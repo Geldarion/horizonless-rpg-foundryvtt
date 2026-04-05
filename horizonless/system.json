@@ -24,7 +24,7 @@
       "discord": "tonateosoup"
     }
   ],
-  "url": "C:\\Users\\drewt\\Downloads\\horizonless\\horizonless",
+  "url": "https://github.com/Geldarion/horizonless-rpg-foundryvtt/blob/main/horizonless/system.json",
   "license": "",
   "readme": "README.md",
   "bugs": "",
@@ -89,8 +89,8 @@
   ],
   "packFolders": [],
   "socket": false,
-  "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
-  "download": "This must link to a .zip file of the current version",
+  "manifest": "https://github.com/Geldarion/horizonless-rpg-foundryvtt/blob/main/horizonless/system.json",
+  "download": "",
   "background": "systems/horizonless/assets/anvil-impact.png",
   "grid": {
     "distance": 5,
