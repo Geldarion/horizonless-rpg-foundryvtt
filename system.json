@@ -87,8 +87,7 @@
   ],
   "packFolders": [],
   "socket": false,
-  "manifest": "https://github.com/Geldarion/horizonless-rpg-foundryvtt/blob/main/horizonless/system.json",
-  "download": "",
+  "manifest": "https://raw.githubusercontent.com/Geldarion/horizonless-rpg-foundryvtt/refs/heads/main/horizonless/system.json",
   "background": "systems/horizonless/assets/anvil-impact.png",
   "grid": {
     "distance": 5,
