@@ -1,0 +1,202 @@
+.horizonless-item-chat {
+  --hz-item-chat-primary: var(--hz-color-primary);
+  --hz-item-chat-primary-strong: var(--hz-color-primary-strong);
+  --hz-item-chat-accent: var(--hz-color-accent);
+  --hz-item-chat-surface: var(--hz-color-surface);
+  --hz-item-chat-text: var(--hz-color-text-on-surface);
+  --hz-item-chat-text-on-dark: var(--hz-color-text-on-dark);
+  --hz-item-chat-stroke: var(--hz-color-stroke-on-surface);
+  color: var(--hz-item-chat-text);
+}
+
+.horizonless-item-chat hr {
+  border-color: var(--hz-item-chat-accent);
+}
+
+.horizonless-item-chat a.content-link,
+.horizonless-item-chat a.inline-roll {
+  color: var(--hz-item-chat-primary-strong);
+  text-decoration-color: currentColor;
+}
+
+.horizonless-item-chat a.content-link:hover,
+.horizonless-item-chat a.inline-roll:hover {
+  color: var(--hz-item-chat-primary);
+}
+
+.horizonless-weapon-chat-message .dice-roll {
+  margin-top: 0.5rem;
+  background: var(--hz-item-chat-surface);
+  color: var(--hz-item-chat-text);
+}
+
+.horizonless-weapon-chat-message .dice-roll .dice-formula,
+.horizonless-weapon-chat-message .dice-roll .dice-total {
+  border-color: var(--hz-item-chat-accent);
+  background: var(--hz-item-chat-primary);
+  color: var(--hz-item-chat-primary-strong);
+}
+
+.horizonless-weapon-chat-message .dice-roll .dice-tooltip {
+  border-top: 1px solid var(--hz-item-chat-accent);
+  background: color-mix(in srgb, var(--hz-item-chat-surface) 88%, white 12%);
+}
+
+.horizonless-item-flavor {
+  color: var(--hz-item-chat-stroke);
+}
+
+.horizonless-chat-card {
+  width: 100%;
+  border: 1px solid var(--hz-item-chat-accent);
+  padding: 0.5rem 0.6rem;
+  background: var(--hz-item-chat-surface);
+  color: var(--hz-item-chat-text);
+  box-sizing: border-box;
+}
+
+.horizonless-chat-card--alert {
+  border-color: var(--hz-item-chat-primary-strong);
+  background: color-mix(in srgb, var(--hz-item-chat-surface) 82%, var(--hz-item-chat-primary) 18%);
+}
+
+.horizonless-chat-card-title {
+  font-weight: 700;
+  color: var(--hz-item-chat-accent);
+}
+
+.horizonless-chat-card-body,
+.horizonless-chat-card-actions {
+  margin-top: 0.4rem;
+}
+
+.horizonless-item-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.horizonless-item-chat-icon {
+  flex: 0 0 auto;
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border: 1px solid var(--hz-item-chat-accent);
+  border-radius: 0.35rem;
+  background: color-mix(in srgb, var(--hz-item-chat-surface) 82%, black 18%);
+}
+
+.horizonless-item-chat-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+  font-weight: 700;
+  color: var(--hz-item-chat-accent);
+}
+
+.horizonless-chat-card button,
+.horizonless-chat-card select {
+  border: 1px solid var(--hz-item-chat-accent);
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.horizonless-chat-card button {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  background: var(--hz-item-chat-primary);
+  color: var(--hz-item-chat-primary-strong);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.horizonless-chat-card button:hover {
+  background: var(--hz-item-chat-primary-strong);
+  color: var(--hz-item-chat-text-on-dark);
+}
+
+.horizonless-chat-card select {
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+  background: var(--hz-item-chat-surface);
+  color: var(--hz-item-chat-text);
+}
+
+.horizonless-weapon-action {
+  width: 100%;
+}
+
+.horizonless-damage-action {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.horizonless-damage-action-field {
+  width: 100%;
+}
+
+.horizonless-damage-action-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+}
+
+.horizonless-damage-type {
+  width: 100%;
+}
+
+.horizonless-attack-results {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.horizonless-attack-result {
+  font-weight: 700;
+}
+
+.horizonless-attack-result--hit {
+  color: var(--hz-item-chat-accent);
+}
+
+.horizonless-attack-result--miss {
+  color: var(--hz-item-chat-stroke);
+}
+
+.horizonless-manuever-flavor {
+  color: var(--hz-item-chat-stroke);
+}
+
+.horizonless-manuever-requirements-met strong {
+  color: var(--hz-item-chat-accent);
+}
+
+.horizonless-damage-apply-content {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.horizonless-undo-damage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.2rem;
+  height: 1.2rem;
+  font-size: 0.75rem;
+  border: 1px solid var(--hz-item-chat-accent);
+  border-radius: 0.15rem;
+  cursor: pointer;
+}

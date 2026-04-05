@@ -1,0 +1,62 @@
+{
+  "HORIZONLESS_RPG": {
+    "Ability": {
+      "Str": { "long": "Strength", "abbr": "str" },
+      "Con": { "long": "Constitution", "abbr": "con" },
+      "Dex": { "long": "Dexterity", "abbr": "dex" },
+      "Int": { "long": "Intelligence", "abbr": "int" },
+      "Wis": { "long": "Wisdom", "abbr": "wis" },
+      "Cha": { "long": "Charisma", "abbr": "cha" }
+    },
+    "SheetLabels": {
+      "Actor": "Horizonless Actor Sheet",
+      "Item": "Horizonless Item Sheet",
+      "Armor": "Horizonless Armor Sheet",
+      "Weapon": "Horizonless Weapon Sheet",
+      "Manuever": "Horizonless Manuever Sheet"
+    },
+    "Item": {
+      "Spell": {
+        "SpellCircle": "Circle {circle} Spells",
+        "AddCircle": "Add Circle {circle}",
+        "Cantrip": "Cantrip"
+      },
+      "Manuever": {
+        "Create": "Add Manuever"
+      }
+    },
+    "Effect": {
+      "Source": "Source",
+      "Duration": "Duration",
+      "Toggle": "Toggle Effect",
+      "Temporary": "Temporary Effects",
+      "Passive": "Passive Effects",
+      "Inactive": "Inactive Effects"
+    },
+    "Combat": {
+      "AddActivation": "Add Activation",
+      "RemoveActivation": "Remove Activation",
+      "UndoActivation": "Undo Activation",
+      "ActivateTurn": "Activate Turn",
+      "EndTurn": "End Turn",
+      "ActivationCount": "Remaining Activations",
+      "TakingTurn": "Taking Turn",
+      "ResizeTracker": "Drag to Resize Tracker"
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC"
+    },
+    "Item": {
+      "item": "Item",
+      "armor": "Armor",
+      "weapon": "Weapon",
+      "feature": "Feature",
+      "spell": "Spell",
+      "manuever": "Manuever"
+    }
+  }
+}

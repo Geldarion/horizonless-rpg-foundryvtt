@@ -1,0 +1,358 @@
+@layer horizonless.components {
+  :where(.horizonless-spell-chat) {
+    background: var(--hz-color-surface);
+  }
+
+  :where(
+    .horizonless-spell-chat-meta,
+    .horizonless-spell-chat-name,
+    .horizonless-spell-chat-name-flavor,
+    .horizonless-spell-heightening-note,
+    .horizonless-spell-chat-possible-heightenings
+  ) {
+    color: var(--hz-color-text-on-surface);
+  }
+
+  :where(.horizonless-spell-chat-meta) {
+    width: 100%;
+    margin: 0 0 0.5rem;
+    border: 2px solid var(--hz-color-accent);
+    border-block-start: 2px solid var(--hz-color-accent) !important;
+    border-block-end: 2px solid var(--hz-color-accent) !important;
+    border-radius: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: clip;
+    background: var(--hz-color-surface);
+  }
+
+  /*
+  :where(.horizonless-spell-chat-meta > tbody > tr:first-child > th, .horizonless-spell-chat-meta > tbody > tr:first-child > td) {
+    border-block-start: 2px solid var(--hz-color-accent) !important;
+  }
+
+  :where(.horizonless-spell-chat-meta > tbody > tr:last-child > th, .horizonless-spell-chat-meta > tbody > tr:last-child > td) {
+    border-block-end: 2px solid var(--hz-color-accent) !important;
+  }
+    */
+
+  :where(.horizonless-spell-chat-meta th, .horizonless-spell-chat-meta td) {
+    padding-block: 0.2rem;
+    vertical-align: top;
+  }
+
+  :where(.horizonless-spell-chat-meta th) {
+    width: 1%;
+    padding-inline: 0.75rem 0.5rem;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: 700;
+    color: var(--hz-color-primary-strong);
+    background: var(--hz-color-primary);
+    border-inline-end: 2px solid var(--hz-color-accent);
+  }
+
+  :where(.horizonless-spell-chat-meta td) {
+    padding-inline: 0.75rem;
+    background: var(--hz-color-surface);
+  }
+
+  :where(.horizonless-spell-chat-row-metadata > td) {
+    padding: 0;
+  }
+
+  :where(.horizonless-spell-chat-metadata-grid) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    background: var(--hz-color-surface);
+  }
+
+  :where(.horizonless-spell-chat-metadata-cell) {
+    min-width: 0;
+    padding: 0.35rem 0.75rem 0.4rem;
+    position: relative;
+    border-color: var(--hz-color-accent);
+    border-style: solid;
+    border-width: 0;
+  }
+
+  :where(.horizonless-spell-chat-metadata-cell:nth-child(odd)) {
+    border-inline-end-width: 2px;
+    border-inline-end-color: var(--hz-color-accent);
+  }
+
+  :where(.horizonless-spell-chat-metadata-cell:nth-child(-n + 2)) {
+    border-block-end-width: 2px;
+    border-block-end-color: var(--hz-color-accent);
+  }
+
+  :where(.horizonless-spell-chat-metadata-label) {
+    color: var(--hz-color-primary-strong);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  :where(.horizonless-spell-chat-metadata-value) {
+    margin-block-start: 0.1rem;
+    color: var(--hz-color-text-on-surface);
+    font-weight: 600;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  :where(.horizonless-spell-chat-meta tr:not(:last-child) th, .horizonless-spell-chat-meta tr:not(:last-child) td) {
+    border-block-end: 2px solid var(--hz-color-accent);
+  }
+
+  :where(.horizonless-spell-chat-name) {
+    font-weight: 700;
+    color: var(--hz-color-accent);
+    line-height: 1.3;
+  }
+
+  :where(.horizonless-spell-chat-name-row) {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  :where(.horizonless-spell-chat-icon) {
+    inline-size: 2rem;
+    block-size: 2rem;
+    border: 1px solid var(--hz-color-accent);
+    object-fit: cover;
+    flex: 0 0 auto;
+  }
+
+  :where(.horizonless-spell-chat-name-block) {
+    min-width: 0;
+  }
+
+  :where(.horizonless-spell-chat-name-flavor p) {
+    margin: 0.2rem 0 0;
+    color: var(--hz-color-text-on-surface);
+  }
+
+  :where(.horizonless-spell-heightening-note ul) {
+    margin: 0.25rem 0 0.6rem 1.25rem;
+    padding: 0;
+  }
+
+  :where(.horizonless-spell-heightening-note li)::marker,
+  :where(.horizonless-spell-chat-possible-heightenings li)::marker {
+    color: var(--hz-color-primary-strong);
+  }
+
+  :where(.horizonless-spell-heightening-requirement) {
+    color: var(--hz-color-text-on-surface);
+  }
+
+  :where(.horizonless-spell-chat-possible-heightenings) {
+    margin: 0.35rem 0 0.6rem;
+    border: 1px solid var(--hz-color-accent);
+    border-radius: 0;
+    background: var(--hz-color-surface);
+    overflow: clip;
+  }
+
+  :where(.horizonless-spell-chat-possible-heightenings summary) {
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    font-weight: 700;
+    color: var(--hz-color-primary-strong);
+    background: var(--hz-color-primary);
+    transition:
+      background-color 160ms ease,
+      color 160ms ease;
+  }
+
+  :where(.horizonless-spell-chat-possible-heightenings summary:hover) {
+    background: var(--hz-color-primary-strong);
+    color: var(--hz-color-text-on-dark);
+  }
+
+  :where(.horizonless-spell-chat-possible-heightenings summary:focus-visible) {
+    outline: 2px solid var(--hz-color-primary-strong);
+    outline-offset: -2px;
+  }
+
+  :where(.horizonless-spell-chat-possible-heightenings ul) {
+    margin: 0.35rem 0 0;
+    padding: 0 0.75rem 0.75rem 1.25rem;
+  }
+
+  :where(.horizonless-spell-chat-possible-heightenings li + li) {
+    margin-block-start: 0.35rem;
+  }
+
+  :where(.horizonless-spell-chat-possible-heightenings li p) {
+    display: inline;
+    margin: 0;
+  }
+
+  :where(.horizonless-spell-chat-actions) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 0.5rem 0 0.6rem;
+  }
+
+  :where(.horizonless-spell-chat-save-action) {
+    border: 1px solid var(--hz-color-accent);
+    border-radius: 0;
+    background: var(--hz-color-primary);
+    overflow: clip;
+  }
+
+  :where(.horizonless-spell-chat-save-button, .horizonless-spell-chat-damage-button) {
+    inline-size: 100%;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--hz-color-accent);
+    border-radius: 0;
+    background: var(--hz-color-primary);
+    color: var(--hz-color-primary-strong);
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease;
+  }
+
+  :where(.horizonless-spell-chat-save-button:hover, .horizonless-spell-chat-damage-button:hover) {
+    background: var(--hz-color-primary-strong);
+    color: var(--hz-color-text-on-dark);
+  }
+
+  :where(.horizonless-spell-chat-save-action .horizonless-spell-chat-save-button) {
+    border: 0;
+  }
+
+  :where(.horizonless-spell-chat-save-button:focus-visible, .horizonless-spell-chat-damage-button:focus-visible) {
+    outline: 2px solid var(--hz-color-primary-strong);
+    outline-offset: 1px;
+  }
+
+  :where(.horizonless-spell-save-results) {
+    margin: 0.35rem 0 0;
+    border: 1px solid var(--hz-color-accent);
+    background: var(--hz-color-surface);
+    color: var(--hz-color-text-on-surface);
+  }
+
+  :where(.horizonless-spell-save-results-title) {
+    padding: 0.5rem 0.75rem;
+    font-weight: 700;
+    color: var(--hz-color-primary-strong);
+    background: var(--hz-color-primary);
+    border-block-end: 1px solid var(--hz-color-accent);
+  }
+
+  :where(.horizonless-spell-save-results-list) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  :where(.horizonless-spell-save-result-row) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.1rem 0.75rem;
+    align-items: center;
+    padding: 0.45rem 0.75rem;
+  }
+
+  :where(.horizonless-spell-save-result-row + .horizonless-spell-save-result-row) {
+    border-block-start: 1px solid rgba(75, 17, 27, 0.25);
+  }
+
+  :where(.horizonless-spell-save-result-name) {
+    font-weight: 700;
+  }
+
+  :where(.horizonless-spell-save-result-total) {
+    font-weight: 700;
+    color: var(--hz-color-accent);
+  }
+
+  :where(.horizonless-spell-save-result-formula) {
+    grid-column: 1 / -1;
+    font-size: 0.8rem;
+    color: var(--hz-color-stroke-on-surface);
+  }
+
+  :where(.horizonless-spell-save-result-tag) {
+    display: inline-flex;
+    align-items: center;
+    inline-size: fit-content;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--hz-color-text-on-dark);
+    background: var(--hz-color-primary-strong);
+  }
+
+  :where(.horizonless-spell-damage-label) {
+    color: var(--hz-color-text-on-surface);
+  }
+
+  :where(.horizonless-spell-damage-message) {
+    margin: 0.35rem 0 0;
+    border: 1px solid var(--hz-color-accent);
+    background: var(--hz-color-surface);
+    color: var(--hz-color-text-on-surface);
+  }
+
+  :where(.horizonless-spell-damage-message-label) {
+    padding: 0.45rem 0.75rem 0;
+    color: var(--hz-color-text-on-surface);
+    font-weight: 600;
+  }
+
+  :where(.horizonless-spell-damage-message-list) {
+    display: flex;
+    flex-direction: column;
+    padding: 0.35rem 0.75rem 0.75rem;
+    gap: 0.6rem;
+  }
+
+  :where(.horizonless-spell-damage-message-row) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  :where(.horizonless-spell-damage-message-row + .horizonless-spell-damage-message-row) {
+    border-block-start: 1px solid rgba(75, 17, 27, 0.25);
+    padding-block-start: 0.6rem;
+  }
+
+  :where(.horizonless-spell-damage-message-target) {
+    font-weight: 700;
+    color: var(--hz-color-accent);
+  }
+
+  :where(.horizonless-spell-damage-message-roll .dice-roll) {
+    margin: 0;
+  }
+
+  :where(.horizonless-spell-damage-message-controls) {
+    width: 100%;
+  }
+
+  :where(.horizonless-spell-chat-message .horizonless-damage-action) {
+    margin-top: 0;
+  }
+
+  :where(.horizonless-spell-chat-meta a, .horizonless-spell-chat-possible-heightenings a) {
+    color: var(--hz-color-primary-strong);
+    text-decoration-color: var(--hz-color-primary-strong);
+    text-underline-offset: 0.15em;
+  }
+
+  :where(.horizonless-spell-chat-meta a:hover, .horizonless-spell-chat-possible-heightenings a:hover) {
+    color: var(--hz-color-primary);
+    text-decoration-color: currentColor;
+  }
+}

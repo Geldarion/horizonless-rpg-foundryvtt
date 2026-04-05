@@ -1,0 +1,299 @@
+{
+  "class": "ranger",
+  "overview_table": [
+    {
+      "Rank": "1",
+      "Features": "Primal Battlecasting Ranger Enclave Channel Ancients",
+      "Spell Points": "2",
+      "Class Circle Cap": "1st",
+      "Spells Prepared": "4",
+      "Martial Die": "1d6"
+    },
+    {
+      "Rank": "2",
+      "Features": "Tumble Ancient Memories I",
+      "Spell Points": "4",
+      "Class Circle Cap": "1st",
+      "Spells Prepared": "5",
+      "Martial Die": "1d6"
+    },
+    {
+      "Rank": "3",
+      "Features": "Tumbling Strike Acute Sense Ability Improvement",
+      "Spell Points": "6",
+      "Class Circle Cap": "1st",
+      "Spells Prepared": "6",
+      "Martial Die": "1d6"
+    },
+    {
+      "Rank": "4",
+      "Features": "Exploration Ranger Enclave Feature",
+      "Spell Points": "8",
+      "Class Circle Cap": "1st",
+      "Spells Prepared": "7",
+      "Martial Die": "1d8"
+    },
+    {
+      "Rank": "5",
+      "Features": "Ancient Memories II",
+      "Spell Points": "10",
+      "Class Circle Cap": "2nd",
+      "Spells Prepared": "8",
+      "Martial Die": "1d8"
+    },
+    {
+      "Rank": "6",
+      "Features": "Elusive Tumble Piercing Sense Ability Improvement",
+      "Spell Points": "12",
+      "Class Circle Cap": "2nd",
+      "Spells Prepared": "9",
+      "Martial Die": "1d8"
+    },
+    {
+      "Rank": "7",
+      "Features": "Adaptation I Exploration",
+      "Spell Points": "13",
+      "Class Circle Cap": "2nd",
+      "Spells Prepared": "10",
+      "Martial Die": "1d10"
+    },
+    {
+      "Rank": "8",
+      "Features": "Ancient Memories III Ranger Enclave Feature",
+      "Spell Points": "14",
+      "Class Circle Cap": "2nd",
+      "Spells Prepared": "11",
+      "Martial Die": "1d10"
+    },
+    {
+      "Rank": "9",
+      "Features": "Improved Tumble Ability Improvement",
+      "Spell Points": "15",
+      "Class Circle Cap": "3rd",
+      "Spells Prepared": "12",
+      "Martial Die": "1d10"
+    },
+    {
+      "Rank": "10",
+      "Features": "Adaptation II Exploration",
+      "Spell Points": "16",
+      "Class Circle Cap": "3rd",
+      "Spells Prepared": "13",
+      "Martial Die": "1d12"
+    },
+    {
+      "Rank": "11",
+      "Features": "Tumbling Spell Ancient Recollection",
+      "Spell Points": "17",
+      "Class Circle Cap": "3rd",
+      "Spells Prepared": "14",
+      "Martial Die": "1d12"
+    },
+    {
+      "Rank": "12",
+      "Features": "Primal Conduit Ability Improvement",
+      "Spell Points": "18",
+      "Class Circle Cap": "3rd",
+      "Spells Prepared": "15",
+      "Martial Die": "1d12"
+    },
+    {
+      "Rank": "",
+      "Features": "Ranger Enclaves",
+      "Spell Points": "",
+      "Class Circle Cap": "",
+      "Spells Prepared": "",
+      "Martial Die": ""
+    },
+    {
+      "Rank": "",
+      "Features": "Dune Strider, Nyctohawk, Wind Warden",
+      "Spell Points": "",
+      "Class Circle Cap": "",
+      "Spells Prepared": "",
+      "Martial Die": ""
+    }
+  ],
+  "features": [
+    {
+      "name": "Primal Battlecasting",
+      "flavor_text": "",
+      "rank": "1st Rank",
+      "description": "As a Ranger, you are able to prepare and cast spells from the Primal spell list:\n\n* **Spells Prepared.** At 1st Rank, you may prepare 4 spells for this Class at the end of each long rest. You may cast those prepared spells using this feature.\n\n* **Class Circle Cap.** Each spell you prepare may have a maximum baseline Circle of 1st Circle.\n\n* **Heightening.** When you cast spells using this feature, you may heighten spells up to your Class Circle Cap.\n\n* **Spell Points.** At 1st Rank, you gain 2 Spell Points. When you cast spells using this feature, you must expend Spell Points equal to the Circle of the spell. Spell Points are regained at the end of each long rest.\n\n* **Spellcasting Modifier.** Your spellcasting modifier when casting spells using this feature is WIS.\n\n  * **Your Spell Attack Bonus** \\= your WIS \\+ your Tier Bonus\n\n  * **Your Spell Save DC** \\= 8 \\+ your WIS \\+ your Tier Bonus\n\n  * **Spellcasting Checks** made with spells prepared for this class use your WIS.\n\n* **Signature Spell.** Your designated signature spell may be one of the 1st Circle or higher spells prepared for this feature.\n\n* **Higher Ranks.** At higher Ranks, the spells prepared, Spell Points, and Class Circle Cap all improve as described in the Class Overview Table."
+    },
+    {
+      "name": "Ranger Enclave",
+      "flavor_text": "You are the product of a millennium of lessons.",
+      "rank": "1st Rank",
+      "description": "At 1st Rank, you choose a Ranger Enclave to reflect the traditions and skills you have honed with time and patience. You gain features from your chosen Ranger Enclave at 1st, 4th, and 8th Rank."
+    },
+    {
+      "name": "Channel Ancients",
+      "flavor_text": "Within your body blooms an unforgotten strength, inheriting the promises of the primal forces of the world. The will of the yearning wilds moves through your actions.",
+      "rank": "1st Rank",
+      "description": "At 1st Rank, as an action during combat, you may *channel* an *ancient* that you know, gaining its listed benefits until the end of combat.\n\nIf you channeled an ancient on your last turn, you may take a free action once during your current turn to either channel another ancient that you know or *evoke* to take a free Move or Attack action.\n\nYou know four ancients: one provided by your Ranger Enclave and the **Echoes**, **Permanence**, and **Ruin** ancients described below:\n\n### *Echoes*\n\n## *Ranger Ancient*\n\n\tYour Speed is increased by 10 feet.\n\n### *Permanence*\n\n## *Ranger Ancient*\n\n\tYou gain your Half Guard AC.\n\n### *Ruin*\n\n## *Ranger Ancient*\n\n\tYour weapon attacks deal an additional **1d4 damage** on a hit. This damage die becomes 2d4/3d4/4d4 at 4th/7th/10th Rank, respectively."
+    },
+    {
+      "name": "Tumble",
+      "flavor_text": "Preternatural senses honed by many dangers allow for quick escapes.",
+      "rank": "2nd Rank",
+      "description": "At 2nd Rank, as a reaction immediately before you are attacked, you may impose disadvantage on the attack check. Afterwards, you may travel up to 10 feet."
+    },
+    {
+      "name": "Ancient Memories I",
+      "flavor_text": "Though the land holds a deep memory for any who would listen, the whisper is quiet.",
+      "rank": "2nd Rank",
+      "description": "At 2nd Rank, select one Ancient Memory feature of your choosing from the list below, which enhances one of your ancients in various ways. During the Retrain downtime activity, you may redo the selection of all of your chosen Ancient Memories.\n\n## **Memories of Echoes**\n\n### *Domain*\n\n## *2nd Rank Ranger Ancient Memory (Echoes)*\n\n\tWhile your **Echoes** ancient is active, your movement ignores difficult terrain.\n\n### *Dusk*\n\n## *2nd Rank Ranger Ancient Memory (Echoes)*\n\n\tWhile your **Echoes** ancient is active, when you take the Dodge action, you may travel up to 10 feet.\n\n### *Rapids*\n\n## *2nd Rank Ranger Ancient Memory (Echoes)*\n\n\tWhile your **Echoes** ancient is active, you may add 5 feet to your movement pool as a free action at the start of each of your turns.\n\n## **Memories of Permanence**\n\n### *Ardor*\n\n## *2nd Rank Ranger Ancient Memory (Permanence)*\n\n\tWhile your **Permanence** ancient is active, you may **regain ST** equal to 2 - your Ranger Rank as a free action at the start of each of your turns.\n\n### *Balance*\n\n## *2nd Rank Ranger Ancient Memory (Permanence)*\n\n\tWhile your **Permanence** ancient is active, when you take the Anticipate action, you gain advantage on the next saving throw you make before the start of your next turn.\n\n### *Roots*\n\n## *2nd Rank Ranger Ancient Memory (Permanence)*\n\n\tWhile your **Permanence** ancient is active, when you would be forcibly moved, you may prevent that movement as a free action. If you do, you may also push the source of the effect 5 feet away from you.\n\n## **Memories of Ruin**\n\n### *Collapse*\n\n## *2nd Rank Ranger Ancient Memory (Ruin)*\n\n\tWhile your **Ruin** ancient is active, you gain advantage on all attack checks against any creature that has a fully depleted DB.\n\n### *Fangs*\n\n## *2nd Rank Ranger Ancient Memory (Ruin)*\n\n\tWhile your **Ruin** ancient is active, the critical hit threshold of all attacks you make are reduced by 1\\.\n\n### *Trail*\n\n## *2nd Rank Ranger Ancient Memory (Ruin)*\n\n\tWhile your **Ruin** ancient is active, you gain advantage on Search checks against creatures that took damage from you during this combat."
+    },
+    {
+      "name": "Tumbling Strike",
+      "flavor_text": "Survival is secured in the narrow slivers of opportunity.",
+      "rank": "3rd Rank",
+      "description": "At 3rd Rank, after each time you use **Tumble**, you may make a weapon attack."
+    },
+    {
+      "name": "Acute Sense",
+      "flavor_text": "Predators can find prey making the smallest movement, and your quarry's breath is caught by your ears.",
+      "rank": "3rd Rank",
+      "description": "At 3rd Rank, when you succeed on a Search check, the target becomes **perceived** by you and your initiative partner."
+    },
+    {
+      "name": "Ability Improvement",
+      "flavor_text": "",
+      "rank": "3rd, 6th, 9th, and 12th Rank",
+      "description": "At 3rd, 6th, 9th, and 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+    },
+    {
+      "name": "Exploration",
+      "flavor_text": "",
+      "rank": "4th, 7th, and 10th Rank",
+      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with Ranger being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than Ranger and gain one Rank in the chosen Class."
+    },
+    {
+      "name": "Ranger Enclave Feature",
+      "flavor_text": "",
+      "rank": "4th Rank",
+      "description": "At 4th Rank, you gain a feature for your Ranger Enclave."
+    },
+    {
+      "name": "Ancient Memories II",
+      "flavor_text": "You are propelled in your search for the truths the land will teach you: the lessons carved into the stones of the earth.",
+      "rank": "5th Rank",
+      "description": "At 5th Rank, you gain an additional Ancient Memory feature chosen from those listed at 2nd Rank. The Ancient Memory feature you choose must enhance a different ancient than one you have already enhanced. During the Retrain downtime activity, you may redo the selection of all of your chosen Ancient Memories."
+    },
+    {
+      "name": "Elusive Tumble",
+      "flavor_text": "Avoid that which cannot be weathered, and weather that which cannot be avoided.",
+      "rank": "6th Rank",
+      "description": "At 6th Rank, you may use **Tumble** as a reaction immediately before you make a **Reflex** saving throw instead of as a reaction to being attacked. If you do, you gain advantage on the saving throw, and all other effects of **Tumble** occur."
+    },
+    {
+      "name": "Piercing Sense",
+      "flavor_text": "Survival is not vindictive; purpose, not malice, guides your lethal arrows.",
+      "rank": "6th Rank",
+      "description": "At 6th Rank, once per turn after succeeding on a Search check, you may make a weapon attack as a free action against the target of the Search check."
+    },
+    {
+      "name": "Ability Improvement",
+      "flavor_text": "",
+      "rank": "6th Rank",
+      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+    },
+    {
+      "name": "Adaptation I",
+      "flavor_text": "Those who do not change, die.",
+      "rank": "7th Rank",
+      "description": "At 7th Rank, you choose an **elemental**, **biological**, or **supernatural** damage type and gain the following benefits:\n\n* **Damage Buffer.** You gain DB 15 against the chosen damage type.\n\n* **Damage Conversion.** When you hit with a weapon attack, you may convert all of the damage dealt to the chosen damage type.\n\n\tDuring the Retrain downtime activity, you may redo your selection of chosen damage type."
+    },
+    {
+      "name": "Exploration",
+      "flavor_text": "",
+      "rank": "7th Rank",
+      "description": "At 7th Rank, you gain an Exploration with Ranger being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than Ranger and gain one Rank in the chosen Class."
+    },
+    {
+      "name": "Ancient Memories III",
+      "flavor_text": "Internalized lessons now guide your path. Observing your fellow mortals in their mundane aspirations, you see the inevitability of all life. Death, renewal, and rejuvenation.",
+      "rank": "8th Rank",
+      "description": "At 8th Rank, select an additional Ancient Memory feature chosen from those listed at 2nd Rank. The Ancient Memory feature you choose must enhance a different ancient than one you have already enhanced. During the Retrain downtime activity, you may redo the selection of all of your chosen Ancient Memories."
+    },
+    {
+      "name": "Ranger Enclave Feature",
+      "flavor_text": "",
+      "rank": "8th Rank",
+      "description": "At 8th Rank, you gain a feature for your Ranger Enclave."
+    },
+    {
+      "name": "Improved Tumble",
+      "flavor_text": "The honed reflexes of a being of pure intuition are unmatched.",
+      "rank": "9th Rank",
+      "description": "At 9th Rank, the distance you travel when you use **Tumble** becomes 20 feet. You gain advantage on weapon attacks made as part of **Tumbling Strike**."
+    },
+    {
+      "name": "Ability Improvement",
+      "flavor_text": "",
+      "rank": "9th Rank",
+      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+    },
+    {
+      "name": "Adaptation II",
+      "flavor_text": "All play their part in the time they are given, though some overcome enough challenges to become the evolutionary force.",
+      "rank": "10th Rank",
+      "description": "At 10th Rank, you may choose a second **elemental**, **biological**, or **supernatural** damage type:\n\n* **Damage Buffer.** Your **Adaptation** DB becomes 20 and applies to both of your chosen damage types.\n\n* **Damage Conversion.** When you hit with a weapon attack, you may convert all of the damage dealt to either of the chosen damage types.\n\n\tDuring the Retrain downtime activity, you may redo your selection of both chosen damage types."
+    },
+    {
+      "name": "Exploration",
+      "flavor_text": "",
+      "rank": "10th Rank",
+      "description": "At 10th Rank, you gain an Exploration with Ranger being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than Ranger and gain one Rank in the chosen Class."
+    },
+    {
+      "name": "Tumbling Spell",
+      "flavor_text": "Instinctual magic conjured as easily as breath.",
+      "rank": "11th Rank",
+      "description": "At 11th Rank, when you use **Tumbling Strike**, you may forgo making the attack to cast a spell instead with a casting time of 1 action using any feature you have as a free action."
+    },
+    {
+      "name": "Ancient Recollection",
+      "flavor_text": "Setting aside your immaterial ambitions, you embrace the full understanding of the natural order.",
+      "rank": "11th Rank",
+      "description": "At 11th Rank, select one of the following Ancient Memory features from the list below or one listed at an earlier Rank. During the Retrain downtime activity, you may redo the selection of all of your chosen Ancient Memories.\n\n### *Currents*\n\n## *11th Rank Ranger Ancient Memory (Echoes)*\n\nWhile your **Echoes** ancient is active, the movement cost to travel is halved when using any mobility.\n\n### *Mountain*\n\n## *11th Rank Ranger Ancient Memory (Permanence)*\n\n\tWhile your **Permanence** ancient is active, when the incapacitated, stunned, or frozen conditions are applied to you, you may prevent the conditions from being applied to you. If you do, all of your ancients cease being active.\n\n### *Eruption*\n\n## *11th Rank Ranger Ancient Memory (Ruin)*\n\n\tWhile your **Ruin** ancient is active, as a free action during each of your turns, you may deal **4d4 damage** to any number of targets within 30 feet of you. The damage type dealt is one of the damage types chosen for your **Adaptation** feature (you pick which)."
+    },
+    {
+      "name": "Primal Conduit",
+      "flavor_text": "Mortals spend their brief life boasting of their flickering candles under the starry expanse. But the battering winds topple their fortresses, the tremors in the earth sunder their foundations, and the rain erodes their monuments leaving not even a memory.",
+      "rank": "12th Rank",
+      "description": "At 12th Rank, as a free action once during each of your turns while you have four or more ancients active at once, you may travel up to your Speed, cleanse yourself of all negative conditions and effects, then make a weapon attack. The weapon attack check gains advantage."
+    },
+    {
+      "name": "Ability Improvement",
+      "flavor_text": "",
+      "rank": "12th Rank",
+      "description": "At 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+    },
+    {
+      "name": "Final Reach",
+      "flavor_text": "",
+      "rank": "",
+      "description": "When you reach character Level 12, you compute your *Total Rank*, which is calculated as:\n\n###### The sum of all of your Class Ranks\n\n\tIf your Total Rank is less than 16 when you reach Level 12, then for each deficient Rank, you may choose one of the benefits below to modify a feature granted by one of your Class Ranks:\n\n* **Maneuvers.** You learn two additional maneuvers.\n\n* **Battlecasting.** You gain a maneuver, an additional Spell Point, and an additional prepared spell for that Class.\n\n* **Spellcasting.** You gain three additional Spell Points and three additional prepared spells for that Class.\n\nBack to Top\n\n# Ranger Enclaves"
+    },
+    {
+      "name": "Ranger Enclave: Dune Strider",
+      "flavor_text": "The rumbling of an insatiable appetite slumbers beyond the earthen facade of the soil upon which you stand. Your nerves twinge in tune with every quake and tremor, a wholeness achieved through joining in with this bottomless thirst. The land will swallow the unready and reform anew.",
+      "rank": "1st Rank",
+      "description": "## **Sand Traps**\n\n\t*Call into question the firm ground upon which they stand. Seize the earth and drown them in it.*\n\n\tAt 1st Rank, as an action, you may create a *sand trap* at a target floor within 30 feet of you. At the start of each of your turns, you may have sand traps of your choosing cause all creatures of Size Large or smaller within 5 feet of them to become stuck. Afterwards, the chosen sand traps expire. This stuck condition has the **Recoverable** condition trait, allowing an action to end the effect.\n\n## **Ancient of Cavitation**\n\n\t*The soft soils grant you their passage. With it, even the lifeless earth is given new purpose.*\n\n\tAt 1st Rank, you learn the **Cavitation** ancient described below.\n\n### *Cavitation*\n\n## *Dune Strider Ranger Ancient*\n\n\tYou gain basic Burrowing mobility. Whenever you travel while burrowing within 5 feet of a floor, you may create a sand trap on that surface.\n\n## **Dustwhirl Tumble**\n\n\t*Eat my dust before it eats you.*\n\n\tAt 4th Rank, when you use **Tumble**, you may create a sand trap at your location immediately before traveling.\n\n## **Sandstorm Torrent**\n\n\t*Scorched grounds and eroded cliffs are but prophecies etched by the hands of time. Sinking ever further into the earth, such words alter the foundations.*\n\n\tAt 8th Rank, you gain the following benefits:\n\n* **Force of Erosion.** Once per turn while your **Cavitation** ancient is active, immediately before you make an attack check against a creature stuck from one of your sand traps, you may gain advantage on the attack check.\n\n* **Shifting Sands.** The range at which your sand traps causes creatures to become stuck becomes 10 feet. When one of your sand traps causes a creature to become stuck, you may pull that creature to that sand trap.\n\nBack to Top"
+    },
+    {
+      "name": "Ranger Enclave: Nyctohawk",
+      "flavor_text": "With legs carried by moonlit gales and the long shadows worn as skin, the very night itself becomes your cloak. Ever elusive, you hang in the corner of their eye and pounce when the moment is ripe. In one breath, a gliding shadow, a falling blade, and a lethal strike bears silent witness to your mark's final moments.",
+      "rank": "1st Rank",
+      "description": "## **Umbral Focus**\n\n\t*At the moment to strike, your eyes narrow upon an unwary target. Their luck ends tonight.*\n\n\tAt 1st Rank, at the start of each of your turns, you apply your *umbral focus* to a target hostile creature that does not **perceive** you. Your umbral focus expires at the end of each turn. Weapon attacks you make against the creature with your umbral focus have their critical hit threshold reduced by 1\\.\n\n## **Ancient of Predation**\n\n\t*The bird of prey tucks its wings as it dives towards its next meal.*\n\n\tAt 1st Rank, you learn the **Predation** ancient described below.\n\n### *Predation*\n\n## *Nyctohawk Ranger Ancient*\n\n\tYou gain basic Jumping mobility. When you hit the creature with your umbral focus with a weapon attack that was made during or immediately after falling further than 20 feet, the target becomes frightened of you until the start of your next turn.\n\n## **Mooncloak Tumble**\n\n\t*By the time they caught onto you, you were already gone.*\n\n\tAt 4th Rank, once per turn, when you use **Tumble**, you may take a free Vanish action.\n\n## **Nocturnal Shroud**\n\n*A midnight mist drips from your form, hanging in the air like a thick fog that smothers your foes.*\n\n\tAt 8th Rank, you gain the following benefits:\n\n* **Into the Night.** While your **Predation** ancient is active, you gain advantage on Vanish checks.\n\n* **Swallowing Shadow.** When you score a critical hit against the creature with your umbral focus, you may cause them to become disoriented until the end of your next turn.\n\nBack to Top"
+    },
+    {
+      "name": "Ranger Enclave: Wind Warden",
+      "flavor_text": "Looking out over the great expanses, your heart flutters with wondrous freedom knowing there is no horizon beyond which the winds cannot carry you. Adrift within the art of the sky, you embody the dreamy separation of the material from its gravity. Though surrounded by thunderous tempest and billowing gales, your eyes remain ever forward and your soul forever at ease.",
+      "rank": "1st Rank",
+      "description": "## **Blow Through**\n\n\t*Through graceful, fluid motions, your hand guides the air into sweeping whirlwinds.*\n\n\tAt 1st Rank, when you deal damage with a weapon attack against a creature, you may evenly divide the damage dealt between the target and another target creature within 5 feet of them.\n\n## **Ancient of Galeforce**\n\n\t*Rippling winds spiral around you and rest at your feet. The air itself springs forth on your behalf.*\n\n\tAt 1st Rank, you learn the **Galeforce** ancient described below.\n\n### *Galeforce*\n\n## *Wind Warden Ranger Ancient*\n\nAs a free action, you may spend up to 15 feet of movement to cause a target object or creature within 15 feet of you to make a **Poise** saving throw against your Ranger Spell Save DC. On a failure, the target is forcibly moved a distance equal to the movement spent in a direction of your choosing.\n\n## **Blast Back Tumble**\n\n*The arrow's fletching catches in the hidden currents surrounding you. Its whirling flight is renewed with winged memories.*\n\n\tAt 4th Rank, when you use **Tumble** followed by **Tumbling Strike**, if the attack made against you was ranged and it missed, you may add its damage roll to the damage roll of the **Tumbling Strike** weapon attack.\n\n## **Zephyr Form**\n\n\t*Once carried by the wind, it now flows through you.*\n\n\tAt 8th Rank, you gain the following benefits:\n\n* **Cyclone Strike.** When you use **Blow Through**, you may now evenly divide the damage dealt between the target of the attack and up to two other target creatures within 5 feet of them.\n\n* **Windwalk.** While your **Galeforce** ancient is active, but only during your turn, you gain basic Flying mobility."
+    }
+  ]
+}

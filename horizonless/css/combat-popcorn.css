@@ -1,0 +1,532 @@
+:root {
+  --horizonless-initiative-icon-size: 1rem;
+  --horizonless-initiative-done-color: var(--hz-color-primary-strong);
+  --horizonless-initiative-player-color: var(--hz-color-primary-strong);
+  --horizonless-initiative-friendly-color: var(--hz-color-primary);
+  --horizonless-initiative-neutral-color: var(--hz-color-surface);
+  --horizonless-initiative-enemy-color: var(--hz-color-accent);
+  --horizonless-initiative-active-color: var(--hz-color-primary);
+  --horizonless-initiative-surface: var(--hz-color-surface);
+  --horizonless-initiative-surface-translucent: color-mix(
+    in srgb,
+    var(--hz-color-primary) 42%,
+    transparent
+  );
+  --horizonless-initiative-text: var(--hz-color-text-on-surface);
+  --horizonless-initiative-stroke: var(--hz-color-accent);
+  --horizonless-initiative-strong: var(--hz-color-primary-strong);
+  --horizonless-initiative-on-strong: var(--hz-color-text-on-dark);
+  --horizonless-initiative-control-color: color-mix(
+    in srgb,
+    var(--hz-color-primary-strong) 40%,
+    white
+  );
+  --horizonless-initiative-control-disabled: color-mix(
+    in srgb,
+    var(--horizonless-initiative-text) 55%,
+    transparent
+  );
+}
+
+#combat .combat-tracker-header,
+#combat-popout .combat-tracker-header {
+  background: var(--horizonless-initiative-surface-translucent);
+  border-bottom: 2px solid var(--horizonless-initiative-stroke);
+  color: var(--horizonless-initiative-text);
+}
+
+#combat #combat-controls,
+#combat-popout #combat-controls {
+  background: var(--horizonless-initiative-surface-translucent);
+  border-top: 2px solid var(--horizonless-initiative-stroke);
+}
+
+[data-tab="combat"] .combat-tracker-header .combat-button,
+[data-tab="combat"] #combat-controls .combat-control,
+[data-tab="combat"] li.combatant .combatant-control,
+#combat .combat-tracker-header .combat-button,
+#combat #combat-controls .combat-control,
+#combat li.combatant .combatant-control,
+#combat-popout .combat-tracker-header .combat-button,
+#combat-popout #combat-controls .combat-control,
+#combat-popout li.combatant .combatant-control {
+  color: var(--horizonless-initiative-control-color);
+  opacity: 1;
+}
+
+[data-tab="combat"] .combat-tracker-header .combat-button[disabled],
+[data-tab="combat"] #combat-controls .combat-control[disabled],
+#combat .combat-tracker-header .combat-button[disabled],
+#combat #combat-controls .combat-control[disabled],
+#combat-popout .combat-tracker-header .combat-button[disabled],
+#combat-popout #combat-controls .combat-control[disabled] {
+  color: var(--horizonless-initiative-control-disabled);
+  opacity: 0.7;
+}
+
+[data-tab="combat"] .combat-tracker-header .combat-button:not([disabled]):hover,
+[data-tab="combat"] #combat-controls .combat-control:not([disabled]):hover,
+[data-tab="combat"] li.combatant .combatant-control:hover,
+#combat .combat-tracker-header .combat-button:not([disabled]):hover,
+#combat #combat-controls .combat-control:not([disabled]):hover,
+#combat li.combatant .combatant-control:hover,
+#combat-popout .combat-tracker-header .combat-button:not([disabled]):hover,
+#combat-popout #combat-controls .combat-control:not([disabled]):hover,
+#combat-popout li.combatant .combatant-control:hover {
+  color: var(--horizonless-initiative-text);
+}
+
+[data-tab="combat"] li.combatant,
+#combat li.combatant,
+#combat-popout li.combatant {
+  background: var(--horizonless-initiative-surface-translucent);
+  color: var(--horizonless-initiative-text);
+  border-bottom: 1px solid color-mix(in srgb, var(--horizonless-initiative-stroke) 35%, transparent);
+}
+
+[data-tab="combat"] li.combatant.player {
+  border-left: 3px solid var(--horizonless-initiative-player-color);
+  border-right: 3px solid var(--horizonless-initiative-player-color);
+}
+
+#combat li.combatant.player,
+#combat-popout li.combatant.player {
+  border-left: 3px solid var(--horizonless-initiative-player-color);
+  border-right: 3px solid var(--horizonless-initiative-player-color);
+}
+
+[data-tab="combat"] li.combatant.player.active::after {
+  border-color: var(--horizonless-initiative-player-color);
+}
+
+#combat li.combatant.player.active::after,
+#combat-popout li.combatant.player.active::after {
+  border-color: var(--horizonless-initiative-player-color);
+}
+
+[data-tab="combat"] li.combatant.player .horizonless-token-initiative a {
+  color: var(--horizonless-initiative-player-color);
+}
+
+#combat li.combatant.player .horizonless-token-initiative a,
+#combat-popout li.combatant.player .horizonless-token-initiative a {
+  color: var(--horizonless-initiative-player-color);
+}
+
+[data-tab="combat"] li.combatant.friendly {
+  border-left: 3px solid var(--horizonless-initiative-friendly-color);
+  border-right: 3px solid var(--horizonless-initiative-friendly-color);
+}
+
+#combat li.combatant.friendly,
+#combat-popout li.combatant.friendly {
+  border-left: 3px solid var(--horizonless-initiative-friendly-color);
+  border-right: 3px solid var(--horizonless-initiative-friendly-color);
+}
+
+[data-tab="combat"] li.combatant.friendly.active::after {
+  border-color: var(--horizonless-initiative-friendly-color);
+}
+
+#combat li.combatant.friendly.active::after,
+#combat-popout li.combatant.friendly.active::after {
+  border-color: var(--horizonless-initiative-friendly-color);
+}
+
+[data-tab="combat"] li.combatant.friendly .horizonless-token-initiative a {
+  color: var(--horizonless-initiative-friendly-color);
+}
+
+#combat li.combatant.friendly .horizonless-token-initiative a,
+#combat-popout li.combatant.friendly .horizonless-token-initiative a {
+  color: var(--horizonless-initiative-friendly-color);
+}
+
+[data-tab="combat"] li.combatant.neutral {
+  border-left: 3px solid var(--horizonless-initiative-neutral-color);
+  border-right: 3px solid var(--horizonless-initiative-neutral-color);
+}
+
+#combat li.combatant.neutral,
+#combat-popout li.combatant.neutral {
+  border-left: 3px solid var(--horizonless-initiative-neutral-color);
+  border-right: 3px solid var(--horizonless-initiative-neutral-color);
+}
+
+[data-tab="combat"] li.combatant.neutral.active::after {
+  border-color: var(--horizonless-initiative-neutral-color);
+}
+
+#combat li.combatant.neutral.active::after,
+#combat-popout li.combatant.neutral.active::after {
+  border-color: var(--horizonless-initiative-neutral-color);
+}
+
+[data-tab="combat"] li.combatant.neutral .horizonless-token-initiative a {
+  color: var(--horizonless-initiative-neutral-color);
+}
+
+#combat li.combatant.neutral .horizonless-token-initiative a,
+#combat-popout li.combatant.neutral .horizonless-token-initiative a {
+  color: var(--horizonless-initiative-neutral-color);
+}
+
+[data-tab="combat"] li.combatant.enemy {
+  border-left: 3px solid var(--horizonless-initiative-enemy-color);
+  border-right: 3px solid var(--horizonless-initiative-enemy-color);
+}
+
+#combat li.combatant.enemy,
+#combat-popout li.combatant.enemy {
+  border-left: 3px solid var(--horizonless-initiative-enemy-color);
+  border-right: 3px solid var(--horizonless-initiative-enemy-color);
+}
+
+[data-tab="combat"] li.combatant.enemy.active::after {
+  border-color: var(--horizonless-initiative-enemy-color);
+}
+
+#combat li.combatant.enemy.active::after,
+#combat-popout li.combatant.enemy.active::after {
+  border-color: var(--horizonless-initiative-enemy-color);
+}
+
+[data-tab="combat"] li.combatant.enemy .horizonless-token-initiative a {
+  color: var(--horizonless-initiative-enemy-color);
+}
+
+#combat li.combatant.enemy .horizonless-token-initiative a,
+#combat-popout li.combatant.enemy .horizonless-token-initiative a {
+  color: var(--horizonless-initiative-enemy-color);
+}
+
+[data-tab="combat"] li.combatant .token-image,
+#combat li.combatant .token-image,
+#combat-popout li.combatant .token-image {
+  flex: 0 0 auto;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.35rem 0.4rem 0.35rem 0.35rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
+}
+
+[data-tab="combat"] li.combatant .token-effect,
+#combat li.combatant .token-effect,
+#combat-popout li.combatant .token-effect {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+
+[data-tab="combat"] li.combatant .token-name,
+#combat li.combatant .token-name,
+#combat-popout li.combatant .token-name {
+  align-self: flex-start;
+  justify-content: flex-start;
+  padding-top: 0.35rem;
+}
+
+[data-tab="combat"] li.combatant .combatant-controls,
+#combat li.combatant .combatant-controls,
+#combat-popout li.combatant .combatant-controls {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.35rem;
+}
+
+[data-tab="combat"] li.combatant .token-effects,
+#combat li.combatant .token-effects,
+#combat-popout li.combatant .token-effects {
+  align-items: flex-start;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+  margin-top: -0.1rem;
+  min-height: 32px;
+}
+
+[data-tab="combat"] li.combatant .horizonless-token-initiative {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.15rem;
+  margin-right: 0.25rem;
+  padding-left: 0.5rem;
+  position: relative;
+}
+
+#combat li.combatant .horizonless-token-initiative,
+#combat-popout li.combatant .horizonless-token-initiative {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.15rem;
+  margin-right: 0.25rem;
+  padding-left: 0.5rem;
+  position: relative;
+}
+
+[data-tab="combat"] li.combatant .horizonless-token-initiative a {
+  cursor: pointer;
+  font-size: var(--horizonless-initiative-icon-size);
+  transition:
+    transform 120ms ease,
+    filter 120ms ease,
+    box-shadow 140ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+#combat li.combatant .horizonless-token-initiative a,
+#combat-popout li.combatant .horizonless-token-initiative a {
+  cursor: pointer;
+  font-size: var(--horizonless-initiative-icon-size);
+  transition:
+    transform 120ms ease,
+    filter 120ms ease,
+    box-shadow 140ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+[data-tab="combat"] li.combatant .horizonless-token-initiative a:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+#combat li.combatant .horizonless-token-initiative a:hover,
+#combat-popout li.combatant .horizonless-token-initiative a:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+[data-tab="combat"] li.combatant .horizonless-token-initiative a.done {
+  align-items: center;
+  background: var(--horizonless-initiative-done-color);
+  border: 2px solid var(--horizonless-initiative-stroke);
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--horizonless-initiative-done-color) 50%, transparent);
+  color: var(--horizonless-initiative-on-strong);
+  display: inline-flex;
+  height: 1.45rem;
+  justify-content: center;
+  min-width: 1.45rem;
+  padding: 0 0.2rem;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 28%);
+}
+
+#combat li.combatant .horizonless-token-initiative a.done,
+#combat-popout li.combatant .horizonless-token-initiative a.done {
+  align-items: center;
+  background: var(--horizonless-initiative-done-color);
+  border: 2px solid var(--horizonless-initiative-stroke);
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--horizonless-initiative-done-color) 50%, transparent);
+  color: var(--horizonless-initiative-on-strong);
+  display: inline-flex;
+  height: 1.45rem;
+  justify-content: center;
+  min-width: 1.45rem;
+  padding: 0 0.2rem;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 28%);
+}
+
+[data-tab="combat"] li.combatant.horizonless-taking-turn .horizonless-token-initiative a.done,
+#combat li.combatant.horizonless-taking-turn .horizonless-token-initiative a.done,
+#combat-popout li.combatant.horizonless-taking-turn .horizonless-token-initiative a.done {
+  animation: horizonless-finish-pulse 1150ms ease-in-out infinite alternate;
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--horizonless-initiative-done-color) 45%, transparent),
+    0 0 12px color-mix(in srgb, var(--horizonless-initiative-done-color) 55%, transparent);
+}
+
+[data-tab="combat"] li.combatant .horizonless-activations {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 24px;
+  justify-content: center;
+  width: 24px;
+}
+
+#combat li.combatant .horizonless-activations,
+#combat-popout li.combatant .horizonless-activations {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 24px;
+  justify-content: center;
+  width: 24px;
+}
+
+[data-tab="combat"] li.combatant .horizonless-activations i {
+  color: var(--horizonless-initiative-control-color);
+  font-size: 15px;
+  position: relative;
+  left: 50%;
+}
+
+#combat li.combatant .horizonless-activations i,
+#combat-popout li.combatant .horizonless-activations i {
+  color: var(--horizonless-initiative-control-color);
+  font-size: 15px;
+  position: relative;
+  left: 50%;
+}
+
+[data-tab="combat"] li.combatant .horizonless-activations span {
+  color: var(--color-text-dark-primary);
+  font-size: 12px;
+  font-weight: 600;
+  position: relative;
+  left: -50%;
+  text-align: center;
+  width: 18px;
+}
+
+#combat li.combatant .horizonless-activations span,
+#combat-popout li.combatant .horizonless-activations span {
+  color: var(--color-text-dark-primary);
+  font-size: 12px;
+  font-weight: 600;
+  position: relative;
+  left: -50%;
+  text-align: center;
+  width: 18px;
+}
+
+[data-tab="combat"] li.combatant.horizonless-taking-turn {
+  border: 2px solid var(--horizonless-initiative-active-color);
+  color: var(--horizonless-initiative-active-color);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--horizonless-initiative-active-color) 80%, transparent),
+    0 0 10px color-mix(in srgb, var(--horizonless-initiative-active-color) 48%, transparent);
+}
+
+#combat li.combatant.horizonless-taking-turn,
+#combat-popout li.combatant.horizonless-taking-turn {
+  border: 2px solid var(--horizonless-initiative-active-color);
+  color: var(--horizonless-initiative-active-color);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--horizonless-initiative-active-color) 80%, transparent),
+    0 0 10px color-mix(in srgb, var(--horizonless-initiative-active-color) 48%, transparent);
+}
+
+[data-tab="combat"] li.combatant.horizonless-taking-turn .token-name h4,
+[data-tab="combat"] li.combatant.horizonless-taking-turn .token-resource .resource {
+  color: var(--horizonless-initiative-active-color);
+}
+
+#combat li.combatant.horizonless-taking-turn .token-name h4,
+#combat li.combatant.horizonless-taking-turn .token-resource .resource,
+#combat-popout li.combatant.horizonless-taking-turn .token-name h4,
+#combat-popout li.combatant.horizonless-taking-turn .token-resource .resource {
+  color: var(--horizonless-initiative-active-color);
+}
+
+.horizonless-combat-tracker {
+  min-height: 0;
+}
+
+.horizonless-combat-tracker .horizonless-tracker-shell,
+[data-tab="combat"] .horizonless-tracker-shell,
+#combat .horizonless-tracker-shell,
+#combat-popout .horizonless-tracker-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+}
+
+.horizonless-combat-tracker:not(.is-popout) #combat-tracker,
+[data-tab="combat"]:not(.is-popout) #combat-tracker,
+#combat:not(.is-popout) #combat-tracker {
+  background: var(--horizonless-initiative-surface-translucent);
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  height: 360px;
+  max-height: 80vh;
+  min-height: 220px;
+  overflow: auto;
+}
+
+.horizonless-combat-tracker:not(.is-popout) #combat-tracker,
+[data-tab="combat"]:not(.is-popout) #combat-tracker,
+#combat:not(.is-popout) #combat-tracker {
+  width: 100%;
+}
+
+.horizonless-combat-tracker.is-popout,
+#combat-popout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.horizonless-combat-tracker.is-popout .horizonless-tracker-shell,
+#combat-popout .horizonless-tracker-shell {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.horizonless-combat-tracker.is-popout #combat-tracker,
+#combat-popout #combat-tracker {
+  background: var(--horizonless-initiative-surface-translucent);
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  height: auto;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+  width: 100%;
+}
+
+.horizonless-combat-tracker.is-popout .combat-tracker-header,
+.horizonless-combat-tracker.is-popout #combat-controls,
+#combat-popout .combat-tracker-header,
+#combat-popout #combat-controls {
+  flex: 0 0 auto;
+}
+
+.horizonless-combat-tracker:not(.is-popout) .horizonless-tracker-resize-handle,
+[data-tab="combat"]:not(.is-popout) .horizonless-tracker-resize-handle,
+#combat:not(.is-popout) .horizonless-tracker-resize-handle {
+  align-self: stretch;
+  cursor: ns-resize;
+  flex: 0 0 10px;
+  margin: 2px 0;
+  position: relative;
+}
+
+.horizonless-combat-tracker:not(.is-popout) .horizonless-tracker-resize-handle::before,
+[data-tab="combat"]:not(.is-popout) .horizonless-tracker-resize-handle::before,
+#combat:not(.is-popout) .horizonless-tracker-resize-handle::before {
+  background: var(--color-border-light-2);
+  border-radius: 999px;
+  content: "";
+  display: block;
+  height: 4px;
+  margin: 3px auto;
+  width: 42px;
+}
+
+body.horizonless-resizing-tracker {
+  user-select: none;
+}
+
+@keyframes horizonless-finish-pulse {
+  from {
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+  }
+  to {
+    transform: translateY(-1px) scale(1.08);
+    filter: brightness(1.12);
+  }
+}

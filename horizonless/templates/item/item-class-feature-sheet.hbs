@@ -1,0 +1,44 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-action="editImage" data-edit="img" title="{{item.name}}"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </div>
+  </header>
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="attributes">Attributes</a>
+    <a class="item" data-tab="effects">Effects</a>
+  </nav>
+
+  <section class="sheet-body">
+    <div class="tab" data-group="primary" data-tab="description">
+      <div class="editor-content">
+        {{{enrichedDescription}}}
+      </div>
+    </div>
+
+    <div class="tab attributes" data-group="primary" data-tab="attributes">
+      <div class="form-group">
+        <label for="system.className">Class</label>
+        <input name="system.className" type="text" value="{{system.className}}"/>
+      </div>
+
+      <div class="form-group">
+        <label for="system.rank">Rank</label>
+        <input name="system.rank" type="number" value="{{system.rank}}" data-dtype="Number" min="1"/>
+      </div>
+
+      <div class="form-group">
+        <label for="system.flavorText">Flavor Text</label>
+        <textarea name="system.flavorText">{{system.flavorText}}</textarea>
+      </div>
+    </div>
+
+    <div class="tab effects" data-group="primary" data-tab="effects">
+      {{> "systems/horizonless/templates/item/parts/item-effects.hbs"}}
+    </div>
+  </section>
+
+</form>

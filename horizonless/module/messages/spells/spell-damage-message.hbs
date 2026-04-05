@@ -1,0 +1,17 @@
+<div class="horizonless-spell-damage-message">
+  <div class="horizonless-spell-save-results-title">{{label}}</div>
+  {{#if hasDamageLabel}}
+  <div class="horizonless-spell-damage-message-label">Damage: {{damageLabel}}</div>
+  {{/if}}
+  <div class="horizonless-spell-damage-message-list">
+    {{#if hasTargets}}
+    <div class="horizonless-spell-damage-message-row">
+      <div class="horizonless-spell-damage-message-target">{{targetNames}}</div>
+      <div class="horizonless-spell-damage-message-roll">{{{rollHtml}}}</div>
+      <div class="horizonless-spell-damage-message-controls">
+        {{{applyDamageButtonHtml}}}
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</div>

@@ -1,0 +1,219 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-action="editImage" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+      {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
+      use both the "grid" and "grid-Ncol" class where "N" can be any number
+      from 1 to 12 and will create that number of columns.  --}}
+      <div class="resources grid grid-3col">
+
+        {{!-- "flex-group-center" is also defined in the _grid.scss file
+        and it will add a small amount of padding, a border, and will
+        center all of its child elements content and text. --}}
+        <div class="resource flex-group-center">
+          <label for="system.resolve.value" class="resource-label">Resolve</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.resolve.value" value="{{system.resolve.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="text" name="system.resolve.max" value="{{system.resolve.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.hitpoints.value" class="resource-label">HP</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.hitpoints.value" value="{{system.hitpoints.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="text" name="system.hitpoints.max" value="{{system.hitpoints.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.stamina.value" class="resource-label">ST</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.stamina.value" value="{{system.stamina.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="text" name="system.stamina.max" value="{{system.stamina.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center damage-buffers-card">
+          <label class="resource-label">Damage Buffers</label>
+          <div class="damage-buffer-list">
+            {{#each system.damageBuffers as |buffer index|}}
+            <div class="damage-buffer-row">
+              <select
+                class="damage-buffer-type"
+                name="system.damageBuffers.{{index}}.type"
+              >
+                <option value="" {{#if (eq buffer.type "")}}selected{{/if}}>No Buffer</option>
+                {{#each @root.damageTypeGroups as |group|}}
+                <optgroup label="{{group.label}}">
+                  {{#each group.options as |option|}}
+                  <option value="{{option.value}}" {{#if (eq option.value buffer.type)}}selected{{/if}}>{{option.label}}</option>
+                  {{/each}}
+                </optgroup>
+                {{/each}}
+              </select>
+              <div class="damage-buffer-values">
+                <input
+                  type="text"
+                  name="system.damageBuffers.{{index}}.value"
+                  value="{{buffer.value}}"
+                  data-dtype="Number"
+                />
+                <span>/</span>
+                <input
+                  type="text"
+                  name="system.damageBuffers.{{index}}.max"
+                  value="{{buffer.max}}"
+                  data-dtype="Number"
+                />
+                <a class="damage-buffer-remove" data-index="{{index}}" title="Remove Buffer">
+                  <i class="fas fa-minus"></i>
+                </a>
+              </div>
+            </div>
+            {{/each}}
+            <a class="damage-buffer-add" title="Add Buffer">
+              <i class="fas fa-plus"></i> Add Buffer
+            </a>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.armorClass" class="resource-label">AC</label>
+          <div class="armor-class-control">
+            <input type="text" name="system.armorClass" value="{{system.armorClass}}" data-dtype="Number"/>
+            <button
+              type="button"
+              class="guard-toggle"
+              data-guard-mode="{{guardDisplay.mode}}"
+              aria-label="{{guardDisplay.label}}"
+              title="{{guardDisplay.label}}"
+              style="--guard-icon: url('{{guardDisplay.icon}}')"
+            >
+              <span class="guard-toggle-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.size" class="resource-label">Size</label>
+          <select name="system.size">
+            {{#each @root.config.sizes as |label key|}}
+            <option value="{{key}}" {{#if (eq key ../system.size)}}selected{{/if}}>{{label}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="features">Features</a>
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="items">Items</a>
+    <a class="item" data-tab="effects">Effects</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Owned Features Tab --}}
+    <div class="tab features" data-group="primary" data-tab="features">
+      <section class="grid grid-3col features-layout">
+        <aside class="sidebar">
+          <table class="ability-table">
+            <thead>
+              <tr>
+                <th>Ability</th>
+                <th>Save</th>
+                <th>Heroic</th>
+                <th>Mod</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each system.abilities as |ability key|}}
+              <tr>
+                <td>
+                  <label
+                    for="system.abilities.{{key}}.mod"
+                    class="resource-label rollable ability-name"
+                    data-roll="d20+@abilities.{{key}}.mod"
+                    data-label="{{localize (lookup @root.config.abilities key)}}"
+                    title="{{localize (lookup @root.config.abilities key)}}"
+                  >
+                    {{localize (lookup @root.config.abilities key)}}
+                  </label>
+                </td>
+                <td>
+                  <a
+                    class="ability-save rollable"
+                    data-ability-key="{{key}}"
+                    data-label="{{localize (lookup @root.config.abilities key)}} Save"
+                  >
+                    Save
+                  </a>
+                </td>
+                <td class="heroic-cell">
+                  <input
+                    type="checkbox"
+                    name="system.abilities.{{key}}.saveHeroic"
+                    {{checked ability.saveHeroic}}
+                  />
+                </td>
+                <td class="mod-cell">
+                  <input
+                    type="text"
+                    name="system.abilities.{{key}}.mod"
+                    value="{{ability.mod}}"
+                    data-dtype="Number"
+                  />
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+          <div class="resource flex-group-center">
+            <label for="system.type" class="resource-label">Type</label>
+            <select name="system.type">
+              {{#each @root.config.npcTypes as |label key|}}
+              <option value="{{key}}" {{#if (eq key ../system.type)}}selected{{/if}}>{{label}}</option>
+              {{/each}}
+            </select>
+          </div>
+        </aside>
+
+        <section class="main grid-span-2">
+          {{> "systems/horizonless/templates/actor/parts/actor-features.hbs"}}
+        </section>
+
+      </section>
+    </div>
+
+    {{!-- Biography Tab --}}
+    <div class="tab biography" data-group="primary" data-tab="description">
+      {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
+      {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+    </div>
+
+    {{!-- Owned Items Tab --}}
+    <div class="tab items" data-group="primary" data-tab="items">
+       {{> "systems/horizonless/templates/actor/parts/actor-items.hbs"}}
+    </div>
+
+    {{!-- Active Effects Tab --}}
+    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+      {{> "systems/horizonless/templates/actor/parts/actor-effects.hbs"}}
+    </div>
+
+  </section>
+</form>
+

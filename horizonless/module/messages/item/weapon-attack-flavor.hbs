@@ -1,0 +1,20 @@
+<div class="horizonless-chat-card horizonless-item-chat">
+  <div class="horizonless-chat-card-title">{{label}}</div>
+  {{#if hasTargets}}
+  <div class="horizonless-chat-card-body">
+    <div class="horizonless-attack-results">
+      {{#each targets}}
+        <div>
+          <strong>{{targetName}}</strong>:
+          <span class="horizonless-attack-result horizonless-attack-result--{{resultType}}">{{resultText}}</span>
+          {{#if hasAc}} (AC {{ac}}){{/if}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
+  <div class="horizonless-chat-card-actions">
+    {{{damageButtonHtml}}}
+    {{{dischargeDamageButtonHtml}}}
+  </div>
+</div>

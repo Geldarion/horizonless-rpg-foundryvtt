@@ -1,0 +1,46 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-action="editImage" data-edit="img" title="{{item.name}}"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="attributes">Attributes</a>
+    <a class="item" data-tab="effects">Effects</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Description Tab --}}
+    <div class="tab" data-group="primary" data-tab="description">
+      <div class="editor-content">
+        {{{enrichedDescription}}}
+      </div>
+    </div>
+
+    {{!-- Attributes Tab --}}
+    <div class="tab attributes" data-group="primary" data-tab="attributes">
+      <div class="form-group">
+        <label for="system.ancestryFeatureType">Ancestry Feature Type</label>
+        <select name="system.ancestryFeatureType">
+          <option value="" {{#if (eq system.ancestryFeatureType "")}}selected{{/if}}>None</option>
+          <option value="primary" {{#if (eq system.ancestryFeatureType "primary")}}selected{{/if}}>Primary</option>
+          <option value="secondary" {{#if (eq system.ancestryFeatureType "secondary")}}selected{{/if}}>Secondary</option>
+          <option value="tertiary" {{#if (eq system.ancestryFeatureType "tertiary")}}selected{{/if}}>Tertiary</option>
+          <option value="inheritor" {{#if (eq system.ancestryFeatureType "inheritor")}}selected{{/if}}>Inheritor</option>
+        </select>
+      </div>
+    </div>
+
+    {{!-- Effects Tab --}}
+    <div class="tab effects" data-group="primary" data-tab="effects">
+      {{> "systems/horizonless/templates/item/parts/item-effects.hbs"}}
+    </div>
+  </section>
+
+</form>

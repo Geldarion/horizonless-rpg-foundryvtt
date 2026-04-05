@@ -1,0 +1,102 @@
+{
+  "id": "horizonless",
+  "title": "Horizonless RPG",
+  "description": "The Horizonless RPG system for FoundryVTT!",
+  "authors": [
+    {
+      "name": "Optiprism",
+      "discord": "optiprism"
+    },
+    {
+      "name": "Signi",
+      "discord": "signi"
+    },
+    {
+      "name": "HazilTheNut",
+      "discord": "hazilthenut"
+    },
+    {
+      "name": "Geldarion",
+      "discord": "geldarion"
+    },  
+    {
+      "name": "ToNate-o Soup",
+      "discord": "tonateosoup"
+    }
+  ],
+  "url": "C:\\Users\\drewt\\Downloads\\horizonless\\horizonless",
+  "license": "",
+  "readme": "README.md",
+  "bugs": "",
+  "changelog": "CHANGELOG.md",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/horizonless/assets/anvil-impact.png",
+      "thumbnail": "systems/horizonless/assets/anvil-impact.png"
+    }
+  ],
+  "version": "2.0.3",
+  "compatibility": {
+    "minimum": 12,
+    "verified": "12"
+  },
+  "esmodules": ["module/horizonless.mjs"],
+  "styles": ["css/horizonless.css", "css/combat-popcorn.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "spells",
+      "label": "Spells",
+      "path": "packs/spells.db",
+      "type": "Item",
+      "system": "horizonless"
+    },
+    {
+      "name": "ancestry-features",
+      "label": "Ancestry Features",
+      "path": "packs/ancestry-features",
+      "type": "Item",
+      "system": "horizonless"
+    },
+    {
+      "name": "manuevers",
+      "label": "Manuevers",
+      "path": "packs/manuevers.db",
+      "type": "Item",
+      "system": "horizonless"
+    },
+    {
+      "name": "curios",
+      "label": "Curios",
+      "path": "packs/curios.db",
+      "type": "Item",
+      "system": "horizonless"
+    },
+    {
+      "name": "class-features",
+      "label": "Class Features",
+      "path": "packs/class-features",
+      "type": "Item",
+      "system": "horizonless"
+    }
+  ],
+  "packFolders": [],
+  "socket": false,
+  "manifest": "Replace this with a link to the /latest release system.json so people can receive updates after they've installed the system",
+  "download": "This must link to a .zip file of the current version",
+  "background": "systems/horizonless/assets/anvil-impact.png",
+  "grid": {
+    "distance": 5,
+    "units": "ft"
+  },
+  "primaryTokenAttribute": "hitpoints",
+  "secondaryTokenAttribute": "stamina"
+}
+

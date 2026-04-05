@@ -1,0 +1,109 @@
+<form class='{{cssClass}}' autocomplete='off'>
+  <header class='sheet-header'>
+    <img
+      class='profile-img'
+      src='{{item.img}}'
+      data-action='editImage'
+      data-edit='img'
+      title='{{item.name}}'
+    />
+    <div class='header-fields'>
+      <h1 class='charname'><input
+          name='name'
+          type='text'
+          value='{{item.name}}'
+          placeholder='Name'
+        /></h1>
+      <div class='grid grid-2col'>
+        <div class='resource'>
+          <label class='resource-label'>Quantity</label>
+          <input
+            type='text'
+            name='system.quantity'
+            value='{{system.quantity}}'
+            data-dtype='Number'
+          />
+        </div>
+        <div class='resource'>
+          <label class='resource-label'>Weight</label>
+          <input
+            type='text'
+            name='system.weight'
+            value='{{system.weight}}'
+            data-dtype='Number'
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{! Sheet Tab Navigation }}
+  <nav class='sheet-tabs tabs' data-group='primary'>
+    <a class='item' data-tab='description'>Description</a>
+    <a class='item' data-tab='attributes'>Attributes</a>
+    <a class='item' data-tab='effects'>Effects</a>
+  </nav>
+
+  {{! Sheet Body }}
+  <section class='sheet-body'>
+
+    {{! Description Tab }}
+    <div class='tab' data-group='primary' data-tab='description'>
+      {{! Editors must receive enriched text data from getData to properly handle rolls }}
+      {{editor
+        enrichedDescription
+        target='system.description'
+        engine='prosemirror'
+        button=true
+        editable=editable
+      }}
+    </div>
+
+    {{! Attributes Tab }}
+    <div class='tab attributes' data-group='primary' data-tab='attributes'>
+      <div class='grid grid-2col'>
+        <div class='resource'>
+          <label class='resource-label'>Armor Type</label>
+          <select name='system.armorType'>
+            <option value='agile' {{#if (eq system.armorType 'agile')}}selected{{/if}}>Agile Armor</option>
+            <option value='stock' {{#if (eq system.armorType 'stock')}}selected{{/if}}>Stock Armor</option>
+            <option value='fortified' {{#if (eq system.armorType 'fortified')}}selected{{/if}}>Fortified Armor</option>
+          </select>
+        </div>
+        <div class='resource'>
+          <label class='resource-label'>Armor Class</label>
+          <input
+            type='text'
+            name='system.armorClass'
+            value='{{system.armorClass}}'
+            data-dtype='Number'
+            readonly
+          />
+        </div>
+        <div class='resource'>
+          <label class='resource-label'>STR Requirement</label>
+          <input
+            type='text'
+            name='system.strRequirement'
+            value='{{system.strRequirement}}'
+            data-dtype='Number'
+            readonly
+          />
+        </div>
+        <div class='resource'>
+          <label class='resource-label'>Worn</label>
+          <input
+            type='checkbox'
+            name='system.worn'
+            {{checked system.worn}}
+          />
+        </div>
+      </div>
+    </div>
+
+    {{! Effects Tab }}
+    <div class='tab effects' data-group='primary' data-tab='effects'>
+      {{> "systems/horizonless/templates/item/parts/item-effects.hbs"}}
+    </div>
+  </section>
+</form>

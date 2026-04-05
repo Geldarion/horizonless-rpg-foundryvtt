@@ -1,0 +1,83 @@
+<form class='{{cssClass}}' autocomplete='off'>
+  <header class='sheet-header'>
+    <img
+      class='profile-img'
+      src='{{item.img}}'
+      data-action='editImage'
+      data-edit='img'
+      title='{{item.name}}'
+    />
+    <div class='header-fields'>
+      <h1 class='charname'><input
+          name='name'
+          type='text'
+          value='{{item.name}}'
+          placeholder='Name'
+        /></h1>
+    </div>
+  </header>
+
+  <nav class='sheet-tabs tabs' data-group='primary'>
+    <a class='item' data-tab='description'>Description</a>
+    <a class='item' data-tab='attributes'>Attributes</a>
+  </nav>
+
+  <section class='sheet-body'>
+    <div class='tab' data-group='primary' data-tab='description'>
+      {{editor
+        enrichedDescription
+        target='system.description'
+        engine='prosemirror'
+        button=true
+        editable=editable
+      }}
+    </div>
+
+    <div class='tab attributes' data-group='primary' data-tab='attributes'>
+      <div class='resource'>
+        <label class='resource-label'>Type</label>
+        <select name='system.manueverType'>
+          <option value='' {{#if (eq system.manueverType "")}}selected{{/if}}>None</option>
+          <option value='attack' {{#if (eq system.manueverType "attack")}}selected{{/if}}>Attack</option>
+          <option value='strategy' {{#if (eq system.manueverType "strategy")}}selected{{/if}}>Strategy</option>
+        </select>
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Flavor</label>
+        <textarea name='system.flavor' rows='3'>{{system.flavor}}</textarea>
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Repetition Penalty</label>
+        <textarea name='system.repetitionPenalty' rows='3'>{{system.repetitionPenalty}}</textarea>
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Advancements</label>
+        {{#if system.advancements.length}}
+          <ol>
+            {{#each system.advancements as |advancement|}}
+              <li>
+                <div class='resource'>
+                  <label class='resource-label'>Requirement</label>
+                  <input
+                    type='text'
+                    name='system.advancements.{{@index}}.requirement'
+                    value='{{advancement.requirement}}'
+                  />
+                </div>
+                <div class='resource'>
+                  <label class='resource-label'>Text</label>
+                  <textarea
+                    name='system.advancements.{{@index}}.text'
+                    rows='3'
+                  >{{advancement.text}}</textarea>
+                </div>
+              </li>
+            {{/each}}
+          </ol>
+        {{else}}
+          <p class='notes'>No advancements.</p>
+        {{/if}}
+      </div>
+    </div>
+  </section>
+</form>

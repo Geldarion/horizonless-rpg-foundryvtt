@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Avirin",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Flight\n\n*Your wings and lightweight frame give you the lift to take to the skies.*\n\nYou gain basic Flying mobility. Your CON is reduced by 2\\.",
+    "secondary_feature": "Windstringer Talons\n\n*Pull and pluck at the currents flowing through the air.*\n\nYou gain the following benefits:\n\n* **Talons.** When you make a weapon attack using the Unarmed fighting style, you may convert the damage dealt to **piercing**. If you do, you ignore the **Minimum Damage** trait.\n\n* **Windstringing.** As a reaction, when a creature travels within 30 feet of you, you may remove 5 feet from their movement pool.",
+    "tertiary_feature": "Meandering Plume\n\n*A memento to ensure you are never far from those you leave behind.*\n\nOnce per long rest, you may create a *meandering plume*. A creature holding one of your meandering plumes may speak a message into it and send it adrift in the wind. Then, if you and the meandering plume are on the same plane of existence, it will fly towards you across any distance. Eventually, when it reaches you, you learn the message spoken into it.",
+    "inheritor_feature": null
+  },
+  {
+    "name": "Deepborn",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Detether\n\n*You sever the physical threads that tie you to imminent danger.*\n\nAs an action, you may cause a target creature within your Reach to be unable to target you, and you are unable to target them until the end of your next turn. For both you and the target:\n\n* If you are concentrating on an effect, your concentration breaks.\n\n* If you have the other creature grappled, that condition ends.\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Telekinetic Grasp\n\n*Your might is manifested through your psionic prowess.*\n\nWhen you take an action or multiaction, you may act as if your Reach were 15 feet for that action or multiaction.\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "tertiary_feature": "Cosmic Mind\n\n*The safeguarding and preservation of knowledge is the legacy you carry forth.*\n\nYou are able to telepathically speak to and understand creatures within 30 feet of you. Additionally, you never forget a single detail of anything you've ever seen, heard, smelled, touched or otherwise perceived. Incredibly detailed information still takes time to parse and understand in retrospect.",
+    "inheritor_feature": "You gain the aberration creature type."
+  },
+  {
+    "name": "Drakonin",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Dragon’s Breath\n\n*From your throat you exhale a wave of destructive energy.*\n\nAs an action, you may cause creatures and objects in a 15 foot cone in front of you to make a basic **Reflex** saving throw to resist **Xd6 damage**, where X is your Tier Bonus. The type of damage dealt is your draconic lineage damage type and the saving throw’s DC is equal to 8 \\+ your CON \\+ your Tier Bonus.\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Chromatic Ward\n\n*A glistening scale guiding and dispersing its elemental affinity.*\n\nAs a reaction at any point, you may grant yourself or a target ally within your Reach DB 5 against your draconic lineage damage type until the start of your next turn. This DB becomes 10/15/20 at character Levels 4/7/10, respectively.",
+    "tertiary_feature": "Watcher’s Glint\n\n*A prized keepsake you couldn’t bear to lose.*\n\nOnce per long rest, you may designate an object you are holding. Until you designate a new object, you know of the designated object’s location as long as it and you are on the same plane of existence.",
+    "inheritor_feature": "You gain the dragon creature type. Choose a damage type from the table below as your *draconic lineage*, or roll a d10 on the table below. A type of dragon that shares a lineage is also provided:"
+  },
+  {
+    "name": "Dwarf",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Earthspeak\n\n*A bellowing shout harmonizing with the rolling hills and sprawling caverns, traveling for miles upon miles.*\n\nAs an action, you may cause all creatures within 10 feet of you to make a **Fortitude** saving throw against a DC equal to 8 \\+ your CON \\+ your Tier Bonus. On a failure, they are disoriented until the start of your next turn.\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Mountain Hearts\n\n*A hearty gemstone buried within you, fortifying your body against all manner of toxins and magmas.*\n\nYour maximum HP is increased by an amount equal to 2 × your character’s Level.\n\nWhen you drink something, you can choose to store it in your heart and may store up to 2 liters of liquid in this manner. The stored liquid, no matter what it is, is completely harmless to you. However, harmful substances, such as lava, poison, or acid, cannot be stored in your heart for longer than an hour before you start to become affected by them. Your heart can neutralize poisons of any kind over the course of an hour if you so choose.\n\nYou can do the following with the liquids stored in your heart:\n\n* **Spit It Out.** You take an action and spit out the entirety of the contents of any liquids stored in your heart. The ejected fluid can travel a distance away from you up to amount equal to 10 feet × your CON (minimum of 10 feet).\n\n* **Enter Bloodstream.** At any point, you may take a reaction to release any amount of the contents from your heart into the rest of your body.",
+    "tertiary_feature": "Stones of Yore\n\n*The earth itself holds a long memory and many a tale to regale.*\n\nOnce per rest, you may gain advantage on an INT effort or trade check to recall information related to your surroundings and its history if there is any rock or stone within your Reach.",
+    "inheritor_feature": null
+  },
+  {
+    "name": "Elf",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Fey Step\n\n*A silent, but ceremonious escape from danger.*\n\nAs an action, you may cleanse yourself of your embodied season’s condition and then teleport to a target location within 30 feet of you.\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Seasonal Vow\n\n*Each passing of the seasons bears it mark and tests the unready.*\n\nAs two actions, you may cause a target creature within 30 feet of you to make a **Will** saving throw against a DC equal to 8 \\+ your CON \\+ your Tier Bonus. On a failure, you apply your embodied season’s condition to them until the start of your next turn.\n\nThis feature requires one fewer action to use while you embody Summer or Winter.",
+    "tertiary_feature": "Everwaking Minds\n\n*Save for the rare occasion, you possess a pristine clarity of mind. Rather than sleep, you rest in a serene trance filled with the wonder of the world around you.*\n\nYou are immune to being charmed or falling unconscious against your will. While unconscious, you ignore its **Inattentive** trait, allowing you to perceive and take free actions. At the end of each of your turns, you may cease being unconscious.",
+    "inheritor_feature": "You gain the fey creature type. At the end of every long rest, you choose to *embody* a season: Spring, Summer, Autumn, or Winter. Each season corresponds to a particular condition:\n\n* **Spring.** poisoned\n\n* **Summer.** ablaze\n\n* **Autumn.** disoriented\n\n* **Winter.** slowed"
+  },
+  {
+    "name": "Erinae",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Witness to Fate\n\n*It is the path you pave that the stars will guide you through.*\n\nOnce per rest, immediately before you make a saving throw, you may add a \\+7 bonus to the check.",
+    "secondary_feature": "Of Seven Stars\n\n*Your soul is attuned to the fortunes and ethos of the great constellation in the night sky.*\n\nWhenever the outcome of a d20 you roll is a 7, you may replace the outcome with a 20\\.\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "tertiary_feature": "Eclipse Born\n\n*Your birth phase weaves gifts of the universe into the fibers of your being. Some are able to stare into the sun and read its prophecies, while others weave moonlight into wondrous trinkets.*\n\nYou choose either a *Solar* or *Lunar* eclipse and permanently gain its benefit below:\n\n* **Solar.** At the end of every long rest, you may choose one of your Tasks on either of your Trades. Once before the end of your next long rest, when you use that Task for a trade check, you may add 1d4 to the check’s total.\n\n* **Lunar.** As an object interaction once per long rest, you may conjure any physical Small or smaller Mundane object of your choosing. It disappears at the end of your next long rest.",
+    "inheritor_feature": null
+  },
+  {
+    "name": "Fzzbr",
+    "flavor": "*Flavor.*\n**Notes:** It’s probably likely that some people reading this ancestry would infer that this ancestry is meant to be a bear of some kind.",
+    "primary_feature": "Call Lightning\n\n*You channel your inner lightning as a concentrated blast.*\n\nYou may cast **Static Shock** using your CON as your spellcasting modifier. Once per long rest, when you hit with a **Static Shock** spell attack, you may push the target 30 feet away from you and deal an additional **Xd6 lightning damage** to them, where X is your Tier Bonus.",
+    "secondary_feature": "Shocking Reflexes\n\n*As the adrenaline kicks in, your heart pounds with rolling thunder.*\n\nOnce per rest, you may grant yourself advantage on an ability check you make as part of a reaction. When you make a **Reflex** saving throw, you may take a reaction to gain this benefit (this must be done before rolling the check).",
+    "tertiary_feature": "Magnetic Alignment\n\n*Your constant static charge enables you to tap into electromagnetic forces.*\n\nYou always know which direction is north. As an object interaction, you may pull a target Tiny unattended metallic object within 30 feet of you up to 30 feet towards you.",
+    "inheritor_feature": null
+  },
+  {
+    "name": "Gnome",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Panic Cloak\n\n*Amidst the perilous dangers out there, it’s good to have an out.*\n\nWhen your ST breaks, you may become invisible until the end of your next turn. After you cast a spell or make an attack, this effect ends early.\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Backtrack\n\n*You form a rift of silver light you can step back to in a flash.*\n\nAs two actions once per long rest, you may designate a *return point* on your current location, of which appears as a sliver rift hanging in the air. The return point lasts for 1 minute or until you create another one. As a reaction at any point, you may teleport to your return point. If you do, the return point expires early.",
+    "tertiary_feature": "Pocket Plane\n\n*A handy extra space just when you need it.*\n\nAs two actions, you can open or close a miniature pocket plane that only you have access to. It has enough space to just barely fit a Small creature. Any creature inside the plane can open it from the inside as two actions.",
+    "inheritor_feature": "You gain the fey creature type."
+  },
+  {
+    "name": "Goblin",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Ride It Out\n\n*Getting flung is far better than getting stung.*\n\nOnce per rest, when you are hit with an attack, you may completely negate the damage dealt against you and may instead be flung away from the source a number of feet equal to the damage that would have been dealt (rounding down to the nearest multiple of 5). Afterwards, you fall prone.",
+    "secondary_feature": "Basically Family\n\n*We each have our moment to share the burden.*\n\nAt the end of a long rest, you may designate a number of creatures with whom you took the long rest to be considered *family*. When creatures in a family simultaneously make a saving throw (such as from effects that target multiple creatures or affect an area), they may distribute the resulting successes or failures amongst members of the family who made the saving throw.\n\nCollectively, a family may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "tertiary_feature": "Make It Work\n\n*The important thing is that you tried.*\n\nOnce per rest, when you fail an effort or trade check, you may instead have it act as if you had succeeded. If you do, it will backfire in some spectacular fashion roughly one minute after.",
+    "inheritor_feature": null
+  },
+  {
+    "name": "Halfling",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Fearless\n\n*Fear finds little purchase in your beating heart.*\n\nWhenever you make a CHA combat check, such as a **Courage** saving throw or an Initiate check, you may treat values 9 or below on the d20s rolled as if they were a 10\\.\n\nAdditionally, being frightened does not prevent you from moving towards the source of the condition.",
+    "secondary_feature": "Hearty\n\n*Frequent, good meals will always put a pep in your step.*\n\nWhenever you complete a short rest, you may **heal HP** equal to your character’s Level.\n\nAdditionally, you may choose to regain one expended usage of one feature of your choosing that replenishes upon completing a long rest. If you do, you may not use **Hearty** again until you complete a long rest.",
+    "tertiary_feature": "Against All Odds\n\n*You can find a path forward.*\n\nOnce per long rest, when you make an effort check, you may ignore all sources of disadvantage.",
+    "inheritor_feature": null
+  },
+  {
+    "name": "Human",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Defiant\n\n*All it takes is a little more effort.*\n\nAs a reaction, when you make a saving throw, you may add 1d6 to the total.",
+    "secondary_feature": "Rise to the Challenge\n\n*You stand your ground to the last breath.*\n\nYou do not fall prone from burning a Resolve. When you burn your last remaining Resolve, you may immediately take an action of your choosing as a free action.",
+    "tertiary_feature": "Close Enough\n\n*The boundaries of your talents are redrawn by your ingenuity.*\n\nWhen you make a trade check and add half your Tier Bonus, you may choose to instead add your full Tier Bonus. You may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "inheritor_feature": null
+  },
+  {
+    "name": "Juneir",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Memory of Vigor\n\n*You call forth a cherished memory to encourage yourself or to share with a trusted companion.*\n\nAs an action while holding your soul seed, you may cause yourself or a target ally within your Reach to **regain ST** equal to 5 × your Tier Bonus.\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Ward of Life\n\n*The magic suffused in your soul seed is undeniable in many respects.*\n\nOnce per long rest, as a reaction at any point, you may grant creatures of your choosing within 10 feet of your soul seed DB equal to 5 × ½ your Tier Bonus against all damage until the end of the current turn.",
+    "tertiary_feature": "Natural Speaker\n\n*Your predecessors’ stewardship of the wilds yields you a parlance with the beasts of the world.*\n\nYou gain the ability to communicate with animals. The information you can obtain from them is limited by their perceptions.",
+    "inheritor_feature": "You gain the fey creature type. Your soul takes the form of an external, physical manifestation of yourself called a *soul seed*. It is delicate, yet enduring. You keep it on your person wherever you go, as it holds your thoughts, memories, and emotions. It was formed when you came of age, and represents your embarkation to the world beyond.\n\nThe soul seed is a Tiny object with 10 HP and a Toughness of 25, and you die if it breaks."
+  },
+  {
+    "name": "Kobold",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Pack Tactics\n\n*It never pays to be alone.*\n\nOn your turn, you may take a free Move action if you are within 10 feet of your initiative partner and they took a Move action. You use your initiative partner’s Speed for this Move action and the movement gained from it must be used to stay within 10 feet of your initiative partner.\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Lethal Premonition\n\n*The occasional psychic vision about how something will kill you keeps you on your toes.*\n\nWhen you succeed on an Analyze check against one or more Analyze check DC thresholds, you additionally learn the most dangerous attack or feature the target creature possesses.",
+    "tertiary_feature": "Devious Ploy\n\n*Clever foresight or doomed machinations? Only one way to find out.*\n\nOnce per rest, as a free action before you make an ability check, you may roll a die. On an even number, you gain advantage on the check. On an odd number, you incur disadvantage on the check.",
+    "inheritor_feature": "You gain the dragon creature type."
+  },
+  {
+    "name": "Lizardfolk",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Stinging Spines\n\n*Venom-tipped barbs fan out when you are under attack.*\n\nAs a reaction once per rest, when you are hit with an attack by a creature within your Reach, you may make a melee special attack against the creature using your CON. On a hit, the target is poisoned until the end of their next turn.",
+    "secondary_feature": "Detachable Limbs\n\n*It’s the perfect distraction.*\n\nYou are able to detach your limbs as a reaction, doing so removes any creatures grabbing onto you and cleanses any stuck, grappled, or restrained conditions applied to you.\n\nAs a free action, you may expend a Resolve to regrow all your lost limbs. During the Refresh downtime activity, you may also regrow all of your lost limbs.",
+    "tertiary_feature": "Adhesive Spit\n\n*The sloppy mucus is surprisingly sticky.*\n\nOnce per rest, as an action, you may designate a 1 foot square area centered on a target surface within your Reach. The next time a subject contacts the surface, it becomes stuck. A STR effort or trade check can be made by a creature stuck in this manner or a creature for which the stuck subject is within their Reach against a DC equal to 8 \\+ your CON \\+ your Tier Bonus. On a success, the stuck condition is cleansed.",
+    "inheritor_feature": null
+  },
+  {
+    "name": "Meowdy",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Burst Agility\n\n*You spring into action with unexpected swiftness.*\n\nAs a reaction at any point, you may double your Speed until the end of the current turn. You may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Climbing Claws\n\n*Your sharp claws offer purchase on sheer cliffs where others cannot find so easily.*\n\nYou gain the following benefits:\n\n* **Claws.** When you make a weapon attack using the Unarmed fighting style, you may convert the damage dealt to **slashing**. If you do, you ignore the **Minimum Damage** trait.\n\n* **Climber.** You gain basic Climbing mobility.\n\n* **Graceful Fall.** All falling damage you take is halved.",
+    "tertiary_feature": "Escapist Sense\n\n*You can glean all entrances, exits, and dead ends at a moment’s notice.*\n\nAs a free action once per rest, you may become aware of all obstructions and structures within 120 feet of you.",
+    "inheritor_feature": null
+  },
+  {
+    "name": "Merfolk",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Shimmering Spear\n\n*You dazzle with spectacular colors and coalesce them into a spear of prismatic light.*\n\nAs an object interaction, you may conjure a *shimmering spear*, a weapon purposed for the Long fighting style suitable for throwing. When you hit with a ranged weapon attack using a shimmering spear, the target must make a **Fortitude** saving throw against a DC equal to 8 \\+ your CON \\+ your Tier Bonus. On a failure, they become disoriented until the start of their next turn.\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Eye of the Storm\n\n*You are able to catch the flow and steady yourself amidst choppy waters.*\n\nYou gain basic Swimming mobility. If you have burned a Resolve this combat, you may take a reaction and choose one of the following effects:\n\n* **Barracuda.** Before you make an attack check, you may gain advantage on the attack check.\n\n* **Calamari.** Before you make a **Reflex** saving throw, you may gain advantage on the saving throw.",
+    "tertiary_feature": "Wavecaller\n\n*You claim the seas and waterways as your solid ground.*\n\nYou can breathe water and air. You may travel atop any liquid surface at will, though if the liquid is hazardous, such as lava or acid, you will still be affected by it if you end your turn on it.",
+    "inheritor_feature": "You gain the elemental creature type."
+  },
+  {
+    "name": "Nerva",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Omen Sense\n\n*You attune to the tides of fate, feeling for whatever may await you.*\n\nAt the end of each of your long rests, you may roll a d20 and record its outcome. Once before the end of your next long rest, when you make an ability check or when an attack check is made against you, you may replace the outcome of one of the rolled d20s with the outcome you had recorded.",
+    "secondary_feature": "Eboncloak Talons\n\n*Your talons pierce the veil and wrap your allies in a shroud of night.*\n\nYou gain the following benefits:\n\n* **Eboncloak.** As an action, you may grant yourself and allies within your Reach DB 5 against **supernatural damage** until the start of your next turn. This DB becomes 10/15/20 at Levels 4/7/10, respectively.\n\n* **Talons.** When you make a weapon attack using the Unarmed fighting style, you may convert the damage dealt to **piercing**. If you do, you ignore the **Minimum Damage** trait.",
+    "tertiary_feature": "Mimicry\n\n*You have the ability to mimic sounds you have heard with almost perfect replication.*\n\nYou can recreate any noise you have heard with near-perfect accuracy. You gain advantage on CHA effort or trade checks made to mimic someone else’s voice.",
+    "inheritor_feature": null
+  },
+  {
+    "name": "Orc",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Kindle Fervor\n\n*Your unyielding drive to press further inspires those around you,*\n\nOnce during each of your turns, if you and your initiative partner **perceive** each other, you may grant advantage to an ability check your initiative partner is making (this must be done before rolling the check).\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Bulwark\n\n*You do not leave room for them to pass through.*\n\nAs a reaction, you may become unable to be pushed or pulled against your will until the end of the current turn.\n\nCreatures of Sizes smaller than you cannot travel through your occupied space unless you are willing.",
+    "tertiary_feature": "Brace For It\n\n*When you're needed, it doesn't matter how much it hurts.*\n\nAs an action once per long rest, you may grant yourself immunity for the next 10 minutes against falling damage, all **injuring elemental damage** dealt by environmental hazards such as extreme heat or cold, and all damage dealt from the ablaze condition.",
+    "inheritor_feature": null
+  },
+  {
+    "name": "Skeleton",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Shadowglare\n\n*Fear is a very mortal reaction, and a useful one at that.*\n\nOnce per long rest as two actions, you cause all creatures in a 30 foot cone in front of you to make a **Courage** saving throw against a DC equal to 8 \\+ your CON \\+ your Tier Bonus. On a failure, they become frightened until the end of your next turn.",
+    "secondary_feature": "Play Dead\n\n*You were made for this.*\n\nAs a reaction, when your ST breaks or you reach 0 HP, you may discard any remaining damage, fall prone, and become incapacitated. At the start of each of your turns, you may end this effect.\n\nWhile incapacitated in this manner, you appear to be an unassuming pile of bones. Creatures may discern the farce as an action with a **Quick-Wits** saving throw against a DC equal to 8 \\+ your CON \\+ your Tier Bonus, but will otherwise be convinced you are no threat to them.",
+    "tertiary_feature": "Bone to Pick\n\n*Making use of every bone in your body,*\n\nAs an object interaction, you may detach any of your arms to use as a weapon. You may also use your skeletal fingers to pick locks.",
+    "inheritor_feature": "You gain the undead creature type. You do not need to eat, drink, or sleep. While you are “sleeping”, you do not dream, and you are fully aware of your surroundings and events taking place around you. If your head is ever detached, you still perceive through it and the rest of your body remains under your control.\n\nYou do not regain Resolve when you take a long rest, and you cannot take the Refresh downtime activity. During a rest, you may destroy a Curio to regain one expended Resolve. The rarity of the Curio must be Common/Uncommon/Rare/Legendary or higher at Levels 1/4/7/10, respectively."
+  },
+  {
+    "name": "Slime",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Gelatinous Hold\n\n*It’s their fault they put it in you.*\n\nWhen a creature your Size or smaller hits you with a melee attack, you may cause the attacker to become stuck with the **Recoverable** condition trait, allowing an action to end the effect. This stuck condition also ends if you move in any way.\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Slinger\n\n*You’ve got that elastic bounce in you.*\n\nThe range of ranged weapon attacks you make using the Thrown fighting style is increased by 15 feet. When your allies travel into or out of your occupied space, they gain basic Jumping mobility until the end of the current turn.",
+    "tertiary_feature": "Freeform Contortionist\n\n*As a goo, anything can be a door.*\n\nYou have no bones and may magically contort your body, allowing you to bend and twist your body in any way you want to. You may squeeze through any opening the size of a keyhole or larger, though you may not bring any equipment through with you if it doesn’t fit.",
+    "inheritor_feature": "You gain the ooze creature type."
+  },
+  {
+    "name": "Soulforged",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Echo Astra\n\n*The effort, hopes, and expertise was not forgotten.*\n\nWhen you make a weapon or spell attack check, you may add 1d6 to the total. If this bonus was necessary for the attack to hit, the attack’s damage roll is replaced by **1d6 force damage** (all other non-damage effects from the attack hitting still occur).\n\nYou may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Willful Spark\n\n*Though I do not draw breath, I live on.*\n\nWhen you burn a Resolve, you may deal **10 force damage** to a target within 30 feet of you. This damage roll becomes 20/30/40 at Levels 4/7/10, respectively.",
+    "tertiary_feature": "Spectral Possession\n\n*Any shell will do.*\n\nAs an action once per long rest, you may *possess* a target object that is your Size or smaller within 30 feet of you. While possessed, an object has a Speed of 10 feet and basic Hovering mobility. While possessing an object, you cannot take any actions other than Move and all movement you spend from your movement pool instead causes the possessed object to travel. You perceive as if you were at the possessed object’s location.\n\nAs a reaction at any point, you may stop possessing the object. This also occurs if the object you possess is destroyed or it is further than 300 feet from you.",
+    "inheritor_feature": "You gain the construct creature type. You do not need to eat, drink, or sleep."
+  }
+]

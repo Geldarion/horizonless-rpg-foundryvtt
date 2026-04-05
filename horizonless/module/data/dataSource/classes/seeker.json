@@ -1,0 +1,66 @@
+{
+  "class": "seeker",
+  "overview_table": [],
+  "features": [
+    {
+      "name": "Ability Improvement",
+      "flavor_text": "",
+      "rank": "3rd, 6th, 9th, and 12th Rank",
+      "description": "At 3rd, 6th, 9th, and 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+    },
+    {
+      "name": "Exploration",
+      "flavor_text": "",
+      "rank": "4th, 7th, and 10th Rank",
+      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with CLASS being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than CLASS and gain one Rank in the chosen Class."
+    },
+    {
+      "name": "SUBCLASS Feature",
+      "flavor_text": "",
+      "rank": "4th Rank",
+      "description": "At 4th Rank, you gain a feature for your SUBCLASS.\n\n\\[Ranks 5-6\\]"
+    },
+    {
+      "name": "Ability Improvement",
+      "flavor_text": "",
+      "rank": "6th Rank",
+      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\.\n\n\\[Rank 7\\]"
+    },
+    {
+      "name": "Exploration",
+      "flavor_text": "",
+      "rank": "7th Rank",
+      "description": "At 7th Rank, you gain an Exploration with CLASS being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than CLASS and gain one Rank in the chosen Class.\n\n\\[Rank 8\\]"
+    },
+    {
+      "name": "SUBCLASS Feature",
+      "flavor_text": "",
+      "rank": "8th Rank",
+      "description": "At 8th Rank, you gain a feature for your SUBCLASS.\n\n\\[Rank 9\\]"
+    },
+    {
+      "name": "Ability Improvement",
+      "flavor_text": "",
+      "rank": "9th Rank",
+      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\.\n\n\\[Rank 10\\]"
+    },
+    {
+      "name": "Exploration",
+      "flavor_text": "",
+      "rank": "10th Rank",
+      "description": "At 10th Rank, you gain an Exploration with CLASS being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than CLASS and gain one Rank in the chosen Class.\n\n\\[Rank 11-12\\]"
+    },
+    {
+      "name": "Ability Improvement",
+      "flavor_text": "",
+      "rank": "12th Rank",
+      "description": "At 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+    },
+    {
+      "name": "Final Reach",
+      "flavor_text": "",
+      "rank": "",
+      "description": "When you reach character Level 12, you compute your *Total Rank*, which is calculated as:\n\n###### The sum of all of your Class Ranks\n\n\tIf your Total Rank is less than 16 when you reach Level 12, then for each deficient Rank, you may choose one of the benefits below to modify a feature granted by one of your Class Ranks:\n\n* **Maneuvers.** You learn two additional maneuvers.\n\n* **Battlecasting.** You gain a maneuver, an additional Spell Point, and an additional prepared spell for that Class.\n\n* **Spellcasting.** You gain three additional Spell Points and three additional prepared spells for that Class.\n\nBack to Top\n\n# Subclasses\n\n\\[Subclass A\\]\n\nBack to Top\n\n\\[Subclass B\\]\n\nBack to Top\n\n\\[Subclass C\\]\n\nBack to Top"
+    }
+  ]
+}

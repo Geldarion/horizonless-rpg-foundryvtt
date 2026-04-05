@@ -1,0 +1,204 @@
+/* Actor sheet palette derived from the spell chat theme. */
+&.actor {
+  --hz-sheet-surface-soft: color-mix(in srgb, var(--hz-color-surface) 48%, transparent);
+  --hz-sheet-surface-strong: color-mix(in srgb, var(--hz-color-surface) 72%, transparent);
+  --hz-sheet-primary-soft: color-mix(in srgb, var(--hz-color-primary) 16%, transparent);
+  --hz-sheet-primary-strong: color-mix(in srgb, var(--hz-color-primary) 28%, transparent);
+  --hz-sheet-primary-hover: color-mix(in srgb, var(--hz-color-primary-strong) 18%, transparent);
+  --hz-sheet-accent-soft: color-mix(in srgb, var(--hz-color-accent) 12%, transparent);
+  --hz-sheet-accent-mid: color-mix(in srgb, var(--hz-color-accent) 22%, transparent);
+  --hz-sheet-accent-strong: color-mix(in srgb, var(--hz-color-accent) 38%, transparent);
+  --hz-sheet-stroke-soft: color-mix(in srgb, var(--hz-color-stroke-on-surface) 32%, transparent);
+  --hz-sheet-stroke-strong: color-mix(in srgb, var(--hz-color-accent) 48%, transparent);
+  --hz-sheet-text: var(--hz-color-text-on-surface);
+  --hz-sheet-heading: var(--hz-color-accent);
+  --hz-sheet-link: var(--hz-color-primary-strong);
+  --hz-sheet-label: var(--hz-color-primary-strong);
+  color: var(--hz-sheet-text);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--hz-color-surface) 78%, transparent),
+      color-mix(in srgb, var(--hz-color-primary) 16%, transparent)
+    );
+
+  a {
+    color: var(--hz-sheet-link);
+  }
+
+  .rollable:is(:hover, :focus) {
+    color: var(--hz-sheet-heading);
+    text-shadow: 0 0 10px color-mix(in srgb, var(--hz-color-primary) 55%, transparent);
+  }
+
+  :is(.sheet-header, .character-header) {
+    padding: 12px;
+    border: 1px solid var(--hz-sheet-stroke-soft);
+    background:
+      linear-gradient(
+        180deg,
+        var(--hz-sheet-surface-strong),
+        var(--hz-sheet-surface-soft)
+      );
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb, var(--hz-color-primary) 12%, transparent);
+  }
+
+  .character-header {
+    padding: 8px;
+  }
+
+  :is(.sheet-header .profile-img, .character-header .character-portrait) {
+    border: 1px solid var(--hz-sheet-stroke-strong);
+    background: var(--hz-sheet-primary-soft);
+  }
+
+  .character-header .character-name input {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+
+  .character-header .resource-card {
+    padding: 5px 8px;
+  }
+
+  .character-header :is(input[type="text"], input[type="number"], select) {
+    min-height: 28px;
+  }
+
+  :is(.sheet-header h1.charname input, .character-header h1.character-name input),
+  :is(input[type="text"], input[type="number"], select, textarea) {
+    color: var(--hz-sheet-text);
+    border: 1px solid var(--hz-sheet-stroke-soft);
+    background: var(--hz-sheet-surface-strong);
+  }
+
+  :is(input[type="text"], input[type="number"], select, textarea)::placeholder {
+    color: color-mix(in srgb, var(--hz-color-text-on-surface) 58%, transparent);
+  }
+
+  :is(input[type="text"], input[type="number"], select, textarea):focus {
+    border-color: var(--hz-sheet-label);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--hz-color-primary-strong) 34%, transparent);
+    outline: none;
+  }
+
+  input[type="checkbox"] {
+    accent-color: var(--hz-color-primary-strong);
+  }
+
+  .tabs {
+    gap: 4px;
+    padding: 4px 0;
+    border-top: 1px solid var(--hz-sheet-stroke-soft);
+    border-bottom: 1px solid var(--hz-sheet-stroke-soft);
+  }
+
+  .tabs .item {
+    padding: 0 10px;
+    color: var(--hz-sheet-label);
+    border: 1px solid transparent;
+    background: var(--hz-sheet-primary-soft);
+    transition:
+      background-color 160ms ease,
+      border-color 160ms ease,
+      color 160ms ease;
+  }
+
+  .tabs .item:hover {
+    background: var(--hz-sheet-primary-strong);
+  }
+
+  .tabs .item.active {
+    color: var(--hz-sheet-heading);
+    text-decoration: none;
+    border-color: var(--hz-sheet-accent-mid);
+    background: var(--hz-sheet-surface-strong);
+  }
+
+  :is(.resource, .resource-card) {
+    padding: 8px 10px;
+    border: 1px solid var(--hz-sheet-stroke-soft);
+    border-radius: 6px;
+    background: var(--hz-sheet-surface-soft);
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb, var(--hz-color-surface) 10%, transparent);
+  }
+
+  :is(.resource-label, .stat-label) {
+    color: var(--hz-sheet-label);
+  }
+
+  :is(.ability-table, .abilities-table) {
+    border: 1px solid var(--hz-sheet-stroke-soft);
+    background: var(--hz-sheet-surface-soft);
+  }
+
+  :is(.ability-table, .abilities-table) :is(th, td) {
+    border-bottom-color: var(--hz-sheet-stroke-soft);
+  }
+
+  :is(.ability-table, .abilities-table) thead th {
+    color: var(--hz-sheet-label);
+    background: var(--hz-sheet-primary-soft);
+  }
+
+  :is(.damage-buffer-add, .damage-buffer-remove),
+  .trades-section .task-control {
+    color: var(--hz-sheet-text);
+    background: var(--hz-sheet-primary-soft);
+    border-color: var(--hz-sheet-accent-mid);
+  }
+
+  :is(.damage-buffer-add, .damage-buffer-remove):hover,
+  .trades-section .task-control:hover {
+    background: var(--hz-sheet-primary-hover);
+  }
+
+  .trades-section .trade-section-heading {
+    color: var(--hz-sheet-heading);
+    border: 1px solid var(--hz-sheet-stroke-soft);
+    background:
+      linear-gradient(
+        90deg,
+        var(--hz-sheet-primary-soft),
+        color-mix(in srgb, var(--hz-color-surface) 26%, transparent)
+      );
+  }
+
+  .trades-section .trade-card {
+    border-color: var(--hz-sheet-stroke-soft);
+    background: var(--hz-sheet-surface-soft);
+  }
+
+  .trades-section .trade-task-row {
+    border-color: var(--hz-sheet-accent-soft);
+    background: color-mix(in srgb, var(--hz-color-primary) 10%, transparent);
+  }
+
+  :is(.items-header, .items-list .items-header) {
+    background: var(--hz-sheet-primary-soft);
+    border: 1px solid var(--hz-sheet-stroke-soft);
+  }
+
+  .items-list {
+    color: var(--hz-sheet-text);
+  }
+
+  .items-list .item {
+    border-bottom-color: var(--hz-sheet-stroke-soft);
+  }
+
+  .items-list .item .item-name {
+    color: var(--hz-sheet-text);
+  }
+
+  :is(.items-list .item-prop, .effects .item .effect-source, .effects .item .effect-duration, .effects .item .effect-controls) {
+    border-inline-color: var(--hz-sheet-stroke-soft);
+  }
+
+  :is(.editor, .editor-content, .ProseMirror) {
+    color: var(--hz-sheet-text);
+    background: color-mix(in srgb, var(--hz-color-surface) 38%, transparent);
+  }
+}

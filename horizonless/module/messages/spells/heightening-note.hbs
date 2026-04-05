@@ -1,0 +1,12 @@
+<div class="horizonless-spell-heightening-note">
+  <strong>Selected Heightenings</strong>
+  <ul>
+    {{#each selections}}
+      <li>
+        {{text}}
+        {{#if showCount}} x{{count}}{{/if}}
+        {{#if requirement}} <span class="horizonless-spell-heightening-requirement">({{requirement}})</span>{{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>

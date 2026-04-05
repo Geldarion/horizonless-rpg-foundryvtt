@@ -1,0 +1,290 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+  {{!-- Character header --}}
+  <header class="character-header">
+    <img class="character-portrait" src="{{actor.img}}" data-action="editImage" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="character-header-details">
+      <h1 class="character-name"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+      {{!-- Grid helpers from global SCSS --}}
+      <div class="resource-summary grid grid-3col">
+
+        {{!-- Centered stat card --}}
+        <div class="resource-card flex-group-center">
+          <label for="system.resolve.value" class="stat-label">Resolve</label>
+          <div class="stat-value-group flexrow flex-center flex-between">
+            <input type="text" name="system.resolve.value" value="{{system.resolve.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="text" name="system.resolve.max" value="{{system.resolve.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource-card flex-group-center">
+          <label for="system.hitpoints.value" class="stat-label">HP</label>
+          <div class="stat-value-group flexrow flex-center flex-between">
+            <input type="text" name="system.hitpoints.value" value="{{system.hitpoints.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="text" name="system.hitpoints.max" value="{{system.hitpoints.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource-card flex-group-center">
+          <label for="system.stamina.value" class="stat-label">Stamina</label>
+          <div class="stat-value-group flexrow flex-center flex-between">
+          <input type="text" name="system.stamina.value" value="{{system.stamina.value}}" data-dtype="Number"/>
+          <span> / </span>
+          <input type="text" name="system.stamina.max" value="{{system.stamina.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource-card flex-group-center damage-buffers-card">
+          <label class="stat-label">Damage Buffers</label>
+          <div class="damage-buffer-list">
+            {{#each system.damageBuffers as |buffer index|}}
+            <div class="damage-buffer-row">
+              <select
+                class="damage-buffer-type"
+                name="system.damageBuffers.{{index}}.type"
+              >
+                <option value="" {{#if (eq buffer.type "")}}selected{{/if}}>No Buffer</option>
+                {{#each @root.damageTypeGroups as |group|}}
+                <optgroup label="{{group.label}}">
+                  {{#each group.options as |option|}}
+                  <option value="{{option.value}}" {{#if (eq option.value buffer.type)}}selected{{/if}}>{{option.label}}</option>
+                  {{/each}}
+                </optgroup>
+                {{/each}}
+              </select>
+              <div class="damage-buffer-values">
+                <input
+                  type="text"
+                  name="system.damageBuffers.{{index}}.value"
+                  value="{{buffer.value}}"
+                  data-dtype="Number"
+                />
+                <span>/</span>
+                <input
+                  type="text"
+                  name="system.damageBuffers.{{index}}.max"
+                  value="{{buffer.max}}"
+                  data-dtype="Number"
+                />
+                <a class="damage-buffer-remove" data-index="{{index}}" title="Remove Buffer">
+                  <i class="fas fa-minus"></i>
+                </a>
+              </div>
+            </div>
+            {{/each}}
+            <a class="damage-buffer-add" title="Add Buffer">
+              <i class="fas fa-plus"></i> Add Buffer
+            </a>
+          </div>
+        </div>
+
+        <div class="resource-card flex-group-center">
+          <label for="system.armorClass" class="stat-label">AC</label>
+          <div class="armor-class-control">
+            <input type="text" name="system.armorClass" value="{{system.armorClass}}" data-dtype="Number"/>
+            <button
+              type="button"
+              class="guard-toggle"
+              data-guard-mode="{{guardDisplay.mode}}"
+              aria-label="{{guardDisplay.label}}"
+              title="{{guardDisplay.label}}"
+              style="--guard-icon: url('{{guardDisplay.icon}}')"
+            >
+              <span class="guard-toggle-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="resource-card flex-group-center">
+          <label for="system.attributes.level.value" class="stat-label">Level</label>
+          <div class="stat-value-group flexrow flex-center flex-between">
+            <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+        <div class="resource-card flex-group-center">
+          <label for="system.size" class="stat-label">Size</label>
+          <select name="system.size">
+            {{#each @root.config.sizes as |label key|}}
+            <option value="{{key}}" {{#if (eq key ../system.size)}}selected{{/if}}>{{label}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        <div class="resource-card flex-group-center">
+          <label for="system.spellPoints.value" class="stat-label">Spell Points</label>
+          <div class="stat-value-group flexrow flex-center flex-between">
+            <input type="text" name="system.spellPoints.value" value="{{system.spellPoints.value}}" data-dtype="Number"/>
+            <span> / </span>
+            <input type="text" name="system.spellPoints.max" value="{{system.spellPoints.max}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  {{!-- Tab navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="features">Features</a>
+    <a class="item" data-tab="ancestries">Ancestries</a>
+    <a class="item" data-tab="classes">Classes</a>
+    <a class="item" data-tab="trades">Trades</a>
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="items">Items</a>
+    <a class="item" data-tab="spells">Spells</a>
+    <a class="item" data-tab="manuevers">Manuevers</a>
+    <a class="item" data-tab="effects">Effects</a>
+  </nav>
+
+  {{!-- Main content --}}
+  <section class="sheet-body">
+
+    {{!-- Features tab --}}
+    <div class="tab" data-group="primary" data-tab="features">
+      <section class="grid grid-3col features-panel">
+        <aside class="abilities-panel">
+
+          {{!-- Ability table --}}
+          <table class="abilities-table">
+            <thead>
+              <tr>
+                <th>Ability</th>
+                <th>Save</th>
+                <th>Heroic</th>
+                <th>Mod</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each system.abilities as |ability key|}}
+              <tr>
+                <td>
+                  <label
+                    for="system.abilities.{{key}}.mod"
+                    class="stat-label rollable ability-label"
+                    data-roll="d20+@abilities.{{key}}.mod"
+                    data-label="{{localize (lookup @root.config.abilities key)}}"
+                    title="{{localize (lookup @root.config.abilities key)}}"
+                  >
+                    {{localize (lookup @root.config.abilities key)}}
+                  </label>
+                </td>
+                <td>
+                  <a
+                    class="ability-save rollable"
+                    data-ability-key="{{key}}"
+                    data-label="{{localize (lookup @root.config.abilities key)}} Save"
+                  >
+                    Save
+                  </a>
+                </td>
+                <td class="heroic-toggle-cell">
+                  <input
+                    type="checkbox"
+                    name="system.abilities.{{key}}.saveHeroic"
+                    {{checked ability.saveHeroic}}
+                  />
+                </td>
+                <td class="ability-modifier-cell">
+                  <input
+                    type="text"
+                    name="system.abilities.{{key}}.mod"
+                    value="{{ability.mod}}"
+                    data-dtype="Number"
+                  />
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </aside>
+
+        {{!-- Feature list --}}
+        <section class="grid-span-2">
+          {{!-- Features partial --}}
+          {{> "systems/horizonless/templates/actor/parts/actor-features.hbs"}}
+        </section>
+
+      </section>
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="ancestries">
+      {{> "systems/horizonless/templates/actor/parts/actor-ancestries.hbs"}}
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="classes">
+
+      {{> "systems/horizonless/templates/actor/parts/actor-class-feature.hbs"}}
+
+      <section class="grid grid-2col classes-level-grid">
+
+        <div class="resource-card flex-group-center class-level-card">
+          <label class="stat-label">
+            Paragon Feats
+          </label>
+
+          <input
+            type="number"
+            name="system.attributes.paragonFeatNum.value"
+            value="{{system.attributes.paragonFeatNum.value}}"
+            data-dtype="Number"
+          />
+        </div>
+
+        {{#each system.attributes.classes as |classData classKey|}}
+        <div class="resource-card flex-group-center class-level-card">
+
+          <label class="stat-label">
+            {{capitalize classKey}}
+          </label>
+
+          <input
+            type="number"
+            name="system.attributes.classes.{{classKey}}.level"
+            value="{{classData.level}}"
+            data-dtype="Number"
+          />
+
+        </div>
+        {{/each}}
+
+      </section>
+
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="trades">
+      {{> "systems/horizonless/templates/actor/parts/actor-trades.hbs"}}
+    </div>
+
+    {{!-- Biography tab --}}
+    <div class="tab" data-group="primary" data-tab="description">
+      {{!-- Rich text editor --}}
+      {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+    </div>
+
+    {{!-- Items tab --}}
+    <div class="tab" data-group="primary" data-tab="items">
+       {{> "systems/horizonless/templates/actor/parts/actor-items.hbs"}}
+    </div>
+
+    {{!-- Spells tab --}}
+    <div class="tab" data-group="primary" data-tab="spells">
+      {{> "systems/horizonless/templates/actor/parts/actor-spells.hbs"}}
+    </div>
+
+    <div class="tab" data-group="primary" data-tab="manuevers">
+      {{> "systems/horizonless/templates/actor/parts/actor-manuevers.hbs"}}
+    </div>
+
+    {{!-- Effects tab --}}
+    <div class="tab flexcol" data-group="primary" data-tab="effects">
+      {{> "systems/horizonless/templates/actor/parts/actor-effects.hbs"}}
+    </div>
+
+  </section>
+</form>
+
+
+

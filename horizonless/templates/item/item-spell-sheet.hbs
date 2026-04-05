@@ -1,0 +1,226 @@
+<form class='{{cssClass}}' autocomplete='off'>
+  <header class='sheet-header'>
+    <img
+      class='profile-img'
+      src='{{item.img}}'
+      data-action='editImage'
+      data-edit='img'
+      title='{{item.name}}'
+    />
+    <div class='header-fields'>
+      <h1 class='charname'><input
+          name='name'
+          type='text'
+          value='{{item.name}}'
+          placeholder='Name'
+        /></h1>
+    </div>
+  </header>
+
+  <nav class='sheet-tabs tabs' data-group='primary'>
+    <a class='item' data-tab='description'>Description</a>
+    <a class='item' data-tab='attributes'>Attributes</a>
+  </nav>
+
+  <section class='sheet-body'>
+    <div class='tab' data-group='primary' data-tab='description'>
+      <div class='editor-content'>
+        {{{enrichedDescription}}}
+      </div>
+    </div>
+<!-- Due to terminology, calling the level label "Circle" here (Geldarion) -->
+    <div class='tab attributes' data-group='primary' data-tab='attributes'>
+      <div class='resource'>
+        <label class='resource-label'>Spell Circle</label>
+        <input
+          type='text'
+          name='system.levelLabel'
+          value='{{system.levelLabel}}'
+        />
+      </div>
+<!--
+      <div class='resource'>
+        <label class='resource-label'>Spell Circle</label>
+        <input
+          type='text'
+          name='system.spellLevel'
+          value='{{system.spellLevel}}'
+          data-dtype='Number'
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Heightened Circle</label>
+        <input
+          type='text'
+          name='system.heightenedCircle'
+          value='{{system.heightenedCircle}}'
+          data-dtype='Number'
+        />
+      </div>
+-->
+      <div class='resource'>
+        <label class='resource-label'>Primary Spell List</label>
+        <select name='system.spellList'>
+          {{#each @root.spellLists as |spellList|}}
+            <option value='{{spellList}}' {{#if (eq spellList ../system.spellList)}}selected{{/if}}>{{capitalize spellList}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Spellcasting Modifier</label>
+        <select name='system.spellcastingModifier'>
+          {{#each @root.spellcastingModifiers as |abilityKey|}}
+            <option value='{{abilityKey}}' {{#if (eq abilityKey ../system.spellcastingModifier)}}selected{{/if}}>{{localize (lookup @root.config.abilities abilityKey)}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Prepared</label>
+        <input
+          type='checkbox'
+          name='system.prepared'
+          {{checked system.prepared}}
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Casting Time</label>
+        <input
+          type='text'
+          name='system.castingTime'
+          value='{{system.castingTime}}'
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Range</label>
+        <input
+          type='text'
+          name='system.range'
+          value='{{system.range}}'
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Shape</label>
+        <input
+          type='text'
+          name='system.shape'
+          value='{{system.shape}}'
+          placeholder='shape (e.g. cone, circle)'
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Shape Size</label>
+        <input
+          type='text'
+          name='system.shapeSize'
+          value='{{system.shapeSize}}'
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Duration</label>
+        <input
+          type='text'
+          name='system.duration'
+          value='{{system.duration}}'
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Concentration</label>
+        <input
+          type='checkbox'
+          name='system.concentration'
+          {{checked system.concentration}}
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Attack Type</label>
+        <input
+          type='text'
+          name='system.attackType'
+          value='{{system.attackType}}'
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Saving Throw Type</label>
+        <input
+          type='text'
+          name='system.savingThrowType'
+          value='{{system.savingThrowType}}'
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Damage</label>
+        <input
+          type='text'
+          name='system.damage'
+          value='{{system.damage}}'
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Damage Type</label>
+        <select name='system.damageType'>
+          <option value=''>None</option>
+          {{#each @root.config.damageTypeGroups as |group|}}
+            <optgroup label='{{group.label}}'>
+              {{#each group.types as |type|}}
+                <option value='{{type}}' {{#if (eq type @root.system.damageType)}}selected{{/if}}>{{lookup (lookup @root.config.damageTypes type) 'label'}}</option>
+              {{/each}}
+            </optgroup>
+          {{/each}}
+        </select>
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Injuring</label>
+        <input
+          type='checkbox'
+          name='system.injuring'
+          {{checked system.injuring}}
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Flavor</label>
+        <textarea name='system.flavor' rows='3'>{{system.flavor}}</textarea>
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Heightening Options</label>
+        {{#if heighteningOptions.length}}
+          <ol class='heightening-options-list'>
+            {{#each heighteningOptions as |option|}}
+              <li>
+                <div class='resource'>
+                  <label class='resource-label'>Text</label>
+                  <textarea
+                    name='system.heighteningOptions.{{@index}}.text'
+                    rows='3'
+                  >{{option.text}}</textarea>
+                </div>
+                <div class='resource'>
+                  <label class='resource-label'>Repeatable</label>
+                  <input
+                    type='checkbox'
+                    name='system.heighteningOptions.{{@index}}.repeatable'
+                    {{checked option.repeatable}}
+                  />
+                </div>
+                <div class='resource'>
+                  <label class='resource-label'>Attribute Requirement</label>
+                  <input
+                    type='text'
+                    name='system.heighteningOptions.{{@index}}.attributeRequirement'
+                    value='{{option.attributeRequirement}}'
+                    placeholder='+3 CHA and above'
+                  />
+                </div>
+                <div class='resource'>
+                  <label class='resource-label'>Preview</label>
+                  <div class='notes'>{{{option.enrichedText}}}</div>
+                </div>
+              </li>
+            {{/each}}
+          </ol>
+        {{else}}
+          <p class='notes'>No heightening options.</p>
+        {{/if}}
+      </div>
+    </div>
+  </section>
+</form>

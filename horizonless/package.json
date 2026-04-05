@@ -1,0 +1,24 @@
+{
+  "name": "horizonless",
+  "version": "2.0.3",
+  "description": "CSS compiler for the Horizonless system",
+  "scripts": {
+    "build": "sass src/scss/horizonless.scss css/horizonless.css --style=expanded --no-source-map",
+    "watch": "sass src/scss/horizonless.scss css/horizonless.css --style=expanded --source-map --watch",
+    "build:spells": "node scripts/build-spell-compendium.mjs",
+    "build:ancestry-features": "node scripts/build-ancestry-feature-compendium.mjs",
+    "build:class-features": "node scripts/build-class-feature-compendium.mjs",
+    "build:manuevers": "node scripts/build-manuever-compendium.mjs",
+    "build:curios": "node scripts/build-curio-compendium.mjs",
+    "build:compendiums": "node scripts/rebuild-compendiums.mjs"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "author": "Asacolips",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "sass": "^1.53.0"
+  }
+}

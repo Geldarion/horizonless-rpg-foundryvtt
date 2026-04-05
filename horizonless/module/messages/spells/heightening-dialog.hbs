@@ -1,0 +1,25 @@
+<div class="hl-heightening-dialog">
+  <p>
+    Select {{requiredSelections}} heightening option{{pluralSuffix}} for
+    <strong>{{spellName}}</strong>.
+  </p>
+  <p class="hl-heightening-progress">Selected: <span class="hl-selected-count">0</span> / {{requiredSelections}}</p>
+  <ol class="hl-heightening-option-list">
+    {{#each options}}
+      <li class="hl-heightening-option-row" data-option-id="{{id}}" data-repeatable="{{repeatableAttr}}">
+        <div class="hl-heightening-option-copy">
+          <div class="hl-heightening-option-text">
+            {{text}}
+            {{#if repeatable}}<span class="hl-heightening-tag">(Repeatable)</span>{{/if}}
+          </div>
+          {{#if requirement}}<div class="hl-heightening-requirement">{{requirement}}</div>{{/if}}
+        </div>
+        <div class="hl-heightening-option-controls">
+          <button type="button" class="hl-heightening-adjust" data-action="decrement" aria-label="Decrease selection">-</button>
+          <span class="hl-heightening-count" data-count-for="{{id}}">0</span>
+          <button type="button" class="hl-heightening-adjust" data-action="increment" aria-label="Increase selection">+</button>
+        </div>
+      </li>
+    {{/each}}
+  </ol>
+</div>

@@ -1,0 +1,87 @@
+<form class='{{cssClass}}' autocomplete='off'>
+  <header class='sheet-header'>
+    <img
+      class='profile-img'
+      src='{{item.img}}'
+      data-action='editImage'
+      data-edit='img'
+      title='{{item.name}}'
+    />
+    <div class='header-fields'>
+      <h1 class='charname'><input
+          name='name'
+          type='text'
+          value='{{item.name}}'
+          placeholder='Name'
+        /></h1>
+      <div class='grid grid-2col'>
+        <div class='resource'>
+          <label class='resource-label'>Quantity</label>
+          <input
+            type='text'
+            name='system.quantity'
+            value='{{system.quantity}}'
+            data-dtype='Number'
+          />
+        </div>
+        <div class='resource'>
+          <label class='resource-label'>Weight</label>
+          <input
+            type='text'
+            name='system.weight'
+            value='{{system.weight}}'
+            data-dtype='Number'
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class='sheet-tabs tabs' data-group='primary'>
+    <a class='item' data-tab='description'>Description</a>
+    <a class='item' data-tab='attributes'>Attributes</a>
+  </nav>
+
+  <section class='sheet-body'>
+    <div class='tab' data-group='primary' data-tab='description'>
+      <div class='editor-content'>
+        {{{enrichedDescription}}}
+      </div>
+    </div>
+
+    <div class='tab attributes' data-group='primary' data-tab='attributes'>
+      <div class='resource'>
+        <label class='resource-label'>Rarity</label>
+        <input type='text' name='system.rarity' value='{{system.rarity}}' />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Discipline</label>
+        <input type='text' name='system.discipline' value='{{system.discipline}}' />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Crafting Threshold Score</label>
+        <input
+          type='text'
+          name='system.craftingThresholdScore'
+          value='{{system.craftingThresholdScore}}'
+        />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Action Type</label>
+        <input type='text' name='system.actionType' value='{{system.actionType}}' />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Main Type</label>
+        <input type='text' name='system.mainType' value='{{system.mainType}}' />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Sub Type</label>
+        <input type='text' name='system.subType' value='{{system.subType}}' />
+      </div>
+      <div class='resource'>
+        <label class='resource-label'>Flavor</label>
+        <textarea name='system.flavor' rows='3'>{{system.flavor}}</textarea>
+      </div>
+    </div>
+  </section>
+</form>

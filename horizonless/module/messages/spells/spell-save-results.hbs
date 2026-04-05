@@ -1,0 +1,26 @@
+<div class="horizonless-spell-save-results">
+  <div class="horizonless-spell-save-results-title">Targeted {{saveLabel}} Saves</div>
+  {{#if hasSpellDc}}
+  <div class="horizonless-spell-save-results-dc">Spell DC: {{spellDc}}</div>
+  {{/if}}
+  <div class="horizonless-spell-save-results-list">
+    {{#each results}}
+    <div class="horizonless-spell-save-result-row">
+      <span class="horizonless-spell-save-result-name">{{tokenName}}</span>
+      <span class="horizonless-spell-save-result-total">{{total}}</span>
+      <span class="horizonless-spell-save-result-formula">{{formula}}</span>
+      {{#if hasSpellDc}}
+      <span class="horizonless-spell-save-result-outcome">{{resultLabel}}</span>
+      {{/if}}
+      {{#if isHeroic}}
+      <span class="horizonless-spell-save-result-tag">Heroic</span>
+      {{/if}}
+    </div>
+    {{/each}}
+  </div>
+  {{#if hasDamageButton}}
+  <div class="horizonless-spell-chat-actions">
+    {{{damageButtonHtml}}}
+  </div>
+  {{/if}}
+</div>

@@ -1,0 +1,32 @@
+<div class="horizonless-damage-action">
+  <div class="horizonless-damage-action-field">
+    <select class="horizonless-damage-type">
+      <option value="">Select Damage Type</option>
+      {{#each damageTypeGroups as |group|}}
+      <optgroup label="{{group.label}}">
+        {{#each group.options as |option|}}
+        <option value="{{option.value}}" {{#if (eq option.value @root.selectedDamageType)}}selected{{/if}}>{{option.label}}</option>
+        {{/each}}
+      </optgroup>
+      {{/each}}
+    </select>
+  </div>
+  <label class="horizonless-damage-action-toggle">
+    <input
+      type="checkbox"
+      class="horizonless-damage-injuring"
+      {{#if injuring}}checked{{/if}}
+    />
+    Injuring
+  </label>
+  <button
+    type="button"
+    class="horizonless-apply-damage"
+    data-target-token-uuids="{{targetTokenUuids}}"
+    data-application-key="{{applicationKey}}"
+    data-damage-total="{{damageTotal}}"
+    data-applied="false"
+  >
+    Apply Damage
+  </button>
+</div>

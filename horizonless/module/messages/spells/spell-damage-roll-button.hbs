@@ -1,0 +1,14 @@
+<button
+  type="button"
+  class="horizonless-spell-chat-damage-button"
+  data-actor-uuid="{{actorUuid}}"
+  data-item-uuid="{{itemUuid}}"
+  data-formula="{{damageFormula}}"
+  data-item-name="{{itemName}}"
+  data-damage-label="{{damageLabel}}"
+  data-damage-type="{{damageType}}"
+  data-injuring="{{#if injuring}}true{{else}}false{{/if}}"
+  data-target-token-uuids="{{targetTokenUuids}}"
+>
+  {{#if buttonLabel}}{{buttonLabel}}{{else}}Roll Damage{{/if}}
+</button>

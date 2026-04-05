@@ -1,0 +1,39 @@
+// Add custom fonts by visiting and search https://fonts.google.com
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('../module/messages/item/chat.css');
+@import url('../module/messages/manuevers/chat.css');
+@import url('../module/messages/spells/chat.css');
+@import url('../module/messages/spells/heightening-dialog.css');
+
+:root,
+.horizonless-spell-chat-theme {
+  --hz-color-primary: #90caf9;
+  --hz-color-primary-strong: #2b6cb0;
+  --hz-color-accent: #4b111b;
+  --hz-color-surface: #e6f0ff;
+  --hz-color-background: #080b12;
+  --hz-color-text-on-surface: #0a1421;
+  --hz-color-text-on-dark: #f8fafc;
+  --hz-color-stroke-on-surface: #647b9a;
+  --hz-color-stroke-on-background: #6d90c5;
+}
+
+// Import utilities.
+@import 'utils/typography';
+@import 'utils/colors';
+@import 'utils/mixins';
+@import 'utils/variables';
+
+/* Global styles */
+@import 'global/window';
+@import 'global/grid';
+@import 'global/flex';
+
+/* Styles limited to horizonless sheets */
+.horizonless {
+  @import 'components/forms';
+  @import 'components/resource';
+  @import 'components/items';
+  @import 'components/effects';
+  @import 'components/character-theme';
+}

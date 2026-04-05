@@ -1,0 +1,14 @@
+<div class="horizonless-chat-card horizonless-item-chat">
+{{#if hasItemIcon}}
+<div class="horizonless-item-chat-header">
+  <img class="horizonless-item-chat-icon" src="{{itemIcon}}" alt="{{itemName}}" />
+  <div class="horizonless-item-chat-title">{{itemName}}</div>
+</div>
+{{/if}}
+{{#if hasHeighteningNote}}
+{{{heighteningNoteHtml}}}
+<hr>
+{{/if}}
+{{{curioFlavorHtml}}}
+{{{itemContentHtml}}}
+</div>

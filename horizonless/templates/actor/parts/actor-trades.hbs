@@ -1,0 +1,191 @@
+<section class="grid grid-2col trades-section">
+  <div class="trade-column">
+    <div class="trade-section-heading">
+      <label class="resource-label">Background Trade</label>
+    </div>
+
+    {{#each system.trades.background as |trade tradeIndex|}}
+      <div class="resource trade-card">
+        <div class="grid grid-2col">
+          <div class="resource">
+            <label class="resource-label">Trade Name</label>
+            <input
+              type="text"
+              name="system.trades.background.{{tradeIndex}}.name"
+              value="{{trade.name}}"
+            />
+          </div>
+          <div class="resource">
+            <label class="resource-label">Specialization</label>
+            <select name="system.trades.background.{{tradeIndex}}.specialization">
+              {{selectOptions @root.config.tradeSpecializations selected=trade.specialization}}
+            </select>
+          </div>
+          <div class="resource grid-span-2">
+            <label class="resource-label">Ability</label>
+            <select name="system.trades.background.{{tradeIndex}}.ability">
+              {{selectOptions @root.config.abilities selected=trade.ability localize=true blank="Select Ability"}}
+            </select>
+          </div>
+        </div>
+
+        <div class="trade-task-list">
+          <div class="trade-task-controls">
+            <button
+              type="button"
+              class="task-control trade-check"
+              data-trade-type="background"
+              data-trade-index="{{tradeIndex}}"
+            >
+              <i class="fas fa-dice-d20"></i>
+              Trade Check
+            </button>
+            <button
+              type="button"
+              class="task-control task-add"
+              data-trade-type="background"
+              data-trade-index="{{tradeIndex}}"
+            >
+              <i class="fas fa-plus"></i>
+              Add Task
+            </button>
+          </div>
+
+          <div class="trade-task-stack">
+            {{#each trade.tasks as |task taskIndex|}}
+              <div class="resource trade-task-row">
+                <div class="trade-task-row-header">
+                  <button
+                    type="button"
+                    class="task-control trade-task-check"
+                    data-trade-type="background"
+                    data-trade-index="{{tradeIndex}}"
+                    data-task-index="{{taskIndex}}"
+                  >
+                    <i class="fas fa-dice-d20"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="task-control task-delete"
+                    data-trade-type="background"
+                    data-trade-index="{{tradeIndex}}"
+                    data-task-index="{{taskIndex}}"
+                  >
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+                <label class="resource-label">Task Name</label>
+                <input
+                  type="text"
+                  name="system.trades.background.{{tradeIndex}}.tasks.{{taskIndex}}.name"
+                  value="{{task.name}}"
+                />
+                <label class="resource-label">Task Description</label>
+                <input
+                  type="text"
+                  name="system.trades.background.{{tradeIndex}}.tasks.{{taskIndex}}.description"
+                  value="{{task.description}}"
+                />
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  <div class="trade-column">
+    <div class="trade-section-heading">
+      <label class="resource-label">Adventurer Trade</label>
+    </div>
+
+    {{#each system.trades.adventurer as |trade tradeIndex|}}
+      <div class="resource trade-card">
+        <div class="grid grid-2col">
+          <div class="resource">
+            <label class="resource-label">Trade Name</label>
+            <input
+              type="text"
+              name="system.trades.adventurer.{{tradeIndex}}.name"
+              value="{{trade.name}}"
+            />
+          </div>
+          <div class="resource">
+            <label class="resource-label">Specialization</label>
+            <select name="system.trades.adventurer.{{tradeIndex}}.specialization">
+              {{selectOptions @root.config.tradeSpecializations selected=trade.specialization}}
+            </select>
+          </div>
+          <div class="resource grid-span-2">
+            <label class="resource-label">Ability</label>
+            <select name="system.trades.adventurer.{{tradeIndex}}.ability">
+              {{selectOptions @root.config.abilities selected=trade.ability localize=true blank="Select Ability"}}
+            </select>
+          </div>
+        </div>
+
+        <div class="trade-task-list">
+          <div class="trade-task-controls">
+            <button
+              type="button"
+              class="task-control trade-check"
+              data-trade-type="adventurer"
+              data-trade-index="{{tradeIndex}}"
+            >
+              <i class="fas fa-dice-d20"></i>
+              Trade Check
+            </button>
+            <button
+              type="button"
+              class="task-control task-add"
+              data-trade-type="adventurer"
+              data-trade-index="{{tradeIndex}}"
+            >
+              <i class="fas fa-plus"></i>
+              Add Task
+            </button>
+          </div>
+
+          <div class="trade-task-stack">
+            {{#each trade.tasks as |task taskIndex|}}
+              <div class="resource trade-task-row">
+                <div class="trade-task-row-header">
+                  <button
+                    type="button"
+                    class="task-control trade-task-check"
+                    data-trade-type="adventurer"
+                    data-trade-index="{{tradeIndex}}"
+                    data-task-index="{{taskIndex}}"
+                  >
+                    <i class="fas fa-dice-d20"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="task-control task-delete"
+                    data-trade-type="adventurer"
+                    data-trade-index="{{tradeIndex}}"
+                    data-task-index="{{taskIndex}}"
+                  >
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+                <label class="resource-label">Task Name</label>
+                <input
+                  type="text"
+                  name="system.trades.adventurer.{{tradeIndex}}.tasks.{{taskIndex}}.name"
+                  value="{{task.name}}"
+                />
+                <label class="resource-label">Task Description</label>
+                <input
+                  type="text"
+                  name="system.trades.adventurer.{{tradeIndex}}.tasks.{{taskIndex}}.description"
+                  value="{{task.description}}"
+                />
+              </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</section>

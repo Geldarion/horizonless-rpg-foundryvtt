@@ -1,0 +1,127 @@
+<div class="horizonless-spell-chat">
+  <table class="horizonless-spell-chat-meta">
+    <tbody>
+      {{#if hasSpellName}}
+      <tr class="horizonless-spell-chat-row-name">
+        <td colspan="2">
+          <div class="horizonless-spell-chat-name-row">
+            {{#if hasSpellIcon}}
+            <img class="horizonless-spell-chat-icon" src="{{spellIcon}}" alt="{{spellName}}" />
+            {{/if}}
+            <div class="horizonless-spell-chat-name-block">
+              <div class="horizonless-spell-chat-name">{{spellName}}</div>
+              {{#if hasSpellFlavor}}
+              <div class="horizonless-spell-chat-name-flavor">{{{spellFlavorHtml}}}</div>
+              {{/if}}
+            </div>
+          </div>
+        </td>
+      </tr>
+      {{/if}}
+      <tr class="horizonless-spell-chat-row-metadata">
+        <td colspan="2">
+          <div class="horizonless-spell-chat-metadata-grid">
+            <div class="horizonless-spell-chat-metadata-cell">
+              <div class="horizonless-spell-chat-metadata-label">Circle</div>
+              <div class="horizonless-spell-chat-metadata-value">
+                {{#if hasSpellCircle}}{{spellCircleLabel}}{{else}}-{{/if}}
+              </div>
+            </div>
+            <div class="horizonless-spell-chat-metadata-cell">
+              <div class="horizonless-spell-chat-metadata-label">Range</div>
+              <div class="horizonless-spell-chat-metadata-value">{{spellRange}}</div>
+            </div>
+            <div class="horizonless-spell-chat-metadata-cell">
+              <div class="horizonless-spell-chat-metadata-label">Duration</div>
+              <div class="horizonless-spell-chat-metadata-value">{{spellDuration}}</div>
+            </div>
+            <div class="horizonless-spell-chat-metadata-cell">
+              <div class="horizonless-spell-chat-metadata-label">Casting Time</div>
+              <div class="horizonless-spell-chat-metadata-value">{{spellCastingTime}}</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr class="horizonless-spell-chat-row-description">
+        <td colspan="2">
+          <div class="horizonless-spell-chat-description">
+            {{{spellDescriptionHtml}}}
+          </div>
+        </td>
+      </tr>
+
+      {{#if hasHeighteningNote}}
+      <tr class="horizonless-spell-chat-row-heightenings">
+        <td colspan="2">
+          <div class="horizonless-spell-chat-heightenings">
+            {{{heighteningNoteHtml}}}
+          </div>
+        </td>
+      </tr>
+      {{/if}}
+    </tbody>
+  </table>
+
+  {{#if hasPossibleHeightenings}}
+  <details class="horizonless-spell-chat-possible-heightenings">
+    <summary>Possible Heightenings</summary>
+    <ul>
+      {{#each possibleHeightenings}}
+      <li>
+        {{{textHtml}}}
+        {{#if repeatable}} <span class="horizonless-spell-heightening-requirement">(Repeatable)</span>{{/if}}
+        {{#if requirement}} <span class="horizonless-spell-heightening-requirement">({{requirement}})</span>{{/if}}
+      </li>
+      {{/each}}
+    </ul>
+  </details>
+  {{/if}}
+
+  {{#if hasSpellAttackButton}}
+  <div class="horizonless-spell-chat-actions">
+    <div class="horizonless-spell-chat-save-action">
+      <button
+        type="button"
+        class="horizonless-spell-chat-save-button horizonless-spell-chat-attack-button"
+        data-attack-label="{{spellAttackLabel}}"
+        data-item-uuid="{{itemUuid}}"
+        data-target-token-uuids="{{targetTokenUuids}}"
+      >
+        Roll Spell Attack
+      </button>
+    </div>
+
+    {{#if hasSavingThrowButton}}
+    <div class="horizonless-spell-chat-save-action">
+      <button
+        type="button"
+        class="horizonless-spell-chat-save-button"
+        data-save-ability-key="{{savingThrowAbilityKey}}"
+        data-save-label="{{savingThrowLabel}}"
+        data-item-uuid="{{itemUuid}}"
+        data-target-token-uuids="{{targetTokenUuids}}"
+      >
+        Roll {{savingThrowLabel}} Save for Targeted Tokens
+      </button>
+    </div>
+    {{/if}}
+  </div>
+  {{else}}
+  {{#if hasSavingThrowButton}}
+  <div class="horizonless-spell-chat-actions">
+    <div class="horizonless-spell-chat-save-action">
+      <button
+        type="button"
+        class="horizonless-spell-chat-save-button"
+        data-save-ability-key="{{savingThrowAbilityKey}}"
+        data-save-label="{{savingThrowLabel}}"
+        data-item-uuid="{{itemUuid}}"
+        data-target-token-uuids="{{targetTokenUuids}}"
+      >
+        Roll {{savingThrowLabel}} Save for Targeted Tokens
+      </button>
+    </div>
+  </div>
+  {{/if}}
+  {{/if}}
+</div>

@@ -1,0 +1,1002 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("../module/messages/item/chat.css");
+@import url("../module/messages/manuevers/chat.css");
+@import url("../module/messages/spells/chat.css");
+@import url("../module/messages/spells/heightening-dialog.css");
+
+:root,
+.horizonless-spell-chat-theme {
+  --hz-color-primary: #90caf9;
+  --hz-color-primary-strong: #2b6cb0;
+  --hz-color-accent: #4b111b;
+  --hz-color-surface: #e6f0ff;
+  --hz-color-background: #080b12;
+  --hz-color-text-on-surface: #0a1421;
+  --hz-color-text-on-dark: #f8fafc;
+  --hz-color-stroke-on-surface: #647b9a;
+  --hz-color-stroke-on-background: #6d90c5;
+}
+
+.chat-message.horizonless-spell-chat-message {
+  background: var(--hz-color-surface) !important;
+  background-color: var(--hz-color-surface) !important;
+  background-image: none !important;
+  border-color: var(--hz-color-accent) !important;
+}
+
+.chat-message.horizonless-weapon-chat-message {
+  background: var(--hz-item-chat-surface) !important;
+  background-color: var(--hz-item-chat-surface) !important;
+  background-image: none !important;
+  border-color: var(--hz-item-chat-accent) !important;
+  color: var(--hz-item-chat-text);
+}
+
+.chat-message.horizonless-weapon-chat-message .message-content {
+  color: inherit;
+}
+
+.chat-message.horizonless-chat-message {
+  background: var(--hz-color-surface) !important;
+  background-color: var(--hz-color-surface) !important;
+  background-image: none !important;
+  border: 1px solid var(--hz-color-accent) !important;
+  color: var(--hz-color-text-on-surface);
+  box-shadow: none;
+}
+
+.chat-message.horizonless-chat-message .message-header {
+  margin-bottom: 0.45rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--hz-color-accent) 30%, transparent);
+}
+
+.chat-message.horizonless-chat-message :is(.message-sender, .flavor-text) {
+  color: var(--hz-color-accent);
+}
+
+.chat-message.horizonless-chat-message .message-metadata {
+  color: var(--hz-color-primary-strong);
+}
+
+.chat-message.horizonless-chat-message .message-content {
+  color: inherit;
+}
+
+.chat-message.horizonless-chat-message a.content-link,
+.chat-message.horizonless-chat-message a.inline-roll,
+.chat-message.horizonless-chat-message a.entity-link {
+  color: var(--hz-color-primary-strong);
+}
+
+.chat-message.horizonless-chat-message .dice-roll .dice-formula,
+.chat-message.horizonless-chat-message .dice-roll .dice-total {
+  background: var(--hz-color-primary);
+  border-color: var(--hz-color-accent);
+  color: var(--hz-color-primary-strong);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.chat-message.horizonless-chat-message .dice-roll .dice-tooltip {
+  background: color-mix(in srgb, var(--hz-color-surface) 94%, white);
+  border: 1px solid var(--hz-color-accent);
+  border-radius: 0;
+  color: var(--hz-color-text-on-surface);
+}
+
+.chat-message.horizonless-chat-message .dice-roll .dice-tooltip .part-header {
+  border-bottom-color: color-mix(in srgb, var(--hz-color-accent) 40%, transparent);
+}
+
+#chat-log .chat-message,
+#chat-log .chat-message .message-content {
+  border-radius: 0 !important;
+}
+
+/* Global */
+.window-app,
+.horizonless .item-form {
+  font-family: "Roboto", sans-serif;
+}
+
+.rollable:is(:hover, :focus) {
+  cursor: pointer;
+  color: #000;
+  text-shadow: 0 0 10px red;
+}
+
+/* Grid helpers */
+.grid,
+.grid-2col,
+.grid-3col,
+.grid-4col,
+.grid-5col,
+.grid-6col,
+.grid-7col,
+.grid-8col,
+.grid-9col,
+.grid-10col,
+.grid-11col,
+.grid-12col {
+  --grid-cols: 2;
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  grid-column: span var(--grid-cols) / span var(--grid-cols);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+
+.grid,
+.grid-2col { --grid-cols: 2; }
+.grid-3col { --grid-cols: 3; }
+.grid-4col { --grid-cols: 4; }
+.grid-5col { --grid-cols: 5; }
+.grid-6col { --grid-cols: 6; }
+.grid-7col { --grid-cols: 7; }
+.grid-8col { --grid-cols: 8; }
+.grid-9col { --grid-cols: 9; }
+.grid-10col { --grid-cols: 10; }
+.grid-11col { --grid-cols: 11; }
+.grid-12col { --grid-cols: 12; }
+
+.grid-start-2 { grid-column-start: 2; }
+.grid-start-3 { grid-column-start: 3; }
+.grid-start-4 { grid-column-start: 4; }
+.grid-start-5 { grid-column-start: 5; }
+.grid-start-6 { grid-column-start: 6; }
+.grid-start-7 { grid-column-start: 7; }
+.grid-start-8 { grid-column-start: 8; }
+.grid-start-9 { grid-column-start: 9; }
+.grid-start-10 { grid-column-start: 10; }
+.grid-start-11 { grid-column-start: 11; }
+.grid-start-12 { grid-column-start: 12; }
+
+.grid-span-2 { grid-column-end: span 2; }
+.grid-span-3 { grid-column-end: span 3; }
+.grid-span-4 { grid-column-end: span 4; }
+.grid-span-5 { grid-column-end: span 5; }
+.grid-span-6 { grid-column-end: span 6; }
+.grid-span-7 { grid-column-end: span 7; }
+.grid-span-8 { grid-column-end: span 8; }
+.grid-span-9 { grid-column-end: span 9; }
+.grid-span-10 { grid-column-end: span 10; }
+.grid-span-11 { grid-column-end: span 11; }
+.grid-span-12 { grid-column-end: span 12; }
+
+/* Flex helpers */
+:is(.flex-group-center, .flex-group-left, .flex-group-right, .align-center, .align-left, .align-right) {
+  align-items: center;
+}
+
+:is(.flex-group-center, .align-center) {
+  justify-content: center;
+  text-align: center;
+}
+
+:is(.flex-group-left, .align-left) {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+:is(.flex-group-right, .align-right) {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.flexshrink { flex: 0; }
+.flex-between { justify-content: space-between; }
+.flexlarge { flex: 2; }
+
+/* Base sheet */
+.horizonless :is(.sheet-header, .character-header) {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  overflow: visible;
+  margin-bottom: 10px;
+}
+
+.horizonless :is(.sheet-header .profile-img, .character-header .character-portrait) {
+  flex: 0 0 140px;
+  width: 140px;
+  height: 140px;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.horizonless :is(.sheet-header .header-fields, .character-header .character-header-details) {
+  flex: 1;
+}
+
+.horizonless :is(.sheet-header h1.charname, .character-header h1.character-name) {
+  height: 50px;
+  margin: 5px 0;
+  padding: 0;
+  border-bottom: 0;
+}
+
+.horizonless :is(.sheet-header h1.charname input, .character-header h1.character-name input) {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.horizonless .sheet-tabs {
+  flex: 0 0 auto;
+  min-width: min-content;
+}
+
+.horizonless .sheet-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.horizonless .character {
+  min-width: 712px;
+}
+
+.horizonless :is(.sheet-body, .sheet-body .tab, .sheet-body .tab .editor) {
+  height: 100%;
+}
+
+.horizonless .sheet-body .tab {
+  display: none;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.horizonless .sheet-body .tab.active {
+  display: block;
+}
+
+.horizonless .sheet-body .tab.active.flexcol {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.horizonless .tox .tox-editor-container {
+  background: #fff;
+}
+
+.horizonless .tox .tox-edit-area,
+.horizonless .item-formula {
+  padding: 0 8px;
+}
+
+.horizonless :is(.resource-label, .stat-label),
+.horizonless .tabs .item,
+.horizonless :is(.ability-table, .abilities-table) thead th,
+.horizonless :is(.items-header, .items-list .items-header),
+.horizonless .items-header .item-name {
+  font-weight: 700;
+}
+
+.horizonless .tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 40px;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #aaa;
+}
+
+.horizonless .tabs .item {
+  flex: 0 0 auto;
+  padding: 0 3px;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.horizonless .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
+}
+
+/* Header stats */
+.horizonless :is(.resource-summary, .resources) {
+  display: grid;
+}
+
+.horizonless .resource-summary {
+  width: 100%;
+  max-width: 100%;
+  gap: 8px;
+  justify-content: stretch;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.horizonless :is(.resource, .resource-card) {
+  min-width: 0;
+}
+
+.horizonless :is(.resource, .resource-card) input {
+  width: 100%;
+  text-align: center;
+}
+
+.horizonless :is(.resource-content, .stat-value-group) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.horizonless :is(.resource-content, .stat-value-group) input {
+  min-width: 0;
+}
+
+.horizonless .armor-class-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.horizonless .armor-class-control input {
+  flex: 1 1 auto;
+}
+
+.horizonless .guard-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  flex: 0 0 32px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.horizonless .guard-toggle-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-color: var(--hz-color-accent);
+  -webkit-mask-image: var(--guard-icon);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-image: var(--guard-icon);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.horizonless .resource-summary .stat-value-group {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.horizonless .resource-summary .stat-value-group input {
+  flex: 0 1 40px;
+  width: 40px;
+  max-width: 40px;
+}
+
+.horizonless .character-header {
+  gap: 8px;
+  align-items: stretch;
+  margin-bottom: 6px;
+}
+
+.horizonless .character-header .character-portrait {
+  flex: 0 0 80px;
+  width: 80px;
+  height: 80px;
+  margin-right: 0;
+}
+
+.horizonless .character-header .character-header-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.horizonless .character-header .character-name {
+  height: 38px;
+  margin: 0;
+}
+
+.horizonless .character-header .resource-summary {
+  margin: 0;
+  gap: 6px;
+}
+
+.horizonless .character-header .stat-label {
+  margin-bottom: 2px;
+  font-size: 12px;
+  line-height: 1.1;
+}
+
+.horizonless .character-header .stat-value-group {
+  gap: 2px;
+}
+
+.horizonless .character-header .stat-value-group input {
+  flex-basis: 34px;
+  width: 34px;
+  max-width: 34px;
+}
+
+.horizonless .character-header .damage-buffers-card {
+  min-height: 82px;
+}
+
+.horizonless .character-header .damage-buffer-list {
+  gap: 2px;
+  overflow: visible;
+  padding-right: 2px;
+}
+
+.horizonless .character-header .damage-buffer-row {
+  gap: 1px;
+}
+
+.horizonless .character-header .damage-buffer-type {
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.horizonless .character-header .damage-buffer-add {
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.horizonless .character-header .damage-buffer-remove {
+  width: 18px;
+  height: 18px;
+  flex-basis: 18px;
+}
+
+.horizonless :is(.resource, .resource-card).damage-buffers-card {
+  align-items: stretch;
+}
+
+.horizonless .damage-buffer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.horizonless .damage-buffer-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.horizonless .damage-buffer-type {
+  width: 100%;
+  font-size: 11px;
+  text-align: left;
+}
+
+.horizonless .damage-buffer-values {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.horizonless .damage-buffer-values input {
+  flex: 0 1 34px;
+  max-width: 34px;
+}
+
+.horizonless :is(.damage-buffer-add, .damage-buffer-remove) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.horizonless :is(.damage-buffer-add, .damage-buffer-remove):hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.horizonless .damage-buffer-remove {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+
+.horizonless .damage-buffer-add {
+  align-self: center;
+  padding: 1px 6px;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+/* Features */
+.horizonless :is(.features-layout, .features-panel) {
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 16px;
+}
+
+.horizonless :is(.features-layout .sidebar, .features-panel .abilities-panel) {
+  padding-right: 6px;
+}
+
+.horizonless :is(.ability-table, .abilities-table) {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.horizonless :is(.ability-table, .abilities-table) :is(th, td) {
+  padding: 4px 6px;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.horizonless :is(.ability-table, .abilities-table) thead th,
+.horizonless :is(.ability-table .heroic-cell, .abilities-table .heroic-toggle-cell),
+.horizonless :is(.ability-table .mod-cell, .abilities-table .ability-modifier-cell),
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(n + 2),
+.horizonless :is(.items-header, .items-list .items-header) > *,
+.horizonless :is(.effect-source),
+.horizonless :is(.effect-duration),
+.horizonless :is(.items-list .item-prop, .effects .item .effect-source, .effects .item .effect-duration, .effects .item .effect-controls),
+.horizonless .items-list .item-controls a {
+  text-align: center;
+}
+
+.horizonless :is(.ability-table, .abilities-table) thead th:first-child,
+.horizonless :is(.ability-table .ability-name, .abilities-table .ability-label),
+.horizonless :is(.items-header .item-name, .items-list .items-header .item-name),
+.horizonless .items-list .item-name,
+.horizonless .trades-section .trade-task-list {
+  text-align: left;
+}
+
+.horizonless :is(.ability-table .ability-name, .abilities-table .ability-label) {
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.horizonless :is(.ability-table .mod-cell input[type="text"], .abilities-table .ability-modifier-cell input[type="text"]) {
+  width: 100%;
+  max-width: 64px;
+  text-align: center;
+}
+
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(1) { width: 80px; }
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(2) { width: 56px; }
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(3) { width: 60px; }
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(4) { width: 72px; }
+
+/* Trades */
+.horizonless .trades-section .trade-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.horizonless .trades-section .trade-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.03));
+}
+
+.horizonless .trades-section .trade-card {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.horizonless .trades-section .trade-task-controls,
+.horizonless .trades-section .trade-task-row-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.horizonless .trades-section .trade-task-controls {
+  margin: 8px 0;
+}
+
+.horizonless .trades-section .trade-task-row-header {
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.horizonless .trades-section .task-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.04);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.horizonless .trades-section .task-control:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.horizonless .trades-section .trade-task-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.horizonless .trades-section .trade-task-row {
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.horizonless .trades-section .task-delete {
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  gap: 0;
+  line-height: 1;
+}
+
+/* Items and effects */
+.horizonless :is(.items-header, .items-list .items-header) {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #eeede0;
+}
+
+.horizonless .items-header > * { font-size: 14px; }
+.horizonless .items-list .items-header > * { font-size: 12px; }
+
+.horizonless :is(.items-header .item-name, .items-list .items-header .item-name) {
+  display: flex;
+  padding-left: 5px;
+}
+
+.horizonless :is(.items-list, .items-list .item-list) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.horizonless .items-list {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: #444;
+}
+
+.horizonless .items-list .inventory-header {
+  height: auto;
+  min-height: 40px;
+  padding: 4px 2px;
+}
+
+.horizonless .items-list .inventory-header .item-controls {
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  row-gap: 4px;
+  justify-content: flex-end;
+}
+
+.horizonless .items-list .inventory-header .item-control {
+  white-space: nowrap;
+}
+
+.horizonless .items-list .item-name {
+  display: flex;
+  flex: 2;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.horizonless .items-list .item-name :is(h3, h4) {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.horizonless .items-list .item-controls {
+  display: flex;
+  flex: 0 0 100px;
+  justify-content: flex-end;
+}
+
+.horizonless .spell-list-section .spell-signature-source .item-controls {
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+}
+
+.horizonless .spell-list-section .spell-signature-source .item-control {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.horizonless .spell-list-section .spell-heighten-select {
+  min-width: 11.5rem;
+}
+
+.horizonless .items-list .item-controls a {
+  margin: 0 6px;
+  font-size: 12px;
+}
+
+.horizonless .items-list .item {
+  align-items: center;
+  padding: 0 2px;
+  border-bottom: 1px solid #c9c7b8;
+}
+
+.horizonless .items-list .item:last-child {
+  border-bottom: 0;
+}
+
+.horizonless .items-list .item .item-name {
+  color: #191813;
+}
+
+.horizonless .items-list .item .item-name .item-image {
+  flex: 0 0 30px;
+  height: 30px;
+  margin-right: 5px;
+  border: 0;
+  background-size: 30px;
+}
+
+.horizonless :is(.items-list .item-prop, .effects .item .effect-source, .effects .item .effect-duration, .effects .item .effect-controls) {
+  border-inline: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+
+.horizonless .effects .item .effect-controls {
+  border: 0;
+}
+
+.horizonless .item-formula {
+  flex: 0 0 200px;
+}
+
+/* Actor sheet palette derived from the spell chat theme. */
+.horizonless.actor {
+  --hz-sheet-surface-soft: color-mix(in srgb, var(--hz-color-surface) 48%, transparent);
+  --hz-sheet-surface-strong: color-mix(in srgb, var(--hz-color-surface) 72%, transparent);
+  --hz-sheet-primary-soft: color-mix(in srgb, var(--hz-color-primary) 16%, transparent);
+  --hz-sheet-primary-strong: color-mix(in srgb, var(--hz-color-primary) 28%, transparent);
+  --hz-sheet-primary-hover: color-mix(in srgb, var(--hz-color-primary-strong) 18%, transparent);
+  --hz-sheet-accent-soft: color-mix(in srgb, var(--hz-color-accent) 12%, transparent);
+  --hz-sheet-accent-mid: color-mix(in srgb, var(--hz-color-accent) 22%, transparent);
+  --hz-sheet-accent-strong: color-mix(in srgb, var(--hz-color-accent) 38%, transparent);
+  --hz-sheet-stroke-soft: color-mix(in srgb, var(--hz-color-stroke-on-surface) 32%, transparent);
+  --hz-sheet-stroke-strong: color-mix(in srgb, var(--hz-color-accent) 48%, transparent);
+  --hz-sheet-text: var(--hz-color-text-on-surface);
+  --hz-sheet-heading: var(--hz-color-accent);
+  --hz-sheet-link: var(--hz-color-primary-strong);
+  --hz-sheet-label: var(--hz-color-primary-strong);
+  color: var(--hz-sheet-text);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--hz-color-surface) 78%, transparent), color-mix(in srgb, var(--hz-color-primary) 16%, transparent));
+}
+
+.horizonless.actor a {
+  color: var(--hz-sheet-link);
+}
+
+.horizonless.actor .rollable:is(:hover, :focus) {
+  color: var(--hz-sheet-heading);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--hz-color-primary) 55%, transparent);
+}
+
+.horizonless.actor :is(.sheet-header, .character-header) {
+  padding: 12px;
+  border: 1px solid var(--hz-sheet-stroke-soft);
+  background: linear-gradient(180deg, var(--hz-sheet-surface-strong), var(--hz-sheet-surface-soft));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--hz-color-primary) 12%, transparent);
+}
+
+.horizonless.actor .character-header {
+  padding: 8px;
+}
+
+.horizonless.actor :is(.sheet-header .profile-img, .character-header .character-portrait) {
+  border: 1px solid var(--hz-sheet-stroke-strong);
+  background: var(--hz-sheet-primary-soft);
+}
+
+.horizonless.actor .character-header .character-name input {
+  font-size: 1.8rem;
+  line-height: 1.1;
+}
+
+.horizonless.actor .character-header .resource-card {
+  padding: 5px 8px;
+}
+
+.horizonless.actor .character-header :is(input[type="text"], input[type="number"], select) {
+  min-height: 28px;
+}
+
+.horizonless.actor :is(.sheet-header h1.charname input, .character-header h1.character-name input),
+.horizonless.actor :is(input[type="text"], input[type="number"], select, textarea) {
+  color: var(--hz-sheet-text);
+  border: 1px solid var(--hz-sheet-stroke-soft);
+  background: var(--hz-sheet-surface-strong);
+}
+
+.horizonless.actor :is(input[type="text"], input[type="number"], select, textarea)::placeholder {
+  color: color-mix(in srgb, var(--hz-color-text-on-surface) 58%, transparent);
+}
+
+.horizonless.actor :is(input[type="text"], input[type="number"], select, textarea):focus {
+  border-color: var(--hz-sheet-label);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--hz-color-primary-strong) 34%, transparent);
+  outline: none;
+}
+
+.horizonless.actor input[type="checkbox"] {
+  accent-color: var(--hz-color-primary-strong);
+}
+
+.horizonless.actor .tabs {
+  gap: 4px;
+  padding: 4px 0;
+  border-top: 1px solid var(--hz-sheet-stroke-soft);
+  border-bottom: 1px solid var(--hz-sheet-stroke-soft);
+}
+
+.horizonless.actor .tabs .item {
+  padding: 0 10px;
+  color: var(--hz-sheet-label);
+  border: 1px solid transparent;
+  background: var(--hz-sheet-primary-soft);
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.horizonless.actor .tabs .item:hover {
+  background: var(--hz-sheet-primary-strong);
+}
+
+.horizonless.actor .tabs .item.active {
+  color: var(--hz-sheet-heading);
+  text-decoration: none;
+  border-color: var(--hz-sheet-accent-mid);
+  background: var(--hz-sheet-surface-strong);
+}
+
+.horizonless.actor :is(.resource, .resource-card) {
+  padding: 8px 10px;
+  border: 1px solid var(--hz-sheet-stroke-soft);
+  border-radius: 6px;
+  background: var(--hz-sheet-surface-soft);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--hz-color-surface) 10%, transparent);
+}
+
+.horizonless.actor :is(.resource-label, .stat-label) {
+  color: var(--hz-sheet-label);
+}
+
+.horizonless.actor :is(.ability-table, .abilities-table) {
+  border: 1px solid var(--hz-sheet-stroke-soft);
+  background: var(--hz-sheet-surface-soft);
+}
+
+.horizonless.actor :is(.ability-table, .abilities-table) :is(th, td) {
+  border-bottom-color: var(--hz-sheet-stroke-soft);
+}
+
+.horizonless.actor :is(.ability-table, .abilities-table) thead th {
+  color: var(--hz-sheet-label);
+  background: var(--hz-sheet-primary-soft);
+}
+
+.horizonless.actor :is(.damage-buffer-add, .damage-buffer-remove),
+.horizonless.actor .trades-section .task-control {
+  color: var(--hz-sheet-text);
+  background: var(--hz-sheet-primary-soft);
+  border-color: var(--hz-sheet-accent-mid);
+}
+
+.horizonless.actor .guard-toggle {
+  color: var(--hz-item-chat-accent);
+  border: 1px solid var(--hz-sheet-accent-mid);
+  background: var(--hz-sheet-primary-soft);
+}
+
+.horizonless.actor .guard-toggle:hover {
+  background: var(--hz-sheet-primary-hover);
+}
+
+.horizonless.actor :is(.damage-buffer-add, .damage-buffer-remove):hover,
+.horizonless.actor .trades-section .task-control:hover {
+  background: var(--hz-sheet-primary-hover);
+}
+
+.horizonless.actor .trades-section .trade-section-heading {
+  color: var(--hz-sheet-heading);
+  border: 1px solid var(--hz-sheet-stroke-soft);
+  background: linear-gradient(90deg, var(--hz-sheet-primary-soft), color-mix(in srgb, var(--hz-color-surface) 26%, transparent));
+}
+
+.horizonless.actor .trades-section .trade-card {
+  border-color: var(--hz-sheet-stroke-soft);
+  background: var(--hz-sheet-surface-soft);
+}
+
+.horizonless.actor .trades-section .trade-task-row {
+  border-color: var(--hz-sheet-accent-soft);
+  background: color-mix(in srgb, var(--hz-color-primary) 10%, transparent);
+}
+
+.horizonless.actor :is(.items-header, .items-list .items-header) {
+  background: var(--hz-sheet-primary-soft);
+  border: 1px solid var(--hz-sheet-stroke-soft);
+}
+
+.horizonless.actor .items-list {
+  color: var(--hz-sheet-text);
+}
+
+.horizonless.actor .items-list .item {
+  border-bottom-color: var(--hz-sheet-stroke-soft);
+}
+
+.horizonless.actor .items-list .item .item-name {
+  color: var(--hz-sheet-text);
+}
+
+.horizonless.actor :is(.items-list .item-prop, .effects .item .effect-source, .effects .item .effect-duration, .effects .item .effect-controls) {
+  border-inline-color: var(--hz-sheet-stroke-soft);
+}
+
+.horizonless.actor :is(.editor, .editor-content, .ProseMirror) {
+  color: var(--hz-sheet-text);
+  background: color-mix(in srgb, var(--hz-color-surface) 38%, transparent);
+}
+
+.horizonless .classes-level-grid {
+  grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
+  align-items: start;
+  justify-content: start;
+  gap: 8px;
+}
+
+.horizonless .class-level-card {
+  width: 120px;
+  min-width: 120px;
+  gap: 6px;
+  padding: 6px;
+}
+
+.horizonless .class-level-card input[type="number"],
+.horizonless .class-level-card input[type="text"] {
+  width: 100%;
+  max-width: 72px;
+  min-height: 28px;
+  margin: 0 auto;
+  text-align: center;
+}
