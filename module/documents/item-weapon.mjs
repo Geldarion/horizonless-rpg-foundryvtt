@@ -9,6 +9,7 @@ import {
 import { prepareEnrichedChatContent } from '../helpers/chat.mjs';
 import { markChatMessageWrapper } from '../helpers/chat-dom.mjs';
 import { normalizeCurioChatDescription } from '../helpers/compendium-normalization.mjs';
+import { FightingStyle } from '../data/enums.mjs';
 
 const { DialogV2 } = foundry.applications.api;
 const renderTemplate = foundry.applications.handlebars.renderTemplate;
@@ -237,10 +238,28 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
     return 'str';
   }
 
+  _getWeaponMartialDieFormula() {
+    const martialDie = String(this.actor?.system?.martialDie ?? '').trim();
+    if (!martialDie) return '0';
+
+    const normalizedFightingStyle = String(this.system?.fightingStyle ?? '').trim();
+    if (normalizedFightingStyle !== FightingStyle.HEAVY) return martialDie;
+
+    const match = martialDie.match(/^(\d+)d(\d+)$/i);
+    if (!match) return martialDie;
+
+    const dieCount = Number(match[1]);
+    const dieSize = Number(match[2]);
+    if (!Number.isInteger(dieCount) || dieCount <= 0 || !Number.isInteger(dieSize) || dieSize <= 0) {
+      return martialDie;
+    }
+
+    return `${dieCount * 2}d${dieSize}`;
+  }
+
   _getWeaponDamageFormula() {
     const attackAbility = this._getAttackAbilityForWeaponRoll();
-    const martialDie = String(this.actor?.system?.martialDie ?? '').trim();
-    const base = martialDie || '0';
+    const base = this._getWeaponMartialDieFormula();
     return `${base}+@${attackAbility}.mod+@tierBonus`;
   }
 
