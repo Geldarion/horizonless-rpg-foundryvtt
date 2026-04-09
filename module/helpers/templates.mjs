@@ -20,7 +20,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/horizonless/templates/actor/parts/actor-ancestries.hbs',
     'systems/horizonless/templates/actor/parts/actor-items.hbs',
     'systems/horizonless/templates/actor/parts/actor-spells.hbs',
-    'systems/horizonless/templates/actor/parts/actor-manuevers.hbs',
+    'systems/horizonless/templates/actor/parts/actor-maneuvers.hbs',
     'systems/horizonless/templates/actor/parts/actor-trades.hbs',
     'systems/horizonless/templates/actor/parts/actor-effects.hbs',
     // Item sheet templates.
@@ -33,7 +33,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/horizonless/templates/item/item-feature-sheet.hbs',
     'systems/horizonless/templates/item/item-class-feature-sheet.hbs',
     'systems/horizonless/templates/item/item-spell-sheet.hbs',
-    'systems/horizonless/templates/item/item-manuever-sheet.hbs',
+    'systems/horizonless/templates/item/item-maneuver-sheet.hbs',
     // Item partials
     'systems/horizonless/templates/item/parts/item-effects.hbs',
     // Chat/message templates
@@ -45,8 +45,8 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/horizonless/module/messages/item/weapon-damage-roll-button.hbs',
     'systems/horizonless/module/messages/item/weapon-apply-damage-button.hbs',
     'systems/horizonless/module/messages/item/weapon-apply-damage-applied.hbs',
-    'systems/horizonless/module/messages/manuevers/chat-content.hbs',
-    'systems/horizonless/module/messages/manuevers/roll-flavor-suffix.hbs',
+    'systems/horizonless/module/messages/maneuvers/chat-content.hbs',
+    'systems/horizonless/module/messages/maneuvers/roll-flavor-suffix.hbs',
     'systems/horizonless/module/messages/spells/spell-chat.hbs',
     'systems/horizonless/module/messages/spells/spell-roll-flavor.hbs',
     'systems/horizonless/module/messages/spells/heightening-note.hbs',

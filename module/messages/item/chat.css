@@ -170,11 +170,11 @@
   color: var(--hz-item-chat-stroke);
 }
 
-.horizonless-manuever-flavor {
+.horizonless-maneuver-flavor {
   color: var(--hz-item-chat-stroke);
 }
 
-.horizonless-manuever-requirements-met strong {
+.horizonless-maneuver-requirements-met strong {
   color: var(--hz-item-chat-accent);
 }
 

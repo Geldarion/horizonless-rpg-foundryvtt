@@ -1,6 +1,6 @@
 import { HorizonlessWeaponItem } from './item-weapon.mjs';
 import { HorizonlessSpellItem } from './item-spell.mjs';
-import { HorizonlessManueverItem } from './item-manuever.mjs';
+import { HorizonlessManeuverItem } from './item-maneuver.mjs';
 
 /**
  * Public Item document class used by system registration.
@@ -28,19 +28,19 @@ export class HorizonlessItem extends HorizonlessWeaponItem {
   }
 
   _parseAdvancementRequirement(requirement) {
-    return HorizonlessManueverItem.prototype._parseAdvancementRequirement.call(this, requirement);
+    return HorizonlessManeuverItem.prototype._parseAdvancementRequirement.call(this, requirement);
   }
 
-  _getMetManueverAdvancements() {
-    return HorizonlessManueverItem.prototype._getMetManueverAdvancements.call(this);
+  _getMetManeuverAdvancements() {
+    return HorizonlessManeuverItem.prototype._getMetManeuverAdvancements.call(this);
   }
 
-  _buildManueverChatContent(baseContent = '') {
-    return HorizonlessManueverItem.prototype._buildManueverChatContent.call(this, baseContent);
+  _buildManeuverChatContent(baseContent = '') {
+    return HorizonlessManeuverItem.prototype._buildManeuverChatContent.call(this, baseContent);
   }
 
-  async _buildManueverRollFlavorSuffix() {
-    return HorizonlessManueverItem.prototype._buildManueverRollFlavorSuffix.call(this);
+  async _buildManeuverRollFlavorSuffix() {
+    return HorizonlessManeuverItem.prototype._buildManeuverRollFlavorSuffix.call(this);
   }
 
   _setPendingHeighteningSelections(selections) {

@@ -1,13 +1,13 @@
 {{#if flavor}}
-<p class="horizonless-manuever-flavor"><em>{{flavor}}</em></p>
+<p class="horizonless-maneuver-flavor"><em>{{flavor}}</em></p>
 {{/if}}
 {{{baseContentHtml}}}
 {{#if hasAdvancements}}
 <hr>
-<div class="horizonless-manuever-requirements-met">
+<div class="horizonless-maneuver-requirements-met">
   {{#each advancements}}
     {{#if requirement}}
-      <p><strong>{{requirement}}</strong> requirement met for {{../manueverName}}.</p>
+      <p><strong>{{requirement}}</strong> requirement met for {{../maneuverName}}.</p>
     {{/if}}
     {{{textHtml}}}
     {{#unless @last}}<hr>{{/unless}}

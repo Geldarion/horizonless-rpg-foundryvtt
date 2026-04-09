@@ -12,7 +12,7 @@ export const ItemType = Object.freeze({
   FEATURE: "feature",
   CLASS_FEATURE: "class-feature",
   SPELL: "spell",
-  MANUEVER: "manuever"
+  MANEUVER: "maneuver"
 });
 
 export const NPCType = Object.freeze({

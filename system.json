@@ -64,9 +64,9 @@
       "system": "horizonless"
     },
     {
-      "name": "manuevers",
-      "label": "Manuevers",
-      "path": "packs/manuevers.db",
+      "name": "maneuvers",
+      "label": "Maneuvers",
+      "path": "packs/maneuvers.db",
       "type": "Item",
       "system": "horizonless"
     },

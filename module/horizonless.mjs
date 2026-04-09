@@ -95,7 +95,7 @@ Hooks.once('init', function () {
     [ItemType.FEATURE]: models.HorizonlessFeature,
     [ItemType.CLASS_FEATURE]: models.HorizonlessClassFeature,
     [ItemType.SPELL]: models.HorizonlessSpell,
-    [ItemType.MANUEVER]: models.HorizonlessManuever
+    [ItemType.MANEUVER]: models.HorizonlessManeuver
   }
 
   CONFIG.Combat.documentClass = HorizonlessCombat;
@@ -141,7 +141,7 @@ Hooks.once('init', function () {
       ItemType.FEATURE,
       ItemType.CLASS_FEATURE,
       ItemType.SPELL,
-      ItemType.MANUEVER,
+      ItemType.MANEUVER,
     ],
     label: 'HORIZONLESS_RPG.SheetLabels.Item',
   });

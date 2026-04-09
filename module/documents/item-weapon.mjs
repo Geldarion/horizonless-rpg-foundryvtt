@@ -366,8 +366,8 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
         ? this._normalizeCurioChatDescription(item.system.description ?? '')
         : (item.system.description ?? '');
       const baseContent = await this._prepareChatContent(rawDescription);
-      const itemContent = this.type === 'manuever'
-        ? await this._buildManueverChatContent(baseContent)
+      const itemContent = this.type === 'maneuver'
+        ? await this._buildManeuverChatContent(baseContent)
         : baseContent;
       const curioFlavor = this.type === 'curio'
         ? String(this.system?.flavor ?? '').trim()
@@ -409,8 +409,8 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
     await roll.evaluate();
 
     let flavor = label;
-    if (this.type === 'manuever') {
-      flavor = `${flavor}${await this._buildManueverRollFlavorSuffix()}`;
+    if (this.type === 'maneuver') {
+      flavor = `${flavor}${await this._buildManeuverRollFlavorSuffix()}`;
     }
     let targetTokenUuids = [];
     if (this.type === 'weapon') {
@@ -473,7 +473,7 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
 
     flavor = await this._renderItemMessageTemplate(ITEM_MESSAGE_TEMPLATES.rollFlavor, {
       flavorHtml: flavor,
-      wrapInChatCard: this.type === 'manuever',
+      wrapInChatCard: this.type === 'maneuver',
     });
 
     roll.toMessage({

@@ -1,0 +1,12 @@
+{{#if hasContent}}
+<hr>
+{{#if flavor}}
+<div class="horizonless-maneuver-flavor"><em>{{flavor}}</em></div>
+{{/if}}
+{{#if hasRequirements}}
+<hr>
+{{#each requirements}}
+<div><strong>{{this}}</strong> requirement met for {{../maneuverName}}.</div>
+{{/each}}
+{{/if}}
+{{/if}}

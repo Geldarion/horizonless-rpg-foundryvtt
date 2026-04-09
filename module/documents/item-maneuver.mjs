@@ -2,12 +2,12 @@ import { HorizonlessBaseItem } from './item-base.mjs';
 
 const renderTemplate = foundry.applications.handlebars.renderTemplate;
 
-const MANUEVER_MESSAGE_TEMPLATES = {
-  chatContent: 'systems/horizonless/module/messages/manuevers/chat-content.hbs',
-  rollFlavorSuffix: 'systems/horizonless/module/messages/manuevers/roll-flavor-suffix.hbs',
+const MANEUVER_MESSAGE_TEMPLATES = {
+  chatContent: 'systems/horizonless/module/messages/maneuvers/chat-content.hbs',
+  rollFlavorSuffix: 'systems/horizonless/module/messages/maneuvers/roll-flavor-suffix.hbs',
 };
 
-export class HorizonlessManueverItem extends HorizonlessBaseItem {
+export class HorizonlessManeuverItem extends HorizonlessBaseItem {
   _parseAdvancementRequirement(requirement) {
     const rawRequirement = String(requirement ?? '').trim();
     if (!rawRequirement) return null;
@@ -27,8 +27,8 @@ export class HorizonlessManueverItem extends HorizonlessBaseItem {
     };
   }
 
-  _getMetManueverAdvancements() {
-    if (this.type !== 'manuever') return [];
+  _getMetManeuverAdvancements() {
+    if (this.type !== 'maneuver') return [];
     if (!this.actor) return [];
 
     const actorAbilities = this.actor.system?.abilities ?? {};
@@ -49,10 +49,10 @@ export class HorizonlessManueverItem extends HorizonlessBaseItem {
     });
   }
 
-  async _buildManueverChatContent(baseContent = '') {
+  async _buildManeuverChatContent(baseContent = '') {
     const flavorText = String(this.system?.flavor ?? '').trim();
-    const manueverName = String(this.name ?? 'This maneuver').trim() || 'This maneuver';
-    const metAdvancements = this._getMetManueverAdvancements();
+    const maneuverName = String(this.name ?? 'This maneuver').trim() || 'This maneuver';
+    const metAdvancements = this._getMetManeuverAdvancements();
     let advancements = [];
 
     if (metAdvancements.length > 0) {
@@ -71,29 +71,29 @@ export class HorizonlessManueverItem extends HorizonlessBaseItem {
       );
     }
 
-    return renderTemplate(MANUEVER_MESSAGE_TEMPLATES.chatContent, {
+    return renderTemplate(MANEUVER_MESSAGE_TEMPLATES.chatContent, {
       flavor: flavorText,
       baseContentHtml: baseContent,
-      manueverName,
+      maneuverName,
       hasAdvancements: advancements.length > 0,
       advancements,
     });
   }
 
-  async _buildManueverRollFlavorSuffix() {
-    if (this.type !== 'manuever') return '';
+  async _buildManeuverRollFlavorSuffix() {
+    if (this.type !== 'maneuver') return '';
 
     const flavorText = String(this.system?.flavor ?? '').trim();
-    const manueverName = String(this.name ?? 'This maneuver').trim() || 'This maneuver';
+    const maneuverName = String(this.name ?? 'This maneuver').trim() || 'This maneuver';
 
-    const metAdvancements = this._getMetManueverAdvancements();
+    const metAdvancements = this._getMetManeuverAdvancements();
     const requirements = metAdvancements
       .map((advancement) => String(advancement?.requirement ?? '').trim())
       .filter((requirement) => requirement.length > 0);
 
-    return renderTemplate(MANUEVER_MESSAGE_TEMPLATES.rollFlavorSuffix, {
+    return renderTemplate(MANEUVER_MESSAGE_TEMPLATES.rollFlavorSuffix, {
       flavor: flavorText,
-      manueverName,
+      maneuverName,
       hasRequirements: requirements.length > 0,
       requirements,
       hasContent: Boolean(flavorText) || requirements.length > 0,

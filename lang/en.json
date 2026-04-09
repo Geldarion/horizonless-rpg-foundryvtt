@@ -13,7 +13,7 @@
       "Item": "Horizonless Item Sheet",
       "Armor": "Horizonless Armor Sheet",
       "Weapon": "Horizonless Weapon Sheet",
-      "Manuever": "Horizonless Manuever Sheet"
+      "Maneuver": "Horizonless Maneuver Sheet"
     },
     "Item": {
       "Spell": {
@@ -21,8 +21,8 @@
         "AddCircle": "Add Circle {circle}",
         "Cantrip": "Cantrip"
       },
-      "Manuever": {
-        "Create": "Add Manuever"
+      "Maneuver": {
+        "Create": "Add Maneuver"
       }
     },
     "Effect": {
@@ -56,7 +56,7 @@
       "weapon": "Weapon",
       "feature": "Feature",
       "spell": "Spell",
-      "manuever": "Manuever"
+      "maneuver": "Maneuver"
     }
   }
 }

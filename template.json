@@ -3,6 +3,6 @@
     "types": ["character", "npc"]
   },
   "Item": {
-    "types": ["item", "armor", "weapon", "curio", "feature", "class-feature", "spell", "manuever"]
+    "types": ["item", "armor", "weapon", "curio", "feature", "class-feature", "spell", "maneuver"]
   }
 }

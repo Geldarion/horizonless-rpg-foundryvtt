@@ -21,8 +21,8 @@ const PACKS = Object.freeze([
     script: "build-class-feature-compendium.mjs"
   },
   {
-    name: "manuevers",
-    script: "build-manuever-compendium.mjs"
+    name: "maneuvers",
+    script: "build-maneuver-compendium.mjs"
   },
   {
     name: "curios",

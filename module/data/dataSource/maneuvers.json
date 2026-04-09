@@ -1,7 +1,7 @@
 [
   {
     "name": "Acrobatics",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Falling is a natural part of gymnastics.",
     "description": "You are able to take the **Handspring** and **Tuck and Roll** reactions described below:\n\n* **Handspring.** As a reaction, when you cease being prone, you may travel up to half your Speed.\n* **Tuck and Roll.** As a reaction, when you are dealt falling damage, you may halve the damage taken and travel up to half your Speed.",
     "repitition penalty": "The distance traveled taking either reaction becomes 5 feet.",
@@ -19,7 +19,7 @@
   },
   {
     "name": "Back to Back",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "No matter the odds, you've got each other's back.",
     "description": "As an action, if an ally within 5 feet of you is willing, both you and the ally become *back-to-back partners* to each other. Back-to-back partners remain so until they are further than 5 feet from each other. Back-to-back partners gain the following benefits:\n\n* **Guarded.** You gain your Half Guard AC.\n\n* **Together.** As a reaction, after your back-to-back partner is attacked, you may swap places with your back-to-back partner and make a light melee weapon attack against the attacker.",
     "repitition penalty": "Back-to-back partners from this maneuver do not gain the **Guarded** benefit.",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Body Block",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Heroically thrown into harm's way.",
     "description": "When you are targeted by an attack and you have a creature grappled, you may take a reaction to swap places with the creature you have grappled and cause the attack to target the grappled creature instead.\n\nDamage dealt by attacks retargeted by **Body Block** is halved.",
     "repitition penalty": "The creature becomes no longer grappled afterwards.",
@@ -59,7 +59,7 @@
   },
   {
     "name": "Bull Rush",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Take the fight with you wherever you go.",
     "description": "When you succeed on a Grapple check, you may perform this maneuver once per turn. If you do, once during this turn as a free action, you may travel up to your Speed.",
     "repitition penalty": "The distance you travel is halved.",
@@ -77,7 +77,7 @@
   },
   {
     "name": "Clash",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Their offense set on a collision course with yours.",
     "description": "As an action while using a melee fighting style, you prepare to *clash* against the first melee weapon attack made against you before the start of your next turn. When you clash, you make a special melee attack using your STR or DEX:\n\n* **Push Back.** If your clash special attack check's total meets or exceeds the incoming attack check's total, the incoming attack misses.\n* **Press Forward.** If your clash special attack check's total is greater than the incoming attack check's total by 5 or more, the incoming attack misses and you may immediately make a melee weapon attack against the attacker.\n\nIf your clash special attack scores a critical hit, **Press Forward** occurs regardless of the total unless the incoming attack was also a critical hit.",
     "repitition penalty": "You incur disadvantage on the clash special attack check.",
@@ -99,7 +99,7 @@
   },
   {
     "name": "Collateral Shot",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "A precise, powerful shot punches through anything that dares stand in its way.",
     "description": "If the attack is a ranged weapon attack and the damage dealt causes a creature or object to either die, be knocked out, burn a Resolve, or break, the attack's targeting path is extended past the subject up to your fighting style's attack range until it intersects with a new one. If so, half of the damage dealt is dealt again to this new subject.\n\nIf the damage dealt to the new subject would activate **Collateral Shot**, you may repeat its effect, halving the damage dealt each time, though it may not affect subjects further than your fighting style's attack range.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -117,7 +117,7 @@
   },
   {
     "name": "Concussive Shock",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "Rung like a bell.",
     "description": "On a hit, if the attack is a melee weapon attack and the target is staggered, they become disoriented until the end of the current turn.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -131,7 +131,7 @@
   },
   {
     "name": "Counterweighted Stance",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Expertly balanced to really go the distance.",
     "description": "As an action, if you are using the Long fighting style, the range of your melee weapon attacks are increased by 5 feet until the end of combat or until you cease using the Long fighting style.",
     "repitition penalty": "You may not use this maneuver's listed advancements.",
@@ -149,7 +149,7 @@
   },
   {
     "name": "Create Door",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Walls are discouragements you can soundly ignore.",
     "description": "As an action, you may travel up to your Speed. During this movement, you may take one free Wreck an Object action against an obstruction in the path of your travel.",
     "repitition penalty": "The distance you travel is halved.",
@@ -167,7 +167,7 @@
   },
   {
     "name": "Curve Trajectory",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "The fletching catches the wind in just the right way to reach its mark.",
     "description": "If the attack is a ranged weapon attack, its targeting path may be bent at one point up to 90 degrees.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -185,7 +185,7 @@
   },
   {
     "name": "Dagger Dance",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "There are more knives on your person than thought possible.",
     "description": "As an action, you may add half your Speed to your movement pool and gain *dagger dance* until the end of combat. While you have dagger dance, retrieving a weapon suitable for throwing is a free action.",
     "repitition penalty": "None",
@@ -203,7 +203,7 @@
   },
   {
     "name": "Danger Dive",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "We win together and we lose together.",
     "description": "As a reaction, when a target willing ally within your Reach makes a saving throw, you may add your Martial Die to the total.\n\nIf an ally fails a saving throw benefitting from your **Danger Dive**, you are also affected by any effects that occur from a failure.",
     "repitition penalty": "Afterwards, you and your target ally fall prone.",
@@ -221,7 +221,7 @@
   },
   {
     "name": "Death from Above",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "A powerful plunge.",
     "description": "If the attack is a melee weapon attack and is made during or immediately after falling further than 20 feet, the falling damage you take is halved, the attack check gains advantage, and the attack check's critical hit threshold is reduced by 2\\.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -243,7 +243,7 @@
   },
   {
     "name": "Devastating Blow",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "You really throw your weight into this one.",
     "description": "If the attack is made while using the Heavy fighting style, it gains the following properties:\n\n* **Wind Up.** The attack check's total is reduced by 3\\.\n\n* **Tear Down.** On a hit, the outcomes of all of your Martial Die rolled for the attack's damage roll are their maximum value.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -261,7 +261,7 @@
   },
   {
     "name": "Disarm",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Let go of those violent urges.",
     "description": "As an action, if you have a creature grappled with no Resolve remaining, you may force that creature to drop everything they are holding.",
     "repitition penalty": "The creature must also be restrained by you to perform this maneuver.",
@@ -279,7 +279,7 @@
   },
   {
     "name": "Drop Shot",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "The perfect shot requires perfect timing.",
     "description": "If a ranged attack is made by a subject other than you, whose targeting path intersects with a space you occupy, you may take a free action to fall prone and grant the attack check advantage.",
     "repitition penalty": "The attack check no longer gains advantage and no advancements take effect.",
@@ -297,7 +297,7 @@
   },
   {
     "name": "Enveloppement",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "\"Taking the steel\" is sometimes literal.",
     "description": "When you use the **Offhand Attack** trait of the Dual Wielding fighting style, you may replace the light weapon attack with a melee special attack using your STR or DEX against a target within your Reach. On a hit against a target with no Resolve remaining, the target must drop an object they are holding of your choosing.",
     "repitition penalty": "You incur disadvantage on the special attack check.",
@@ -315,7 +315,7 @@
   },
   {
     "name": "Eviscerate",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "When the opponent isn't ready for it, you know how to make it quick.",
     "description": "If the target is staggered, the attack's critical hit threshold is reduced by 2\\.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -333,7 +333,7 @@
   },
   {
     "name": "Explosive Entrance",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Kick down doors first, ask questions later.",
     "description": "If you make an Initiate check, your combat team is not ambushed, and you enter the combat with a loud and bombastic entrance (such as kicking down a door), you may add your Martial Die to your Initiate check's total.",
     "repitition penalty": "None",
@@ -351,7 +351,7 @@
   },
   {
     "name": "Fastball Special",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Who needs range when you've got your best friends around you",
     "description": "When you take the Throw action, you may act as if a target willing ally within your Reach was grappled by you and throw them instead. If you do, the distance thrown is doubled.",
     "repitition penalty": "The distance thrown is not doubled by this maneuver and the STR advancement does not occur.",
@@ -369,7 +369,7 @@
   },
   {
     "name": "Finisher",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "End of the line.",
     "description": "If the target has no Resolve remaining, the attack's critical hit threshold is reduced by 2\\. If the attack scores a critical hit, dice rolled for the damage roll is tripled rather than doubled.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -387,7 +387,7 @@
   },
   {
     "name": "Flanking Assault",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Attack from all angles, all at once.",
     "description": "If a hostile creature is between you and your initiative partner, each of you may take an action to make a light melee weapon attack against the creature. If both attacks hit, the target becomes staggered.",
     "repitition penalty": "Both attack checks incur disadvantage.",
@@ -405,7 +405,7 @@
   },
   {
     "name": "Fling",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Keeping them at arm's length is nowhere close to enough.",
     "description": "When you take the Throw action or throw a creature into another creature as an attack, you may double the distance thrown.",
     "repitition penalty": "The distance thrown is instead increased by 5 feet.",
@@ -423,7 +423,7 @@
   },
   {
     "name": "Goading Remark",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Is that really the best you can do",
     "description": "As an action, you may cause a target creature within 30 feet of you to make a **Courage** saving throw. On a failure, the target is provoked by you until they hit you with an attack or until combat ends.",
     "repitition penalty": "The target gains advantage on the **Courage** saving throw.",
@@ -441,7 +441,7 @@
   },
   {
     "name": "Hooking Trip",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Hook, line, and sinker.",
     "description": "When you take the Trip action while using the Long fighting style, you may act as if your Reach was your weapon attack range for the action.",
     "repitition penalty": "You incur disadvantage on the Trip check.",
@@ -455,7 +455,7 @@
   },
   {
     "name": "Intercept",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "With quick reflexes, you step in to bat away an attack with your shield.",
     "description": "As a reaction, while you are gaining the benefits of the Raise Shield action and an ally within your Reach is targeted by a melee attack, you may force the attack to target you instead.\n\nAttacks retargeted by **Intercept** allow the attacker to treat you as being at the ally's location for the attack.",
     "repitition penalty": "After performing this maneuver, you cease gaining the benefits of the Raise Shield action.",
@@ -473,7 +473,7 @@
   },
   {
     "name": "Long Shot",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "Past the rolling hills and beyond the valley, your aim holds true.",
     "description": "If the attack is a ranged weapon attack, the attack ignores the disadvantage imposed by attacking at long range.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -491,7 +491,7 @@
   },
   {
     "name": "Menacing",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Your display of martial prowess dovetails into a strikingly menacing pose.",
     "description": "As an action, you may cause a target creature within 30 feet of you to make a **Courage** saving throw. On a failure, an affected creature is frightened of you for 10 minutes. While frightened by this maneuver, a creature may retry the saving throw at the end of each of its turns, ending the effect on a success.",
     "repitition penalty": "An affected creature gains advantage on the initial **Courage** saving throw.",
@@ -513,7 +513,7 @@
   },
   {
     "name": "Overpower",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "An unprepared foe is easily bested.",
     "description": "If you take the Grapple action, the target is staggered, and the target is one Size category larger than you or smaller, you may remove the condition to automatically succeed on the Grapple check.",
     "repitition penalty": "Rather than automatically succeeding, you instead gain advantage on the Grapple check.",
@@ -527,7 +527,7 @@
   },
   {
     "name": "Parry",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "A flash of steel separates you from harm.",
     "description": "When a melee weapon attack is made against you while using the Dual Wielding, Improvised, Solitary, or Unarmed fighting styles, you may take a reaction to gain your Full Guard AC for the attack.",
     "repitition penalty": "You instead gain your Half Guard AC if you do not already have it.",
@@ -549,7 +549,7 @@
   },
   {
     "name": "Pierce",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "This. Is. Going. To. HIT.",
     "description": "If the target is staggered, their AC is reduced to their Base AC for the attack.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -567,7 +567,7 @@
   },
   {
     "name": "Point Blank",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "Arguably the easiest to line up.",
     "description": "If you are using either the Loading Ranged, Skirmisher, or Thrown fighting styles and the attack is a ranged weapon attack, you ignore the disadvantage on ranged attacks imposed by a hostile creature being able to target you with a melee weapon attack.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -585,7 +585,7 @@
   },
   {
     "name": "Pressure Point",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Suddenly, it hits them.",
     "description": "When you make an Analyze check, if you are able to take the Stagger action against the target of the Analyze check, you may immediately do so as a free action.",
     "repitition penalty": "You incur disadvantage on both the Analyze check and the Stagger attack check.",
@@ -603,7 +603,7 @@
   },
   {
     "name": "Priming Shot",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "A grazing blow to create an opening.",
     "description": "When you take the Stagger action while using a ranged fighting style, you may extend the range of the Stagger attack to the range of your fighting style weapon attacks. If you do this while using the Loading Ranged fighting style, this unloads the weapon.",
     "repitition penalty": "The Stagger attack check incurs disadvantage.",
@@ -617,7 +617,7 @@
   },
   {
     "name": "Quick Fix",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Walk it off.",
     "description": "As an action, you may grant a target creature within your Reach other than you the following benefits:\n\n* The target **regains Xd4 \\+ X ST**, where X is your Tier Bonus.\n* If the target is affected by effects with the **Recoverable** or **Out of It** condition traits, such as being ablaze, prone, or unconscious, those effects end.",
     "repitition penalty": "The ST regained from this maneuver is halved.",
@@ -639,7 +639,7 @@
   },
   {
     "name": "Read and Repeat",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Predictable, every time.",
     "description": "As a reaction immediately after a creature or object you **perceive** misses an attack against you, you may take a free Dodge action.",
     "repitition penalty": "You are unable to perform this maneuver.",
@@ -657,7 +657,7 @@
   },
   {
     "name": "Sentinel Strike",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Even amidst the rapids of battle, you catch the currents.",
     "description": "While using a melee fighting style, when a creature or object travels into, out of, or through a space within the attack range of your fighting style, you may take a reaction to make a light melee weapon attack against the creature or object.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -679,7 +679,7 @@
   },
   {
     "name": "Shield Bash",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Offense and defense are just two sides of the same shield.",
     "description": "When you take the Raise Shield action, you may take a free Stagger action.",
     "repitition penalty": "Taking the Raise Shield action may only grant your Half Guard AC. You incur disadvantage on the Stagger attack check.",
@@ -693,7 +693,7 @@
   },
   {
     "name": "Speedload",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Like a well-oiled machine.",
     "description": "As a reaction during your turn, you may take a free Reload object interaction.",
     "repitition penalty": "You incur disadvantage on the next weapon attack check you make before the end of your next turn.",
@@ -707,7 +707,7 @@
   },
   {
     "name": "Strike Through",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "In the blink of an eye, you cut through the front line, spelling their demise with the sheathing of your blade.",
     "description": "While using the Solitary fighting style, you may take two actions to travel up to half your Speed to an unoccupied space and then make a melee weapon attack against each creature whose occupied space you traveled through. During this movement, you are able to travel through the spaces occupied by creatures of any Size and do so without treating those spaces as difficult terrain.",
     "repitition penalty": "All attack checks incur disadvantage.",
@@ -725,7 +725,7 @@
   },
   {
     "name": "Sundering Bolt",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "When the final hour strikes, there will be no tomorrow.",
     "description": "If you are using the Loading Ranged or Skirmisher fighting style, the attack is a ranged weapon attack, and it scores a critical hit, you may add all of the dice rolled in the damage roll an additional time (in the absence of other features, dice are tripled rather than doubled).",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -743,7 +743,7 @@
   },
   {
     "name": "Tackle",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Run into every problem head-first.",
     "description": "As an action, you may travel up to your Speed towards a target creature. If the target is within your Reach at the end of this movement, you may take a free Shove or Trip action against it.",
     "repitition penalty": "The distance you travel is halved.",
@@ -761,7 +761,7 @@
   },
   {
     "name": "Tactical Repositioning",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "You create a daring opening, allowing an ally to get into position.",
     "description": "As an action, if your initiative partner is within 30 feet of you, you may allow them to travel up to half their Speed.",
     "repitition penalty": "The distance traveled by this maneuver becomes 5 feet.",
@@ -779,7 +779,7 @@
   },
   {
     "name": "Thread the Needle",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "In a scarce collection of seconds you find the exact shot that counts.",
     "description": "If you are using the Basic Ranged fighting style, you may choose to take one, two, or no *drawing actions* immediately before making the attack. The attack gains benefits according to the number of drawing actions taken:\n\n* **No Drawing Actions.** The critical hit threshold is reduced by a total of 1\\.\n\n* **One Drawing Action.** The critical hit threshold is reduced by a total of 3\\.\n\n* **Two Drawing Actions.** The critical hit threshold is reduced by a total of 5\\.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -797,7 +797,7 @@
   },
   {
     "name": "Tie Them Up",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "Rope is optional but can help in situations where their skeleton doesn't allow for knots.",
     "description": "When you make a Pin check, you may perform this maneuver. Afterwards, creatures you currently have restrained by a successful Pin check no longer need to be grappled by you to remain restrained. Those creatures remain restrained until they succeed on an Escape check against you (they may take Escape actions as if they were still grappled by you).",
     "repitition penalty": "You incur disadvantage on the Pin check.",
@@ -815,7 +815,7 @@
   },
   {
     "name": "Under Pressure",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "When it comes to being in the right place at the right time, you are fashionably late.",
     "description": "When you take the Move action while you have no ST, you may add your Speed to your movement pool an additional time.",
     "repitition penalty": "The additional movement from this maneuver becomes 10 feet.",
@@ -833,7 +833,7 @@
   },
   {
     "name": "Volley",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "You pin down the enemy with a barrage of arrows.",
     "description": "As two actions, while using the Basic Ranged fighting style, you designate a 10 foot radius sphere originating from a target location within your fighting style's range that persists until the start of your next turn. Whenever a creature you can target is in the area for the first time since the start of your most recent turn, you may cause them to make a basic **Reflex** saving throw to resist **Xd8 damage**, where X is your Tier Bonus. The type of damage dealt matches what your weapon would deal.",
     "repitition penalty": "All affected creatures gain advantage on the **Reflex** saving throw imposed.",
@@ -855,7 +855,7 @@
   },
   {
     "name": "Wallop",
-    "manuever type": "Attack",
+    "maneuver type": "Attack",
     "flavor": "Push comes to shove.",
     "description": "On a hit, if the attack is a melee weapon attack and the target is staggered, you may either push them 5 feet away from you or cause them to fall prone.",
     "repitition penalty": "The attack check incurs disadvantage.",
@@ -873,7 +873,7 @@
   },
   {
     "name": "Whirlwind",
-    "manuever type": "Strategy",
+    "maneuver type": "Strategy",
     "flavor": "With blinding speed, you strike out at any and all unfortunate enough to find themselves near you.",
     "description": "You may take three actions to make up to eight melee weapon attacks. Each attack ignores weapon attack fatigue and must be against a different creature or object.",
     "repitition penalty": "All attack checks incur disadvantage.",

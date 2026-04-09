@@ -173,7 +173,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
             { id: 'description' },
             { id: 'items' },
             { id: 'spells' },
-            { id: 'manuevers' },
+            { id: 'maneuvers' },
             { id: 'effects' },
           ],
         },
@@ -435,7 +435,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     const curios = [];
     const features = [];
     const classFeatures = [];
-    const manuevers = [];
+    const maneuvers = [];
     const spells = {
       1: [],
       2: [],
@@ -483,8 +483,8 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
           spells[circle].push(item);
         }
       }
-      else if (item.type === ItemType.MANUEVER) {
-        manuevers.push(item);
+      else if (item.type === ItemType.MANEUVER) {
+        maneuvers.push(item);
       }
     }
 
@@ -498,7 +498,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       return String(a.name ?? '').localeCompare(String(b.name ?? ''));
     });
     context.spells = spells;
-    context.manuevers = manuevers;
+    context.maneuvers = maneuvers;
     context.signatureSpell = null;
     context.ancestrySlots = {};
     context.inheritorFeatures = ancestryFeaturesByType[AncestryFeatureType.INHERITOR];

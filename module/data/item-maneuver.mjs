@@ -1,7 +1,7 @@
 import HorizonlessItemBase from "./base-item.mjs";
 
-export default class HorizonlessManuever extends HorizonlessItemBase {
-  static MANUEVER_TYPES = Object.freeze([
+export default class HorizonlessManeuver extends HorizonlessItemBase {
+  static MANEUVER_TYPES = Object.freeze([
     "",
     "attack",
     "strategy"
@@ -11,10 +11,10 @@ export default class HorizonlessManuever extends HorizonlessItemBase {
     const fields = foundry.data.fields;
     const schema = super.defineSchema();
 
-    schema.manueverType = new fields.StringField({
+    schema.maneuverType = new fields.StringField({
       required: true,
       blank: true,
-      choices: this.MANUEVER_TYPES,
+      choices: this.MANEUVER_TYPES,
       initial: ""
     });
     schema.flavor = new fields.StringField({ required: true, blank: true, initial: "" });

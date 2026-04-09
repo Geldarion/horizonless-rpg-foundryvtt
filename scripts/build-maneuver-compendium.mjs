@@ -7,8 +7,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
-const sourcePath = path.join(rootDir, "module", "data", "dataSource", "manuevers.json");
-const outputPath = path.join(rootDir, "packs", "manuevers.db");
+const sourcePath = path.join(rootDir, "module", "data", "dataSource", "maneuvers.json");
+const outputPath = path.join(rootDir, "packs", "maneuvers.db");
 
 const MOJIBAKE_REPLACEMENTS = Object.freeze([
   ["вЂ™", "'"],
@@ -55,7 +55,7 @@ function buildId(seed, usedIds) {
   throw new Error(`Unable to allocate unique ID for seed: ${seed}`);
 }
 
-function normalizeManueverType(value) {
+function normalizeManeuverType(value) {
   const normalized = cleanText(value).toLowerCase();
   if (normalized === "attack" || normalized === "strategy") return normalized;
   return "";
@@ -71,19 +71,19 @@ function normalizeAdvancements(value) {
     .filter((entry) => entry.requirement.length > 0 || entry.text.length > 0);
 }
 
-function createManueverDocument(manuever, index, usedIds) {
-  const name = cleanText(manuever?.name) || `Manuever ${index + 1}`;
+function createManeuverDocument(maneuver, index, usedIds) {
+  const name = cleanText(maneuver?.name) || `Maneuver ${index + 1}`;
   return {
     _id: buildId(name, usedIds),
     name,
-    type: "manuever",
-    img: normalizeImagePath(manuever?.icon),
+    type: "maneuver",
+    img: normalizeImagePath(maneuver?.icon),
     system: {
-      description: cleanText(manuever?.description),
-      manueverType: normalizeManueverType(manuever?.["manuever type"] ?? manuever?.manueverType),
-      flavor: cleanText(manuever?.flavor),
-      repetitionPenalty: cleanText(manuever?.["repitition penalty"] ?? manuever?.repetitionPenalty),
-      advancements: normalizeAdvancements(manuever?.advancements),
+      description: cleanText(maneuver?.description),
+      maneuverType: normalizeManeuverType(maneuver?.["maneuver type"] ?? maneuver?.maneuverType),
+      flavor: cleanText(maneuver?.flavor),
+      repetitionPenalty: cleanText(maneuver?.["repitition penalty"] ?? maneuver?.repetitionPenalty),
+      advancements: normalizeAdvancements(maneuver?.advancements),
     },
     effects: [],
     folder: null,
@@ -97,11 +97,11 @@ function createManueverDocument(manuever, index, usedIds) {
 function main() {
   const source = JSON.parse(readFileSync(sourcePath, "utf8").replace(/^\uFEFF/, ""));
   if (!Array.isArray(source)) {
-    throw new Error("manuevers.json must be an array.");
+    throw new Error("maneuvers.json must be an array.");
   }
 
   const usedIds = new Set();
-  const docs = source.map((manuever, index) => createManueverDocument(manuever, index, usedIds));
+  const docs = source.map((maneuver, index) => createManeuverDocument(maneuver, index, usedIds));
   const ndjson = `${docs.map((doc) => JSON.stringify(doc)).join("\n")}\n`;
 
   writeFileSync(outputPath, ndjson, "utf8");
