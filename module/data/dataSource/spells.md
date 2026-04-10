@@ -1078,7 +1078,7 @@ Spell effects with the **Sensor** trait identify affected creatures according to
 
 ## *When you ascend the Circles of magic, your enemies must follow.*
 
-	You target creature or persistent magic (as defined by the Sense Magic action) within range and cause an effect depending on its type:
+	You target a creature or persistent magic (as defined by the Sense Magic action) within range and cause an effect depending on its type:
 
 * **Creature.** You destroy all spell effects affecting the target up to and including 1st Circle.
 
