@@ -1,0 +1,16 @@
+# Generated Foundry pack files
+/packs/**/CURRENT
+/packs/**/LOCK
+/packs/**/LOG
+/packs/**/LOG.old
+/packs/**/*.log
+/packs/**/MANIFEST-*
+/packs/**/OPTIONS-*
+/packs/**/*.ldb
+/packs/**/*.sst
+
+# Keep tracked
+!/packs/*.db
+!/.gitattributes
+!/packs/**/.gitattributes
+!/packs/**/.gitkeep
