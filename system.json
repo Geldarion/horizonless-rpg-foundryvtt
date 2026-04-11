@@ -34,7 +34,7 @@
       "thumbnail": "systems/horizonless/assets/anvil-impact.png"
     }
   ],
-  "version": "0.2.0.4",
+  "version": "0.2.0.5",
   "compatibility": {
     "minimum": 12,
     "verified": "12"
@@ -87,8 +87,8 @@
   ],
   "packFolders": [],
   "socket": false,
-  "manifest": "https://github.com/Geldarion/horizonless-rpg-foundryvtt/releases/download/v0.2.0.4/system.json",
-  "download": "https://github.com/Geldarion/horizonless-rpg-foundryvtt/releases/download/v0.2.0.4/horizonless.zip",
+  "manifest": "https://github.com/Geldarion/horizonless-rpg-foundryvtt/releases/download/v0.2.0.5/system.json",
+  "download": "https://github.com/Geldarion/horizonless-rpg-foundryvtt/releases/download/v0.2.0.5/horizonless.zip",
   "background": "systems/horizonless/assets/anvil-impact.png",
   "grid": {
     "distance": 5,
