@@ -48,6 +48,14 @@
     "inheritor_feature": null
   },
   {
+    "name": "Felidaen",
+    "flavor": "*Flavor.*",
+    "primary_feature": "Burst Agility\n\n*You spring into action with unexpected swiftness.*\n\nAs a reaction at any point, you may double your Speed until the end of the current turn. You may use this feature a number of times per long rest equal to your CON (minimum of once).",
+    "secondary_feature": "Climbing Claws\n\n*Your sharp claws offer purchase on sheer cliffs where others cannot find so easily.*\n\nYou gain the following benefits:\n\n* **Claws.** When you make a weapon attack using the Unarmed fighting style, you may convert the damage dealt to **slashing**. If you do, you ignore the **Minimum Damage** trait.\n\n* **Climber.** You gain basic Climbing mobility.\n\n* **Graceful Fall.** All falling damage you take is halved.",
+    "tertiary_feature": "Escapist Sense\n\n*You can glean all entrances, exits, and dead ends at a moment’s notice.*\n\nAs a free action once per rest, you may become aware of all obstructions and structures within 120 feet of you.",
+    "inheritor_feature": null
+  },
+  {
     "name": "Fzzbr",
     "flavor": "*Flavor.*\n**Notes:** It’s probably likely that some people reading this ancestry would infer that this ancestry is meant to be a bear of some kind.",
     "primary_feature": "Call Lightning\n\n*You channel your inner lightning as a concentrated blast.*\n\nYou may cast **Static Shock** using your CON as your spellcasting modifier. Once per long rest, when you hit with a **Static Shock** spell attack, you may push the target 30 feet away from you and deal an additional **Xd6 lightning damage** to them, where X is your Tier Bonus.",
@@ -109,14 +117,6 @@
     "primary_feature": "Stinging Spines\n\n*Venom-tipped barbs fan out when you are under attack.*\n\nAs a reaction once per rest, when you are hit with an attack by a creature within your Reach, you may make a melee special attack against the creature using your CON. On a hit, the target is poisoned until the end of their next turn.",
     "secondary_feature": "Detachable Limbs\n\n*It’s the perfect distraction.*\n\nYou are able to detach your limbs as a reaction, doing so removes any creatures grabbing onto you and cleanses any stuck, grappled, or restrained conditions applied to you.\n\nAs a free action, you may expend a Resolve to regrow all your lost limbs. During the Refresh downtime activity, you may also regrow all of your lost limbs.",
     "tertiary_feature": "Adhesive Spit\n\n*The sloppy mucus is surprisingly sticky.*\n\nOnce per rest, as an action, you may designate a 1 foot square area centered on a target surface within your Reach. The next time a subject contacts the surface, it becomes stuck. A STR effort or trade check can be made by a creature stuck in this manner or a creature for which the stuck subject is within their Reach against a DC equal to 8 \\+ your CON \\+ your Tier Bonus. On a success, the stuck condition is cleansed.",
-    "inheritor_feature": null
-  },
-  {
-    "name": "Meowdy",
-    "flavor": "*Flavor.*",
-    "primary_feature": "Burst Agility\n\n*You spring into action with unexpected swiftness.*\n\nAs a reaction at any point, you may double your Speed until the end of the current turn. You may use this feature a number of times per long rest equal to your CON (minimum of once).",
-    "secondary_feature": "Climbing Claws\n\n*Your sharp claws offer purchase on sheer cliffs where others cannot find so easily.*\n\nYou gain the following benefits:\n\n* **Claws.** When you make a weapon attack using the Unarmed fighting style, you may convert the damage dealt to **slashing**. If you do, you ignore the **Minimum Damage** trait.\n\n* **Climber.** You gain basic Climbing mobility.\n\n* **Graceful Fall.** All falling damage you take is halved.",
-    "tertiary_feature": "Escapist Sense\n\n*You can glean all entrances, exits, and dead ends at a moment’s notice.*\n\nAs a free action once per rest, you may become aware of all obstructions and structures within 120 feet of you.",
     "inheritor_feature": null
   },
   {
