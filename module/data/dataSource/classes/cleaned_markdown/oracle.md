@@ -1,19 +1,3 @@
-![](media/image1.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Oracle Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Oracle Class Overview Table
 
 +----------+------------------------------+---------------+---------------+---------------+---------------+---------------+
@@ -66,11 +50,9 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+------------------------------+---------------+---------------+---------------+---------------+---------------+
 |          | **Oracle Visions**                                                                                           |
 +----------+--------------------------------------------------------------------------------------------------------------+
-|          | [[Calamity]{.underline}](#kix.uw19ym92vjhc), [[Discovery]{.underline}](#kix.7ncppredur7s),                   |
-|          | [[Unity]{.underline}](#kix.spq4kno05s91)                                                                     |
+|          | Calamity, Discovery,                   |
+|          | Unity                                                                     |
 +==========+==============================+===============+===============+===============+===============+===============+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 5
 
@@ -402,8 +384,6 @@ a feature granted by one of your Class Ranks:
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
 
-[[Back to Top]{.underline}](#kix.sxbxiom9sz3b)
-
 Oracle Visions
 
 # Oracle Vision: Calamity
@@ -466,8 +446,6 @@ following ways:
 - You spend up to 5 points from your well of determination at a given
   time.
 
-[[Back to Top]{.underline}](#kix.sxbxiom9sz3b)
-
 # Oracle Vision: Discovery
 
 *Great mysteries lie beyond the penumbra of the world's knowledge. As
@@ -492,7 +470,7 @@ At 1st Rank, your **Radiance** feature is enhanced in the following
 ways:
 
 - **Clarity.** Creatures that regain ST from **Mote of Insight** are
-  also cleansed of the [disoriented]{.underline} condition.
+  also cleansed of the disoriented condition.
 
 - **Illumination**. You immediately **perceive** any creature damaged by
   **Mote of Power** that you were previously **aware** of.
@@ -513,8 +491,6 @@ to the next d20 roll after your Analyze check.
 At 8th Rank, if you use **Brilliance** on an Analyze check that succeeds
 the highest Analyze check DC threshold for the target, your usage of
 **Brilliance** is not expended.
-
-[[Back to Top]{.underline}](#kix.sxbxiom9sz3b)
 
 # Oracle Vision: Unity
 
@@ -571,5 +547,3 @@ the following benefits:
   attack.
 
 - You gain advantage on **Golden Blade** spell attacks.
-
-[[Back to Top]{.underline}](#kix.sxbxiom9sz3b)

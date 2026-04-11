@@ -1,19 +1,3 @@
-![](media/image1.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Wizard Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Wizard Class Overview
 
 +----------+------------------------------+---------------+---------------+---------------+---------------+---------------+
@@ -67,11 +51,9 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+------------------------------+---------------+---------------+---------------+---------------+---------------+
 |          | **Subclasses**                                                                                               |
 +----------+--------------------------------------------------------------------------------------------------------------+
-|          | [[Dynamancy]{.underline}](#kix.7s5fjwtcagm), [[Entropomancy]{.underline}](#kix.dm95f2qk927j),                |
-|          | [[Magnamancy]{.underline}](#kix.99sa3egirrrq)                                                                |
+|          | Dynamancy, Entropomancy,                |
+|          | Magnamancy                                                                |
 +==========+==============================+===============+===============+===============+===============+===============+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 5
 
@@ -296,7 +278,7 @@ effect or you use this feature again.
 Below are some examples of contingencies you are able to create, but are
 not limited to:
 
-- When you become [stuck]{.underline}, cast **Translocate** to escape,
+- When you become stuck, cast **Translocate** to escape,
   targeting an unoccupied space within range.
 
 - When you fall farther than 20 feet, cast **Hover** targeting yourself.
@@ -461,8 +443,6 @@ a feature granted by one of your Class Ranks:
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
 
-[[Back to Top]{.underline}](#wizard-class-overview)
-
 Subclasses
 
 # Wizard Study: Dynamancy
@@ -541,8 +521,6 @@ At 8th Rank, you gain the following benefits:
   dice from the pool to reduce the attack's critical hit threshold by
   the same amount as the number of dice expended.
 
-[[Back to Top]{.underline}](#wizard-class-overview)
-
 # Wizard Study: Entropomancy
 
 *The sand pours through the hourglass, the ink dries on the page, and
@@ -594,7 +572,7 @@ Entropomancy Wizard Spell Theorem
 
 When you cast an automaton spell, you may expend 1 Theorem Point. If you
 do, when the automaton object is destroyed, you may cause all creatures
-and objects within 15 feet of the object to become [slowed]{.underline}
+and objects within 15 feet of the object to become slowed
 with the **Recoverable** condition trait, allowing an action to end it.
 
 ## Spontaneous Decay
@@ -618,14 +596,12 @@ At 8th Rank, you gain the following benefits:
 - **Perfect Crystal.** While a subject is affected by **Deceleration
   Theorem**, instead of halving their Speed, you may cause them to make
   a **Fortitude** saving throw against your Wizard Spell Save DC to
-  avoid becoming [stuck]{.underline} with the **Recoverable** condition
-  trait. Impact rolls made by creatures [stuck]{.underline} in this way
+  avoid becoming stuck with the **Recoverable** condition
+  trait. Impact rolls made by creatures stuck in this way
   have the outcomes of all dice rolled replaced by 1.
 
 - **Spatial Delocalization.** When you cast **Mending**, you may cause
   the spell's range to become 30 feet.
-
-[[Back to Top]{.underline}](#wizard-class-overview)
 
 # Wizard Study: Magnamancy
 
@@ -695,5 +671,3 @@ At 8th Rank, you gain the following benefits:
 - **Recirculation.** Once per rest, when you cast your signature spell
   and apply your **Amplitude Theorem** to it, you may halve the Theorem
   Point cost.
-
-[[Back to Top]{.underline}](#wizard-class-overview)

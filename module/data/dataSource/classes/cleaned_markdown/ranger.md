@@ -1,19 +1,3 @@
-![](media/image1.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Ranger Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Ranger Class Overview Table
 
 +----------+---------------+--------------+--------------+--------------+
@@ -92,12 +76,10 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+---------------+--------------+--------------+--------------+
 |          | **Ranger Enclaves**                                        |
 +----------+------------------------------------------------------------+
-|          | [[Dune Strider]{.underline}](#kix.dea2phynlh6v),           |
-|          | [[Nyctohawk]{.underline}](#kix.j7m229uawgrr), [[Wind       |
-|          | Warden]{.underline}](#kix.q3yehy5og6gj)                    |
+|          | Dune Strider,           |
+|          | Nyctohawk, Wind       |
+|          | Warden                    |
 +==========+===============+==============+==============+==============+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 7
 
@@ -468,8 +450,8 @@ halved when using any mobility.
 11th Rank Ranger Ancient Memory (Permanence)
 
 While your **Permanence** ancient is active, when the
-[incapacitated]{.underline}, [stunned]{.underline}, or
-[frozen]{.underline} conditions are applied to you, you may prevent the
+incapacitated, stunned, or
+frozen conditions are applied to you, you may prevent the
 conditions from being applied to you. If you do, all of your ancients
 cease being active.
 
@@ -513,8 +495,6 @@ a feature granted by one of your Class Ranks:
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
 
-[[Back to Top]{.underline}](#kix.u8l0iu3mcfq)
-
 Ranger Enclaves
 
 # Ranger Enclave: Dune Strider
@@ -533,8 +513,8 @@ earth and drown them in it.*
 At 1st Rank, as an action, you may create a *sand trap* at a target
 floor within 30 feet of you. At the start of each of your turns, you may
 have sand traps of your choosing cause all creatures of Size Large or
-smaller within 5 feet of them to become [stuck]{.underline}. Afterwards,
-the chosen sand traps expire. This [stuck]{.underline} condition has the
+smaller within 5 feet of them to become stuck. Afterwards,
+the chosen sand traps expire. This stuck condition has the
 **Recoverable** condition trait, allowing an action to end the effect.
 
 ## Ancient of Cavitation
@@ -568,15 +548,13 @@ At 8th Rank, you gain the following benefits:
 
 - **Force of Erosion.** Once per turn while your **Cavitation** ancient
   is active, immediately before you make an attack check against a
-  creature [stuck]{.underline} from one of your sand traps, you may gain
+  creature stuck from one of your sand traps, you may gain
   advantage on the attack check.
 
 - **Shifting Sands.** The range at which your sand traps causes
-  creatures to become [stuck]{.underline} becomes 10 feet. When one of
-  your sand traps causes a creature to become [stuck]{.underline}, you
+  creatures to become stuck becomes 10 feet. When one of
+  your sand traps causes a creature to become stuck, you
   may pull that creature to that sand trap.
-
-[[Back to Top]{.underline}](#kix.u8l0iu3mcfq)
 
 # Ranger Enclave: Nyctohawk
 
@@ -610,7 +588,7 @@ Nyctohawk Ranger Ancient
 You gain basic Jumping mobility. When you hit the creature with your
 umbral focus with a weapon attack that was made during or immediately
 after falling further than 20 feet, the target becomes
-[frightened]{.underline} of you until the start of your next turn.
+frightened of you until the start of your next turn.
 
 ## Mooncloak Tumble
 
@@ -631,9 +609,7 @@ At 8th Rank, you gain the following benefits:
 
 - **Swallowing Shadow.** When you score a critical hit against the
   creature with your umbral focus, you may cause them to become
-  [disoriented]{.underline} until the end of your next turn.
-
-[[Back to Top]{.underline}](#kix.u8l0iu3mcfq)
+  disoriented until the end of your next turn.
 
 # Ranger Enclave: Wind Warden
 
@@ -691,5 +667,3 @@ At 8th Rank, you gain the following benefits:
 
 - **Windwalk.** While your **Galeforce** ancient is active, but only
   during your turn, you gain basic Flying mobility.
-
-[[Back to Top]{.underline}](#kix.u8l0iu3mcfq)

@@ -1,19 +1,3 @@
-![](media/image1.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Berserker Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Berserker Class Overview Table
 
 +----------+------------------------------------------+--------------------+--------------------+--------------------+
@@ -76,11 +60,9 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+------------------------------------------+--------------------+--------------------+--------------------+
 |          | **Berserker Mettles**                                                                                   |
 +----------+---------------------------------------------------------------------------------------------------------+
-|          | [[Coldfury]{.underline}](#kix.vljk3s8pcmhr), [[Flamewrought]{.underline}](#kix.ah0euvcdf8lh),           |
-|          | [[Siegebreaker]{.underline}](#kix.s5otd58u9v3u)                                                         |
+|          | Coldfury, Flamewrought,           |
+|          | Siegebreaker                                                         |
 +==========+==========================================+====================+====================+====================+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 9
 
@@ -144,7 +126,7 @@ selection of all of your chosen Wrath Evolutions.
 While you have at least 2 wrath charges, if a basic combat action,
 maneuver, or Berserker feature attempts to inflict a condition on a
 creature, and the condition is not applied for any reason, the creature
-becomes [staggered]{.underline} instead.
+becomes staggered instead.
 
 ### Quake
 
@@ -158,12 +140,12 @@ the damage dealt by the aftershock.
 2nd Rank Berserker Wrath Evolution
 
 You may expend 1 wrath charge when you hit with a melee weapon attack to
-cause the target to become [provoked]{.underline} by you until the start
+cause the target to become provoked by you until the start
 of your next turn.
 
 # Legion of One I
 
-*They said \"you and what army?\". Little did they know I am worth two
+*They said "you and what army?". Little did they know I am worth two
 armies.*
 
 At 3rd Rank, when you make a Grapple, Pin, Shove, Trip, or Wreck An
@@ -172,7 +154,7 @@ against all creatures within your Reach other than the original target
 as a free action. If you do, use the total of the original STR combat
 check for all others rather than rolling each of them. Alternatively,
 when you take the Throw action, you may throw all creatures you have
-[grappled]{.underline}.
+grappled.
 
 You may use **Legion of One** twice per rest.
 
@@ -184,7 +166,7 @@ any creature raving mad.*
 At 3rd Rank, as a free action once per rest when a hostile combat team
 takes initiative, you may choose two hostile creatures who have not yet
 taken their turn this round. The chosen creatures must take their turn
-and are [provoked]{.underline} by you until the end of the turn.
+and are provoked by you until the end of the turn.
 
 # Ability Improvement
 
@@ -218,7 +200,7 @@ under its weight.*
 At 5th Rank, the radius of your aftershock becomes 10 feet.
 Additionally, you may expend 3 wrath charges when you create an
 aftershock to cause all creatures who took damage from it to become
-[staggered]{.underline}.
+staggered.
 
 # Wrath Evolutions II
 
@@ -240,7 +222,7 @@ You gain 1 wrath charge each time your **Wrath** DB breaks.
 5th Rank Berserker Wrath Evolution
 
 While you have at least 4 wrath charges, attacks against creatures you
-have [grappled]{.underline} gain advantage.
+have grappled gain advantage.
 
 ### Lash Out
 
@@ -260,7 +242,7 @@ end of the current turn.
 
 # Legion of One II
 
-*\"Don\'t worry, I brought enough punishment for everyone.\"*
+*"Don't worry, I brought enough punishment for everyone."*
 
 At 6th Rank, you may now use **Legion of One** three times per rest.
 
@@ -306,8 +288,8 @@ Wrath Evolutions.
 8th Rank Berserker Wrath Evolution
 
 While you have at least 6 wrath charges, hostile creatures within 30
-feet of you that are [frightened]{.underline} are also
-[provoked]{.underline} by you.
+feet of you that are frightened are also
+provoked by you.
 
 ### Furious Brawn
 
@@ -335,7 +317,7 @@ At 8th Rank, you gain a feature for your Berserker Mettle.
 At 9th Rank, the radius of your aftershock becomes 15 feet.
 Additionally, you may expend 5 wrath charges when you create an
 aftershock to cause all creatures who took damage from it to become
-[provoked]{.underline} by you until the start of your next turn.
+provoked by you until the start of your next turn.
 
 # Legion of One III
 
@@ -422,11 +404,11 @@ damage to negate all of it.
 # Seismic Smash
 
 *Unleash all your might into an attack so devastating the world cries,
-the heavens quake, and your foes\' lives flash before their eyes.*
+the heavens quake, and your foes' lives flash before their eyes.*
 
 At 12th Rank, once per rest, when you create an aftershock, you may have
 its radius become 30 feet and cause all creatures who took damage from
-it to become [stunned]{.underline} until the start of your next turn.
+it to become stunned until the start of your next turn.
 
 # Final Reach
 
@@ -447,8 +429,6 @@ a feature granted by one of your Class Ranks:
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
 
-[[Back to Top]{.underline}](#berserker-class-overview-table)
-
 Berserker Mettles
 
 # Berserker Mettle: Coldfury
@@ -463,7 +443,7 @@ close in, and find no mercy from the arctic predator in my gaze.*
 *I am the winter of death that comes.*
 
 At 1st Rank, while hostile creatures are within your Reach, they are
-[slowed]{.underline}.
+slowed.
 
 ## Icicle Wave
 
@@ -485,8 +465,8 @@ This damage roll becomes 2d6/3d6/4d6 at 4th/7th/10th Rank, respectively.
 *Gaining my attention will freeze you in your tracks.*
 
 At 4th Rank, you may expend 2 wrath charges as a free action to cause a
-target that travels into your Reach to become [stuck]{.underline}. This
-[stuck]{.underline} condition gains the **Recoverable** condition trait,
+target that travels into your Reach to become stuck. This
+stuck condition gains the **Recoverable** condition trait,
 allowing an action to end it.
 
 ## Frostbite
@@ -496,8 +476,6 @@ options.*
 
 At 8th Rank, when a creature begins their turn within your Reach, they
 take 1 fewer action this turn.
-
-[[Back to Top]{.underline}](#berserker-class-overview-table)
 
 # Berserker Mettle: Flamewrought
 
@@ -511,16 +489,16 @@ wrought upon themselves.*
 conflagration.*
 
 At 1st Rank, as a free action once during each of your turns, you may
-either become [ablaze]{.underline} or cleanse yourself of the condition.
-While you are [ablaze]{.underline}, you gain the following benefits:
+either become ablaze or cleanse yourself of the condition.
+While you are ablaze, you gain the following benefits:
 
 - **Hellfire.** The DB damage reduction cost is doubled for **fire
   damage** you deal with weapon attacks or from your
-  [ablaze]{.underline} conditions.
+  ablaze conditions.
 
 - **Vengeful Blaze.** As a reaction when you or an ally within 15 feet
   of you takes damage, you may cause the source of the damage to become
-  [ablaze]{.underline}.
+  ablaze.
 
 ## Ignition Wave
 
@@ -528,7 +506,7 @@ While you are [ablaze]{.underline}, you gain the following benefits:
 
 At 1st Rank, your aftershocks may deal **fire damage**. You may also
 cause all creatures who take any type of damage from your aftershocks to
-become [ablaze]{.underline}.
+become ablaze.
 
 ## Burning Wrath
 
@@ -551,10 +529,8 @@ At 8th Rank, you gain the following benefits:
   expend 2 wrath charges to gain the effects of burning a Resolve.
 
 - **Thermal Cascade.** When a target takes damage from your
-  [ablaze]{.underline} conditions, they inflict [ablaze]{.underline} to
+  ablaze conditions, they inflict ablaze to
   all creatures within 5 feet of them.
-
-[[Back to Top]{.underline}](#berserker-class-overview-table)
 
 # Berserker Mettle: Siegebreaker
 
@@ -594,7 +570,7 @@ number of target creatures within 30 feet of you to make a **Poise**
 saving throw against your Maneuver DC. On a failure, a creature is
 pulled to a target unoccupied space within your Reach. At the end of
 your turn, you push any creatures within your Reach 15 feet away from
-you. Creatures that are pushed in this way fall [prone]{.underline}.
+you. Creatures that are pushed in this way fall prone.
 
 ## Battering Ram
 
@@ -606,6 +582,4 @@ At 8th Rank, you gain the following benefits:
   against objects becomes 15.
 
 - **Shattered Ankles.** Creatures that start their turn shattered are
-  [slowed]{.underline} until the end of their turn.
-
-[[Back to Top]{.underline}](#berserker-class-overview-table)
+  slowed until the end of their turn.

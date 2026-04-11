@@ -80,80 +80,66 @@
     },
     {
       "Rank": "12",
-      "Features": "Flawless Execution Ability Improvement",
+      "Features": "Flawless Execution",
       "": "",
       "Maneuvers Known": "14",
       "Martial Die": "2d6"
-    },
-    {
-      "Rank": "",
-      "Features": "Subclasses",
-      "": "",
-      "Maneuvers Known": "",
-      "Martial Die": ""
-    },
-    {
-      "Rank": "",
-      "Features": "Commander, Drifter, Vanguard",
-      "": "",
-      "Maneuvers Known": "",
-      "Martial Die": ""
     }
   ],
   "features": [
     {
       "name": "Maneuvers",
-      "flavor_text": "Core techniques form the foundation of your combat style and specialty.",
+      "flavor_text": "",
       "rank": "1st Rank",
-      "description": "At 1st Rank, you learn three maneuvers, and you learn an additional one each time you gain an additional Fighter Rank. You may Retrain this feature to redo your selection of known maneuvers."
+      "description": "At 1st Rank, you learn three maneuvers, and you learn an additional one\neach time you gain an additional Fighter Rank. You may Retrain this\nfeature to redo your selection of known maneuvers."
     },
     {
       "name": "Fighter Code",
       "flavor_text": "Confidence and purpose are your truest whetstones.",
       "rank": "1st Rank",
-      "description": "At 1st Rank, you choose a Fighter Code to exemplify your combat style and techniques. You gain features from your chosen Fighter Code at 1st, 4th, and 8th Rank."
+      "description": "At 1st Rank, you choose a Fighter Code to exemplify your combat style\nand techniques. You gain features from your chosen Fighter Code at 1st,\n4th, and 8th Rank."
     },
     {
       "name": "Momentum I",
       "flavor_text": "Every movement and attack plan carries forth into the next in seamless choreography. Keep looking forward and never repeat yourself.",
       "rank": "1st Rank",
-      "description": "At 1st Rank, when you perform a maneuver with a listed repetition penalty, but don't incur  it, you may *exhaust* the maneuver. Doing so immediately grants one *momentum die*, which are d12s (these are added to your *momentum dice pool*). Afterwards, performing the exhausted maneuver always incurs its listed repetition penalty.\n\n\t At the start and end of combat, you discard all momentum dice from your momentum dice pool and remove exhaustion from all of your maneuvers.\n\nLastly, you know the **Decisive Blow** feature described below.\n\n### *Decisive Blow*\n\n\tOnce per turn, as a free action immediately before you make a weapon attack, you may expend one momentum die to grant the following benefits:\n\n* **Bonus Damage.** If the attack hits, you may add 1d12 to the damage roll.\n\n* **Stagger.** If the attack scores a critical hit or its attack check's total exceeds the target's AC by 5 or more, the target becomes staggered.\n\n* **Fighter Code.** Your chosen Fighter Code may add an additional effect."
+      "description": "At 1st Rank, when you perform a maneuver with a listed repetition\npenalty, but don't incur it, you may *exhaust* the maneuver. Doing so\nimmediately grants one *momentum die*, which are d12s (these are added\nto your *momentum dice pool*). Afterwards, performing the exhausted\nmaneuver always incurs its listed repetition penalty.\n\nAt the start and end of combat, you discard all momentum dice from your\nmomentum dice pool and remove exhaustion from all of your maneuvers.\n\nLastly, you know the **Decisive Blow** feature described below.\n\n### Decisive Blow\n\nOnce per turn, as a free action immediately before you make a weapon\nattack, you may expend one momentum die to grant the following benefits:\n\n- **Bonus Damage.** If the attack hits, you may add 1d12 to the damage\n  roll.\n\n- **Stagger.** If the attack scores a critical hit or its attack check's\n  total exceeds the target's AC by 5 or more, the target becomes\n  staggered.\n\n- **Fighter Code.** Your chosen Fighter Code may add an additional\n  effect."
     },
     {
       "name": "Counter Vigil",
       "flavor_text": "Your muscles tense as you study your foe with disciplined vigilance, awaiting the moment they create an opening.",
       "rank": "2nd Rank",
-      "description": "At 2nd Rank, at the beginning of each round of combat, you may choose to *watch* a target hostile creature. If you do, you are unable to take your turn until the creature you are watching completes their turn. **Counter Vigil** cannot be used on a creature using a similar feature that prevents them from taking their turn until another creature does.\n\nWhen you take your turn after watching a creature, you cease watching the creature and the turn is called your *rebuttal*, which grants the following effects:\n\n* **Momentum Die.** You gain one momentum die.\n\n* **Perfect Opportunity.** The creature you watched becomes staggered.\n\n\tIf the creature you are watching dies or is knocked out, you may choose to watch a different target creature."
+      "description": "At 2nd Rank, at the beginning of each round of combat, you may choose to\n*watch* a target hostile creature. If you do, you are unable to take\nyour turn until the creature you are watching completes their turn.\n**Counter Vigil** cannot be used on a creature using a similar feature\nthat prevents them from taking their turn until another creature does.\n\nWhen you take your turn after watching a creature, you cease watching\nthe creature and the turn is called your *rebuttal*, which grants the\nfollowing effects:\n\n- **Momentum Die.** You gain one momentum die.\n\n- **Perfect Opportunity.** The creature you watched becomes\n  staggered.\n\nIf the creature you are watching dies or is knocked out, you may choose\nto watch a different target creature."
     },
     {
       "name": "Vigilant Tactics I",
       "flavor_text": "A steady focus underlies the greatest offense.",
       "rank": "2nd Rank",
-      "description": "At 2nd Rank, select one of the following Vigilant Tactic features from the list below, which enhance the capabilities of your **Counter Vigil** feature. During the Retrain downtime activity, you may redo the selection of all of your chosen Vigilant Tactics.\n\n### *Battle Flow*\n\n## *2nd Rank Fighter Vigilant Tactic*\n\n\tWhile you are watching a creature, you gain advantage on **Poise** and **Reflex** saving throws.\n\n### *Keen Eye*\n\n## *2nd Rank Fighter Vigilant Tactic*\n\n\tWhen you begin watching a creature, you may choose to make a Search check or an Analyze check as a free action.\n\n### *Second Wind*\n\n## *2nd Rank Fighter Vigilant Tactic*\n\n\tAt the start of your rebuttal, you may **regain ST** equal to 2 - your Fighter Rank."
+      "description": "At 2nd Rank, select one of the following Vigilant Tactic features from\nthe list below, which enhance the capabilities of your **Counter Vigil**\nfeature. During the Retrain downtime activity, you may redo the\nselection of all of your chosen Vigilant Tactics.\n\n### Battle Flow\n\n2nd Rank Fighter Vigilant Tactic\n\nWhile you are watching a creature, you gain advantage on **Poise** and\n**Reflex** saving throws.\n\n### Keen Eye\n\n2nd Rank Fighter Vigilant Tactic\n\nWhen you begin watching a creature, you may choose to make a Search\ncheck or an Analyze check as a free action.\n\n### Second Wind\n\n2nd Rank Fighter Vigilant Tactic\n\nAt the start of your rebuttal, you may **regain ST** equal to 2 × your\nFighter Rank."
     },
     {
       "name": "Double Strike I",
       "flavor_text": "As their grip on the conflict loosens, two quick strikes deliver a swift victory.",
       "rank": "3rd Rank",
-      "description": "At 3rd Rank, once per rest, when you make a weapon attack against a staggered target, you may make a second weapon attack against the same target as a free action. This second attack treats the target as being staggered and ignores weapon attack fatigue."
+      "description": "At 3rd Rank, once per rest, when you make a weapon attack against a\nstaggered target, you may make a second weapon attack\nagainst the same target as a free action. This second attack treats the\ntarget as being staggered and ignores weapon attack\nfatigue."
     },
     {
       "name": "Stalwart I",
       "flavor_text": "A triage of motion and strategy lessens the losses.",
       "rank": "3rd Rank",
-      "description": "At 3rd Rank, when you make a saving throw, you may expend one momentum die to add 1d12 to the total."
+      "description": "At 3rd Rank, when you make a saving throw, you may expend one momentum\ndie to add 1d12 to the total."
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
-      "rank": "3rd, 6th, 9th, and 12th Rank",
-      "description": "At 3rd, 6th, 9th, and 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "rank": "3rd, 6th, and 9th Rank",
+      "description": "At 3rd, 6th, and 9th Rank, you gain an Ability Improvement. Each time\nyou gain an Ability Improvement, distribute three permanent +1 increases\nto your ability modifiers. You may increase the same ability modifier\nmultiple times.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "4th, 7th, and 10th Rank",
-      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with Fighter being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than Fighter and gain one Rank in the chosen Class."
+      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with Fighter being\nthe exploring Class. Each time you gain an Exploration, you gain the\nfollowing benefit:\n\n- **Bonus Rank.** You choose any Class other than Fighter and gain one\n  Rank in the chosen Class."
     },
     {
       "name": "Fighter Code Feature",
@@ -165,49 +151,49 @@
       "name": "Momentum II",
       "flavor_text": "An exacting strike balances necessity with assurance.",
       "rank": "5th Rank",
-      "description": "At 5th Rank, when you exhaust a maneuver, you gain two momentum dice instead of one. Additionally, when you apply **Decisive Blow** to a weapon attack and it hits, you may expend one or more additional momentum dice and add Xd12 to the damage dealt, where X is the additional momentum dice spent.\n\n\tFor example, if you expend a momentum dice to use **Decisive Blow** and the attack hit, you could then expend two more momentum dice and add a total of 3d12 to the damage dealt."
+      "description": "At 5th Rank, when you exhaust a maneuver, you gain two momentum dice\ninstead of one. Additionally, when you apply **Decisive Blow** to a\nweapon attack and it hits, you may expend one or more additional\nmomentum dice and add Xd12 to the damage roll, where X is the additional\nmomentum dice spent.\n\nFor example, if you expend a momentum dice to use **Decisive Blow** and\nthe attack hit, you could then expend two more momentum dice and add a\ntotal of 3d12 to the damage roll."
     },
     {
       "name": "Vigilant Tactics II",
       "flavor_text": "Deep breaths fan the flames of your roaring reprisal.",
       "rank": "5th Rank",
-      "description": "At 5th Rank, select one of the following Vigilant Tactic features from the list below or one listed at an earlier Rank. During the Retrain downtime activity, you may redo the selection of all of your chosen Vigilant Tactics.\n\n### *Conclusive Strikes*\n\n## *5th Rank Fighter Vigilant Tactic*\n\n\tDuring your rebuttal, all weapon attacks you make against the creature you watched while they are staggered have their critical hit threshold reduced by 1\\.\n\n### *Prescient Attack*\n\n## *5th Rank Fighter Vigilant Tactic*\n\n\tOn the first weapon attack you make during your rebuttal against the creature you watched, the attack may be made at any range provided the creature was within your fighting style's attack range at some point while you were watching them.\n\n\tThis attack's critical hit threshold is reduced by 1\\.\n\n### *Rebound*\n\n## *5th Rank Fighter Vigilant Tactic*\n\n\tAt the start of your rebuttal as a free action, you may cleanse yourself of all conditions and effects with the **Recoverable** condition trait, such as by being prone or ablaze."
+      "description": "At 5th Rank, select one of the following Vigilant Tactic features from\nthe list below or one listed at an earlier Rank. During the Retrain\ndowntime activity, you may redo the selection of all of your chosen\nVigilant Tactics.\n\n### Conclusive Strikes\n\n5th Rank Fighter Vigilant Tactic\n\nDuring your rebuttal, all weapon attacks you make against the creature\nyou watched while they are staggered have their critical\nhit threshold reduced by 1.\n\n### Prescient Attack\n\n5th Rank Fighter Vigilant Tactic\n\nOn the first weapon attack you make during your rebuttal against the\ncreature you watched, the attack may be made at any range provided the\ncreature was within your fighting style's attack range at some point\nwhile you were watching them.\n\nThis attack's critical hit threshold is reduced by 1.\n\n### Rebound\n\n5th Rank Fighter Vigilant Tactic\n\nAt the start of your rebuttal as a free action, you may cleanse yourself\nof all conditions and effects with the **Recoverable** condition trait,\nsuch as by being prone or ablaze."
     },
     {
       "name": "Double Strike II",
       "flavor_text": "Your constant drive pushes to reach further, strike quicker, and hit harder.",
       "rank": "6th Rank",
-      "description": "At 6th Rank, you may now use **Double Strike** twice per rest. Additionally, each time you use **Double Strike**, you gain one momentum die."
+      "description": "At 6th Rank, you may now use **Double Strike** twice per rest.\nAdditionally, each time you use **Double Strike**, you gain one momentum\ndie."
     },
     {
       "name": "Maneuver Mastery I",
       "flavor_text": "Battles begin and end with the fundamentals.",
       "rank": "6th Rank",
-      "description": "At 6th Rank, choose two maneuvers that you know and for each chosen maneuver, choose one of its listed advancements. When you perform the chosen maneuvers, you may apply its chosen advancement without needing to meet its ability modifier requirement.\n\nWhen you take the Retrain downtime activity, you may redo your selection of maneuvers and their advancements."
+      "description": "At 6th Rank, choose two maneuvers that you know and for each chosen\nmaneuver, choose one of its listed advancements. When you perform the\nchosen maneuvers, you may apply its chosen advancement without needing\nto meet its ability modifier requirement.\n\nWhen you take the Retrain downtime activity, you may redo your selection\nof maneuvers and their advancements."
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "6th Rank",
-      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
     },
     {
       "name": "Unflinching",
       "flavor_text": "I could go all day.",
       "rank": "7th Rank",
-      "description": "At 7th Rank, on your turn as free action, you may expend a momentum die to gain the following benefits:\n\n* **Dogged.** If you are affected by the **Immobile** condition trait (which sets your Speed to 0 and prevents you from traveling), you may replace it with being affected by the **Slow** condition trait (which doubles the movement cost to travel).\n\n* **Persistent.** If you are affected by the **Locked** condition trait (which normally prevents you from taking actions), you may take one of your turn's actions regardless."
+      "description": "At 7th Rank, on your turn as free action, you may expend a momentum die\nto gain the following benefits:\n\n- **Dogged.** If you are affected by the **Immobile** condition trait\n  (which sets your Speed to 0 and prevents you from traveling), you may\n  replace it with being affected by the **Slow** condition trait (which\n  doubles the movement cost to travel).\n\n- **Persistent.** If you are affected by the **Locked** condition trait\n  (which normally prevents you from taking actions), you may take one of\n  your turn's actions regardless."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "7th Rank",
-      "description": "At 7th Rank, you gain an Exploration with Fighter being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than Fighter and gain one Rank in the chosen Class."
+      "description": "At 7th Rank, you gain an Exploration with Fighter being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Fighter and gain one\n  Rank in the chosen Class."
     },
     {
       "name": "Vigilant Tactics III",
       "flavor_text": "A trained eye can catch every mistake and move to capitalize on them",
       "rank": "8th Rank",
-      "description": "At 8th Rank, select one of the following Vigilant Tactic features from the list below or one listed at an earlier Rank. During the Retrain downtime activity, you may redo the selection of all of your chosen Vigilant Tactics.\n\n### *Guarded Stance*\n\n## *8th Rank Fighter Vigilant Tactic*\n\n\tWhile you are watching a creature, you gain your Half Guard AC.\n\n### *Coordination*\n\n## *8th Rank Fighter Vigilant Tactic*\n\n\tWhile you are watching a creature, attacks made by your allies against that creature have their critical hit threshold reduced by 1\\.\n\n### *Spring to Action*\n\n## *8th Rank Fighter Vigilant Tactic*\n\n\tAt the start of your rebuttal, you may add your Speed to your movement pool."
+      "description": "At 8th Rank, select one of the following Vigilant Tactic features from\nthe list below or one listed at an earlier Rank. During the Retrain\ndowntime activity, you may redo the selection of all of your chosen\nVigilant Tactics.\n\n### Guarded Stance\n\n8th Rank Fighter Vigilant Tactic\n\nWhile you are watching a creature, you gain your Half Guard AC.\n\n### Coordination\n\n8th Rank Fighter Vigilant Tactic\n\nWhile you are watching a creature, attacks made by your allies against\nthat creature have their critical hit threshold reduced by 1.\n\n### Spring to Action\n\n8th Rank Fighter Vigilant Tactic\n\nAt the start of your rebuttal, you may add your Speed to your movement\npool."
     },
     {
       "name": "Fighter Code Feature",
@@ -219,79 +205,73 @@
       "name": "Momentum III",
       "flavor_text": "Every movement brings the heat in measures untold.",
       "rank": "9th Rank",
-      "description": "At 9th Rank, when you exhaust a maneuver, you gain three momentum dice instead of two. Additionally, when you use **Double Strike**, you may remove exhaustion from one of your maneuvers."
+      "description": "At 9th Rank, when you exhaust a maneuver, you gain three momentum dice\ninstead of two. Additionally, when you use **Double Strike**, you may\nremove exhaustion from one of your maneuvers."
     },
     {
       "name": "Maneuver Mastery II",
       "flavor_text": "Every minute perfection in your routine is another weapon in your arsenal.",
       "rank": "9th Rank",
-      "description": "At 9th Rank, you may choose four maneuvers instead of two for your **Maneuver Mastery** feature (you still choose one advancement for each maneuver)."
+      "description": "At 9th Rank, you may choose four maneuvers instead of two for your\n**Maneuver Mastery** feature (you still choose one advancement for each\nmaneuver)."
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "9th Rank",
-      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
     },
     {
       "name": "Stalwart II",
       "flavor_text": "You stand defiant in the face of utter annihilation.",
       "rank": "10th Rank",
-      "description": "At 10th Rank, when you use **Stalwart**, you may expend one additional momentum die to add another 1d12 to the saving throw's total (adding a maximum total of 2d12 altogether). Additionally, when you use **Stalwart** on a saving throw and it still fails, you regain all of the expended momentum dice."
+      "description": "At 10th Rank, when you use **Stalwart**, you may expend one additional\nmomentum die to add another 1d12 to the saving throw's total (adding a\nmaximum total of 2d12 altogether). Additionally, when you use\n**Stalwart** on a saving throw and it still fails, you regain all of the\nexpended momentum dice."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "10th Rank",
-      "description": "At 10th Rank, you gain an Exploration with Fighter being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than Fighter and gain one Rank in the chosen Class."
+      "description": "At 10th Rank, you gain an Exploration with Fighter being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Fighter and gain one\n  Rank in the chosen Class."
     },
     {
       "name": "Momentum IV",
       "flavor_text": "You are there when it truly counts, each and every time.",
       "rank": "11th Rank",
-      "description": "At 11th Rank, when you exhaust a maneuver, you gain four momentum dice instead of three. Additionally, when you burn a Resolve, you may remove exhaustion from all of your maneuvers."
+      "description": "At 11th Rank, when you exhaust a maneuver, you gain four momentum dice\ninstead of three. Additionally, when you burn a Resolve, you may remove\nexhaustion from all of your maneuvers."
     },
     {
       "name": "Vigilant Tactics IV",
       "flavor_text": "Your opponents shall fear the quiet just as much as the storm it foretells.",
       "rank": "11th Rank",
-      "description": "At 11th Rank, select one of the following Vigilant Tactic features from the list below or one listed at an earlier Rank. During the Retrain downtime activity, you may redo the selection of all of your chosen Vigilant Tactics.\n\n### *Measured Strike*\n\n## *11th Rank Fighter Vigilant Tactic*\n\n\tOnce during each of your rebuttals, when you make a weapon attack against the creature you watched, you may add a \\+10 bonus to the attack check's total.\n\n### *Relentless*\n\n## *11th Rank Fighter Vigilant Tactic*\n\nAs a reaction, when the watched creature burns a Resolve, either while you are watching them or during your rebuttal, you may make a weapon attack against that creature.\n\n### *Rushdown*\n\n## *11th Rank Fighter Vigilant Tactic*\n\n\tAt the start of your rebuttal, you may allow your initiative partner to travel up to their Speed towards the creature you watched."
+      "description": "At 11th Rank, select one of the following Vigilant Tactic features from\nthe list below or one listed at an earlier Rank. During the Retrain\ndowntime activity, you may redo the selection of all of your chosen\nVigilant Tactics.\n\n### Measured Strike\n\n11th Rank Fighter Vigilant Tactic\n\nOnce during each of your rebuttals, when you make a weapon attack\nagainst the creature you watched, you may add a +10 bonus to the attack\ncheck's total.\n\n### Relentless\n\n11th Rank Fighter Vigilant Tactic\n\nAs a reaction, when the watched creature burns a Resolve, either while\nyou are watching them or during your rebuttal, you may make a weapon\nattack against that creature.\n\n### Rushdown\n\n11th Rank Fighter Vigilant Tactic\n\nAt the start of your rebuttal, you may allow your initiative partner to\ntravel up to their Speed towards the creature you watched."
     },
     {
       "name": "Flawless Execution",
       "flavor_text": "Your training, effort, and mastery culminates in an ultimate display of prowess sure to topple the greatest of enemies and sever their claim to power.",
       "rank": "12th Rank",
-      "description": "At 12th Rank, as two actions, you may make two weapon attacks against each staggered target within the range of your weapon attacks. All of these attacks automatically hit, but cannot score critical hits (as such, you do not need to roll any of the attack checks). Features that apply effects to these weapon attacks if their attack total meets a certain threshold, such as your **Decisive Blow** feature, act as if the total is sufficiently high enough."
-    },
-    {
-      "name": "Ability Improvement",
-      "flavor_text": "",
-      "rank": "12th Rank",
-      "description": "At 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "description": "At 12th Rank, as two actions, you may make two weapon attacks against\neach staggered target within the range of your weapon\nattacks. All of these attacks automatically hit, but cannot score\ncritical hits (as such, you do not need to roll any of the attack\nchecks). Features that apply effects to these weapon attacks if their\nattack total meets a certain threshold, such as your **Decisive Blow**\nfeature, act as if the total is sufficiently high enough."
     },
     {
       "name": "Final Reach",
       "flavor_text": "",
       "rank": "",
-      "description": "When you reach character Level 12, you compute your *Total Rank*, which is calculated as:\n\n###### The sum of all of your Class Ranks\n\n\tIf your Total Rank is less than 16 when you reach Level 12, then for each deficient Rank, you may choose one of the benefits below to modify a feature granted by one of your Class Ranks:\n\n* **Maneuvers.** You learn two additional maneuvers.\n\n* **Battlecasting.** You gain a maneuver, an additional Spell Point, and an additional prepared spell for that Class.\n\n* **Spellcasting.** You gain three additional Spell Points and three additional prepared spells for that Class.\n\nBack to Top\n\n# Subclasses"
+      "description": "When you reach character Level 12, you compute your *Total Rank*, which\nis calculated as:\n\n###### The sum of all of your Class Ranks\n\nIf your Total Rank is less than 16 when you reach Level 12, then for\neach deficient Rank, you may choose one of the benefits below to modify\na feature granted by one of your Class Ranks:\n\n- **Maneuvers.** You learn two additional maneuvers.\n\n- **Battlecasting.** You gain a maneuver, an additional Spell Point, and\n  an additional prepared spell for that Class.\n\n- **Spellcasting.** You gain three additional Spell Points and three\n  additional prepared spells for that Class.\n\nSubclasses"
     },
     {
       "name": "Fighter Code: Commander",
       "flavor_text": "The gift of a quiet combat is only given to those who know that planning is where the battle truly lies. You do not chase the amateur's dream of a singular, decisive move to sweep the battlefield. Instead, the perfected strategy of small choices overwhelms the strongest defense. For those who know their allies and their enemies best, also know the path to victory.",
       "rank": "1st Rank",
-      "description": "## **Encircle**\n\n\t *Fighting with a few allies is no different than fighting with an army under your command; it all comes down to effective cues and signals.*\n\n\tAt 1st Rank, as an action once per turn, you may cause a target creature within 30 feet of you to make a **Quick-Wits** saving throw against your Maneuver DC. On a failure, the target becomes *encircled* until the end of the current turn. An encircled creature's AC is reduced to their Base AC and it cannot be improved while encircled.\n\n## **Flanking Blow**\n\n\t*Forming a single front against an enemy split into fractions, the whole is pitted against separate parts of a whole.*\n\n\tAt 1st Rank, as an action, you may allow your initiative partner to take a reaction to make a light weapon attack. You may apply **Decisive Blow** to that attack instead of one of your own weapon attacks this turn.\n\n## **Direct the Troops**\n\n\t*The onset of soldiers is like the rush of a river; even the stones will roll in its path.*\n\n\tAt 4th Rank, while you are watching a creature, they are encircled.\n\n## **Pressure Defenses**\n\n\t*Should the enemy strengthen their vanguard, they will weaken their rear. Should they strengthen their left flank, they weaken their right. You direct maximum force to minimum resistance.*\n\n\tAt 8th Rank, you gain the following benefits:\n\n* **Leader's Reputation.** While you have a creature encircled, they are also frightened of you.\n\n* **Unexpected Flank.** You may use **Flanking Blow** on any target ally instead of only your initiative partner.\n\nBack to Top"
+      "description": "## Encircle\n\n*Fighting with a few allies is no different than fighting with an army\nunder your command; it all comes down to effective cues and signals.*\n\nAt 1st Rank, as an action once per turn, you may cause a target creature\nwithin 30 feet of you to make a **Quick-Wits** saving throw against your\nManeuver DC. On a failure, the target becomes *encircled* until the end\nof the current turn. An encircled creature's AC is reduced to their Base\nAC and it cannot be improved while encircled.\n\n## Flanking Blow\n\n*Forming a single front against an enemy split into fractions, the whole\nis pitted against separate parts of a whole.*\n\nAt 1st Rank, as an action, you may allow your initiative partner to take\na reaction to make a light weapon attack. You may apply **Decisive\nBlow** to that attack instead of one of your own weapon attacks this\nturn.\n\n## Direct the Troops\n\n*The onset of soldiers is like the rush of a river; even the stones will\nroll in its path.*\n\nAt 4th Rank, while you are watching a creature, they are encircled.\n\n## Pressure Defenses\n\n*Should the enemy strengthen their vanguard, they will weaken their\nrear. Should they strengthen their left flank, they weaken their right.\nYou direct maximum force to minimum resistance.*\n\nAt 8th Rank, you gain the following benefits:\n\n- **Leader's Reputation.** While you have a creature encircled, they are\n  also frightened of you.\n\n- **Unexpected Flank.** You may use **Flanking Blow** on any target ally\n  instead of only your initiative partner."
     },
     {
       "name": "Fighter Code: Drifter",
       "flavor_text": "Roads winding under the sun and dreams wandered under the stars mark the paths of those with somewhere to go. As a skilled nomad, you never let your enemies know your footing, darting through the fields as fallen foes lie in your wake. A life spent in motion has trained you to press ever onward.",
       "rank": "1st Rank",
-      "description": "## **Passing Strike**\n\n\t*You dash past an enemy and leave behind a mortal wound.*\n\nAt 1st Rank, once on your turn after you take the Move action but before your movement pool is empty, you may make a light weapon attack against a target you have not yet attacked this turn. Afterwards, until the end of the current turn, you may not make any additional attacks against the attack's target and must spend the remainder of your movement pool.\n\n## **Gliding Blow**\n\n\t*Dust kicks up into the wind as you leap into the fray.*\n\n\tAt 1st Rank, when you apply **Decisive Blow** to a weapon attack, you may immediately travel up to 10 feet either before or after the attack.\n\n## **Shift**\n\n\t*Even as you study the battle before you, you remain mobile to keep the upper hand.*\n\n\tAt 4th Rank, while you are watching a creature, you may travel up to 10 feet each time your combat team takes initiative. You do not gain **Shift's** benefit on your rebuttal.\n\n## **Windswept Stride**\n\n\t*You outrun the confines of your own weight and sprint with defiant fluidity as you cut your way through their ranks.*\n\n\tAt 8th Rank, you gain the following benefits:\n\n* If you take two or more Move actions during your turn, you may use **Passing Strike** twice on your turn instead of once.\n\n* When you use **Gliding Blow**, you may travel up to 20 feet instead of 10 feet.\n\nBack to Top"
+      "description": "## Passing Strike\n\n*You dash past an enemy and leave behind a mortal wound.*\n\nAt 1st Rank, once on your turn after you take the Move action but before\nyour movement pool is empty, you may make a light weapon attack against\na target you have not yet attacked this turn. Afterwards, until the end\nof the current turn, you may not make any additional attacks against the\nattack's target and must spend the remainder of your movement pool.\n\n## Gliding Blow\n\n*Dust kicks up into the wind as you leap into the fray.*\n\nAt 1st Rank, when you apply **Decisive Blow** to a weapon attack, you\nmay immediately travel up to 10 feet either before or after the attack.\n\n## Shift\n\n*Even as you study the battle before you, you remain mobile to keep the\nupper hand.*\n\nAt 4th Rank, while you are watching a creature, you may travel up to 10\nfeet each time your combat team takes initiative. You do not gain\n**Shift's** benefit on your rebuttal.\n\n## Windswept Stride\n\n*You outrun the confines of your own weight and sprint with defiant\nfluidity as you cut your way through their ranks.*\n\nAt 8th Rank, you gain the following benefits:\n\n- If you take two or more Move actions during your turn, you may use\n  **Passing Strike** twice on your turn instead of once.\n\n- When you use **Gliding Blow**, you may travel up to 20 feet instead of\n  10 feet."
     },
     {
       "name": "Fighter Code: Vanguard",
       "flavor_text": "A soldier's final moments are spent watching their nation fall. With the necessity of fortitude hammered into memory, you stand tall and protect the vulnerable.",
       "rank": "1st Rank",
-      "description": "### *Vanguard Range*\n\n\tBy default, your *vanguard range* is equal to your Reach. If you are using a melee fighting style, this distance may instead be your weapon attack range.\n\n## **Hold the Line**\n\n\t*Pressing forward and anchoring at the front, you keep the enemy at bay.*\n\n\tAt 1st Rank, while you have your Half Guard or Full Guard AC, the movement cost is doubled for hostile creatures traveling through 5 foot spaces within your vanguard range.\n\n## **Guarded Blow**\n\n\t*A strong offense must not sacrifice one's vigilance.*\n\n\tAt 1st Rank, when you apply **Decisive Blow** to a weapon attack, regardless if it hits or misses, you may gain your Half Guard AC until the start of your next turn.\n\n## **Disruption**\n\n\t*Your grip on the battlefront is unshakable.*\n\n\tAt 4th Rank, once per turn, while you are watching a creature within your vanguard range and they make an attack against a subject other than you, you may impose disadvantage on the attack check as a free action (this must be done before the attack check is rolled).\n\n## **Iron Bastion**\n\n\t*You become the wall that breaks the tide.*\n\nAt 8th Rank, you gain the following benefits:\n\n* **Locked in Battle.** When you use **Guarded Blow** and the weapon attack hits, the target becomes stuck until the end of the current turn. This effect has the **Recoverable** condition trait, allowing an action to end it early.\n* **Towering Presence.** While you have your Full Guard AC, your vanguard range is increased by 10 feet."
+      "description": "### Vanguard Range\n\nBy default, your *vanguard range* is equal to your Reach. If you are\nusing a melee fighting style, this distance may instead be your weapon\nattack range.\n\n## Hold the Line\n\n*Pressing forward and anchoring at the front, you keep the enemy at\nbay.*\n\nAt 1st Rank, while you have your Half Guard or Full Guard AC, the\nmovement cost is doubled for hostile creatures traveling through 5 foot\nspaces within your vanguard range.\n\n## Guarded Blow\n\n*A strong offense must not sacrifice one's vigilance.*\n\nAt 1st Rank, when you apply **Decisive Blow** to a weapon attack,\nregardless if it hits or misses, you may gain your Half Guard AC until\nthe start of your next turn.\n\n## Disruption\n\n*Your grip on the battlefront is unshakable.*\n\nAt 4th Rank, once per turn, while you are watching a creature within\nyour vanguard range and they make an attack against a subject other than\nyou, you may impose disadvantage on the attack check as a free action\n(this must be done before the attack check is rolled).\n\n## Iron Bastion\n\n*You become the wall that breaks the tide.*\n\nAt 8th Rank, you gain the following benefits:\n\n- **Locked in Battle.** When you use **Guarded Blow** and the weapon\n  attack hits, the target becomes stuck until the end of\n  the current turn. This effect has the **Recoverable** condition trait,\n  allowing an action to end it early.\n\n- **Towering Presence.** While you have your Full Guard AC, your\n  vanguard range is increased by 10 feet."
     }
   ]
 }

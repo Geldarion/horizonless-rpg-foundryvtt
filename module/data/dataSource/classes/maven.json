@@ -4,7 +4,7 @@
     {
       "Rank": "1",
       "Features": "Harmonic Spellcasting Maven Realm Sphere of Influence I",
-      "Inspiration Dice Pool": "\\-",
+      "Inspiration Dice Pool": "-",
       "Spell Points": "4",
       "Class Circle Cap": "1st",
       "Spells Prepared": "6",
@@ -102,30 +102,12 @@
     },
     {
       "Rank": "12",
-      "Features": "Harmonious Instant Ability Improvement",
+      "Features": "Harmonious Instant",
       "Inspiration Dice Pool": "4d10",
       "Spell Points": "30",
       "Class Circle Cap": "6th",
       "Spells Prepared": "28",
       "Martial Die": "1d10"
-    },
-    {
-      "Rank": "",
-      "Features": "Subclasses",
-      "Inspiration Dice Pool": "",
-      "Spell Points": "",
-      "Class Circle Cap": "",
-      "Spells Prepared": "",
-      "Martial Die": ""
-    },
-    {
-      "Rank": "",
-      "Features": "Dreams, Possibility, Resonance",
-      "Inspiration Dice Pool": "",
-      "Spell Points": "",
-      "Class Circle Cap": "",
-      "Spells Prepared": "",
-      "Martial Die": ""
     }
   ],
   "features": [
@@ -133,49 +115,49 @@
       "name": "Harmonic Spellcasting",
       "flavor_text": "",
       "rank": "1st Rank",
-      "description": "As a Maven, you are able to prepare and cast spells from the Harmonic spell list:\n\n* **Spells Prepared.** At 1st Rank, you may prepare 6 spells for this Class at the end of each long rest. You may cast those prepared spells using this feature.\n\n* **Class Circle Cap.** Each spell you prepare may have a maximum baseline Circle of 1st Circle.\n\n* **Heightening.** When you cast spells using this feature, you may heighten spells up to your Class Circle Cap.\n\n* **Spell Points.** At 1st Rank, you gain 4 Spell Points. When you cast spells using this feature, you must expend Spell Points equal to the Circle of the spell. Spell Points are regained at the end of each long rest.\n\n* **Spellcasting Modifier.** Your spellcasting modifier when casting spells using this feature is CHA.\n\n  * **Your Spell Attack Bonus** \\= your CHA \\+ your Tier Bonus\n\n  * **Your Spell Save DC** \\= 8 \\+ your CHA \\+ your Tier Bonus\n\n  * **Spellcasting Checks** made with spells prepared for this class use your CHA.\n\n* **Signature Spell.** Your designated signature spell may be one of the 1st Circle or higher spells prepared for this feature.\n\n* **Higher Ranks.** At higher Ranks, the spells prepared, Spell Points, and Class Circle Cap all improve as described in the Class Overview Table."
+      "description": "As a Maven, you are able to prepare and cast spells from the Harmonic\nspell list:\n\n- **Spells Prepared.** At 1st Rank, you may prepare 6 spells for this\n  Class at the end of each long rest. You may cast those prepared spells\n  using this feature.\n\n- **Class Circle Cap.** Each spell you prepare may have a maximum\n  baseline Circle of 1st Circle.\n\n- **Heightening.** When you cast spells using this feature, you may\n  heighten spells up to your Class Circle Cap.\n\n- **Spell Points.** At 1st Rank, you gain 4 Spell Points. When you cast\n  spells using this feature, you must expend Spell Points equal to the\n  Circle of the spell. Spell Points are regained at the end of each long\n  rest.\n\n- **Spellcasting Modifier.** Your spellcasting modifier when casting\n  spells using this feature is CHA.\n\n  - **Your Spell Attack Bonus** = your CHA + your Tier Bonus\n\n  - **Your Spell Save DC** = 8 + your CHA + your Tier Bonus\n\n  - **Spellcasting Checks** made with spells prepared for this class use\n    your CHA.\n\n- **Signature Spell.** Your designated signature spell may be one of the\n  1st Circle or higher spells prepared for this feature.\n\n- **Higher Ranks.** At higher Ranks, the spells prepared, Spell Points,\n  and Class Circle Cap all improve as described in the Class Overview\n  Table."
     },
     {
       "name": "Maven Realm",
       "flavor_text": "Great power can be drawn from a unique perspective.",
       "rank": "1st Rank",
-      "description": "At 1st Rank, you choose a Maven Realm that describes how your presence bends the rules of the universe and fashions a new fate for you and your friends. You gain features from your chosen Maven Realm at 1st, 4th, and 8th Rank."
+      "description": "At 1st Rank, you choose a Maven Realm that describes how your presence\nbends the rules of the universe and fashions a new fate for you and your\nfriends. You gain features from your chosen Maven Realm at 1st, 4th, and\n8th Rank."
     },
     {
       "name": "Sphere of Influence I",
       "flavor_text": "Sinking into the fabric of reality, the weight of your presence pulls those nearby into your influence, the gravitas of your gravity creating a sharp discontinuity in the world around you. Near you, anything could be possible.",
       "rank": "1st Rank",
-      "description": "At 1st Rank, as a free action after you cast a spell, you may create your *sphere of influence*, which is a 20 foot radius sphere originating from yourself. When you travel, the sphere of influence's origin point may travel with you. Your sphere of influence persists until you dismiss the effect as a free action at any point or if you are no longer in the sphere.\n\n\tCreatures within your sphere of influence are subject to the following effects:\n\n* **Boundary Conditions.** If a creature other than you travels or teleports out of the sphere of influence, that creature becomes disoriented until the end of the current turn.\n\n* **Realm.** Creatures in your sphere of influence are affected by your Maven Realm features."
+      "description": "At 1st Rank, as a free action after you cast a spell, you may create\nyour *sphere of influence*, which is a 20 foot radius sphere originating\nfrom yourself. When you travel, the sphere of influence's origin point\nmay travel with you. Your sphere of influence persists until you dismiss\nthe effect as a free action at any point or if you are no longer in the\nsphere.\n\nCreatures within your sphere of influence are subject to the following\neffects:\n\n- **Boundary Conditions.** If a creature other than you travels or\n  teleports out of the sphere of influence, that creature becomes\n  disoriented until the end of the current turn.\n\n- **Realm.** Creatures in your sphere of influence are affected by your\n  Maven Realm features."
     },
     {
       "name": "Inspiration I",
       "flavor_text": "Your presence lifts up those in need with every word of encouragement.",
       "rank": "2nd Rank",
-      "description": "At 2nd Rank, you have a pool of 2d6 called your *inspiration dice pool*. As a reaction, when a target creature other than you within your sphere of influence makes a saving throw, you may *inspire* them, allowing them to add one inspiration die to the total.\n\n\tVarious features allow you to inspire creatures when they make other kinds of checks or impact rolls. Regardless of how they are used, inspiration dice are removed from your inspiration dice pool when they are rolled. At the end of every rest, your inspiration dice pool is refilled."
+      "description": "At 2nd Rank, you have a pool of 2d6 called your *inspiration dice pool*.\nAs a reaction, when a target creature other than you within your sphere\nof influence makes a saving throw, you may *inspire* them, allowing them\nto add one inspiration die to the total.\n\nVarious features allow you to inspire creatures when they make other\nkinds of checks or impact rolls. Regardless of how they are used,\ninspiration dice are removed from your inspiration dice pool when they\nare rolled. At the end of every rest, your inspiration dice pool is\nrefilled."
     },
     {
       "name": "Inspiration Ideals I",
       "flavor_text": "Many great works begin with a simple idea.",
       "rank": "2nd Rank",
-      "description": "At 2nd Rank, select one of the following Inspiration Ideal features from the list below, which enhance the capabilities of your **Inspiration** feature. During the Retrain downtime activity, you may redo the selection of all of your chosen Inspiration Ideals.\n\n### *Boldness*\n\n## *2nd Rank Maven Inspiration Ideal*\n\n\tWhenever you inspire a creature, you may cause them to **regain ST** equal to 2 - your Maven Rank.\n\n### *Flow*\n\n## *2nd Rank Maven Inspiration Ideal*\n\n\tWhen you inspire a creature making a check and they still fail, the rolled inspiration dice are not removed from your inspiration dice pool.\n\n### *Mastery*\n\n## *2nd Rank Maven Inspiration Ideal*\n\n\tAs a reaction, when a target creature other than you within your sphere of influence makes an attack or combat check, you may inspire them, allowing them to add one inspiration die to the total."
+      "description": "At 2nd Rank, select one of the following Inspiration Ideal features from\nthe list below, which enhance the capabilities of your **Inspiration**\nfeature. During the Retrain downtime activity, you may redo the\nselection of all of your chosen Inspiration Ideals.\n\n### Boldness\n\n2nd Rank Maven Inspiration Ideal\n\nWhenever you inspire a creature, you may cause them to **regain ST**\nequal to 2 × your Maven Rank.\n\n### Flow\n\n2nd Rank Maven Inspiration Ideal\n\nWhen you inspire a creature making a check and they still fail, the\nrolled inspiration dice are not removed from your inspiration dice pool.\n\n### Mastery\n\n2nd Rank Maven Inspiration Ideal\n\nAs a reaction, when a target creature other than you within your sphere\nof influence makes an attack or combat check, you may inspire them,\nallowing them to add one inspiration die to the total."
     },
     {
       "name": "Prodigious Talent",
       "flavor_text": "When the time comes, you deliver your passions to the furthest extent of perfection.",
       "rank": "3rd Rank",
-      "description": "At 3rd Rank, once per rest, when you make a trade check that is possible for you to succeed, you may choose to succeed it regardless of the total. **Prodigious Talent** may not be used on checks without a DC, such as a Craft check."
+      "description": "At 3rd Rank, once per rest, when you make a trade check that is possible\nfor you to succeed, you may choose to succeed it regardless of the\ntotal. **Prodigious Talent** may not be used on checks without a DC,\nsuch as a Craft check."
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
-      "rank": "3rd, 6th, 9th, and 12th Rank",
-      "description": "At 3rd, 6th, 9th, and 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "rank": "3rd, 6th, and 9th Rank",
+      "description": "At 3rd, 6th, and 9th Rank, you gain an Ability Improvement. Each time\nyou gain an Ability Improvement, distribute three permanent +1 increases\nto your ability modifiers. You may increase the same ability modifier\nmultiple times.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "4th, 7th, and 10th Rank",
-      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with Maven being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than Maven and gain one Rank in the chosen Class."
+      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with Maven being the\nexploring Class. Each time you gain an Exploration, you gain the\nfollowing benefit:\n\n- **Bonus Rank.** You choose any Class other than Maven and gain one\n  Rank in the chosen Class."
     },
     {
       "name": "Maven Realm Feature",
@@ -193,31 +175,31 @@
       "name": "Sphere of Influence II",
       "flavor_text": "Your presence grows, impressive weight upon the fabric of space and time, pulling down to an even sharper cone. All fall in.",
       "rank": "6th Rank",
-      "description": "At 6th Rank, when you create your sphere of influence, you may increase the sphere's radius up to 40 feet in total. Additionally, when you create your sphere of influence, you may have it originate at a target location within 20 feet of you."
+      "description": "At 6th Rank, when you create your sphere of influence, you may increase\nthe sphere's radius up to 40 feet in total. Additionally, when you\ncreate your sphere of influence, you may have it originate at a target\nlocation within 20 feet of you."
     },
     {
       "name": "Universal Talent",
       "flavor_text": "Endless iterations of yourself span the breadth of the possible worlds. Perhaps it is time to call in a favor or two.",
       "rank": "6th Rank",
-      "description": "At 6th Rank, you may use **Prodigious Talent** twice per rest. Additionally, you may apply **Prodigious Talent** to any effort check that is possible for you to succeed."
+      "description": "At 6th Rank, you may use **Prodigious Talent** twice per rest.\nAdditionally, you may apply **Prodigious Talent** to any effort check\nthat is possible for you to succeed."
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "6th Rank",
-      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "7th Rank",
-      "description": "At 7th Rank, you gain an Exploration with Maven being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than Maven and gain one Rank in the chosen Class."
+      "description": "At 7th Rank, you gain an Exploration with Maven being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Maven and gain one\n  Rank in the chosen Class."
     },
     {
       "name": "Inspiration Ideals II",
       "flavor_text": "The layered and infectious thematics bring the world to a fever pitch.",
       "rank": "8th Rank",
-      "description": "At 8th Rank, select one of the following Inspiration Ideal features from the list below or one listed at an earlier Rank. During the Retrain downtime activity, you may redo the selection of all of your chosen Inspiration Ideals.\n\n### *Contrast*\n\n## *8th Rank Maven Inspiration Ideal*\n\n\tWhen you inspire a creature making a check with any degree of disadvantage, they may replace the outcomes of any inspiration dice rolled with their maximum value.\n\n### *Intensity*\n\n## *8th Rank Maven Inspiration Ideal*\n\n\tWhen you inspire a creature making a check, you may allow them to add a second inspiration die to the total.\n\n### *Presence*\n\n## *8th Rank Maven Inspiration Ideal*\n\n\tYou may expend 1 Spell Point, choose one of your features that inspires a creature as a reaction, and instead use it as a free action."
+      "description": "At 8th Rank, select one of the following Inspiration Ideal features from\nthe list below or one listed at an earlier Rank. During the Retrain\ndowntime activity, you may redo the selection of all of your chosen\nInspiration Ideals.\n\n### Contrast\n\n8th Rank Maven Inspiration Ideal\n\nWhen you inspire a creature making a check with any degree of\ndisadvantage, they may replace the outcomes of any inspiration dice\nrolled with their maximum value.\n\n### Intensity\n\n8th Rank Maven Inspiration Ideal\n\nWhen you inspire a creature making a check, you may allow them to add a\nsecond inspiration die to the total.\n\n### Presence\n\n8th Rank Maven Inspiration Ideal\n\nYou may expend 1 Spell Point, choose one of your features that inspires\na creature as a reaction, and instead use it as a free action."
     },
     {
       "name": "Maven Realm Feature",
@@ -235,61 +217,55 @@
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "9th Rank",
-      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
     },
     {
       "name": "Sphere of Influence III",
       "flavor_text": "Your magical prowess is diffuse through the air, sparking an electric notion of the furthest corners of your universe falling within striking distance. The rules have changed once more.",
       "rank": "10th Rank",
-      "description": "At 10th Rank, when you create your sphere of influence, you may increase the sphere's radius up to 60 feet in total. Additionally, you may modify spell effects you create if they fit either of the following criteria:\n\n* **Area.** If the spell effect designates an area, you may treat creatures of your choosing in your sphere of influence as being within the area.\n\n* **Multiple Targets.** If the spell effect can target two or more creatures, you may additionally target any number of creatures of your choosing in your sphere of influence."
+      "description": "At 10th Rank, when you create your sphere of influence, you may increase\nthe sphere's radius up to 60 feet in total. Additionally, you may modify\nspell effects you create if they fit either of the following criteria:\n\n- **Area.** If the spell effect designates an area, you may treat\n  creatures of your choosing in your sphere of influence as being within\n  the area.\n\n- **Multiple Targets.** If the spell effect can target two or more\n  creatures, you may additionally target any number of creatures of your\n  choosing in your sphere of influence."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "10th Rank",
-      "description": "At 10th Rank, you gain an Exploration with Maven being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than Maven and gain one Rank in the chosen Class."
+      "description": "At 10th Rank, you gain an Exploration with Maven being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Maven and gain one\n  Rank in the chosen Class."
     },
     {
       "name": "Multiversal Talent",
       "flavor_text": "Your vision is filled with the many lives and decisions your allies could have made, yet they are here with you now. Knowing their many permutations and alternate paths, you grant them a glimpse of one more suited for the task at hand.",
       "rank": "11th Rank",
-      "description": "At 11th Rank, you may use **Prodigious Talent** on any effort check any ally within 60 feet of you makes if it is possible for them to succeed."
+      "description": "At 11th Rank, you may use **Prodigious Talent** on any effort check any\nally within 60 feet of you makes if it is possible for them to succeed."
     },
     {
       "name": "Harmonious Instant",
       "flavor_text": "The greatest elegance is achieved when all motions of the universe coincide to a single moment in time. Within that handful of seconds, anything is possible.",
       "rank": "12th Rank",
-      "description": "At 12th Rank, once per rest, as a free action during your turn, you may grant yourself the following benefits until the start of your next turn:\n\n* **Aligned Perfectly.** When any of your inspiration dice is rolled and its outcome is even, that die is not removed from your inspiration dice pool.\n\n* **At the Right Place.** Once during your turn, you may allow yourself and creatures of your choosing in your sphere of influence to teleport to an unoccupied space that they can target within your sphere of influence.\n\n* **At the Right Time.** Your features that inspire creatures as a reaction may now instead be used as a free action."
-    },
-    {
-      "name": "Ability Improvement",
-      "flavor_text": "",
-      "rank": "12th Rank",
-      "description": "At 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "description": "At 12th Rank, once per rest, as a free action during your turn, you may\ngrant yourself the following benefits until the start of your next turn:\n\n- **Aligned Perfectly.** When any of your inspiration dice is rolled and\n  its outcome is even, that die is not removed from your inspiration\n  dice pool.\n\n- **At the Right Place.** Once during your turn, you may allow yourself\n  and creatures of your choosing in your sphere of influence to teleport\n  to an unoccupied space that they can target within your sphere of\n  influence.\n\n- **At the Right Time.** Your features that inspire creatures as a\n  reaction may now instead be used as a free action."
     },
     {
       "name": "Final Reach",
       "flavor_text": "",
       "rank": "",
-      "description": "When you reach character Level 12, you compute your *Total Rank*, which is calculated as:\n\n###### The sum of all of your Class Ranks\n\n\tIf your Total Rank is less than 16 when you reach Level 12, then for each deficient Rank, you may choose one of the benefits below to modify a feature granted by one of your Class Ranks:\n\n* **Maneuvers.** You learn two additional maneuvers.\n\n* **Battlecasting.** You gain a maneuver, an additional Spell Point, and an additional prepared spell for that Class.\n\n* **Spellcasting.** You gain three additional Spell Points and three additional prepared spells for that Class.\n\nBack to Top\n\n# Subclasses"
+      "description": "When you reach character Level 12, you compute your *Total Rank*, which\nis calculated as:\n\n###### The sum of all of your Class Ranks\n\nIf your Total Rank is less than 16 when you reach Level 12, then for\neach deficient Rank, you may choose one of the benefits below to modify\na feature granted by one of your Class Ranks:\n\n- **Maneuvers.** You learn two additional maneuvers.\n\n- **Battlecasting.** You gain a maneuver, an additional Spell Point, and\n  an additional prepared spell for that Class.\n\n- **Spellcasting.** You gain three additional Spell Points and three\n  additional prepared spells for that Class.\n\nSubclasses"
     },
     {
       "name": "Maven Realm: Dreams",
       "flavor_text": "In the space betwixt the squinting of the eye lies fertile ground for your imaginationary magic. Your boundless wonder suffuses the air with a dreamy perfume masking the tug and pull drawing ever deeper into slumber. The answer to the outside is only found within.",
       "rank": "1st Rank",
-      "description": "## **Blended Boundary**\n\n\t*Your powers thrive in the lack of focus \\- an eternal gradient to slip further and further away.*\n\n\tAt 1st Rank, you may append **Drowsiness** to the list of spells you prepare for the Maven class. Additionally, any effect you create with the **Out of It** condition trait (such as the **Drowsiness** spell) does not end for a creature when they take damage if that damage did not reduce their HP.\n\n## **Painted Dreamscape**\n\n\t*There is no life without a vision for how it must be. The architecture of your ambition melts and drips and leaks into the hardened, crystalline reality.*\n\n\tAt 1st Rank, as an action while your sphere of influence is active, you may designate a target creature that you have affected with the **Out of It** condition trait and *dreamspin* them. The target is forcibly teleported to a target unoccupied space within your sphere of influence and becomes *dreamspun* while you have them affected with the **Out of It** condition trait. You may not dreamspin yourself or a creature you have dreamspun already.\n\n\tDreamspun creatures have the following effects:\n\n* **Mostly Fictitious.** Only you or other dreamspun creatures may be affected by them. All damage they deal cannot reduce HP.\n\n* **Within the Dream.** They ignore the **Locked**, **Immobile**, and **Inattentive** condition traits (such as by being incapacitated or unconscious) but cannot move out of your sphere of influence or perceive anything outside of your sphere of influence. If you move your sphere of influence such that a dreamspun creature is now outside the area, they cease being dreamspun.\n\n* **Snap Out of It.** At the end of each of their turns, they may make a **Quick-Wits** saving throw against your Maven Spell Save DC. On a success, they cease being dreamspun and are cleansed of all effects that have the **Out of It** condition trait.\n\n* **Return.** After they cease to be dreamspun, they cannot be dreamspun again until they complete a rest.\n\n## **Larger Than Life**\n\n\t*Your allies finally see themselves the way you see them.*\n\n\tAt 4th Rank, when you inspire a target creature you have dreamspun, none of the inspiration dice they roll are removed from your inspiration dice pool.\n\n## **Vibrant Palette**\n\n\t*Striking hues and bold silhouettes string together a masterwork of a future. The inherent strength of an idea lies only in its presentation.*\n\n\tAt 8th Rank, you gain the following benefits:\n\n* **Dreamrunner.** Creatures may choose to ignore the **Return** effect of being dreamspun.\n* **Heavy Daze.** You may choose for a creature to become stuck while affected by your **Drowsiness** spell effects.\n* **Twinspin.** As a free action, when you dreamspin a creature, you may dreamspin a second qualifying creature.\n\nBack to Top"
+      "description": "## Blended Boundary\n\n*Your powers thrive in the lack of focus - an eternal gradient to slip\nfurther and further away.*\n\nAt 1st Rank, you may append **Drowsiness** to the list of spells you\nprepare for the Maven class. Additionally, any effect you create with\nthe **Out of It** condition trait (such as the **Drowsiness** spell)\ndoes not end for a creature when they take damage if that damage did not\nreduce their HP.\n\n## Painted Dreamscape\n\n*There is no life without a vision for how it must be. The architecture\nof your ambition melts and drips and leaks into the hardened,\ncrystalline reality.*\n\nAt 1st Rank, as an action while your sphere of influence is active, you\nmay designate a target creature that you have affected with the **Out of\nIt** condition trait and *dreamspin* them. The target is forcibly\nteleported to a target unoccupied space within your sphere of influence\nand becomes *dreamspun* while you have them affected with the **Out of\nIt** condition trait. You may not dreamspin yourself or a creature you\nhave dreamspun already.\n\nDreamspun creatures have the following effects:\n\n- **Mostly Fictitious.** Only you or other dreamspun creatures may be\n  affected by them. All damage they deal cannot reduce HP.\n\n- **Within the Dream.** They ignore the **Locked**, **Immobile**, and\n  **Inattentive** condition traits (such as by being\n  incapacitated or unconscious) but cannot\n  move out of your sphere of influence or perceive anything outside of\n  your sphere of influence. If you move your sphere of influence such\n  that a dreamspun creature is now outside the area, they cease being\n  dreamspun.\n\n- **Snap Out of It.** At the end of each of their turns, they may make a\n  **Quick-Wits** saving throw against your Maven Spell Save DC. On a\n  success, they cease being dreamspun and are cleansed of all effects\n  that have the **Out of It** condition trait.\n\n- **Return.** After they cease to be dreamspun, they cannot be dreamspun\n  again until they complete a rest.\n\n## Larger Than Life\n\n*Your allies finally see themselves the way you see them.*\n\nAt 4th Rank, when you inspire a target creature you have dreamspun, none\nof the inspiration dice they roll are removed from your inspiration dice\npool.\n\n## Vibrant Palette\n\n*Striking hues and bold silhouettes string together a masterwork of a\nfuture. The inherent strength of an idea lies only in its presentation.*\n\nAt 8th Rank, you gain the following benefits:\n\n- **Dreamrunner.** Creatures may choose to ignore the **Return** effect\n  of being dreamspun.\n\n- **Heavy Daze.** You may choose for a creature to become\n  stuck while affected by your **Drowsiness** spell\n  effects.\n\n- **Twinspin.** As a free action, when you dreamspin a creature, you may\n  dreamspin a second qualifying creature."
     },
     {
       "name": "Maven Realm: Possibility",
-      "flavor_text": "Storms crackle, fortunes twist, and nations fall as the penpoint of fate meets with the page of history. With only a moment to spare, the cautious author directs the poetic procession \\- but not all mistakes must be taken as fact. A choice word at the exact moment can ease tempests, portend victories, and forge alliances.",
+      "flavor_text": "Storms crackle, fortunes twist, and nations fall as the penpoint of fate meets with the page of history. With only a moment to spare, the cautious author directs the poetic procession - but not all mistakes must be taken as fact. A choice word at the exact moment can ease tempests, portend victories, and forge alliances.",
       "rank": "1st Rank",
-      "description": "## **Rough Draft**\n\n\t*A story can take many turns and a skilled writer knows to survey the landscape before putting it to words.*\n\n\tAt 1st Rank, once per round when a creature becomes affected by one of your spell effects, you may additionally give all affected creatures other than yourself a *rewrite* that persists until the start of your next turn. Creatures with one of your rewrites can expend it on the following:\n\n* **Poetry.** After the creature casts a spell and knows the results of all of its immediate effects, they may expend a rewrite to negate all of the spell's effects and regain all actions and reactions taken to cast it. If they do, they may instead cast a different spell using any feature.\n* **Prose.** After a creature makes an attack and misses, they may expend a rewrite to retry the attack check against a different target. This counts as the same attack for the purposes of weapon attack fatigue and maneuver repetition penalties.\n\n## **Dramatic Retelling**\n\n\t*A larger-than-life story can be a biography if you live large enough.*\n\n\tAt 1st Rank, all dice rolled for impact rolls by creatures in your sphere of influence become d12s. For example, if a creature in your sphere of influence would roll 1d8 \\+ 1d4 \\+ 6 for a damage roll, they instead roll 2d12 \\+ 6\\.\n\n## **Editorial Hand**\n\n\t*Impossibility is for the unimaginative.*\n\n\tAt 4th Rank, you gain the following benefits:\n\n* **Eloquence.** When a target creature within your sphere of influence expends a rewrite for **Poetry**, you may inspire them, allowing them to add your inspiration dice to the spell effect's Spell DC.\n* **Emphasis.** When a target creature within your sphere of influence expends a rewrite for **Prose**, you may inspire them, allowing them to add one inspiration die to the retried attack check's total. Inspiration dice added to this check become d12s.\n\n## **Patchwork Narrative**\n\n\t*Incidental moments given retroactive meaning coincide to create layered plotlines and foreshadowed tension, all neatly tied together just in the nick of time.*\n\n\tAt 8th Rank, you gain the following benefits:\n\n* **Plot Hole.** When a creature expends a rewrite for **Prose**, they may teleport to an unoccupied space they target within half their Speed before retrying the attack.\n* **Turn of Phrase.** When a creature expends a rewrite for **Poetry**, they refund any feature usages or Spell Points expended by the negated spell.\n\nBack to Top"
+      "description": "## Rough Draft\n\n*A story can take many turns and a skilled writer knows to survey the\nlandscape before putting it to words.*\n\nAt 1st Rank, once per round when a creature becomes affected by one of\nyour spell effects, you may additionally give all affected creatures\nother than yourself a *rewrite* that persists until the start of your\nnext turn. Creatures with one of your rewrites can expend it on the\nfollowing:\n\n- **Poetry.** After the creature casts a spell and knows the results of\n  all of its immediate effects, they may expend a rewrite to negate all\n  of the spell's effects and regain all actions and reactions taken to\n  cast it. If they do, they may instead cast a different spell using any\n  feature.\n\n- **Prose.** After a creature makes an attack and misses, they may\n  expend a rewrite to retry the attack check against a different target.\n  This counts as the same attack for the purposes of weapon attack\n  fatigue and maneuver repetition penalties.\n\n## Dramatic Retelling\n\n*A larger-than-life story can be a biography if you live large enough.*\n\nAt 1st Rank, all dice rolled for impact rolls by creatures in your\nsphere of influence become d12s. For example, if a creature in your\nsphere of influence would roll 1d8 + 1d4 + 6 for a damage roll, they\ninstead roll 2d12 + 6.\n\n## Editorial Hand\n\n*Impossibility is for the unimaginative.*\n\nAt 4th Rank, you gain the following benefits:\n\n- **Eloquence.** When a target creature within your sphere of influence\n  expends a rewrite for **Poetry**, you may inspire them, allowing them\n  to add one of your inspiration dice to the spell effect's Spell DC.\n\n- **Emphasis.** When a target creature within your sphere of influence\n  expends a rewrite for **Prose**, you may inspire them, allowing them\n  to add one of your inspiration dice to the retried attack check's\n  total. Inspiration dice added to this check become d12s.\n\n## Patchwork Narrative\n\n*Incidental moments given retroactive meaning coincide to create layered\nplotlines and foreshadowed tension, all neatly tied together just in the\nnick of time.*\n\nAt 8th Rank, you gain the following benefits:\n\n- **Plot Hole.** When a creature expends a rewrite for **Prose**, they\n  may teleport to an unoccupied space they target within half their\n  Speed before retrying the attack.\n\n- **Turn of Phrase.** When a creature expends a rewrite for **Poetry**,\n  they refund any feature usages or Spell Points expended by casting the\n  negated spell."
     },
     {
       "name": "Maven Realm: Resonance",
       "flavor_text": "A stirring melody sweeps through the crowd and pulls their heartbeats into tune. The winds, seas, and stars sing their verses of the song of creation and harmonize with the key of your masterpiece. A complete chorus permeates space as you rise and uplift.",
       "rank": "1st Rank",
-      "description": "## **Aural Attunement**\n\n\t*Singing a song of desire for a better world, for dreams unfulfilled, the hero takes center stage.*\n\n\tAt 1st Rank, as an action, you may designate a target creature within 30 feet of you with your *aural attunement*, which persists until you can no longer target the creature or you take this action again. Once per round, when you cast a 1st Circle or higher spell, you may cause the creature with your aural attunement to **regain ST** equal to 5 - the spell's Circle.\n\n## **Resonant Tempo**\n\n\t*No baton in hand, but with wandless magic nonetheless, you conduct the conflict like a battle of rhythm and melody.*\n\n\tAt 1st Rank, when you create your sphere of influence, you may choose either **Adagio** or **Allegro** to be in effect while it persists:\n\n* **Adagio.** All d20 outcomes of attack and combat checks made by creatures in your sphere of influence that are higher than 10 become 10\\.\n\n* **Allegro.** All d20 outcomes of attack and combat checks made by creatures in your sphere of influence that are lower than 10 become 10\\.\n\n## **Spherical Harmony**\n\n\t*A piercing melody broadened into harmonious leitmotif, the action of one is played out by the chorus.*\n\n\tAt 4th Rank, as a reaction, when a target creature in your sphere of influence is dealt damage, you may expend an inspiration die to inspire them and cause the damage dealt to be redirected to be evenly divided amongst all creatures in the sphere of influence.\n\n## **Moving Reverberance**\n\n\t*The power of a single cadence can bring hope to the heart or devastation to the psyche.*\n\n\tAt 8th Rank, you gain the following benefits:\n\n* **Anthem.** When you inspire a creature, you may switch **Resonant Tempo's** active effect from **Adagio** to **Allegro**.\n* **Ballad.** When the creature with your aural attunement breaks their ST, you may switch **Resonant Tempo's** active effect from **Allegro** to **Adagio**."
+      "description": "## Aural Attunement\n\n*Singing a song of desire for a better world, for dreams unfulfilled,\nthe hero takes center stage.*\n\nAt 1st Rank, as an action, you may designate a target creature within 30\nfeet of you with your *aural attunement*, which persists until you can\nno longer target the creature or you take this action again. Once per\nround, when you cast a 1st Circle or higher spell, you may cause the\ncreature with your aural attunement to **regain ST** equal to 5 × the\nspell's Circle.\n\n## Resonant Tempo\n\n*No baton in hand, but with wandless magic nonetheless, you conduct the\nconflict like a battle of rhythm and melody.*\n\nAt 1st Rank, when you create your sphere of influence, you may choose\neither **Adagio** or **Allegro** to be in effect while it persists:\n\n- **Adagio.** All d20 outcomes of attack and combat checks made by\n  creatures in your sphere of influence that are higher than 10 become\n  10.\n\n- **Allegro.** All d20 outcomes of attack and combat checks made by\n  creatures in your sphere of influence that are lower than 10 become\n  10.\n\n## Spherical Harmony\n\n*A piercing melody broadened into harmonious leitmotif, the action of\none is played out by the chorus.*\n\nAt 4th Rank, as a reaction, when a target creature in your sphere of\ninfluence is dealt damage, you may expend an inspiration die to inspire\nthem and cause the damage dealt to be redirected to be evenly divided\namongst all creatures in the sphere of influence.\n\n## Moving Reverberance\n\n*The power of a single cadence can bring hope to the heart or\ndevastation to the psyche.*\n\nAt 8th Rank, you gain the following benefits:\n\n- **Anthem.** When you inspire a creature, you may switch **Resonant\n  Tempo's** active effect from **Adagio** to **Allegro**.\n\n- **Ballad.** When the creature with your aural attunement breaks their\n  ST, you may switch **Resonant Tempo's** active effect from **Allegro**\n  to **Adagio**."
     }
   ]
 }

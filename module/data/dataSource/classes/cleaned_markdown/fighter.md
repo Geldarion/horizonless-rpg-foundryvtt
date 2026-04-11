@@ -1,19 +1,3 @@
-![](media/image1.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Fighter Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Fighter Class Overview Table
 
 +----------+-------------------------------------------+--------------------+--------------------+--------------------+
@@ -76,11 +60,9 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+-------------------------------------------+--------------------+--------------------+--------------------+
 |          | **Subclasses**                                                                                           |
 +----------+----------------------------------------------------------------------------------------------------------+
-|          | [[Commander]{.underline}](#kix.l84lo993yd50), [[Drifter]{.underline}](#kix.qwaymm93dtdw),                |
-|          | [[Vanguard]{.underline}](#kix.qdma08ce82n)                                                               |
+|          | Commander, Drifter,                |
+|          | Vanguard                                                               |
 +==========+===========================================+====================+====================+====================+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 9
 
@@ -106,7 +88,7 @@ and techniques. You gain features from your chosen Fighter Code at 1st,
 choreography. Keep looking forward and never repeat yourself.*
 
 At 1st Rank, when you perform a maneuver with a listed repetition
-penalty, but don\'t incur it, you may *exhaust* the maneuver. Doing so
+penalty, but don't incur it, you may *exhaust* the maneuver. Doing so
 immediately grants one *momentum die*, which are d12s (these are added
 to your *momentum dice pool*). Afterwards, performing the exhausted
 maneuver always incurs its listed repetition penalty.
@@ -126,7 +108,7 @@ attack, you may expend one momentum die to grant the following benefits:
 
 - **Stagger.** If the attack scores a critical hit or its attack check's
   total exceeds the target's AC by 5 or more, the target becomes
-  [staggered]{.underline}.
+  staggered.
 
 - **Fighter Code.** Your chosen Fighter Code may add an additional
   effect.
@@ -149,7 +131,7 @@ following effects:
 - **Momentum Die.** You gain one momentum die.
 
 - **Perfect Opportunity.** The creature you watched becomes
-  [staggered]{.underline}.
+  staggered.
 
 If the creature you are watching dies or is knocked out, you may choose
 to watch a different target creature.
@@ -190,9 +172,9 @@ Fighter Rank.
 swift victory.*
 
 At 3rd Rank, once per rest, when you make a weapon attack against a
-[staggered]{.underline} target, you may make a second weapon attack
+staggered target, you may make a second weapon attack
 against the same target as a free action. This second attack treats the
-target as being [staggered]{.underline} and ignores weapon attack
+target as being staggered and ignores weapon attack
 fatigue.
 
 # Stalwart I
@@ -254,7 +236,7 @@ Vigilant Tactics.
 5th Rank Fighter Vigilant Tactic
 
 During your rebuttal, all weapon attacks you make against the creature
-you watched while they are [staggered]{.underline} have their critical
+you watched while they are staggered have their critical
 hit threshold reduced by 1.
 
 ### Prescient Attack
@@ -274,7 +256,7 @@ This attack's critical hit threshold is reduced by 1.
 
 At the start of your rebuttal as a free action, you may cleanse yourself
 of all conditions and effects with the **Recoverable** condition trait,
-such as by being [prone]{.underline} or [ablaze]{.underline}.
+such as by being prone or ablaze.
 
 # Double Strike II
 
@@ -461,7 +443,7 @@ prowess sure to topple the greatest of enemies and sever their claim to
 power.*
 
 At 12th Rank, as two actions, you may make two weapon attacks against
-each [staggered]{.underline} target within the range of your weapon
+each staggered target within the range of your weapon
 attacks. All of these attacks automatically hit, but cannot score
 critical hits (as such, you do not need to roll any of the attack
 checks). Features that apply effects to these weapon attacks if their
@@ -487,14 +469,12 @@ a feature granted by one of your Class Ranks:
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
 
-[[Back to Top]{.underline}](#kix.lf3lc5g4l5rw)
-
 Subclasses
 
 # Fighter Code: Commander
 
 *The gift of a quiet combat is only given to those who know that
-planning is where the battle truly lies. You do not chase the amateur\'s
+planning is where the battle truly lies. You do not chase the amateur's
 dream of a singular, decisive move to sweep the battlefield. Instead,
 the perfected strategy of small choices overwhelms the strongest
 defense. For those who know their allies and their enemies best, also
@@ -537,12 +517,10 @@ You direct maximum force to minimum resistance.*
 At 8th Rank, you gain the following benefits:
 
 - **Leader's Reputation.** While you have a creature encircled, they are
-  also [frightened]{.underline} of you.
+  also frightened of you.
 
 - **Unexpected Flank.** You may use **Flanking Blow** on any target ally
   instead of only your initiative partner.
-
-[[Back to Top]{.underline}](#kix.lf3lc5g4l5rw)
 
 # Fighter Code: Drifter
 
@@ -591,8 +569,6 @@ At 8th Rank, you gain the following benefits:
 - When you use **Gliding Blow**, you may travel up to 20 feet instead of
   10 feet.
 
-[[Back to Top]{.underline}](#kix.lf3lc5g4l5rw)
-
 # Fighter Code: Vanguard
 
 *A soldier's final moments are spent watching their nation fall. With
@@ -638,11 +614,9 @@ you, you may impose disadvantage on the attack check as a free action
 At 8th Rank, you gain the following benefits:
 
 - **Locked in Battle.** When you use **Guarded Blow** and the weapon
-  attack hits, the target becomes [stuck]{.underline} until the end of
+  attack hits, the target becomes stuck until the end of
   the current turn. This effect has the **Recoverable** condition trait,
   allowing an action to end it early.
 
 - **Towering Presence.** While you have your Full Guard AC, your
   vanguard range is increased by 10 feet.
-
-[[Back to Top]{.underline}](#kix.lf3lc5g4l5rw)

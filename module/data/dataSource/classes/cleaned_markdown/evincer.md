@@ -1,19 +1,3 @@
-![](media/image1.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Evincer Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Evincer Class Overview Table
 
 +----------+------------------------------+---------------+---------------+---------------+---------------+---------------+
@@ -72,11 +56,9 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+------------------------------+---------------+---------------+---------------+---------------+---------------+
 |          | **Subclasses**                                                                                               |
 +----------+--------------------------------------------------------------------------------------------------------------+
-|          | [[Breakneck]{.underline}](#kix.a0ceqjuxyfnj), [[Fractureforged]{.underline}](#kix.hoyb1s9ckyva),             |
-|          | [[Timetorn]{.underline}](#kix.o2sg0fj8y0st)                                                                  |
+|          | Breakneck, Fractureforged,             |
+|          | Timetorn                                                                  |
 +==========+==============================+===============+===============+===============+===============+===============+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 7
 
@@ -158,7 +140,7 @@ well as one from your Evincer Lens.
 Once per round when you hit with a weapon attack, you may expend a
 lightspeed charge to convert all of the damage to **radiant** and deal
 an additional **Xd4 damage**, where X is your Evincer Rank. If this
-damage breaks the target\'s ST, they are [disoriented]{.underline} until
+damage breaks the target's ST, they are disoriented until
 the end of their next turn.
 
 # Vergence I
@@ -196,7 +178,7 @@ selection of all of your chosen Vergence Angles.
 2nd Rank Evincer Vergence Angle
 
 As a vergence effect, you cause the source of the damage to become
-[disoriented]{.underline} until the start of its next turn.
+disoriented until the start of its next turn.
 
 ### Parallax
 
@@ -422,8 +404,8 @@ At 10th Rank, you learn the following lightform:
 Once on your turn as an action, you may expend four lightspeed charges
 to cause all creatures in a 60 foot long, 15 foot wide line originating
 in front of you to become *sunburned* and be dealt **8d6 radiant
-damage**. Sunburned creatures are [disoriented]{.underline} until the
-end of their next turn and set [ablaze]{.underline}.
+damage**. Sunburned creatures are disoriented until the
+end of their next turn and set ablaze.
 
 # Exploration
 
@@ -520,8 +502,6 @@ a feature granted by one of your Class Ranks:
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
 
-[[Back to Top]{.underline}](#kix.fxqnqnaz98nz)
-
 Subclasses
 
 # Evincer Lens: Breakneck
@@ -545,7 +525,7 @@ action, you gain one lightspeed charge.
 At the end of each of your turns while supersonic, if you have not used
 the **Accelerate** lightform (listed below) during that turn, you cease
 being supersonic and *burn out*. Burning out causes you to fall
-[prone]{.underline} and deal **2d6 lightning damage** to all creatures
+prone and deal **2d6 lightning damage** to all creatures
 and objects other than yourself within 10 feet of you**.** This damage
 increases to 4d6/6d6/8d6 at 4th/7th/10th Rank, respectively.
 
@@ -581,8 +561,8 @@ your movement, vergence effects still trigger as if you had teleported.
 
 Each creature of your choice within your Reach of the path you traveled
 during this movement is pushed 10 feet upwards and becomes
-[stuck]{.underline} in the air until the end of their next turn, at
-which point they fall [prone]{.underline}.
+stuck in the air until the end of their next turn, at
+which point they fall prone.
 
 ## Slipstream
 
@@ -594,14 +574,12 @@ At 8th Rank, you gain the following benefits:
   feet rather than 10 feet.
 
 - **Supersonic Boom.** When you burn out, instead of falling
-  [prone]{.underline} you may travel 10 feet immediately before dealing
+  prone you may travel 10 feet immediately before dealing
   the burn out damage. Creatures that take the burn out damage fall
-  [prone]{.underline}.
+  prone.
 
-- **Tornado Alley.** Creatures [stuck]{.underline} by **Twister Trail**
-  are instead [restrained]{.underline}.
-
-[[Back to Top]{.underline}](#kix.fxqnqnaz98nz)
+- **Tornado Alley.** Creatures stuck by **Twister Trail**
+  are instead restrained.
 
 # Evincer Lens: Fractureforged
 
@@ -646,16 +624,16 @@ chosen from below to one of your fractal armaments that does not yet
 have a color:
 
 - **Red.** Target is dealt an additional **3d4 fire damage** and is set
-  [ablaze]{.underline}.
+  ablaze.
 
 - **Orange.** Target is dealt an additional **2d4 force damage** and is
-  [stuck]{.underline} until the end of their next turn.
+  stuck until the end of their next turn.
 
 - **Yellow.** Target is dealt an additional **1d4 psychic damage** and
-  is [frightened]{.underline} until the end of their next turn.
+  is frightened until the end of their next turn.
 
 - **Green.** Target is dealt an additional **2d4 acid damage** and is
-  [poisoned]{.underline} until the end of their next turn.
+  poisoned until the end of their next turn.
 
 Weapon attacks that hit using your fractal armaments and **Glass Spear**
 hits apply the used fractal armament's color's effect to the target.
@@ -671,7 +649,7 @@ option for your **Stained Glass** feature:
 
 - **Blue.** Choosing this option costs one additional lightspeed charge.
   Target is dealt an additional **3d4 cold damage** and is
-  [restrained]{.underline} until the end of their next turn.
+  restrained until the end of their next turn.
 
 ## Iridescent Arsenal
 
@@ -688,9 +666,7 @@ At 8th Rank, you gain the following benefits:
 
   - **Violet.** Choosing this option costs one additional lightspeed
     charge. Target is dealt an additional **3d4 necrotic damage** and is
-    [incapacitated]{.underline} until the end of their next turn.
-
-[[Back to Top]{.underline}](#kix.fxqnqnaz98nz)
+    incapacitated until the end of their next turn.
 
 # Evincer Lens: Timetorn
 
@@ -698,7 +674,7 @@ At 8th Rank, you gain the following benefits:
 you fall through the labyrinths of time searching for the rare path
 forward. Caught between always and every time at once, your anchor to
 the world - your allies and your family - is the last thing you have to
-hold onto. It\'s something worth fighting for, time after time.*
+hold onto. It's something worth fighting for, time after time.*
 
 ## Temporal Jaunt
 
@@ -763,5 +739,3 @@ notice.*
 At 8th Rank, if your present self and your past self use the same
 lightform at the same time, you expend the lightspeed charge cost once
 instead of twice.
-
-[[Back to Top]{.underline}](#kix.fxqnqnaz98nz)

@@ -1,19 +1,3 @@
-![](media/image1.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Druid Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Druid Class Overview Table
 
 +----------+------------------------------+---------------+---------------+---------------+---------------+---------------+
@@ -66,11 +50,9 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+------------------------------+---------------+---------------+---------------+---------------+---------------+
 |          | **Druid Paths**                                                                                              |
 +----------+--------------------------------------------------------------------------------------------------------------+
-|          | [[Flora]{.underline}](#kix.m2oz4bid17u6), [[Storms]{.underline}](#kix.3253641467u7),                         |
-|          | [[Waves]{.underline}](#kix.ayy2ab233pmg)                                                                     |
+|          | Flora, Storms,                         |
+|          | Waves                                                                     |
 +==========+==============================+===============+===============+===============+===============+===============+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 5
 
@@ -162,10 +144,10 @@ At 2nd Rank, at the end of a short or long rest, you may create a
 creature wearing of your seeds is subjected to one or more of the
 following conditions, they may cause one of their seeds to *bloom*,
 expending it and immediately cleansing themselves of all of these
-conditions: [ablaze]{.underline}, [charmed]{.underline},
-[disoriented]{.underline}, [grappled]{.underline},
-[pacified]{.underline}, [prone]{.underline}, [provoked]{.underline},
-[poisoned]{.underline}, [slowed]{.underline}, and [stuck]{.underline}.
+conditions: ablaze, charmed,
+disoriented, grappled,
+pacified, prone, provoked,
+poisoned, slowed, and stuck.
 
 At the end of every long rest, all seeds you have previously created are
 destroyed before you create new seeds.
@@ -176,9 +158,9 @@ destroyed before you create new seeds.
 wants of all shall be known to you.*
 
 At 2nd Rank, as an action once per rest, you may become
-[polymorphed]{.underline} into a Tier Ø beast creature of your choosing
+polymorphed into a Tier Ø beast creature of your choosing
 until the end of your next short or long rest. While
-[polymorphed]{.underline} in this manner, you ignore the **No
+polymorphed in this manner, you ignore the **No
 Concentration** effect listed in the **Transformed** condition trait,
 allowing you to concentrate on spell effects (though you may not cast
 spells).
@@ -242,9 +224,9 @@ manners it wishes to grow.*
 
 At 5th Rank, you may add the following conditions to the list that can
 activate and be cleansed by your seeds blooming:
-[frightened]{.underline}, [incapacitated]{.underline},
-[polymorphed]{.underline}, [restrained]{.underline}, and
-[unconscious]{.underline}.
+frightened, incapacitated,
+polymorphed, restrained, and
+unconscious.
 
 # Amplified Landwords I
 
@@ -255,7 +237,7 @@ At 6th Rank, once per rest, when you use one of the following landwords,
 you may enhance its effect as described below:
 
 - **Roiling Earth.** All creatures standing in the landword's area of
-  **Roiling Earth** fall [prone]{.underline}.
+  **Roiling Earth** fall prone.
 
 - **Rapid Ridge.** The Toughness of the wall you create using **Rapid
   Ridge** becomes 15. Creatures that climb the wall treat it as
@@ -271,7 +253,7 @@ you become that which bridges the gap.*
 
 At 6th Rank, you may use **Critter Form** twice per rest. When you use
 **Critter Form**, you may cause the creature form you become
-[polymorphed]{.underline} into to gain the following benefits:
+polymorphed into to gain the following benefits:
 
 - **Size.** You choose the creature form's Size up to Huge.
 
@@ -357,8 +339,8 @@ times of great need.*
 
 At 9th Rank, you may add the following conditions to the list that can
 activate and be cleansed by your seeds blooming:
-[incapacitated]{.underline}, [frozen]{.underline}, and
-[stunned]{.underline}.
+incapacitated, frozen, and
+stunned.
 
 # Ability Improvement
 
@@ -395,7 +377,7 @@ benefit:
 *A form suffused with the wonders of magic and the fondness of home.
 With a graceful leap, you bound through hidden paths into your grove.*
 
-At 11th Rank, while you have [polymorphed]{.underline} yourself, you may
+At 11th Rank, while you have polymorphed yourself, you may
 gain the following benefits:
 
 - **Spellcasting.** You ignore the **No Spellcasting** and **No
@@ -440,8 +422,6 @@ a feature granted by one of your Class Ranks:
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
 
-[[Back to Top]{.underline}](#kix.tx81t8tae8o6)
-
 Druid Paths
 
 # Druid Path: Flora
@@ -464,7 +444,7 @@ effects below:
 - **Direct.** You instead push the target up to 10 feet in a direction
   of your choosing.
 
-- **Bind.** You instead cause the target to become [stuck]{.underline}
+- **Bind.** You instead cause the target to become stuck
   with the **Recoverable** condition trait, allowing an action to end
   the effect.
 
@@ -490,8 +470,8 @@ checks while in the area.
 At 4th Rank, when one of your seeds blooms, you may cause a target
 within 10 feet of the wearer to make a **Poise** saving throw against
 your Druid Spell Save DC. On a failure, the target is
-[restrained]{.underline}. Once per round, a creature
-[restrained]{.underline} in this manner may take an action to retry the
+restrained. Once per round, a creature
+restrained in this manner may take an action to retry the
 saving throw, ending the effect on a success.
 
 ## Gnarled Brush
@@ -507,11 +487,9 @@ At 8th Rank, you gain the following benefits:
 - When you use your **Twisting Brush** landword, you may cause any
   number of target creatures or objects in the area to make a **Poise**
   saving throw against your Druid Spell Save DC. On a failure, the
-  target is [restrained]{.underline}. Once per round, a creature
-  [restrained]{.underline} in this manner may take an action to retry
+  target is restrained. Once per round, a creature
+  restrained in this manner may take an action to retry
   the saving throw, ending the effect on a success.
-
-[[Back to Top]{.underline}](#kix.tx81t8tae8o6)
 
 # Druid Path: Storms
 
@@ -565,13 +543,11 @@ At 8th Rank, you gain the following benefits:
 
 - When a creature fails the saving throw from your **Resounding Static**
   feature, you may cause the creature to become
-  [incapacitated]{.underline} until the end of its next turn.
+  incapacitated until the end of its next turn.
 
 - When you use your **Gathering Storm** landword, you may have the
   damage occur twice: once upon using the landword and once again at the
   start of your next turn.
-
-[[Back to Top]{.underline}](#kix.tx81t8tae8o6)
 
 # Druid Path: Waves
 
@@ -599,7 +575,7 @@ improvements:
 - **Cleansing.** All creatures affected by your **Tidal Blessing** spell
   are also cleansed of all effects that have either the **Recoverable**
   or **Out of It** condition traits, such as by being
-  [prone]{.underline} or [unconscious]{.underline}.
+  prone or unconscious.
 
 ## Surf Turf
 
@@ -643,6 +619,4 @@ At 8th Rank, you gain the following benefits:
 - The ST recovery of your splash for **Tidal Blessing** becomes 10.
 
 - Creatures affected by your **Tidal Blessing** spell are also cleansed
-  of the [incapacitated]{.underline} condition.
-
-[[Back to Top]{.underline}](#kix.tx81t8tae8o6)
+  of the incapacitated condition.

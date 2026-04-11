@@ -1,19 +1,3 @@
-![](media/image1.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Witch Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Witch Class Overview Table
 
 +----------+---------------------------+------------+------------+------------+------------+------------+------------+
@@ -67,11 +51,9 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+---------------------------+------------+------------+------------+------------+------------+------------+
 |          | **Witch Covens**                                                                                        |
 +----------+---------------------------------------------------------------------------------------------------------+
-|          | [[Alterity]{.underline}](#kix.xjvb35qcb4rp), [[Life]{.underline}](#kix.t6aj1uo5w8yi),                   |
-|          | [[Lore]{.underline}](#kix.zfkxpfilcf5s)                                                                 |
+|          | Alterity, Life,                   |
+|          | Lore                                                                 |
 +==========+===========================+============+============+============+============+============+============+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 5
 
@@ -407,8 +389,6 @@ a feature granted by one of your Class Ranks:
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
 
-[[Back to Top]{.underline}](#kix.1uuet6gzkq2m)
-
 Witch Covens
 
 # Witch Coven: Alterity
@@ -461,7 +441,7 @@ your spell effects that have **Gnawing Infection** . This damage becomes
 curses. Perhaps it is too late.*
 
 At 4th Rank, all creatures you have affected with spell effects with the
-contagion trait are [provoked]{.underline} toward your blighted
+contagion trait are provoked toward your blighted
 creature.
 
 ## Eldritch Omen
@@ -472,15 +452,15 @@ dust, disease tightens its grip, and unabated fire purges the earth.*
 At 8th Rank, you gain the following benefits:
 
 - **Ring of Fire.** When creatures fail the saving throw imposed by your
-  **Smoldering Crown** spell, they become [ablaze]{.underline}.
+  **Smoldering Crown** spell, they become ablaze.
 
 - **Sow Dissent.** When a creature becomes affected by a contagion spell
-  and is [provoked]{.underline} by **Rotted Roots**, they must take
+  and is provoked by **Rotted Roots**, they must take
   their next action to make a weapon attack against the blighted
   creature if possible.
 
-[[Back to
-Top]{.underline}](https://docs.google.com/document/d/1LiSRKLIKh4LBtdmsC0Ko2J5kKWpOTdFqlEoM7aoIUHs/edit?pli=1&tab=t.0#bookmark=id.9mnd7e2108tw)
+Back to
+Top
 
 # Witch Coven: Life
 
@@ -545,8 +525,8 @@ At 8th Rank, you gain the following benefits:
 - **Cut a Deal.** Using **Channel Vitality** on **Sanguine Sliver** only
   costs one vital charge, regardless of Circle.
 
-[[Back to
-Top]{.underline}](https://docs.google.com/document/d/1LiSRKLIKh4LBtdmsC0Ko2J5kKWpOTdFqlEoM7aoIUHs/edit?pli=1&tab=t.0#bookmark=id.9mnd7e2108tw)
+Back to
+Top
 
 # Witch Coven: Lore
 
@@ -621,5 +601,5 @@ At 8th Rank, you gain the following benefits:
   a different **elemental**, **biological**, or **supernatural** damage
   type.
 
-[[Back to
-Top]{.underline}](https://docs.google.com/document/d/1LiSRKLIKh4LBtdmsC0Ko2J5kKWpOTdFqlEoM7aoIUHs/edit?pli=1&tab=t.0#bookmark=id.9mnd7e2108tw)
+Back to
+Top

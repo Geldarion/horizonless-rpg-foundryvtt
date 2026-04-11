@@ -1,19 +1,3 @@
-![](media/image1.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Hexblade Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Hexblade Class Overview Table
 
 +----------+------------------------------+---------------+---------------+---------------+---------------+---------------+
@@ -72,11 +56,9 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+------------------------------+---------------+---------------+---------------+---------------+---------------+
 |          | **Hexblade Lures**                                                                                           |
 +----------+--------------------------------------------------------------------------------------------------------------+
-|          | [[The Abyss]{.underline}](#kix.jaq3ov2g8te7), [[Avarice]{.underline}](#kix.btm9nm9bozrz), [[The              |
-|          | Unknown]{.underline}](#kix.j4vekcbncfd6)                                                                     |
+|          | The Abyss, Avarice, The              |
+|          | Unknown                                                                     |
 +==========+==============================+===============+===============+===============+===============+===============+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 7
 
@@ -223,7 +205,7 @@ of your chosen Hexwrought Curses.
 2nd Rank Hexblade Hexwrought Curse
 
 When you hit your hexed subject with a melee weapon attack, it becomes
-[slowed]{.underline} until the start of your next turn.
+slowed until the start of your next turn.
 
 ### Reap Vitality
 
@@ -239,7 +221,7 @@ respectively.
 
 When you awaken a spirit of violence while a subject is hexed by you, it
 appears within 5 feet of your hexed subject and your hexed subject falls
-[prone]{.underline}.
+prone.
 
 # Impulsive Strike
 
@@ -261,7 +243,7 @@ weapon attack. Afterwards, you make a doom check.
 ensnaring your adversary.*
 
 At 3rd Rank, when you burn a Resolve while you have a creature hexed,
-you may cause that creature to become [restrained]{.underline}. At the
+you may cause that creature to become restrained. At the
 end of each of the affected creature's turns, they may make a
 **Fortitude** saving throw against your Hexblade Spell Save DC, ending
 the effect on a success.
@@ -305,7 +287,7 @@ Hexwrought Curses.
 5th Rank Hexblade Hexwrought Curse
 
 When a spirit of violence is awakened, your hexed subject becomes
-[frightened]{.underline} of that spirit of violence until they are no
+frightened of that spirit of violence until they are no
 longer hexed by you.
 
 ### Shaky Footing
@@ -425,9 +407,9 @@ At 8th Rank, you gain a feature for your Hexblade Lure.
 
 *I do not fear my own death, but you should be terrified of it.*
 
-At 9th Rank, when you cause a creature to be [restrained]{.underline} by
+At 9th Rank, when you cause a creature to be restrained by
 your **Clutches of Death**, you may instead cause them to be
-[stunned]{.underline}.
+stunned.
 
 # Ability Improvement
 
@@ -505,7 +487,7 @@ melee attacks against your hexed subject.
 11th Rank Hexblade Hexwrought Curse
 
 When your hexed subject reaches 0 HP or is broken, the next subject
-hexed by you this turn is [stunned]{.underline} until the end of the
+hexed by you this turn is stunned until the end of the
 turn.
 
 # Master of Violence
@@ -534,8 +516,6 @@ a feature granted by one of your Class Ranks:
 
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
-
-[[Back to Top]{.underline}](#kix.7f9tq97khdfl)
 
 Subclasses
 
@@ -573,8 +553,8 @@ doom DC by 4 and make a doom check.
 
 Slick does not stack, and as a free action you may expend slick to
 cleanse yourself of any condition other than
-[incapacitated]{.underline}, [stunned]{.underline}, or
-[frozen]{.underline}.
+incapacitated, stunned, or
+frozen.
 
 ## Drowned Spirit
 
@@ -602,8 +582,6 @@ At 8th Rank, you gain the following benefits:
 
 - **Death Defying.** The dice you add to checks for your **Adrenaline
   Spike** feature become d6s.
-
-[[Back to Top]{.underline}](#kix.7f9tq97khdfl)
 
 # Hexblade Lure: Avarice
 
@@ -654,7 +632,7 @@ below.
 Lure of Avarice Hexblade Doomglyph
 
 As a free action, you spend 3 fortune chips and increase your doom DC by
-4 to inflict [poisoned]{.underline} on a target creature within 30 feet
+4 to inflict poisoned on a target creature within 30 feet
 of you until either the end of combat or you use this doomglyph again.
 Afterwards, you make a doom check.
 
@@ -675,10 +653,8 @@ At 8th Rank, you gain the following benefits:
 - **Dragon's Envy.** Your hoard's initial size becomes 10.
 
 - **Golden Tomb.** When you use **Poisoned by Greed**, you may spend 15
-  chips instead of 3. If you do, the [poisoned]{.underline} condition is
-  replaced with [stunned]{.underline}.
-
-[[Back to Top]{.underline}](#kix.7f9tq97khdfl)
+  chips instead of 3. If you do, the poisoned condition is
+  replaced with stunned.
 
 # Hexblade Lure: The Unknown
 
@@ -745,5 +721,3 @@ At 8th Rank, you gain the following benefits:
 - **Hexdraw.** You may use **Hexslinger** to bestow your hex on a
   subject immediately before you target it with a cantrip attack instead
   of when you hit it.
-
-[[Back to Top]{.underline}](#kix.7f9tq97khdfl)

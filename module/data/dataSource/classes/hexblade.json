@@ -1,66 +1,289 @@
 {
   "class": "hexblade",
-  "overview_table": [],
+  "overview_table": [
+    {
+      "Rank": "1",
+      "Features": "Occult Battlecasting Hexblade Lure Doomglyphs",
+      "Hex Die": "-",
+      "Spell Points": "2",
+      "Class Circle Cap": "1st",
+      "Spells Prepared": "4",
+      "Martial Die": "1d6"
+    },
+    {
+      "Rank": "2",
+      "Features": "Hex Hexwrought Curses I",
+      "Hex Die": "1d8",
+      "Spell Points": "4",
+      "Class Circle Cap": "1st",
+      "Spells Prepared": "5",
+      "Martial Die": "1d6"
+    },
+    {
+      "Rank": "3",
+      "Features": "Impulsive Strike Clutches of Death I Ability Improvement",
+      "Hex Die": "1d8",
+      "Spell Points": "6",
+      "Class Circle Cap": "1st",
+      "Spells Prepared": "6",
+      "Martial Die": "1d6"
+    },
+    {
+      "Rank": "4",
+      "Features": "Exploration Hexblade Lure Feature",
+      "Hex Die": "2d8",
+      "Spell Points": "8",
+      "Class Circle Cap": "1st",
+      "Spells Prepared": "7",
+      "Martial Die": "1d8"
+    },
+    {
+      "Rank": "5",
+      "Features": "Hexwrought Curses II",
+      "Hex Die": "2d8",
+      "Spell Points": "10",
+      "Class Circle Cap": "2nd",
+      "Spells Prepared": "8",
+      "Martial Die": "1d8"
+    },
+    {
+      "Rank": "6",
+      "Features": "Bloodshield Shadow Price Ability Improvement",
+      "Hex Die": "2d8",
+      "Spell Points": "12",
+      "Class Circle Cap": "2nd",
+      "Spells Prepared": "9",
+      "Martial Die": "1d8"
+    },
+    {
+      "Rank": "7",
+      "Features": "Lifesteal I Exploration",
+      "Hex Die": "2d8",
+      "Spell Points": "13",
+      "Class Circle Cap": "2nd",
+      "Spells Prepared": "10",
+      "Martial Die": "1d10"
+    },
+    {
+      "Rank": "8",
+      "Features": "Hexwrought Curses III Hexblade Lure Feature",
+      "Hex Die": "3d8",
+      "Spell Points": "14",
+      "Class Circle Cap": "2nd",
+      "Spells Prepared": "11",
+      "Martial Die": "1d10"
+    },
+    {
+      "Rank": "9",
+      "Features": "Clutches of Death II Ability Improvement",
+      "Hex Die": "3d8",
+      "Spell Points": "15",
+      "Class Circle Cap": "3rd",
+      "Spells Prepared": "12",
+      "Martial Die": "1d10"
+    },
+    {
+      "Rank": "10",
+      "Features": "Violence Is Mine Exploration",
+      "Hex Die": "4d8",
+      "Spell Points": "16",
+      "Class Circle Cap": "3rd",
+      "Spells Prepared": "13",
+      "Martial Die": "1d12"
+    },
+    {
+      "Rank": "11",
+      "Features": "Lifesteal II Hexwrought Curses IV",
+      "Hex Die": "4d8",
+      "Spell Points": "17",
+      "Class Circle Cap": "3rd",
+      "Spells Prepared": "14",
+      "Martial Die": "1d12"
+    },
+    {
+      "Rank": "12",
+      "Features": "Master of Violence",
+      "Hex Die": "4d8",
+      "Spell Points": "18",
+      "Class Circle Cap": "3rd",
+      "Spells Prepared": "15",
+      "Martial Die": "1d12"
+    }
+  ],
   "features": [
+    {
+      "name": "Occult Battlecasting",
+      "flavor_text": "",
+      "rank": "1st Rank",
+      "description": "As a Hexblade, you are able to prepare and cast spells from the Occult\nspell list:\n\n- **Spells Prepared.** At 1st Rank, you may prepare 4 spells for this\n  Class at the end of each long rest. You may cast those prepared spells\n  using this feature.\n\n- **Class Circle Cap.** Each spell you prepare may have a maximum\n  baseline Circle of 1st Circle.\n\n- **Heightening.** When you cast spells using this feature, you may\n  heighten spells up to your Class Circle Cap.\n\n- **Spell Points.** At 1st Rank, you gain 2 Spell Points. When you cast\n  spells using this feature, you must expend Spell Points equal to the\n  Circle of the spell. Spell Points are regained at the end of each long\n  rest.\n\n- **Spellcasting Modifier.** Your spellcasting modifier when casting\n  spells using this feature is CHA.\n\n  - **Your Spell Attack Bonus** = your CHA + your Tier Bonus\n\n  - **Your Spell Save DC** = 8 + your CHA + your Tier Bonus\n\n  - **Spellcasting Checks** made with spells prepared for this class use\n    your CHA.\n\n- **Signature Spell.** Your designated signature spell may be one of the\n  1st Circle or higher spells prepared for this feature.\n\n- **Higher Ranks.** At higher Ranks, the spells prepared, Spell Points,\n  and Class Circle Cap all improve as described in the Class Overview\n  Table."
+    },
+    {
+      "name": "Hexblade Lure",
+      "flavor_text": "Toeing the line between uncertain doom and immeasurable power, you brave the dangerous path and make it your own. You have everything to lose and everything to gain.",
+      "rank": "1st Rank",
+      "description": "At 1st Rank, you choose a Hexblade Lure: a false promise that you aim to\nmake true. You gain features from this chosen Hexblade Lure at 1st, 4th,\nand 8th Rank."
+    },
+    {
+      "name": "Doomglyphs",
+      "flavor_text": "You begin to tap into perilous forces beyond your control and bargain with voices that tempt you from beyond the reaches of obscurity.",
+      "rank": "1st Rank",
+      "description": "At 1st Rank, you gain access to *doomglyphs*, which increase your *doom\nDC* and cause you to make a *doom check* immediately afterwards. You\nlearn one doomglyph from your Hexblade Lure, as well as the **Hungering\nStrike** doomglyph described below*.*\n\n### Hungering Strike\n\nHexblade Doomglyph\n\nWhen you make an attack check, you may increase your doom DC by 3 to add\n+3 to the check's total. After the attack, you make a doom check.\n\n## Doom Checks\n\nYour *doom DC* begins at 0 and can increase to a maximum of 20. *Doom\nchecks* are flat checks against your doom DC. On a success, nothing\nhappens. On a failure, your doom DC reverts to 0 and you *awaken* a\n*spirit of violence*, which has the following properties:\n\n- **Object.** The spirit of violence is a Small object with 5 HP, 15 AC,\n  and 5 Toughness.\n\n- **Mobility.** The spirit of violence has advanced Hovering mobility.\n\n- **Speed.** The spirit of violence has a Speed equal to your Speed.\n\n- **Hostile.** The spirit of violence is controlled by the GM and\n  awakens 30 feet away from you at a location of the GM's choice.\n\n- **Lured.** The spirit of violence is granted additional features by\n  your Hexblade Lure.\n\n- **Reaper.** At the end of each of your turns, the GM may have it\n  travel up to its Speed and then, if it is within 5 feet of you, it may\n  make a *reaper* melee special attack against you. Reaper attacks have\n  a +6 attack bonus and deal **5 injuring necrotic damage** that ignores\n  DBs on a hit.\n\n- **Combative.** If a spirit of violence is awakened, combat begins with\n  only your combat team if you are not already in combat.\n\nAt higher character Levels, the statistics of the spirit of violence\nimproves as shown in the table below:\n\n#### Hexblade Spirit of Violence Statistics Table\n\n----------------------------------------------------------------------------\n  **Level**    **HP**    **AC**    **Toughness**   **Reaper     **Reaper\n                                                   Attack       Attack Damage\n                                                   Bonus**      Roll**\n  ------------ --------- --------- --------------- ------------ --------------\n  **1-3**      5         13        5               +6           5\n\n**4-6**      5         16        10              +9           10\n\n**7-9**      5         19        15              +12          15\n\n**10-12**    5         22        20              +15          20\n  ----------------------------------------------------------------------------"
+    },
+    {
+      "name": "Hex",
+      "flavor_text": "A malignant mist reaches out and shares your misery with your foes.",
+      "rank": "2nd Rank",
+      "description": "At 2nd Rank, as an action, you may *bestow* your *hex* on a target\nwithin 60 feet of you. The subject remains *hexed* by you until the end\nof combat, it burns a Resolve, or you bestow your hex on a different\nsubject. You cannot bestow your hex on a subject that is currently hexed\nby you.\n\nWhen you hit your hexed subject with an attack, you may add **1d8\nnecrotic damage** to the damage roll. This 1d8 is your *hex die*, and it\nbecomes 2d8/3d8/4d8 at 4th/7th/10th Rank, respectively."
+    },
+    {
+      "name": "Hexwrought Curses I",
+      "flavor_text": "Sparks of electric misfortune hone in on those you've primed for their demise.",
+      "rank": "2nd Rank",
+      "description": "At 2nd Rank, select one of the following Hexwrought Curse features from\nthe list below, which enhance the capabilities of your **Hex** feature.\nDuring the Retrain downtime activity, you may redo the selection of all\nof your chosen Hexwrought Curses.\n\n### Chilling Dusk\n\n2nd Rank Hexblade Hexwrought Curse\n\nWhen you hit your hexed subject with a melee weapon attack, it becomes\nslowed until the start of your next turn.\n\n### Reap Vitality\n\n2nd Rank Hexblade Hexwrought Curse\n\nWhen your hexed subject reaches 0 HP or is broken, you may **regain 5\nST**. This ST recovery roll becomes 10/15/20 at 4th/7th/10th Rank,\nrespectively.\n\n### Unwilling Conduit\n\n2nd Rank Hexblade Hexwrought Curse\n\nWhen you awaken a spirit of violence while a subject is hexed by you, it\nappears within 5 feet of your hexed subject and your hexed subject falls\nprone."
+    },
+    {
+      "name": "Impulsive Strike",
+      "flavor_text": "Strike while the iron is hot.",
+      "rank": "3rd Rank",
+      "description": "At 3rd Rank, you learn the **Impulsive Strike** doomglyph described\nbelow.\n\n### Impulsive Strike\n\n3rd Rank Hexblade Doomglyph\n\nAs a reaction at any point, you may increase your doom DC by 5 to make a\nweapon attack. Afterwards, you make a doom check."
+    },
+    {
+      "name": "Clutches of Death I",
+      "flavor_text": "Hanging over the edge of failure, you pull yourself up by the chains ensnaring your adversary.",
+      "rank": "3rd Rank",
+      "description": "At 3rd Rank, when you burn a Resolve while you have a creature hexed,\nyou may cause that creature to become restrained. At the\nend of each of the affected creature's turns, they may make a\n**Fortitude** saving throw against your Hexblade Spell Save DC, ending\nthe effect on a success."
+    },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
-      "rank": "3rd, 6th, 9th, and 12th Rank",
-      "description": "At 3rd, 6th, 9th, and 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "rank": "3rd, 6th, and 9th Rank",
+      "description": "At 3rd, 6th, and 9th Rank, you gain an Ability Improvement. Each time\nyou gain an Ability Improvement, distribute three permanent +1 increases\nto your ability modifiers. You may increase the same ability modifier\nmultiple times.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "4th, 7th, and 10th Rank",
-      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with CLASS being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than CLASS and gain one Rank in the chosen Class."
+      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with Hexblade being\nthe exploring Class. Each time you gain an Exploration, you gain the\nfollowing benefit:\n\n- **Bonus Rank.** You choose any Class other than Hexblade and gain one\n  Rank in the chosen Class."
     },
     {
-      "name": "SUBCLASS Feature",
+      "name": "Hexblade Lure Feature",
       "flavor_text": "",
       "rank": "4th Rank",
-      "description": "At 4th Rank, you gain a feature for your SUBCLASS.\n\n\\[Ranks 5-6\\]"
+      "description": "At 4th Rank, you gain a feature for your Hexblade Lure."
+    },
+    {
+      "name": "Hexwrought Curses II",
+      "flavor_text": "Indecipherable shadows cling to the corners of their mind, your persistent presence haunting their thoughts.",
+      "rank": "5th Rank",
+      "description": "At 5th Rank, select one of the following Hexwrought Curse features from\nthe list below or one listed at an earlier Rank. During the Retrain\ndowntime activity, you may redo the selection of all of your chosen\nHexwrought Curses.\n\n### Nightmare Virus\n\n5th Rank Hexblade Hexwrought Curse\n\nWhen a spirit of violence is awakened, your hexed subject becomes\nfrightened of that spirit of violence until they are no\nlonger hexed by you.\n\n### Shaky Footing\n\n5th Rank Hexblade Hexwrought Curse\n\nWhile a subject is hexed by you, their AC is reduced by one guard step\n(their AC is either their Full Guard AC, Half Guard AC, or Base AC).\n\n### Unnerve\n\n5th Rank Hexblade Hexwrought Curse\n\nWhile a subject is hexed by you, they cannot gain advantage on attack\nchecks made against you."
+    },
+    {
+      "name": "Bloodshield",
+      "flavor_text": "Your stubborn refusal to despair in the face of failure hardens into a fragile armor.",
+      "rank": "6th Rank",
+      "description": "At 6th Rank, you learn the **Bloodshield** doomglyph described below.\n\n### Bloodshield\n\n6th Rank Hexblade Doomglyph\n\nAs a free action immediately after you lose HP, you may increase your\ndoom DC by 7 to gain your Full Guard AC until the end of your next turn.\nAfterwards, you make a doom check."
+    },
+    {
+      "name": "Shadow Price",
+      "flavor_text": "You've measured the costs and paid the interest. The deferred catastrophe reignites your fighting spirit.",
+      "rank": "6th Rank",
+      "description": "At 6th Rank, when you succeed on a doom check, you gain one or more of\nthe following benefits:\n\n- **Split Fate.** If your doom DC is 7 or higher, you may bestow your\n  hex on a target within 60 feet of you as a free action. You may choose\n  a condition affecting you and cause your hexed target to be afflicted\n  with that condition until they are no longer hexed by you.\n\n- **Reverse Fate.** If your doom DC is 12 or higher, you are cleansed of\n  the condition chosen by **Split Fate**.\n\n- **Defy Fate.** If your doom DC is 17 or higher, allies within 15 feet\n  of you are also cleansed of the condition chosen by **Split Fate**."
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "6th Rank",
-      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\.\n\n\\[Rank 7\\]"
+      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
+    },
+    {
+      "name": "Lifesteal I",
+      "flavor_text": "Sap their life force to recoup the cost of their demise.",
+      "rank": "7th Rank",
+      "description": "At 7th Rank, twice per long rest, as a free action whenever you roll\nyour hex die, you may **heal HP** equal to the total of the hex die.\nEffects that multiply your hex die, such as critical hits, consequently\nimprove the healing gained from **Lifesteal**."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "7th Rank",
-      "description": "At 7th Rank, you gain an Exploration with CLASS being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than CLASS and gain one Rank in the chosen Class.\n\n\\[Rank 8\\]"
+      "description": "At 7th Rank, you gain an Exploration with Hexblade being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Hexblade and gain one\n  Rank in the chosen Class."
     },
     {
-      "name": "SUBCLASS Feature",
+      "name": "Hexwrought Curses III",
+      "flavor_text": "The vicious words spoken to castigate your foes are precise and efficient in their malevolence.",
+      "rank": "8th Rank",
+      "description": "At 8th Rank, select one of the following Hexwrought Curse features from\nthe list below or one listed at an earlier Rank. During the Retrain\ndowntime activity, you may redo the selection of all of your chosen\nHexwrought Curses.\n\n### Fatal Flaw\n\n8th Rank Hexblade Hexwrought Curse\n\nAll attacks made against your hexed subject have their critical hit\nthreshold reduced by 1.\n\n### Recurse\n\n8th Rank Hexblade Hexwrought Curse\n\nAs a reaction, when your hexed subject reaches 0 HP or is broken, you\nmay bestow your hex on a target within 60 feet of you.\n\n### Seed of Doubt\n\n8th Rank Hexblade Hexwrought Curse\n\nYour hex gains the **Recoverable** condition trait, allowing an action\nto end the effect early. When your hexed subject imposes a saving throw,\nthe creatures making the saving throw automatically succeed."
+    },
+    {
+      "name": "Hexblade Lure Feature",
       "flavor_text": "",
       "rank": "8th Rank",
-      "description": "At 8th Rank, you gain a feature for your SUBCLASS.\n\n\\[Rank 9\\]"
+      "description": "At 8th Rank, you gain a feature for your Hexblade Lure."
+    },
+    {
+      "name": "Clutches of Death II",
+      "flavor_text": "I do not fear my own death, but you should be terrified of it.",
+      "rank": "9th Rank",
+      "description": "At 9th Rank, when you cause a creature to be restrained by\nyour **Clutches of Death**, you may instead cause them to be\nstunned."
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "9th Rank",
-      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\.\n\n\\[Rank 10\\]"
+      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
+    },
+    {
+      "name": "Violence Is Mine",
+      "flavor_text": "Wield the consequences to turn your costs into benefits.",
+      "rank": "10th Rank",
+      "description": "At 10th Rank, you learn the **Violence Is Mine** doomglyph described\nbelow.\n\n### Violence Is Mine\n\n10th Rank Hexblade Doomglyph\n\nAs a free action once per turn, you may increase your doom DC by 9 and\nmake a doom check. Afterwards, you gain control of one of your awakened\nspirits of violence of your choosing during this turn (i.e. you decide\nboth where it travels and the target of its reaper attacks)."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "10th Rank",
-      "description": "At 10th Rank, you gain an Exploration with CLASS being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than CLASS and gain one Rank in the chosen Class.\n\n\\[Rank 11-12\\]"
+      "description": "At 10th Rank, you gain an Exploration with Hexblade being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Hexblade and gain one\n  Rank in the chosen Class."
     },
     {
-      "name": "Ability Improvement",
-      "flavor_text": "",
+      "name": "Lifesteal II",
+      "flavor_text": "Tear their vitality, rend their soul, bring forth from their body your retribution.",
+      "rank": "11th Rank",
+      "description": "At 11th Rank, you may now use **Lifesteal** three times per long rest.\nAdditionally, when you use **Lifesteal**, you may replace the outcome of\nthe rolled hex dice with their maximum value."
+    },
+    {
+      "name": "Hexwrought Curses IV",
+      "flavor_text": "Purge every purity and sharpen every hesitation into a weapon designed for your ends.",
+      "rank": "11th Rank",
+      "description": "At 11th Rank, select one of the following Hexwrought Curse features from\nthe list below or one listed at an earlier Rank. During the Retrain\ndowntime activity, you may redo the selection of all of your chosen\nHexwrought Curses.\n\n### Blindspot\n\n11th Rank Hexblade Hexwrought Curse\n\nWhen you bestow a hex on a creature, they become **uncertain** of you\nand cannot **perceive** you while hexed by you.\n\n### Call to Cull\n\n11th Rank Hexblade Hexwrought Curse\n\nWhen you awaken a spirit of violence while a subject is hexed by you, it\nappears within 5 feet of your hexed subject. As an action during this\nturn, you may cause that spirit of violence to make two reaper special\nmelee attacks against your hexed subject.\n\n### Devour Essence\n\n11th Rank Hexblade Hexwrought Curse\n\nWhen your hexed subject reaches 0 HP or is broken, the next subject\nhexed by you this turn is stunned until the end of the\nturn."
+    },
+    {
+      "name": "Master of Violence",
+      "flavor_text": "Controlling the chaos is the answer, not giving up the power.",
       "rank": "12th Rank",
-      "description": "At 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "description": "At 12th Rank, when you use your **Violence Is Mine** doomglyph, you may\ntake two actions and automatically fail your doom check to choose all of\nyour awakened spirits of violence instead of just one."
     },
     {
       "name": "Final Reach",
       "flavor_text": "",
       "rank": "",
-      "description": "When you reach character Level 12, you compute your *Total Rank*, which is calculated as:\n\n###### The sum of all of your Class Ranks\n\n\tIf your Total Rank is less than 16 when you reach Level 12, then for each deficient Rank, you may choose one of the benefits below to modify a feature granted by one of your Class Ranks:\n\n* **Maneuvers.** You learn two additional maneuvers.\n\n* **Battlecasting.** You gain a maneuver, an additional Spell Point, and an additional prepared spell for that Class.\n\n* **Spellcasting.** You gain three additional Spell Points and three additional prepared spells for that Class.\n\nBack to Top\n\n# Subclasses\n\n\\[Subclass A\\]\n\nBack to Top\n\n\\[Subclass B\\]\n\nBack to Top\n\n\\[Subclass C\\]"
+      "description": "When you reach character Level 12, you compute your *Total Rank*, which\nis calculated as:\n\n###### The sum of all of your Class Ranks\n\nIf your Total Rank is less than 16 when you reach Level 12, then for\neach deficient Rank, you may choose one of the benefits below to modify\na feature granted by one of your Class Ranks:\n\n- **Maneuvers.** You learn two additional maneuvers.\n\n- **Battlecasting.** You gain a maneuver, an additional Spell Point, and\n  an additional prepared spell for that Class.\n\n- **Spellcasting.** You gain three additional Spell Points and three\n  additional prepared spells for that Class.\n\nSubclasses"
+    },
+    {
+      "name": "Hexblade Lure: The Abyss",
+      "flavor_text": "A sourceless voice calls to dive deeper, to push farther, to blur the unfathomably thin line between you and the void. It dares you to test its waters, but at the brink of catastrophe, the bliss of doing the impossible is the breath of air on the other side of drowning.",
+      "rank": "1st Rank",
+      "description": "## Adrenaline Spike\n\n*A chilling pang of commitment at the moment where triumph is the only\noption.*\n\nAt 1st Rank, as a free action when you make a combat or effort check,\nyou may add 1d4 to the check's total and deal **injuring cold damage**\nto yourself equal to 5 × ½ your Tier Bonus. You may repeat this multiple\ntimes for the same check.\n\n## Slick Trick\n\n*The offer is not a price but a challenge eagerly accepted.*\n\nAt 1st Rank, you learn the **Slick Trick** doomglyph described below.\n\n### Slick Trick\n\nLure of the Abyss Hexblade Doomglyph\n\nImmediately before you make a combat or effort check, you raise its DC\nby 2. If you succeed on that check, you gain *slick* until the start or\nend of combat. Afterwards, regardless of the result, you increase your\ndoom DC by 4 and make a doom check.\n\nSlick does not stack, and as a free action you may expend slick to\ncleanse yourself of any condition other than\nincapacitated, stunned, or\nfrozen.\n\n## Drowned Spirit\n\n*A jealous hand reaches from the nameless void to wrest away your\nachievements.*\n\nAt 1st Rank, when a spirit of violence hits you with a reaper attack,\nyou lose slick if you had it.\n\n## Flow State\n\n*Live in the moment and submit to the current.*\n\nAt 4th Rank, when you succeed on a combat or effort check, you may\nbestow your hex on a target creature within 60 feet of you.\n\n## Fearless Fathoms\n\n*Fear is an illusion created by the mind to prevent greatness.*\n\nAt 8th Rank, you gain the following benefits:\n\n- **Conquer Fear.** Expending slick may now be used to cleanse yourself\n  or a target creature within your Reach of any condition.\n\n- **Death Defying.** The dice you add to checks for your **Adrenaline\n  Spike** feature become d6s."
+    },
+    {
+      "name": "Hexblade Lure: Avarice",
+      "flavor_text": "The endless torrent of gold passes through your fingertips, tempting you with the next big play. Whether fancy or fallacy, you are gripped with the madness of wealth beyond comprehension, taxing your mind with its idyllic gleam. But with an opportunity this rich, only a fool would cash out early.",
+      "rank": "1st Rank",
+      "description": "## Fate's Wager\n\n*The glittering shine of fate's providence is yours to play with. Go big\nor go home.*\n\nAt 1st Rank, you have a *hoard* of 5 *fortune chips* that resets at the\nstart and end of combat. The hoard may increase or decrease but has a\nmaximum of 20 and a minimum of 0.\n\nAs a reaction immediately before a target creature within 60 feet of you\nattempts a combat check, you may spend any number of fortune chips you\nhave and bet on either the check's success or on the check's failure:\n\n- **If you're right,** you gain double the number of fortune chips that\n  were spent.\n\n- **If you're wrong,** you gain nothing.\n\n- **If the result was an automatic failure or success or was willingly\n  chosen to fail,** then you are refunded the chips you spent.\n\n## Gambler Spirit\n\n*Those who lost everything, seeking your company in their misery.*\n\nAt 1st Rank, when a spirit of violence hits you with a reaper attack,\nyou lose 3 fortune chips. When a spirit of violence you awakened is\ndestroyed, you gain 3 fortune chips.\n\n## Poisoned by Greed\n\n*Money talks, fools listen.*\n\nAt 1st Rank, you learn the **Poisoned by Greed** doomglyph described\nbelow.\n\n### Poisoned by Greed\n\nLure of Avarice Hexblade Doomglyph\n\nAs a free action, you spend 3 fortune chips and increase your doom DC by\n4 to inflict poisoned on a target creature within 30 feet\nof you until either the end of combat or you use this doomglyph again.\nAfterwards, you make a doom check.\n\n## Ill-Gotten Gains\n\n*Those who deal with bad luck know the exact price.*\n\nAt 4th Rank, when a target creature within 60 feet of you fails a check,\nyou may spend 3 fortune chips to bestow your hex on them.\n\n## High Roller\n\n*When it has been aces all the way down, you can't stop while you're on\na hot streak.*\n\nAt 8th Rank, you gain the following benefits:\n\n- **Dragon's Envy.** Your hoard's initial size becomes 10.\n\n- **Golden Tomb.** When you use **Poisoned by Greed**, you may spend 15\n  chips instead of 3. If you do, the poisoned condition is\n  replaced with stunned."
+    },
+    {
+      "name": "Hexblade Lure: The Unknown",
+      "flavor_text": "The incessant pounding of your heart when you first taste new magic wakes a hunger of the mind that outweighs the caution of the soul. You push past the lies of mortal knowledge into the unfortunate truths beyond. Your fractional sliver of endless fractal secrets will never be complete, but temperance is for the unambitious.",
+      "rank": "1st Rank",
+      "description": "## Corrupted Knowledge\n\n*Undeniable secrets buried in the forgotten corners of history.*\n\nAt 1st Rank, when you prepare one or more Occult spells, you may\n*corrupt* any number of them. Corrupted Occult spells do not cost Spell\nPoints when you cast them as a prepared spell, but you must use the\n**Spellburn** doomglyph described below.\n\n### Spellburn\n\nLure of the Unknown Hexblade Doomglyph\n\nAfter casting a corrupted spell, but before it begins, you increase your\ndoom DC by 4 and lose HP equal to your Tier Bonus × the Circle of spell\ncast. After the spell begins, you make a doom check.\n\n## Spellcaster Spirit\n\n*An insatiable censor vying to siphon your stolen knowledge.*\n\nAt 1st Rank, the reaper attack of spirits of violence you have awakened\nis now a special ranged attack against a target within 30 feet of it.\n\n## Spell Locust\n\n*Holding onto a wonderfully horrifying idea for even the briefest moment\nchanges your life irreparably.*\n\nAt 1st Rank, once per rest when you are about to burn a Resolve, you may\ninstead choose to lose a corrupted spell you have prepared to gain the\neffects of burning a Resolve.\n\n## Hexslinger\n\n*A foul and twisted shot of reality from the wastes of infinite\nobscurity.*\n\nAt 4th Rank, when you hit a target with a cantrip attack, you may bestow\nyour hex on them.\n\n## Wonderlust\n\n*Devour the forgotten memories and venture into the fringes of the\nunknowable.*\n\nAt 8th Rank, you gain the following benefits:\n\n- **Feeling Lucky.** When you use **Spellburn**, you may double the\n  increase to your doom DC. If you do, halve the HP you lose.\n\n- **Harvest Magic.** When a creature destroys one of your spirits of\n  violence, that creature regains 1 expended Spell Point.\n\n- **Hexdraw.** You may use **Hexslinger** to bestow your hex on a\n  subject immediately before you target it with a cantrip attack instead\n  of when you hit it."
     }
   ]
 }

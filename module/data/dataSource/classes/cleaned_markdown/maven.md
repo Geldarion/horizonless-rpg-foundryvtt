@@ -1,19 +1,3 @@
-![](media/image1.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Maven Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Maven Class Overview Table
 
 +----------+---------------------------+---------------+---------------+---------------+---------------+---------------+
@@ -66,11 +50,9 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+---------------------------+---------------+---------------+---------------+---------------+---------------+
 |          | **Subclasses**                                                                                            |
 +----------+-----------------------------------------------------------------------------------------------------------+
-|          | [[Dreams]{.underline}](#kix.kastknk2xr9x), [[Possibility]{.underline}](#kix.pvt0y6oi0u3u),                |
-|          | [[Resonance]{.underline}](#kix.vlm7g0xc4bqz)                                                              |
+|          | Dreams, Possibility,                |
+|          | Resonance                                                              |
 +==========+===========================+===============+===============+===============+===============+===============+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 5
 
@@ -141,7 +123,7 @@ effects:
 
 - **Boundary Conditions.** If a creature other than you travels or
   teleports out of the sphere of influence, that creature becomes
-  [disoriented]{.underline} until the end of the current turn.
+  disoriented until the end of the current turn.
 
 - **Realm.** Creatures in your sphere of influence are affected by your
   Maven Realm features.
@@ -402,8 +384,6 @@ a feature granted by one of your Class Ranks:
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
 
-[[Back to Top]{.underline}](#maven-class-overview-table)
-
 Subclasses
 
 # Maven Realm: Dreams
@@ -445,7 +425,7 @@ Dreamspun creatures have the following effects:
 
 - **Within the Dream.** They ignore the **Locked**, **Immobile**, and
   **Inattentive** condition traits (such as by being
-  [incapacitated]{.underline} or [unconscious]{.underline}) but cannot
+  incapacitated or unconscious) but cannot
   move out of your sphere of influence or perceive anything outside of
   your sphere of influence. If you move your sphere of influence such
   that a dreamspun creature is now outside the area, they cease being
@@ -478,13 +458,11 @@ At 8th Rank, you gain the following benefits:
   of being dreamspun.
 
 - **Heavy Daze.** You may choose for a creature to become
-  [stuck]{.underline} while affected by your **Drowsiness** spell
+  stuck while affected by your **Drowsiness** spell
   effects.
 
 - **Twinspin.** As a free action, when you dreamspin a creature, you may
   dreamspin a second qualifying creature.
-
-[[Back to Top]{.underline}](#maven-class-overview-table)
 
 # Maven Realm: Possibility
 
@@ -556,8 +534,6 @@ At 8th Rank, you gain the following benefits:
   they refund any feature usages or Spell Points expended by casting the
   negated spell.
 
-[[Back to Top]{.underline}](#maven-class-overview-table)
-
 # Maven Realm: Resonance
 
 *A stirring melody sweeps through the crowd and pulls their heartbeats
@@ -616,5 +592,3 @@ At 8th Rank, you gain the following benefits:
 - **Ballad.** When the creature with your aural attunement breaks their
   ST, you may switch **Resonant Tempo's** active effect from **Allegro**
   to **Adagio**.
-
-[[Back to Top]{.underline}](#maven-class-overview-table)

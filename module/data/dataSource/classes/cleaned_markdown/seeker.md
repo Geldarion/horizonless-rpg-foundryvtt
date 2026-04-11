@@ -1,19 +1,3 @@
-![](media/image1.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Seeker Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Seeker Class Overview Table
 
 +----------+-----------------------------+---------------+---------------+---------------+---------------+---------------+
@@ -76,11 +60,9 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+-----------------------------+---------------+---------------+---------------+---------------+---------------+
 |          | **Subclasses**                                                                                              |
 +----------+-------------------------------------------------------------------------------------------------------------+
-|          | [[Nighteye]{.underline}](#kix.xw9nhai17ndg), [[Scoundrel]{.underline}](#kix.l0vs5pyi7awa), [[Spell          |
-|          | Thief]{.underline}](#kix.tx40qbdirreu)                                                                      |
+|          | Nighteye, Scoundrel, Spell          |
+|          | Thief                                                                      |
 +==========+=============================+===============+===============+===============+===============+===============+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 9
 
@@ -106,7 +88,7 @@ and tactics. You gain features from this chosen Seeker Pursuit at 1st,
 *The setup and takedown, all in one fluid motion.*
 
 At 1st Rank, whenever you take the Stagger action or inflict
-[staggered]{.underline}, you may enter *alacrity*. Your chosen Seeker
+staggered, you may enter *alacrity*. Your chosen Seeker
 Pursuit provides an alternate way to enter alacrity. Entering alacrity
 multiple times does not stack. At the start and end of combat, you exit
 alacrity if you have it.
@@ -145,7 +127,7 @@ Seeker Trick features.
 
 2nd Rank Seeker Trick
 
-You cleanse the [grappled]{.underline} and [slowed]{.underline}
+You cleanse the grappled and slowed
 conditions from a target ally within your Reach.
 
 ### Leg Sweep
@@ -240,7 +222,7 @@ Tricks.
 
 5th Rank Seeker Trick
 
-You apply [slowed]{.underline} with Recoverable to a target within 15
+You apply slowed with Recoverable to a target within 15
 feet of you.
 
 ### Cover
@@ -323,7 +305,7 @@ this turn that hits also scores a critical hit.
 
 8th Rank Seeker Trick
 
-You cleanse the [incapacitated]{.underline} and [stunned]{.underline}
+You cleanse the incapacitated and stunned
 conditions from a target ally within your Reach.
 
 # Seeker Pursuit Feature
@@ -336,7 +318,7 @@ At 8th Rank, you gain a feature for your Seeker Pursuit.
 
 At 9th Rank, the Speed bonus you gain from alacrity becomes 30 feet.
 Additionally, whenever you perform a cunning strike, the target of the
-attack is [disoriented]{.underline} until the end of their next turn.
+attack is disoriented until the end of their next turn.
 
 # Flourish II
 
@@ -378,7 +360,7 @@ benefit:
 
 At 11th Rank, the Speed bonus you gain from alacrity becomes 40 feet.
 Whenever you hit with a Stagger special attack and inflict
-[staggered]{.underline}, you may then deal **1 physical damage** (you
+staggered, you may then deal **1 physical damage** (you
 choose which type) to the target and exit alacrity to perform a cunning
 strike regardless of the requirements.
 
@@ -410,9 +392,9 @@ initiative partner within your Reach.
 11th Rank Seeker Trick
 
 You exit alacrity to cause a target creature within your Reach already
-suffering from the [disoriented]{.underline} condition to make a
+suffering from the disoriented condition to make a
 **Fortitude** saving throw against your Maneuver DC. On a failure, the
-target is [stunned]{.underline} until the end of their next turn.
+target is stunned until the end of their next turn.
 
 # Masterstroke
 
@@ -445,8 +427,6 @@ a feature granted by one of your Class Ranks:
 
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
-
-[[Back to Top]{.underline}](#kix.5l2ypvecpex6)
 
 Seeker Pursuits
 
@@ -488,7 +468,7 @@ At 4th Rank, you learn the **Legerdemain** Seeker Trick described below:
 Your next action or multiaction this turn doesn't cause you to become
 **perceived**.
 
-## Night\'s Rook
+## Night's Rook
 
 *Take all of your pieces off the board.*
 
@@ -500,8 +480,6 @@ At 8th Rank, you gain the following benefits:
 
 - **Speed of Darkness.** While you have alacrity, all Search checks
   against you incur disadvantage.
-
-[[Back to Top]{.underline}](#kix.5l2ypvecpex6)
 
 # Seeker Pursuit: Scoundrel
 
@@ -537,7 +515,7 @@ below:
 
 You make a special melee attack using your STR or DEX against a target
 creature within your Reach. If it hits, the target is
-[disoriented]{.underline} until the end of their next turn.
+disoriented until the end of their next turn.
 
 ## Another Round
 
@@ -550,8 +528,6 @@ At 8th Rank, you gain the following benefits:
 
 - **Distract.** Your **Discombobulate** special attack is always made
   against the target's Base AC.
-
-[[Back to Top]{.underline}](#kix.5l2ypvecpex6)
 
 # Seeker Pursuit: Spell Thief
 
@@ -604,5 +580,3 @@ At 8th Rank, once per long rest, when you use **Case Arcana** to capture
 a spell, you may capture any spell. Until the end of your next rest, you
 may cast the captured spell once at the Circle it was cast using your
 INT, WIS, or CHA as your spellcasting modifier.
-
-[[Back to Top]{.underline}](#kix.5l2ypvecpex6)

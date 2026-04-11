@@ -1,66 +1,301 @@
 {
   "class": "seeker",
-  "overview_table": [],
+  "overview_table": [
+    {
+      "Rank": "1",
+      "Features": "Maneuvers Seeker Pursuit Alacrity I",
+      "": "",
+      "Cunning Strike Die": "1d8",
+      "Alacrity Speed": "+10 ft.",
+      "Maneuvers Known": "3",
+      "Martial Die": "1d8"
+    },
+    {
+      "Rank": "2",
+      "Features": "Seeker Tricks I Backflip",
+      "": "",
+      "Cunning Strike Die": "2d8",
+      "Alacrity Speed": "+10 ft.",
+      "Maneuvers Known": "4",
+      "Martial Die": "1d8"
+    },
+    {
+      "Rank": "3",
+      "Features": "Gambit I Close Call Ability Improvement",
+      "": "",
+      "Cunning Strike Die": "3d8",
+      "Alacrity Speed": "+10 ft.",
+      "Maneuvers Known": "5",
+      "Martial Die": "1d8"
+    },
+    {
+      "Rank": "4",
+      "Features": "Exploration Seeker Pursuit Feature",
+      "": "",
+      "Cunning Strike Die": "4d8",
+      "Alacrity Speed": "+10 ft.",
+      "Maneuvers Known": "6",
+      "Martial Die": "1d10"
+    },
+    {
+      "Rank": "5",
+      "Features": "Alacrity II Seeker Tricks II",
+      "": "",
+      "Cunning Strike Die": "5d8",
+      "Alacrity Speed": "+20 ft.",
+      "Maneuvers Known": "7",
+      "Martial Die": "1d10"
+    },
+    {
+      "Rank": "6",
+      "Features": "Gambit II Flourish I Ability Improvement",
+      "": "",
+      "Cunning Strike Die": "6d8",
+      "Alacrity Speed": "+20 ft.",
+      "Maneuvers Known": "8",
+      "Martial Die": "1d10"
+    },
+    {
+      "Rank": "7",
+      "Features": "Razor Sharp Exploration",
+      "": "",
+      "Cunning Strike Die": "7d8",
+      "Alacrity Speed": "+20 ft.",
+      "Maneuvers Known": "9",
+      "Martial Die": "1d12"
+    },
+    {
+      "Rank": "8",
+      "Features": "Seeker Tricks III Seeker Pursuit Feature",
+      "": "",
+      "Cunning Strike Die": "8d8",
+      "Alacrity Speed": "+20 ft.",
+      "Maneuvers Known": "9",
+      "Martial Die": "1d12"
+    },
+    {
+      "Rank": "9",
+      "Features": "Alacrity III Flourish II Ability Improvement",
+      "": "",
+      "Cunning Strike Die": "9d8",
+      "Alacrity Speed": "+30 ft.",
+      "Maneuvers Known": "10",
+      "Martial Die": "1d12"
+    },
+    {
+      "Rank": "10",
+      "Features": "Gambit III Exploration",
+      "": "",
+      "Cunning Strike Die": "10d8",
+      "Alacrity Speed": "+30 ft.",
+      "Maneuvers Known": "10",
+      "Martial Die": "2d6"
+    },
+    {
+      "Rank": "11",
+      "Features": "Alacrity IV Seeker Tricks IV",
+      "": "",
+      "Cunning Strike Die": "11d8",
+      "Alacrity Speed": "+40 ft.",
+      "Maneuvers Known": "11",
+      "Martial Die": "2d6"
+    },
+    {
+      "Rank": "12",
+      "Features": "Masterstroke",
+      "": "",
+      "Cunning Strike Die": "12d8",
+      "Alacrity Speed": "+40 ft.",
+      "Maneuvers Known": "11",
+      "Martial Die": "2d6"
+    }
+  ],
   "features": [
+    {
+      "name": "Maneuvers",
+      "flavor_text": "",
+      "rank": "1st Rank",
+      "description": "At 1st Rank, you learn three maneuvers, and you learn additional ones as\nyou gain additional Ranks as shown in the Class Overview Table. During\nthe Retrain downtime activity, you may redo the selection of all of your\nknown maneuvers."
+    },
+    {
+      "name": "Seeker Pursuit",
+      "flavor_text": "When you've got an itch to scratch, start by finding the right angle.",
+      "rank": "1st Rank",
+      "description": "At 1st Rank, you choose a Seeker Pursuit from which you draw your skills\nand tactics. You gain features from this chosen Seeker Pursuit at 1st,\n4th, and 8th Rank."
+    },
+    {
+      "name": "Alacrity I",
+      "flavor_text": "The setup and takedown, all in one fluid motion.",
+      "rank": "1st Rank",
+      "description": "At 1st Rank, whenever you take the Stagger action or inflict\nstaggered, you may enter *alacrity*. Your chosen Seeker\nPursuit provides an alternate way to enter alacrity. Entering alacrity\nmultiple times does not stack. At the start and end of combat, you exit\nalacrity if you have it.\n\nWhile you have alacrity, your Speed is increased by 10 feet. Some\nfeatures require you to exit alacrity, such as **Cunning Strike**\ndescribed below.\n\n## Cunning Strike\n\nWhen you hit a creature with a spell or weapon attack, you may exit\nalacrity to perform a *cunning strike* if the attack satisfies either\nthe requirements listed below:\n\n- **Advantage.** You have advantage or greater on the attack check.\n\n- **Nearby Ally.** An ally is within 5 feet of the target of the attack.\n\nCunning strikes add **Xd8 damage** to the attack's damage roll, where X\nis your Seeker Rank. You may perform a cunning strike at most once per\nround."
+    },
+    {
+      "name": "Seeker Tricks I",
+      "flavor_text": "With a sleeve full of backup plans, you have got what it takes to finish the job.",
+      "rank": "2nd Rank",
+      "description": "At 2nd Rank, select one Seeker Trick feature of your choosing from the\nlist below. During the Retrain downtime activity, you may redo the\nselection of all of your chosen Seeker Tricks.\n\nAs a free action once during each of your turns, you may use one of your\nSeeker Trick features.\n\n### Getaway\n\n2nd Rank Seeker Trick\n\nYou cleanse the grappled and slowed\nconditions from a target ally within your Reach.\n\n### Leg Sweep\n\n2nd Rank Seeker Trick\n\nYou perform a free Trip action.\n\n### Surveil\n\n2nd Rank Seeker Trick\n\nYou perform a free Analyze action."
+    },
+    {
+      "name": "Backflip",
+      "flavor_text": "Going for style is your style.",
+      "rank": "2nd Rank",
+      "description": "At 2nd Rank, you gain the **Backflip** Seeker Trick described below:\n\n### Backflip\n\n2nd Rank Seeker Trick\n\nYou travel up to half your Speed. During this movement, you may freely\ntravel through spaces occupied by hostile creatures."
+    },
+    {
+      "name": "Gambit I",
+      "flavor_text": "",
+      "rank": "3rd Rank",
+      "description": "*On your signal, the plan is in motion.*\\\nAt 3rd Rank, once per rest, as an action at the start of your turn, you\nmay allow an additional ally that has not yet taken their turn this\nround to also take their turn. This may exceed the limit of two\ncreatures taking their turn together.\n\nWhen you or an ally uses a feature that references their initiative\npartner, they choose which ally to which the feature will apply (the\nchosen ally must be taking their turn)."
+    },
+    {
+      "name": "Close Call",
+      "flavor_text": "Nimbly, you cheat certain death.",
+      "rank": "3rd Rank",
+      "description": "At 3rd Rank, as a reaction when you are dealt damage from an attack, you\nmay halve the damage dealt. As a reaction before you make a basic\n**Reflex** saving throw, you may cause a failure to only deal half\ndamage to you and a success to have no damage be dealt to you."
+    },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
-      "rank": "3rd, 6th, 9th, and 12th Rank",
-      "description": "At 3rd, 6th, 9th, and 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "rank": "3rd, 6th, and 9th Rank",
+      "description": "At 3rd, 6th, and 9th Rank, you gain an Ability Improvement. Each time\nyou gain an Ability Improvement, distribute three permanent +1 increases\nto your ability modifiers. You may increase the same ability modifier\nmultiple times.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "4th, 7th, and 10th Rank",
-      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with CLASS being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than CLASS and gain one Rank in the chosen Class."
+      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with Seeker being\nthe exploring Class. Each time you gain an Exploration, you gain the\nfollowing benefit:\n\n- **Bonus Rank.** You choose any Class other than Seeker and gain one\n  Rank in the chosen Class."
     },
     {
-      "name": "SUBCLASS Feature",
+      "name": "Seeker Pursuit Feature",
       "flavor_text": "",
       "rank": "4th Rank",
-      "description": "At 4th Rank, you gain a feature for your SUBCLASS.\n\n\\[Ranks 5-6\\]"
+      "description": "At 4th Rank, you gain a feature for your Seeker Pursuit."
+    },
+    {
+      "name": "Alacrity II",
+      "flavor_text": "Controlled chaos is ripe with opportunity.",
+      "rank": "5th Rank",
+      "description": "At 5th Rank, the Speed bonus you gain from alacrity becomes 20 feet.\nWhen you make a Stagger special attack, the next weapon or spell attack\ncheck made against the target this turn has its critical hit threshold\nreduced by 1."
+    },
+    {
+      "name": "Seeker Tricks II",
+      "flavor_text": "Always prepared with the tools of the trade.",
+      "rank": "5th Rank",
+      "description": "At 5th Rank, select one of the following Seeker Trick features from the\nlist below or one listed at an earlier Rank. During the Retrain downtime\nactivity, you may redo the selection of all of your chosen Seeker\nTricks.\n\n### Bola\n\n5th Rank Seeker Trick\n\nYou apply slowed with Recoverable to a target within 15\nfeet of you.\n\n### Cover\n\n5th Rank Seeker Trick\n\nYou grant a free Dodge action to a target ally within your Reach.\n\n### Smoke Bomb\n\n5th Rank Seeker Trick\n\nYou grant a free Vanish action to yourself or an ally within your Reach."
+    },
+    {
+      "name": "Gambit II",
+      "flavor_text": "Every branch of the plan has been mapped out. We move as one.",
+      "rank": "6th Rank",
+      "description": "At 6th Rank, whenever you use **Gambit**, all allies taking their turn,\nincluding yourself, may add their Speed to their movement pool."
+    },
+    {
+      "name": "Flourish I",
+      "flavor_text": "Even your backup plans have backup plans.",
+      "rank": "6th Rank",
+      "description": "At 6th Rank, once per rest during your turn, you may allow yourself to\nuse an additional Seeker Trick this turn."
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "6th Rank",
-      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\.\n\n\\[Rank 7\\]"
+      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
+    },
+    {
+      "name": "Razor Sharp",
+      "flavor_text": "After having come this far, you've got nerves of steel and a sixth sense for things that can go wrong.",
+      "rank": "7th Rank",
+      "description": "At 7th Rank, you gain an additional reaction at the start of each of\nyour turns."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "7th Rank",
-      "description": "At 7th Rank, you gain an Exploration with CLASS being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than CLASS and gain one Rank in the chosen Class.\n\n\\[Rank 8\\]"
+      "description": "At 7th Rank, you gain an Exploration with Seeker being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Seeker and gain one\n  Rank in the chosen Class."
     },
     {
-      "name": "SUBCLASS Feature",
+      "name": "Seeker Tricks III",
+      "flavor_text": "Call the shot. Set the pace. Make the play.",
+      "rank": "8th Rank",
+      "description": "At 8th Rank, select one of the following Seeker Trick features from the\nlist below or one listed at an earlier Rank. During the Retrain downtime\nactivity, you may redo the selection of all of your chosen Seeker\nTricks.\n\n### Coordinate\n\n8th Rank Seeker Trick\n\nYou grant a free Anticipate action to a target ally within your Reach.\n\n### Double Tap\n\n8th Rank Seeker Trick\n\nIf you have scored a critical hit this turn, the next attack you make\nthis turn that hits also scores a critical hit.\n\n### Snap Out\n\n8th Rank Seeker Trick\n\nYou cleanse the incapacitated and stunned\nconditions from a target ally within your Reach."
+    },
+    {
+      "name": "Seeker Pursuit Feature",
       "flavor_text": "",
       "rank": "8th Rank",
-      "description": "At 8th Rank, you gain a feature for your SUBCLASS.\n\n\\[Rank 9\\]"
+      "description": "At 8th Rank, you gain a feature for your Seeker Pursuit."
+    },
+    {
+      "name": "Alacrity III",
+      "flavor_text": "Plot an attack so sudden, it leaves them reeling.",
+      "rank": "9th Rank",
+      "description": "At 9th Rank, the Speed bonus you gain from alacrity becomes 30 feet.\nAdditionally, whenever you perform a cunning strike, the target of the\nattack is disoriented until the end of their next turn."
+    },
+    {
+      "name": "Flourish II",
+      "flavor_text": "Double or nothing.",
+      "rank": "9th Rank",
+      "description": "At 9th Rank, you may now use **Flourish** twice per rest."
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "9th Rank",
-      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\.\n\n\\[Rank 10\\]"
+      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
+    },
+    {
+      "name": "Gambit III",
+      "flavor_text": "Now this is where you come in.",
+      "rank": "10th Rank",
+      "description": "At 10th Rank, whenever you use **Gambit**, you may designate an ally.\nThe designated ally gains advantage on the next ability check they make\nthis turn."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "10th Rank",
-      "description": "At 10th Rank, you gain an Exploration with CLASS being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than CLASS and gain one Rank in the chosen Class.\n\n\\[Rank 11-12\\]"
+      "description": "At 10th Rank, you gain an Exploration with Seeker being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Seeker and gain one\n  Rank in the chosen Class."
     },
     {
-      "name": "Ability Improvement",
-      "flavor_text": "",
+      "name": "Alacrity IV",
+      "flavor_text": "Pure speed and sleight of hand.",
+      "rank": "11th Rank",
+      "description": "At 11th Rank, the Speed bonus you gain from alacrity becomes 40 feet.\nWhenever you hit with a Stagger special attack and inflict\nstaggered, you may then deal **1 physical damage** (you\nchoose which type) to the target and exit alacrity to perform a cunning\nstrike regardless of the requirements."
+    },
+    {
+      "name": "Seeker Tricks IV",
+      "flavor_text": "Slow is smooth, smooth is fast.",
+      "rank": "11th Rank",
+      "description": "At 11th Rank, select one of the following Seeker Trick features from the\nlist below or one listed at an earlier Rank. During the Retrain downtime\nactivity, you may redo the selection of all of your chosen Seeker\nTricks.\n\n### Exit Strategy\n\n11th Rank Seeker Trick\n\nYou exit alacrity to cleanse all conditions from yourself or a target\nally within your Reach.\n\n### Go Time\n\n11th Rank Seeker Trick\n\nYou exit alacrity to grant an additional action this turn to an\ninitiative partner within your Reach.\n\n### Sucker Punch\n\n11th Rank Seeker Trick\n\nYou exit alacrity to cause a target creature within your Reach already\nsuffering from the disoriented condition to make a\n**Fortitude** saving throw against your Maneuver DC. On a failure, the\ntarget is stunned until the end of their next turn."
+    },
+    {
+      "name": "Masterstroke",
+      "flavor_text": "The game was never theirs to play.",
       "rank": "12th Rank",
-      "description": "At 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "description": "At 12th Rank, once per long rest as a free action at any point, you may\ndramatically reveal that everything was all according to plan, and have\nretroactively made preparations to account for this very moment. You, or\nan ally of your choice in an advantageous position, may make a weapon\nattack check, use a feature or item, or cast a spell with any casting\ntime. If the feature or spell imposes a saving throw, the target(s)\nautomatically fail(s). If it's an attack check, it automatically hits\nand scores a critical hit."
     },
     {
       "name": "Final Reach",
       "flavor_text": "",
       "rank": "",
-      "description": "When you reach character Level 12, you compute your *Total Rank*, which is calculated as:\n\n###### The sum of all of your Class Ranks\n\n\tIf your Total Rank is less than 16 when you reach Level 12, then for each deficient Rank, you may choose one of the benefits below to modify a feature granted by one of your Class Ranks:\n\n* **Maneuvers.** You learn two additional maneuvers.\n\n* **Battlecasting.** You gain a maneuver, an additional Spell Point, and an additional prepared spell for that Class.\n\n* **Spellcasting.** You gain three additional Spell Points and three additional prepared spells for that Class.\n\nBack to Top\n\n# Subclasses\n\n\\[Subclass A\\]\n\nBack to Top\n\n\\[Subclass B\\]\n\nBack to Top\n\n\\[Subclass C\\]\n\nBack to Top"
+      "description": "When you reach character Level 12, you compute your *Total Rank*, which\nis calculated as:\n\n###### The sum of all of your Class Ranks\n\nIf your Total Rank is less than 16 when you reach Level 12, then for\neach deficient Rank, you may choose one of the benefits below to modify\na feature granted by one of your Class Ranks:\n\n- **Maneuvers.** You learn two additional maneuvers.\n\n- **Battlecasting.** You gain a maneuver, an additional Spell Point, and\n  an additional prepared spell for that Class.\n\n- **Spellcasting.** You gain three additional Spell Points and three\n  additional prepared spells for that Class.\n\nSeeker Pursuits"
+    },
+    {
+      "name": "Seeker Pursuit: Nighteye",
+      "flavor_text": "Deep shadows cut into the murky urban alleys; the cruel figure of a corrupt guard falls lifelessly to the ground in front of their would-be victims. A robber baron's torch flickers in the depths of his empty vault, horror creeping onto his lips. Many put faith in an unseen guardian, you know it is not misplaced.",
+      "rank": "1st Rank",
+      "description": "## Unseen\n\n*Time to get to work.*\n\nAt 1st Rank, you have a pool of 2d6 called your *unseen dice pool*. As a\nfree action when you make a Vanish check, you may expend an unseen die\nto add it to the total. When you score a critical hit, you regain one\nexpended unseen die. At the end of every rest, your unseen dice pool is\nrefilled.\n\n## Cloaked Threat\n\n*Nothing moves faster than what you cannot see.*\n\nAt 1st Rank, once during your turn as a free action, if no hostile\ncreatures **perceive** you, enter alacrity.\n\n## Legerdemain\n\n*Ignore the hand behind the curtain.*\n\nAt 4th Rank, you learn the **Legerdemain** Seeker Trick described below:\n\n### Legerdemain\n\n4th Rank Nighteye Seeker Trick\n\nYour next action or multiaction this turn doesn't cause you to become\n**perceived**.\n\n## Night's Rook\n\n*Take all of your pieces off the board.*\n\nAt 8th Rank, you gain the following benefits:\n\n- **Shadow Conspiracy.** Your unseen dice pool becomes 4d6, and they can\n  now be spent on any Vanish check made by a target ally within 60 feet\n  of you.\n\n- **Speed of Darkness.** While you have alacrity, all Search checks\n  against you incur disadvantage."
+    },
+    {
+      "name": "Seeker Pursuit: Scoundrel",
+      "flavor_text": "It doesn't matter what hand you were dealt, whether you cheated at every turn and lied through gritted, bloodied teeth. It doesn't matter that they hate you, or that they plot behind your back. You're still here, and whatever unfinished business still waits for you will come to a close. Trust.",
+      "rank": "1st Rank",
+      "description": "## Head on a Swivel\n\n*Only fools play by the rules.*\n\nAt 1st Rank, whenever you end your turn with alacrity, you gain your\nHalf Guard AC until the start of your next turn.\n\n## Shoot First\n\n*...ask questions later.*\n\nAt 1st Rank, when you begin combat, you enter alacrity.\n\n## Discombobulate\n\n*Discombobulate.*\n\nAt 4th Rank, you learn the **Discombobulate** Seeker Trick described\nbelow:\n\n### Discombobulate\n\n4th Rank Scoundrel Seeker Trick\n\nYou make a special melee attack using your STR or DEX against a target\ncreature within your Reach. If it hits, the target is\ndisoriented until the end of their next turn.\n\n## Another Round\n\n*Keep 'em coming.*\n\nAt 8th Rank, you gain the following benefits:\n\n- **Bob and Weave.** Whenever you end your turn with alacrity, you may\n  take a free Dodge action.\n\n- **Distract.** Your **Discombobulate** special attack is always made\n  against the target's Base AC."
+    },
+    {
+      "name": "Seeker Pursuit: Spell Thief",
+      "flavor_text": "Within the annals of arcane history lies mystery shrouded in the margins of works held by the masters. Endless knowledge, the keys to every door that has ever existed, untold power and acclaim ready to be discovered and rediscovered by countless magi practicing in their dark towers, their hidden groves, austere temples and wretched swamps. These secrets have terrible prices, but that doesn't mean you have to pay them...",
+      "rank": "1st Rank",
+      "description": "## Case Arcana\n\n*Each discipline of magic has its quirks, but they crack all the same.*\n\nAt 1st Rank, choose three cantrips, each from any spell list. You may\ncast those chosen cantrips using your INT, WIS, or CHA as your\nspellcasting modifier. During the Retrain downtime activity, you may\nredo your selection of chosen cantrips.\n\nOnce per rest, as a reaction when a target creature within 60 feet of\nyou casts a baseline 1st Circle spell, you may *capture* that spell.\nUntil the end of your next rest, you may cast the captured spell once at\n1st Circle using your INT, WIS, or CHA as your spellcasting modifier.\n\n## Spellrush\n\n*Fraying spell byproducts is just the kick you need.*\n\nAt 1st Rank, whenever you cast a spell, you enter alacrity.\n\n## Misdirect\n\n*A secret's life can be short-lived, but never unimportant.*\n\nAt 4th Rank, you learn the **Misdirect** Seeker Trick described below:\n\n### Misdirect\n\n4th Rank Spell Thief Seeker Trick\n\nYou cast a cantrip with a casting time of one action (the spell is cast\nas a free action).\n\n## Hack Magic\n\n*What's yours, now mine.*\n\nAt 8th Rank, once per long rest, when you use **Case Arcana** to capture\na spell, you may capture any spell. Until the end of your next rest, you\nmay cast the captured spell once at the Circle it was cast using your\nINT, WIS, or CHA as your spellcasting modifier."
     }
   ]
 }

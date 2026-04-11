@@ -1,66 +1,277 @@
 {
   "class": "berserker",
-  "overview_table": [],
+  "overview_table": [
+    {
+      "Rank": "1",
+      "Features": "Maneuvers Berserker Mettle Shockwave I",
+      "Legion of One Uses": "-",
+      "Maneuvers Known": "3",
+      "Martial Die": "1d8"
+    },
+    {
+      "Rank": "2",
+      "Features": "Wrath Wrath Evolutions I",
+      "Legion of One Uses": "-",
+      "Maneuvers Known": "4",
+      "Martial Die": "1d8"
+    },
+    {
+      "Rank": "3",
+      "Features": "Legion of One I Taunt I Ability Improvement",
+      "Legion of One Uses": "2",
+      "Maneuvers Known": "5",
+      "Martial Die": "1d8"
+    },
+    {
+      "Rank": "4",
+      "Features": "Exploration Berserker Mettle Feature",
+      "Legion of One Uses": "2",
+      "Maneuvers Known": "6",
+      "Martial Die": "1d10"
+    },
+    {
+      "Rank": "5",
+      "Features": "Shockwave II Wrath Evolutions II",
+      "Legion of One Uses": "2",
+      "Maneuvers Known": "7",
+      "Martial Die": "1d10"
+    },
+    {
+      "Rank": "6",
+      "Features": "Taunt II Legion of One II Ability Improvement",
+      "Legion of One Uses": "3",
+      "Maneuvers Known": "8",
+      "Martial Die": "1d10"
+    },
+    {
+      "Rank": "7",
+      "Features": "Charge Into Action Exploration",
+      "Legion of One Uses": "3",
+      "Maneuvers Known": "9",
+      "Martial Die": "1d12"
+    },
+    {
+      "Rank": "8",
+      "Features": "Wrath Evolutions III Berserker Mettle Feature",
+      "Legion of One Uses": "3",
+      "Maneuvers Known": "9",
+      "Martial Die": "1d12"
+    },
+    {
+      "Rank": "9",
+      "Features": "Shockwave III Legion of One III Ability Improvement",
+      "Legion of One Uses": "4",
+      "Maneuvers Known": "10",
+      "Martial Die": "1d12"
+    },
+    {
+      "Rank": "10",
+      "Features": "Taunt III Exploration",
+      "Legion of One Uses": "4",
+      "Maneuvers Known": "10",
+      "Martial Die": "2d6"
+    },
+    {
+      "Rank": "11",
+      "Features": "Leap Into Action Wrath Evolutions IV",
+      "Legion of One Uses": "4",
+      "Maneuvers Known": "11",
+      "Martial Die": "2d6"
+    },
+    {
+      "Rank": "12",
+      "Features": "Seismic Smash",
+      "Legion of One Uses": "4",
+      "Maneuvers Known": "11",
+      "Martial Die": "2d6"
+    }
+  ],
   "features": [
+    {
+      "name": "Maneuvers",
+      "flavor_text": "",
+      "rank": "1st Rank",
+      "description": "At 1st Rank, you learn three maneuvers, and you learn additional ones as\nyou gain additional Ranks as shown in the Class Overview Table. During\nthe Retrain downtime activity, you may redo the selection of all of your\nknown maneuvers."
+    },
+    {
+      "name": "Berserker Mettle",
+      "flavor_text": "All souls hold a great power within. Unleash yours and begin to put the heavens on notice.",
+      "rank": "1st Rank",
+      "description": "At 1st Rank, you choose a Berserker Mettle, the origin of your\nperseverance and resilience. You gain features from your chosen\nBerserker Mettle at 1st, 4th, and 8th Rank."
+    },
+    {
+      "name": "Shockwave I",
+      "flavor_text": "This attack has all your names written on it!",
+      "rank": "1st Rank",
+      "description": "At 1st Rank, immediately after you hit with a melee weapon attack, you\nmay create an *aftershock* originating from the target. When your\naftershock is created, you deal **damage** equal to your STR (minimum\nof 1) to all creatures and objects other than you within a 5 foot radius\nsphere. The type of damage dealt by your aftershock may be determined\neither by the type of damage dealt by your weapon attacks or by your\nBerserker Mettle."
+    },
+    {
+      "name": "Wrath",
+      "flavor_text": "Your foes bleed and break, and the fires within burn brighter with every drop they lose.",
+      "rank": "2nd Rank",
+      "description": "At 2nd Rank, whenever you deal damage to one or more Tier I or greater\ncreatures with your aftershock, you gain 1 *wrath charge* for each of\nthose creatures. Additionally, whenever you succeed on a STR combat\ncheck, you gain 1 *wrath charge*.\n\nWhile you have 1 or more wrath charges, you have DB 5 against all\ndamage, and at the start of each of your turns, you lose 1 wrath charge.\nThis DB becomes 10/15/20 at 4th/7th/10th Rank, respectively."
+    },
+    {
+      "name": "Wrath Evolutions I",
+      "flavor_text": "Forge your weapons of fury in the fires of your soul.",
+      "rank": "2nd Rank",
+      "description": "At 2nd Rank, select one Wrath Evolution feature of your choosing from\nthe list below, which enhances the capabilities of your **Wrath**\nfeature. During the Retrain downtime activity, you may redo the\nselection of all of your chosen Wrath Evolutions.\n\n### Bruise\n\n2nd Rank Berserker Wrath Evolution\n\nWhile you have at least 2 wrath charges, if a basic combat action,\nmaneuver, or Berserker feature attempts to inflict a condition on a\ncreature, and the condition is not applied for any reason, the creature\nbecomes staggered instead.\n\n### Quake\n\n2nd Rank Berserker Wrath Evolution\n\nYou may expend 1 wrath charge when you create an aftershock to double\nthe damage dealt by the aftershock.\n\n### Trash Talk\n\n2nd Rank Berserker Wrath Evolution\n\nYou may expend 1 wrath charge when you hit with a melee weapon attack to\ncause the target to become provoked by you until the start\nof your next turn."
+    },
+    {
+      "name": "Legion of One I",
+      "flavor_text": "They said \"you and what army?\". Little did they know I am worth two armies.",
+      "rank": "3rd Rank",
+      "description": "At 3rd Rank, when you make a Grapple, Pin, Shove, Trip, or Wreck An\nObject STR combat check, you may immediately repeat the STR combat check\nagainst all creatures within your Reach other than the original target\nas a free action. If you do, use the total of the original STR combat\ncheck for all others rather than rolling each of them. Alternatively,\nwhen you take the Throw action, you may throw all creatures you have\ngrappled.\n\nYou may use **Legion of One** twice per rest."
+    },
+    {
+      "name": "Taunt I",
+      "flavor_text": "A few choice words, a rude gesture, and a smug grin are enough to make any creature raving mad.",
+      "rank": "3rd Rank",
+      "description": "At 3rd Rank, as a free action once per rest when a hostile combat team\ntakes initiative, you may choose two hostile creatures who have not yet\ntaken their turn this round. The chosen creatures must take their turn\nand are provoked by you until the end of the turn."
+    },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
-      "rank": "3rd, 6th, 9th, and 12th Rank",
-      "description": "At 3rd, 6th, 9th, and 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "rank": "3rd, 6th, and 9th Rank",
+      "description": "At 3rd, 6th, and 9th Rank, you gain an Ability Improvement. Each time\nyou gain an Ability Improvement, distribute three permanent +1 increases\nto your ability modifiers. You may increase the same ability modifier\nmultiple times.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "4th, 7th, and 10th Rank",
-      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with CLASS being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than CLASS and gain one Rank in the chosen Class."
+      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with Berserker being\nthe exploring Class. Each time you gain an Exploration, you gain the\nfollowing benefit:\n\n- **Bonus Rank.** You choose any Class other than Berserker and gain one\n  Rank in the chosen Class."
     },
     {
-      "name": "SUBCLASS Feature",
+      "name": "Berserker Mettle Feature",
       "flavor_text": "",
       "rank": "4th Rank",
-      "description": "At 4th Rank, you gain a feature for your SUBCLASS.\n\n\\[Ranks 5-6\\]"
+      "description": "At 4th Rank, you gain a feature for your Berserker Mettle."
+    },
+    {
+      "name": "Shockwave II",
+      "flavor_text": "Throw your whole being into every swing, and force your foes to buckle under its weight.",
+      "rank": "5th Rank",
+      "description": "At 5th Rank, the radius of your aftershock becomes 10 feet.\nAdditionally, you may expend 3 wrath charges when you create an\naftershock to cause all creatures who took damage from it to become\nstaggered."
+    },
+    {
+      "name": "Wrath Evolutions II",
+      "flavor_text": "Ignite your rage and unleash retribution.",
+      "rank": "5th Rank",
+      "description": "At 5th Rank, select one of the following Wrath Evolution features from\nthe list below or one listed at an earlier Rank. During the Retrain\ndowntime activity, you may redo the selection of all of your chosen\nWrath Evolutions.\n\n### Bloodrage\n\n5th Rank Berserker Wrath Evolution\n\nYou gain 1 wrath charge each time your **Wrath** DB breaks.\n\n### Bodyslam\n\n5th Rank Berserker Wrath Evolution\n\nWhile you have at least 4 wrath charges, attacks against creatures you\nhave grappled gain advantage.\n\n### Lash Out\n\n5th Rank Berserker Wrath Evolution\n\nWhile you have at least 4 wrath charges, as a reaction when you are\nattacked, you may make a weapon attack against the attacker."
+    },
+    {
+      "name": "Taunt II",
+      "flavor_text": "What's the matter, did I upset you? Take your best shot, I won't even feel it.",
+      "rank": "6th Rank",
+      "description": "At 6th Rank, when you use **Taunt**, your **Wrath** DB is increased by\n10 × the number of targets chosen for your **Taunt** feature until the\nend of the current turn."
+    },
+    {
+      "name": "Legion of One II",
+      "flavor_text": "Don't worry, I brought enough punishment for everyone.",
+      "rank": "6th Rank",
+      "description": "At 6th Rank, you may now use **Legion of One** three times per rest."
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "6th Rank",
-      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\.\n\n\\[Rank 7\\]"
+      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
+    },
+    {
+      "name": "Charge Into Action",
+      "flavor_text": "The only thing between us is the beef I have with you.",
+      "rank": "7th Rank",
+      "description": "At 7th Rank, once during your first turn of combat as a free action, you\nmay travel up to double your Speed in a straight line. This movement\nmust begin by traveling towards a hostile creature."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "7th Rank",
-      "description": "At 7th Rank, you gain an Exploration with CLASS being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than CLASS and gain one Rank in the chosen Class.\n\n\\[Rank 8\\]"
+      "description": "At 7th Rank, you gain an Exploration with Berserker being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Berserker and gain one\n  Rank in the chosen Class."
     },
     {
-      "name": "SUBCLASS Feature",
+      "name": "Wrath Evolutions III",
+      "flavor_text": "Your foes begin to see the feral flame flicker behind your eyes.",
+      "rank": "8th Rank",
+      "description": "At 8th Rank, select one of the following Wrath Evolution features from\nthe list below or one listed at an earlier Rank. During the Retrain\ndowntime activity, you may redo the selection of all of your chosen\nWrath Evolutions.\n\n### Evoke Panic\n\n8th Rank Berserker Wrath Evolution\n\nWhile you have at least 6 wrath charges, hostile creatures within 30\nfeet of you that are frightened are also\nprovoked by you.\n\n### Furious Brawn\n\n8th Rank Berserker Wrath Evolution\n\nWhile you have at least 6 wrath charges, you gain advantage on STR\ncombat and effort checks.\n\n### Note Disrespect\n\n8th Rank Berserker Wrath Evolution\n\nYou gain 1 wrath charge each time a condition you have applied to a\nhostile creature is removed. You may gain a maximum of 3 wrath charges\nper round using this feature."
+    },
+    {
+      "name": "Berserker Mettle Feature",
       "flavor_text": "",
       "rank": "8th Rank",
-      "description": "At 8th Rank, you gain a feature for your SUBCLASS.\n\n\\[Rank 9\\]"
+      "description": "At 8th Rank, you gain a feature for your Berserker Mettle."
+    },
+    {
+      "name": "Shockwave III",
+      "flavor_text": "Hit them hard and with all the disrespect you can muster.",
+      "rank": "9th Rank",
+      "description": "At 9th Rank, the radius of your aftershock becomes 15 feet.\nAdditionally, you may expend 5 wrath charges when you create an\naftershock to cause all creatures who took damage from it to become\nprovoked by you until the start of your next turn."
+    },
+    {
+      "name": "Legion of One III",
+      "flavor_text": "It doesn't matter the number of foes you face, all within your reach will know your might.",
+      "rank": "9th Rank",
+      "description": "At 9th Rank, you may now use **Legion of One** four times per rest."
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "9th Rank",
-      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\.\n\n\\[Rank 10\\]"
+      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
+    },
+    {
+      "name": "Taunt III",
+      "flavor_text": "I have survived worse than this, worse than you. Test me if you want, you will shatter like all those who came before you.",
+      "rank": "10th Rank",
+      "description": "At 10th Rank, when choosing hostile creatures for your **Taunt**\nfeature, you may instead choose all hostile creatures that are suffering\nfrom a condition who have not yet taken their turn this round. This may\nexceed the limit of two creatures taking their turn together.\n\nWhen a creature taking their turn uses a feature that references their\ninitiative partner, they choose which ally to which the feature will\napply."
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "10th Rank",
-      "description": "At 10th Rank, you gain an Exploration with CLASS being the exploring Class. Each time you gain an Exploration, you gain the following benefit:\n\n* **Bonus Rank.** You choose any Class other than CLASS and gain one Rank in the chosen Class.\n\n\\[Rank 11-12\\]"
+      "description": "At 10th Rank, you gain an Exploration with Berserker being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Berserker and gain one\n  Rank in the chosen Class."
     },
     {
-      "name": "Ability Improvement",
-      "flavor_text": "",
+      "name": "Leap Into Action",
+      "flavor_text": "I'm about to make an impact crater big enough to bury these fools.",
+      "rank": "11th Rank",
+      "description": "At 11th Rank, when you use **Charge Into Action**, you gain advanced\nJumping mobility during the movement. Afterwards, you may create an\naftershock originating from you as a free action."
+    },
+    {
+      "name": "Wrath Evolutions IV",
+      "flavor_text": "Stoke your anger into a blaze strong enough to create a second dawn.",
+      "rank": "11th Rank",
+      "description": "At 11th Rank, select one of the following Wrath Evolution features from\nthe list below or one listed at an earlier Rank. During the Retrain\ndowntime activity, you may redo the selection of all of your chosen\nWrath Evolutions.\n\n### Mutual Destruction\n\n11th Rank Berserker Wrath Evolution\n\nYou may expend 7 wrath charges to cause all creatures who take damage\nfrom your next aftershock to gain all conditions from other creatures\nwho also took damage from it.\n\n### Shock and Awe\n\n11th Rank Berserker Wrath Evolution\n\nWhile you have at least 8 wrath charges, once per turn when you use\n**Shockwave**, you may create an additional number of aftershocks\noriginating from the target of the attack equal to the number of\nconditions affecting them.\n\n### Too Angry to Die\n\n11th Rank Berserker Wrath Evolution\n\nYou may expend 7 wrath charges as a free action when you are dealt\ndamage to negate all of it."
+    },
+    {
+      "name": "Seismic Smash",
+      "flavor_text": "Unleash all your might into an attack so devastating the world cries, the heavens quake, and your foes' lives flash before their eyes.",
       "rank": "12th Rank",
-      "description": "At 12th Rank, you gain an Ability Improvement. Each time you gain an Ability Improvement, distribute three permanent \\+1 increases to your ability modifiers. You may increase the same ability modifier multiple times.\n\nThe maximum ability modifier that may be achieved is limited by your character's Level. The maximum is \\+5 at Level 3, increases to \\+6 at Level 6, and finally becomes \\+7 at Level 9\\."
+      "description": "At 12th Rank, once per rest, when you create an aftershock, you may have\nits radius become 30 feet and cause all creatures who took damage from\nit to become stunned until the start of your next turn."
     },
     {
       "name": "Final Reach",
       "flavor_text": "",
       "rank": "",
-      "description": "When you reach character Level 12, you compute your *Total Rank*, which is calculated as:\n\n###### The sum of all of your Class Ranks\n\n\tIf your Total Rank is less than 16 when you reach Level 12, then for each deficient Rank, you may choose one of the benefits below to modify a feature granted by one of your Class Ranks:\n\n* **Maneuvers.** You learn two additional maneuvers.\n\n* **Battlecasting.** You gain a maneuver, an additional Spell Point, and an additional prepared spell for that Class.\n\n* **Spellcasting.** You gain three additional Spell Points and three additional prepared spells for that Class.\n\nBack to Top\n\n# Subclasses\n\n\\[Subclass A\\]\n\nBack to Top\n\n\\[Subclass B\\]\n\nBack to Top\n\n\\[Subclass C\\]\n\nBack to Top"
+      "description": "When you reach character Level 12, you compute your *Total Rank*, which\nis calculated as:\n\n###### The sum of all of your Class Ranks\n\nIf your Total Rank is less than 16 when you reach Level 12, then for\neach deficient Rank, you may choose one of the benefits below to modify\na feature granted by one of your Class Ranks:\n\n- **Maneuvers.** You learn two additional maneuvers.\n\n- **Battlecasting.** You gain a maneuver, an additional Spell Point, and\n  an additional prepared spell for that Class.\n\n- **Spellcasting.** You gain three additional Spell Points and three\n  additional prepared spells for that Class.\n\nBerserker Mettles"
+    },
+    {
+      "name": "Berserker Mettle: Coldfury",
+      "flavor_text": "Underneath the cool facade is a frigid core of rage and focus. The fusion of primal fear and isolation forces me to crystalize survival. In time, they will fall to my wrath, plead for their lives as the walls close in, and find no mercy from the arctic predator in my gaze.",
+      "rank": "1st Rank",
+      "description": "## Chilling Presence\n\n*I am the winter of death that comes.*\n\nAt 1st Rank, while hostile creatures are within your Reach, they are\nslowed.\n\n## Icicle Wave\n\n*As the air itself slows in anticipation, the mist collects to form the\nbarrier of my domain.*\n\nAt 1st Rank, your aftershocks may deal **cold damage**. When you create\nan aftershock, you may form a thin wall of solid ice along the entire\nboundary of the area. The wall is 1 foot thick and 10 feet tall. The\nwall has 5 HP, an AC of 10, and 5 Toughness. Creatures are incapable of\nclimbing the wall without advanced Climbing mobility.\n\nThe entire wall is destroyed if any part of the wall is destroyed, and\nall creatures within 5 feet of the wall are dealt **1d6 cold damage**.\nThis damage roll becomes 2d6/3d6/4d6 at 4th/7th/10th Rank, respectively.\n\n## Freezing Wrath\n\n*Gaining my attention will freeze you in your tracks.*\n\nAt 4th Rank, you may expend 2 wrath charges as a free action to cause a\ntarget that travels into your Reach to become stuck. This\nstuck condition gains the **Recoverable** condition trait,\nallowing an action to end it.\n\n## Frostbite\n\n*They fumble in the cold, their sapped energy depriving them of\noptions.*\n\nAt 8th Rank, when a creature begins their turn within your Reach, they\ntake 1 fewer action this turn."
+    },
+    {
+      "name": "Berserker Mettle: Flamewrought",
+      "flavor_text": "My path is littered with the embers of loss, injustice, and personal insult. My anger burns brightly and fuels the vengeance my enemies have wrought upon themselves.",
+      "rank": "1st Rank",
+      "description": "## Trial by Fire\n\n*I mete out justice, branding their iniquity with consecrated\nconflagration.*\n\nAt 1st Rank, as a free action once during each of your turns, you may\neither become ablaze or cleanse yourself of the condition.\nWhile you are ablaze, you gain the following benefits:\n\n- **Hellfire.** The DB damage reduction cost is doubled for **fire\n  damage** you deal with weapon attacks or from your\n  ablaze conditions.\n\n- **Vengeful Blaze.** As a reaction when you or an ally within 15 feet\n  of you takes damage, you may cause the source of the damage to become\n  ablaze.\n\n## Ignition Wave\n\n*Flames burst forth, too hot to contain.*\n\nAt 1st Rank, your aftershocks may deal **fire damage**. You may also\ncause all creatures who take any type of damage from your aftershocks to\nbecome ablaze.\n\n## Burning Wrath\n\n*You shall burn as I, together wreathed in the inferno.*\n\nAt 4th Rank, you may expend 2 wrath charges as a free action when you\nare attacked to lower the attack's critical hit threshold by 2. If the\nattack hits, any damage dealt to you by the attack is also dealt to the\nattacker as **fire damage**.\n\n## Living Thermite\n\n*Pour your volcanic ire upon them; bury them in ash and igneous\nretribution.*\n\nAt 8th Rank, you gain the following benefits:\n\n- **Eternal Flame.** When you are about to burn a Resolve when taking\n  damage immediately after using **Burning Wrath**, you may instead\n  expend 2 wrath charges to gain the effects of burning a Resolve.\n\n- **Thermal Cascade.** When a target takes damage from your\n  ablaze conditions, they inflict ablaze to\n  all creatures within 5 feet of them."
+    },
+    {
+      "name": "Berserker Mettle: Siegebreaker",
+      "flavor_text": "Thunder crashes amidst the pouring rain as I glare down their feeble defenses. Their foolish faith is in their walls of matchwood. The first hammer to strike the wedge is the terror my name holds, followed by the pounding of my fists through their blockade.They jump at the lightning above, but their fear should be directed towards the storm below. To me.",
+      "rank": "1st Rank",
+      "description": "## Power Through\n\n*Don't get in my way.*\n\nAt 1st Rank, damage dealt by your aftershocks to objects is increased by\n10. Once per turn when you break an object, you add your Speed to your\nmovement pool.\n\n## Hurricane Wave\n\n*I am the storm after the calm, and the hour of your demise is rapidly\napproaching.*\n\nAt 1st Rank, your aftershocks may deal **bludgeoning damage**. When you\ndeal damage to a creature with an aftershock, that creature becomes\n*shattered* until the start of their next turn. While shattered, their\nAC is reduced by one guard step (their AC is either their Full Guard AC,\nHalf Guard AC, or Base AC).\n\n## Implosive Wrath\n\n*With a crackle of cataclysmic force, their strength is nothing against\nthe storm.*\n\nAt 4th Rank, you may expend 2 wrath charges as an action to cause any\nnumber of target creatures within 30 feet of you to make a **Poise**\nsaving throw against your Maneuver DC. On a failure, a creature is\npulled to a target unoccupied space within your Reach. At the end of\nyour turn, you push any creatures within your Reach 15 feet away from\nyou. Creatures that are pushed in this way fall prone.\n\n## Battering Ram\n\n*Your fortifications fall to my fist.*\n\nAt 8th Rank, you gain the following benefits:\n\n- **Blastsmith.** The aftershock damage bonus of **Power Through**\n  against objects becomes 15.\n\n- **Shattered Ankles.** Creatures that start their turn shattered are\n  slowed until the end of their turn."
     }
   ]
 }

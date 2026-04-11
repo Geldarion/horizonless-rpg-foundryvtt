@@ -1,19 +1,3 @@
-![](media/image5.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Artificer Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Artificer Class Overview Table
 
 +----------+----------------------+--------------+------------+------------+------------+------------+------------+
@@ -77,11 +61,9 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+----------------------+--------------+------------+------------+------------+------------+------------+
 |          | **Subclasses**                                                                                       |
 +----------+------------------------------------------------------------------------------------------------------+
-|          | [[Chemistry]{.underline}](#kix.migwusrvm152), [[Engraving]{.underline}](#kix.le3hrj4gu10f),          |
-|          | [[Wandcarving]{.underline}](#kix.ac2xj58bsfyw)                                                       |
+|          | Chemistry, Engraving,          |
+|          | Wandcarving                                                       |
 +==========+======================+==============+============+============+============+============+============+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 7
 
@@ -126,8 +108,8 @@ spell list:
 
 # Artificer Field
 
-\"*What you would consider unstable experimentation is what I call
-unlocking its true potential.\"*
+"*What you would consider unstable experimentation is what I call
+unlocking its true potential."*
 
 At 1st Rank, you choose an Artificer Field to study as you invent new
 magical creations. You gain features from this chosen Artificer Field at
@@ -424,8 +406,6 @@ a feature granted by one of your Class Ranks:
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
 
-[[Back to Top]{.underline}](#kix.h301gd1zhh1f)
-
 Artificer Fields
 
 # Artificer Field: Chemistry
@@ -569,7 +549,7 @@ until the end of a next short rest, regardless of composition, all have
 the same Toxicity effect:
 
 - **Experimental.** While suffering from potion toxicity, you are
-  [poisoned]{.underline}.
+  poisoned.
 
 ## Tria Prima
 
@@ -631,8 +611,6 @@ At 8th Rank, you gain the following improvements.
 
 - **Coagulation.** You may take three actions to create a single item
   from one of your Catalyzed Stock Recipes using your reagents.
-
-[[Back to Top]{.underline}](#kix.h301gd1zhh1f)
 
 # Artificer Field: Engraving
 
@@ -729,7 +707,7 @@ frozen script.*
   reduced by 5/10/15 feet until the end of its next turn.
 
 - **8th Rank Aspect Booster.** All affected creatures become
-  [stuck]{.underline} with the **Recoverable** condition trait, allowing
+  stuck with the **Recoverable** condition trait, allowing
   an action to end the effect.
 
 ### Pyral Rune
@@ -744,7 +722,7 @@ Artificer Engraver Trait
   **1d6/2d6/3d6 damage**.
 
 - **8th Rank Aspect Booster.** All affected creatures are set
-  [ablaze]{.underline}.
+  ablaze.
 
 ### Ethereal Rune
 
@@ -759,7 +737,7 @@ Artificer Engraver Trait
   start of your next turn.
 
 - **8th Rank Aspect Booster.** All affected creatures fall
-  [prone]{.underline}.
+  prone.
 
 ### Electric Rune
 
@@ -808,7 +786,7 @@ witness it.*
   before the start of your next turn.
 
 - **8th Rank Aspect Booster.** All affected creatures become
-  [poisoned]{.underline} until the end of their next turn.
+  poisoned until the end of their next turn.
 
 ### Illusory Rune
 
@@ -839,9 +817,7 @@ illuminated as bright as the sun itself.*
   the attack's target.
 
 - **8th Rank Aspect Booster.** All affected creatures become
-  [disoriented]{.underline} until the end of their next turn.
-
-[[Back to Top]{.underline}](#kix.h301gd1zhh1f)
+  disoriented until the end of their next turn.
 
 # Artificer Field: Wandcarving
 
@@ -942,5 +918,3 @@ following ways:
 - **High Caliber Imbuement.** When you append spells to an Imbued Spells
   aspect using the **Expanded Imbuement** feature, you may ignore the
   **Preparable** requirement for a single spell.
-
-[[Back to Top]{.underline}](#kix.h301gd1zhh1f)

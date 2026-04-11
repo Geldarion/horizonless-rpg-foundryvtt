@@ -1,19 +1,3 @@
-![](media/image1.png){width="6.119792213473316in"
-height="2.641278433945757in"}
-
-Champion Class
-
-Version 0.2
-
-Released: 04/04/2026
-
-All materials presented here are not the final version and are subject
-to change.
-
-FOR INTERNAL PLAYTESTING PURPOSES ONLY
-
-DO NOT SHARE, COPY, OR DISTRIBUTE
-
 ## Champion Class Overview Table
 
 +----------+------------------------------+---------------+---------------+---------------+---------------+---------------+
@@ -72,11 +56,9 @@ DO NOT SHARE, COPY, OR DISTRIBUTE
 +----------+------------------------------+---------------+---------------+---------------+---------------+---------------+
 |          | **Champion Legends**                                                                                         |
 +----------+--------------------------------------------------------------------------------------------------------------+
-|          | [[Confidence]{.underline}](#kix.74kztwbg7bvv), [[Foresight]{.underline}](#kix.4i0wdo5awzl8),                 |
-|          | [[Tenacity]{.underline}](#kix.ouyku8stru7b)                                                                  |
+|          | Confidence, Foresight,                 |
+|          | Tenacity                                                                  |
 +==========+==============================+===============+===============+===============+===============+===============+
-
-## 
 
 **Maximum Hit Points (HP) gained per Rank:** 7
 
@@ -264,8 +246,8 @@ Reinforcements.
 5th Rank Champion Ward Reinforcement
 
 When you place your ward onto an ally, you may cleanse the warded ally
-of the [disoriented]{.underline}, [poisoned]{.underline}, and
-[frightened]{.underline} conditions.
+of the disoriented, poisoned, and
+frightened conditions.
 
 ### Intercession
 
@@ -273,7 +255,7 @@ of the [disoriented]{.underline}, [poisoned]{.underline}, and
 
 As an action, you may splinter one of your wards to cause hostile
 creatures within 10 feet of the warded ally to become
-[provoked]{.underline} by you until the start of your next turn.
+provoked by you until the start of your next turn.
 
 ### Preservation
 
@@ -360,9 +342,9 @@ Dodge action as a free action.
 8th Rank Champion Ward Reinforcement
 
 As a free action, you may splinter one of your wards to cleanse the
-warded ally of the [incapacitated]{.underline},
-[polymorphed]{.underline}, [stunned]{.underline}, and
-[unconscious]{.underline} conditions.
+warded ally of the incapacitated,
+polymorphed, stunned, and
+unconscious conditions.
 
 ### Justice
 
@@ -473,7 +455,7 @@ Fight for this, one last time.*
 At 12th Rank, once per rest as a free action, when an ally in your rally
 is about to burn a Resolve, you may instead dismiss the rally to grant
 all allies in your rally the effects of burning a Resolve, except they
-do not fall [prone]{.underline}.
+do not fall prone.
 
 # Final Reach
 
@@ -494,8 +476,6 @@ a feature granted by one of your Class Ranks:
 - **Spellcasting.** You gain three additional Spell Points and three
   additional prepared spells for that Class.
 
-[[Back to Top]{.underline}](#kix.67wkh76lmzeh)
-
 Champion Legends
 
 # Champion Legend: Confidence
@@ -514,8 +494,8 @@ unflinching bravery.*
 *I'll hold them off!*
 
 At 1st Rank, when you hit with a melee attack against a creature, you
-may cause the target to become [provoked]{.underline} by you until the
-end of combat or after they attack you. While [provoked]{.underline} in
+may cause the target to become provoked by you until the
+end of combat or after they attack you. While provoked in
 this manner, a creature gains advantage on attack checks made against
 you.
 
@@ -549,14 +529,12 @@ At 8th Rank, you gain the following benefits:
 
 - **All In.** When you place your ward on an ally, they gain advantage
   on the next attack check they make this turn against a creature that
-  you have [provoked]{.underline} from your **Distracting Challenge**
+  you have provoked from your **Distracting Challenge**
   feature.
 
 - **Thrill of the Melee.** When you end your turn within your rally, you
   may **regain ST** equal to 4 × the number of hostile creatures within
   your rally.
-
-[[Back to Top]{.underline}](#kix.67wkh76lmzeh)
 
 # Champion Legend: Foresight
 
@@ -610,8 +588,6 @@ At 8th Rank, you gain the following benefits:
   cause a target ally within 60 feet of you to travel up to their Speed
   towards your rally.
 
-[[Back to Top]{.underline}](#kix.67wkh76lmzeh)
-
 # Champion Legend: Tenacity
 
 *The waters rise as homes are torn into distant memories, trapping a
@@ -641,8 +617,8 @@ defiantly held together by tough seams and faith. It is only over when
 you give up.*
 
 At 1st Rank, you and allies in your rally affected by the
-[charmed]{.underline}, [grappled]{.underline}, [provoked]{.underline},
-[restrained]{.underline}, [slowed]{.underline}, or [stuck]{.underline}
+charmed, grappled, provoked,
+restrained, slowed, or stuck
 conditions may treat those conditions as having the **Recoverable**
 condition trait, allowing an action to end the effect.
 
@@ -671,5 +647,3 @@ At 8th Rank, you gain the following benefits:
 
 - **Bounce Back.** All conditions now count for your **Stoic Rally**
   feature.
-
-[[Back to Top]{.underline}](#kix.67wkh76lmzeh)
