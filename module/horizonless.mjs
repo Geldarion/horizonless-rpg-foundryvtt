@@ -195,19 +195,11 @@ Hooks.once('ready', async function () {
 
   const combatTrackerConfig = game.settings.get('core', 'combatTrackerConfig');
   const turnMarkerEnabled = combatTrackerConfig?.turnMarker?.enabled ?? null;
-  console.log('[Horizonless] ready: combat turn marker enabled state', {
-    turnMarkerEnabled,
-    isActiveGM: game.user?.isActiveGM ?? false,
-  });
 
   if (game.user?.isActiveGM && turnMarkerEnabled !== false) {
     const nextConfig = foundry.utils.deepClone(combatTrackerConfig);
     nextConfig.turnMarker.enabled = false;
     await game.settings.set('core', 'combatTrackerConfig', nextConfig);
-    console.log('[Horizonless] Disabled Foundry core canvas turn marker', {
-      previousEnabled: turnMarkerEnabled,
-      nextEnabled: nextConfig.turnMarker.enabled,
-    });
   }
 });
 

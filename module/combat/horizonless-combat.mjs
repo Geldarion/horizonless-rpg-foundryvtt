@@ -6,8 +6,8 @@ function getSystemId() {
   return game.system?.id ?? 'horizonless';
 }
 
-const ACTIVE_COMBATANTS_FLAG = 'activeCombatantIds';
 const BASE_ROUND_ACTIVATIONS = 1;
+const TURN_STATE_FLAG = 'turnState';
 
 /**
  * Override Combat with activation-based "popcorn" turns.
@@ -18,17 +18,6 @@ export class HorizonlessCombat extends Combat {
     const dispositionDelta = b.disposition - a.disposition;
     if (dispositionDelta !== 0) return dispositionDelta;
     return super._sortCombatants(a, b);
-  }
-
-  async _preCreate(...[data, options, user]) {
-    const updateData = { turn: null };
-    foundry.utils.setProperty(
-      updateData,
-      `flags.${getSystemId()}.${ACTIVE_COMBATANTS_FLAG}`,
-      []
-    );
-    this.updateSource(updateData);
-    return super._preCreate(data, options, user);
   }
 
   _manageTurnEvents(adjustedTurn) {
@@ -84,24 +73,39 @@ export class HorizonlessCombat extends Combat {
   }
 
   get activeCombatantIds() {
-    const ids = this.getFlag(getSystemId(), ACTIVE_COMBATANTS_FLAG);
-    return Array.isArray(ids) ? this._sanitizeActiveCombatantIds(ids) : [];
+    return this._getActiveCombatants().map((combatant) => combatant.id);
   }
 
-  _sanitizeActiveCombatantIds(ids) {
-    const validIds = new Set(this.turns.map((t) => t.id));
-    return [...new Set(ids.filter((id) => validIds.has(id)))];
+  _getActiveCombatants() {
+    return this.combatants
+      .filter((combatant) => combatant?.isTakingTurn)
+      .sort((a, b) => {
+        const aOrder = Number(a.turnState?.order ?? 0);
+        const bOrder = Number(b.turnState?.order ?? 0);
+        return aOrder - bOrder;
+      });
+  }
+
+  async _clearActiveTurnStates() {
+    const updates = this.combatants
+      .filter((combatant) => combatant?.isTakingTurn)
+      .map((combatant) => ({
+        _id: combatant.id,
+        [`flags.${getSystemId()}.${TURN_STATE_FLAG}`]: {
+          active: false,
+          order: null,
+        },
+      }));
+
+    if (!updates.length) return [];
+    return this.updateEmbeddedDocuments('Combatant', updates);
   }
 
   async startCombat() {
     this._playCombatSound('startEncounter');
     const updateData = { round: 1, turn: null };
-    foundry.utils.setProperty(
-      updateData,
-      `flags.${getSystemId()}.${ACTIVE_COMBATANTS_FLAG}`,
-      []
-    );
     Hooks.callAll('combatStart', this, updateData);
+    await this._clearActiveTurnStates();
     await this.resetActivations();
     await this._refreshCombatantDamageBuffers();
     await this.update(updateData);
@@ -109,14 +113,10 @@ export class HorizonlessCombat extends Combat {
   }
 
   async nextRound() {
+    await this._clearActiveTurnStates();
     await this.resetActivations();
     await this._refreshCombatantDamageBuffers();
     const updateData = { round: (this.round ?? 0) + 1, turn: null };
-    foundry.utils.setProperty(
-      updateData,
-      `flags.${getSystemId()}.${ACTIVE_COMBATANTS_FLAG}`,
-      []
-    );
     let advanceTime = Math.max(this.turns.length - (this.turn ?? 0), 0) * CONFIG.time.turnTime;
     advanceTime += CONFIG.time.roundTime;
     const updateOptions = { advanceTime, direction: 1 };
@@ -129,30 +129,37 @@ export class HorizonlessCombat extends Combat {
    * End the active turn without selecting the next combatant.
    */
   async nextTurn() {
-    console.log('[HorizonlessCombat] nextTurn:start', {
-      combatId: this.id,
-      round: this.round,
-      turn: this.turn,
-      activeCombatantIds: this.activeCombatantIds,
-    });
     const activeIds = this.activeCombatantIds;
     if (activeIds.length === 0) {
       const updateData = { turn: null };
       const updateOptions = { advanceTime: 0, direction: 0 };
       Hooks.callAll('combatTurn', this, updateData, updateOptions);
-      console.log('[HorizonlessCombat] nextTurn:update', {
-        combatId: this.id,
-        updateData,
-        updateOptions,
-      });
       await this.update(updateData, updateOptions);
       return this;
     }
 
     let remainingActiveIds = [];
     if (game.user?.isGM) {
+      await this._clearActiveTurnStates();
       remainingActiveIds = [];
     } else {
+      const ownedActiveCombatants = activeIds
+        .map((id) => this.getEmbeddedDocument('Combatant', id, {}))
+        .filter((combatant) => combatant?.testUserPermission(game.user, 'OWNER'));
+
+      if (ownedActiveCombatants.length) {
+        await this.updateEmbeddedDocuments(
+          'Combatant',
+          ownedActiveCombatants.map((combatant) => ({
+            _id: combatant.id,
+            [`flags.${getSystemId()}.${TURN_STATE_FLAG}`]: {
+              active: false,
+              order: null,
+            },
+          }))
+        );
+      }
+
       remainingActiveIds = activeIds.filter((id) => {
         const combatant = this.getEmbeddedDocument('Combatant', id, {});
         return !combatant?.testUserPermission(game.user, 'OWNER');
@@ -166,34 +173,20 @@ export class HorizonlessCombat extends Combat {
     const updateData = {
       turn: Number.isInteger(nextTurn) && nextTurn >= 0 ? nextTurn : null,
     };
-    foundry.utils.setProperty(
-      updateData,
-      `flags.${getSystemId()}.${ACTIVE_COMBATANTS_FLAG}`,
-      remainingActiveIds
-    );
     const updateOptions = { advanceTime: 0, direction: 0 };
     Hooks.callAll('combatTurn', this, updateData, updateOptions);
-    console.log('[HorizonlessCombat] nextTurn:update', {
-      combatId: this.id,
-      updateData,
-      updateOptions,
-    });
     await this._refreshCombatantDamageBuffers();
     await this.update(updateData, updateOptions);
     return this;
   }
 
   async previousRound() {
+    await this._clearActiveTurnStates();
     await this.resetActivations();
     const round = Math.max((this.round ?? 0) - 1, 0);
     let advanceTime = 0;
     if (round > 0) advanceTime -= CONFIG.time.roundTime;
     const updateData = { round, turn: null };
-    foundry.utils.setProperty(
-      updateData,
-      `flags.${getSystemId()}.${ACTIVE_COMBATANTS_FLAG}`,
-      []
-    );
     const updateOptions = { advanceTime, direction: -1 };
     Hooks.callAll('combatRound', this, updateData, updateOptions);
     await this.update(updateData, updateOptions);
@@ -204,12 +197,6 @@ export class HorizonlessCombat extends Combat {
    * End current turn and refund one activation.
    */
   async previousTurn() {
-    console.log('[HorizonlessCombat] previousTurn:start', {
-      combatId: this.id,
-      round: this.round,
-      turn: this.turn,
-      activeCombatantIds: this.activeCombatantIds,
-    });
     const activeIds = this.activeCombatantIds;
     let targetId = activeIds[activeIds.length - 1];
     if (!targetId && this.turn !== null) targetId = this.turns[this.turn]?.id ?? null;
@@ -222,6 +209,12 @@ export class HorizonlessCombat extends Combat {
     if (!canModify) return this;
 
     await targetCombatant?.modifyCurrentActivations(1);
+    await targetCombatant?.update({
+      [`flags.${getSystemId()}.${TURN_STATE_FLAG}`]: {
+        active: false,
+        order: null,
+      },
+    });
     const remainingActiveIds = activeIds.filter((id) => id !== targetId);
     const nextTurn = remainingActiveIds.length
       ? this.turns.findIndex((turn) => turn.id === remainingActiveIds[remainingActiveIds.length - 1])
@@ -229,33 +222,19 @@ export class HorizonlessCombat extends Combat {
     const updateData = {
       turn: Number.isInteger(nextTurn) && nextTurn >= 0 ? nextTurn : null,
     };
-    foundry.utils.setProperty(
-      updateData,
-      `flags.${getSystemId()}.${ACTIVE_COMBATANTS_FLAG}`,
-      remainingActiveIds
-    );
     const updateOptions = { advanceTime: -CONFIG.time.turnTime, direction: -1 };
     Hooks.callAll('combatTurn', this, updateData, updateOptions);
-    console.log('[HorizonlessCombat] previousTurn:update', {
-      combatId: this.id,
-      updateData,
-      updateOptions,
-    });
     await this.update(updateData, updateOptions);
     return this;
   }
 
   async resetAll() {
+    await this._clearActiveTurnStates();
     await this.resetActivations();
     this.combatants.forEach((combatant) => {
       combatant.updateSource({ initiative: null });
     });
     const updateData = { turn: null, combatants: this.combatants.toObject() };
-    foundry.utils.setProperty(
-      updateData,
-      `flags.${getSystemId()}.${ACTIVE_COMBATANTS_FLAG}`,
-      []
-    );
     await this.update(updateData, { diff: false });
     return this;
   }
@@ -270,15 +249,6 @@ export class HorizonlessCombat extends Combat {
    */
   async activateCombatant(id, override = false) {
     const combatant = this.getEmbeddedDocument('Combatant', id, {});
-    console.log('[HorizonlessCombat] activateCombatant:start', {
-      combatId: this.id,
-      combatantId: id,
-      combatantName: combatant?.name ?? null,
-      override,
-      currentTurn: this.turn,
-      currentCombatantId: this.combatant?.id ?? null,
-      activeCombatantIds: this.activeCombatantIds,
-    });
     if (!combatant) return this;
 
     const canActivate = Boolean(game.user?.isGM || combatant.isOwner || override);
@@ -287,32 +257,20 @@ export class HorizonlessCombat extends Combat {
     if (!combatant.activations.value) return this;
 
     await combatant.modifyCurrentActivations(-1);
-    const activeCombatantIds = this._sanitizeActiveCombatantIds([
-      ...this.activeCombatantIds,
-      id,
-    ]);
+    const activeCombatantIds = this.activeCombatantIds;
+    const nextOrder = activeCombatantIds.length;
+    await combatant.update({
+      [`flags.${getSystemId()}.${TURN_STATE_FLAG}`]: {
+        active: true,
+        order: nextOrder,
+      },
+    });
     const turn = this.turns.findIndex((t) => t.id === id);
     if (turn < 0) return this;
 
     const updateData = { turn };
-    foundry.utils.setProperty(
-      updateData,
-      `flags.${getSystemId()}.${ACTIVE_COMBATANTS_FLAG}`,
-      activeCombatantIds
-    );
     const updateOptions = { advanceTime: CONFIG.time.turnTime, direction: 1 };
     Hooks.callAll('combatTurn', this, updateData, updateOptions);
-    console.log('[HorizonlessCombat] activateCombatant:update', {
-      combatId: this.id,
-      combatantId: id,
-      combatantName: combatant?.name ?? null,
-      previousTurn: this.turn,
-      nextTurn: turn,
-      updateData,
-      updateOptions,
-      activeCombatantIds,
-      note: 'Setting combat.turn causes Foundry core to treat this combatant as the current turn, which also refreshes the canvas turn marker.',
-    });
     return this.update(updateData, updateOptions);
   }
 
@@ -321,17 +279,17 @@ export class HorizonlessCombat extends Combat {
    */
   async deactivateCombatant(id) {
     const activeCombatantIds = this.activeCombatantIds;
-    console.log('[HorizonlessCombat] deactivateCombatant:start', {
-      combatId: this.id,
-      combatantId: id,
-      currentTurn: this.turn,
-      currentCombatantId: this.combatant?.id ?? null,
-      activeCombatantIds,
-    });
     if (!activeCombatantIds.includes(id)) return this;
 
     const combatant = this.getEmbeddedDocument('Combatant', id, {});
     if (!combatant?.testUserPermission(game.user, 'OWNER') && !game.user?.isGM) return this;
+
+    await combatant.update({
+      [`flags.${getSystemId()}.${TURN_STATE_FLAG}`]: {
+        active: false,
+        order: null,
+      },
+    });
 
     const remainingActiveIds = activeCombatantIds.filter((activeId) => activeId !== id);
     const nextTurn = remainingActiveIds.length
@@ -340,20 +298,8 @@ export class HorizonlessCombat extends Combat {
     const updateData = {
       turn: Number.isInteger(nextTurn) && nextTurn >= 0 ? nextTurn : null,
     };
-    foundry.utils.setProperty(
-      updateData,
-      `flags.${getSystemId()}.${ACTIVE_COMBATANTS_FLAG}`,
-      remainingActiveIds
-    );
     const updateOptions = { advanceTime: 0, direction: 0 };
     Hooks.callAll('combatTurn', this, updateData, updateOptions);
-    console.log('[HorizonlessCombat] deactivateCombatant:update', {
-      combatId: this.id,
-      combatantId: id,
-      updateData,
-      updateOptions,
-      remainingActiveIds,
-    });
     await this._refreshCombatantDamageBuffers();
     await this.update(updateData, updateOptions);
     return this;
@@ -396,6 +342,19 @@ export class HorizonlessCombatant extends Combatant {
 
   get activations() {
     return this.getFlag(getSystemId(), 'activations') ?? {};
+  }
+
+  get turnState() {
+    return (
+      this.getFlag(getSystemId(), TURN_STATE_FLAG) ?? {
+        active: false,
+        order: null,
+      }
+    );
+  }
+
+  get isTakingTurn() {
+    return Boolean(this.turnState?.active);
   }
 
   get disposition() {

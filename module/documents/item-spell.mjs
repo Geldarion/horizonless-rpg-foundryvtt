@@ -973,7 +973,6 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     try {
       await sourceApplication.minimize();
     } catch (error) {
-      console.warn('[HorizonlessSpellItem.roll] Failed to minimize casting source application.', error);
       return callback();
     }
 
@@ -982,9 +981,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     } finally {
       try {
         await sourceApplication.maximize();
-      } catch (error) {
-        console.warn('[HorizonlessSpellItem.roll] Failed to restore casting source application.', error);
-      }
+      } catch (error) {}
     }
   }
 
@@ -1324,9 +1321,6 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     }
 
     if (!templateObject?.shape) {
-      console.warn('[HorizonlessSpellItem._targetTokensInTemplate] template shape was not ready in time', {
-        templateId: templateDocument.id,
-      });
       return;
     }
 

@@ -51,8 +51,8 @@ function isAllowedCombatantInteraction(target) {
   );
 }
 
-function enrichTurnData(turn, combatant, activeCombatantIds) {
-  const isTakingTurn = activeCombatantIds.has(combatant?.id ?? turn?.id);
+function enrichTurnData(turn, combatant) {
+  const isTakingTurn = Boolean(combatant?.isTakingTurn);
   return {
     ...turn,
     css: `${turn?.css ?? ''} ${getDispositionClass(combatant)}`.trim(),
@@ -140,8 +140,7 @@ export class HorizonlessCombatTracker extends BaseCombatTracker {
 
   async _prepareTurnContext(combat, combatant, index) {
     const turn = await super._prepareTurnContext(combat, combatant, index);
-    const activeCombatantIds = new Set(this.viewed?.activeCombatantIds ?? []);
-    return enrichTurnData(turn, combatant, activeCombatantIds);
+    return enrichTurnData(turn, combatant);
   }
 
   async _prepareTrackerContext(context, options) {
@@ -158,14 +157,6 @@ export class HorizonlessCombatTracker extends BaseCombatTracker {
 
   async _onRender(context, options) {
     await super._onRender(context, options);
-    console.log('[HorizonlessCombatTracker] _onRender', {
-      viewedCombatId: this.viewed?.id ?? null,
-      renderContext: options?.renderContext ?? null,
-      parts: options?.parts ?? null,
-      combatTurn: this.viewed?.turn ?? null,
-      currentCombatantId: this.viewed?.combatant?.id ?? null,
-      activeCombatantIds: this.viewed?.activeCombatantIds ?? [],
-    });
     if (this.element instanceof HTMLElement) {
       this.element.classList.toggle('is-popout', getIsPopOut(this));
       removeTurnStepControls(this.element);
@@ -268,14 +259,6 @@ export class HorizonlessCombatTracker extends BaseCombatTracker {
 
   async _handleActivationControl(control, target) {
     const combatantId = target?.closest?.('.combatant')?.dataset?.combatantId;
-    console.log('[HorizonlessCombatTracker] _handleActivationControl', {
-      control,
-      combatantId,
-      viewedCombatId: this.viewed?.id ?? null,
-      currentTurn: this.viewed?.turn ?? null,
-      currentCombatantId: this.viewed?.combatant?.id ?? null,
-      activeCombatantIds: this.viewed?.activeCombatantIds ?? [],
-    });
     if (!combatantId) return;
 
     if (control === 'deactivateCombatant') {
