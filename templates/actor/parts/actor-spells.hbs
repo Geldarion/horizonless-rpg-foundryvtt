@@ -18,24 +18,33 @@
   <h3 class='resource-label'>Spell List</h3>
 
   <ol class='items-list'>
-  {{#each spells as |spells spellCircle|}}
+  {{#each spells as |spellGroup|}}
     <li class='item flexrow items-header'>
       <div class='item-name'>
-          {{localize 'HORIZONLESS_RPG.Item.Spell.SpellCircle' circle=spellCircle}}
+        {{#if (eq spellGroup.spellCircle "cantrip")}}
+          {{localize 'HORIZONLESS_RPG.Item.Spell.CantripSpells'}}
+        {{else}}
+          {{localize 'HORIZONLESS_RPG.Item.Spell.SpellCircle' circle=spellGroup.spellCircle}}
+        {{/if}}
       </div>
       <div class='item-controls'>
         <a
           class='item-control item-create'
           title='{{localize "DOCUMENT.Create" type='Spell'}}'
           data-type='spell'
-          data-spell-level='{{spellCircle}}'
+          data-spell-level='{{spellGroup.spellCircle}}'
+          {{#if (eq spellGroup.spellCircle "cantrip")}}data-level-label='Cantrip' data-heightened-circle='1'{{/if}}
         >
           <i class='fas fa-plus'></i>
-          {{localize 'HORIZONLESS_RPG.Item.Spell.AddCircle' circle=spellCircle}}
+          {{#if (eq spellGroup.spellCircle "cantrip")}}
+            {{localize 'HORIZONLESS_RPG.Item.Spell.AddCantrip'}}
+          {{else}}
+            {{localize 'HORIZONLESS_RPG.Item.Spell.AddCircle' circle=spellGroup.spellCircle}}
+          {{/if}}
         </a>
       </div>
     </li>
-    {{#each spells as |item id|}}
+    {{#each spellGroup.spells as |item id|}}
       <li class='item flexrow spell-signature-source' data-item-id='{{item._id}}' draggable='true'>
         <div class='item-name flexrow'>
           <div class='item-image'>

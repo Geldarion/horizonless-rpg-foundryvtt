@@ -106,6 +106,12 @@ function getNextGuardMode(guardMode) {
   return GUARD_SEQUENCE[(normalizedIndex + 1) % GUARD_SEQUENCE.length];
 }
 
+function isCantripSpell(item) {
+  const levelLabel = String(item?.system?.levelLabel ?? '').trim().toLowerCase();
+  if (levelLabel === 'cantrip') return true;
+  return Number(item?.system?.spellLevel ?? 1) === 1 && levelLabel.length === 0;
+}
+
 function getTabGroup(element) {
   return String(
     element?.dataset?.group
@@ -461,15 +467,16 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     const features = [];
     const classFeatures = [];
     const maneuvers = [];
-    const spells = {
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-    };
+    const spellBuckets = new Map([
+      ['cantrip', []],
+      [1, []],
+      [2, []],
+      [3, []],
+      [4, []],
+      [5, []],
+      [6, []],
+      [7, []],
+    ]);
     const ancestryFeaturesByType = {
       [AncestryFeatureType.PRIMARY]: [],
       [AncestryFeatureType.SECONDARY]: [],
@@ -495,6 +502,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
         classFeatures.push(item);
       }
       else if (item.type === ItemType.SPELL) {
+        const cantrip = isCantripSpell(item);
         const circle = Number(item.system.spellLevel);
         if (Number.isInteger(circle) && circle >= 1 && circle <= 7) {
           const minHeighten = circle;
@@ -505,7 +513,11 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
             { length: (maxHeighten - minHeighten) + 1 },
             (_, index) => minHeighten + index
           );
-          spells[circle].push(item);
+          if (cantrip) {
+            spellBuckets.get('cantrip')?.push(item);
+          } else {
+            spellBuckets.get(circle)?.push(item);
+          }
         }
       }
       else if (item.type === ItemType.MANEUVER) {
@@ -522,7 +534,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       if (rankA !== rankB) return rankA - rankB;
       return String(a.name ?? '').localeCompare(String(b.name ?? ''));
     });
-    context.spells = spells;
+    context.spells = Array.from(spellBuckets, ([spellCircle, spells]) => ({ spellCircle, spells }));
     context.maneuvers = maneuvers;
     context.signatureSpell = null;
     context.ancestrySlots = {};
@@ -606,6 +618,11 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     const header = event.currentTarget;
     const type = header.dataset.type;
     const data = foundry.utils.deepClone(header.dataset);
+    if (type === ItemType.SPELL && data.spellLevel === 'cantrip') {
+      data.spellLevel = 1;
+      data.levelLabel = 'Cantrip';
+      data.heightenedCircle = 1;
+    }
     const itemTypeName = type ? `${type.charAt(0).toUpperCase()}${type.slice(1)}` : 'Item';
     const itemData = {
       name: `New ${itemTypeName}`,

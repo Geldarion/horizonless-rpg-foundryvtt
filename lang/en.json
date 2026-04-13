@@ -19,6 +19,8 @@
       "Spell": {
         "SpellCircle": "Circle {circle} Spells",
         "AddCircle": "Add Circle {circle}",
+        "CantripSpells": "Cantrip Spells",
+        "AddCantrip": "Add Cantrip",
         "Cantrip": "Cantrip"
       },
       "Maneuver": {
