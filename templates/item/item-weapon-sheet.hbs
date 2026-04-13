@@ -49,12 +49,12 @@
 
     {{! Description Tab }}
     <div class='tab' data-group='primary' data-tab='description'>
-      {{editor
-        enrichedDescription
-        target='system.description'
-        engine='prosemirror'
-        button=true
-        editable=editable
+      {{> "systems/horizonless/templates/shared/parts/editor-toggle.hbs"
+        editingDescription=editingDescription
+        documentUuid=item.uuid
+        target="system.description"
+        label="description"
+        content=enrichedDescription
       }}
     </div>
 

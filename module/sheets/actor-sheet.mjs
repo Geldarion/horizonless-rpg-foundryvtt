@@ -10,6 +10,13 @@ import {
 import {
   normalizeAncestryName,
 } from '../helpers/compendium-normalization.mjs';
+import {
+  activateDescriptionEditor,
+  getDescriptionEditorActions,
+  populateDescriptionEditorContext,
+  saveDescriptionEditorContent,
+  startDescriptionEditing,
+} from '../helpers/description-editor.mjs';
 import { getArmorStrengthRequirementFailure } from '../helpers/item-validation.mjs';
 import {
   AncestryFeatureType,
@@ -121,6 +128,9 @@ function syncTabGroup(root, group, activeTab) {
 }
 
 export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
+  editingDescriptionTarget = null;
+  _isSavingDescription = false;
+
   tabGroups = {
     primary: 'features',
   };
@@ -129,6 +139,9 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     return foundry.utils.mergeObject(
       super.DEFAULT_OPTIONS ?? {},
       {
+        actions: {
+          ...getDescriptionEditorActions(this),
+        },
         classes: ['horizonless', 'sheet', 'actor'],
         form: {
           closeOnSubmit: false,
@@ -228,6 +241,8 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       }
     );
 
+    populateDescriptionEditorContext(context, this.actor, this.editingDescriptionTarget);
+
     context.effects = prepareActiveEffectCategories(this.actor.allApplicableEffects());
     const sheetTheme = String(
       this.actor.getFlag('horizonless', 'characterSheetTheme') ?? SheetTheme.DEFAULT
@@ -274,6 +289,8 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       const item = this.actor.items.get(itemId);
       item?.sheet.render(true);
     });
+
+    activateDescriptionEditor(this);
 
     if (!this.isEditable) return;
 
@@ -416,6 +433,14 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
         listItem.addEventListener('dragstart', handler, false);
       }
     }
+  }
+
+  static _onEditDescription(event, target) {
+    startDescriptionEditing(this, target);
+  }
+
+  async _onDescriptionEditorSave(event) {
+    await saveDescriptionEditorContent(this, event);
   }
 
   async _submitPendingChanges() {

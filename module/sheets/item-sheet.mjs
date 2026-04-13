@@ -2,6 +2,13 @@ import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
 } from '../helpers/effects.mjs';
+import {
+  activateDescriptionEditor,
+  getDescriptionEditorActions,
+  populateDescriptionEditorContext,
+  saveDescriptionEditorContent,
+  startDescriptionEditing,
+} from '../helpers/description-editor.mjs';
 import { SpellList } from '../data/enums.mjs';
 import { prepareEnrichedChatContent } from '../helpers/chat.mjs';
 
@@ -37,6 +44,9 @@ function syncTabGroup(root, group, activeTab) {
 }
 
 export class HorizonlessItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
+  editingDescriptionTarget = null;
+  _isSavingDescription = false;
+
   tabGroups = {
     primary: 'description',
   };
@@ -50,6 +60,9 @@ export class HorizonlessItemSheet extends HandlebarsApplicationMixin(ItemSheetV2
     return foundry.utils.mergeObject(
       super.DEFAULT_OPTIONS ?? {},
       {
+        actions: {
+          ...getDescriptionEditorActions(this),
+        },
         classes: ['horizonless', 'sheet', 'item'],
         form: {
           closeOnSubmit: false,
@@ -156,6 +169,8 @@ export class HorizonlessItemSheet extends HandlebarsApplicationMixin(ItemSheetV2
       );
     }
 
+    populateDescriptionEditorContext(context, this.item, this.editingDescriptionTarget);
+
     return context;
   }
 
@@ -176,11 +191,21 @@ export class HorizonlessItemSheet extends HandlebarsApplicationMixin(ItemSheetV2
       this._syncTabState(this.form ?? this.element, group);
     });
 
+    activateDescriptionEditor(this);
+
     if (!this.isEditable) return;
 
     bindEventListeners(root, 'click', '.effect-control', (event) =>
       onManageActiveEffect(event, this.item)
     );
+  }
+
+  static _onEditDescription(event, target) {
+    startDescriptionEditing(this, target);
+  }
+
+  async _onDescriptionEditorSave(event) {
+    await saveDescriptionEditorContent(this, event);
   }
 
   async _preClose(options) {

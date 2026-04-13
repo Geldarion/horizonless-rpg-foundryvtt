@@ -1,0 +1,21 @@
+{{#if editingDescription}}
+  <prose-mirror
+    name="{{editingDescription.target}}"
+    value="{{editingDescription.value}}"
+    document-uuid="{{documentUuid}}"
+    compact
+  ></prose-mirror>
+{{else}}
+  <div class="editor" data-target="{{target}}">
+    <button
+      type="button"
+      class="control-button editor-edit unbutton"
+      data-action="editDescription"
+      data-target="{{target}}"
+      aria-label="Edit {{label}}"
+    >
+      <i class="fas fa-edit" inert></i>
+    </button>
+    <div class="editor-content">{{{content}}}</div>
+  </div>
+{{/if}}

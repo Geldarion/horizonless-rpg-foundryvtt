@@ -44,6 +44,12 @@ export default class HorizonlessActor extends HorizonlessDataModel {
       initial: GuardMode.NO_GUARD
     });
 
+    schema.biography = new fields.StringField({
+      required: true,
+      blank: true,
+      initial: ""
+    });
+
     schema.damageBuffers = new fields.ArrayField(
       new fields.SchemaField({
         type: new fields.StringField({

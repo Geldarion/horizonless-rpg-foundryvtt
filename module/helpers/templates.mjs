@@ -23,6 +23,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/horizonless/templates/actor/parts/actor-maneuvers.hbs',
     'systems/horizonless/templates/actor/parts/actor-trades.hbs',
     'systems/horizonless/templates/actor/parts/actor-effects.hbs',
+    'systems/horizonless/templates/shared/parts/editor-toggle.hbs',
     // Item sheet templates.
     'systems/horizonless/templates/item/item-sheet-root.hbs',
     'systems/horizonless/templates/item/item-sheet.hbs',
