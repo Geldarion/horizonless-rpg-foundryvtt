@@ -175,9 +175,9 @@
                   <a
                     class="ability-save rollable"
                     data-ability-key="{{key}}"
-                    data-label="{{localize (lookup @root.config.abilities key)}} Save"
+                    data-label="{{localize (lookup @root.config.abilities key)}} {{#if (eq key 'str')}}Poise{{else if (eq key 'dex')}}Reflex{{else if (eq key 'con')}}Fortitude{{else if (eq key 'int')}}Quick-Wits{{else if (eq key 'wis')}}Will{{else if (eq key 'cha')}}Courage{{else}}Save{{/if}}"
                   >
-                    Save
+                    {{#if (eq key 'str')}}Poise{{else if (eq key 'dex')}}Reflex{{else if (eq key 'con')}}Fortitude{{else if (eq key 'int')}}Quick-Wits{{else if (eq key 'wis')}}Will{{else if (eq key 'cha')}}Courage{{else}}Save{{/if}}
                   </a>
                 </td>
                 <td class="heroic-toggle-cell">
