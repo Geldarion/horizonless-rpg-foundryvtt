@@ -4,6 +4,7 @@ import {
   NPCType,
   TradeSpecialization,
 } from "../data/enums.mjs";
+import HorizonlessWeaponItem from "../data/item-weapon.mjs";
 export const HORIZONLESS_RPG = {};
 
 /**
@@ -90,9 +91,11 @@ HORIZONLESS_RPG.fightingStyles = {
 };
 
 HORIZONLESS_RPG.fightingStyleTypes = {
-  melee: "Melee",
-  ranged: "Ranged"
+  [HorizonlessWeaponItem.FIGHTING_STYLE_TYPES.MELEE]: "Melee",
+  [HorizonlessWeaponItem.FIGHTING_STYLE_TYPES.RANGED]: "Ranged"
 };
+
+HORIZONLESS_RPG.fightingStyleTypeByStyle = HorizonlessWeaponItem.FIGHTING_STYLE_TYPE_BY_STYLE;
 
 HORIZONLESS_RPG.npcTypes = {
   [NPCType.MINION]: "Minion",

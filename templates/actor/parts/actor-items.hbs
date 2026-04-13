@@ -62,7 +62,7 @@
           {{/if}}
         {{else if (eq item.type 'weapon')}}
           {{lookup @root.config.fightingStyles item.system.fightingStyle}}
-          ({{lookup @root.config.fightingStyleTypes item.system.fightingStyleType}})
+          ({{lookup @root.config.fightingStyleTypes (lookup @root.config.fightingStyleTypeByStyle item.system.fightingStyle)}})
         {{else if (eq item.type 'curio')}}
           {{item.system.rarity}}
           {{#if item.system.mainType}}
