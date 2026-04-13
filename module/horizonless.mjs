@@ -301,6 +301,7 @@ function rollItemMacro(itemUuid) {
 
 function buildDefaultPrototypeTokenUpdate(data) {
   const updateData = {};
+  const actorType = String(data?.type ?? '').trim();
 
   for (const [barKey, attribute] of Object.entries(DEFAULT_TOKEN_BAR_ATTRIBUTES)) {
     const currentAttribute = foundry.utils.getProperty(
@@ -323,6 +324,10 @@ function buildDefaultPrototypeTokenUpdate(data) {
       'prototypeToken.displayBars',
       CONST.TOKEN_DISPLAY_MODES.ALWAYS
     );
+  }
+
+  if (actorType === 'character') {
+    foundry.utils.setProperty(updateData, 'prototypeToken.actorLink', true);
   }
 
   return updateData;
@@ -361,6 +366,10 @@ async function migrateActorPrototypeTokenBars() {
         'prototypeToken.displayBars',
         CONST.TOKEN_DISPLAY_MODES.ALWAYS
       );
+    }
+
+    if (actor.type === 'character' && actor.prototypeToken?.actorLink !== true) {
+      foundry.utils.setProperty(updateData, 'prototypeToken.actorLink', true);
     }
 
     if (Object.keys(updateData).length > 0) {
