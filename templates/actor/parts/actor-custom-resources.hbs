@@ -1,0 +1,54 @@
+<section class="custom-resources-section">
+  <div class="custom-resources-header">
+    <h3>Custom Resources</h3>
+    <a class="custom-resource-add task-control" title="Add Resource">
+      <i class="fas fa-plus"></i>
+      New Resource
+    </a>
+  </div>
+
+  {{#if customResources.length}}
+    <div class="custom-resource-list">
+      {{#each customResources as |resource index|}}
+        <div class="custom-resource-card">
+          <div class="custom-resource-row custom-resource-row-main">
+            <label class="stat-label" for="system.customResources.{{index}}.name">Name</label>
+            <input
+              type="text"
+              name="system.customResources.{{index}}.name"
+              value="{{resource.name}}"
+              placeholder="Resource Name"
+            />
+            <a class="custom-resource-remove task-control task-delete" data-index="{{index}}" title="Remove Resource">
+              <i class="fas fa-minus"></i>
+            </a>
+          </div>
+          <div class="custom-resource-row custom-resource-row-values">
+            <div class="custom-resource-value-group">
+              <label class="stat-label" for="system.customResources.{{index}}.value">Value</label>
+              <input
+                type="text"
+                name="system.customResources.{{index}}.value"
+                value="{{resource.value}}"
+                data-dtype="Number"
+              />
+            </div>
+            <div class="custom-resource-value-group">
+              <label class="stat-label" for="system.customResources.{{index}}.max">Max</label>
+              <input
+                type="text"
+                name="system.customResources.{{index}}.max"
+                value="{{resource.max}}"
+                data-dtype="Number"
+              />
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    <div class="custom-resource-empty resource-card flex-group-center">
+      <p>No custom resources added.</p>
+    </div>
+  {{/if}}
+</section>

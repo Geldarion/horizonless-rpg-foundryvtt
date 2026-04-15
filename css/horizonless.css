@@ -582,6 +582,73 @@
 .horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(3) { width: 60px; }
 .horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(4) { width: 72px; }
 
+/* Custom resources */
+.horizonless .custom-resources-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.horizonless .custom-resources-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.horizonless .custom-resources-header h3 {
+  margin: 0;
+}
+
+.horizonless .custom-resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.horizonless .custom-resource-card {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.horizonless .custom-resource-row {
+  display: grid;
+  gap: 8px;
+  align-items: end;
+}
+
+.horizonless .custom-resource-row-main {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+.horizonless .custom-resource-row-values {
+  grid-template-columns: repeat(2, minmax(0, 140px));
+  justify-content: start;
+  margin-top: 8px;
+}
+
+.horizonless .custom-resource-value-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.horizonless .custom-resource-card input[type="text"],
+.horizonless .custom-resource-card input[type="number"] {
+  width: 100%;
+}
+
+.horizonless .custom-resource-remove {
+  justify-self: end;
+}
+
+.horizonless .custom-resource-empty {
+  min-height: 96px;
+}
+
 /* Trades */
 .horizonless .trades-section .trade-column {
   display: flex;
@@ -622,7 +689,8 @@
   margin-bottom: 4px;
 }
 
-.horizonless .trades-section .task-control {
+.horizonless .trades-section .task-control,
+.horizonless .custom-resources-section .task-control {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -634,7 +702,8 @@
   line-height: 18px;
 }
 
-.horizonless .trades-section .task-control:hover {
+.horizonless .trades-section .task-control:hover,
+.horizonless .custom-resources-section .task-control:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -915,7 +984,8 @@
 }
 
 .horizonless.actor :is(.damage-buffer-add, .damage-buffer-remove),
-.horizonless.actor .trades-section .task-control {
+.horizonless.actor .trades-section .task-control,
+.horizonless.actor .custom-resources-section .task-control {
   color: var(--hz-sheet-text);
   background: var(--hz-sheet-primary-soft);
   border-color: var(--hz-sheet-accent-mid);
@@ -932,7 +1002,8 @@
 }
 
 .horizonless.actor :is(.damage-buffer-add, .damage-buffer-remove):hover,
-.horizonless.actor .trades-section .task-control:hover {
+.horizonless.actor .trades-section .task-control:hover,
+.horizonless.actor .custom-resources-section .task-control:hover {
   background: var(--hz-sheet-primary-hover);
 }
 
@@ -943,6 +1014,11 @@
 }
 
 .horizonless.actor .trades-section .trade-card {
+  border-color: var(--hz-sheet-stroke-soft);
+  background: var(--hz-sheet-surface-soft);
+}
+
+.horizonless.actor .custom-resource-card {
   border-color: var(--hz-sheet-stroke-soft);
   background: var(--hz-sheet-surface-soft);
 }

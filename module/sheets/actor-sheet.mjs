@@ -106,6 +106,24 @@ function getNextGuardMode(guardMode) {
   return GUARD_SEQUENCE[(normalizedIndex + 1) % GUARD_SEQUENCE.length];
 }
 
+function createEmptyCustomResource() {
+  return {
+    name: '',
+    value: 0,
+    max: 0,
+  };
+}
+
+function normalizeCustomResources(customResources) {
+  if (!Array.isArray(customResources)) return [];
+
+  return customResources.map((resource) => ({
+    name: String(resource?.name ?? ''),
+    value: Math.max(0, Math.floor(Number(resource?.value ?? 0) || 0)),
+    max: Math.max(0, Math.floor(Number(resource?.max ?? 0) || 0)),
+  }));
+}
+
 function isCantripSpell(item) {
   const levelLabel = String(item?.system?.levelLabel ?? '').trim().toLowerCase();
   if (levelLabel === 'cantrip') return true;
@@ -303,6 +321,8 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     bindEventListeners(root, 'click', '.item-create', this._onItemCreate.bind(this));
     bindEventListeners(root, 'click', '.damage-buffer-add', this._onDamageBufferAdd.bind(this));
     bindEventListeners(root, 'click', '.damage-buffer-remove', this._onDamageBufferRemove.bind(this));
+    bindEventListeners(root, 'click', '.custom-resource-add', this._onCustomResourceAdd.bind(this));
+    bindEventListeners(root, 'click', '.custom-resource-remove', this._onCustomResourceRemove.bind(this));
 
     bindEventListeners(root, 'click', '.item-delete', async (event) => {
       event.preventDefault();
@@ -459,7 +479,9 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     await super._preClose(options);
   }
 
-  _prepareCharacterData(_context) {}
+  _prepareCharacterData(context) {
+    context.customResources = normalizeCustomResources(context.system?.customResources);
+  }
 
   _prepareItems(context) {
     const gear = [];
@@ -610,6 +632,54 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       this.render(false);
     } finally {
       this._damageBufferMutationInFlight = false;
+    }
+  }
+
+  async _onCustomResourceAdd(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (this.actor.type !== 'character') return;
+    if (this._customResourceMutationInFlight) return;
+    this._customResourceMutationInFlight = true;
+
+    try {
+      await this._submitPendingChanges();
+
+      const customResources = normalizeCustomResources(
+        foundry.utils.deepClone(this.actor.system?.customResources ?? [])
+      );
+      customResources.push(createEmptyCustomResource());
+
+      await this.actor.update({ 'system.customResources': customResources });
+      this.render(false);
+    } finally {
+      this._customResourceMutationInFlight = false;
+    }
+  }
+
+  async _onCustomResourceRemove(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (this.actor.type !== 'character') return;
+    if (this._customResourceMutationInFlight) return;
+    this._customResourceMutationInFlight = true;
+
+    try {
+      const resourceIndex = Number(event.currentTarget.dataset.index ?? -1);
+      if (!Number.isInteger(resourceIndex) || resourceIndex < 0) return;
+
+      await this._submitPendingChanges();
+
+      const customResources = normalizeCustomResources(
+        foundry.utils.deepClone(this.actor.system?.customResources ?? [])
+      );
+      if (resourceIndex >= customResources.length) return;
+
+      customResources.splice(resourceIndex, 1);
+      await this.actor.update({ 'system.customResources': customResources });
+      this.render(false);
+    } finally {
+      this._customResourceMutationInFlight = false;
     }
   }
 

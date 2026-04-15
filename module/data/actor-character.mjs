@@ -55,6 +55,14 @@ function createTradeArraySchema(fields) {
   });
 }
 
+function createCustomResourceSchema(fields) {
+  return new fields.SchemaField({
+    name: new fields.StringField({ required: true, blank: true, initial: "" }),
+    value: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0 }),
+    max: new fields.NumberField({ required: true, nullable: false, integer: true, initial: 0, min: 0 })
+  });
+}
+
 export default class HorizonlessCharacter extends HorizonlessActorBase {
 
   // Central place for per-rank class progression rules.
@@ -366,6 +374,10 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
     schema.trades = new fields.SchemaField({
       [TradeType.BACKGROUND]: createTradeArraySchema(fields),
       [TradeType.ADVENTURER]: createTradeArraySchema(fields)
+    });
+
+    schema.customResources = new fields.ArrayField(createCustomResourceSchema(fields), {
+      initial: []
     });
 
     return schema;
