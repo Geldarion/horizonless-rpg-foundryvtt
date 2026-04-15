@@ -1,15 +1,16 @@
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { removePackArtifacts, writeCompendiumPack } from "./compendium-pack-utils.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
 const sourcePath = path.join(rootDir, "module", "data", "dataSource", "spells.json");
-const outputPath = path.join(rootDir, "packs", "spells.db");
-const levelDbPath = path.join(rootDir, "packs", "spells");
+const outputPath = path.join(rootDir, "packs", "spells");
+const legacyOutputPath = path.join(rootDir, "packs", "spells.db");
 
 const SPELL_LIST_MAP = Object.freeze({
   arcane: "arcane",
@@ -337,22 +338,12 @@ function normalizeNullableObject(value) {
   return value;
 }
 
-function removeStalePackArtifacts() {
-  if (existsSync(outputPath)) {
-    rmSync(outputPath, { force: true });
-  }
-
-  if (existsSync(levelDbPath)) {
-    rmSync(levelDbPath, { recursive: true, force: true });
-  }
-}
-
 function readJsonFile(filePath) {
   const text = readFileSync(filePath, "utf8").replace(/^\uFEFF/, "");
   return JSON.parse(text);
 }
 
-function main() {
+async function main() {
   const source = readJsonFile(sourcePath);
   if (!Array.isArray(source)) {
     throw new Error("spells.json must be an array.");
@@ -360,10 +351,13 @@ function main() {
 
   const usedIds = new Set();
   const docs = source.map((spell, index) => createSpellDocument(spell, index, usedIds));
-  const ndjson = `${docs.map((doc) => JSON.stringify(doc)).join("\n")}\n`;
 
-  removeStalePackArtifacts();
-  writeFileSync(outputPath, ndjson, "utf8");
+  removePackArtifacts(outputPath, legacyOutputPath);
+  await writeCompendiumPack({
+    rootDir,
+    outputPath,
+    documents: docs
+  });
 }
 
-main();
+await main();

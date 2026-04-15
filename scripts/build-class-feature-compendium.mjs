@@ -1,7 +1,8 @@
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync, readdirSync, rmSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
-import { fileURLToPath, pathToFileURL } from "node:url";
+import { fileURLToPath } from "node:url";
+import { removePackArtifacts, writeCompendiumPack } from "./compendium-pack-utils.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,7 +14,6 @@ const outputPath = path.join(rootDir, "packs", "class-features");
 const legacyOutputPath = path.join(rootDir, "packs", "class-features.db");
 const systemManifestPath = path.join(rootDir, "system.json");
 const foundryPackagePath = path.join(foundryAppDir, "package.json");
-const classicLevelPath = path.join(foundryAppDir, "node_modules", "classic-level", "index.js");
 
 const MOJIBAKE_REPLACEMENTS = Object.freeze([
   ["РІР‚в„ў", "'"],
@@ -252,43 +252,14 @@ function buildCompendiumDocuments(metadata) {
   return { folders, docs };
 }
 
-function removeIfPresent(targetPath) {
-  if (!existsSync(targetPath)) return;
-  rmSync(targetPath, { recursive: true, force: false });
-}
-
-async function loadClassicLevel() {
-  const moduleUrl = pathToFileURL(classicLevelPath).href;
-  return import(moduleUrl);
-}
-
 async function writePack({ folders, docs }) {
-  removeIfPresent(outputPath);
-  removeIfPresent(legacyOutputPath);
-
-  const { ClassicLevel } = await loadClassicLevel();
-  const db = new ClassicLevel(outputPath, {
-    createIfMissing: true,
-    keyEncoding: "utf8",
-    valueEncoding: "json"
+  removePackArtifacts(outputPath, legacyOutputPath);
+  await writeCompendiumPack({
+    rootDir,
+    outputPath,
+    folders,
+    documents: docs
   });
-
-  try {
-    await db.open();
-    const batch = db.batch();
-
-    for (const folder of folders) {
-      batch.put(`!folders!${folder._id}`, folder);
-    }
-
-    for (const doc of docs) {
-      batch.put(`!items!${doc._id}`, doc);
-    }
-
-    await batch.write();
-  } finally {
-    await db.close();
-  }
 }
 
 async function main() {

@@ -36,8 +36,8 @@
   ],
   "version": "0.2.0.5",
   "compatibility": {
-    "minimum": 12,
-    "verified": "12"
+    "minimum": 13,
+    "verified": "13"
   },
   "esmodules": ["module/horizonless.mjs"],
   "styles": ["css/horizonless.css", "css/combat-popcorn.css"],
@@ -52,7 +52,7 @@
     {
       "name": "spells",
       "label": "Spells",
-      "path": "packs/spells.db",
+      "path": "packs/spells",
       "type": "Item",
       "system": "horizonless"
     },
@@ -66,14 +66,14 @@
     {
       "name": "maneuvers",
       "label": "Maneuvers",
-      "path": "packs/maneuvers.db",
+      "path": "packs/maneuvers",
       "type": "Item",
       "system": "horizonless"
     },
     {
       "name": "curios",
       "label": "Curios",
-      "path": "packs/curios.db",
+      "path": "packs/curios",
       "type": "Item",
       "system": "horizonless"
     },

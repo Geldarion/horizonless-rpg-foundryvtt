@@ -1,14 +1,16 @@
 import { createHash } from "node:crypto";
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { removePackArtifacts, writeCompendiumPack } from "./compendium-pack-utils.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, "..");
 
 const sourcePath = path.join(rootDir, "module", "data", "dataSource", "maneuvers.json");
-const outputPath = path.join(rootDir, "packs", "maneuvers.db");
+const outputPath = path.join(rootDir, "packs", "maneuvers");
+const legacyOutputPath = path.join(rootDir, "packs", "maneuvers.db");
 
 const MOJIBAKE_REPLACEMENTS = Object.freeze([
   ["вЂ™", "'"],
@@ -94,7 +96,7 @@ function createManeuverDocument(maneuver, index, usedIds) {
   };
 }
 
-function main() {
+async function main() {
   const source = JSON.parse(readFileSync(sourcePath, "utf8").replace(/^\uFEFF/, ""));
   if (!Array.isArray(source)) {
     throw new Error("maneuvers.json must be an array.");
@@ -102,9 +104,13 @@ function main() {
 
   const usedIds = new Set();
   const docs = source.map((maneuver, index) => createManeuverDocument(maneuver, index, usedIds));
-  const ndjson = `${docs.map((doc) => JSON.stringify(doc)).join("\n")}\n`;
 
-  writeFileSync(outputPath, ndjson, "utf8");
+  removePackArtifacts(outputPath, legacyOutputPath);
+  await writeCompendiumPack({
+    rootDir,
+    outputPath,
+    documents: docs
+  });
 }
 
-main();
+await main();
