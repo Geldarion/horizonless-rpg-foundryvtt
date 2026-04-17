@@ -1,0 +1,130 @@
+<section class="custom-attacks-section">
+  <div class="custom-attacks-header">
+    <h3>Custom Attacks</h3>
+    <div class="custom-attacks-controls">
+      <a class="custom-attack-add task-control" title="Add Attack">
+        <i class="fas fa-plus"></i>
+        New Attack
+      </a>
+      <a class="custom-save-add task-control" title="Add Saving Throw">
+        <i class="fas fa-plus"></i>
+        New Saving Throw
+      </a>
+    </div>
+  </div>
+
+  {{#if customAttacks.length}}
+    <div class="custom-attack-list">
+      {{#each customAttacks as |entry index|}}
+        <div class="custom-attack-card">
+          <div class="custom-attack-row custom-attack-row-main">
+            <div class="custom-attack-field custom-attack-field-name">
+              <label class="stat-label" for="system.customAttacks.{{index}}.name">
+                {{#if (eq entry.kind "save")}}Save Name{{else}}Attack Name{{/if}}
+              </label>
+              <input
+                type="text"
+                name="system.customAttacks.{{index}}.name"
+                value="{{entry.name}}"
+                placeholder="{{#if (eq entry.kind "save")}}Saving Throw Name{{else}}Attack Name{{/if}}"
+              />
+            </div>
+            <input type="hidden" name="system.customAttacks.{{index}}.kind" value="{{entry.kind}}" />
+            <a class="custom-attack-remove task-control task-delete" data-index="{{index}}" title="Remove Entry">
+              <i class="fas fa-minus"></i>
+            </a>
+          </div>
+
+          {{#if (eq entry.kind "attack")}}
+            <div class="custom-attack-row custom-attack-row-values">
+              <div class="custom-attack-field">
+                <label class="stat-label" for="system.customAttacks.{{index}}.toHitBonus">To-Hit Bonus</label>
+                <input
+                  type="text"
+                  name="system.customAttacks.{{index}}.toHitBonus"
+                  value="{{entry.toHitBonus}}"
+                  placeholder="+0"
+                />
+              </div>
+              <div class="custom-attack-field">
+                <label class="stat-label" for="system.customAttacks.{{index}}.damage">Damage</label>
+                <input
+                  type="text"
+                  name="system.customAttacks.{{index}}.damage"
+                  value="{{entry.damage}}"
+                  placeholder="1d6"
+                />
+              </div>
+              <div class="custom-attack-field">
+                <label class="stat-label" for="system.customAttacks.{{index}}.damageType">Damage Type</label>
+                <select name="system.customAttacks.{{index}}.damageType">
+                  <option value="" {{#if (eq entry.damageType "")}}selected{{/if}}>No Damage Type</option>
+                  {{#each @root.damageTypeGroups as |group|}}
+                    <optgroup label="{{group.label}}">
+                      {{#each group.options as |option|}}
+                        <option value="{{option.value}}" {{#if (eq option.value ../../damageType)}}selected{{/if}}>{{option.label}}</option>
+                      {{/each}}
+                    </optgroup>
+                  {{/each}}
+                </select>
+              </div>
+            </div>
+          {{else}}
+            <div class="custom-attack-row custom-attack-row-values custom-attack-row-values-save">
+              <div class="custom-attack-field">
+                <label class="stat-label" for="system.customAttacks.{{index}}.saveType">Save Type</label>
+                <select name="system.customAttacks.{{index}}.saveType">
+                  <option value="" {{#if (eq entry.saveType "")}}selected{{/if}}>Select Save Type</option>
+                  {{#each @root.customAttackSaveTypes as |saveType|}}
+                    <option value="{{saveType}}" {{#if (eq saveType ../saveType)}}selected{{/if}}>{{saveType}}</option>
+                  {{/each}}
+                </select>
+              </div>
+              <div class="custom-attack-field custom-attack-field-dc">
+                <label class="stat-label" for="system.customAttacks.{{index}}.dc">DC</label>
+                <input
+                  type="text"
+                  name="system.customAttacks.{{index}}.dc"
+                  value="{{entry.dc}}"
+                  placeholder="10"
+                />
+              </div>
+              <div class="custom-attack-field">
+                <label class="stat-label" for="system.customAttacks.{{index}}.damage">Damage</label>
+                <input
+                  type="text"
+                  name="system.customAttacks.{{index}}.damage"
+                  value="{{entry.damage}}"
+                  placeholder="2d6"
+                />
+              </div>
+              <div class="custom-attack-field">
+                <label class="stat-label" for="system.customAttacks.{{index}}.damageType">Damage Type</label>
+                <select name="system.customAttacks.{{index}}.damageType">
+                  <option value="" {{#if (eq entry.damageType "")}}selected{{/if}}>No Damage Type</option>
+                  {{#each @root.damageTypeGroups as |group|}}
+                    <optgroup label="{{group.label}}">
+                      {{#each group.options as |option|}}
+                        <option value="{{option.value}}" {{#if (eq option.value ../../damageType)}}selected{{/if}}>{{option.label}}</option>
+                      {{/each}}
+                    </optgroup>
+                  {{/each}}
+                </select>
+              </div>
+            </div>
+          {{/if}}
+
+          <div class="custom-attack-row custom-attack-row-actions">
+            <button type="button" class="custom-attack-roll" data-index="{{index}}">
+              {{#if (eq entry.kind "save")}}Roll Saving Throw{{else}}Roll Attack{{/if}}
+            </button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    <div class="custom-attack-empty resource-card flex-group-center">
+      <p>No custom attacks added.</p>
+    </div>
+  {{/if}}
+</section>

@@ -649,6 +649,98 @@
   min-height: 96px;
 }
 
+.horizonless .custom-attacks-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.horizonless .custom-attacks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.horizonless .custom-attacks-header h3 {
+  margin: 0;
+}
+
+.horizonless .custom-attacks-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.horizonless .custom-attack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.horizonless .custom-attack-card {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.horizonless .custom-attack-row {
+  display: grid;
+  gap: 8px;
+  align-items: end;
+}
+
+.horizonless .custom-attack-row + .custom-attack-row {
+  margin-top: 8px;
+}
+
+.horizonless .custom-attack-row-main {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.horizonless .custom-attack-row-values {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.horizonless .custom-attack-row-values-save {
+  grid-template-columns: minmax(0, 1.1fr) 88px minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.horizonless .custom-attack-row-actions {
+  justify-content: start;
+}
+
+.horizonless .custom-attack-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.horizonless .custom-attack-field-dc {
+  max-width: 88px;
+}
+
+.horizonless .custom-attack-card :is(input[type="text"], input[type="number"], select) {
+  width: 100%;
+}
+
+.horizonless .custom-attack-remove {
+  justify-self: end;
+}
+
+.horizonless .custom-attack-roll {
+  width: fit-content;
+  min-width: 140px;
+}
+
+.horizonless .custom-attack-empty {
+  min-height: 96px;
+}
+
 /* Trades */
 .horizonless .trades-section .trade-column {
   display: flex;
@@ -690,7 +782,8 @@
 }
 
 .horizonless .trades-section .task-control,
-.horizonless .custom-resources-section .task-control {
+.horizonless .custom-resources-section .task-control,
+.horizonless .custom-attacks-section .task-control {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -703,7 +796,8 @@
 }
 
 .horizonless .trades-section .task-control:hover,
-.horizonless .custom-resources-section .task-control:hover {
+.horizonless .custom-resources-section .task-control:hover,
+.horizonless .custom-attacks-section .task-control:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -985,7 +1079,8 @@
 
 .horizonless.actor :is(.damage-buffer-add, .damage-buffer-remove),
 .horizonless.actor .trades-section .task-control,
-.horizonless.actor .custom-resources-section .task-control {
+.horizonless.actor .custom-resources-section .task-control,
+.horizonless.actor .custom-attacks-section .task-control {
   color: var(--hz-sheet-text);
   background: var(--hz-sheet-primary-soft);
   border-color: var(--hz-sheet-accent-mid);
@@ -1003,7 +1098,8 @@
 
 .horizonless.actor :is(.damage-buffer-add, .damage-buffer-remove):hover,
 .horizonless.actor .trades-section .task-control:hover,
-.horizonless.actor .custom-resources-section .task-control:hover {
+.horizonless.actor .custom-resources-section .task-control:hover,
+.horizonless.actor .custom-attacks-section .task-control:hover {
   background: var(--hz-sheet-primary-hover);
 }
 
@@ -1019,6 +1115,11 @@
 }
 
 .horizonless.actor .custom-resource-card {
+  border-color: var(--hz-sheet-stroke-soft);
+  background: var(--hz-sheet-surface-soft);
+}
+
+.horizonless.actor .custom-attack-card {
   border-color: var(--hz-sheet-stroke-soft);
   background: var(--hz-sheet-surface-soft);
 }

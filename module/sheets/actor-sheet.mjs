@@ -26,10 +26,12 @@ import {
   SheetTheme,
   TradeTypes,
 } from '../data/enums.mjs';
+import { HorizonlessSpellItem } from '../documents/item-spell.mjs';
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 const TextEditor = foundry.applications.ux.TextEditor.implementation;
+const renderTemplate = foundry.applications.handlebars.renderTemplate;
 
 const ANCESTRY_SLOT_CONFIG = Object.freeze({
   [AncestryFeatureType.PRIMARY]: {
@@ -69,6 +71,31 @@ const GUARD_ICON_CONFIG = Object.freeze({
     label: 'Full Guard',
     path: `${SYSTEM_STATIC_ROOT}/assets/icons/fullguard.svg`,
   },
+});
+const CUSTOM_ATTACK_KIND = Object.freeze({
+  ATTACK: 'attack',
+  SAVE: 'save',
+});
+const CUSTOM_ATTACK_SAVE_TYPES = Object.freeze([
+  'Poise',
+  'Reflex',
+  'Fortitude',
+  'Quick-Wits',
+  'Will',
+  'Courage',
+]);
+const CUSTOM_ATTACK_SAVE_ABILITY_MAP = Object.freeze({
+  Poise: 'str',
+  Reflex: 'dex',
+  Fortitude: 'con',
+  'Quick-Wits': 'int',
+  Will: 'wis',
+  Courage: 'cha',
+});
+const CUSTOM_ATTACK_MESSAGE_TEMPLATES = Object.freeze({
+  weaponAttackFlavor: 'systems/horizonless/module/messages/item/weapon-attack-flavor.hbs',
+  spellDamageRollButton: 'systems/horizonless/module/messages/spells/spell-damage-roll-button.hbs',
+  spellSaveResults: 'systems/horizonless/module/messages/spells/spell-save-results.hbs',
 });
 
 function bindEventListeners(root, eventName, selector, listener) {
@@ -122,6 +149,59 @@ function normalizeCustomResources(customResources) {
     value: Math.max(0, Math.floor(Number(resource?.value ?? 0) || 0)),
     max: Math.max(0, Math.floor(Number(resource?.max ?? 0) || 0)),
   }));
+}
+
+function createEmptyCustomAttack(kind = CUSTOM_ATTACK_KIND.ATTACK) {
+  const normalizedKind = kind === CUSTOM_ATTACK_KIND.SAVE
+    ? CUSTOM_ATTACK_KIND.SAVE
+    : CUSTOM_ATTACK_KIND.ATTACK;
+
+  return {
+    kind: normalizedKind,
+    name: '',
+    toHitBonus: '',
+    saveType: '',
+    dc: '',
+    damage: '',
+    damageType: '',
+  };
+}
+
+function normalizeCustomAttackKind(kind) {
+  return kind === CUSTOM_ATTACK_KIND.SAVE
+    ? CUSTOM_ATTACK_KIND.SAVE
+    : CUSTOM_ATTACK_KIND.ATTACK;
+}
+
+function normalizeCustomAttackSaveType(saveType) {
+  const normalized = String(saveType ?? '').trim().toLowerCase();
+  const matchedType = CUSTOM_ATTACK_SAVE_TYPES.find(
+    (option) => option.toLowerCase() === normalized
+  );
+  return matchedType ?? '';
+}
+
+function normalizeCustomAttacks(customAttacks) {
+  if (!Array.isArray(customAttacks)) return [];
+
+  return customAttacks.map((entry) => ({
+    kind: normalizeCustomAttackKind(String(entry?.kind ?? '')),
+    name: String(entry?.name ?? ''),
+    toHitBonus: String(entry?.toHitBonus ?? ''),
+    saveType: normalizeCustomAttackSaveType(entry?.saveType),
+    dc: String(entry?.dc ?? ''),
+    damage: String(entry?.damage ?? ''),
+    damageType: Object.prototype.hasOwnProperty.call(
+      CONFIG.HORIZONLESS_RPG.damageTypes,
+      String(entry?.damageType ?? '')
+    )
+      ? String(entry?.damageType ?? '')
+      : '',
+  }));
+}
+
+function getTargetedTokens() {
+  return Array.from(game.user?.targets ?? []).filter((token) => token?.actor);
 }
 
 function isCantripSpell(item) {
@@ -239,6 +319,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     context.actor = this.actor;
     context.config = CONFIG.HORIZONLESS_RPG;
     context.cssClass = this.options.classes.join(' ');
+    context.customAttackSaveTypes = CUSTOM_ATTACK_SAVE_TYPES;
     context.damageTypeGroups = getDamageTypeSelectGroups();
     context.flags = actorData.flags;
     context.items = this.actor.items.contents.map((item) => item.toObject());
@@ -253,6 +334,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
 
     if (actorData.type === 'npc') {
       this._prepareItems(context);
+      this._prepareNpcData(context);
     }
 
     context.enrichedBiography = await TextEditor.enrichHTML(
@@ -323,6 +405,10 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     bindEventListeners(root, 'click', '.damage-buffer-remove', this._onDamageBufferRemove.bind(this));
     bindEventListeners(root, 'click', '.custom-resource-add', this._onCustomResourceAdd.bind(this));
     bindEventListeners(root, 'click', '.custom-resource-remove', this._onCustomResourceRemove.bind(this));
+    bindEventListeners(root, 'click', '.custom-attack-add', this._onCustomAttackAdd.bind(this));
+    bindEventListeners(root, 'click', '.custom-save-add', this._onCustomSaveAdd.bind(this));
+    bindEventListeners(root, 'click', '.custom-attack-remove', this._onCustomAttackRemove.bind(this));
+    bindEventListeners(root, 'click', '.custom-attack-roll', this._onCustomAttackRoll.bind(this));
 
     bindEventListeners(root, 'click', '.item-delete', async (event) => {
       event.preventDefault();
@@ -481,6 +567,10 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
 
   _prepareCharacterData(context) {
     context.customResources = normalizeCustomResources(context.system?.customResources);
+  }
+
+  _prepareNpcData(context) {
+    context.customAttacks = normalizeCustomAttacks(context.system?.customAttacks);
   }
 
   _prepareItems(context) {
@@ -681,6 +771,272 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     } finally {
       this._customResourceMutationInFlight = false;
     }
+  }
+
+  _getCustomAttackEntries() {
+    return normalizeCustomAttacks(
+      foundry.utils.deepClone(this.actor.system?.customAttacks ?? [])
+    );
+  }
+
+  async _onCustomAttackAdd(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (this.actor.type !== 'npc') return;
+    if (this._customAttackMutationInFlight) return;
+    this._customAttackMutationInFlight = true;
+
+    try {
+      await this._submitPendingChanges();
+
+      const customAttacks = this._getCustomAttackEntries();
+      customAttacks.push(createEmptyCustomAttack(CUSTOM_ATTACK_KIND.ATTACK));
+
+      await this.actor.update({ 'system.customAttacks': customAttacks });
+      this.render(false);
+    } finally {
+      this._customAttackMutationInFlight = false;
+    }
+  }
+
+  async _onCustomSaveAdd(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (this.actor.type !== 'npc') return;
+    if (this._customAttackMutationInFlight) return;
+    this._customAttackMutationInFlight = true;
+
+    try {
+      await this._submitPendingChanges();
+
+      const customAttacks = this._getCustomAttackEntries();
+      customAttacks.push(createEmptyCustomAttack(CUSTOM_ATTACK_KIND.SAVE));
+
+      await this.actor.update({ 'system.customAttacks': customAttacks });
+      this.render(false);
+    } finally {
+      this._customAttackMutationInFlight = false;
+    }
+  }
+
+  async _onCustomAttackRemove(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (this.actor.type !== 'npc') return;
+    if (this._customAttackMutationInFlight) return;
+    this._customAttackMutationInFlight = true;
+
+    try {
+      const attackIndex = Number(event.currentTarget.dataset.index ?? -1);
+      if (!Number.isInteger(attackIndex) || attackIndex < 0) return;
+
+      await this._submitPendingChanges();
+
+      const customAttacks = this._getCustomAttackEntries();
+      if (attackIndex >= customAttacks.length) return;
+
+      customAttacks.splice(attackIndex, 1);
+      await this.actor.update({ 'system.customAttacks': customAttacks });
+      this.render(false);
+    } finally {
+      this._customAttackMutationInFlight = false;
+    }
+  }
+
+  _getCustomAttackDamageButtonData(entry, targetTokenUuids = []) {
+    const damageFormula = String(entry?.damage ?? '').trim();
+    const actorUuid = String(this.actor?.uuid ?? '').trim();
+    if (!actorUuid || !damageFormula) return null;
+
+    return {
+      actorUuid,
+      itemUuid: '',
+      damageFormula,
+      itemName: String(entry?.name ?? '').trim() || 'Custom Attack',
+      damageLabel: damageFormula,
+      buttonLabel: 'Roll Damage',
+      damageType: String(entry?.damageType ?? '').trim(),
+      injuring: false,
+      targetTokenUuids: JSON.stringify(
+        targetTokenUuids
+          .map((uuid) => String(uuid ?? '').trim())
+          .filter((uuid) => uuid.length > 0)
+      ),
+    };
+  }
+
+  async _renderCustomAttackDamageButton(entry, targetTokenUuids = []) {
+    const data = this._getCustomAttackDamageButtonData(entry, targetTokenUuids);
+    if (!data) return '';
+    return renderTemplate(CUSTOM_ATTACK_MESSAGE_TEMPLATES.spellDamageRollButton, data);
+  }
+
+  async _rollCustomSavingThrowForToken(token, { abilityKey, dc }) {
+    const actor = token?.actor;
+    if (!actor) return null;
+    if (!Object.prototype.hasOwnProperty.call(CONFIG.HORIZONLESS_RPG.abilities, abilityKey)) return null;
+
+    const abilityMod = Number(actor.system?.abilities?.[abilityKey]?.mod ?? 0);
+    const tierBonus = Number(actor.system?.tierBonus ?? 0);
+    const isHeroic = Boolean(actor.system?.abilities?.[abilityKey]?.saveHeroic);
+    const tierContribution = isHeroic ? tierBonus : Math.floor(tierBonus / 2);
+    const roll = new Roll(`1d20 + ${abilityMod} + ${tierContribution}`, actor.getRollData());
+    await roll.evaluate();
+
+    const normalizedDc = Number(dc);
+    const hasSpellDc = Number.isFinite(normalizedDc);
+    const savedAgainstSpell = hasSpellDc ? Number(roll.total ?? 0) >= normalizedDc : false;
+
+    return {
+      tokenName: String(token.name ?? actor.name ?? 'Target').trim() || 'Target',
+      total: Number(roll.total ?? 0),
+      formula: roll.formula,
+      flavorPrefix: isHeroic ? '[heroic save]' : '[save]',
+      isHeroic,
+      dieTotal: Number(roll.terms?.[0]?.total ?? 0),
+      hasSpellDc,
+      spellDc: hasSpellDc ? normalizedDc : null,
+      resultLabel: hasSpellDc
+        ? (savedAgainstSpell ? 'Spell saved against' : 'Spell succeeded!')
+        : '',
+      savedAgainstSpell,
+    };
+  }
+
+  async _rollNpcCustomAttack(entry) {
+    const selectedTokens = getTargetedTokens();
+    const attackName = String(entry?.name ?? '').trim() || 'Custom Attack';
+    if (selectedTokens.length === 0) {
+      ui.notifications?.warn(`Target at least one token to roll ${attackName}.`);
+      return null;
+    }
+
+    const attackBonus = String(entry?.toHitBonus ?? '').trim();
+    const attackFormula = attackBonus ? `1d20 + (${attackBonus})` : '1d20';
+    let roll;
+    try {
+      roll = new Roll(attackFormula, this.actor.getRollData());
+      await roll.evaluate();
+    } catch (_error) {
+      ui.notifications?.warn(`Enter a valid to-hit bonus for ${attackName}.`);
+      return null;
+    }
+
+    const attackTotal = Number(roll.total ?? 0);
+    const targetTokenUuids = selectedTokens.map((token) => token?.document?.uuid ?? '');
+    const targetResults = selectedTokens.map((token) => {
+      const targetActor = token.actor;
+      const ac = Number(targetActor?.system?.armorClass);
+      const hasAc = Number.isFinite(ac);
+      const isHit = hasAc && Number.isFinite(attackTotal) && attackTotal >= ac;
+
+      return {
+        targetName: String(token.name ?? targetActor?.name ?? 'Target').trim() || 'Target',
+        resultText: isHit ? 'Hit' : 'Miss',
+        resultType: isHit ? 'hit' : 'miss',
+        hasAc,
+        ac,
+      };
+    });
+    const damageButtonHtml = await this._renderCustomAttackDamageButton(entry, targetTokenUuids);
+    const flavor = await renderTemplate(CUSTOM_ATTACK_MESSAGE_TEMPLATES.weaponAttackFlavor, {
+      label: `[npc attack] ${attackName}`,
+      hasTargets: targetResults.length > 0,
+      targets: targetResults,
+      damageButtonHtml,
+      dischargeDamageButtonHtml: '',
+    });
+
+    HorizonlessSpellItem.registerHooks();
+    await roll.toMessage({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      rollMode: game.settings.get('core', 'rollMode'),
+      flavor,
+      flags: {
+        horizonless: {
+          spellChat: true,
+        },
+      },
+    });
+
+    return roll;
+  }
+
+  async _rollNpcCustomSave(entry) {
+    const saveName = String(entry?.name ?? '').trim() || 'Custom Saving Throw';
+    const saveType = normalizeCustomAttackSaveType(entry?.saveType);
+    const abilityKey = CUSTOM_ATTACK_SAVE_ABILITY_MAP[saveType] ?? null;
+    if (!abilityKey) {
+      ui.notifications?.warn(`Select a valid save type for ${saveName}.`);
+      return null;
+    }
+
+    const dc = Number(String(entry?.dc ?? '').trim());
+    if (!Number.isFinite(dc)) {
+      ui.notifications?.warn(`Enter a valid DC for ${saveName}.`);
+      return null;
+    }
+
+    const selectedTokens = getTargetedTokens();
+    if (selectedTokens.length === 0) {
+      ui.notifications?.warn(`Target at least one token to roll ${saveType} saves.`);
+      return null;
+    }
+
+    const results = [];
+    for (const token of selectedTokens) {
+      const result = await this._rollCustomSavingThrowForToken(token, { abilityKey, dc });
+      if (result) results.push(result);
+    }
+    if (results.length === 0) return null;
+
+    const targetTokenUuids = selectedTokens.map((token) => token?.document?.uuid ?? '');
+    const damageButtonHtml = await this._renderCustomAttackDamageButton(entry, targetTokenUuids);
+    const content = await renderTemplate(CUSTOM_ATTACK_MESSAGE_TEMPLATES.spellSaveResults, {
+      saveLabel: saveType,
+      hasSpellDc: true,
+      spellDc: dc,
+      results,
+      hasDamageButton: Boolean(damageButtonHtml),
+      damageButtonHtml,
+    });
+
+    HorizonlessSpellItem.registerHooks();
+    await ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      rollMode: game.settings.get('core', 'rollMode'),
+      flavor: `[npc save] ${saveName} Saving Throws`,
+      content,
+      flags: {
+        horizonless: {
+          spellChat: true,
+          spellSaveResults: true,
+        },
+      },
+    });
+
+    return results;
+  }
+
+  async _onCustomAttackRoll(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (this.actor.type !== 'npc') return null;
+
+    const attackIndex = Number(event.currentTarget.dataset.index ?? -1);
+    if (!Number.isInteger(attackIndex) || attackIndex < 0) return null;
+
+    await this._submitPendingChanges();
+
+    const customAttacks = this._getCustomAttackEntries();
+    const entry = customAttacks[attackIndex];
+    if (!entry) return null;
+
+    if (entry.kind === CUSTOM_ATTACK_KIND.SAVE) {
+      return this._rollNpcCustomSave(entry);
+    }
+
+    return this._rollNpcCustomAttack(entry);
   }
 
   async _onItemCreate(event) {

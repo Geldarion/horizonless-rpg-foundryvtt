@@ -1,5 +1,46 @@
 import HorizonlessActorBase from "./base-actor.mjs";
-import { NPCType, NPCTypes } from "./enums.mjs";
+import { DamageTypes, NPCType, NPCTypes } from "./enums.mjs";
+
+const NPC_CUSTOM_ATTACK_KIND = Object.freeze({
+  ATTACK: "attack",
+  SAVE: "save"
+});
+
+const NPC_CUSTOM_SAVE_TYPES = Object.freeze([
+  "Poise",
+  "Reflex",
+  "Fortitude",
+  "Quick-Wits",
+  "Will",
+  "Courage"
+]);
+
+function createNpcCustomAttackSchema(fields) {
+  return new fields.SchemaField({
+    kind: new fields.StringField({
+      required: true,
+      nullable: false,
+      choices: Object.values(NPC_CUSTOM_ATTACK_KIND),
+      initial: NPC_CUSTOM_ATTACK_KIND.ATTACK
+    }),
+    name: new fields.StringField({ required: true, blank: true, initial: "" }),
+    toHitBonus: new fields.StringField({ required: true, blank: true, initial: "" }),
+    saveType: new fields.StringField({
+      required: true,
+      blank: true,
+      choices: ["", ...NPC_CUSTOM_SAVE_TYPES],
+      initial: ""
+    }),
+    dc: new fields.StringField({ required: true, blank: true, initial: "" }),
+    damage: new fields.StringField({ required: true, blank: true, initial: "" }),
+    damageType: new fields.StringField({
+      required: true,
+      blank: true,
+      choices: ["", ...DamageTypes],
+      initial: ""
+    })
+  });
+}
 
 export default class HorizonlessNPC extends HorizonlessActorBase {
 
@@ -13,6 +54,10 @@ export default class HorizonlessNPC extends HorizonlessActorBase {
       nullable: false,
       initial: NPCType.MINION,
       choices: NPCTypes
+    });
+
+    schema.customAttacks = new fields.ArrayField(createNpcCustomAttackSchema(fields), {
+      initial: []
     });
     
     return schema

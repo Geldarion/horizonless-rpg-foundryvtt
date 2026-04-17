@@ -225,6 +225,98 @@
   }
 }
 
+.custom-attacks-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.custom-attacks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.custom-attacks-header h3 {
+  margin: 0;
+}
+
+.custom-attacks-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.custom-attack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.custom-attack-card {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.custom-attack-row {
+  display: grid;
+  gap: 8px;
+  align-items: end;
+}
+
+.custom-attack-row + .custom-attack-row {
+  margin-top: 8px;
+}
+
+.custom-attack-row-main {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.custom-attack-row-values {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.custom-attack-row-values-save {
+  grid-template-columns: minmax(0, 1.1fr) 88px minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.custom-attack-row-actions {
+  justify-content: start;
+}
+
+.custom-attack-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.custom-attack-field-dc {
+  max-width: 88px;
+}
+
+.custom-attack-card :is(input[type="text"], input[type="number"], select) {
+  width: 100%;
+}
+
+.custom-attack-remove {
+  justify-self: end;
+}
+
+.custom-attack-roll {
+  width: fit-content;
+  min-width: 140px;
+}
+
+.custom-attack-empty {
+  min-height: 96px;
+}
+
 .trades-section {
   .trade-column {
     display: flex;
@@ -273,6 +365,22 @@
   }
 
   .task-control:hover {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .custom-attacks-section .task-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.04);
+    padding: 2px 8px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .custom-attacks-section .task-control:hover {
     background: rgba(0, 0, 0, 0.1);
   }
 

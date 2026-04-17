@@ -144,14 +144,18 @@
   }
 
   :is(.damage-buffer-add, .damage-buffer-remove),
-  .trades-section .task-control {
+  .trades-section .task-control,
+  .custom-resources-section .task-control,
+  .custom-attacks-section .task-control {
     color: var(--hz-sheet-text);
     background: var(--hz-sheet-primary-soft);
     border-color: var(--hz-sheet-accent-mid);
   }
 
   :is(.damage-buffer-add, .damage-buffer-remove):hover,
-  .trades-section .task-control:hover {
+  .trades-section .task-control:hover,
+  .custom-resources-section .task-control:hover,
+  .custom-attacks-section .task-control:hover {
     background: var(--hz-sheet-primary-hover);
   }
 
@@ -167,6 +171,11 @@
   }
 
   .trades-section .trade-card {
+    border-color: var(--hz-sheet-stroke-soft);
+    background: var(--hz-sheet-surface-soft);
+  }
+
+  :is(.custom-resource-card, .custom-attack-card) {
     border-color: var(--hz-sheet-stroke-soft);
     background: var(--hz-sheet-surface-soft);
   }
