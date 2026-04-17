@@ -18,9 +18,13 @@
 
     {{!-- Description Tab --}}
     <div class="tab" data-group="primary" data-tab="description">
-      <div class="editor-content">
-        {{{enrichedDescription}}}
-      </div>
+      {{> "systems/horizonless/templates/shared/parts/editor-toggle.hbs"
+        editingDescription=editingDescription
+        documentUuid=item.uuid
+        target="system.description"
+        label="description"
+        content=enrichedDescription
+      }}
     </div>
 
     {{!-- Attributes Tab --}}
