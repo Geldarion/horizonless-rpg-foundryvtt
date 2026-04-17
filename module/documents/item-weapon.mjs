@@ -4,12 +4,12 @@ import {
 } from '../helpers/damage-buffers.mjs';
 import {
   createDamageButtonController,
-  parseStringArray,
 } from '../combat/horizonless-damage-button.mjs';
 import { prepareEnrichedChatContent } from '../helpers/chat.mjs';
 import { markChatMessageWrapper } from '../helpers/chat-dom.mjs';
 import { normalizeCurioChatDescription } from '../helpers/compendium-normalization.mjs';
 import { FightingStyle } from '../data/enums.mjs';
+import HorizonlessWeaponData from '../data/item-weapon.mjs';
 
 const { DialogV2 } = foundry.applications.api;
 const renderTemplate = foundry.applications.handlebars.renderTemplate;
@@ -27,6 +27,14 @@ const ITEM_MESSAGE_TEMPLATES = {
 
 export class HorizonlessWeaponItem extends HorizonlessBaseItem {
   static _damageRollButtonHookRegistered = false;
+
+  static _getCurrentlyTargetedTokenUuids() {
+    return Array.from(game.user?.targets ?? [])
+      .map((token) => token?.document?.uuid ?? '')
+      .map((uuid) => String(uuid).trim())
+      .filter((uuid) => uuid.length > 0)
+      .filter((uuid, index, arr) => arr.indexOf(uuid) === index);
+  }
 
   static registerHooks() {
     this._registerDamageRollButtonHook();
@@ -96,20 +104,7 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
           event.target instanceof Element
             ? event.target.closest('.horizonless-undo-damage')
             : null,
-        getTargetTokenUuids: (button, chatMessage) => {
-          const targetTokenUuidsFromButton = parseStringArray(
-            String(button?.dataset?.targetTokenUuids ?? '')
-          );
-          const targetTokenUuidsFromFlag = parseStringArray(
-            game.messages?.get?.(chatMessage?.id)?.getFlag?.(
-              'horizonless',
-              'weaponDamageTargetTokenUuids'
-            ) ?? chatMessage?.getFlag?.('horizonless', 'weaponDamageTargetTokenUuids')
-          );
-          return targetTokenUuidsFromButton.length > 0
-            ? targetTokenUuidsFromButton
-            : targetTokenUuidsFromFlag;
-        },
+        getTargetTokenUuids: () => this._getCurrentlyTargetedTokenUuids(),
         getTotalDamage: (button, chatMessage) => {
           const fallbackDamageTotal = Number(
             game.messages?.get?.(chatMessage?.id)?.getFlag?.('horizonless', 'weaponDamageTotal')
@@ -171,9 +166,6 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
         const itemUuid = String(currentButton.dataset?.itemUuid ?? '');
         const formula = String(currentButton.dataset?.formula ?? '').trim();
         const itemName = String(currentButton.dataset?.itemName ?? 'Weapon').trim() || 'Weapon';
-        const targetTokenUuids = parseStringArray(
-          message.getFlag('horizonless', 'weaponAttackTargetTokenUuids')
-        );
 
         if (!actorUuid || !formula) return;
 
@@ -192,7 +184,6 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
         const applyDamageButton = await this._renderMessageTemplate(
           ITEM_MESSAGE_TEMPLATES.weaponApplyDamageButton,
           {
-            targetTokenUuids: JSON.stringify(targetTokenUuids),
             damageTotal,
             damageTypeGroups: getDamageTypeSelectGroups(),
             selectedDamageType: String(weaponItem?.system?.damageType ?? '').trim(),
@@ -214,7 +205,6 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
           flags: {
             horizonless: {
               weaponChat: true,
-              weaponDamageTargetTokenUuids: targetTokenUuids,
               weaponDamageTotal: damageTotal,
             },
           },
@@ -260,7 +250,11 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
   _getWeaponDamageFormula() {
     const attackAbility = this._getAttackAbilityForWeaponRoll();
     const base = this._getWeaponMartialDieFormula();
-    return `${base}+@${attackAbility}.mod+@tierBonus`;
+    const fightingStyle = String(this.system?.fightingStyle ?? '').trim();
+    const useLightAttack = HorizonlessWeaponData.supportsLightAttack(fightingStyle)
+      && Boolean(this.system?.lightAttack);
+    const tierBonusTerm = useLightAttack ? '' : '+@tierBonus';
+    return `${base}+@${attackAbility}.mod${tierBonusTerm}`;
   }
 
   async _promptAttackRollModifiers() {
@@ -358,15 +352,6 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
     return `${totalDice}${diceSize}${keepClause}${diceBonus}`;
   }
 
-  _getTargetTokenUuids() {
-    const uuids = Array.from(game.user?.targets ?? [])
-      .map((token) => token?.document?.uuid ?? '')
-      .map((uuid) => String(uuid).trim())
-      .filter((uuid) => uuid.length > 0)
-      .filter((uuid, index, arr) => arr.indexOf(uuid) === index);
-    return uuids;
-  }
-
   /**
    * Handle clickable rolls.
    * @param {Event} event   The originating click event
@@ -431,7 +416,6 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
     if (this.type === 'maneuver') {
       flavor = `${flavor}${await this._buildManeuverRollFlavorSuffix()}`;
     }
-    let targetTokenUuids = [];
     if (this.type === 'weapon') {
       const damageFormula = this._getWeaponDamageFormula();
       const damageButton = await this._renderItemMessageTemplate(
@@ -449,7 +433,6 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
           actor: token?.actor ?? null,
         }))
         .filter((entry) => entry.actor);
-      targetTokenUuids = this._getTargetTokenUuids();
 
       if (targets.length > 0) {
         const attackTotal = Number(roll.total);
@@ -503,7 +486,6 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
         ? {
             horizonless: {
               weaponChat: true,
-              weaponAttackTargetTokenUuids: targetTokenUuids,
             },
           }
         : {},

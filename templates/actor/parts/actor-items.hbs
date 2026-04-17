@@ -83,6 +83,18 @@
             />
             Worn
           </label>
+        {{else if (eq item.type 'weapon')}}
+          {{#unless (eq item.system.fightingStyle 'heavy')}}
+            <label class='item-control' title='Light Attack'>
+              <input
+                type='checkbox'
+                class='weapon-light-attack-toggle'
+                {{checked item.system.lightAttack}}
+                {{#unless @root.editable}}disabled{{/unless}}
+              />
+              Light Attack
+            </label>
+          {{/unless}}
         {{/if}}
         <a
           class='item-control item-edit'

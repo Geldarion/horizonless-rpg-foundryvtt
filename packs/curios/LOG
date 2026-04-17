@@ -1,3 +1,5 @@
-2026/04/17-10:46:55.865 45bc Recovering log #4
-2026/04/17-10:46:55.874 45bc Delete type=0 #4
-2026/04/17-10:46:55.875 45bc Delete type=3 #2
+2026/04/17-10:53:10.590 b50c Recovering log #7
+2026/04/17-10:53:10.590 b50c Level-0 table #9: started
+2026/04/17-10:53:10.595 b50c Level-0 table #9: 93795 bytes OK
+2026/04/17-10:53:10.604 b50c Delete type=0 #7
+2026/04/17-10:53:10.604 b50c Delete type=3 #6

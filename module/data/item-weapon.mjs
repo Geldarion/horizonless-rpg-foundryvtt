@@ -51,6 +51,10 @@ export default class HorizonlessWeaponItem extends HorizonlessItem {
     return this.FIGHTING_STYLE_TYPE_BY_STYLE[fightingStyle] ?? this.FIGHTING_STYLE_TYPES.MELEE;
   }
 
+  static supportsLightAttack(fightingStyle) {
+    return fightingStyle !== FightingStyle.HEAVY;
+  }
+
   static defineSchema() {
     const fields = foundry.data.fields;
     const requiredInteger = { required: true, nullable: false, integer: true };
@@ -79,6 +83,11 @@ export default class HorizonlessWeaponItem extends HorizonlessItem {
       nullable: false,
       initial: false
     });
+    schema.lightAttack = new fields.BooleanField({
+      required: true,
+      nullable: false,
+      initial: false
+    });
 
     // Break down roll formula into three independent fields
     schema.roll = new fields.SchemaField({
@@ -100,6 +109,7 @@ export default class HorizonlessWeaponItem extends HorizonlessItem {
     const dexMod = Number(actorSystem.abilities?.dex?.mod ?? 0);
     const attackAbility = this.constructor.getAttackAbilityByStyle(this.fightingStyle, { strMod, dexMod });
     const fightingStyleType = this.constructor.getFightingStyleType(this.fightingStyle);
+    const supportsLightAttack = this.constructor.supportsLightAttack(this.fightingStyle);
     const roll = this.roll;
     const diceNum = Math.max(1, Math.floor(Number(roll?.diceNum ?? 1)));
     const diceSize = String(roll?.diceSize ?? "d20") || "d20";
@@ -107,6 +117,7 @@ export default class HorizonlessWeaponItem extends HorizonlessItem {
 
     roll.diceBonus = diceBonus;
     this.injuring = Boolean(this.injuring);
+    this.lightAttack = supportsLightAttack && Boolean(this.lightAttack);
     this.formula = `${diceNum}${diceSize}${diceBonus}`;
     this.fightingStyleType = fightingStyleType;
   }

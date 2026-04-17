@@ -453,6 +453,13 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       await item.update({ 'system.worn': event.currentTarget.checked });
     });
 
+    bindEventListeners(root, 'change', '.weapon-light-attack-toggle', async (event) => {
+      const listItem = event.currentTarget.closest('.item');
+      const item = this.actor.items.get(listItem?.dataset?.itemId);
+      if (!item || item.type !== ItemType.WEAPON) return;
+      await item.update({ 'system.lightAttack': event.currentTarget.checked });
+    });
+
     bindEventListeners(root, 'click', '.guard-toggle', async (event) => {
       event.preventDefault();
       event.stopPropagation();
