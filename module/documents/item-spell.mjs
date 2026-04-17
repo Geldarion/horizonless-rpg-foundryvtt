@@ -101,6 +101,49 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     return SPELL_LIST_DEFAULT_MODIFIER_MAP[normalizedSpellList] ?? 'int';
   }
 
+  static parseSpellCircleLabel(levelLabel = '') {
+    const normalizedLabel = String(levelLabel ?? '').trim().toLowerCase();
+    if (!normalizedLabel) return null;
+    if (normalizedLabel === 'cantrip') return 0;
+
+    const match = normalizedLabel.match(/^(\d+)(st|nd|rd|th)\s+circle$/);
+    if (!match) return null;
+
+    const circle = Number(match[1]);
+    if (!Number.isFinite(circle)) return null;
+    return Math.max(0, Math.min(7, circle));
+  }
+
+  static getNormalizedSpellCircleData(systemData = {}) {
+    const parsedCircle = this.parseSpellCircleLabel(systemData?.levelLabel);
+    if (parsedCircle === null) return null;
+
+    const rawSpellLevel = Number(systemData?.spellLevel);
+    const rawHeightenedCircle = Number(systemData?.heightenedCircle);
+    const hasLegacyOffset = Number.isFinite(rawSpellLevel) && rawSpellLevel === (parsedCircle + 1);
+    const normalizedSpellLevel = parsedCircle;
+
+    let normalizedHeightenedCircle = Number.isFinite(rawHeightenedCircle)
+      ? rawHeightenedCircle
+      : normalizedSpellLevel;
+
+    if (hasLegacyOffset && Number.isFinite(rawHeightenedCircle)) {
+      normalizedHeightenedCircle -= 1;
+    }
+
+    normalizedHeightenedCircle = Math.max(
+      normalizedSpellLevel,
+      Math.min(7, Number.isFinite(normalizedHeightenedCircle) ? normalizedHeightenedCircle : normalizedSpellLevel)
+    );
+
+    if (rawSpellLevel === normalizedSpellLevel && rawHeightenedCircle === normalizedHeightenedCircle) return null;
+
+    return {
+      spellLevel: normalizedSpellLevel,
+      heightenedCircle: normalizedHeightenedCircle,
+    };
+  }
+
   static applyDefaultSpellcastingModifier(updateData = {}, fallbackSpellList = '') {
     const systemChanges = updateData.system ?? {};
     const nextSpellList = systemChanges.spellList ?? fallbackSpellList;
@@ -117,6 +160,11 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
 
   _applyDefaultSpellcastingModifierToSource(data = {}) {
     const createData = foundry.utils.deepClone(data ?? {});
+    const normalizedCircleData = HorizonlessSpellItem.getNormalizedSpellCircleData(createData.system);
+    if (normalizedCircleData) {
+      createData.system ??= {};
+      foundry.utils.mergeObject(createData, { system: normalizedCircleData });
+    }
     const withDefaultModifier = HorizonlessSpellItem.applyDefaultSpellcastingModifier(
       createData,
       createData.system?.spellList ?? this.system?.spellList
@@ -124,7 +172,21 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     this.updateSource(withDefaultModifier);
   }
 
+  _normalizeSpellCircleDataOnSource() {
+    const normalizedCircleData = HorizonlessSpellItem.getNormalizedSpellCircleData(this.system);
+    if (!normalizedCircleData) return;
+    this.updateSource({ system: normalizedCircleData });
+  }
+
   _applyDefaultSpellcastingModifierToUpdate(changed = {}) {
+    const normalizedCircleData = HorizonlessSpellItem.getNormalizedSpellCircleData({
+      ...this.system,
+      ...(changed?.system ?? {}),
+    });
+    if (normalizedCircleData) {
+      foundry.utils.mergeObject(changed, { system: normalizedCircleData });
+    }
+
     const currentModifier = String(this.system?.spellcastingModifier ?? '').trim();
     const currentSpellList = String(this.system?.spellList ?? '').trim();
     const nextSpellList = String(changed?.system?.spellList ?? currentSpellList).trim();
@@ -694,16 +756,16 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
   }
 
   _getSpellCircleFromSystem() {
-    const baseCircle = Math.max(1, Math.min(7, Number(this.system?.spellLevel ?? 1)));
+    const baseCircle = Math.max(0, Math.min(7, Number(this.system?.spellLevel ?? 0)));
     const heightenedCircle = Math.max(baseCircle, Math.min(7, Number(this.system?.heightenedCircle ?? baseCircle)));
     return this._isHeighteningSelected() ? heightenedCircle : baseCircle;
   }
 
-  _getSpellCircleLabel(circleValue = 1) {
-    const normalizedCircle = Math.max(1, Math.min(7, Math.trunc(Number(circleValue ?? 1) || 1)));
-    if (normalizedCircle <= 1) return 'Cantrip';
+  _getSpellCircleLabel(circleValue = 0) {
+    const normalizedCircle = Math.max(0, Math.min(7, Math.trunc(Number(circleValue ?? 0) || 0)));
+    if (normalizedCircle === 0) return 'Cantrip';
 
-    const circleNumber = normalizedCircle - 1;
+    const circleNumber = normalizedCircle;
     const suffix = this._getOrdinalSuffix(circleNumber);
     return `${circleNumber}${suffix} Circle`;
   }
@@ -765,7 +827,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
 
   _isHeighteningSelected() {
     if (this.type !== ItemType.SPELL) return false;
-    const baseCircle = Number(this.system?.spellLevel ?? 1);
+    const baseCircle = Number(this.system?.spellLevel ?? 0);
     const heightenedCircle = Number(this.system?.heightenedCircle ?? baseCircle);
     if (!Number.isFinite(baseCircle) || !Number.isFinite(heightenedCircle)) return false;
     return heightenedCircle > baseCircle;
@@ -819,7 +881,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
   async _showHeighteningConfirmationDialog() {
     if (!this._isHeighteningSelected()) return [];
 
-    const baseCircle = Number(this.system?.spellLevel ?? 1);
+    const baseCircle = Number(this.system?.spellLevel ?? 0);
     const heightenedCircle = Number(this.system?.heightenedCircle ?? baseCircle);
     const requiredSelections = Math.max(0, heightenedCircle - baseCircle);
     if (requiredSelections <= 0) return [];

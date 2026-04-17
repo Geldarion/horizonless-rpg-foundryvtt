@@ -4,7 +4,7 @@
     {{#if signatureSpell}}
       <div>
         {{signatureSpell.name}}
-        ({{ordinal signatureSpell.system.spellLevel}} circle)
+        ({{#if (eq signatureSpell.system.spellLevel 0)}}cantrip{{else}}{{ordinal signatureSpell.system.spellLevel}} circle{{/if}})
       </div>
     {{else}}
       <div>Drag a prepared spell here to set signature spell.</div>
@@ -33,7 +33,7 @@
           title='{{localize "DOCUMENT.Create" type='Spell'}}'
           data-type='spell'
           data-spell-level='{{spellGroup.spellCircle}}'
-          {{#if (eq spellGroup.spellCircle "cantrip")}}data-level-label='Cantrip' data-heightened-circle='1'{{/if}}
+          {{#if (eq spellGroup.spellCircle "cantrip")}}data-level-label='Cantrip' data-heightened-circle='0'{{/if}}
         >
           <i class='fas fa-plus'></i>
           {{#if (eq spellGroup.spellCircle "cantrip")}}
@@ -70,10 +70,18 @@
             <select class='spell-heighten-select' {{#unless @root.editable}}disabled{{/unless}}>
               {{#each item.heightenOptions as |circle|}}
                 <option value='{{circle}}' {{#if (eq circle ../system.heightenedCircle)}}selected{{/if}}>
-                  {{#if (eq circle ../system.spellLevel)}}
-                    Cast at {{ordinal circle}} circle
+                  {{#if (eq circle 0)}}
+                    {{#if (eq circle ../system.spellLevel)}}
+                      Cast as cantrip
+                    {{else}}
+                      Heighten to cantrip
+                    {{/if}}
                   {{else}}
-                    Heighten to {{ordinal circle}} circle
+                    {{#if (eq circle ../system.spellLevel)}}
+                      Cast at {{ordinal circle}} circle
+                    {{else}}
+                      Heighten to {{ordinal circle}} circle
+                    {{/if}}
                   {{/if}}
                 </option>
               {{/each}}

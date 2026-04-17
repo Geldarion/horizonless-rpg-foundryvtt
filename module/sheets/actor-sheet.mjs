@@ -127,7 +127,7 @@ function normalizeCustomResources(customResources) {
 function isCantripSpell(item) {
   const levelLabel = String(item?.system?.levelLabel ?? '').trim().toLowerCase();
   if (levelLabel === 'cantrip') return true;
-  return Number(item?.system?.spellLevel ?? 1) === 1 && levelLabel.length === 0;
+  return Number(item?.system?.spellLevel ?? 0) === 0 && levelLabel.length === 0;
 }
 
 function getTabGroup(element) {
@@ -402,7 +402,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       const item = this.actor.items.get(listItem?.dataset?.itemId);
       if (!item || item.type !== ItemType.SPELL) return;
 
-      const baseCircle = Number(item.system?.spellLevel ?? 1);
+      const baseCircle = Number(item.system?.spellLevel ?? 0);
       const selected = Number(event.currentTarget.value);
       const maxHeighten = Math.max(baseCircle, 6);
       const heightenedCircle = Math.max(baseCircle, Math.min(maxHeighten, selected));
@@ -526,7 +526,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       else if (item.type === ItemType.SPELL) {
         const cantrip = isCantripSpell(item);
         const circle = Number(item.system.spellLevel);
-        if (Number.isInteger(circle) && circle >= 1 && circle <= 7) {
+        if (Number.isInteger(circle) && circle >= 0 && circle <= 7) {
           const minHeighten = circle;
           const maxHeighten = Math.max(minHeighten, 6);
           const currentHeighten = Number(item.system.heightenedCircle ?? minHeighten);
@@ -689,9 +689,9 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     const type = header.dataset.type;
     const data = foundry.utils.deepClone(header.dataset);
     if (type === ItemType.SPELL && data.spellLevel === 'cantrip') {
-      data.spellLevel = 1;
+      data.spellLevel = 0;
       data.levelLabel = 'Cantrip';
-      data.heightenedCircle = 1;
+      data.heightenedCircle = 0;
     }
     const itemTypeName = type ? `${type.charAt(0).toUpperCase()}${type.slice(1)}` : 'Item';
     const itemData = {

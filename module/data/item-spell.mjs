@@ -24,8 +24,8 @@ export default class HorizonlessSpell extends HorizonlessItemBase {
     const schema = super.defineSchema();
 
     schema.levelLabel = new fields.StringField({ required: true, blank: true, initial: this.SPELL_LEVEL_LABELS[0] });
-    schema.spellLevel = new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 7 });
-    schema.heightenedCircle = new fields.NumberField({ ...requiredInteger, initial: 1, min: 1, max: 7 });
+    schema.spellLevel = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 7 });
+    schema.heightenedCircle = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 7 });
     schema.spellList = new fields.StringField({
       required: true,
       nullable: false,

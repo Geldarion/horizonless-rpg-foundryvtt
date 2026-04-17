@@ -51,14 +51,14 @@ function normalizeSpellLists(value) {
 
 function parseSpellLevel(levelLabel) {
   const normalized = cleanText(levelLabel).toLowerCase();
-  if (!normalized || normalized === "cantrip") return 1;
+  if (!normalized || normalized === "cantrip") return 0;
 
   const match = normalized.match(/^(\d+)(st|nd|rd|th)\s+circle$/);
-  if (!match) return 1;
+  if (!match) return 0;
 
   const circle = Number(match[1]);
-  if (!Number.isFinite(circle)) return 1;
-  return Math.max(1, Math.min(7, circle + 1));
+  if (!Number.isFinite(circle)) return 0;
+  return Math.max(0, Math.min(7, circle));
 }
 
 function normalizeStringArray(value) {

@@ -13,6 +13,13 @@ export class HorizonlessItem extends HorizonlessWeaponItem {
     HorizonlessSpellItem.registerHooks();
   }
 
+  prepareData() {
+    super.prepareData();
+    if (this.type === 'spell') {
+      HorizonlessSpellItem.prototype._normalizeSpellCircleDataOnSource.call(this);
+    }
+  }
+
   async _preCreate(data, options, user) {
     await super._preCreate(data, options, user);
     if (this.type === 'spell') {
