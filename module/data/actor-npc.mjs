@@ -18,12 +18,19 @@ export default class HorizonlessNPC extends HorizonlessActorBase {
     return schema
   }
 
-  prepareDerivedData() {
-    super.prepareDerivedData();
+  prepareBaseData() {
+    super.prepareBaseData();
 
     if (this.resolve?.max !== undefined) {
       this.resolve.max = 3;
-      this.resolve.value = Math.min(this.resolve.value, this.resolve.max);
+    }
+  }
+
+  prepareDerivedData() {
+    super.prepareDerivedData();
+
+    if (this.resolve) {
+      this.resolve.value = Math.min(this.resolve.value, this.resolve.max ?? 0);
     }
 
     //this.xp = this.cr * this.cr * 100;

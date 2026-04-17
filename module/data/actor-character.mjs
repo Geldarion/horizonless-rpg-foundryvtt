@@ -250,7 +250,6 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
   }) {
     if (this.hitpoints?.max !== undefined) {
       this.hitpoints.max = Math.max(0, 10 + conMod + classHpBonus);
-      this.hitpoints.value = Math.min(this.hitpoints.value, this.hitpoints.max);
     }
 
     if (this.stamina?.max !== undefined) {
@@ -258,18 +257,33 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
         0,
         15 + (conMod * tierBonus) + classStaminaBonus
       );
-      this.stamina.value = Math.min(this.stamina.value, this.stamina.max);
     }
 
     if (this.resolve?.max !== undefined) {
       const hasHeroicConSave = Boolean(this.abilities?.con?.saveHeroic);
       this.resolve.max = hasHeroicConSave ? 4 : 3;
-      this.resolve.value = Math.min(this.resolve.value, this.resolve.max);
     }
 
     if (this.spellPoints?.max !== undefined) {
       this.spellPoints.max = Math.max(0, classSpellPoints);
-      this.spellPoints.value = Math.min(this.spellPoints.value, this.spellPoints.max);
+    }
+  }
+
+  _clampResourcesToMaximums() {
+    if (this.hitpoints) {
+      this.hitpoints.value = Math.min(this.hitpoints.value, this.hitpoints.max ?? 0);
+    }
+
+    if (this.stamina) {
+      this.stamina.value = Math.min(this.stamina.value, this.stamina.max ?? 0);
+    }
+
+    if (this.resolve) {
+      this.resolve.value = Math.min(this.resolve.value, this.resolve.max ?? 0);
+    }
+
+    if (this.spellPoints) {
+      this.spellPoints.value = Math.min(this.spellPoints.value, this.spellPoints.max ?? 0);
     }
   }
 
@@ -383,16 +397,15 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
     return schema;
   }
 
-  prepareDerivedData() {
-    super.prepareDerivedData();
+  prepareBaseData() {
+    super.prepareBaseData();
 
     const { characterLevel, tierBonus } = this._deriveLevelData();
-    const { conMod, dexMod, strMod } = this._deriveAbilityMods();
+    const { conMod } = this._deriveAbilityMods();
     const {
       classHpBonus,
       classStaminaBonus,
-      classSpellPoints,
-      classMartialDie
+      classSpellPoints
     } = this._deriveClassProgressionData(characterLevel);
 
     this.tierBonus = tierBonus;
@@ -403,8 +416,25 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
       classStaminaBonus,
       classSpellPoints
     });
+  }
+
+  prepareDerivedData() {
+    super.prepareDerivedData();
+
+    const characterLevel = Math.max(
+      0,
+      Math.floor(Number(this.attributes?.level?.value ?? 0))
+    );
+    const { dexMod, strMod } = this._deriveAbilityMods();
+    const { classMartialDie } = this._deriveClassProgressionData(characterLevel);
+
+    this._clampResourcesToMaximums();
     this.martialDie = classMartialDie;
-    this._applyDerivedArmorClass({ strMod, dexMod, tierBonus });
+    this._applyDerivedArmorClass({
+      strMod,
+      dexMod,
+      tierBonus: Number(this.tierBonus ?? 0)
+    });
   }
 
   getRollData() {
