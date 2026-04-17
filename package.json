@@ -6,6 +6,7 @@
     "build": "sass src/scss/horizonless.scss css/horizonless.css --style=expanded --no-source-map",
     "watch": "sass src/scss/horizonless.scss css/horizonless.css --style=expanded --source-map --watch",
     "build:classes": "node scripts/generate_class_jsons.mjs",
+    "generate:spells-from-markdown": "node module/data/dataSource/generate_spells_from_markdown.mjs --input module/data/dataSource/spells.md --output module/data/dataSource/spells.json --reference module/data/dataSource/spells.json",
     "build:spells": "node scripts/build-spell-compendium.mjs",
     "build:ancestry-features": "node scripts/build-ancestry-feature-compendium.mjs",
     "build:class-features": "node scripts/build-class-feature-compendium.mjs",

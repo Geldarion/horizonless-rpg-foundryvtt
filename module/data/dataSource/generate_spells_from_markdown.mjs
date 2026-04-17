@@ -524,8 +524,8 @@ function mergeReferenceData(generatedRecords, referenceRecords) {
 
     // These are either curated or not fully present in the markdown source.
     merged.iconPath = reference.iconPath ?? null;
-    merged.shape = reference.shape ?? record.shape ?? null;
-    merged.shapeSize = reference.shapeSize ?? record.shapeSize ?? null;
+    merged.shape = record.shape ?? null;
+    merged.shapeSize = record.shapeSize ?? null;
 
     // Keep schema-complete defaults stable.
     merged.conditionsApplied = Array.isArray(reference.conditionsApplied) ? reference.conditionsApplied : [];
