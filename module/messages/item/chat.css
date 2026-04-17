@@ -131,6 +131,13 @@
   width: 100%;
 }
 
+.horizonless-weapon-chat-message .horizonless-weapon-action,
+.horizonless-weapon-chat-message .horizonless-roll-weapon-damage {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .horizonless-damage-action {
   display: flex;
   flex-direction: column;
