@@ -86,6 +86,10 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
       button
         ?.closest?.('.horizonless-damage-action')
         ?.querySelector?.('.horizonless-damage-injuring') ?? null,
+    getHalfDamageCheckbox: (button) =>
+      button
+        ?.closest?.('.horizonless-damage-action')
+        ?.querySelector?.('.horizonless-damage-half') ?? null,
     getUndoActivator: (event) =>
       event.target instanceof Element
         ? event.target.closest('.horizonless-undo-damage')
@@ -421,9 +425,14 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
 
     if (results.length === 0) return;
 
+    const defaultHalfDamage = results.length > 0
+      && results.every((result) => !Boolean(result?.savedAgainstSpell));
     const damageData = this._getSpellDamageButtonData(
       item,
-      selectedTokens.map((token) => token?.document?.uuid ?? '')
+      selectedTokens.map((token) => token?.document?.uuid ?? ''),
+      {
+        halfDamage: defaultHalfDamage,
+      }
     );
     const damageButtonHtml = damageData
       ? await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellDamageRollButton, damageData)
@@ -583,6 +592,8 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     damageTotal,
     selectedDamageType,
     injuring = false,
+    showHalfDamage = false,
+    halfDamage = false,
   }) {
     return renderTemplate(SPELL_MESSAGE_TEMPLATES.spellApplyDamageButton, {
       applicationKey: String(applicationKey ?? '').trim(),
@@ -591,6 +602,8 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
       damageTypeGroups: getDamageTypeSelectGroups(),
       selectedDamageType: String(selectedDamageType ?? '').trim(),
       injuring: Boolean(injuring),
+      showHalfDamage: Boolean(showHalfDamage),
+      halfDamage: Boolean(halfDamage),
     });
   }
 
@@ -635,12 +648,13 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     };
   }
 
-  static _getSpellDamageButtonData(item, targetTokenUuids = []) {
+  static _getSpellDamageButtonData(item, targetTokenUuids = [], options = {}) {
     const actorUuid = String(item?.actor?.uuid ?? '').trim();
     const itemUuid = String(item?.uuid ?? '').trim();
     const { rawDamage, baseDamageFormula } = this._getSpellBaseDamageData(item);
     if (!actorUuid || !itemUuid || !baseDamageFormula) return null;
 
+    const halfDamage = Boolean(options?.halfDamage);
     return {
       actorUuid,
       itemUuid,
@@ -650,17 +664,20 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
       buttonLabel: 'Roll Damage',
       damageType: String(item?.system?.damageType ?? '').trim(),
       injuring: Boolean(item?.system?.injuring),
+      halfDamageOption: Boolean(item?.system?.basicSavingThrow),
+      halfDamage,
       targetTokenUuids: JSON.stringify(parseStringArray(targetTokenUuids)),
     };
   }
 
-  static _getSpellDischargeDamageButtonData(item, targetTokenUuids = []) {
+  static _getSpellDischargeDamageButtonData(item, targetTokenUuids = [], options = {}) {
     const actorUuid = String(item?.actor?.uuid ?? '').trim();
     const itemUuid = String(item?.uuid ?? '').trim();
     const { rawDamage, baseDamageFormula } = this._getSpellBaseDamageData(item);
     const dischargeDamageFormula = this._getDischargeDamageFormula(item);
     if (!actorUuid || !itemUuid || !baseDamageFormula || !dischargeDamageFormula) return null;
 
+    const halfDamage = Boolean(options?.halfDamage);
     return {
       actorUuid,
       itemUuid,
@@ -670,6 +687,8 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
       buttonLabel: 'Roll Discharge Damage',
       damageType: String(item?.system?.damageType ?? '').trim(),
       injuring: Boolean(item?.system?.injuring),
+      halfDamageOption: Boolean(item?.system?.basicSavingThrow),
+      halfDamage,
       targetTokenUuids: JSON.stringify(parseStringArray(targetTokenUuids)),
     };
   }
@@ -685,6 +704,8 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     const damageLabel = String(button?.dataset?.damageLabel ?? '').trim();
     const selectedDamageType = String(button?.dataset?.damageType ?? '').trim();
     const injuring = String(button?.dataset?.injuring ?? '').trim() === 'true';
+    const showHalfDamage = String(button?.dataset?.halfDamageOption ?? '').trim() === 'true';
+    const halfDamage = String(button?.dataset?.halfDamage ?? '').trim() === 'true';
     const targetTokenUuids = parseStringArray(button?.dataset?.targetTokenUuids ?? '');
 
     if (!actorUuid || !formula) return;
@@ -725,6 +746,8 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
       damageTotal,
       selectedDamageType,
       injuring,
+      showHalfDamage,
+      halfDamage,
     });
 
     const content = await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellDamageMessage, {

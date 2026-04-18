@@ -850,7 +850,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     }
   }
 
-  _getCustomAttackDamageButtonData(entry, targetTokenUuids = []) {
+  _getCustomAttackDamageButtonData(entry, targetTokenUuids = [], options = {}) {
     const damageFormula = String(entry?.damage ?? '').trim();
     const actorUuid = String(this.actor?.uuid ?? '').trim();
     if (!actorUuid || !damageFormula) return null;
@@ -864,6 +864,8 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       buttonLabel: 'Roll Damage',
       damageType: String(entry?.damageType ?? '').trim(),
       injuring: false,
+      halfDamageOption: entry?.kind === CUSTOM_ATTACK_KIND.SAVE,
+      halfDamage: Boolean(options?.halfDamage),
       targetTokenUuids: JSON.stringify(
         targetTokenUuids
           .map((uuid) => String(uuid ?? '').trim())
@@ -872,8 +874,8 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     };
   }
 
-  async _renderCustomAttackDamageButton(entry, targetTokenUuids = []) {
-    const data = this._getCustomAttackDamageButtonData(entry, targetTokenUuids);
+  async _renderCustomAttackDamageButton(entry, targetTokenUuids = [], options = {}) {
+    const data = this._getCustomAttackDamageButtonData(entry, targetTokenUuids, options);
     if (!data) return '';
     return renderTemplate(CUSTOM_ATTACK_MESSAGE_TEMPLATES.spellDamageRollButton, data);
   }
@@ -998,7 +1000,11 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     if (results.length === 0) return null;
 
     const targetTokenUuids = selectedTokens.map((token) => token?.document?.uuid ?? '');
-    const damageButtonHtml = await this._renderCustomAttackDamageButton(entry, targetTokenUuids);
+    const defaultHalfDamage = results.length > 0
+      && results.every((result) => Boolean(result?.savedAgainstSpell));
+    const damageButtonHtml = await this._renderCustomAttackDamageButton(entry, targetTokenUuids, {
+      halfDamage: defaultHalfDamage,
+    });
     const content = await renderTemplate(CUSTOM_ATTACK_MESSAGE_TEMPLATES.spellSaveResults, {
       saveLabel: saveType,
       hasSpellDc: true,

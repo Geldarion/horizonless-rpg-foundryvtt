@@ -14,8 +14,68 @@ const DEATH_CONDITION_ID = "horizonless.dead";
 const ACTOR_MESSAGE_TEMPLATES = {
   resolveBurnMessage: 'systems/horizonless/module/messages/item/resolve-burn-message.hbs',
 };
+const ACTOR_INTEGER_SYSTEM_PATHS = Object.freeze([
+  'hitpoints.value',
+  'hitpoints.max',
+  'stamina.value',
+  'stamina.max',
+  'resolve.value',
+  'resolve.max',
+  'armorClass',
+  'tierBonus',
+  'spellPoints.value',
+  'spellPoints.max',
+]);
+
+function coerceInteger(value, fallback = 0) {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return fallback;
+  return Math.trunc(numeric);
+}
+
+function getIntegerFallbackForPath(path) {
+  switch (path) {
+    case 'hitpoints.value':
+    case 'hitpoints.max':
+    case 'stamina.value':
+    case 'stamina.max':
+      return 10;
+    case 'resolve.value':
+    case 'resolve.max':
+      return 4;
+    case 'armorClass':
+      return 10;
+    case 'tierBonus':
+      return 2;
+    case 'spellPoints.value':
+    case 'spellPoints.max':
+    default:
+      return 0;
+  }
+}
+
+function sanitizeActorSystemIntegers(source = {}) {
+  const systemData = source.system;
+  if (!systemData || typeof systemData !== 'object') return source;
+
+  for (const path of ACTOR_INTEGER_SYSTEM_PATHS) {
+    const fullPath = `system.${path}`;
+    const current = foundry.utils.getProperty(source, fullPath);
+    if (current === undefined) continue;
+    const fallback = getIntegerFallbackForPath(path);
+    foundry.utils.setProperty(source, fullPath, coerceInteger(current, fallback));
+  }
+
+  return source;
+}
 
 export class HorizonlessActor extends Actor {
+  /** @override */
+  static migrateData(source) {
+    const migrated = super.migrateData(source);
+    return sanitizeActorSystemIntegers(migrated);
+  }
+
   /** @override */
   async _preUpdate(changed, options, user) {
     const currentHitpoints = Number(this.system?.hitpoints?.value ?? 0);

@@ -17,6 +17,16 @@
     />
     Injuring
   </label>
+  {{#if showHalfDamage}}
+  <label>
+    <input
+      type="checkbox"
+      class="horizonless-damage-half"
+      {{#if halfDamage}}checked{{/if}}
+    />
+    Half Damage
+  </label>
+  {{/if}}
   <button
     type="button"
     class="horizonless-apply-damage"

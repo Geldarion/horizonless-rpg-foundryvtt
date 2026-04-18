@@ -100,6 +100,7 @@ async function storeApplication(message, button, entry, persistence = {}) {
     applied: false,
     damageType: '',
     injuring: false,
+    halfDamage: false,
     undoState: null,
   };
 
@@ -191,6 +192,7 @@ export function createDamageButtonController({
   persistence,
   getDamageTypeSelect,
   getInjuringCheckbox,
+  getHalfDamageCheckbox,
   getUndoActivator,
   getTargetTokenUuids,
   getTotalDamage,
@@ -201,6 +203,8 @@ export function createDamageButtonController({
     if (damageTypeSelect) damageTypeSelect.disabled = false;
     const injuringCheckbox = getInjuringCheckbox?.(button);
     if (injuringCheckbox) injuringCheckbox.disabled = false;
+    const halfDamageCheckbox = getHalfDamageCheckbox?.(button);
+    if (halfDamageCheckbox) halfDamageCheckbox.disabled = false;
 
     button.dataset.applied = 'false';
     button.classList.remove('horizonless-damage-applied-state');
@@ -213,6 +217,8 @@ export function createDamageButtonController({
     if (damageTypeSelect) damageTypeSelect.disabled = true;
     const injuringCheckbox = getInjuringCheckbox?.(button);
     if (injuringCheckbox) injuringCheckbox.disabled = true;
+    const halfDamageCheckbox = getHalfDamageCheckbox?.(button);
+    if (halfDamageCheckbox) halfDamageCheckbox.disabled = true;
 
     const appliedContent = await renderTemplate(appliedTemplatePath, {});
     button.dataset.applied = 'true';
@@ -224,11 +230,17 @@ export function createDamageButtonController({
   const syncButtonState = async (button, message) => {
     const application = getStoredApplication(message, button, persistence);
     const damageTypeSelect = getDamageTypeSelect?.(button);
+    const injuringCheckbox = getInjuringCheckbox?.(button);
+    const halfDamageCheckbox = getHalfDamageCheckbox?.(button);
     if (damageTypeSelect && application?.damageType) {
       damageTypeSelect.value = application.damageType;
     }
-    const injuringCheckbox = getInjuringCheckbox?.(button);
-    if (injuringCheckbox) injuringCheckbox.checked = Boolean(application?.injuring);
+    if (injuringCheckbox && application) {
+      injuringCheckbox.checked = Boolean(application?.injuring);
+    }
+    if (halfDamageCheckbox && application) {
+      halfDamageCheckbox.checked = Boolean(application?.halfDamage);
+    }
 
     if (application?.applied) {
       await setAppliedState(button);
@@ -274,6 +286,7 @@ export function createDamageButtonController({
       applied: false,
       damageType: application?.damageType ?? '',
       injuring: Boolean(application?.injuring),
+      halfDamage: Boolean(application?.halfDamage),
       undoState: null,
     }, persistence);
     setReadyState(button);
@@ -282,15 +295,17 @@ export function createDamageButtonController({
   const applyDamage = async (button, message) => {
     const damageType = String(getDamageTypeSelect?.(button)?.value ?? '').trim();
     const injuring = Boolean(getInjuringCheckbox?.(button)?.checked);
+    const halfDamage = Boolean(getHalfDamageCheckbox?.(button)?.checked);
     if (!damageType) {
       ui.notifications?.warn('Select a damage type before applying damage.');
       return;
     }
 
-    const totalDamage = Math.max(
+    const baseDamage = Math.max(
       0,
       Math.floor(Number(getTotalDamage?.(button, message) ?? 0))
     );
+    const totalDamage = halfDamage ? Math.floor(baseDamage / 2) : baseDamage;
     if (totalDamage <= 0) {
       ui.notifications?.warn('No valid damage amount found to apply.');
       return;
@@ -336,6 +351,7 @@ export function createDamageButtonController({
       applied: true,
       damageType,
       injuring,
+      halfDamage,
       undoState,
     }, persistence);
     await setAppliedState(button);

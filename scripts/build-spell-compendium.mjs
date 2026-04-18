@@ -313,6 +313,7 @@ function createSpellDocument(spell, index, usedIds) {
       flavor: cleanText(spell?.flavor),
       attackType: cleanText(spell?.attackType),
       savingThrowType: cleanText(spell?.savingThrowType),
+      basicSavingThrow: Boolean(spell?.basicSavingThrow),
       heighteningOptions: normalizeHeighteningOptions(
         spell?.heighteningOptions ?? extractHeighteningOptions(spell?.description)
       ),

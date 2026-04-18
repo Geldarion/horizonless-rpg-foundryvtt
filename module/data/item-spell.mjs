@@ -56,6 +56,11 @@ export default class HorizonlessSpell extends HorizonlessItemBase {
     schema.flavor = new fields.StringField({ required: true, blank: true, initial: "" });
     schema.attackType = new fields.StringField({ required: true, blank: true, initial: "" });
     schema.savingThrowType = new fields.StringField({ required: true, blank: true, initial: "" });
+    schema.basicSavingThrow = new fields.BooleanField({
+      required: true,
+      nullable: false,
+      initial: false
+    });
     schema.heighteningOptions = new fields.ArrayField(
       new fields.SchemaField({
         text: new fields.StringField({ required: true, blank: true, initial: "" }),
