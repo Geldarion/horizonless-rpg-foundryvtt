@@ -235,6 +235,19 @@
     outline-offset: 1px;
   }
 
+  :where(.horizonless-spell-chat-damage-action--inline) {
+    padding: 0.55rem 0.75rem;
+    background: var(--hz-color-surface);
+  }
+
+  :where(.horizonless-spell-chat-damage-action--inline .horizonless-damage-action) {
+    gap: 0.45rem;
+  }
+
+  :where(.horizonless-spell-chat-damage-action--inline .horizonless-apply-damage) {
+    inline-size: 100%;
+  }
+
   :where(.horizonless-spell-save-results) {
     margin: 0.35rem 0 0;
     border: 1px solid var(--hz-color-accent);

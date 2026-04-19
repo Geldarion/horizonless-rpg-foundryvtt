@@ -1,3 +1,5 @@
-2026/04/19-00:55:36.533 6074 Recovering log #4
-2026/04/19-00:55:36.542 6074 Delete type=0 #4
-2026/04/19-00:55:36.542 6074 Delete type=3 #2
+2026/04/19-01:19:15.946 bacc Recovering log #7
+2026/04/19-01:19:15.947 bacc Level-0 table #9: started
+2026/04/19-01:19:15.951 bacc Level-0 table #9: 28421 bytes OK
+2026/04/19-01:19:15.960 bacc Delete type=0 #7
+2026/04/19-01:19:15.960 bacc Delete type=3 #6

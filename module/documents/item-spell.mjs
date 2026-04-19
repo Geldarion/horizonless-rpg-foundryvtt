@@ -48,6 +48,134 @@ const SPELL_LIST_DEFAULT_MODIFIER_MAP = Object.freeze({
   [SpellList.PRIMAL]: 'wis',
 });
 
+const HERALD_OF_DEFIANCE_DAMAGE_TYPE_OPTIONS = Object.freeze([
+  { value: 'radiant', label: 'Radiant' },
+  { value: 'necrotic', label: 'Necrotic' },
+]);
+
+const SPELL_DAMAGE_INCREASE_PATTERNS = Object.freeze({
+  baseSpecific: [
+    /(?:this spell's|its)\s+initial\s+damage\s+roll\s+(?:is\s+)?increase(?:d|s)\s+by\s+([^,.]+?)(?=(?:,| and\b|\.|$))/gi,
+    /(?:this spell's|its)\s+area\s+damage\s+roll\s+(?:is\s+)?increase(?:d|s)\s+by\s+([^,.]+?)(?=(?:,| and\b|\.|$))/gi,
+  ],
+  spellstrikeSpecific: [
+    /(?:this spell's|its)\s+bonus\s+attack\s+damage\s+roll\s+(?:is\s+)?increase(?:d|s)\s+by\s+([^,.]+?)(?=(?:,| and\b|\.|$))/gi,
+    /(?:this spell's|its)\s+bonus\s+weapon\s+damage\s+roll\s+(?:is\s+)?increase(?:d|s)\s+by\s+([^,.]+?)(?=(?:,| and\b|\.|$))/gi,
+  ],
+  generic: [
+    /(?:this spell's|its)\s+damage\s+roll\s+(?:is\s+)?increase(?:d|s)\s+by\s+([^,.]+?)(?=(?:,| and\b|\.|$))/gi,
+  ],
+  herald: [
+    /damage\s+increase(?:d|s)?\s+by\s+([^,.]+?)(?=(?:,| and\b|\.|$))/gi,
+  ],
+});
+
+function normalizeSpellRuleText(value = '') {
+  return String(value ?? '')
+    .replace(/\r\n/g, '\n')
+    .replace(/\\\./g, '.')
+    .replace(/\*\*/g, '')
+    .replace(/\*/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function normalizeSpellBonusFormula(value = '') {
+  const cleaned = normalizeSpellRuleText(value)
+    .replace(/\.$/, '')
+    .trim();
+  if (!cleaned) return null;
+  return normalizeSpellDamageFormula(cleaned) ?? (/^\d+$/.test(cleaned) ? cleaned : null);
+}
+
+function extractFormulaTermsFromText(text = '', patterns = []) {
+  const normalizedText = normalizeSpellRuleText(text);
+  const terms = [];
+
+  for (const pattern of patterns) {
+    pattern.lastIndex = 0;
+    let match;
+    while ((match = pattern.exec(normalizedText)) !== null) {
+      const rawAmount = String(match[1] ?? '')
+        .replace(/\.$/, '')
+        .trim();
+      const formula = normalizeSpellBonusFormula(rawAmount);
+      if (!formula) continue;
+      terms.push({
+        formula,
+        label: rawAmount,
+      });
+    }
+  }
+
+  return terms;
+}
+
+function repeatFormulaTerms(terms = [], count = 1) {
+  const safeCount = Math.max(1, Math.floor(Number(count ?? 1) || 1));
+  const repeated = [];
+  for (let index = 0; index < safeCount; index += 1) {
+    repeated.push(...terms.map((term) => ({ ...term })));
+  }
+  return repeated;
+}
+
+function combineSpellFormulaTerms(baseFormula = '', bonusTerms = []) {
+  const terms = [
+    String(baseFormula ?? '').trim(),
+    ...bonusTerms
+      .map((term) => String(term?.formula ?? '').trim())
+      .filter((term) => term.length > 0),
+  ]
+    .filter((term) => term.length > 0)
+    .map((term) => `(${term})`);
+
+  return terms.length > 0 ? terms.join(' + ') : '';
+}
+
+function combineSpellDamageLabels(baseLabel = '', bonusTerms = []) {
+  return [
+    String(baseLabel ?? '').trim(),
+    ...bonusTerms
+      .map((term) => String(term?.label ?? '').trim())
+      .filter((term) => term.length > 0),
+  ]
+    .filter((term) => term.length > 0)
+    .join(' + ');
+}
+
+function extractDamageAmountFromPhrase(phrase = '') {
+  const normalizedPhrase = normalizeSpellRuleText(phrase)
+    .replace(/\.$/, '')
+    .trim();
+  if (!normalizedPhrase) return null;
+
+  const patterns = [
+    /^(.+?)\s+injuring\s+[A-Za-z-]+\s+damage$/i,
+    /^(.+?)\s+[A-Za-z-]+\s+damage$/i,
+    /^(.+?)\s+damage$/i,
+  ];
+
+  for (const pattern of patterns) {
+    const match = normalizedPhrase.match(pattern);
+    if (!match) continue;
+    const rawAmount = String(match[1] ?? '').trim();
+    const formula = normalizeSpellBonusFormula(rawAmount);
+    if (!formula) return null;
+    return {
+      formula,
+      label: rawAmount,
+    };
+  }
+
+  const formula = normalizeSpellBonusFormula(normalizedPhrase);
+  if (!formula) return null;
+  return {
+    formula,
+    label: normalizedPhrase,
+  };
+}
+
 function getControlledTokens() {
   const placeables = canvas?.tokens?.placeables ?? [];
   return placeables.filter((token) => token?.controlled && token?.actor);
@@ -591,19 +719,26 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     targetTokenUuids,
     damageTotal,
     selectedDamageType,
+    damageTypeOptions = [],
     injuring = false,
+    showInjuring = true,
     showHalfDamage = false,
     halfDamage = false,
+    buttonLabel = 'Apply Damage',
   }) {
     return renderTemplate(SPELL_MESSAGE_TEMPLATES.spellApplyDamageButton, {
       applicationKey: String(applicationKey ?? '').trim(),
       targetTokenUuids,
       damageTotal,
       damageTypeGroups: getDamageTypeSelectGroups(),
+      damageTypeOptions: Array.isArray(damageTypeOptions) ? damageTypeOptions : [],
+      hasDamageTypeOptions: Array.isArray(damageTypeOptions) && damageTypeOptions.length > 0,
       selectedDamageType: String(selectedDamageType ?? '').trim(),
       injuring: Boolean(injuring),
+      showInjuring: Boolean(showInjuring),
       showHalfDamage: Boolean(showHalfDamage),
       halfDamage: Boolean(halfDamage),
+      buttonLabel: String(buttonLabel ?? '').trim() || 'Apply Damage',
     });
   }
 
@@ -645,6 +780,163 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     return {
       rawDamage,
       baseDamageFormula,
+    };
+  }
+
+  static _isHeraldOfDefianceSpell(item) {
+    return String(item?.name ?? '').trim().toLowerCase() === 'herald of defiance';
+  }
+
+  static _getSpellstrikeBonusDamageData(item) {
+    const description = String(item?.system?.description ?? '');
+    const match = description.match(/\*\*Spellstrike\.\*\*[\s\S]*?deals?\s+an\s+additional\s+\*\*([^*]+?)\*\*/i);
+    if (!match) return null;
+    return extractDamageAmountFromPhrase(match[1]);
+  }
+
+  static _getSelectedHeighteningDamageTerms(selections = [], { hasSpellstrike = false } = {}) {
+    const terms = {
+      baseTerms: [],
+      spellstrikeTerms: [],
+    };
+
+    for (const selection of Array.isArray(selections) ? selections : []) {
+      const count = Math.max(1, Math.floor(Number(selection?.count ?? 1) || 1));
+      const text = String(selection?.text ?? '').trim();
+      if (!text) continue;
+
+      const genericTerms = extractFormulaTermsFromText(text, SPELL_DAMAGE_INCREASE_PATTERNS.generic);
+      const baseSpecificTerms = extractFormulaTermsFromText(text, SPELL_DAMAGE_INCREASE_PATTERNS.baseSpecific);
+      const spellstrikeSpecificTerms = hasSpellstrike
+        ? extractFormulaTermsFromText(text, SPELL_DAMAGE_INCREASE_PATTERNS.spellstrikeSpecific)
+        : [];
+
+      terms.baseTerms.push(...repeatFormulaTerms([...genericTerms, ...baseSpecificTerms], count));
+      if (hasSpellstrike) {
+        terms.spellstrikeTerms.push(
+          ...repeatFormulaTerms([...genericTerms, ...spellstrikeSpecificTerms], count)
+        );
+      }
+    }
+
+    return terms;
+  }
+
+  static _getHeraldDamageIncreaseTotal(selections = []) {
+    let totalIncrease = 0;
+
+    for (const selection of Array.isArray(selections) ? selections : []) {
+      const count = Math.max(1, Math.floor(Number(selection?.count ?? 1) || 1));
+      const terms = extractFormulaTermsFromText(selection?.text ?? '', SPELL_DAMAGE_INCREASE_PATTERNS.herald);
+      for (const term of terms) {
+        const numericIncrease = Number(term.formula);
+        if (!Number.isFinite(numericIncrease)) continue;
+        totalIncrease += (numericIncrease * count);
+      }
+    }
+
+    return Math.max(0, totalIncrease);
+  }
+
+  static async _getStrictSpellDamageChatData(item, targetTokenUuids = [], selections = []) {
+    const attackType = String(item?.system?.attackType ?? '').trim();
+    const savingThrowType = String(item?.system?.savingThrowType ?? '').trim();
+    const actorUuid = String(item?.actor?.uuid ?? '').trim();
+    const itemUuid = String(item?.uuid ?? '').trim();
+    if (!actorUuid || !itemUuid) {
+      return {
+        damageActions: [],
+        inlineApplyDamageButtonHtml: '',
+      };
+    }
+
+    if (this._isSpellAttackType(attackType) || this._getSaveAbilityKey(savingThrowType)) {
+      return {
+        damageActions: [],
+        inlineApplyDamageButtonHtml: '',
+      };
+    }
+
+    const normalizedTargets = JSON.stringify(parseStringArray(targetTokenUuids));
+
+    if (this._isHeraldOfDefianceSpell(item)) {
+      const inlineApplyDamageButtonHtml = await this._renderSpellApplyDamageButton({
+        applicationKey: this._getSpellDamageApplicationKey(targetTokenUuids),
+        targetTokenUuids: normalizedTargets,
+        damageTotal: 5 + this._getHeraldDamageIncreaseTotal(selections),
+        selectedDamageType: '',
+        damageTypeOptions: HERALD_OF_DEFIANCE_DAMAGE_TYPE_OPTIONS,
+        injuring: false,
+        showInjuring: false,
+        showHalfDamage: false,
+        halfDamage: false,
+      });
+
+      return {
+        damageActions: [],
+        inlineApplyDamageButtonHtml,
+      };
+    }
+
+    const { rawDamage, baseDamageFormula } = this._getSpellBaseDamageData(item);
+    if (!baseDamageFormula) {
+      return {
+        damageActions: [],
+        inlineApplyDamageButtonHtml: '',
+      };
+    }
+
+    const spellstrikeBonusData = this._getSpellstrikeBonusDamageData(item);
+    const heighteningTerms = this._getSelectedHeighteningDamageTerms(selections, {
+      hasSpellstrike: Boolean(spellstrikeBonusData),
+    });
+    const baseButtonData = {
+      actorUuid,
+      itemUuid,
+      damageFormula: combineSpellFormulaTerms(baseDamageFormula, heighteningTerms.baseTerms),
+      itemName: String(item?.name ?? 'Spell').trim() || 'Spell',
+      damageLabel: combineSpellDamageLabels(rawDamage, heighteningTerms.baseTerms),
+      buttonLabel: 'Roll Damage',
+      damageType: String(item?.system?.damageType ?? '').trim(),
+      injuring: Boolean(item?.system?.injuring),
+      halfDamageOption: false,
+      halfDamage: false,
+      targetTokenUuids: normalizedTargets,
+      useCurrentTargets: true,
+    };
+
+    const damageActions = [
+      await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellDamageRollButton, baseButtonData),
+    ];
+
+    if (spellstrikeBonusData) {
+      damageActions.push(
+        await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellDamageRollButton, {
+          actorUuid,
+          itemUuid,
+          damageFormula: combineSpellFormulaTerms(
+            spellstrikeBonusData.formula,
+            heighteningTerms.spellstrikeTerms
+          ),
+          itemName: `${String(item?.name ?? 'Spell').trim() || 'Spell'} Spellstrike`,
+          damageLabel: combineSpellDamageLabels(
+            spellstrikeBonusData.label,
+            heighteningTerms.spellstrikeTerms
+          ),
+          buttonLabel: 'Roll Damage (Spellstrike)',
+          damageType: String(item?.system?.damageType ?? '').trim(),
+          injuring: Boolean(item?.system?.injuring),
+          halfDamageOption: false,
+          halfDamage: false,
+          targetTokenUuids: normalizedTargets,
+          useCurrentTargets: true,
+        })
+      );
+    }
+
+    return {
+      damageActions,
+      inlineApplyDamageButtonHtml: '',
     };
   }
 
@@ -706,12 +998,24 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     const injuring = String(button?.dataset?.injuring ?? '').trim() === 'true';
     const showHalfDamage = String(button?.dataset?.halfDamageOption ?? '').trim() === 'true';
     const halfDamage = String(button?.dataset?.halfDamage ?? '').trim() === 'true';
-    const targetTokenUuids = parseStringArray(button?.dataset?.targetTokenUuids ?? '');
+    const useCurrentTargets = String(button?.dataset?.useCurrentTargets ?? '').trim() === 'true';
+    let targetTokenUuids = parseStringArray(button?.dataset?.targetTokenUuids ?? '');
 
     if (!actorUuid || !formula) return;
 
     const actor = await fromUuid(actorUuid);
     if (!(actor instanceof Actor)) return;
+
+    if (useCurrentTargets) {
+      targetTokenUuids = Array.from(
+        new Set(
+          getTargetedTokens()
+            .map((token) => token?.document?.uuid ?? '')
+            .map((uuid) => String(uuid).trim())
+            .filter((uuid) => uuid.length > 0)
+        )
+      );
+    }
 
     if (targetTokenUuids.length === 0) {
       ui.notifications?.warn('Target at least one token before rolling spell damage.');
@@ -829,20 +1133,25 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     }
     if (!t) return null;
 
-    const distance = this._parseFirstNumber(rawSize);
-    if (!Number.isFinite(distance) || distance <= 0) return null;
+    const size = this._parseFirstNumber(rawSize);
+    if (!Number.isFinite(size) || size <= 0) return null;
+
+    const distance = t === 'rect'
+      ? (size * Math.SQRT2)
+      : size;
 
     return {
       t,
       distance,
-      direction: 0,
+      // Foundry rectangles are defined by a diagonal, not a side length.
+      // Start square templates on a 45-degree diagonal so they render with
+      // the expected width and height instead of collapsing to a line.
+      direction: t === 'rect' ? 45 : 0,
       angle: t === 'cone' ? 90 : undefined,
       width:
         t === 'ray'
           ? Number(canvas?.scene?.grid?.distance ?? 5)
-          : t === 'rect'
-            ? distance
-            : undefined,
+          : undefined,
       fillColor: game.user?.color ?? '#ff6400',
       texture: null,
     };
@@ -1152,13 +1461,11 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
           .filter((uuid) => uuid.length > 0)
           .filter((uuid, index, list) => list.indexOf(uuid) === index)
       );
-      const damageButtonData = HorizonlessSpellItem._getSpellDamageButtonData(
+      const strictSpellDamageChatData = await HorizonlessSpellItem._getStrictSpellDamageChatData(
         item,
-        parseStringArray(targetTokenUuids)
+        parseStringArray(targetTokenUuids),
+        pendingHeighteningSelections
       );
-      const damageButtonHtml = damageButtonData
-        ? await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellDamageRollButton, damageButtonData)
-        : '';
       const content = await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellChat, {
         hasSpellName: spellName.length > 0,
         spellName,
@@ -1182,8 +1489,10 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
         savingThrowLabel: savingThrowType,
         itemUuid: this.uuid,
         targetTokenUuids,
-        hasDamageButton: Boolean(damageButtonHtml),
-        damageButtonHtml,
+        hasDamageActions: strictSpellDamageChatData.damageActions.length > 0,
+        damageActions: strictSpellDamageChatData.damageActions,
+        hasInlineApplyDamageButton: Boolean(strictSpellDamageChatData.inlineApplyDamageButtonHtml),
+        inlineApplyDamageButtonHtml: strictSpellDamageChatData.inlineApplyDamageButtonHtml,
         spellDescriptionHtml,
       });
       ChatMessage.create({
@@ -1194,6 +1503,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
         flags: {
           horizonless: {
             spellChat: true,
+            spellDamageApplications: {},
           },
         },
       });

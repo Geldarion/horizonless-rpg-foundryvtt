@@ -1,15 +1,24 @@
 <div class="horizonless-damage-action">
-  <select class="horizonless-damage-type">
-    <option value="">Select Damage Type</option>
-    {{#each damageTypeGroups as |group|}}
-    <optgroup label="{{group.label}}">
-      {{#each group.options as |option|}}
-      <option value="{{option.value}}" {{#if (eq option.value @root.selectedDamageType)}}selected{{/if}}>{{option.label}}</option>
-      {{/each}}
-    </optgroup>
-    {{/each}}
-  </select>
-  <label>
+  <div class="horizonless-damage-action-field">
+    <select class="horizonless-damage-type">
+      <option value="">Select Damage Type</option>
+      {{#if hasDamageTypeOptions}}
+        {{#each damageTypeOptions as |option|}}
+        <option value="{{option.value}}" {{#if (eq option.value @root.selectedDamageType)}}selected{{/if}}>{{option.label}}</option>
+        {{/each}}
+      {{else}}
+        {{#each damageTypeGroups as |group|}}
+        <optgroup label="{{group.label}}">
+          {{#each group.options as |option|}}
+          <option value="{{option.value}}" {{#if (eq option.value @root.selectedDamageType)}}selected{{/if}}>{{option.label}}</option>
+          {{/each}}
+        </optgroup>
+        {{/each}}
+      {{/if}}
+    </select>
+  </div>
+  {{#if showInjuring}}
+  <label class="horizonless-damage-action-toggle">
     <input
       type="checkbox"
       class="horizonless-damage-injuring"
@@ -17,8 +26,9 @@
     />
     Injuring
   </label>
+  {{/if}}
   {{#if showHalfDamage}}
-  <label>
+  <label class="horizonless-damage-action-toggle">
     <input
       type="checkbox"
       class="horizonless-damage-half"
@@ -35,6 +45,6 @@
     data-damage-total="{{damageTotal}}"
     data-applied="false"
   >
-    Apply Damage
+    {{buttonLabel}}
   </button>
 </div>

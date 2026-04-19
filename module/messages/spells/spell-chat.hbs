@@ -77,6 +77,24 @@
   </details>
   {{/if}}
 
+  {{#if hasDamageActions}}
+  <div class="horizonless-spell-chat-actions horizonless-spell-chat-damage-actions">
+    {{#each damageActions}}
+    <div class="horizonless-spell-chat-save-action horizonless-spell-chat-damage-action">
+      {{{this}}}
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+  {{#if hasInlineApplyDamageButton}}
+  <div class="horizonless-spell-chat-actions horizonless-spell-chat-damage-actions">
+    <div class="horizonless-spell-chat-save-action horizonless-spell-chat-damage-action horizonless-spell-chat-damage-action--inline">
+      {{{inlineApplyDamageButtonHtml}}}
+    </div>
+  </div>
+  {{/if}}
+
   {{#if hasSpellAttackButton}}
   <div class="horizonless-spell-chat-actions">
     <div class="horizonless-spell-chat-save-action">
