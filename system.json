@@ -87,8 +87,8 @@
   ],
   "packFolders": [],
   "socket": false,
-  "manifest": "https://github.com/Geldarion/horizonless-rpg-foundryvtt/releases/download/v0.2.0.6/system.json",
-  "download": "https://github.com/Geldarion/horizonless-rpg-foundryvtt/releases/download/v0.2.0.6/horizonless.zip",
+  "manifest": "https://github.com/Geldarion/horizonless-rpg-foundryvtt/releases/download/v0.2.0.7/system.json",
+  "download": "https://github.com/Geldarion/horizonless-rpg-foundryvtt/releases/download/v0.2.0.7/horizonless.zip",
   "background": "systems/horizonless/assets/anvil-impact.png",
   "grid": {
     "distance": 5,
