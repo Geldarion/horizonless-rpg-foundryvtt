@@ -913,19 +913,64 @@
   justify-content: flex-end;
 }
 
-.horizonless .spell-list-section .spell-signature-source .item-controls {
+.horizonless :is(.spell-list-section .spell-signature-source, .signature-spell-section) .item-controls {
   flex: 0 0 auto;
   align-items: center;
   gap: 6px;
 }
 
-.horizonless .spell-list-section .spell-signature-source .item-control {
+.horizonless :is(.spell-list-section .spell-signature-source, .signature-spell-section) .item-control {
   flex: 0 0 auto;
   white-space: nowrap;
 }
 
-.horizonless .spell-list-section .spell-heighten-select {
+.horizonless :is(.spell-list-section, .signature-spell-section) .spell-heighten-select {
   min-width: 11.5rem;
+}
+
+.horizonless .signature-spell-section .items-list {
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.horizonless .signature-spell-section .item {
+  min-width: 0;
+  width: 100%;
+  flex-wrap: wrap;
+  row-gap: 4px;
+}
+
+.horizonless .signature-spell-section .item-name {
+  min-width: 0;
+  flex: 1 1 12rem;
+}
+
+.horizonless .signature-spell-section .item-controls {
+  min-width: 0;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.horizonless .signature-spell-section .spell-heighten-select {
+  max-width: 100%;
+}
+
+.horizonless .signature-spell-section label.item-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.horizonless .signature-spell-section label.item-control:has(.signature-spell-used-toggle) {
+  margin-left: 6px;
+}
+
+.horizonless .signature-spell-section .signature-spell-used-toggle {
+  width: auto;
+  flex: 0 0 auto;
+  margin: 0;
 }
 
 .horizonless .items-list .item-controls a {

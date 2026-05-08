@@ -130,6 +130,68 @@
   }
 }
 
+:is(.spell-list-section .spell-signature-source, .signature-spell-section) .item-controls {
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+}
+
+:is(.spell-list-section .spell-signature-source, .signature-spell-section) .item-control {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+:is(.spell-list-section, .signature-spell-section) .spell-heighten-select {
+  min-width: 11.5rem;
+}
+
+.signature-spell-section {
+  .items-list {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .item {
+    min-width: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
+  .item-name {
+    min-width: 0;
+    flex: 1 1 12rem;
+  }
+
+  .item-controls {
+    min-width: 0;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .spell-heighten-select {
+    max-width: 100%;
+  }
+
+  label.item-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+
+    &:has(.signature-spell-used-toggle) {
+      margin-left: 6px;
+    }
+  }
+
+  .signature-spell-used-toggle {
+    width: auto;
+    flex: 0 0 auto;
+    margin: 0;
+  }
+}
+
 // Example style for Horizonless (can be removed if not needed).
 .item-formula {
   

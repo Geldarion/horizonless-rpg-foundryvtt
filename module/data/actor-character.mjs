@@ -346,6 +346,11 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
       blank: true,
       initial: ""
     });
+    schema.signatureSpellUsed = new fields.BooleanField({
+      required: true,
+      nullable: false,
+      initial: false
+    });
     schema.ancestries = new fields.SchemaField({
       primaryFeatureId: new fields.StringField({
         required: true,

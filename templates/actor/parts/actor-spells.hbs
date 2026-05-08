@@ -2,10 +2,51 @@
   <h3 class='resource-label'>Signature Spell</h3>
   <div class='resource flex-group-center signature-spell-dropzone'>
     {{#if signatureSpell}}
-      <div>
-        {{signatureSpell.name}}
-        ({{#if (eq signatureSpell.system.spellLevel 0)}}cantrip{{else}}{{ordinal signatureSpell.system.spellLevel}} circle{{/if}})
-      </div>
+      <ol class='items-list'>
+        <li class='item flexrow' data-item-id='{{signatureSpell._id}}'>
+          <div class='item-name flexrow'>
+            <div class='item-image'>
+              <a class='rollable' data-roll-type='item' data-signature-spell='true'><img
+                  src='{{signatureSpell.img}}'
+                  title='{{signatureSpell.name}}'
+                  width='24'
+                  height='24'
+                /></a>
+            </div>
+            <h4>{{signatureSpell.name}}</h4>
+          </div>
+          <div class='item-controls'>
+            <label class='item-control' title='Heighten'>
+              <select class='spell-heighten-select' {{#unless @root.editable}}disabled{{/unless}}>
+                {{#each signatureSpell.heightenOptions as |circle|}}
+                  <option value='{{circle}}' {{#if (eq circle @root.signatureSpell.system.heightenedCircle)}}selected{{/if}}>
+                    {{#if (eq circle @root.signatureSpell.system.spellLevel)}}
+                      Cast at {{ordinal circle}} circle
+                    {{else}}
+                      Heighten to {{ordinal circle}} circle
+                    {{/if}}
+                  </option>
+                {{/each}}
+              </select>
+            </label>
+            <label class='item-control' title='Already Used'>
+              <input
+                type='checkbox'
+                class='signature-spell-used-toggle'
+                {{checked @root.signatureSpellUsed}}
+                {{#unless @root.editable}}disabled{{/unless}}
+              />
+              Already Used
+            </label>
+            <a
+              class='item-control signature-spell-clear'
+              title='Clear Signature Spell'
+            >
+              <i class='fas fa-trash'></i>
+            </a>
+          </div>
+        </li>
+      </ol>
     {{else}}
       <div>Drag a prepared spell here to set signature spell.</div>
     {{/if}}
@@ -58,14 +99,16 @@
           <h4>{{item.name}}</h4>
         </div>
         <div class='item-controls'>
-          <span
-            class='item-control spell-drag-handle'
-            title='Drag to Signature Spell'
-            draggable='true'
-            data-item-id='{{item._id}}'
-          >
-            <i class='fas fa-grip-vertical'></i>
-          </span>
+          {{#unless (eq spellGroup.spellCircle "cantrip")}}
+            <span
+              class='item-control spell-drag-handle'
+              title='Drag to Signature Spell'
+              draggable='true'
+              data-item-id='{{item._id}}'
+            >
+              <i class='fas fa-grip-vertical'></i>
+            </span>
+          {{/unless}}
           <label class='item-control' title='Heighten'>
             <select class='spell-heighten-select' {{#unless @root.editable}}disabled{{/unless}}>
               {{#each item.heightenOptions as |circle|}}

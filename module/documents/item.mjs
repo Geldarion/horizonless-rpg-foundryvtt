@@ -24,6 +24,9 @@ export class HorizonlessItem extends HorizonlessWeaponItem {
     await super._preCreate(data, options, user);
     if (this.type === 'spell') {
       HorizonlessSpellItem.prototype._applyDefaultSpellcastingModifierToSource.call(this, data);
+      if (this.parent instanceof Actor) {
+        this.updateSource({ system: { prepared: true } });
+      }
     }
   }
 

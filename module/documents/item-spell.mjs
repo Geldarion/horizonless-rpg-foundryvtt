@@ -1593,7 +1593,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
         inlineApplyDamageButtonHtml: strictSpellDamageChatData.inlineApplyDamageButtonHtml,
         spellDescriptionHtml,
       });
-      ChatMessage.create({
+      return ChatMessage.create({
         speaker,
         rollMode,
         flavor: label,

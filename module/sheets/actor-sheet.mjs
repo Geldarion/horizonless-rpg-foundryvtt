@@ -469,6 +469,20 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       await item.update({ 'system.prepared': event.currentTarget.checked });
     });
 
+    bindEventListeners(root, 'change', '.signature-spell-used-toggle', async (event) => {
+      await this.actor.update({ 'system.signatureSpellUsed': event.currentTarget.checked });
+    });
+
+    bindEventListeners(root, 'click', '.signature-spell-clear', async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      await this.actor.update({
+        'system.signatureSpellId': '',
+        'system.signatureSpellUsed': false,
+      });
+      this.render(false);
+    });
+
     bindEventListeners(root, 'change', '.spell-heighten-select', async (event) => {
       const listItem = event.currentTarget.closest('.item');
       const item = this.actor.items.get(listItem?.dataset?.itemId);
@@ -486,6 +500,11 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       const itemId = event.currentTarget.dataset.itemId;
       const item = this.actor.items.get(itemId);
       if (!item || item.type !== ItemType.SPELL) return;
+      if (isCantripSpell(item)) {
+        event.preventDefault();
+        ui.notifications?.warn('Cantrips cannot be signature spells.');
+        return;
+      }
       if (!item.system?.prepared) {
         event.preventDefault();
         ui.notifications?.warn('Only prepared spells can be dragged to Signature Spell.');
@@ -642,6 +661,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       context.signatureSpell =
         context.items.find((item) => item.type === ItemType.SPELL && item._id === signatureSpellId) ?? null;
     }
+    context.signatureSpellUsed = Boolean(context.system?.signatureSpellUsed);
 
     const ancestryState = context.system?.ancestries ?? {};
     for (const [slotKey, slotConfig] of Object.entries(ANCESTRY_SLOT_CONFIG)) {
@@ -1159,7 +1179,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     }
   }
 
-  _onRoll(event) {
+  async _onRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
@@ -1167,7 +1187,23 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     if (dataset.rollType && dataset.rollType === 'item') {
       const itemId = element.closest('.item')?.dataset?.itemId;
       const item = this.actor.items.get(itemId);
-      if (item?.type === ItemType.SPELL) return item.roll({ sourceApplication: this });
+      if (item?.type === ItemType.SPELL) {
+        const isSignatureSpell = String(dataset.signatureSpell ?? '').trim() === 'true';
+        if (isSignatureSpell) {
+          if (this.actor.system?.signatureSpellUsed) {
+            ui.notifications?.warn('Signature spell has already been used.');
+            return null;
+          }
+
+          const result = await item.roll({ sourceApplication: this, signatureSpell: true });
+          if (result !== null) {
+            await this.actor.update({ 'system.signatureSpellUsed': true });
+          }
+          return result;
+        }
+
+        return item.roll({ sourceApplication: this });
+      }
       if (item) return item.roll();
     }
 
@@ -1322,12 +1358,20 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       return false;
     }
 
+    if (isCantripSpell(spell)) {
+      ui.notifications?.warn('Cantrips cannot be signature spells.');
+      return false;
+    }
+
     if (!spell.system?.prepared) {
       ui.notifications?.warn('Only prepared spells can be set as signature spells.');
       return false;
     }
 
-    await this.actor.update({ 'system.signatureSpellId': spell.id });
+    await this.actor.update({
+      'system.signatureSpellId': spell.id,
+      'system.signatureSpellUsed': false,
+    });
     this.render(false);
     return false;
   }
