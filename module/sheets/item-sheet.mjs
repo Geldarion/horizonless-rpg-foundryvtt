@@ -9,39 +9,18 @@ import {
   saveDescriptionEditorContent,
   startDescriptionEditing,
 } from '../helpers/description-editor.mjs';
+import {
+  bindEventListeners,
+  getEventTabGroup,
+  submitPendingSheetChanges,
+  syncSheetTabState,
+} from '../helpers/sheet.mjs';
 import { SpellList } from '../data/enums.mjs';
 import { prepareEnrichedChatContent } from '../helpers/chat.mjs';
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 const TextEditor = foundry.applications.ux.TextEditor.implementation;
-
-function bindEventListeners(root, eventName, selector, listener) {
-  for (const element of root.querySelectorAll(selector)) {
-    element.addEventListener(eventName, listener);
-  }
-}
-
-function getTabGroup(element) {
-  return String(
-    element?.dataset?.group
-    ?? element?.closest?.('[data-group]')?.dataset?.group
-    ?? ''
-  ).trim();
-}
-
-function syncTabGroup(root, group, activeTab) {
-  if (!group || !activeTab) return;
-
-  for (const navItem of root.querySelectorAll('.sheet-tabs [data-tab]')) {
-    if (getTabGroup(navItem) !== group) continue;
-    navItem.classList.toggle('active', navItem.dataset.tab === activeTab);
-  }
-
-  for (const panel of root.querySelectorAll(`.sheet-body [data-group="${group}"][data-tab]`)) {
-    panel.classList.toggle('active', panel.dataset.tab === activeTab);
-  }
-}
 
 export class HorizonlessItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   editingDescriptionTarget = null;
@@ -52,8 +31,7 @@ export class HorizonlessItemSheet extends HandlebarsApplicationMixin(ItemSheetV2
   };
 
   async _submitPendingChanges() {
-    if (!(this.form instanceof HTMLFormElement) || !this.isEditable) return;
-    await this.submit();
+    await submitPendingSheetChanges(this);
   }
 
   static get DEFAULT_OPTIONS() {
@@ -112,12 +90,7 @@ export class HorizonlessItemSheet extends HandlebarsApplicationMixin(ItemSheetV2
   }
 
   _syncTabState(root, group = 'primary') {
-    const tabConfig = this.constructor.TABS?.[group];
-    const activeTab = this.tabGroups[group] ?? tabConfig?.initial ?? tabConfig?.tabs?.[0]?.id ?? '';
-    if (!activeTab) return;
-
-    this.tabGroups[group] = activeTab;
-    syncTabGroup(root, group, activeTab);
+    syncSheetTabState(this, root, group);
   }
 
   async _prepareContext(options) {
@@ -182,7 +155,7 @@ export class HorizonlessItemSheet extends HandlebarsApplicationMixin(ItemSheetV2
 
     this._syncTabState(root);
     bindEventListeners(root, 'click', '.sheet-tabs [data-tab]', (event) => {
-      const group = getTabGroup(event.currentTarget) || 'primary';
+      const group = getEventTabGroup(event);
       const tabId = String(event.currentTarget.dataset.tab ?? '').trim();
       if (!tabId) return;
 

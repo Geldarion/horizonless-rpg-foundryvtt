@@ -102,3 +102,5 @@ HORIZONLESS_RPG.npcTypes = {
   [NPCType.THREAT]: "Threat",
   [NPCType.BOSS]: "Boss"
 };
+
+HORIZONLESS_RPG.npcTiers = [1, 2, 3, 4];

@@ -1,6 +1,7 @@
 import HorizonlessActorBase from "./base-actor.mjs";
 import {
   CasterType,
+  getGuardArmorBonus,
   GuardMode,
   TradeSpecialization,
   TradeType,
@@ -294,18 +295,6 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
       && strMod >= Number(item.system?.strRequirement ?? 0));
   }
 
-  _getGuardArmorBonus(guardMode, tierBonus) {
-    switch (guardMode) {
-      case GuardMode.HALF_GUARD:
-        return Math.floor(tierBonus / 2);
-      case GuardMode.FULL_GUARD:
-        return tierBonus;
-      case GuardMode.NO_GUARD:
-      default:
-        return 0;
-    }
-  }
-
   _applyDerivedArmorClass({ strMod, dexMod, tierBonus }) {
     const firstArmorItem = this._getWornArmorMeetingStrength(strMod);
     const armorBaseAc = Number(firstArmorItem?.system?.armorClass);
@@ -313,7 +302,7 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
       ? armorBaseAc
       : 10 + Math.floor(tierBonus / 2) + Math.ceil(dexMod / 2);
     const guardMode = this.guard || GuardMode.NO_GUARD;
-    const guardAc = this._getGuardArmorBonus(guardMode, tierBonus);
+    const guardAc = getGuardArmorBonus(guardMode, tierBonus);
 
     this.armorClass = Math.max(0, baseAc + guardAc);
   }

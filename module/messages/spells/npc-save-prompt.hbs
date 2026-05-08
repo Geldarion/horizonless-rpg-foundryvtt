@@ -1,0 +1,58 @@
+<div class="horizonless-spell-chat">
+  <table class="horizonless-spell-chat-meta">
+    <tbody>
+      <tr class="horizonless-spell-chat-row-name">
+        <td colspan="2">
+          <div class="horizonless-spell-chat-name-row">
+            <div class="horizonless-spell-chat-name-block">
+              <div class="horizonless-spell-chat-name">{{saveName}}</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr class="horizonless-spell-chat-row-metadata">
+        <td colspan="2">
+          <div class="horizonless-spell-chat-metadata-grid">
+            <div class="horizonless-spell-chat-metadata-cell">
+              <div class="horizonless-spell-chat-metadata-label">Save Type</div>
+              <div class="horizonless-spell-chat-metadata-value">{{saveLabel}}</div>
+            </div>
+            <div class="horizonless-spell-chat-metadata-cell">
+              <div class="horizonless-spell-chat-metadata-label">DC</div>
+              <div class="horizonless-spell-chat-metadata-value">{{spellDc}}</div>
+            </div>
+            <div class="horizonless-spell-chat-metadata-cell">
+              <div class="horizonless-spell-chat-metadata-label">Damage</div>
+              <div class="horizonless-spell-chat-metadata-value">{{damageFormula}}</div>
+            </div>
+            <div class="horizonless-spell-chat-metadata-cell">
+              <div class="horizonless-spell-chat-metadata-label">Damage Type</div>
+              <div class="horizonless-spell-chat-metadata-value">{{damageType}}</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr class="horizonless-spell-chat-row-description">
+        <td colspan="2">
+          <div class="horizonless-spell-chat-description">
+            {{{damageRollHtml}}}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="horizonless-spell-chat-actions">
+    <div class="horizonless-spell-chat-save-action">
+      <button
+        type="button"
+        class="horizonless-spell-chat-save-button"
+        data-npc-save-prompt="true"
+        data-save-ability-key="{{abilityKey}}"
+        data-save-label="{{saveLabel}}"
+      >
+        Roll {{saveLabel}} Save
+      </button>
+    </div>
+  </div>
+</div>

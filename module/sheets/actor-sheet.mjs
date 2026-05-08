@@ -19,14 +19,22 @@ import {
 } from '../helpers/description-editor.mjs';
 import { getArmorStrengthRequirementFailure } from '../helpers/item-validation.mjs';
 import {
+  bindEventListeners,
+  getEventTabGroup,
+  submitPendingSheetChanges,
+  syncSheetTabState,
+} from '../helpers/sheet.mjs';
+import {
   AncestryFeatureType,
   GearItemType,
+  getGuardArmorBonus,
   GuardMode,
   ItemType,
+  SaveAbilityMap,
+  SaveTypes,
   SheetTheme,
   TradeTypes,
 } from '../data/enums.mjs';
-import { HorizonlessSpellItem } from '../documents/item-spell.mjs';
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -76,45 +84,12 @@ const CUSTOM_ATTACK_KIND = Object.freeze({
   ATTACK: 'attack',
   SAVE: 'save',
 });
-const CUSTOM_ATTACK_SAVE_TYPES = Object.freeze([
-  'Poise',
-  'Reflex',
-  'Fortitude',
-  'Quick-Wits',
-  'Will',
-  'Courage',
-]);
-const CUSTOM_ATTACK_SAVE_ABILITY_MAP = Object.freeze({
-  Poise: 'str',
-  Reflex: 'dex',
-  Fortitude: 'con',
-  'Quick-Wits': 'int',
-  Will: 'wis',
-  Courage: 'cha',
-});
 const CUSTOM_ATTACK_MESSAGE_TEMPLATES = Object.freeze({
   weaponAttackFlavor: 'systems/horizonless/module/messages/item/weapon-attack-flavor.hbs',
   spellDamageRollButton: 'systems/horizonless/module/messages/spells/spell-damage-roll-button.hbs',
+  npcSavePrompt: 'systems/horizonless/module/messages/spells/npc-save-prompt.hbs',
   spellSaveResults: 'systems/horizonless/module/messages/spells/spell-save-results.hbs',
 });
-
-function bindEventListeners(root, eventName, selector, listener) {
-  for (const element of root.querySelectorAll(selector)) {
-    element.addEventListener(eventName, listener);
-  }
-}
-
-function getGuardArmorBonus(guardMode, tierBonus) {
-  switch (guardMode) {
-    case GuardMode.HALF_GUARD:
-      return Math.floor(tierBonus / 2);
-    case GuardMode.FULL_GUARD:
-      return tierBonus;
-    case GuardMode.NO_GUARD:
-    default:
-      return 0;
-  }
-}
 
 function getGuardDisplayData(guardMode) {
   const normalizedGuardMode = GUARD_SEQUENCE.includes(guardMode) ? guardMode : GuardMode.NO_GUARD;
@@ -175,7 +150,7 @@ function normalizeCustomAttackKind(kind) {
 
 function normalizeCustomAttackSaveType(saveType) {
   const normalized = String(saveType ?? '').trim().toLowerCase();
-  const matchedType = CUSTOM_ATTACK_SAVE_TYPES.find(
+  const matchedType = SaveTypes.find(
     (option) => option.toLowerCase() === normalized
   );
   return matchedType ?? '';
@@ -208,27 +183,6 @@ function isCantripSpell(item) {
   const levelLabel = String(item?.system?.levelLabel ?? '').trim().toLowerCase();
   if (levelLabel === 'cantrip') return true;
   return Number(item?.system?.spellLevel ?? 0) === 0 && levelLabel.length === 0;
-}
-
-function getTabGroup(element) {
-  return String(
-    element?.dataset?.group
-    ?? element?.closest?.('[data-group]')?.dataset?.group
-    ?? ''
-  ).trim();
-}
-
-function syncTabGroup(root, group, activeTab) {
-  if (!group || !activeTab) return;
-
-  for (const navItem of root.querySelectorAll('.sheet-tabs [data-tab]')) {
-    if (getTabGroup(navItem) !== group) continue;
-    navItem.classList.toggle('active', navItem.dataset.tab === activeTab);
-  }
-
-  for (const panel of root.querySelectorAll(`.sheet-body [data-group="${group}"][data-tab]`)) {
-    panel.classList.toggle('active', panel.dataset.tab === activeTab);
-  }
 }
 
 export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
@@ -304,12 +258,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
   }
 
   _syncTabState(root, group = 'primary') {
-    const tabConfig = this.constructor.TABS?.[group];
-    const activeTab = this.tabGroups[group] ?? tabConfig?.initial ?? tabConfig?.tabs?.[0]?.id ?? '';
-    if (!activeTab) return;
-
-    this.tabGroups[group] = activeTab;
-    syncTabGroup(root, group, activeTab);
+    syncSheetTabState(this, root, group);
   }
 
   async _prepareContext(options) {
@@ -319,7 +268,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     context.actor = this.actor;
     context.config = CONFIG.HORIZONLESS_RPG;
     context.cssClass = this.options.classes.join(' ');
-    context.customAttackSaveTypes = CUSTOM_ATTACK_SAVE_TYPES;
+    context.customAttackSaveTypes = SaveTypes;
     context.damageTypeGroups = getDamageTypeSelectGroups();
     context.flags = actorData.flags;
     context.items = this.actor.items.contents.map((item) => item.toObject());
@@ -367,7 +316,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
 
     this._syncTabState(root);
     bindEventListeners(root, 'click', '.sheet-tabs [data-tab]', (event) => {
-      const group = getTabGroup(event.currentTarget) || 'primary';
+      const group = getEventTabGroup(event);
       const tabId = String(event.currentTarget.dataset.tab ?? '').trim();
       if (!tabId) return;
 
@@ -563,8 +512,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
   }
 
   async _submitPendingChanges() {
-    if (!(this.form instanceof HTMLFormElement) || !this.isEditable) return;
-    await this.submit();
+    await submitPendingSheetChanges(this);
   }
 
   async _preClose(options) {
@@ -906,7 +854,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       hasSpellDc,
       spellDc: hasSpellDc ? normalizedDc : null,
       resultLabel: hasSpellDc
-        ? (savedAgainstSpell ? 'Spell saved against' : 'Spell succeeded!')
+        ? (savedAgainstSpell ? 'Spell failed!' : 'Spell successful.')
         : '',
       savedAgainstSpell,
     };
@@ -956,7 +904,6 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       dischargeDamageButtonHtml: '',
     });
 
-    HorizonlessSpellItem.registerHooks();
     await roll.toMessage({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
       rollMode: game.settings.get('core', 'rollMode'),
@@ -974,7 +921,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
   async _rollNpcCustomSave(entry) {
     const saveName = String(entry?.name ?? '').trim() || 'Custom Saving Throw';
     const saveType = normalizeCustomAttackSaveType(entry?.saveType);
-    const abilityKey = CUSTOM_ATTACK_SAVE_ABILITY_MAP[saveType] ?? null;
+    const abilityKey = SaveAbilityMap[saveType] ?? null;
     if (!abilityKey) {
       ui.notifications?.warn(`Select a valid save type for ${saveName}.`);
       return null;
@@ -986,49 +933,65 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       return null;
     }
 
-    const selectedTokens = getTargetedTokens();
-    if (selectedTokens.length === 0) {
-      ui.notifications?.warn(`Target at least one token to roll ${saveType} saves.`);
+    const damageFormula = String(entry?.damage ?? '').trim();
+    if (!damageFormula) {
+      ui.notifications?.warn(`Enter damage for ${saveName}.`);
       return null;
     }
 
-    const results = [];
-    for (const token of selectedTokens) {
-      const result = await this._rollCustomSavingThrowForToken(token, { abilityKey, dc });
-      if (result) results.push(result);
+    const damageType = String(entry?.damageType ?? '').trim();
+    if (!damageType) {
+      ui.notifications?.warn(`Select a damage type for ${saveName}.`);
+      return null;
     }
-    if (results.length === 0) return null;
+    const damageTypeLabel = String(
+      CONFIG.HORIZONLESS_RPG.damageTypes?.[damageType]?.label ?? damageType
+    ).trim();
 
-    const targetTokenUuids = selectedTokens.map((token) => token?.document?.uuid ?? '');
-    const defaultHalfDamage = results.length > 0
-      && results.every((result) => Boolean(result?.savedAgainstSpell));
-    const damageButtonHtml = await this._renderCustomAttackDamageButton(entry, targetTokenUuids, {
-      halfDamage: defaultHalfDamage,
-    });
-    const content = await renderTemplate(CUSTOM_ATTACK_MESSAGE_TEMPLATES.spellSaveResults, {
+    let damageRoll;
+    try {
+      damageRoll = new Roll(damageFormula, this.actor.getRollData());
+      await damageRoll.evaluate();
+    } catch (_error) {
+      ui.notifications?.warn(`Enter valid damage for ${saveName}.`);
+      return null;
+    }
+
+    const damageTotal = Math.max(0, Math.floor(Number(damageRoll.total ?? 0)));
+    const content = await renderTemplate(CUSTOM_ATTACK_MESSAGE_TEMPLATES.npcSavePrompt, {
+      saveName,
       saveLabel: saveType,
-      hasSpellDc: true,
       spellDc: dc,
-      results,
-      hasDamageButton: Boolean(damageButtonHtml),
-      damageButtonHtml,
+      damageFormula,
+      damageType: damageTypeLabel || damageType,
+      damageRollHtml: await damageRoll.render(),
+      abilityKey,
     });
 
-    HorizonlessSpellItem.registerHooks();
     await ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      rollMode: game.settings.get('core', 'rollMode'),
-      flavor: `[npc save] ${saveName} Saving Throws`,
+      rollMode: 'publicroll',
+      flavor: `[npc save] ${saveName}`,
       content,
       flags: {
         horizonless: {
           spellChat: true,
-          spellSaveResults: true,
+          npcSavePrompt: {
+            saveName,
+            saveLabel: saveType,
+            abilityKey,
+            dc,
+            damageFormula,
+            damageTotal,
+            damageType,
+            injuring: false,
+          },
+          spellDamageApplications: {},
         },
       },
     });
 
-    return results;
+    return damageRoll;
   }
 
   async _onCustomAttackRoll(event) {

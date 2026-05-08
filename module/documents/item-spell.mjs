@@ -359,7 +359,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     const applySpellWrapperClass = (message, html) => {
       if (!this._isSpellChatMessage(message)) return;
       this._markSpellChatWrapper(html);
-      this._bindSavingThrowButtons(html);
+      this._bindSavingThrowButtons(html, message);
       this._bindAttackButtons(html);
       this._bindDamageRollButtons(html);
       this._bindApplyDamageButtons(html, message);
@@ -475,11 +475,11 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     }
   }
 
-  static _bindSavingThrowButtons(html) {
+  static _bindSavingThrowButtons(html, message) {
     for (const button of this._getSaveButtonElements(html)) {
       if (button.dataset.saveButtonBound === 'true') continue;
       button.dataset.saveButtonBound = 'true';
-      button.addEventListener('click', (event) => this._onSavingThrowButtonClick(event));
+      button.addEventListener('click', (event) => this._onSavingThrowButtonClick(event, message));
     }
   }
 
@@ -512,11 +512,25 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     }
   }
 
-  static async _onSavingThrowButtonClick(event) {
+  static _getChatMessageFromButton(button, message = null) {
+    if (message) return message;
+
+    const messageElement = button?.closest?.('[data-message-id]');
+    const messageId = String(messageElement?.dataset?.messageId ?? '').trim();
+    return messageId ? game.messages?.get?.(messageId) ?? null : null;
+  }
+
+  static async _onSavingThrowButtonClick(event, message = null) {
     event.preventDefault();
     event.stopPropagation();
 
     const button = event.currentTarget;
+    const currentMessage = this._getChatMessageFromButton(button, message);
+    const isNpcSavePrompt = String(button?.dataset?.npcSavePrompt ?? '').trim() === 'true';
+    if (isNpcSavePrompt) {
+      return this._onNpcSavingThrowButtonClick(event, currentMessage);
+    }
+
     const abilityKey = String(button?.dataset?.saveAbilityKey ?? '').trim();
     const saveLabel = String(button?.dataset?.saveLabel ?? '').trim();
     const itemUuid = String(button?.dataset?.itemUuid ?? '').trim();
@@ -583,6 +597,90 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
         horizonless: {
           spellChat: true,
           spellSaveResults: true,
+        },
+      },
+    });
+  }
+
+  static async _onNpcSavingThrowButtonClick(event, message = null) {
+    const button = event.currentTarget;
+    const abilityKey = String(button?.dataset?.saveAbilityKey ?? '').trim();
+    const saveLabel = String(button?.dataset?.saveLabel ?? '').trim();
+    const npcSaveData = message?.getFlag?.('horizonless', 'npcSavePrompt') ?? null;
+
+    const spellDc = Number(npcSaveData?.dc);
+    const rawDamageTotal = Number(npcSaveData?.damageTotal ?? 0);
+    const damageTotal = Math.max(0, Math.floor(rawDamageTotal));
+    const selectedDamageType = String(npcSaveData?.damageType ?? '').trim();
+    if (!abilityKey || !saveLabel || !Number.isFinite(spellDc) || !Number.isFinite(rawDamageTotal)) return;
+
+    const selectedTokens = getControlledTokens();
+    if (selectedTokens.length === 0) {
+      ui.notifications?.warn(`Select at least one token to roll ${saveLabel} saves.`);
+      return;
+    }
+
+    const resultEntries = [];
+    for (const token of selectedTokens) {
+      const result = await this._rollSavingThrowForToken(token, {
+        abilityKey,
+        spellDc,
+      });
+      if (!result) continue;
+
+      result.resultLabel = result.savedAgainstSpell
+        ? 'Spell failed!'
+        : 'Spell successful.';
+      resultEntries.push({ token, result });
+    }
+
+    if (resultEntries.length === 0) return;
+
+    const applyDamageButtonHtml = (
+      await Promise.all(
+        resultEntries.map(async ({ token, result }) => {
+          const tokenUuid = String(token?.document?.uuid ?? '').trim();
+          if (!tokenUuid) return '';
+
+          return this._renderSpellApplyDamageButton({
+            applicationKey: this._getSpellDamageApplicationKey(tokenUuid),
+            targetTokenUuids: JSON.stringify([tokenUuid]),
+            damageTotal,
+            selectedDamageType,
+            injuring: Boolean(npcSaveData?.injuring),
+            showHalfDamage: true,
+            halfDamage: Boolean(result?.savedAgainstSpell),
+            buttonLabel: resultEntries.length > 1
+              ? `Apply Damage (${String(result?.tokenName ?? token.name ?? 'Target').trim() || 'Target'})`
+              : 'Apply Damage',
+          });
+        })
+      )
+    ).join('');
+    const content = await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellSaveResults, {
+      saveLabel,
+      hasSpellDc: true,
+      spellDc,
+      results: resultEntries.map((entry) => entry.result),
+      hasDamageButton: Boolean(applyDamageButtonHtml),
+      damageButtonHtml: applyDamageButtonHtml,
+    });
+
+    const speakerToken = selectedTokens.length === 1 ? selectedTokens[0]?.document ?? null : null;
+    const speakerActor = speakerToken?.actor ?? selectedTokens[0]?.actor ?? null;
+    await ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({
+        actor: speakerActor ?? undefined,
+        token: speakerToken ?? undefined,
+      }),
+      rollMode: 'publicroll',
+      flavor: `[npc save] ${String(npcSaveData?.saveName ?? saveLabel).trim() || saveLabel} Saving Throws`,
+      content,
+      flags: {
+        horizonless: {
+          spellChat: true,
+          spellSaveResults: true,
+          spellDamageApplications: {},
         },
       },
     });
@@ -708,7 +806,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
       hasSpellDc,
       spellDc: hasSpellDc ? normalizedSpellDc : null,
       resultLabel: hasSpellDc
-        ? (savedAgainstSpell ? 'Spell saved against' : 'Spell succeeded!')
+        ? (savedAgainstSpell ? 'Spell failed!' : 'Spell successful.')
         : '',
       savedAgainstSpell,
     };

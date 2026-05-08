@@ -1,19 +1,16 @@
 import HorizonlessActorBase from "./base-actor.mjs";
-import { DamageTypes, NPCType, NPCTypes } from "./enums.mjs";
+import { DamageTypes, NPCType, NPCTypes, SaveTypes } from "./enums.mjs";
+
+const NPC_TIER_BONUS_OFFSETS = Object.freeze({
+  [NPCType.MINION]: 0,
+  [NPCType.THREAT]: 1,
+  [NPCType.BOSS]: 2
+});
 
 const NPC_CUSTOM_ATTACK_KIND = Object.freeze({
   ATTACK: "attack",
   SAVE: "save"
 });
-
-const NPC_CUSTOM_SAVE_TYPES = Object.freeze([
-  "Poise",
-  "Reflex",
-  "Fortitude",
-  "Quick-Wits",
-  "Will",
-  "Courage"
-]);
 
 function createNpcCustomAttackSchema(fields) {
   return new fields.SchemaField({
@@ -28,7 +25,7 @@ function createNpcCustomAttackSchema(fields) {
     saveType: new fields.StringField({
       required: true,
       blank: true,
-      choices: ["", ...NPC_CUSTOM_SAVE_TYPES],
+      choices: ["", ...SaveTypes],
       initial: ""
     }),
     dc: new fields.StringField({ required: true, blank: true, initial: "" }),
@@ -56,6 +53,13 @@ export default class HorizonlessNPC extends HorizonlessActorBase {
       choices: NPCTypes
     });
 
+    schema.tier = new fields.NumberField({
+      ...requiredInteger,
+      initial: 1,
+      min: 1,
+      max: 4
+    });
+
     schema.customAttacks = new fields.ArrayField(createNpcCustomAttackSchema(fields), {
       initial: []
     });
@@ -65,6 +69,10 @@ export default class HorizonlessNPC extends HorizonlessActorBase {
 
   prepareBaseData() {
     super.prepareBaseData();
+
+    const tier = Math.min(4, Math.max(1, Math.floor(Number(this.tier ?? 1))));
+    const typeOffset = NPC_TIER_BONUS_OFFSETS[this.type] ?? NPC_TIER_BONUS_OFFSETS[NPCType.MINION];
+    this.tierBonus = 2 * (tier + typeOffset);
 
     if (this.resolve?.max !== undefined) {
       this.resolve.max = 3;

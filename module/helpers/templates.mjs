@@ -54,6 +54,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/horizonless/module/messages/spells/spell-roll-flavor.hbs',
     'systems/horizonless/module/messages/spells/heightening-note.hbs',
     'systems/horizonless/module/messages/spells/heightening-dialog.hbs',
+    'systems/horizonless/module/messages/spells/npc-save-prompt.hbs',
     'systems/horizonless/module/messages/spells/spell-save-results.hbs',
     'systems/horizonless/module/messages/spells/spell-damage-roll-button.hbs',
     'systems/horizonless/module/messages/spells/spell-damage-flavor.hbs',

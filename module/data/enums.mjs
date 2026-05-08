@@ -36,6 +36,18 @@ export const GuardMode = Object.freeze({
   FULL_GUARD: "fullGuard"
 });
 
+export function getGuardArmorBonus(guardMode, tierBonus) {
+  switch (guardMode) {
+    case GuardMode.HALF_GUARD:
+      return Math.floor(tierBonus / 2);
+    case GuardMode.FULL_GUARD:
+      return tierBonus;
+    case GuardMode.NO_GUARD:
+    default:
+      return 0;
+  }
+}
+
 export const SpellList = Object.freeze({
   ARCANE: "arcane",
   DIVINE: "divine",
@@ -84,6 +96,26 @@ export const DamageType = Object.freeze({
 });
 
 export const DamageTypes = Object.freeze(Object.values(DamageType));
+
+export const SaveType = Object.freeze({
+  POISE: "Poise",
+  REFLEX: "Reflex",
+  FORTITUDE: "Fortitude",
+  QUICK_WITS: "Quick-Wits",
+  WILL: "Will",
+  COURAGE: "Courage"
+});
+
+export const SaveTypes = Object.freeze(Object.values(SaveType));
+
+export const SaveAbilityMap = Object.freeze({
+  [SaveType.POISE]: "str",
+  [SaveType.REFLEX]: "dex",
+  [SaveType.FORTITUDE]: "con",
+  [SaveType.QUICK_WITS]: "int",
+  [SaveType.WILL]: "wis",
+  [SaveType.COURAGE]: "cha"
+});
 
 export const TradeSpecialization = Object.freeze({
   NONE: "",

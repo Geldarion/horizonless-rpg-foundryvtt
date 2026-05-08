@@ -22,6 +22,7 @@ const ACTOR_INTEGER_SYSTEM_PATHS = Object.freeze([
   'resolve.value',
   'resolve.max',
   'armorClass',
+  'tier',
   'tierBonus',
   'spellPoints.value',
   'spellPoints.max',
@@ -45,6 +46,8 @@ function getIntegerFallbackForPath(path) {
       return 4;
     case 'armorClass':
       return 10;
+    case 'tier':
+      return 1;
     case 'tierBonus':
       return 2;
     case 'spellPoints.value':
@@ -208,33 +211,6 @@ export class HorizonlessActor extends Actor {
       speaker: ChatMessage.getSpeaker({ actor: this }),
       content,
     });
-  }
-
-  /** @override */
-  prepareData() {
-    // Prepare data for the actor. Calling the super version of this executes
-    // the following, in order: data reset (to clear active effects),
-    // prepareBaseData(), prepareEmbeddedDocuments() (including active effects),
-    // prepareDerivedData().
-    super.prepareData();
-  }
-
-  /** @override */
-  prepareBaseData() {
-    // Data modifications in this step occur before processing embedded
-    // documents or derived data.
-  }
-
-  /**
-   * @override
-   * Augment the actor source data with additional dynamic data that isn't 
-   * handled by the actor's DataModel. Data calculated in this step should be
-   * available both inside and outside of character sheets (such as if an actor
-   * is queried and has a roll executed directly from it).
-   */
-  prepareDerivedData() {
-    const actorData = this;
-    const flags = actorData.flags.horizonless || {};
   }
 
   /**

@@ -189,6 +189,14 @@
               {{/each}}
             </select>
           </div>
+          <div class="resource flex-group-center">
+            <label for="system.tier" class="resource-label">Tier</label>
+            <select name="system.tier" data-dtype="Number">
+              {{#each @root.config.npcTiers as |tier|}}
+              <option value="{{tier}}" {{#if (eq tier ../system.tier)}}selected{{/if}}>{{tier}}</option>
+              {{/each}}
+            </select>
+          </div>
         </aside>
 
         <section class="main grid-span-2">
