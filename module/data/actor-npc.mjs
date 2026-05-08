@@ -22,6 +22,14 @@ function createNpcCustomAttackSchema(fields) {
     }),
     name: new fields.StringField({ required: true, blank: true, initial: "" }),
     toHitBonus: new fields.StringField({ required: true, blank: true, initial: "" }),
+    advantageModifier: new fields.NumberField({
+      required: true,
+      nullable: false,
+      integer: true,
+      initial: 0,
+      min: -3,
+      max: 3
+    }),
     saveType: new fields.StringField({
       required: true,
       blank: true,

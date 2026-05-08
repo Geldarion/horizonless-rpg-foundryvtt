@@ -710,7 +710,9 @@
 }
 
 .horizonless .custom-attack-row-actions {
+  grid-template-columns: auto auto;
   justify-content: start;
+  align-items: center;
 }
 
 .horizonless .custom-attack-field {
@@ -735,6 +737,26 @@
 .horizonless .custom-attack-roll {
   width: fit-content;
   min-width: 140px;
+}
+
+.horizonless .custom-attack-advantage-control {
+  display: inline-grid;
+  grid-template-columns: 28px 44px 28px;
+  gap: 4px;
+  align-items: center;
+}
+
+.horizonless .custom-attack-advantage-adjust {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  line-height: 1;
+}
+
+.horizonless .custom-attack-advantage-control .custom-attack-advantage-display {
+  width: 44px;
+  height: 28px;
+  text-align: center;
 }
 
 .horizonless .custom-attack-empty {

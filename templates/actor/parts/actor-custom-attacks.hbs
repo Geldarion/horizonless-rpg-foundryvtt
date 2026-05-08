@@ -30,6 +30,7 @@
               />
             </div>
             <input type="hidden" name="system.customAttacks.{{index}}.kind" value="{{entry.kind}}" />
+            <input type="hidden" name="system.customAttacks.{{index}}.advantageModifier" value="{{entry.advantageModifier}}" data-dtype="Number" />
             <a class="custom-attack-remove task-control task-delete" data-index="{{index}}" title="Remove Entry">
               <i class="fas fa-minus"></i>
             </a>
@@ -118,6 +119,37 @@
             <button type="button" class="custom-attack-roll" data-index="{{index}}">
               {{#if (eq entry.kind "save")}}Roll Saving Throw{{else}}Roll Attack{{/if}}
             </button>
+            {{#if (eq entry.kind "attack")}}
+              <div class="custom-attack-advantage-control" aria-label="Attack advantage modifier">
+                <button
+                  type="button"
+                  class="custom-attack-advantage-adjust"
+                  data-index="{{index}}"
+                  data-delta="-1"
+                  title="Subtract Advantage"
+                  aria-label="Subtract Advantage"
+                >
+                  -
+                </button>
+                <input
+                  type="text"
+                  class="custom-attack-advantage-display"
+                  value="{{signedNumber entry.advantageModifier}}"
+                  readonly
+                  aria-label="Attack advantage modifier value"
+                />
+                <button
+                  type="button"
+                  class="custom-attack-advantage-adjust"
+                  data-index="{{index}}"
+                  data-delta="1"
+                  title="Add Advantage"
+                  aria-label="Add Advantage"
+                >
+                  +
+                </button>
+              </div>
+            {{/if}}
           </div>
         </div>
       {{/each}}

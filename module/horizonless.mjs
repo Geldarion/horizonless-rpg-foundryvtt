@@ -182,6 +182,12 @@ Handlebars.registerHelper('ordinal', function (value) {
   return formatOrdinal(value);
 });
 
+Handlebars.registerHelper('signedNumber', function (value) {
+  const number = Math.floor(Number(value ?? 0));
+  if (!Number.isFinite(number) || number === 0) return '0';
+  return number > 0 ? `+${number}` : String(number);
+});
+
 /* -------------------------------------------- */
 /*  Ready Hook                                  */
 /* -------------------------------------------- */

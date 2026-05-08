@@ -84,6 +84,8 @@ const CUSTOM_ATTACK_KIND = Object.freeze({
   ATTACK: 'attack',
   SAVE: 'save',
 });
+const CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MIN = -3;
+const CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MAX = 3;
 const CUSTOM_ATTACK_MESSAGE_TEMPLATES = Object.freeze({
   weaponAttackFlavor: 'systems/horizonless/module/messages/item/weapon-attack-flavor.hbs',
   spellDamageRollButton: 'systems/horizonless/module/messages/spells/spell-damage-roll-button.hbs',
@@ -135,6 +137,7 @@ function createEmptyCustomAttack(kind = CUSTOM_ATTACK_KIND.ATTACK) {
     kind: normalizedKind,
     name: '',
     toHitBonus: '',
+    advantageModifier: 0,
     saveType: '',
     dc: '',
     damage: '',
@@ -156,6 +159,31 @@ function normalizeCustomAttackSaveType(saveType) {
   return matchedType ?? '';
 }
 
+function clampCustomAttackAdvantageModifier(value) {
+  const normalized = Math.floor(Number(value ?? 0));
+  if (!Number.isFinite(normalized)) return 0;
+  return Math.min(
+    CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MAX,
+    Math.max(CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MIN, normalized)
+  );
+}
+
+function getCustomAttackAdvantageRollTerm(advantageModifier) {
+  const modifier = clampCustomAttackAdvantageModifier(advantageModifier);
+  if (modifier === 0) return '1d20';
+
+  const degree = Math.abs(modifier);
+  const keepClause = modifier > 0 ? 'kh1' : 'kl1';
+  return `${degree + 1}d20${keepClause}`;
+}
+
+function getCustomAttackAdvantageLabel(advantageModifier) {
+  const modifier = clampCustomAttackAdvantageModifier(advantageModifier);
+  if (modifier === 0) return '';
+  const degree = Math.abs(modifier);
+  return modifier > 0 ? `Advantage ${degree}` : `Disadvantage ${degree}`;
+}
+
 function normalizeCustomAttacks(customAttacks) {
   if (!Array.isArray(customAttacks)) return [];
 
@@ -163,6 +191,7 @@ function normalizeCustomAttacks(customAttacks) {
     kind: normalizeCustomAttackKind(String(entry?.kind ?? '')),
     name: String(entry?.name ?? ''),
     toHitBonus: String(entry?.toHitBonus ?? ''),
+    advantageModifier: clampCustomAttackAdvantageModifier(entry?.advantageModifier),
     saveType: normalizeCustomAttackSaveType(entry?.saveType),
     dc: String(entry?.dc ?? ''),
     damage: String(entry?.damage ?? ''),
@@ -357,6 +386,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     bindEventListeners(root, 'click', '.custom-attack-add', this._onCustomAttackAdd.bind(this));
     bindEventListeners(root, 'click', '.custom-save-add', this._onCustomSaveAdd.bind(this));
     bindEventListeners(root, 'click', '.custom-attack-remove', this._onCustomAttackRemove.bind(this));
+    bindEventListeners(root, 'click', '.custom-attack-advantage-adjust', this._onCustomAttackAdvantageAdjust.bind(this));
     bindEventListeners(root, 'click', '.custom-attack-roll', this._onCustomAttackRoll.bind(this));
 
     bindEventListeners(root, 'click', '.item-delete', async (event) => {
@@ -798,6 +828,36 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     }
   }
 
+  async _onCustomAttackAdvantageAdjust(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (this.actor.type !== 'npc') return;
+    if (this._customAttackMutationInFlight) return;
+    this._customAttackMutationInFlight = true;
+
+    try {
+      const button = event.currentTarget;
+      const attackIndex = Number(button.dataset.index ?? -1);
+      const delta = Math.floor(Number(button.dataset.delta ?? 0));
+      if (!Number.isInteger(attackIndex) || attackIndex < 0) return;
+      if (!Number.isFinite(delta) || delta === 0) return;
+
+      await this._submitPendingChanges();
+
+      const customAttacks = this._getCustomAttackEntries();
+      const entry = customAttacks[attackIndex];
+      if (!entry || entry.kind !== CUSTOM_ATTACK_KIND.ATTACK) return;
+
+      entry.advantageModifier = clampCustomAttackAdvantageModifier(
+        Number(entry.advantageModifier ?? 0) + delta
+      );
+      await this.actor.update({ 'system.customAttacks': customAttacks });
+      this.render(false);
+    } finally {
+      this._customAttackMutationInFlight = false;
+    }
+  }
+
   _getCustomAttackDamageButtonData(entry, targetTokenUuids = [], options = {}) {
     const damageFormula = String(entry?.damage ?? '').trim();
     const actorUuid = String(this.actor?.uuid ?? '').trim();
@@ -869,7 +929,8 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     }
 
     const attackBonus = String(entry?.toHitBonus ?? '').trim();
-    const attackFormula = attackBonus ? `1d20 + (${attackBonus})` : '1d20';
+    const attackRollTerm = getCustomAttackAdvantageRollTerm(entry?.advantageModifier);
+    const attackFormula = attackBonus ? `${attackRollTerm} + (${attackBonus})` : attackRollTerm;
     let roll;
     try {
       roll = new Roll(attackFormula, this.actor.getRollData());
@@ -896,8 +957,12 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       };
     });
     const damageButtonHtml = await this._renderCustomAttackDamageButton(entry, targetTokenUuids);
+    const advantageLabel = getCustomAttackAdvantageLabel(entry?.advantageModifier);
+    const attackLabel = advantageLabel
+      ? `[npc attack] ${attackName} (${advantageLabel})`
+      : `[npc attack] ${attackName}`;
     const flavor = await renderTemplate(CUSTOM_ATTACK_MESSAGE_TEMPLATES.weaponAttackFlavor, {
-      label: `[npc attack] ${attackName}`,
+      label: attackLabel,
       hasTargets: targetResults.length > 0,
       targets: targetResults,
       damageButtonHtml,
