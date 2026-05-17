@@ -1,6 +1,6 @@
 {
   "name": "horizonless",
-  "version": "2.0.3",
+  "version": "2.0.8",
   "description": "CSS compiler for the Horizonless system",
   "scripts": {
     "build": "sass src/scss/horizonless.scss css/horizonless.css --style=expanded --no-source-map",
