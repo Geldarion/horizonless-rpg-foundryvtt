@@ -175,7 +175,7 @@
     background: var(--hz-sheet-surface-soft);
   }
 
-  :is(.custom-resource-card, .custom-attack-card) {
+  :is(.property-row, .custom-resource-card, .custom-attack-card) {
     border-color: var(--hz-sheet-stroke-soft);
     background: var(--hz-sheet-surface-soft);
   }

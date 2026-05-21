@@ -7,6 +7,12 @@ import {
 } from '../combat/horizonless-damage-button.mjs';
 import { prepareEnrichedChatContent } from '../helpers/chat.mjs';
 import { markChatMessageWrapper } from '../helpers/chat-dom.mjs';
+import {
+  getAttackOutcome,
+  getAttackOutcomeChatData,
+  getDamageButtonDataForAttackOutcome,
+  resolveAttackResult,
+} from '../helpers/attacks.mjs';
 import { normalizeCurioChatDescription } from '../helpers/compendium-normalization.mjs';
 import { FightingStyle, ItemType } from '../data/enums.mjs';
 import HorizonlessWeaponData from '../data/item-weapon.mjs';
@@ -50,8 +56,14 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
     return Boolean(message?.getFlag?.('horizonless', 'weaponChat'));
   }
 
-  static _markWeaponChatWrapper(html) {
+  static _markWeaponChatWrapper(html, message = null) {
     markChatMessageWrapper(html, 'horizonless-weapon-chat-message');
+    const attackOutcome = String(message?.getFlag?.('horizonless', 'attackOutcome') ?? '');
+    if (attackOutcome === 'critical') {
+      markChatMessageWrapper(html, 'horizonless-attack-chat-message--critical');
+    } else if (attackOutcome === 'critical-miss') {
+      markChatMessageWrapper(html, 'horizonless-attack-chat-message--critical-miss');
+    }
   }
 
   static async _renderMessageTemplate(templatePath, data = {}) {
@@ -78,7 +90,7 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
 
     Hooks.on('renderChatMessageHTML', async (message, html) => {
       if (!this._isWeaponChatMessage(message)) return;
-      this._markWeaponChatWrapper(html);
+      this._markWeaponChatWrapper(html, message);
 
       const messageHtml =
         typeof html?.querySelectorAll === 'function'
@@ -417,6 +429,9 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
 
     const roll = new Roll(formula, rollData.actor);
     await roll.evaluate();
+    const attackOutcome = this.type === 'weapon'
+      ? getAttackOutcome(roll, this.actor)
+      : null;
 
     let flavor = label;
     if (this.type === 'maneuver') {
@@ -424,14 +439,20 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
     }
     if (this.type === 'weapon') {
       const damageFormula = this._getWeaponDamageFormula();
-      const damageButton = await this._renderItemMessageTemplate(
-        ITEM_MESSAGE_TEMPLATES.weaponDamageRollButton,
+      const damageButtonData = getDamageButtonDataForAttackOutcome(
         {
           actorUuid: this.actor?.uuid ?? '',
           itemUuid: this.uuid ?? '',
           damageFormula,
           itemName: this.name ?? 'Weapon',
-        }
+          buttonLabel: 'Roll Damage',
+        },
+        attackOutcome,
+        rollData.actor
+      );
+      const damageButton = await this._renderItemMessageTemplate(
+        ITEM_MESSAGE_TEMPLATES.weaponDamageRollButton,
+        damageButtonData
       );
       const targets = Array.from(game.user?.targets ?? [])
         .map((token) => ({
@@ -445,13 +466,17 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
         const targetResults = targets.map(({ token, actor }) => {
           const ac = Number(actor.system?.armorClass);
           const hasAc = Number.isFinite(ac);
-          const isHit = hasAc && Number.isFinite(attackTotal) && attackTotal >= ac;
+          const attackResult = resolveAttackResult({
+            attackTotal,
+            hasAc,
+            ac,
+            outcome: attackOutcome,
+          });
           const targetName = token.name || actor.name || 'Target';
-          const resultText = isHit ? 'Hit' : 'Miss';
           return {
             targetName,
-            resultText,
-            resultType: isHit ? 'hit' : 'miss',
+            resultText: attackResult.resultText,
+            resultType: attackResult.resultType,
             hasAc,
             ac,
           };
@@ -461,6 +486,7 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
           ITEM_MESSAGE_TEMPLATES.weaponAttackFlavor,
           {
             label,
+            ...getAttackOutcomeChatData(attackOutcome),
             hasTargets: targetResults.length > 0,
             targets: targetResults,
             damageButtonHtml: damageButton,
@@ -471,6 +497,7 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
           ITEM_MESSAGE_TEMPLATES.weaponAttackFlavor,
           {
             label,
+            ...getAttackOutcomeChatData(attackOutcome),
             hasTargets: false,
             targets: [],
             damageButtonHtml: damageButton,
@@ -492,6 +519,7 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
         ? {
             horizonless: {
               weaponChat: true,
+              attackOutcome: attackOutcome?.type ?? 'normal',
             },
           }
         : {},

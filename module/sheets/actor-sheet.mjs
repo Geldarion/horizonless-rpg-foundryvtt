@@ -25,6 +25,12 @@ import {
   syncSheetTabState,
 } from '../helpers/sheet.mjs';
 import {
+  getAttackOutcome,
+  getAttackOutcomeChatData,
+  getDamageButtonDataForAttackOutcome,
+  resolveAttackResult,
+} from '../helpers/attacks.mjs';
+import {
   AncestryFeatureType,
   GearItemType,
   getGuardArmorBonus,
@@ -86,6 +92,9 @@ const CUSTOM_ATTACK_KIND = Object.freeze({
 });
 const CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MIN = -3;
 const CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MAX = 3;
+const CRITICAL_HIT_THRESHOLD_MIN = 15;
+const CRITICAL_HIT_THRESHOLD_MAX = 20;
+const CRITICAL_HIT_THRESHOLD_FALLBACK = 20;
 const CUSTOM_ATTACK_MESSAGE_TEMPLATES = Object.freeze({
   weaponAttackFlavor: 'systems/horizonless/module/messages/item/weapon-attack-flavor.hbs',
   spellDamageRollButton: 'systems/horizonless/module/messages/spells/spell-damage-roll-button.hbs',
@@ -182,6 +191,25 @@ function getCustomAttackAdvantageLabel(advantageModifier) {
   if (modifier === 0) return '';
   const degree = Math.abs(modifier);
   return modifier > 0 ? `Advantage ${degree}` : `Disadvantage ${degree}`;
+}
+
+function clampCriticalHitThreshold(value) {
+  if (value === '') return CRITICAL_HIT_THRESHOLD_FALLBACK;
+
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return CRITICAL_HIT_THRESHOLD_FALLBACK;
+
+  return Math.min(
+    CRITICAL_HIT_THRESHOLD_MAX,
+    Math.max(CRITICAL_HIT_THRESHOLD_MIN, Math.trunc(numeric))
+  );
+}
+
+function clampCriticalHitThresholdInput(input) {
+  if (!(input instanceof HTMLInputElement)) return;
+
+  const clamped = String(clampCriticalHitThreshold(input.value));
+  if (input.value !== clamped) input.value = clamped;
 }
 
 function normalizeCustomAttacks(customAttacks) {
@@ -388,6 +416,11 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     bindEventListeners(root, 'click', '.custom-attack-remove', this._onCustomAttackRemove.bind(this));
     bindEventListeners(root, 'click', '.custom-attack-advantage-adjust', this._onCustomAttackAdvantageAdjust.bind(this));
     bindEventListeners(root, 'click', '.custom-attack-roll', this._onCustomAttackRoll.bind(this));
+
+    for (const input of root.querySelectorAll('input[name="system.criticalHitThreshold"]')) {
+      input.addEventListener('change', () => clampCriticalHitThresholdInput(input), { capture: true });
+      input.addEventListener('blur', () => clampCriticalHitThresholdInput(input));
+    }
 
     bindEventListeners(root, 'click', '.item-delete', async (event) => {
       event.preventDefault();
@@ -883,7 +916,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     const actorUuid = String(this.actor?.uuid ?? '').trim();
     if (!actorUuid || !damageFormula) return null;
 
-    return {
+    const data = {
       actorUuid,
       itemUuid: '',
       damageFormula,
@@ -900,6 +933,12 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
           .filter((uuid) => uuid.length > 0)
       ),
     };
+
+    return getDamageButtonDataForAttackOutcome(
+      data,
+      options?.attackOutcome ?? null,
+      this.actor.getRollData()
+    );
   }
 
   async _renderCustomAttackDamageButton(entry, targetTokenUuids = [], options = {}) {
@@ -961,28 +1000,37 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     }
 
     const attackTotal = Number(roll.total ?? 0);
+    const attackOutcome = getAttackOutcome(roll, this.actor);
     const targetTokenUuids = selectedTokens.map((token) => token?.document?.uuid ?? '');
     const targetResults = selectedTokens.map((token) => {
       const targetActor = token.actor;
       const ac = Number(targetActor?.system?.armorClass);
       const hasAc = Number.isFinite(ac);
-      const isHit = hasAc && Number.isFinite(attackTotal) && attackTotal >= ac;
+      const attackResult = resolveAttackResult({
+        attackTotal,
+        hasAc,
+        ac,
+        outcome: attackOutcome,
+      });
 
       return {
         targetName: String(token.name ?? targetActor?.name ?? 'Target').trim() || 'Target',
-        resultText: isHit ? 'Hit' : 'Miss',
-        resultType: isHit ? 'hit' : 'miss',
+        resultText: attackResult.resultText,
+        resultType: attackResult.resultType,
         hasAc,
         ac,
       };
     });
-    const damageButtonHtml = await this._renderCustomAttackDamageButton(entry, targetTokenUuids);
+    const damageButtonHtml = await this._renderCustomAttackDamageButton(entry, targetTokenUuids, {
+      attackOutcome,
+    });
     const advantageLabel = getCustomAttackAdvantageLabel(entry?.advantageModifier);
     const attackLabel = advantageLabel
       ? `[npc attack] ${attackName} (${advantageLabel})`
       : `[npc attack] ${attackName}`;
     const flavor = await renderTemplate(CUSTOM_ATTACK_MESSAGE_TEMPLATES.weaponAttackFlavor, {
       label: attackLabel,
+      ...getAttackOutcomeChatData(attackOutcome),
       hasTargets: targetResults.length > 0,
       targets: targetResults,
       damageButtonHtml,
@@ -996,6 +1044,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       flags: {
         horizonless: {
           spellChat: true,
+          attackOutcome: attackOutcome.type,
         },
       },
     });

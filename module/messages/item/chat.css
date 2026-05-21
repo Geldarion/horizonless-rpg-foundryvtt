@@ -60,9 +60,45 @@
   background: color-mix(in srgb, var(--hz-item-chat-surface) 82%, var(--hz-item-chat-primary) 18%);
 }
 
+.chat-message.horizonless-chat-message.horizonless-attack-chat-message--critical {
+  border-color: #7f1d2d !important;
+  background: color-mix(in srgb, var(--hz-color-surface) 84%, #7f1d2d 16%) !important;
+  background-color: color-mix(in srgb, var(--hz-color-surface) 84%, #7f1d2d 16%) !important;
+}
+
+.chat-message.horizonless-chat-message.horizonless-attack-chat-message--critical-miss {
+  border-color: #102a56 !important;
+  background: color-mix(in srgb, var(--hz-color-surface) 84%, #102a56 16%) !important;
+  background-color: color-mix(in srgb, var(--hz-color-surface) 84%, #102a56 16%) !important;
+}
+
+.horizonless-attack-card--critical {
+  --hz-attack-outcome-accent: #7f1d2d;
+  --hz-attack-outcome-surface: color-mix(in srgb, var(--hz-item-chat-surface) 82%, #7f1d2d 18%);
+  border-color: var(--hz-attack-outcome-accent);
+  background: var(--hz-attack-outcome-surface);
+}
+
+.horizonless-attack-card--critical-miss {
+  --hz-attack-outcome-accent: #102a56;
+  --hz-attack-outcome-surface: color-mix(in srgb, var(--hz-item-chat-surface) 82%, #102a56 18%);
+  border-color: var(--hz-attack-outcome-accent);
+  background: var(--hz-attack-outcome-surface);
+}
+
 .horizonless-chat-card-title {
   font-weight: 700;
   color: var(--hz-item-chat-accent);
+}
+
+.horizonless-attack-card--critical .horizonless-chat-card-title,
+.horizonless-attack-card--critical .horizonless-attack-result--critical {
+  color: #7f1d2d;
+}
+
+.horizonless-attack-card--critical-miss .horizonless-chat-card-title,
+.horizonless-attack-card--critical-miss .horizonless-attack-result--critical-miss {
+  color: #102a56;
 }
 
 .horizonless-chat-card-body,
@@ -165,6 +201,37 @@
   gap: 0.1rem;
 }
 
+.horizonless-attack-outcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.45rem;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid var(--hz-attack-outcome-accent, var(--hz-item-chat-accent));
+  background: color-mix(
+    in srgb,
+    var(--hz-attack-outcome-accent, var(--hz-item-chat-accent)) 14%,
+    white
+  );
+  color: var(--hz-attack-outcome-accent, var(--hz-item-chat-accent));
+  line-height: 1.2;
+}
+
+.horizonless-attack-outcome-label {
+  min-width: 0;
+  font-weight: 700;
+}
+
+.horizonless-attack-outcome-detail {
+  flex: 0 1 auto;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: right;
+  color: var(--hz-item-chat-text);
+}
+
 .horizonless-attack-result {
   font-weight: 700;
 }
@@ -175,6 +242,14 @@
 
 .horizonless-attack-result--miss {
   color: var(--hz-item-chat-stroke);
+}
+
+.horizonless-attack-result--critical {
+  color: #7f1d2d;
+}
+
+.horizonless-attack-result--critical-miss {
+  color: #102a56;
 }
 
 .horizonless-maneuver-flavor {

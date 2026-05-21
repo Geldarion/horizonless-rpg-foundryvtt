@@ -1,5 +1,11 @@
-<div class="horizonless-chat-card horizonless-item-chat">
+<div class="horizonless-chat-card horizonless-item-chat horizonless-attack-card{{#if hasAttackOutcome}} horizonless-attack-card--{{attackOutcomeType}}{{/if}}">
   <div class="horizonless-chat-card-title">{{label}}</div>
+  {{#if hasAttackOutcome}}
+  <div class="horizonless-attack-outcome horizonless-attack-outcome--{{attackOutcomeType}}">
+    <span class="horizonless-attack-outcome-label">{{attackOutcomeLabel}}</span>
+    <span class="horizonless-attack-outcome-detail">{{attackOutcomeDetail}}</span>
+  </div>
+  {{/if}}
   {{#if hasTargets}}
   <div class="horizonless-chat-card-body">
     <div class="horizonless-attack-results">

@@ -22,6 +22,7 @@ const ACTOR_INTEGER_SYSTEM_PATHS = Object.freeze([
   'resolve.value',
   'resolve.max',
   'armorClass',
+  'criticalHitThreshold',
   'tier',
   'tierBonus',
   'spellPoints.value',
@@ -46,6 +47,8 @@ function getIntegerFallbackForPath(path) {
       return 4;
     case 'armorClass':
       return 10;
+    case 'criticalHitThreshold':
+      return 20;
     case 'tier':
       return 1;
     case 'tierBonus':
@@ -57,16 +60,28 @@ function getIntegerFallbackForPath(path) {
   }
 }
 
-function sanitizeActorSystemIntegers(source = {}) {
+function clampActorSystemInteger(path, value, fallback) {
+  if (path === 'criticalHitThreshold' && value === '') return fallback;
+  const integer = coerceInteger(value, fallback);
+  if (path === 'criticalHitThreshold') return Math.min(20, Math.max(15, integer));
+  return integer;
+}
+
+function sanitizeActorSystemIntegers(source = {}, { applyInitials = false } = {}) {
   const systemData = source.system;
   if (!systemData || typeof systemData !== 'object') return source;
 
   for (const path of ACTOR_INTEGER_SYSTEM_PATHS) {
     const fullPath = `system.${path}`;
     const current = foundry.utils.getProperty(source, fullPath);
-    if (current === undefined) continue;
     const fallback = getIntegerFallbackForPath(path);
-    foundry.utils.setProperty(source, fullPath, coerceInteger(current, fallback));
+    if (current === undefined) {
+      if (applyInitials && path === 'criticalHitThreshold') {
+        foundry.utils.setProperty(source, fullPath, fallback);
+      }
+      continue;
+    }
+    foundry.utils.setProperty(source, fullPath, clampActorSystemInteger(path, current, fallback));
   }
 
   return source;
@@ -76,11 +91,13 @@ export class HorizonlessActor extends Actor {
   /** @override */
   static migrateData(source) {
     const migrated = super.migrateData(source);
-    return sanitizeActorSystemIntegers(migrated);
+    return sanitizeActorSystemIntegers(migrated, { applyInitials: true });
   }
 
   /** @override */
   async _preUpdate(changed, options, user) {
+    sanitizeActorSystemIntegers(changed);
+
     const currentHitpoints = Number(this.system?.hitpoints?.value ?? 0);
     const changedHitpoints = foundry.utils.getProperty(changed, 'system.hitpoints.value');
     const nextHitpoints = changedHitpoints === undefined

@@ -16,6 +16,7 @@ export const preloadHandlebarsTemplates = async function () {
     'systems/horizonless/templates/actor/actor-npc-sheet.hbs',
     // Actor partials.
     'systems/horizonless/templates/actor/parts/actor-features.hbs',
+    'systems/horizonless/templates/actor/parts/actor-properties.hbs',
     'systems/horizonless/templates/actor/parts/actor-custom-resources.hbs',
     'systems/horizonless/templates/actor/parts/actor-custom-attacks.hbs',
     'systems/horizonless/templates/actor/parts/actor-class-feature.hbs',

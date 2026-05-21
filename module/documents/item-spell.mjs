@@ -12,6 +12,12 @@ import {
   parseStringArray,
 } from '../combat/horizonless-damage-button.mjs';
 import { markChatMessageWrapper } from '../helpers/chat-dom.mjs';
+import {
+  getAttackOutcome,
+  getAttackOutcomeChatData,
+  getDamageButtonDataForAttackOutcome,
+  resolveAttackResult,
+} from '../helpers/attacks.mjs';
 import { normalizeSpellDamageFormula } from '../helpers/compendium-normalization.mjs';
 
 const { DialogV2 } = foundry.applications.api;
@@ -348,8 +354,14 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     return Boolean(message?.getFlag?.('horizonless', 'spellChat'));
   }
 
-  static _markSpellChatWrapper(html) {
+  static _markSpellChatWrapper(html, message = null) {
     markChatMessageWrapper(html, 'horizonless-spell-chat-message');
+    const attackOutcome = String(message?.getFlag?.('horizonless', 'attackOutcome') ?? '');
+    if (attackOutcome === 'critical') {
+      markChatMessageWrapper(html, 'horizonless-attack-chat-message--critical');
+    } else if (attackOutcome === 'critical-miss') {
+      markChatMessageWrapper(html, 'horizonless-attack-chat-message--critical-miss');
+    }
     this._moveItemChatAfterDiceResult(html);
   }
 
@@ -358,7 +370,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
 
     const applySpellWrapperClass = (message, html) => {
       if (!this._isSpellChatMessage(message)) return;
-      this._markSpellChatWrapper(html);
+      this._markSpellChatWrapper(html, message);
       this._bindSavingThrowButtons(html, message);
       this._bindAttackButtons(html);
       this._bindDamageRollButtons(html);
@@ -726,18 +738,24 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     );
     await roll.evaluate();
 
+    const attackOutcome = getAttackOutcome(roll, actor);
     const attackTotal = Number(roll.total ?? 0);
     const targetResults = selectedTokens.map((token) => {
       const targetActor = token.actor;
       const ac = Number(targetActor?.system?.armorClass);
       const hasAc = Number.isFinite(ac);
-      const isHit = hasAc && Number.isFinite(attackTotal) && attackTotal >= ac;
+      const attackResult = resolveAttackResult({
+        attackTotal,
+        hasAc,
+        ac,
+        outcome: attackOutcome,
+      });
       const targetName = String(token.name ?? targetActor?.name ?? 'Target').trim() || 'Target';
 
       return {
         targetName,
-        resultText: isHit ? 'Hit' : 'Miss',
-        resultType: isHit ? 'hit' : 'miss',
+        resultText: attackResult.resultText,
+        resultType: attackResult.resultType,
         hasAc,
         ac,
       };
@@ -747,18 +765,25 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
       item,
       selectedTokens.map((token) => token?.document?.uuid ?? '')
     );
-    const damageButtonHtml = damageButtonData
-      ? await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellDamageRollButton, damageButtonData)
+    const attackDamageButtonData = damageButtonData
+      ? getDamageButtonDataForAttackOutcome(damageButtonData, attackOutcome, actor.getRollData())
+      : null;
+    const damageButtonHtml = attackDamageButtonData
+      ? await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellDamageRollButton, attackDamageButtonData)
       : '';
     const dischargeDamageButtonData = this._getSpellDischargeDamageButtonData(
       item,
       selectedTokens.map((token) => token?.document?.uuid ?? '')
     );
-    const dischargeDamageButtonHtml = dischargeDamageButtonData
-      ? await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellDamageRollButton, dischargeDamageButtonData)
+    const attackDischargeDamageButtonData = dischargeDamageButtonData
+      ? getDamageButtonDataForAttackOutcome(dischargeDamageButtonData, attackOutcome, actor.getRollData())
+      : null;
+    const dischargeDamageButtonHtml = attackDischargeDamageButtonData
+      ? await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellDamageRollButton, attackDischargeDamageButtonData)
       : '';
     const flavor = await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellAttackFlavor, {
       label: `[spell attack] ${item.name}`,
+      ...getAttackOutcomeChatData(attackOutcome),
       hasTargets: targetResults.length > 0,
       targets: targetResults,
       damageButtonHtml,
@@ -772,6 +797,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
       flags: {
         horizonless: {
           spellChat: true,
+          attackOutcome: attackOutcome.type,
         },
       },
     });

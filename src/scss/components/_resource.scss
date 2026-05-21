@@ -225,6 +225,39 @@
   }
 }
 
+.properties-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  margin-bottom: 12px;
+}
+
+.properties-section h3 {
+  margin: 0;
+}
+
+.properties-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+}
+
+.property-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.property-row :is(input, select) {
+  width: 100%;
+}
+
 .custom-attacks-section {
   display: flex;
   flex-direction: column;

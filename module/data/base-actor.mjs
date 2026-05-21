@@ -31,6 +31,13 @@ export default class HorizonlessActor extends HorizonlessDataModel {
       min: 0
     });
 
+    schema.criticalHitThreshold = new fields.NumberField({
+      ...requiredInteger,
+      initial: 20,
+      min: 15,
+      max: 20
+    });
+
     schema.tierBonus = new fields.NumberField({
       ...requiredInteger,
       initial: 2,
@@ -112,6 +119,7 @@ export default class HorizonlessActor extends HorizonlessDataModel {
 
     data.tierBonus = Number(this.tierBonus ?? 0);
     data.halfTierBonus = Math.floor(data.tierBonus / 2);
+    data.criticalHitThreshold = Number(this.criticalHitThreshold ?? 20);
 
     //data.lvl = this.attributes.level.value;
 

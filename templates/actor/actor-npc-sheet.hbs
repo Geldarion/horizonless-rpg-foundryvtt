@@ -181,25 +181,10 @@
               {{/each}}
             </tbody>
           </table>
-          <div class="resource flex-group-center">
-            <label for="system.type" class="resource-label">Type</label>
-            <select name="system.type">
-              {{#each @root.config.npcTypes as |label key|}}
-              <option value="{{key}}" {{#if (eq key ../system.type)}}selected{{/if}}>{{label}}</option>
-              {{/each}}
-            </select>
-          </div>
-          <div class="resource flex-group-center">
-            <label for="system.tier" class="resource-label">Tier</label>
-            <select name="system.tier" data-dtype="Number">
-              {{#each @root.config.npcTiers as |tier|}}
-              <option value="{{tier}}" {{#if (eq tier ../system.tier)}}selected{{/if}}>{{tier}}</option>
-              {{/each}}
-            </select>
-          </div>
         </aside>
 
         <section class="main grid-span-2">
+          {{> "systems/horizonless/templates/actor/parts/actor-properties.hbs"}}
           {{> "systems/horizonless/templates/actor/parts/actor-custom-attacks.hbs"}}
         </section>
 

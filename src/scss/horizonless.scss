@@ -18,6 +18,18 @@
   --hz-color-stroke-on-background: #6d90c5;
 }
 
+.chat-message.horizonless-chat-message.horizonless-attack-chat-message--critical {
+  background: color-mix(in srgb, var(--hz-color-surface) 84%, #7f1d2d 16%) !important;
+  background-color: color-mix(in srgb, var(--hz-color-surface) 84%, #7f1d2d 16%) !important;
+  border-color: #7f1d2d !important;
+}
+
+.chat-message.horizonless-chat-message.horizonless-attack-chat-message--critical-miss {
+  background: color-mix(in srgb, var(--hz-color-surface) 84%, #102a56 16%) !important;
+  background-color: color-mix(in srgb, var(--hz-color-surface) 84%, #102a56 16%) !important;
+  border-color: #102a56 !important;
+}
+
 // Import utilities.
 @import 'utils/typography';
 @import 'utils/colors';
