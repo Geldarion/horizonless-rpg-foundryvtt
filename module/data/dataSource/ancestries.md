@@ -1,4 +1,4 @@
-# List of Ancestries
+﻿# List of Ancestries
 
 # **Avirin**
 
@@ -94,13 +94,13 @@ You may use this feature a number of times per long rest equal to your CON (mini
 | **7-8** | Lightning | Storm Dragons |
 | **9-10** | Poison | Bog Dragons |
 
-### *Dragon’s Breath*
+### *Dragon's Breath*
 
 ## *Drakonin Primary Feature*
 
 *From your throat you exhale a wave of destructive energy.*
 
-	As an action, you may cause creatures and objects in a 15 foot cone in front of you to make a basic **Reflex** saving throw to resist **Xd6 damage**, where X is your Tier Bonus. The type of damage dealt is your draconic lineage damage type and the saving throw’s DC is equal to 8 \+ your CON \+ your Tier Bonus.
+	As an action, you may cause creatures and objects in a 15 foot cone in front of you to make a basic **Reflex** saving throw to resist **Xd6 damage**, where X is your Tier Bonus. The type of damage dealt is your draconic lineage damage type and the saving throw's DC is equal to 8 \+ your CON \+ your Tier Bonus.
 
 	You may use this feature a number of times per long rest equal to your CON (minimum of once).
 
@@ -112,13 +112,13 @@ You may use this feature a number of times per long rest equal to your CON (mini
 
 	As a reaction at any point, you may grant yourself or a target ally within your Reach DB 5 against your draconic lineage damage type until the start of your next turn. This DB becomes 10/15/20 at character Levels 4/7/10, respectively.
 
-### *Watcher’s Glint*
+### *Watcher's Glint*
 
 ## *Drakonin Tertiary Feature*
 
-*A prized keepsake you couldn’t bear to lose.*
+*A prized keepsake you couldn't bear to lose.*
 
-	Once per long rest, you may designate an object you are holding. Until you designate a new object, you know of the designated object’s location as long as it and you are on the same plane of existence.
+	Once per long rest, you may designate an object you are holding. Until you designate a new object, you know of the designated object's location as long as it and you are on the same plane of existence.
 
 # **Dwarf**
 
@@ -140,13 +140,13 @@ You may use this feature a number of times per long rest equal to your CON (mini
 
 *A hearty gemstone buried within you, fortifying your body against all manner of toxins and magmas.*
 
-Your maximum HP is increased by an amount equal to 2 × your character’s Level.
+Your maximum HP is increased by an amount equal to 2 - your character's Level.
 
-	When you drink something, you can choose to store it in your heart and may store up to 2 liters of liquid in this manner. The stored liquid, no matter what it is, is completely harmless to you. However, harmful substances, such as lava, poison, or acid, cannot be stored in your heart for longer than an hour before you start to become affected by them. Your heart can neutralize poisons of any kind over the course of an hour if you so choose. 
+	When you drink something, you can choose to store it in your heart and may store up to 2 liters of liquid in this manner. The stored liquid, no matter what it is, is completely harmless to you. However, harmful substances, such as lava, poison, or acid, cannot be stored in your heart for longer than an hour before you start to become affected by them. Your heart can neutralize poisons of any kind over the course of an hour if you so choose.
 
 	You can do the following with the liquids stored in your heart:
 
-* **Spit It Out.** You take an action and spit out the entirety of the contents of any liquids stored in your heart. The ejected fluid can travel a distance away from you up to amount equal to 10 feet × your CON (minimum of 10 feet).
+* **Spit It Out.** You take an action and spit out the entirety of the contents of any liquids stored in your heart. The ejected fluid can travel a distance away from you up to amount equal to 10 feet - your CON (minimum of 10 feet).
 
 * **Enter Bloodstream.** At any point, you may take a reaction to release any amount of the contents from your heart into the rest of your body.
 
@@ -182,7 +182,7 @@ Your maximum HP is increased by an amount equal to 2 × your character’s Level
 
 *A silent, but ceremonious escape from danger.*
 
-	As an action, you may cleanse yourself of your embodied season’s condition and then teleport to a target location within 30 feet of you.
+	As an action, you may cleanse yourself of your embodied season's condition and then teleport to a target location within 30 feet of you.
 
 You may use this feature a number of times per long rest equal to your CON (minimum of once).
 
@@ -192,7 +192,7 @@ You may use this feature a number of times per long rest equal to your CON (mini
 
 *Each passing of the seasons bears it mark and tests the unready.*
 
-	As two actions, you may cause a target creature within 30 feet of you to make a **Will** saving throw against a DC equal to 8 \+ your CON \+ your Tier Bonus. On a failure, you apply your embodied season’s condition to them until the start of your next turn. 
+	As two actions, you may cause a target creature within 30 feet of you to make a **Will** saving throw against a DC equal to 8 \+ your CON \+ your Tier Bonus. On a failure, you apply your embodied season's condition to them until the start of your next turn.
 
 This feature requires one fewer action to use while you embody Summer or Winter.
 
@@ -234,7 +234,7 @@ You may use this feature a number of times per long rest equal to your CON (mini
 
 You choose either a *Solar* or *Lunar* eclipse and permanently gain its benefit below:
 
-* **Solar.** At the end of every long rest, you may choose one of your Tasks on either of your Trades. Once before the end of your next long rest, when you use that Task for a trade check, you may add 1d4 to the check’s total.
+* **Solar.** At the end of every long rest, you may choose one of your Tasks on either of your Trades. Once before the end of your next long rest, when you use that Task for a trade check, you may add 1d4 to the check's total.
 
 * **Lunar.** As an object interaction once per long rest, you may conjure any physical Small or smaller Mundane object of your choosing. It disappears at the end of your next long rest.
 
@@ -242,7 +242,7 @@ You choose either a *Solar* or *Lunar* eclipse and permanently gain its benefit 
 
 	*Flavor.*
 
-**Notes:** It’s probably likely that some people reading this ancestry would infer that this ancestry is meant to be a bear of some kind.
+**Notes:** It's probably likely that some people reading this ancestry would infer that this ancestry is meant to be a bear of some kind.
 
 ### *Call Lightning*
 
@@ -282,7 +282,7 @@ You choose either a *Solar* or *Lunar* eclipse and permanently gain its benefit 
 
 ## *Gnome Primary Feature*
 
-*Amidst the perilous dangers out there, it’s good to have an out.*
+*Amidst the perilous dangers out there, it's good to have an out.*
 
 	When your ST breaks, you may become invisible until the end of your next turn. After you cast a spell or make an attack, this effect ends early.
 
@@ -354,7 +354,7 @@ Collectively, a family may use this feature a number of times per long rest equa
 
 *Frequent, good meals will always put a pep in your step.*
 
-	Whenever you complete a short rest, you may **heal HP** equal to your character’s Level. 
+	Whenever you complete a short rest, you may **heal HP** equal to your character's Level.
 
 Additionally, you may choose to regain one expended usage of one feature of your choosing that replenishes upon completing a long rest. If you do, you may not use **Hearty** again until you complete a long rest.
 
@@ -412,7 +412,7 @@ Additionally, you may choose to regain one expended usage of one feature of your
 
 *You call forth a cherished memory to encourage yourself or to share with a trusted companion.*
 
-	As an action while holding your soul seed, you may cause yourself or a target ally within your Reach to **regain ST** equal to 5 × your Tier Bonus.
+	As an action while holding your soul seed, you may cause yourself or a target ally within your Reach to **regain ST** equal to 5 - your Tier Bonus.
 
 You may use this feature a number of times per long rest equal to your CON (minimum of once).
 
@@ -422,13 +422,13 @@ You may use this feature a number of times per long rest equal to your CON (mini
 
 *The magic suffused in your soul seed is undeniable in many respects.*
 
-	Once per long rest, as a reaction at any point, you may grant creatures of your choosing within 10 feet of your soul seed DB equal to 5 × ½ your Tier Bonus against all damage until the end of the current turn.
+	Once per long rest, as a reaction at any point, you may grant creatures of your choosing within 10 feet of your soul seed DB equal to 5 -  your Tier Bonus against all damage until the end of the current turn.
 
 ### *Natural Speaker*
 
 ## *Juneir Tertiary Feature*
 
-*Your predecessors’ stewardship of the wilds yields you a parlance with the beasts of the world.*
+*Your predecessors' stewardship of the wilds yields you a parlance with the beasts of the world.*
 
 You gain the ability to communicate with animals. The information you can obtain from them is limited by their perceptions.
 
@@ -448,7 +448,7 @@ You gain the ability to communicate with animals. The information you can obtain
 
 *It never pays to be alone.*
 
-	On your turn, you may take a free Move action if you are within 10 feet of your initiative partner and they took a Move action. You use your initiative partner’s Speed for this Move action and the movement gained from it must be used to stay within 10 feet of your initiative partner. 
+	On your turn, you may take a free Move action if you are within 10 feet of your initiative partner and they took a Move action. You use your initiative partner's Speed for this Move action and the movement gained from it must be used to stay within 10 feet of your initiative partner.
 
 You may use this feature a number of times per long rest equal to your CON (minimum of once).
 
@@ -484,7 +484,7 @@ Once per rest, as a free action before you make an ability check, you may roll a
 
 ## *Lizardfolk Secondary Feature*
 
-*It’s the perfect distraction.*
+*It's the perfect distraction.*
 
 	You are able to detach your limbs as a reaction, doing so removes any creatures grabbing onto you and cleanses any stuck, grappled, or restrained conditions applied to you.
 
@@ -528,7 +528,7 @@ As a free action, you may expend a Resolve to regrow all your lost limbs. During
 
 ## *Meowdy Tertiary Feature*
 
-*You can glean all entrances, exits, and dead ends at a moment’s notice.*
+*You can glean all entrances, exits, and dead ends at a moment's notice.*
 
 	As a free action once per rest, you may become aware of all obstructions and structures within 120 feet of you.
 
@@ -602,7 +602,7 @@ You gain the following benefits:
 
 *You have the ability to mimic sounds you have heard with almost perfect replication.*
 
-	You can recreate any noise you have heard with near-perfect accuracy. You gain advantage on CHA effort or trade checks made to mimic someone else’s voice.
+	You can recreate any noise you have heard with near-perfect accuracy. You gain advantage on CHA effort or trade checks made to mimic someone else's voice.
 
 # **Orc**
 
@@ -644,7 +644,7 @@ As an action once per long rest, you may grant yourself immunity for the next 10
 
 ## *Skeleton Inheritor*
 
-	You gain the undead creature type. You do not need to eat, drink, or sleep. While you are “sleeping”, you do not dream, and you are fully aware of your surroundings and events taking place around you. If your head is ever detached, you still perceive through it and the rest of your body remains under your control.
+	You gain the undead creature type. You do not need to eat, drink, or sleep. While you are sleeping, you do not dream, and you are fully aware of your surroundings and events taking place around you. If your head is ever detached, you still perceive through it and the rest of your body remains under your control.
 
 	You do not regain Resolve when you take a long rest, and you cannot take the Refresh downtime activity. During a rest, you may destroy a Curio to regain one expended Resolve. The rarity of the Curio must be Common/Uncommon/Rare/Legendary or higher at Levels 1/4/7/10, respectively.
 
@@ -688,7 +688,7 @@ While incapacitated in this manner, you appear to be an unassuming pile of bones
 
 ## *Slimefolk Primary Feature*
 
-*It’s their fault they put it in you.*
+*It's their fault they put it in you.*
 
 	When a creature your Size or smaller hits you with a melee attack, you may cause the attacker to become stuck with the **Recoverable** condition trait, allowing an action to end the effect. This stuck condition also ends if you move in any way.
 
@@ -698,7 +698,7 @@ While incapacitated in this manner, you appear to be an unassuming pile of bones
 
 ## *Slimefolk Secondary Feature*
 
-*You’ve got that elastic bounce in you.*
+*You've got that elastic bounce in you.*
 
 	The range of ranged weapon attacks you make using the Thrown fighting style is increased by 15 feet. When your allies travel into or out of your occupied space, they gain basic Jumping mobility until the end of the current turn.
 
@@ -708,7 +708,7 @@ While incapacitated in this manner, you appear to be an unassuming pile of bones
 
 *As a goo, anything can be a door.*
 
-	You have no bones and may magically contort your body, allowing you to bend and twist your body in any way you want to. You may squeeze through any opening the size of a keyhole or larger, though you may not bring any equipment through with you if it doesn’t fit.
+	You have no bones and may magically contort your body, allowing you to bend and twist your body in any way you want to. You may squeeze through any opening the size of a keyhole or larger, though you may not bring any equipment through with you if it doesn't fit.
 
 # **Soulforged**
 
@@ -726,7 +726,7 @@ While incapacitated in this manner, you appear to be an unassuming pile of bones
 
 *The effort, hopes, and expertise was not forgotten.*
 
-	When you make a weapon or spell attack check, you may add 1d6 to the total. If this bonus was necessary for the attack to hit, the attack’s damage roll is replaced by **1d6 force damage** (all other non-damage effects from the attack hitting still occur).
+	When you make a weapon or spell attack check, you may add 1d6 to the total. If this bonus was necessary for the attack to hit, the attack's damage roll is replaced by **1d6 force damage** (all other non-damage effects from the attack hitting still occur).
 
 	You may use this feature a number of times per long rest equal to your CON (minimum of once).
 
@@ -744,7 +744,7 @@ While incapacitated in this manner, you appear to be an unassuming pile of bones
 
 *Any shell will do.*
 
-	As an action once per long rest, you may *possess* a target object that is your Size or smaller within 30 feet of you. While possessed, an object has a Speed of 10 feet and basic Hovering mobility. While possessing an object, you cannot take any actions other than Move and all movement you spend from your movement pool instead causes the possessed object to travel. You perceive as if you were at the possessed object’s location.
+	As an action once per long rest, you may *possess* a target object that is your Size or smaller within 30 feet of you. While possessed, an object has a Speed of 10 feet and basic Hovering mobility. While possessing an object, you cannot take any actions other than Move and all movement you spend from your movement pool instead causes the possessed object to travel. You perceive as if you were at the possessed object's location.
 
 As a reaction at any point, you may stop possessing the object. This also occurs if the object you possess is destroyed or it is further than 300 feet from you.
 

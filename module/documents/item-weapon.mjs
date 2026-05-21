@@ -8,7 +8,7 @@ import {
 import { prepareEnrichedChatContent } from '../helpers/chat.mjs';
 import { markChatMessageWrapper } from '../helpers/chat-dom.mjs';
 import { normalizeCurioChatDescription } from '../helpers/compendium-normalization.mjs';
-import { FightingStyle } from '../data/enums.mjs';
+import { FightingStyle, ItemType } from '../data/enums.mjs';
 import HorizonlessWeaponData from '../data/item-weapon.mjs';
 
 const { DialogV2 } = foundry.applications.api;
@@ -24,6 +24,12 @@ const ITEM_MESSAGE_TEMPLATES = {
   weaponApplyDamageButton: 'systems/horizonless/module/messages/item/damage-apply-button.hbs',
   weaponApplyDamageApplied: 'systems/horizonless/module/messages/item/damage-apply-applied.hbs',
 };
+
+const DESCRIPTION_ONLY_ROLL_ITEM_TYPES = Object.freeze([
+  ItemType.ITEM,
+  ItemType.ARMOR,
+  ItemType.CURIO,
+]);
 
 export class HorizonlessWeaponItem extends HorizonlessBaseItem {
   static _damageRollButtonHookRegistered = false;
@@ -365,7 +371,7 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
     const rollMode = game.settings.get('core', 'rollMode');
     const label = `[${item.type}] ${item.name}`;
 
-    if (!this.system.formula) {
+    if (DESCRIPTION_ONLY_ROLL_ITEM_TYPES.includes(this.type) || !this.system.formula) {
       const rawDescription = this.type === 'curio'
         ? this._normalizeCurioChatDescription(item.system.description ?? '')
         : (item.system.description ?? '');

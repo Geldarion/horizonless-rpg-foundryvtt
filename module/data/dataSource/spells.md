@@ -1,4 +1,4 @@
-## **\[Cantrip\] Ancient Reading**
+﻿## **\[Cantrip\] Ancient Reading**
 
 **Spell Lists:**		Divine
 
@@ -100,7 +100,7 @@
 
 ## *Turning everything into completely featureless cubes allows for much more efficient packing.*
 
-	You cause a target Tiny or Small unattended object within range to become polymorphed into a Tiny object with 5 HP, 15 AC, and 5 Toughness until this spell ends. This new form does not retain any characteristics or features from the target’s original form except for its weight. This spell ends early if the new form is destroyed.
+	You cause a target Tiny or Small unattended object within range to become polymorphed into a Tiny object with 5 HP, 15 AC, and 5 Toughness until this spell ends. This new form does not retain any characteristics or features from the target's original form except for its weight. This spell ends early if the new form is destroyed.
 
 You choose the new form the first time you ever cast **Cubify**. Each time you cast **Cubify** thereafter, the new form must be exactly identical to what you chose the first time.
 
@@ -170,7 +170,7 @@ A creature guessing the identity of an object polymorphed by **Cubify** based on
 
 ## *Lightning captured in a hand-shaped bottle. Your fragile accessory is the perfect solution to the problem of unlabeled switches.*
 
-	You conjure a *glass hand* at a target location within range that persists until this spell ends. The glass hand is a Tiny object with 5 HP, 15 AC, 0 Toughness, advanced Hovering mobility, and a Speed equal to this spell’s range. This spell ends early if the glass hand is destroyed, if the glass hand is ever further than this spell’s range from you, or you cast **Glass Hand** again.
+	You conjure a *glass hand* at a target location within range that persists until this spell ends. The glass hand is a Tiny object with 5 HP, 15 AC, 0 Toughness, advanced Hovering mobility, and a Speed equal to this spell's range. This spell ends early if the glass hand is destroyed, if the glass hand is ever further than this spell's range from you, or you cast **Glass Hand** again.
 
 **Automaton.** You may issue the *commands* listed below to an object of your choice created by this spell. You must take the listed kind of action in each of the following commands to activate this spell trait, and each free action command may only be performed once per round:
 
@@ -220,7 +220,7 @@ A creature guessing the identity of an object polymorphed by **Cubify** based on
 
 **Discharge.** You may take an additional action when you hit with the attack. If you do, you set the target ablaze.
 
-## **\[Cantrip\] Keepsake’s Calling**
+## **\[Cantrip\] Keepsake's Calling**
 
 **Spell Lists:**		Arcane
 
@@ -234,7 +234,7 @@ A creature guessing the identity of an object polymorphed by **Cubify** based on
 
 ## *The nature, size, shape, and appearance of an object carries with it a reputation. A name pulled from the threads of artisanship.*
 
-You learn the name of a target object within range and gain advantage on INT effort or trade checks made to recall information regarding the target object. This spell treats effects with the **Illusion** spell trait as real and determines the name based only on the target’s appearance and not its material composition. 
+You learn the name of a target object within range and gain advantage on INT effort or trade checks made to recall information regarding the target object. This spell treats effects with the **Illusion** spell trait as real and determines the name based only on the target's appearance and not its material composition.
 
 ## **\[Cantrip\] Magicnetic Needle**
 
@@ -266,9 +266,9 @@ You learn the name of a target object within range and gain advantage on INT eff
 
 **Concentration:**	No
 
-## *You help recall an object’s younger memories.*
+## *You help recall an object's younger memories.*
 
-	You heal all missing HP of a target Small or smaller object within range whose Toughness is less than or equal to 5 × half your Tier Bonus.
+	You heal all missing HP of a target Small or smaller object within range whose Toughness is less than or equal to 5 - half your Tier Bonus.
 
 ## **\[Cantrip\] Mischief**
 
@@ -282,7 +282,7 @@ You learn the name of a target object within range and gain advantage on INT eff
 
 **Concentration:**	No
 
-## *It’s the minor bits of chaos that keep them guessing.*
+## *It's the minor bits of chaos that keep them guessing.*
 
 	You may choose for the casting of this spell to be imperceptible. You create one of the following effects of your choosing:
 
@@ -310,7 +310,7 @@ You learn the name of a target object within range and gain advantage on INT eff
 
 **Discharge.** You may take an additional action when you hit with the attack. If you do, the damage roll increases by **Xd6**, where X is half your Tier Bonus.
 
-## **\[Cantrip\] Nature’s Tongue**
+## **\[Cantrip\] Nature's Tongue**
 
 **Spell Lists:**		Primal
 
@@ -340,7 +340,7 @@ You learn the name of a target object within range and gain advantage on INT eff
 
 ## *Grease the wheels and watch as the seconds tick by 10% faster.*
 
-	You cleanse the slowed condition from a target creature within range. Additionally, the target’s Speed is increased by 5 feet until this spell ends.
+	You cleanse the slowed condition from a target creature within range. Additionally, the target's Speed is increased by 5 feet until this spell ends.
 
 ## **\[Cantrip\] Prismatic Blast**
 
@@ -354,9 +354,9 @@ You learn the name of a target object within range and gain advantage on INT eff
 
 **Concentration:**	No
 
-## *You envision a reality without limits. A rainbow without ends.* 
+## *You envision a reality without limits. A rainbow without ends.*
 
-	You make a ranged spell attack against a target within range. On a hit, the target is dealt **damage** equal to your spellcasting modifier. Roll a d4 to determine the attack’s damage type: 1 is **acid**, 2 is **cold**, 3 is **fire**, and 4 is **lightning**.
+	You make a ranged spell attack against a target within range. On a hit, the target is dealt **damage** equal to your spellcasting modifier. Roll a d4 to determine the attack's damage type: 1 is **acid**, 2 is **cold**, 3 is **fire**, and 4 is **lightning**.
 
 **Discharge.** You may take an additional action when you hit with the attack. If you do, If you do, the damage roll increases by **Xd8**, where X is half your Tier Bonus.
 
@@ -372,7 +372,7 @@ You learn the name of a target object within range and gain advantage on INT eff
 
 **Concentration:**	Yes
 
-## *Bone, though seemingly immutable, can also be forged like metal.* 
+## *Bone, though seemingly immutable, can also be forged like metal.*
 
 	This spell may be cast at any point. Until this spell ends, you gain the following benefits:
 
@@ -456,7 +456,7 @@ You learn the name of a target object within range and gain advantage on INT eff
 
 **Discharge.** You may take an additional action when you hit with the attack. If you do, the critical hit threshold for this attack is retroactively reduced by 1 and the damage roll increases by **Xd6**, where X is half your Tier Bonus.
 
-## **\[Cantrip\] Soothsayer’s Gaze**
+## **\[Cantrip\] Soothsayer's Gaze**
 
 **Spell Lists:**		Divine
 
@@ -490,7 +490,7 @@ You learn the name of a target object within range and gain advantage on INT eff
 
 	You cause a target creature within range to **regain ST** equal to your spellcasting modifier.
 
-**Expound.** You may take an additional action when this spell begins. If you do, the ST recovery roll increases by **Xd6**, where X is half your Tier Bonus. If the target is frightened, this spell’s ST recovery roll is replaced with the maximum possible total.
+**Expound.** You may take an additional action when this spell begins. If you do, the ST recovery roll increases by **Xd6**, where X is half your Tier Bonus. If the target is frightened, this spell's ST recovery roll is replaced with the maximum possible total.
 
 ## **\[Cantrip\] Spectral Lantern**
 
@@ -506,9 +506,9 @@ You learn the name of a target object within range and gain advantage on INT eff
 
 ## *You bind a portion of your soul into a lantern and let it fly. It is you, and it shall light the way.*
 
-	You summon a *spectral lantern* at a target location within range that persists until this spell ends. The spectral lantern is an object that has HP equal to 5 × your Tier Bonus, 15 AC, 10 Toughness, a Speed equal to this spell’s range, and advanced Hovering mobility. This spell ends early if the spectral lantern is destroyed or you cast **Spectral Lantern** again. The spectral lantern illuminates its surroundings.
+	You summon a *spectral lantern* at a target location within range that persists until this spell ends. The spectral lantern is an object that has HP equal to 5 - your Tier Bonus, 15 AC, 10 Toughness, a Speed equal to this spell's range, and advanced Hovering mobility. This spell ends early if the spectral lantern is destroyed or you cast **Spectral Lantern** again. The spectral lantern illuminates its surroundings.
 
-	As an object interaction, you may cause the spectral lantern to travel up its Speed. This spell ends early if the spectral lantern is ever further than four times this spell’s range from you.
+	As an object interaction, you may cause the spectral lantern to travel up its Speed. This spell ends early if the spectral lantern is ever further than four times this spell's range from you.
 
 	**Scrying.** As an action, you may choose an object created by this spell and begin perceiving as if you were located at it. As a free action, you may end this effect. While perceiving in this manner, you are always **aware** of subjects within 15 feet of the object and are **uncertain** of all subjects beyond this distance.
 
@@ -566,7 +566,7 @@ You may choose for the casting of this spell to be imperceptible. You create one
 
 * **Flourish.** You create a harmless sensory effect, such as a puff of smoke, shower of sparks, or spray of confetti at a target location within range that persists until the end of the current turn. The effect can include a visual, auditory, and olfactory component simultaneously.
 
-* **Vibe Check.** You target three or more creatures within range with this spell and learn the surface-level emotion, thought, or idea that is on the majority of the targets’ minds.
+* **Vibe Check.** You target three or more creatures within range with this spell and learn the surface-level emotion, thought, or idea that is on the majority of the targets' minds.
 
 ## **\[Cantrip\] Touchstone**
 
@@ -662,11 +662,11 @@ You may choose for the casting of this spell to be imperceptible. You create one
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d6.
+* **(Repeatable)** This spell's damage roll increases by 1d6.
 
-* **(+3 INT and above)** This spell’s damage now occurs when a creature marked with abyssal bleed starts their turn within 30 feet of another creature marked with abyssal bleed.
+* **(+3 INT and above)** This spell's damage now occurs when a creature marked with abyssal bleed starts their turn within 30 feet of another creature marked with abyssal bleed.
 
-* **(+3 CHA and above)** The abyssal bleed’s damage radius becomes 10 feet.
+* **(+3 CHA and above)** The abyssal bleed's damage radius becomes 10 feet.
 
 ## **\[1st\] Acrid Spine**
 
@@ -688,9 +688,9 @@ You may choose for the casting of this spell to be imperceptible. You create one
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s initial damage roll increases by 1d4 and its bonus attack damage roll increases by 2d6.
+* **(Repeatable)** This spell's initial damage roll increases by 1d4 and its bonus attack damage roll increases by 2d6.
 
-* **(+3 CHA and above)** The square area’s side length becomes 20 feet.
+* **(+3 CHA and above)** The square area's side length becomes 20 feet.
 
 ## **\[1st\] Animate Interceptor**
 
@@ -704,7 +704,7 @@ You may choose for the casting of this spell to be imperceptible. You create one
 
 **Concentration:**	Yes
 
-## *While most automata obey the rule of “do no harm”, some take it a step further.*
+## *While most automata obey the rule of do no harm, some take it a step further.*
 
 	You conjure an *animate interceptor* at a target unoccupied space within range that persists until this spell ends. The animate interceptor is a Small object with 15 HP, 15 AC, 5 Toughness, and advanced Hovering mobility. This spell ends early if it is destroyed.
 
@@ -716,7 +716,7 @@ You may choose for the casting of this spell to be imperceptible. You create one
 
 * **(+3 WIS and above, Repeatable)** The first, third, and fifth times you choose this enhancement, **Project Shield** may be used an additional time per round.
 
-* **(+3 CHA and above, Repeatable)** The animate interceptor’s HP increases by 10 and its Toughness increases by 5\.
+* **(+3 CHA and above, Repeatable)** The animate interceptor's HP increases by 10 and its Toughness increases by 5\.
 
 ## **\[1st\] Augury**
 
@@ -732,7 +732,7 @@ You may choose for the casting of this spell to be imperceptible. You create one
 
 ## *A reading of stars dancing in the palm of your hand.*
 
-	You ask a question that does not elicit a binary response (i.e. “yes” or “no” questions are disallowed) and receive an objectively true one-word response, if one exists. You may cast this spell at most once per hour.
+	You ask a question that does not elicit a binary response (i.e. yes or no questions are disallowed) and receive an objectively true one-word response, if one exists. You may cast this spell at most once per hour.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
@@ -762,9 +762,9 @@ You may choose for the casting of this spell to be imperceptible. You create one
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d8.
+* **(Repeatable)** This spell's damage roll increases by 2d8.
 
-* **(+3 WIS and above)** This spell’s range becomes 60 feet and the maximum distance between unique targets becomes 30 feet.
+* **(+3 WIS and above)** This spell's range becomes 60 feet and the maximum distance between unique targets becomes 30 feet.
 
 * **(+3 CHA and above)** Each usage of the **Expound** trait allows you to designate an additional unique target.
 
@@ -808,7 +808,7 @@ You may choose for the casting of this spell to be imperceptible. You create one
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d6.
+* **(Repeatable)** This spell's damage roll increases by 2d6.
 
 * **(+3 CHA and above, Repeatable)** You may target an additional creature within range.
 
@@ -826,7 +826,7 @@ You may choose for the casting of this spell to be imperceptible. You create one
 
 ## *You burden an opponent with the crushing weight of misfortune.*
 
-	You cause a target creature within range to make a **Will** saving throw. On a failure, an affected creature subtracts 1d4 from all ability checks they make until this spell ends. At the end of an affected creature’s turn, they may retry the saving throw, ending the effect on a success.
+	You cause a target creature within range to make a **Will** saving throw. On a failure, an affected creature subtracts 1d4 from all ability checks they make until this spell ends. At the end of an affected creature's turn, they may retry the saving throw, ending the effect on a success.
 
 	**Contagion.** As a reaction when a creature affected by a spell effect with contagion trait dies, is knocked out, or burns a Resolve, you may cause a different target creature within range to become affected by the spell as if it had failed the saving throw.
 
@@ -848,7 +848,7 @@ You may choose for the casting of this spell to be imperceptible. You create one
 
 **Concentration:**	No
 
-## *To flip a coin is to cast yourself amidst the whims of an unthinking universe. It’s time to pick a side.*
+## *To flip a coin is to cast yourself amidst the whims of an unthinking universe. It's time to pick a side.*
 
 	You designate up to two target creatures within range. Once before this spell ends, an affected creature may choose to do either of the following:
 
@@ -882,7 +882,7 @@ You may choose for the casting of this spell to be imperceptible. You create one
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d6.
+* **(Repeatable)** This spell's damage roll increases by 1d6.
 
 ## **\[1st\] Camouflage**
 
@@ -902,9 +902,9 @@ You may choose for the casting of this spell to be imperceptible. You create one
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(+3 INT and above)** This spell’s Vanish check bonus becomes \+10.
+* **(+3 INT and above)** This spell's Vanish check bonus becomes \+10.
 
-* **(+3 WIS and above)** This spell’s duration is now until you complete a short or long rest.
+* **(+3 WIS and above)** This spell's duration is now until you complete a short or long rest.
 
 * **(+3 CHA and above, Repeatable)** The range of this spell becomes 30 feet and the casting time of this spell becomes 2 actions. In addition to affecting yourself, you may affect two additional target creatures within range.
 
@@ -928,7 +928,7 @@ The climbing vine is strong enough to support creatures standing on it and creat
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(+3 INT and above)** The climbing vine’s Toughness becomes 15\.
+* **(+3 INT and above)** The climbing vine's Toughness becomes 15\.
 
 * **(+3 WIS and above)** As an action while within 60 feet of the climbing vine, you may change the orientation and bending of the climbing vine.
 
@@ -954,7 +954,7 @@ The climbing vine is strong enough to support creatures standing on it and creat
 
 * **(+3 INT and above)** You may choose for the casting of this spell to be imperceptible.
 
-* **(+3 WIS and above)** This spell’s casting time becomes 3 actions and its range becomes 60 feet.
+* **(+3 WIS and above)** This spell's casting time becomes 3 actions and its range becomes 60 feet.
 
 * **(+3 CHA and above, Repeatable)** You may target an additional creature within range.
 
@@ -1004,11 +1004,11 @@ The climbing vine is strong enough to support creatures standing on it and creat
 
 ## *Undeath prides itself on its perpetuity. You remind them of the fragile balance of vital forces at play.*
 
-	You cause a target undead creature within range to make a basic **Fortitude** saving throw to resist **4d8 force damage**. If the target dies from this spell’s initial damage, they explode and deal **2d6 force damage** to all creatures and objects within 10 feet of it.
+	You cause a target undead creature within range to make a basic **Fortitude** saving throw to resist **4d8 force damage**. If the target dies from this spell's initial damage, they explode and deal **2d6 force damage** to all creatures and objects within 10 feet of it.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s target damage roll increases by 4d8 and the explosion damage roll increases by 2d6.
+* **(Repeatable)** This spell's target damage roll increases by 4d8 and the explosion damage roll increases by 2d6.
 
 * **(+3 INT and above)** Any undead creature that dies from an explosion from this spell also explodes.
 
@@ -1026,7 +1026,7 @@ The climbing vine is strong enough to support creatures standing on it and creat
 
 ## *The shrill, blaring noise it makes is sure to awaken even the heaviest of sleepers.*
 
-	You summon a *defender drone* at a target unoccupied space within range that persists until this spell ends. The defender drone is a Small object with 15 HP, 15 AC, 10 Toughness, and has a Search DC equal to this spell’s Save DC. This spell ends early if it is destroyed, if it is ever further than this spell’s range from you, or you cast **Defender Drone** again. The defender drone acts as a sentry outside of combat with its alertness starting as **relaxed**.
+	You summon a *defender drone* at a target unoccupied space within range that persists until this spell ends. The defender drone is a Small object with 15 HP, 15 AC, 10 Toughness, and has a Search DC equal to this spell's Save DC. This spell ends early if it is destroyed, if it is ever further than this spell's range from you, or you cast **Defender Drone** again. The defender drone acts as a sentry outside of combat with its alertness starting as **relaxed**.
 
 	**Automaton.** You may issue the *commands* listed below to an object of your choice created by this spell by taking its listed kind of action. Each command may only be performed once per round:
 
@@ -1034,7 +1034,7 @@ The climbing vine is strong enough to support creatures standing on it and creat
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d10.
+* **(Repeatable)** This spell's damage roll increases by 1d10.
 
 ## **\[1st\] Disguise**
 
@@ -1050,19 +1050,19 @@ The climbing vine is strong enough to support creatures standing on it and creat
 
 ## *If you plan to get into trouble, you should at least fit in.*
 
-	You change the appearance of a target creature within range to a new one of your choosing until this spell ends. This effect may include altering the appearance of worn clothing and equipment, the coloration and texture of skin, the placement and appearance of appendages on one’s body (such as arms, legs, eyes, ears, or tails; any appendages removed with this spell are instead invisible), and stature, though this spell may not alter a creature’s Size.
+	You change the appearance of a target creature within range to a new one of your choosing until this spell ends. This effect may include altering the appearance of worn clothing and equipment, the coloration and texture of skin, the placement and appearance of appendages on one's body (such as arms, legs, eyes, ears, or tails; any appendages removed with this spell are instead invisible), and stature, though this spell may not alter a creature's Size.
 
 Spell effects with the **Sensor** trait identify affected creatures according to their new appearance from this spell.
 
-**Illusion.** This spell effect is intangible but creatures perceive it as real until they attempt to physically interact with it. As an action, a creature that **perceives** this effect may make a **Quick-Wits** saving throw. On a success, the effect becomes obviously illusory to them.	
+**Illusion.** This spell effect is intangible but creatures perceive it as real until they attempt to physically interact with it. As an action, a creature that **perceives** this effect may make a **Quick-Wits** saving throw. On a success, the effect becomes obviously illusory to them.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(+3 INT and above)** This spell may now also alter an affected creature’s voice as a part of their new appearance.
+* **(+3 INT and above)** This spell may now also alter an affected creature's voice as a part of their new appearance.
 
 * **(+3 WIS and above)** An affected creature may take an action to change their appearance again to a new one of their choosing.
 
-* **(+3 CHA and above)** This spell may now alter an affected creature’s apparent Size by one category larger or smaller.
+* **(+3 CHA and above)** This spell may now alter an affected creature's apparent Size by one category larger or smaller.
 
 ## **\[1st\] Dispel**
 
@@ -1088,7 +1088,7 @@ Spell effects with the **Sensor** trait identify affected creatures according to
 
 * **(Repeatable)** The maximum spell Circle this spell can end increases by one.
 
-* **(+3 INT and above)** You make a spellcasting combat check and set the maximum spell Circle this spell can end to either its current value or \[(the spellcasting check’s total \- 10\) / 2\], whichever is higher. **Dispel** cannot end 7th Circle spell effects.
+* **(+3 INT and above)** You make a spellcasting combat check and set the maximum spell Circle this spell can end to either its current value or \[(the spellcasting check's total \- 10\) / 2\], whichever is higher. **Dispel** cannot end 7th Circle spell effects.
 
 * **(+3 WIS and above)** When targeting a creature, you learn which spells are affecting the creature. You may then selectively end spells of your choosing and leave the remaining intact.
 
@@ -1104,9 +1104,9 @@ Spell effects with the **Sensor** trait identify affected creatures according to
 
 **Concentration:**	Yes
 
-## *The floor becomes the ceiling which becomes the floor which becomes the ceiling…*
+## *The floor becomes the ceiling which becomes the floor which becomes the ceiling*
 
-	You cause a target creature within range to make a **Quick-Wits** saving throw. On a failure, they are disoriented until this spell ends. At the end of an affected creature’s turn, they may retry the saving throw, ending the effect on a success.
+	You cause a target creature within range to make a **Quick-Wits** saving throw. On a failure, they are disoriented until this spell ends. At the end of an affected creature's turn, they may retry the saving throw, ending the effect on a success.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
@@ -1136,7 +1136,7 @@ On the first attack made against you before this spell ends, you may roll a die 
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d10.
+* **(Repeatable)** This spell's damage roll increases by 3d8.
 
 * **(+3 CHA and above)** You now roll a die on the first two attacks made against you to determine if they automatically miss.
 
@@ -1176,7 +1176,7 @@ On the first attack made against you before this spell ends, you may roll a die 
 
 	You cause up to three target creatures within range to become slowed. Creatures that are immune to being charmed are not affected by this spell.
 
-**Drowsiness** effects have the **Out of It** condition trait, which means they end early for a creature if it takes any damage or if they are within another creature’s Reach and that creature takes an action to shake them out of their stupor.
+**Drowsiness** effects have the **Out of It** condition trait, which means they end early for a creature if it takes any damage or if they are within another creature's Reach and that creature takes an action to shake them out of their stupor.
 
 A creature under the effect of the **Drowsiness** spell incurs disadvantage on saving throws imposed by the **Sleep** spell.
 
@@ -1206,9 +1206,9 @@ You make a weapon attack. If this attack hits, you may cause a target creature w
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 2d4 and its damage roll increases by 2d6.
+* **(Repeatable)** This spell's ST recovery roll increases by 2d4 and its damage roll increases by 2d10.
 
-* **(+3 INT and above)** The creature you cause to **regain ST** adds **2d6 radiant damage** to the damage dealt by their next attack that hits within the next 10 minutes.
+* **(+3 INT and above)** The creature you cause to **regain ST** adds **2d10 radiant damage** to the damage dealt by their next attack that hits within the next 10 minutes.
 
 * **(+3 WIS and above)** The range of this spell becomes 60 feet.
 
@@ -1232,9 +1232,9 @@ You make a weapon attack. If this attack hits, you may cause a target creature w
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(+3 INT and above, Repeatable)** The wall’s height is increased by 5 feet and its Toughness is increased by 5\.
+* **(+3 INT and above, Repeatable)** The wall's height is increased by 5 feet and its Toughness is increased by 5\.
 
-* **(+3 CHA and above, Repeatable)** The wall’s length is increased by 30 feet and can be formed into a circle with a radius 5 feet longer. Each section’s HP is also increased by 10\.
+* **(+3 CHA and above, Repeatable)** The wall's length is increased by 30 feet and can be formed into a circle with a radius 5 feet longer. Each section's HP is also increased by 10\.
 
 ## **\[1st\] Empathic Barrier**
 
@@ -1258,9 +1258,9 @@ You grant up to two target creatures within range the following benefits:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d8.
+* **(Repeatable)** This spell's damage roll increases by 1d8.
 
-* **(+3 WIS and above)** This spell’s range becomes 60 feet.
+* **(+3 WIS and above)** This spell's range becomes 60 feet.
 
 * **(+3 CHA and above, Repeatable)** This spell may target an additional creature.
 
@@ -1284,7 +1284,7 @@ You grant up to two target creatures within range the following benefits:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d10.
+* **(Repeatable)** This spell's damage roll increases by 3d8.
 
 * **(+3 INT and above)** After the target is pushed, they become prone.
 
@@ -1306,7 +1306,7 @@ You grant up to two target creatures within range the following benefits:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d6.
+* **(Repeatable)** This spell's damage roll increases by 2d6.
 
 * **(+3 INT and above)** All unoccupied surface spaces in the area are set ablaze. Any creatures affected by this spell that fail the **Reflex** saving throw are also set ablaze.
 
@@ -1322,15 +1322,15 @@ You grant up to two target creatures within range the following benefits:
 
 **Concentration:**	No
 
-## *A pyral fan of flames explodes out of the palms of your hands.* 
+## *A pyral fan of flames explodes out of the palms of your hands.*
 
 	You cause all creatures and objects in a cone in front of you whose length is the range of this spell to make a basic **Reflex** saving throw to resist **3d6 fire damage**.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 3d6.
+* **(Repeatable)** This spell's damage roll increases by 3d6.
 
-* **(+3 INT and above)** This spell’s damage ignores DBs.
+* **(+3 INT and above)** This spell's damage ignores DBs.
 
 * **(+3 WIS and above)** The range of this spell becomes 40 feet.
 
@@ -1348,16 +1348,15 @@ You grant up to two target creatures within range the following benefits:
 
 ## *Often, the impression of a spell is all that is necessary.*
 
-As you cast this spell, you choose an Arcane spell effect, and the casting of this spell appears identical to that of the chosen spell. You create a *facsimile* of the chosen spell. This spell’s range and duration is equal to that of the chosen spell. The facsimile has the following properties:
+As you cast this spell, you choose an Arcane spell effect, and the casting of this spell appears identical to that of the chosen spell. You create a *facsimile* of the chosen spell. This spell's range and duration is equal to that of the chosen spell. The facsimile has the following properties:
 
 * **Disillusioned.** The spell effect chosen for the facsimile must not already have the **Illusion** trait.
 
 * **Non-Transformitive.** The facsimile cannot cause subjects to become invisible or polymorphed to achieve the appearance of its effect.
 
-* **Unconvincing.** The **Illusion** trait of this spell only applies to creatures that would not be affected by the facsimile’s spell effect. Creatures that would be affected by the facsimile’s spell effect know it is not real.
+* **Unconvincing.** The **Illusion** trait of this spell only applies to creatures that would not be affected by the facsimile's spell effect. Creatures that would be affected by the facsimile's spell effect know it is not real.
 
 * **No Heightening.** The facsimile acts as if it were cast at its baseline Circle.
-
 
 **Illusion.** This spell effect is intangible but creatures perceive it as real until they attempt to physically interact with it. As an action, a creature that **perceives** this effect may make a **Quick-Wits** saving throw. On a success, the effect becomes obviously illusory to them.
 
@@ -1373,7 +1372,7 @@ As you cast this spell, you choose an Arcane spell effect, and the casting of th
 
 **Concentration:**	No
 
-## *You’ve learned to trace a fuse onto the weave itself.*
+## *You've learned to trace a fuse onto the weave itself.*
 
 You make a weapon attack.
 
@@ -1431,7 +1430,7 @@ Both attacks have the following effects:
 
 * **(+3 WIS and above)** You may take an action once per round to move the centerpoint of the area up to 30 feet to a target location.
 
-* **(+3 CHA and above, Repeatable)** The radius of the area is increased by 5 feet and the smoke’s HP is increased by 5\.
+* **(+3 CHA and above, Repeatable)** The radius of the area is increased by 5 feet and the smoke's HP is increased by 5\.
 
 ## **\[1st\] Fortify**
 
@@ -1447,7 +1446,7 @@ Both attacks have the following effects:
 
 ## *Fluorescent adhesives suffuse through the material and bind it together.*
 
-	You designate a target object within range with a Toughness of 20 or less. Until this spell ends, the target’s Toughness is increased by 10\.
+	You designate a target object within range with a Toughness of 20 or less. Until this spell ends, the target's Toughness is increased by 10\.
 
 ## **\[1st\] Frigid Gauntlet**
 
@@ -1469,11 +1468,11 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** The DB gained from this spell increases by 5 and its damage roll increases by 2d8.
+* **(Repeatable)** The DB gained from this spell increases by 5 and its damage roll increases by 3d8.
 
-* **(+3 INT and above)** Whenever this spell’s DB is broken, you deal **1d8 cold damage** to all creatures and objects within your Reach.
+* **(+3 INT and above)** Whenever this spell's DB is broken, you deal **1d8 cold damage** to all creatures and objects within your Reach.
 
-* **(+3 WIS and above)** This spell’s duration becomes 10 minutes.
+* **(+3 WIS and above)** This spell's duration becomes 10 minutes.
 
 ## **\[1st\] Heal**
 
@@ -1493,7 +1492,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s healing roll increases by 1d8.
+* **(Repeatable)** This spell's healing roll increases by 1d8.
 
 ## **\[1st\] Illusion**
 
@@ -1515,9 +1514,9 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(+3 INT and above)** The effect may now also include sounds and other sensory effects. These effects are perceptible outside of this spell’s area.
+* **(+3 INT and above)** The effect may now also include sounds and other sensory effects. These effects are perceptible outside of this spell's area.
 
-* **(+3 WIS and above)** The visual appearance may now be animated, though this animation must be determined when this spell begins. As an action, you may move the origin point of this spell’s area up to 30 feet to a location you are **aware** of.
+* **(+3 WIS and above)** The visual appearance may now be animated, though this animation must be determined when this spell begins. As an action, you may move the origin point of this spell's area up to 30 feet to a location you are **aware** of.
 
 * **(+3 CHA and above, Repeatable)** The side length of the cube increases by 10 feet. Additionally, you may cause the casting time of this spell to be 1 minute to multiply the resulting total side length by 3\.
 
@@ -1547,9 +1546,9 @@ Both attacks have the following effects:
 
 * **(+3 INT and above)** An affected creature gains advantage on **Poise** saving throws and all STR combat checks made against an affected creature incur disadvantage.
 
-* **(+3 WIS and above)** This spell’s range becomes 60 feet.
+* **(+3 WIS and above)** This spell's range becomes 60 feet.
 
-* **(+3 CHA and above, Repeatable)** This spell’s DB increases by 5\.
+* **(+3 CHA and above, Repeatable)** This spell's DB increases by 5\.
 
 ## **\[1st\] Kindling Light**
 
@@ -1571,9 +1570,9 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** Both of this spell’s ST recovery roll increase by 1d8 \+ 2\.
+* **(Repeatable)** Both of this spell's ST recovery roll increase by 1d8 \+ 2\.
 
-* **(+3 WIS and above)** You may choose any number of creatures in this spell’s area to be unaffected.
+* **(+3 WIS and above)** You may choose any number of creatures in this spell's area to be unaffected.
 
 ## **\[1st\] Life Ball**
 
@@ -1589,13 +1588,13 @@ Both attacks have the following effects:
 
 ## *Ball is life.*
 
-	You conjure a *life ball* represented as a target 5 foot space within range that persists until this spell ends. Whenever an ally is within a life ball’s space for the first time since the start of your most recent turn, they **regain 1d8 \+ 1 ST.** At the end of each round, if no creature regained ST from a life ball, this spell ends.
+	You conjure a *life ball* represented as a target 5 foot space within range that persists until this spell ends. Whenever an ally is within a life ball's space for the first time since the start of your most recent turn, they **regain 1d8 \+ 1 ST.** At the end of each round, if no creature regained ST from a life ball, this spell ends.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 1d8 \+ 1\.
+* **(Repeatable)** This spell's ST recovery roll increases by 1d8 \+ 1\.
 
-* **(+3 WIS and above)** If a life ball is within the Reach of an ally, they may take an action to relocate the life ball to a new 5 foot space they target within this spell’s range of them.
+* **(+3 WIS and above)** If a life ball is within the Reach of an ally, they may take an action to relocate the life ball to a new 5 foot space they target within this spell's range of them.
 
 * **(+3 CHA and above, Repeatable)** You conjure an additional life ball at a target 5 foot space within range.
 
@@ -1613,15 +1612,15 @@ Both attacks have the following effects:
 
 ## *With fluid motion you channel a bolt of lightning to strike with violent precision.*
 
-	You cause all creatures and objects in a 5 foot wide line whose length is the range of this spell to make a basic **Reflex** saving throw to resist **2d8 lightning damage**. 
+	You cause all creatures and objects in a 5 foot wide line whose length is the range of this spell to make a basic **Reflex** saving throw to resist **2d8 lightning damage**.
 
-	**Expound.** You may take an additional action when this spell begins. If you do, you may bend the area’s line at one point along the line to any angle or direction you choose.
+	**Expound.** You may take an additional action when this spell begins. If you do, you may bend the area's line at one point along the line to any angle or direction you choose.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d8.
+* **(Repeatable)** This spell's damage roll increases by 2d8.
 
-* **(+3 INT and above)** You bend the area’s line at a point along the line to any angle or direction you choose.
+* **(+3 INT and above)** You bend the area's line at a point along the line to any angle or direction you choose.
 
 * **(+3 WIS and above)** The range of this spell becomes 120 feet.
 
@@ -1663,11 +1662,11 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d6.
+* **(Repeatable)** This spell's damage roll increases by 2d6.
 
 * **(+3 WIS and above)** The range of this spell becomes 120 feet.
 
-* **(+3 CHA and above)** The radius of this spell’s area becomes 30 feet.
+* **(+3 CHA and above)** The radius of this spell's area becomes 30 feet.
 
 ## **\[1st\] Mimic Matter**
 
@@ -1699,7 +1698,7 @@ Both attacks have the following effects:
 
 ## *Dear esteemed colleague: I apologize for diverting your attention from your critical studies. Your predilection towards explosive spells yields incredible promise. However, it is absolutely imperative that I tell you-*
 
-	You compose a message of 30 words or less and choose a creature that you know. You then conjure a note with the message written on it at the chosen creature’s location. 
+	You compose a message of 30 words or less and choose a creature that you know. You then conjure a note with the message written on it at the chosen creature's location.
 
 ## **\[1st\] Molasses Missile**
 
@@ -1719,7 +1718,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage die increases by 4d10.
+* **(Repeatable)** This spell's damage die increases by 4d10.
 
 * **(+3 INT and above, Repeatable)** The molasses missile now can dissolve through material while traveling at the same pace towards the target. It only stops if it collides with the target or an object with Toughness greater than 5\. Choosing this enhancement multiple times increases the maximum Toughness by 5 for each selection after the first.
 
@@ -1759,11 +1758,11 @@ You may choose for the casting of this spell to be imperceptible. You may cast t
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** Each of this spell’s damage rolls increase by 1d8.
+* **(Repeatable)** Each of this spell's damage rolls increase by 1d8.
 
 * **(+3 INT and above)** Choose one of the following damage types: **acid**, **fire**, or **force**. All damage dealt by this spell is converted to the chosen damage type.
 
-* **(+3 WIS and above)** This spell’s duration becomes 10 minutes but requires concentration.
+* **(+3 WIS and above)** This spell's duration becomes 10 minutes but requires concentration.
 
 ## **\[1st\] Pearlescent Cable**
 
@@ -1781,7 +1780,7 @@ You may choose for the casting of this spell to be imperceptible. You may cast t
 
 	You conjure a *pearlescent cable*, a 15 foot long cable attached to one or two target surfaces within range that persists until this spell ends. The pearlescent cable is a Small object with 15 HP, 10 AC, and 10 Toughness, and it remains attached to the target surfaces until it is destroyed. This spell ends early if it is destroyed.
 
-## **\[1st\] Phosphorescence** 
+## **\[1st\] Phosphorescence**
 
 **Spell Lists:**		Arcane
 
@@ -1819,7 +1818,7 @@ You may choose for the casting of this spell to be imperceptible. You may cast t
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d8.
+* **(Repeatable)** This spell's damage roll increases by 2d8.
 
 * **(+3 INT and above)** On a failure, an affected creature is poisoned until the end of its next turn.
 
@@ -1845,7 +1844,7 @@ You may choose for the casting of this spell to be imperceptible. You may cast t
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 1d6 \+ 1\.
+* **(Repeatable)** This spell's ST recovery roll increases by 1d6 \+ 1\.
 
 * **(+3 CHA and above)** The range of this spell becomes 30 feet.
 
@@ -1867,7 +1866,7 @@ You may choose for the casting of this spell to be imperceptible. You may cast t
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(+3 INT and above)** This spell’s critical hit threshold reduction increases to 2\.
+* **(+3 INT and above)** This spell's critical hit threshold reduction increases to 2\.
 
 * **(+3 CHA and above, Repeatable)** You target an additional weapon within range.
 
@@ -1911,7 +1910,7 @@ You may choose for the casting of this spell to be imperceptible. You may cast t
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 3d6.
+* **(Repeatable)** This spell's damage roll increases by 3d6.
 
 ## **\[1st\] Sever Senses**
 
@@ -1939,7 +1938,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d6.
+* **(Repeatable)** This spell's damage roll increases by 2d8.
 
 * **(+3 INT and above)** If a target is dealt **psychic damage** by this spell, it also incurs disadvantage on its next **Quick-Wits** saving throw before the end of its next turn.
 
@@ -1959,7 +1958,7 @@ Both attacks have the following effects:
 
 	You create a *shard of memory*, preserving everything you can **perceive** in your immediate surroundings in a Tiny object with 5 HP, 15 AC, and 5 Toughness that persists until this spell ends. The contents of the shard of memory may be an instantaneous moment or up to 6 seconds of experiences. This spell ends early if it is destroyed.
 
-	As an action while holding a shard of memory, a creature may **perceive** the contents of the shard as if they were at the time and place the shard of memory was created. 
+	As an action while holding a shard of memory, a creature may **perceive** the contents of the shard as if they were at the time and place the shard of memory was created.
 
 ## **\[1st\] Slick Ice**
 
@@ -2031,9 +2030,9 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s initial damage roll increases by 2d6 and the crowned damage roll increases by 1d10.
+* **(Repeatable)** This spell's initial damage roll increases by 2d6 and the crowned damage roll increases by 1d10.
 
-* **(+3 INT and above)** This spell’s damage ignores DBs.
+* **(+3 INT and above)** This spell's damage ignores DBs.
 
 * **(+3 WIS and above)** The range of this spell becomes 120 feet.
 
@@ -2051,15 +2050,15 @@ Both attacks have the following effects:
 
 **Concentration:**	No
 
-## *Yeah, I think we’ll win this one.*
+## *Yeah, I think we'll win this one.*
 
 	You cause all hostile creatures within range to make a **Courage** saving throw. On a failure, an affected creature is provoked by you until this spell ends. Whenever a creature provoked by this spell makes an attack against a creature other than you, you may deal **5 psychic damage** to them.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 5\.
+* **(Repeatable)** This spell's damage roll increases by 5\.
 
-* **(+3 WIS and above)** This spell’s range becomes 30 feet.
+* **(+3 WIS and above)** This spell's range becomes 30 feet.
 
 * **(+3 CHA and above, Repeatable)** When this spell ends, you **regain 3d6 ST**. For each time you select this enhancement after the first, this ST recovery roll increases by 3d6.
 
@@ -2081,9 +2080,9 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s self damage roll increases by 1d6 and the area damage roll increases by 2d10.
+* **(Repeatable)** This spell's self damage roll increases by 1d6 and the area damage roll increases by 2d10.
 
-* **(+3 CHA and above)** The radius of this spell’s area increases to 30 feet.
+* **(+3 CHA and above)** The radius of this spell's area increases to 30 feet.
 
 ## **\[1st\] Starfire Cluster**
 
@@ -2099,11 +2098,11 @@ Both attacks have the following effects:
 
 ## *You initiate a wondrous dance of dazzling starfire.*
 
-	You create three *stars* and distribute them amongst yourself and allied creatures within 15 feet of you. Until this spell ends, a creature with a star may take an action to expend it, add 10 feet to their movement pool, and cause a creature or object they target within this spell’s range of them to make a basic **Quick-Wits** saving throw (using your Spell Save DC) to resist **2d8 radiant damage**.
+	You create three *stars* and distribute them amongst yourself and allied creatures within 15 feet of you. Until this spell ends, a creature with a star may take an action to expend it, add 10 feet to their movement pool, and cause a creature or object they target within this spell's range of them to make a basic **Quick-Wits** saving throw (using your Spell Save DC) to resist **2d8 radiant damage**.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d8.
+* **(Repeatable)** This spell's damage roll increases by 2d8.
 
 * **(+3 WIS and above)** You may distribute the stars to allied creatures within 30 feet of you.
 
@@ -2121,7 +2120,7 @@ Both attacks have the following effects:
 
 **Concentration:**	Yes
 
-## *A wizard’s best friend: portable frigid spike grenade.*
+## *A wizard's best friend: portable frigid spike grenade.*
 
 	You summon a *subzero spiker* at a target unoccupied space within range that persists until this spell ends. The subzero spiker is a Tiny object with 15 HP, 15 AC, 5 Toughness, immunity to **cold damage**, advanced Hovering mobility, and a Speed of 15 feet. This spell ends early if it is destroyed.
 
@@ -2133,9 +2132,9 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** The subzero spiker’s HP increases by 15, its Toughness increases by 5, and this spell’s damage roll increases by 1d8.
+* **(Repeatable)** The subzero spiker's HP increases by 15, its Toughness increases by 5, and this spell's damage roll increases by 1d8.
 
-* **(+3 INT and above)** This spell’s damage ignores DBs.
+* **(+3 INT and above)** This spell's damage ignores DBs.
 
 ## **\[1st\] Telepathic Bond**
 
@@ -2173,17 +2172,17 @@ Both attacks have the following effects:
 
 	Both attacks have the following effects:
 
-* **If it hits,** the attack’s damage is converted to **fire damage** and deals an additional **1d8 fire damage** to the target.
+* **If it hits,** the attack's damage is converted to **fire damage** and deals an additional **1d8 fire damage** to the target.
 
 * **If both attacks hit**, you may choose to extend the duration of this spell to 10 minutes and concentrate on it. If you do, you gain the following effects:
 
-  * Whenever you hit with a weapon attack before this spell ends, you convert all of the attack’s damage to **fire damage**.
+  * Whenever you hit with a weapon attack before this spell ends, you convert all of the attack's damage to **fire damage**.
 
   * The range of your melee weapon attacks is increased by 5 feet.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d6.
+* **(Repeatable)** This spell's damage roll increases by 1d8.
 
 * **(+3 INT and above)** While you are concentrating on this spell, your weapon attacks have their critical hit threshold reduced by 1\.
 
@@ -2223,7 +2222,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 4d6 \+ 4\.
+* **(Repeatable)** This spell's ST recovery roll increases by 4d6 \+ 4\.
 
 ## **\[1st\] Tracker Sense**
 
@@ -2245,7 +2244,7 @@ Both attacks have the following effects:
 
 * **(+3 INT and above)** You ignore the invisible condition and its **Concealed** and **Stealthy** traits for creatures tracked by this spell. This spell now ignores effects with the **Illusion** spell trait.
 
-* **(+3 WIS and above)** This spell’s range becomes 1 mile.
+* **(+3 WIS and above)** This spell's range becomes 1 mile.
 
 * **(+3 CHA and above)** You instead track the nearest three qualifying creatures when this spell begins.
 
@@ -2289,13 +2288,13 @@ Both attacks have the following effects:
 
 	You cause a target Small or Tiny unattended object within range with Toughness 15 or less to become entirely composed of one material of your choosing from the following list until this spell ends. Doing so alters the properties of the object, such as its Toughness (as listed in parentheses next to each material): paper (0), glass (0), cloth (5), leather (5), wood (10), stone (10), iron (15), bronze (15), brass (15).
 
-	**Permanence.** When this spell begins, you may expend a Resource to cause this spell’s duration to become Indefinite. This spell cannot create Resources.
+	**Permanence.** When this spell begins, you may expend a Resource to cause this spell's duration to become Indefinite. This spell cannot create Resources.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
 * **(+3 INT and above)** The following materials (with their Toughness in parentheses) are appended to the above list for this spell: ice (0), bone (5), charcoal (5), gold (10), silver (10), lead (15), diamond (20). You may target objects of Toughness 20 or below with this spell.
 
-* **(+3 WIS and above)** You may choose multiple from this spell’s material list and determine the composition and arrangement of the chosen materials in the target object.
+* **(+3 WIS and above)** You may choose multiple from this spell's material list and determine the composition and arrangement of the chosen materials in the target object.
 
 * **(+3 CHA and above, Repeatable)** The maximum Size category of object targetable by this spell increases by one, to a maximum of Huge.
 
@@ -2311,13 +2310,13 @@ Both attacks have the following effects:
 
 **Concentration:**	No
 
-## *Threads pulling threads pulling threads pulling…*
+## *Threads pulling threads pulling threads pulling*
 
 	You cause a target within range to be dealt an additional **1d8 force damage** on the next three attacks that hit it before this spell ends.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d8.
+* **(Repeatable)** This spell's damage roll increases by 1d8.
 
 * **(+3 CHA and above)** The target is dealt the damage for two additional attacks that hit it before this spell ends.
 
@@ -2337,15 +2336,15 @@ Both attacks have the following effects:
 
 	You designate a 15 foot radius, 30 foot tall cylinder originating from a target floor within range and then designate a creature type tag. Until this spell ends, a creature with a creature type tag designated by this spell may not willingly move into the area.
 
-**Permanence.** When this spell begins, you may expend a Resource to cause this spell’s duration to become Indefinite.
+**Permanence.** When this spell begins, you may expend a Resource to cause this spell's duration to become Indefinite.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(+3 INT and above)** Creatures with a creature type tag designated by this spell may now enter the area, but may not willingly move out of the area. This spell’s duration becomes 10 minutes.
+* **(+3 INT and above)** Creatures with a creature type tag designated by this spell may now enter the area, but may not willingly move out of the area. This spell's duration becomes 10 minutes.
 
 * **(+3 WIS and above, Repeatable)** You may designate an additional creature type tag.
 
-* **(+3 CHA and above, Repeatable)** The radius of the area increases by 5 feet. If you are using this spell’s **Permanence** spell trait, this enhancement instead doubles each dimension.
+* **(+3 CHA and above, Repeatable)** The radius of the area increases by 5 feet. If you are using this spell's **Permanence** spell trait, this enhancement instead doubles each dimension.
 
 ## **\[1st\] Wildfire Strike**
 
@@ -2367,7 +2366,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d4.
+* **(Repeatable)** This spell's damage roll increases by 2d4.
 
 * **(+3 WIS and above)** The range of this spell becomes 30 feet.
 
@@ -2389,7 +2388,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 4d10.
+* **(Repeatable)** This spell's damage roll increases by 4d10.
 
 ## **\[1st\] Witty Retort**
 
@@ -2409,7 +2408,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 4d6.
+* **(Repeatable)** This spell's damage roll increases by 4d6.
 
 # **List of 2nd Circle Spells**
 
@@ -2449,13 +2448,13 @@ Both attacks have the following effects:
 
 ## *You know how it all ends. The long draw to emptiness. A future devoid of warmth.*
 
-	You cause a target within range to become slowed until this spell ends. This spell ends early if you are ever further than this spell’s range from the harrowed target.
+	You cause a target within range to become slowed until this spell ends. This spell ends early if you are ever further than this spell's range from the harrowed target.
 
 **Spellstrike.** You may take an additional action when this spell begins to make a weapon attack. If the attack hits a target slowed by this spell, it deals an additional **6d8 cold damage** to the target.
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 3d8.
+* **(Repeatable)** This spell's damage roll increases by 3d8.
 
 * **(+3 INT and above)** If a target is dealt **cold damage** by this spell, it becomes stuck until either the end of its next turn or when this spell ends.
 
@@ -2481,7 +2480,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d4.
+* **(Repeatable)** This spell's damage roll increases by 1d4.
 
 * **(+3 WIS and above)** The Reach bonus gained from using your vine arms becomes 10 feet.
 
@@ -2501,15 +2500,15 @@ Both attacks have the following effects:
 
 ## *A minefield of thorns and spikes covers the land.*
 
-	You designate a 20 foot radius sphere originating from a target surface within range that persists until this spell ends. All surface spaces in the area are considered difficult terrain. For every 5 feet a creature travels through a surface space within this spell’s area, you deal **2d4 piercing damage** to them.
+	You designate a 20 foot radius sphere originating from a target surface within range that persists until this spell ends. All surface spaces in the area are considered difficult terrain. For every 5 feet a creature travels through a surface space within this spell's area, you deal **2d4 piercing damage** to them.
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d4.
+* **(Repeatable)** This spell's damage roll increases by 1d4.
 
 * **(+3 INT and above)** When you cast this spell, you may designate any amount of surface spaces in the area to be excluded from effect of this spell.
 
-* **(+3 CHA and above)** The radius of this spell’s area becomes 40 feet.
+* **(+3 CHA and above)** The radius of this spell's area becomes 40 feet.
 
 ## **\[2nd\] Cindering Oath**
 
@@ -2553,11 +2552,11 @@ Both attacks have the following effects:
 
 	You designate up to three target creatures within range. As an action once per round until this spell ends, you may cause all targets to **regain 2d6 \+ 2 ST**. If at the end of any turn during combat all affected creatures are within 5 feet of another affected creature, this spell is *upgraded* for all affected creatures.
 
-	While this spell is upgraded, an affected creature may ignore effects that prevent them from regaining ST and this spell’s ST recovery roll increases by 1d6.
+	While this spell is upgraded, an affected creature may ignore effects that prevent them from regaining ST and this spell's ST recovery roll increases by 1d6.
 
 ***Heightening.*** For each additional Circle above 1st, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 1d6 \+ 1\.
+* **(Repeatable)** This spell's ST recovery roll increases by 1d6 \+ 1\.
 
 ## **\[2nd\] Compound Deconstruction**
 
@@ -2571,7 +2570,7 @@ Both attacks have the following effects:
 
 **Concentration:**	No
 
-## *This particular flavor of alchemy is classified as “quantifiable disaster.”*
+## *This particular flavor of alchemy is classified as quantifiable disaster.*
 
 	You make a weapon attack.
 
@@ -2585,9 +2584,9 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll for each attack increases by 1d6.
+* **(Repeatable)** This spell's damage roll for each attack increases by 1d6.
 
-* **(+3 WIS and above)** The line’s length becomes 20 feet.
+* **(+3 WIS and above)** The line's length becomes 20 feet.
 
 ## **\[2nd\] Counterspell**
 
@@ -2603,11 +2602,11 @@ Both attacks have the following effects:
 
 ## *As a spell is being formed, you upset it with an equal but opposite force.*
 
-	Immediately after a target within range casts a spell, but before the spell begins, you may cast **Counterspell** as a reaction. The spell the target just cast is called the *target spell*, and **Counterspell’s** effect is determined by the Circle of the target spell:
+	Immediately after a target within range casts a spell, but before the spell begins, you may cast **Counterspell** as a reaction. The spell the target just cast is called the *target spell*, and **Counterspell's** effect is determined by the Circle of the target spell:
 
 * **2nd Circle or Below.** If the target spell is less than or equal to 2nd Circle, the target spell ends and produces no effect.
 
-* **Above 2nd Circle.** If the target spell is greater than 2nd Circle, you must make a spellcasting combat check against a DC equal to 10 \+ (2 × the Circle of the target spell). On a success, the target spell ends and produces no effect.
+* **Above 2nd Circle.** If the target spell is greater than 2nd Circle, you must make a spellcasting combat check against a DC equal to 10 \+ (2 - the Circle of the target spell). On a success, the target spell ends and produces no effect.
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
@@ -2665,7 +2664,7 @@ You may cast this spell as a reaction at any point. You grant up to three target
 
 * **(+3 WIS and above, Repeatable)** Until this spell ends, you additionally gain basic Burrowing mobility. Choosing this enhancement twice grants advanced Burrowing mobility.
 
-* **(+3 CHA and above, Repeatable)** This spell’s DB increases by 5\.
+* **(+3 CHA and above, Repeatable)** This spell's DB increases by 5\.
 
 ## **\[2nd\] Echoing Blast**
 
@@ -2685,11 +2684,11 @@ You may cast this spell as a reaction at any point. You grant up to three target
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s initial damage roll increases by 1d10 and its delayed damage roll increases by 1d8.
+* **(Repeatable)** This spell's initial damage roll increases by 1d10 and its delayed damage roll increases by 1d8.
 
-* **(+3 INT and above)** This spell’s damage ignores DBs.
+* **(+3 INT and above)** This spell's damage ignores DBs.
 
-* **(+3 CHA and above)** The radius of this spell’s area becomes 25 feet.
+* **(+3 CHA and above)** The radius of this spell's area becomes 25 feet.
 
 ## **\[2nd\] Electric Tomb**
 
@@ -2709,9 +2708,9 @@ You may cast this spell as a reaction at any point. You grant up to three target
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** Both of this spell’s damage rolls increase by 4d8.
+* **(Repeatable)** Both of this spell's damage rolls increase by 4d8.
 
-* **(+3 INT and above)** This spell’s damage ignores DBs.
+* **(+3 INT and above)** This spell's damage ignores DBs.
 
 ## **\[2nd\] Enervate**
 
@@ -2725,15 +2724,15 @@ You may cast this spell as a reaction at any point. You grant up to three target
 
 **Concentration:**	Yes
 
-## *You impose a withering frailness upon a foe’s vigor.*
+## *You impose a withering frailness upon a foe's vigor.*
 
 	You cause a target creature within range to make a **Fortitude** saving throw. On a failure, an affected creature incurs disadvantage on all STR combat and effort checks and halves the damage dealt by all weapon attacks they make while using melee or Thrown fighting styles.
 
-At the end of an affected creature’s turn, they may retry the saving throw, ending the effect on a success.
+At the end of an affected creature's turn, they may retry the saving throw, ending the effect on a success.
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(+3 INT and above)** This spell’s saving throw DC is increased by 2\.
+* **(+3 INT and above)** This spell's saving throw DC is increased by 2\.
 
 * **(+3 WIS and above)** The range of this spell becomes 60 feet.
 
@@ -2757,7 +2756,7 @@ At the end of an affected creature’s turn, they may retry the saving throw, en
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(+3 INT and above)** When you take this spell’s reaction, you may convert the inflicted elemental damage to a physical damage type of your choosing.
+* **(+3 INT and above)** When you take this spell's reaction, you may convert the inflicted elemental damage to a physical damage type of your choosing.
 
 ## **\[2nd\] Fear**
 
@@ -2781,11 +2780,11 @@ At the end of an affected creature’s turn, they may retry the saving throw, en
 
 * **Freeze.** The creature is stuck until the end of their turn.
 
-	At the end of an affected creature’s turn, they may retry the saving throw, ending the effect on a success.
+	At the end of an affected creature's turn, they may retry the saving throw, ending the effect on a success.
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(+3 INT and above)** This spell’s saving throw DC is increased by 2\.
+* **(+3 INT and above)** This spell's saving throw DC is increased by 2\.
 
 * **(+3 WIS and above)** The range of this spell becomes 60 feet.
 
@@ -2807,15 +2806,15 @@ At the end of an affected creature’s turn, they may retry the saving throw, en
 
 	You cause all creatures and objects in a 20 foot radius sphere originating from a target location within range to make a basic **Reflex** saving throw to resist **4d8 fire damage**.
 
-**Expound.** You may take an additional action when this spell begins. If you do, you cause all creatures that failed the saving throw as well as all objects and unoccupied surface spaces in this spell’s area to be set ablaze.
+**Expound.** You may take an additional action when this spell begins. If you do, you cause all creatures that failed the saving throw as well as all objects and unoccupied surface spaces in this spell's area to be set ablaze.
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d8.
+* **(Repeatable)** This spell's damage roll increases by 2d8.
 
 * **(+3 WIS and above)** The range of this spell becomes 120 feet.
 
-* **(+3 CHA and above)** The radius of this spell’s area becomes 30 feet.
+* **(+3 CHA and above)** The radius of this spell's area becomes 30 feet.
 
 ## **\[2nd\] Gnarled Garden**
 
@@ -2835,7 +2834,7 @@ At the end of an affected creature’s turn, they may retry the saving throw, en
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 2d6 \+ 2\.
+* **(Repeatable)** This spell's ST recovery roll increases by 2d6 \+ 2\.
 
 * **(+3 INT and above)** Creatures of your choosing may ignore the difficult terrain caused by this spell.
 
@@ -2855,13 +2854,13 @@ At the end of an affected creature’s turn, they may retry the saving throw, en
 
 ## *When the forces of life and death overflow, you are there to turn back the tide.*
 
-	You grant up to three target allies within range DB 5 against **radiant** and **necrotic damage** until this spell ends. When an affected creature is dealt **necrotic damage**, the source of the damage is dealt **5 radiant damage**. Likewise, when an affected creature is dealt **radiant damage**, the source of the damage is dealt **5 necrotic damage**. 
+	You grant up to three target allies within range DB 5 against **radiant** and **necrotic damage** until this spell ends. When an affected creature is dealt **necrotic damage**, the source of the damage is dealt **5 radiant damage**. Likewise, when an affected creature is dealt **radiant damage**, the source of the damage is dealt **5 necrotic damage**.
 
 	A creature may be dealt damage by **Herald of Defiance** at most once per turn.
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** Both this spell’s DB and its damage increase by 5\.
+* **(Repeatable)** Both this spell's DB and its damage increase by 5\.
 
 * **(+3 CHA and above, Repeatable)** You target an additional creature within range.
 
@@ -2883,7 +2882,7 @@ At the end of an affected creature’s turn, they may retry the saving throw, en
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 2d4 \+ 2\.
+* **(Repeatable)** This spell's ST recovery roll increases by 2d4 \+ 2\.
 
 * **(+3 WIS and above)** The movement gained from this spell is doubled.
 
@@ -2921,17 +2920,17 @@ At the end of an affected creature’s turn, they may retry the saving throw, en
 
 ## *Let it be known. Let I be known.*
 
-You create a 20 foot radius sphere originating from a location within range you are at least aware of (even through obstructions). All creatures and objects must make a basic **Will** saving throw to resist **4d6 psychic damage**. Additionally, you are aware of all subjects in this spell’s area until the end of your next turn.
+You create a 20 foot radius sphere originating from a location within range you are at least aware of (even through obstructions). All creatures and objects must make a basic **Will** saving throw to resist **4d6 psychic damage**. Additionally, you are aware of all subjects in this spell's area until the end of your next turn.
 
 **Expound.** You may take an additional action when this spell begins. If you do, you double the radius of the sphere and negate all of the **psychic damage** this spell would have dealt.
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d6.
+* **(Repeatable)** This spell's damage roll increases by 2d6.
 
 * **(+3 WIS and above)** The range of this spell becomes 120 feet.
 
-* **(+3 CHA and above)** The radius of this spell’s area becomes 30 feet.
+* **(+3 CHA and above)** The radius of this spell's area becomes 30 feet.
 
 ## **\[2nd\] Invisibility**
 
@@ -2953,7 +2952,7 @@ You create a 20 foot radius sphere originating from a location within range you 
 
 * **(+3 INT and above)** Attempting to inflict damage, apply a condition, or force another creature to make a saving throw in any way no longer ends this spell.
 
-* **(+3 WIS and above)** This spell’s duration becomes 1 hour.
+* **(+3 WIS and above)** This spell's duration becomes 1 hour.
 
 ## **\[2nd\] Levitate**
 
@@ -3005,7 +3004,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d8.
+* **(Repeatable)** This spell's damage roll increases by 1d8.
 
 * **(+3 WIS and above)** The range of this spell becomes 30 feet.
 
@@ -3029,9 +3028,9 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 1d6 \+ 1\.
+* **(Repeatable)** This spell's ST recovery roll increases by 1d6 \+ 1\.
 
-* **(+3 CHA and above)** The radius of this spell’s area becomes 25 feet.
+* **(+3 CHA and above)** The radius of this spell's area becomes 25 feet.
 
 ## **\[2nd\] Parting Gift**
 
@@ -3051,9 +3050,9 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 4d6.
+* **(Repeatable)** This spell's damage roll increases by 4d6.
 
-* **(+3 INT and above)** If the target of this spell’s damage fails the saving throw, they are pulled to your original position.
+* **(+3 INT and above)** If the target of this spell's damage fails the saving throw, they are pulled to your original position.
 
 * **(+3 WIS and above)** The range of this spell becomes 120 feet.
 
@@ -3077,9 +3076,9 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 1d6 \+ 1\.
+* **(Repeatable)** This spell's ST recovery roll increases by 1d6 \+ 1\.
 
-* **(+3 WIS and above)** You may choose any number of creatures in this spell’s area to be unaffected.
+* **(+3 WIS and above)** You may choose any number of creatures in this spell's area to be unaffected.
 
 ## **\[2nd\] Reunmagnification**
 
@@ -3119,11 +3118,11 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d6.
+* **(Repeatable)** This spell's damage roll increases by 2d6.
 
 * **(+3 WIS and above)** The range of this spell becomes 120 feet.
 
-* **(+3 CHA and above)** The radius of this spell’s area becomes 30 feet.
+* **(+3 CHA and above)** The radius of this spell's area becomes 30 feet.
 
 ## **\[2nd\] Siphon Sign**
 
@@ -3145,7 +3144,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery per hit increases by 3\.
+* **(Repeatable)** This spell's ST recovery per hit increases by 3\.
 
 ## **\[2nd\] Skittering Saboteur**
 
@@ -3171,7 +3170,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** The skittering saboteur’s HP increases by 15, its AC increases by 1, and this spell’s damage roll increases by 2d8.
+* **(Repeatable)** The skittering saboteur's HP increases by 15, its AC increases by 1, and this spell's damage roll increases by 2d8.
 
 ## **\[2nd\] Sleep**
 
@@ -3187,13 +3186,13 @@ Both attacks have the following effects:
 
 ## *You close the gap between worlds of the real and those of dreams. It beckons many to cross.*
 
-	You cause all creatures in a 15 foot diameter sphere originating from a target location within range to make a **Will** saving throw. A creature gains a degree of advantage on the saving throw for each Resolve they have remaining. Features that alter a creature’s susceptibility to being charmed also apply to saving throws imposed by **Sleep**. On a failure, a creature falls prone and unconscious.
+	You cause all creatures in a 15 foot diameter sphere originating from a target location within range to make a **Will** saving throw. A creature gains a degree of advantage on the saving throw for each Resolve they have remaining. Features that alter a creature's susceptibility to being charmed also apply to saving throws imposed by **Sleep**. On a failure, a creature falls prone and unconscious.
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
 * **(+3 WIS and above)** The range of this spell becomes 60 feet.
 
-* **(+3 CHA and above, Repeatable)** The diameter of the area becomes 10 feet.
+* **(+3 CHA and above, Repeatable)** The diameter of the area increases by 10 feet.
 
 ## **\[2nd\] Spears of Retribution**
 
@@ -3213,11 +3212,11 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d6.
+* **(Repeatable)** This spell's damage roll increases by 1d6.
 
 * **(+3 INT and above)** The target(s) chosen to make a saving throw to avoid damage no longer need to be unique. When choosing a target multiple times, they make one basic saving throw to resist a combined damage roll.
 
-* **(+3 WIS and above)** This spell’s range becomes 120 feet.
+* **(+3 WIS and above)** This spell's range becomes 120 feet.
 
 ## **\[2nd\] Spore Plume**
 
@@ -3239,11 +3238,11 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d8.
+* **(Repeatable)** This spell's damage roll increases by 2d8.
 
 * **(+3 WIS and above)** Your allies are able to perceive into or out of the area using normal senses.
 
-* **(+3 CHA and above, Repeatable)** The diameter of this spell’s area increases by 10 feet.
+* **(+3 CHA and above, Repeatable)** The diameter of this spell's area increases by 10 feet.
 
 ## **\[2nd\] Storm Stride**
 
@@ -3267,7 +3266,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d4.
+* **(Repeatable)** This spell's damage roll increases by 1d4.
 
 ## **\[2nd\] Summon Piano**
 
@@ -3287,7 +3286,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d6.
+* **(Repeatable)** This spell's damage roll increases by 2d6.
 
 * **(+3 CHA and above)** You summon a pipe organ instead, which increases its Size to Huge with 40 HP, 5 AC, and 15 Toughness.
 
@@ -3311,7 +3310,7 @@ Both attacks have the following effects:
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s area damage roll increases by 3 and its bonus weapon damage roll increases by 1d6.
+* **(Repeatable)** This spell's area damage roll increases by 3 and its bonus weapon damage roll increases by 1d6.
 
 * **(+3 WIS and above)** When this spell begins, you may travel up to half your Speed immediately. This may be done before using the **Spellstrike** trait.
 
@@ -3329,7 +3328,7 @@ Both attacks have the following effects:
 
 ## *I must have smelt it.*
 
-	You cause all creatures in a 15 foot radius sphere originating from a target location within range to make a **Fortitude** saving throw. On a failure, a creature is poisoned until this spell ends. At the end of an affected creature’s turn, they may retry the saving throw, ending the effect on a success.
+	You cause all creatures in a 15 foot radius sphere originating from a target location within range to make a **Fortitude** saving throw. On a failure, a creature is poisoned until this spell ends. At the end of an affected creature's turn, they may retry the saving throw, ending the effect on a success.
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
@@ -3357,7 +3356,7 @@ Both attacks have the following effects:
 
 * **(+3 INT and above)** You may instead target an unwilling creature within range.
 
-* **(+3 WIS and above)** The teleportation does not happen immediately and this spell’s duration becomes 10 minutes. When this spell ends (such as by dismissing it), you teleport to the target space or its nearest unoccupied space if occupied.
+* **(+3 WIS and above)** The teleportation does not happen immediately and this spell's duration becomes 10 minutes. When this spell ends (such as by dismissing it), you teleport to the target space or its nearest unoccupied space if occupied.
 
 ## **\[2nd\] Venomous Malaise**
 
@@ -3399,11 +3398,11 @@ Both attacks have the following effects:
 
 ## *You flood a creature with restorative vigor.*
 
-	You cause a target creature within range to become cleansed of the poisoned condition and gain a *wellspring pool* of 6d8 that persists until either the pool is emptied or this spell ends. At the start of each of an affected creature’s turns, they may roll the wellspring pool and **regain ST** equal to the total. Afterwards, wellspring dice are retained in the pool unless their outcome was a 7 or 8 (in which case they are discarded).
+	You cause a target creature within range to become cleansed of the poisoned condition and gain a *wellspring pool* of 6d8 that persists until either the pool is emptied or this spell ends. At the start of each of an affected creature's turns, they may roll the wellspring pool and **regain ST** equal to the total. Afterwards, wellspring dice are retained in the pool unless their outcome was a 7 or 8 (in which case they are discarded).
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s initial wellspring pool increases by 3d8.
+* **(Repeatable)** This spell's initial wellspring pool increases by 3d8.
 
 ## **\[2nd\] Web**
 
@@ -3443,15 +3442,15 @@ Both attacks have the following effects:
 
 **Concentration:**	No
 
-## *You sling jetstreams of acid that can cut through solid steel.* 
+## *You sling jetstreams of acid that can cut through solid steel.*
 
-	You cause a target within range to make a basic **Fortitude** saving throw to resist **12d8 acid damage**. On a failure, the target’s AC is reduced to their Base AC and all incoming attacks have their critical strike threshold reduced by 2 until this spell ends.
+	You cause a target within range to make a basic **Fortitude** saving throw to resist **12d8 acid damage**. On a failure, the target's AC is reduced to their Base AC and all incoming attacks have their critical strike threshold reduced by 2 until this spell ends.
 
 	If the target is an object and has Toughness 15 or below, you are able to slice cleanly through it in any fashion of your choosing as if you had automatically succeeded on a Wreck an Object action.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 4d8.
+* **(Repeatable)** This spell's damage roll increases by 4d8.
 
 * **(+3 INT and above)** The maximum object Toughness this spell may break increases to 20\.
 
@@ -3475,7 +3474,7 @@ While this spell is upgraded and an affected creature is more than 30 feet above
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d6.
+* **(Repeatable)** This spell's damage roll increases by 1d6.
 
 * **(+3 WIS and above)** You grant all affected creatures advanced Flying mobility.
 
@@ -3495,21 +3494,21 @@ While this spell is upgraded and an affected creature is more than 30 feet above
 
 ## *You call upon the souls around you, draw one forth, and strike true.*
 
-You choose a creature you are aware of within range and **perceive** them until this spell ends, negating the **Concealed** condition trait of invisible or other features. 
+You choose a creature you are aware of within range and **perceive** them until this spell ends, negating the **Concealed** condition trait of invisible or other features.
 
 **Spellstrike.** You may take an additional action when this spell begins to make a weapon attack. The attack gains the following benefits:
 
-* The attack’s range is the range of this spell.
+* The attack's range is the range of this spell.
 
 * The attack may target the chosen creature even if the targeting path is obstructed.
 
-* All of the attack’s damage is converted to **necrotic**.
+* All of the attack's damage is converted to **necrotic**.
 
 * If the attack hits, it deals an additional **9d8 necrotic damage** to the target.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 3d8.
+* **(Repeatable)** This spell's damage roll increases by 3d8.
 
 * **(+3 WIS and above)** The range of this spell becomes 60 feet.
 
@@ -3525,15 +3524,15 @@ You choose a creature you are aware of within range and **perceive** them until 
 
 **Concentration:**	No
 
-## *The original spellbook’s footnote read: “Do Not Create The Collapsing Vortex”.*
+## *The original spellbook's footnote read: Do Not Create The Collapsing Vortex.*
 
 You cause all creatures and objects in a 30 foot radius sphere originating from a target location within range to make a basic **Poise** saving throw to resist **6d8 force damage**. On a failure, an affected creature is pulled to the center of the area as closely as possible. For the purposes of determining the order of movement, creatures nearer to the center are affected before creatures farther from the center.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d8.
+* **(Repeatable)** This spell's damage roll increases by 2d8.
 
-* **(+3 CHA and above)** The radius of this spell’s area becomes 45 feet.
+* **(+3 CHA and above)** The radius of this spell's area becomes 45 feet.
 
 ## **\[3rd\] Crystalline Sentinel**
 
@@ -3581,11 +3580,11 @@ You cause all creatures and objects in a 30 foot radius sphere originating from 
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d6.
+* **(Repeatable)** This spell's damage roll increases by 2d6.
 
 * **(+3 WIS and above)** The range of this spell becomes 120 feet.
 
-## **\[3rd\] Déjà Vwoop**
+## **\[3rd\] Dj  Vwoop**
 
 **Spell Lists:**		Harmonic
 
@@ -3597,15 +3596,15 @@ You cause all creatures and objects in a 30 foot radius sphere originating from 
 
 **Concentration:**	No
 
-## *You forcibly push back a creature’s thought process by six seconds.*
+## *You forcibly push back a creature's thought process by six seconds.*
 
-	You cause a target creature within range to make a basic **Quick-Wits** saving throw to resist **12d6 psychic damage**. On a failure, during the target’s next turn, they must repeat an action of your choosing that they performed on their previous turn. 
+	You cause a target creature within range to make a basic **Quick-Wits** saving throw to resist **12d6 psychic damage**. On a failure, during the target's next turn, they must repeat an action of your choosing that they performed on their previous turn.
 
 If the creature has not taken a turn yet, they are only dealt the damage.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 4d6.
+* **(Repeatable)** This spell's damage roll increases by 4d6.
 
 * **(+3 INT and above)** On a failed save, the target repeats an action that you have already taken during this turn rather than an action they took.
 
@@ -3631,9 +3630,9 @@ If the creature has not taken a turn yet, they are only dealt the damage.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 1d6 \+ 1\.
+* **(Repeatable)** This spell's ST recovery roll increases by 1d6 \+ 1\.
 
-* **(+3 INT and above)** This spell’s **Expound** trait cannot be activated and may only target one creature. The amount of ST recovery granted from this spell is doubled.
+* **(+3 INT and above)** This spell's **Expound** trait cannot be activated and may only target one creature. The amount of ST recovery granted from this spell is doubled.
 
 * **(+3 CHA and above)** The range of this spell becomes 30 feet.
 
@@ -3653,7 +3652,7 @@ If the creature has not taken a turn yet, they are only dealt the damage.
 
 	All creatures in a 30 foot cube originating at a target location within range must make a **Will** saving throw. On a failure, an affected creature is charmed by you and incapacitated until this spell ends. A creature immune to being charmed is unaffected by **Enthralling Performance**.
 
-**Enthralling Performance** effects have the **Out of It** condition trait, which means they end early for a creature if it takes any damage or if they are within another creature’s Reach and that creature takes an action to shake them out of their stupor.
+**Enthralling Performance** effects have the **Out of It** condition trait, which means they end early for a creature if it takes any damage or if they are within another creature's Reach and that creature takes an action to shake them out of their stupor.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
@@ -3697,7 +3696,7 @@ If the creature has not taken a turn yet, they are only dealt the damage.
 
 ## *Blades dredged in spells dredged in hate.*
 
-You make a weapon attack. 
+You make a weapon attack.
 
 **Spellstrike.** You may take an additional action when this spell begins to make another weapon attack. This second attack ignores weapon attack fatigue.
 
@@ -3709,7 +3708,7 @@ You make a weapon attack.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** Both of this spell’s damage rolls increase by 1d8.
+* **(Repeatable)** Both of this spell's damage rolls increase by 1d8.
 
 ## **\[3rd\] Forbidden Thought**
 
@@ -3725,17 +3724,17 @@ You make a weapon attack.
 
 ## *You bury a psychic hook into an enemy and pull them away from you.*
 
-	You cause a target creature within range to make a basic **Quick-Wits** saving throw to resist **12d8 psychic damage**. On a failure, an affected creature cannot target you or your location until this spell ends. At the end of an affected creature’s turn, they may retry the saving throw, ending the effect on a success.
+	You cause a target creature within range to make a basic **Quick-Wits** saving throw to resist **12d8 psychic damage**. On a failure, an affected creature cannot target you or your location until this spell ends. At the end of an affected creature's turn, they may retry the saving throw, ending the effect on a success.
 
 	**Contagion.** As a reaction when a creature affected by a spell effect with contagion trait dies, is knocked out, or burns a Resolve, you may cause a different target creature within range to become affected by the spell as if it had failed the saving throw. Newly affected creatures are not dealt the initial damage.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 4d8.
+* **(Repeatable)** This spell's damage roll increases by 4d8.
 
 * **(+3 WIS and above)** The range of this spell becomes 120 feet.
 
-* **(+3 CHA and above)** On a failure, an affected creature cannot target a creature or the creature’s location of your choice.
+* **(+3 CHA and above)** On a failure, an affected creature cannot target a creature or the creature's location of your choice.
 
 ## **\[3rd\] Frostwave**
 
@@ -3755,9 +3754,9 @@ You make a weapon attack.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 3d6.
+* **(Repeatable)** This spell's damage roll increases by 3d6.
 
-* **(+3 INT and above)** This spell’s damage ignores DBs.
+* **(+3 INT and above)** This spell's damage ignores DBs.
 
 * **(+3 WIS and above)** The range of this spell becomes 60 feet.
 
@@ -3781,7 +3780,7 @@ You make a weapon attack.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 3d8.
+* **(Repeatable)** This spell's damage roll increases by 3d8.
 
 * **(+3 INT and above)** If the target fails the **Poise** saving throw, they become restrained until this spell ends.
 
@@ -3797,15 +3796,15 @@ You make a weapon attack.
 
 **Concentration:**	Yes
 
-## *“Do I cut the striped wire or the checkered one?”*
+## *Do I cut the striped wire or the checkered one?*
 
 	You conjure a *heat sink* at a target unoccupied space within range. The heat sink is a Small object with 45 HP, 15 AC, 15 Toughness, advanced Climbing mobility, and a Speed of 30 feet. This spell ends early if it is destroyed.
 
-	If the heat sink is within a creature’s Reach, they may take an action to *disarm* it, ending this spell. When this spell ends without the heat sink being disarmed, all creatures and unattended objects within 30 feet of it must make a basic **Reflex** saving throw to resist **30 fire damage**.
+	If the heat sink is within a creature's Reach, they may take an action to *disarm* it, ending this spell. When this spell ends without the heat sink being disarmed, all creatures and unattended objects within 30 feet of it must make a basic **Reflex** saving throw to resist **30 fire damage**.
 
 	**Automaton.** You may issue the *commands* listed below to an object of your choice created by this spell by taking its listed kind of action. Each command may only be performed once per round:
 
-* **Absorb (free action).** When one or more allies within 30 feet of the heat sink are dealt **fire damage**, you may redirect half of the total damage dealt to the heat sink. 
+* **Absorb (free action).** When one or more allies within 30 feet of the heat sink are dealt **fire damage**, you may redirect half of the total damage dealt to the heat sink.
 
 * **Move (free action during your turn).** The heat sink travels up to its Speed.
 
@@ -3813,7 +3812,7 @@ You make a weapon attack.
 
 * **(+3 INT and above)** You choose an elemental damage type other than **fire**. The damage type the heat sink may **Absorb** as well as the damage dealt by this spell is now the chosen damage type.
 
-* **(+3 CHA and above, Repeatable)** The heat sink’s HP increases by 15 and its Toughness increases by 5\.
+* **(+3 CHA and above, Repeatable)** The heat sink's HP increases by 15 and its Toughness increases by 5\.
 
 ## **\[3rd\] Hover**
 
@@ -3851,7 +3850,7 @@ You make a weapon attack.
 
 ## *You shove a target into a pocket dimension.*
 
-	You cause a target within range to make a **Courage** saving throw. On a failure, they are sent to a harmless demiplane until this spell ends. At the end of an affected creature’s turn, they may retry the saving throw, ending the effect on a success.
+	You cause a target within range to make a **Courage** saving throw. On a failure, they are sent to a harmless demiplane until this spell ends. At the end of an affected creature's turn, they may retry the saving throw, ending the effect on a success.
 
 When this spell ends, they return to the nearest unoccupied space from where they left.
 
@@ -3883,7 +3882,7 @@ If both attacks hit, a 5 foot wide line subsequently forms with endpoints that a
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 1d10.
+* **(Repeatable)** This spell's damage roll increases by 1d10.
 
 * **(+3 INT and above)** If the targets are pulled into adjacent spaces, they become stuck to each other until the targets take an action on the same turn to cleanse the condition.
 
@@ -3907,7 +3906,7 @@ If both attacks hit, a 5 foot wide line subsequently forms with endpoints that a
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 4d8.
+* **(Repeatable)** This spell's damage roll increases by 4d8.
 
 * **(+3 WIS and above)** The range of this spell becomes 120 feet.
 
@@ -3935,9 +3934,9 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d6.
+* **(Repeatable)** This spell's damage roll increases by 2d6.
 
-* **(+3 INT and above)** You teleport to your initiative partner’s previous position when they teleport.
+* **(+3 INT and above)** You teleport to your initiative partner's previous position when they teleport.
 
 * **(+3 WIS and above)** The range of this spell becomes 60 feet.
 
@@ -3955,11 +3954,11 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 ## *You transform a creature into a harmless animal.*
 
-	You cause a target creature within range to make a **Will** saving throw. A creature gains a degree of advantage on the saving throw for each Resolve they have remaining. On a failure, a target is polymorphed into a Tier Ø beast creature of your choosing until this spell ends. While polymorphed in this manner, burning a Resolve does not expend it.
+	You cause a target creature within range to make a **Will** saving throw. A creature gains a degree of advantage on the saving throw for each Resolve they have remaining. On a failure, a target is polymorphed into a Tier  beast creature of your choosing until this spell ends. While polymorphed in this manner, burning a Resolve does not expend it.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(+3 WIS and above)** This spell’s duration is extended to last until you take a long rest.
+* **(+3 WIS and above)** This spell's duration is extended to last until you take a long rest.
 
 ## **\[3rd\] Radiant Arsenal**
 
@@ -3975,13 +3974,13 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 ## *Tempered souls forge their own fate.*
 
-	You designate up to three target allies within range. Until this spell ends, whenever an affected creature hits with a weapon attack, they deal an additional **1d8 radiant damage**. If a d8 rolled for this spell’s damage has an outcome of 8, this spell is *upgraded* for all affected creatures until this spell ends.
+	You designate up to three target allies within range. Until this spell ends, whenever an affected creature hits with a weapon attack, they deal an additional **1d8 radiant damage**. If a d8 rolled for this spell's damage has an outcome of 8, this spell is *upgraded* for all affected creatures until this spell ends.
 
 	While this spell is upgraded, the additional damage of this spell increases to **1d10 radiant damage**.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Costs 2 Selections)** This spell’s normal damage die increases to 2d8 and the upgraded damage die increases to 2d10.
+* **(Costs 2 Selections)** This spell's normal damage die increases to 2d8 and the upgraded damage die increases to 2d10.
 
 * **(+3 CHA and above, Repeatable)** You target an additional creature within range.
 
@@ -4007,7 +4006,7 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage increases by 4\.
+* **(Repeatable)** This spell's damage increases by 4\.
 
 * **(+3 CHA and above, Repeatable)** The radius of the damage of **Layers of Fungus** increases by 5 feet.
 
@@ -4025,11 +4024,11 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 ## *Pay it forward.*
 
-	You cause a target ally within range to **regain 3d4 \+ 3 ST** and gain advantage on the next attack they make before this spell ends. If they make an attack before this spell ends, they may choose an ally they target within this spell’s range of them that has yet to be affected by this spell to gain all of the benefits of this spell.
+	You cause a target ally within range to **regain 3d4 \+ 3 ST** and gain advantage on the next attack they make before this spell ends. If they make an attack before this spell ends, they may choose an ally they target within this spell's range of them that has yet to be affected by this spell to gain all of the benefits of this spell.
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 1d4 \+ 1\.
+* **(Repeatable)** This spell's ST recovery roll increases by 1d4 \+ 1\.
 
 ## **\[3rd\] Soul Sink**
 
@@ -4049,9 +4048,9 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d6 and the target of this spell regains an additional 2 ST for each creature damaged by this spell.
+* **(Repeatable)** This spell's damage roll increases by 2d6 and the target of this spell regains an additional 2 ST for each creature damaged by this spell.
 
-* **(+3 CHA and above)** The radius of this spell’s area becomes 30 feet.
+* **(+3 CHA and above)** The radius of this spell's area becomes 30 feet.
 
 ## **\[3rd\] Squall**
 
@@ -4071,7 +4070,7 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d6.
+* **(Repeatable)** This spell's damage roll increases by 2d6.
 
 * **(+3 INT and above)** On a failure, an affected creature or object is pushed 60 feet away from you rather than 30 feet.
 
@@ -4093,9 +4092,9 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 ***Heightening.*** For each additional Circle above 3rd, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 4d6 \+ 4\.
+* **(Repeatable)** This spell's ST recovery roll increases by 4d6 \+ 4\.
 
-* **(+3 WIS and above)** This spell’s range becomes 60 feet.
+* **(+3 WIS and above)** This spell's range becomes 60 feet.
 
 * **(+3 CHA and above)** This spell does not end when it sets an attacker ablaze.
 
@@ -4143,7 +4142,7 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 ## *Twinkling motes of light descend from the sky and coalesce into a massive brass instrument of arcane warfare.*
 
-	You conjure an *astral ballista* at a target unoccupied space within range that persists until this spell ends. The astral ballista is a Large object with 60 HP, 15 AC, and 20 Toughness. This spell ends early if it is destroyed. 
+	You conjure an *astral ballista* at a target unoccupied space within range that persists until this spell ends. The astral ballista is a Large object with 60 HP, 15 AC, and 20 Toughness. This spell ends early if it is destroyed.
 
 **Automaton.** You may issue the *commands* listed below to an object of your choice created by this spell by taking its listed kind of action. Each command may only be performed once per round:
 
@@ -4151,15 +4150,15 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 * **Force Blast (action).** You designate a 10 foot radius sphere originating from a target location within range of the astral ballista. All creatures and unattended objects in the area must make a basic **Poise** saving throw to resist **4d8 force damage**. On a failure, an affected subject is pushed 10 feet away from the astral ballista and falls prone.
 
-* **Delegate (action).** You designate a target creature within range. Until this spell ends, they may use this spell’s **Automaton** trait if the astral ballista is within their Reach (each command may still only be performed once per round between all eligible issuers).
+* **Delegate (action).** You designate a target creature within range. Until this spell ends, they may use this spell's **Automaton** trait if the astral ballista is within their Reach (each command may still only be performed once per round between all eligible issuers).
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
 * **(Repeatable)** The **Dazzlefire Beam** damage roll increases by 1d10 and the **Force Blast** damage roll increases by 1d8.
 
-* **(+3 WIS and above)** This spell’s range becomes 120 feet.
+* **(+3 WIS and above)** This spell's range becomes 120 feet.
 
-* **(+3 CHA and above, Repeatable)** The astral ballista’s HP increases by 15 and its Toughness increases by 5\.
+* **(+3 CHA and above, Repeatable)** The astral ballista's HP increases by 15 and its Toughness increases by 5\.
 
 ## **\[4th\] Backfire Matrix**
 
@@ -4173,15 +4172,15 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 **Concentration:**	No
 
-## *A skilled caster can shield themself from a spell’s backfire. An even better one knows how to cause it.*
+## *A skilled caster can shield themself from a spell's backfire. An even better one knows how to cause it.*
 
-	You cause all creatures and objects within a 20 foot cube originating from a target location within range to make a basic **Fortitude** saving throw to resist **8d8 force damage**. For an affected creature or object that is concentrating on an effect, their concentration ends and this spell’s damage roll is replaced with the maximum possible result.
+	You cause all creatures and objects within a 20 foot cube originating from a target location within range to make a basic **Fortitude** saving throw to resist **8d8 force damage**. For an affected creature or object that is concentrating on an effect, their concentration ends and this spell's damage roll is replaced with the maximum possible result.
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d8.
+* **(Repeatable)** This spell's damage roll increases by 2d8.
 
-* **(+3 INT and above)** This spell’s damage ignores DBs.
+* **(+3 INT and above)** This spell's damage ignores DBs.
 
 * **(+3 WIS and above)** The range of this spell becomes 120 feet.
 
@@ -4249,7 +4248,7 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 * **(+3 WIS and above)** The range of this spell becomes 60 feet.
 
-* **(+3 CHA and above)** The dimensional anchor’s HP increases by 15 and its Toughness increases by 5\.
+* **(+3 CHA and above)** The dimensional anchor's HP increases by 15 and its Toughness increases by 5\.
 
 ## **\[4th\] Enkindled Filigree**
 
@@ -4275,7 +4274,7 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s initial damage roll increases by 2d6 and its **Incandescent** damage roll increases by 1d6.
+* **(Repeatable)** This spell's initial damage roll increases by 2d6 and its **Incandescent** damage roll increases by 1d6.
 
 * **(+3 INT and above)** Using **Shed Expectations** requires taking two actions instead of one.
 
@@ -4297,11 +4296,11 @@ Both of these attacks deal an additional **6d6 force damage** to their respectiv
 
 You designate a 25 foot radius, 50 foot tall cylinder originating from a target floor surface within range. The following effects are created within the area:
 
-* **Looping.** A creature that attempts to travel out of this spell’s area instead appears on the diametrically opposite side of the area. This effect does not occur when teleporting or when traveling out of the top or bottom faces of the cylindrical area.
+* **Looping.** A creature that attempts to travel out of this spell's area instead appears on the diametrically opposite side of the area. This effect does not occur when teleporting or when traveling out of the top or bottom faces of the cylindrical area.
 
-* **Mushrooms.** When you cast this spell, you may plant up to five *mushrooms* each at target 5 foot unoccupied spaces within the area. The mushrooms are invisible to any number of creatures of your choosing. When a creature enters a mushroom’s space, the mushroom is destroyed, the creature’s movement pool is cleared, and they must make a **Fortitude** saving throw. On a failure, a creature is incapacitated until the end of the current turn.
+* **Mushrooms.** When you cast this spell, you may plant up to five *mushrooms* each at target 5 foot unoccupied spaces within the area. The mushrooms are invisible to any number of creatures of your choosing. When a creature enters a mushroom's space, the mushroom is destroyed, the creature's movement pool is cleared, and they must make a **Fortitude** saving throw. On a failure, a creature is incapacitated until the end of the current turn.
 
-* **Tree.** A 50 foot tall *tree* appears at the area’s centerpoint with a 5 foot diameter trunk. Creatures are pushed out into nearby unoccupied spaces if the tree appears in their space. The top of the tree fans out into a thick canopy covering the top of the cylinder. The canopy is a solid material of 15 Toughness and any holes piercing through it regenerate at the start of your turn.
+* **Tree.** A 50 foot tall *tree* appears at the area's centerpoint with a 5 foot diameter trunk. Creatures are pushed out into nearby unoccupied spaces if the tree appears in their space. The top of the tree fans out into a thick canopy covering the top of the cylinder. The canopy is a solid material of 15 Toughness and any holes piercing through it regenerate at the start of your turn.
 
 	When this spell ends, everything created by this spell instantly disappears.
 
@@ -4323,7 +4322,7 @@ You designate a 25 foot radius, 50 foot tall cylinder originating from a target 
 
 ## *A gross but ultimately harmless liquefaction.*
 
-	You cause any number of willing creatures within range to become polymorphed into a Tier Ø ooze creature form with the following statistics until this spell ends:
+	You cause any number of willing creatures within range to become polymorphed into a Tier  ooze creature form with the following statistics until this spell ends:
 
 * **Movement.** A Speed of 15 feet with advanced Climbing mobility. They are able to squeeze through gaps with diameters of 1 inch or greater.
 
@@ -4353,13 +4352,13 @@ You designate a 25 foot radius, 50 foot tall cylinder originating from a target 
 
 	You cause a target creature within range to make a basic **Will** saving throw to resist **16d6 necrotic damage**. On a failure, a target is *despaired* until this spell ends for them. Creatures despaired by this spell have their Speed halved and cannot regain ST through means other than expending Resolve.
 
-Regardless of success or failure, if the above target dies from this spell's damage roll, you may extend this spell’s duration to 10 minutes and concentrate on this spell to create an intangible *grim conduit* at the target’s location which persists until this spell ends.
+Regardless of success or failure, if the above target dies from this spell's damage roll, you may extend this spell's duration to 10 minutes and concentrate on this spell to create an intangible *grim conduit* at the target's location which persists until this spell ends.
 
 	Once as a free action during each of your turns, you may cause a target creature within 30 feet of the grim conduit to make a basic **Will** saving throw to resist **4d8 necrotic damage**. On a failure, an affected creature is also despaired until this spell ends.
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s initial damage roll is increased by 4d6 and its repeated damage roll is increased by 1d8.
+* **(Repeatable)** This spell's initial damage roll is increased by 4d6 and its repeated damage roll is increased by 1d8.
 
 * **(+3 INT and above)** Creatures despaired by this spell also incur disadvantage on all attack checks.
 
@@ -4381,11 +4380,11 @@ Regardless of success or failure, if the above target dies from this spell's dam
 
 ## *Call now for immediate results.*
 
-	You cause both you and a target initiative partner within range to **regain 4d8 \+ 4 ST** and add 15 feet of your Speeds until this spell ends. Additionally, a *hypeline* appears as a 5 foot wide line whose endpoints are your location and the target’s location. As you and your target move, the endpoints of the hypeline move along with. If a hypeline passes through a creature, they **regain 4d8 \+ 4 ST**. A creature cannot be affected by this spell more than once.
+	You cause both you and a target initiative partner within range to **regain 4d8 \+ 4 ST** and add 15 feet of your Speeds until this spell ends. Additionally, a *hypeline* appears as a 5 foot wide line whose endpoints are your location and the target's location. As you and your target move, the endpoints of the hypeline move along with. If a hypeline passes through a creature, they **regain 4d8 \+ 4 ST**. A creature cannot be affected by this spell more than once.
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 1d8 \+ 1\.
+* **(Repeatable)** This spell's ST recovery roll increases by 1d8 \+ 1\.
 
 ## **\[4th\] Leyline Jaunt**
 
@@ -4431,7 +4430,7 @@ Regardless of success or failure, if the above target dies from this spell's dam
 
 	You name an object and create a *scrying lens* within 30 feet of a qualifying object with that name. The scrying lens is located such that the object can be **perceived** by the lens. The scrying lens is a Tiny object that is invisible with 5 HP, 20 AC, and 5 Toughness, and it persists until this spell ends.
 
-If multiple objects qualify, one of them is chosen at random. Only objects that are on the same plane of existence as you may qualify for this spell. If either zero or more than seven objects qualify for this spell, a scrying lens is not created and this spell ends. Effects with the **Illusion** spell trait can qualify as if they were real objects. 
+If multiple objects qualify, one of them is chosen at random. Only objects that are on the same plane of existence as you may qualify for this spell. If either zero or more than seven objects qualify for this spell, a scrying lens is not created and this spell ends. Effects with the **Illusion** spell trait can qualify as if they were real objects.
 
 **Scrying.** As an action, you may choose an object created by this spell and begin perceiving as if you were located at it. As a free action, you may end this effect.
 
@@ -4443,7 +4442,7 @@ If multiple objects qualify, one of them is chosen at random. Only objects that 
 
 * **(+3 CHA and above)** If no scrying lens is created from this spell, you may create a new **Material Scrying** effect naming a different object. This new effect gains the heightening enhancements of the original except for this one.
 
-## **\[4th\] Martyr’s Precept**
+## **\[4th\] Martyr's Precept**
 
 **Spell Lists:**		Occult
 
@@ -4457,11 +4456,11 @@ If multiple objects qualify, one of them is chosen at random. Only objects that 
 
 ## *True heroics are acts of sacrifice.*
 
-	You cause a target creature within range to **regain 8d4 \+ 8 ST**. If the target is affected by one or more negative conditions, this spell’s ST recovery roll is doubled and all of those conditions now affect you instead of the target.
+	You cause a target creature within range to **regain 8d4 \+ 8 ST**. If the target is affected by one or more negative conditions, this spell's ST recovery roll is doubled and all of those conditions now affect you instead of the target.
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 2d4 \+ 2\.
+* **(Repeatable)** This spell's ST recovery roll increases by 2d4 \+ 2\.
 
 ## **\[4th\] Miasma**
 
@@ -4481,11 +4480,11 @@ If multiple objects qualify, one of them is chosen at random. Only objects that 
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll increases by 2d6.
+* **(Repeatable)** This spell's damage roll increases by 2d6.
 
 * **(+3 WIS and above)** Once per round, you may take an action to move the origin of the area up to 30 feet to a target surface within range.
 
-* **(+3 CHA and above)** The radius of this spell’s area becomes 30 feet.
+* **(+3 CHA and above)** The radius of this spell's area becomes 30 feet.
 
 ## **\[4th\] Mirror Fate**
 
@@ -4511,7 +4510,7 @@ This spell ends when either fate-linked creature dies or expends a Resolve, and 
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(+3 INT and above)** This spell’s saving throw DC is increased by 2\.
+* **(+3 INT and above)** This spell's saving throw DC is increased by 2\.
 
 * **(+3 CHA and above, Repeatable)** You may target an additional creature within range. This spell ends if the effect ends for any of the fate-linked creatures.
 
@@ -4547,7 +4546,7 @@ This spell ends when either fate-linked creature dies or expends a Resolve, and 
 
 	You designate a 30 foot radius, 30 foot tall cylinder originating from a target floor within range. Until this spell ends, creatures in the area are pacified.
 
-**Permanence.** When this spell begins, you may expend a Resource to cause this spell’s duration to become Indefinite.
+**Permanence.** When this spell begins, you may expend a Resource to cause this spell's duration to become Indefinite.
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
@@ -4555,7 +4554,7 @@ This spell ends when either fate-linked creature dies or expends a Resolve, and 
 
 * **(+3 WIS and above)** While in the area, you gain advantage on WIS effort and trade checks.
 
-* **(+3 CHA and above)** The area is doubled in all dimensions. If you are using this spell’s **Permanence** spell trait, this enhancement instead quadruples the total area in all dimensions.
+* **(+3 CHA and above)** The area is doubled in all dimensions. If you are using this spell's **Permanence** spell trait, this enhancement instead quadruples the total area in all dimensions.
 
 ## **\[4th\] Read the Earth**
 
@@ -4601,7 +4600,7 @@ Until this spell ends, you may ask the soul up to three questions and it is comp
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(+3 INT and above)** The soul’s answers must be truthful, though they may be incomplete.
+* **(+3 INT and above)** The soul's answers must be truthful, though they may be incomplete.
 
 * **(+3 WIS and above)** The target vestige no longer requires a skull and may now instead be an object owned by the soul during its life.
 
@@ -4627,9 +4626,9 @@ Until this spell ends, you may ask the soul up to three questions and it is comp
 
 * **(+3 INT and above, Repeatable)** The maximum Toughness this spell may break increases by 5\.
 
-* **(+3 WIS and above)** This spell’s range becomes 60 feet.
+* **(+3 WIS and above)** This spell's range becomes 60 feet.
 
-* **(+3 CHA and above)** This spell’s side length becomes 30 feet. 
+* **(+3 CHA and above)** This spell's side length becomes 30 feet.
 
 ## **\[4th\] Reticence Sigil**
 
@@ -4675,7 +4674,7 @@ Until this spell ends, you may ask the soul up to three questions and it is comp
 
 * **(+3 INT and above, Repeatable)** You may additionally target unwilling creatures to be affected if they fail a **Poise** saving throw. If this enhancement is selected twice, there is no saving throw (they are always teleported).
 
-* **(+3 WIS and above)** This spell’s range becomes 60 feet.
+* **(+3 WIS and above)** This spell's range becomes 60 feet.
 
 ## **\[4th\] Spectral Guardians**
 
@@ -4689,9 +4688,9 @@ Until this spell ends, you may ask the soul up to three questions and it is comp
 
 **Concentration:**	No
 
-## *Those that answer the call find rest only in duty.* 
+## *Those that answer the call find rest only in duty.*
 
-	You cause up to three target creatures within range to gain a *spectral guardian* for each creature that immediately causes the creature to **regain 2d6 \+ 2 ST**. Each creature’s spectral guardian lasts until this spell ends and grants the following benefits:
+	You cause up to three target creatures within range to gain a *spectral guardian* for each creature that immediately causes the creature to **regain 2d6 \+ 2 ST**. Each creature's spectral guardian lasts until this spell ends and grants the following benefits:
 
 * **Aegis.** Attacks against the creature incur disadvantage.
 
@@ -4699,7 +4698,7 @@ Until this spell ends, you may ask the soul up to three questions and it is comp
 
 ***Heightening.*** For each additional Circle above 2nd, choose one of the enhancements below:
 
-* **(Repeatable)** Both of this spell’s ST recovery roll increase by 1d6 \+ 1\.
+* **(Repeatable)** Both of this spell's ST recovery roll increase by 1d6 \+ 1\.
 
 ## **\[4th\] Starlight Solace**
 
@@ -4721,7 +4720,7 @@ Until this spell ends, you may ask the soul up to three questions and it is comp
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 1d6 \+ 1\.
+* **(Repeatable)** This spell's ST recovery roll increases by 1d6 \+ 1\.
 
 * **(+3 WIS and above)** This spell also cleanses the stunned condition for all affected creatures.
 
@@ -4737,9 +4736,9 @@ Until this spell ends, you may ask the soul up to three questions and it is comp
 
 **Concentration:**	Yes
 
-## *You open your heart and soul to form a channel into another’s.*
+## *You open your heart and soul to form a channel into another's.*
 
-	You target yourself and a creature within range to *connect* both you and them until this spell ends. This spell ends early if any connected creatures are further than this spell’s range from each other. All connected creatures gain the following effects:
+	You target yourself and a creature within range to *connect* both you and them until this spell ends. This spell ends early if any connected creatures are further than this spell's range from each other. All connected creatures gain the following effects:
 
 * **Skim Surface.** They may read the surface thoughts and emotions of any other creature affected by this spell.
 
@@ -4763,7 +4762,7 @@ You conjure a doorway at a target location within range. The doorway is a Large 
 
 All doorways created from **Transplanar Crossroads** from all casters of the spell lead to the same extradimensional space, though the doorways appear at different locations inside of it. **Transplanar Crossroads** cannot be cast while inside the extradimensional space.
 
-	The GM determines the size, nature, contents, and whether there are other doorways that currently exist inside **Transplanar Crossroad’s** extradimensional space.
+	The GM determines the size, nature, contents, and whether there are other doorways that currently exist inside **Transplanar Crossroad's** extradimensional space.
 
 ## **\[4th\] Traverse the Wilds**
 
@@ -4805,7 +4804,7 @@ All doorways created from **Transplanar Crossroads** from all casters of the spe
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s **Explosion** damage roll increases by 1d8.
+* **(Repeatable)** This spell's **Explosion** damage roll increases by 1d8.
 
 * **(+3 INT and above)** Weapon attacks made with the designated weapon have their critical hit threshold reduced by 1\.
 
@@ -4829,7 +4828,7 @@ All doorways created from **Transplanar Crossroads** from all casters of the spe
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s ST recovery roll increases by 4d6 \+ 4\.
+* **(Repeatable)** This spell's ST recovery roll increases by 4d6 \+ 4\.
 
 * **(+3 INT and above)** The weapon attack that violently blooms inflicts restrained instead of stuck.
 
@@ -4853,9 +4852,9 @@ All doorways created from **Transplanar Crossroads** from all casters of the spe
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s initial damage roll increases by 2d10 and the restrained failure damage roll increases by 2d6.
+* **(Repeatable)** This spell's initial damage roll increases by 2d10 and the restrained failure damage roll increases by 2d6.
 
-* **(+3 INT and above)** This spell’s damage ignores DBs.
+* **(+3 INT and above)** This spell's damage ignores DBs.
 
 * **(+3 CHA and above, Repeatable)** You target an additional creature within range.
 
@@ -4871,13 +4870,13 @@ All doorways created from **Transplanar Crossroads** from all casters of the spe
 
 **Concentration:**	No
 
-## *Your personality is electrostatic…*
+## *Your personality is electrostatic*
 
 	Creatures of your choosing within range when this spell is cast must make a **Quick-Wits** saving throw. On a failure, a creature is pulled into a space adjacent to you. At the start of your next turn, all creatures within 5 feet of you are stunned until the end of their next turn.
 
 ***Heightening.*** For each additional Circle above 4th, choose one of the enhancements below:
 
-* **(+3 INT and above)** this spell’s saving throw DC is increased by 2\.
+* **(+3 INT and above)** this spell's saving throw DC is increased by 2\.
 
 * **(+3 WIS and above)** The range of this spell becomes 30 feet.
 
@@ -4895,17 +4894,17 @@ All doorways created from **Transplanar Crossroads** from all casters of the spe
 
 **Concentration:**	No
 
-## *…toil and trouble, corrosion bites, and the sword strikes double.*
+## *toil and trouble, corrosion bites, and the sword strikes double.*
 
 	You cause a target within range to make a **Reflex** saving throw to resist **10d8 acid damage**. On a failure, the first attack made against an affected creature before this spell ends automatically hits and scores a critical hit.
 
 ***Heightening.*** When cast at 6th Circle, choose one of the enhancements below:
 
-* This spell’s damage roll becomes 12d8.
+* This spell's damage roll becomes 12d8.
 
-* **(+3 WIS and above)** This spell’s range becomes 60 feet.
+* **(+3 WIS and above)** This spell's range becomes 60 feet.
 
-## **\[5th\] Castigator’s Will**
+## **\[5th\] Castigator's Will**
 
 **Spell Lists:**		Occult
 
@@ -4919,13 +4918,13 @@ All doorways created from **Transplanar Crossroads** from all casters of the spe
 
 ## *Misguided hope is always the last to crumble.*
 
-	When a target creature within range makes a saving throw, you may cast **Castigator’s Will** as a reaction. The target automatically fails the saving throw.
+	When a target creature within range makes a saving throw, you may cast **Castigator's Will** as a reaction. The target automatically fails the saving throw.
 
 ***Heightening.*** When cast at 6th Circle, choose one of the enhancements below:
 
 * **(+3 INT and above)** If the triggering effect has a saving throw to end the effect early, the target automatically fails those subsequent saving throws as well.
 
-* **(+3 WIS and above)** This spell’s range becomes 60 feet.
+* **(+3 WIS and above)** This spell's range becomes 60 feet.
 
 ## **\[5th\] Chain Lightning**
 
@@ -4945,9 +4944,9 @@ All doorways created from **Transplanar Crossroads** from all casters of the spe
 
 ***Heightening.*** When cast at 6th Circle, choose one of the enhancements below:
 
-* This spell’s damage roll becomes 6d6.
+* This spell's damage roll becomes 6d6.
 
-* **(+3 INT and above)** A creature that fails this spell’s saving throw is also disoriented until the end of its next turn.
+* **(+3 INT and above)** A creature that fails this spell's saving throw is also disoriented until the end of its next turn.
 
 * **(+3 CHA and above)** You may target two additional targets within range.
 
@@ -4963,9 +4962,9 @@ All doorways created from **Transplanar Crossroads** from all casters of the spe
 
 **Concentration:**	Yes
 
-## *A knotted ball of reflective yarn, able to accept and return thought waves directed at it. Not a mirror, but an amplifier of an idea’s complexity.*
+## *A knotted ball of reflective yarn, able to accept and return thought waves directed at it. Not a mirror, but an amplifier of an idea's complexity.*
 
-	You conjure a *conceptual entangler* at a target unoccupied space within range that persists until this spell ends. A conceptual entangler is a Tiny object with 75 HP, 21 AC, and 0 Toughness. This spell ends early if it is destroyed. 
+	You conjure a *conceptual entangler* at a target unoccupied space within range that persists until this spell ends. A conceptual entangler is a Tiny object with 75 HP, 21 AC, and 0 Toughness. This spell ends early if it is destroyed.
 
 	**Automaton.** You may issue the *commands* listed below to an object of your choice created by this spell. You must take the listed kind of action in each of the following commands to activate this spell trait, and each command may only be performed once per round:
 
@@ -4999,7 +4998,7 @@ All doorways created from **Transplanar Crossroads** from all casters of the spe
 
 ## *Your infectious energy causes others to join you in a big dance.*
 
-	You cause up to three target creatures within range to make a **Will** saving throw. On a failure, a creature is charmed by you until this spell ends. While charmed by this spell, an affected creature is stunned as they dance in place. At the end of an affected creature’s turn, they may retry the saving throw, ending the effect on a success.
+	You cause up to three target creatures within range to make a **Will** saving throw. On a failure, a creature is charmed by you until this spell ends. While charmed by this spell, an affected creature is stunned as they dance in place. At the end of an affected creature's turn, they may retry the saving throw, ending the effect on a success.
 
 Once per round until this spell ends (including when you cast this spell) you may take an action to add half your Speed to your movement pool and cause an additional creature within range to make a **Will** saving throw. On a failure, the target becomes charmed by this spell in the same manner as above.
 
@@ -5009,7 +5008,7 @@ When you spend movement granted by this spell, all creatures you have charmed by
 
 * **(+3 INT and above)** The DC of all saving throws imposed by this spell are increased by 2\.
 
-* **(+3 WIS and above)** this spell’s range becomes 120 feet.
+* **(+3 WIS and above)** this spell's range becomes 120 feet.
 
 ## **\[5th\] Freeze**
 
@@ -5025,13 +5024,13 @@ When you spend movement granted by this spell, all creatures you have charmed by
 
 ## *You stall the biology of a target with a terrifying coldness.*
 
-	You cause a target creature within range to make a **Fortitude** saving throw. On a failure, a target is frozen until this spell ends. At the end of an affected creature’s turn, they may retry the saving throw, ending the effect on a success.
+	You cause a target creature within range to make a **Fortitude** saving throw. On a failure, a target is frozen until this spell ends. At the end of an affected creature's turn, they may retry the saving throw, ending the effect on a success.
 
 	**Contagion.** As a reaction when a creature affected by a spell effect with contagion trait dies, is knocked out, or burns a Resolve, you may cause a different target creature within range to become affected by the spell as if it had failed the saving throw.
 
 ***Heightening.*** When cast at 6th Circle, choose one of the enhancements below:
 
-* **(+3 INT and above)** This spell’s saving throw DC is increased by 2\.
+* **(+3 INT and above)** This spell's saving throw DC is increased by 2\.
 
 * **(+3 WIS and above)** The range of this spell becomes 60 feet.
 
@@ -5053,11 +5052,11 @@ When you spend movement granted by this spell, all creatures you have charmed by
 
 	Additionally, if a lifelinked creature makes a saving throw or multiple simultaneously, all of their lifelinked creatures make the saving throw. The best total amongst the saving throws made is used for all lifelinked creatures, and all lifelinked creatures are affected by the success or failure effects caused by the saving throw.
 
-	Lastly, at the start of a lifelinked creature’s turn, that creature **regains 5d4 \+ 5 ST**.
+	Lastly, at the start of a lifelinked creature's turn, that creature **regains 5d4 \+ 5 ST**.
 
 ***Heightening.*** When cast at 6th Circle, choose one of the enhancements below:
 
-* This spell’s ST recovery die becomes 6d4 \+ 6\.
+* This spell's ST recovery die becomes 6d4 \+ 6\.
 
 * **(+3 CHA and above)** You target an additional creature within range.
 
@@ -5079,7 +5078,7 @@ When you spend movement granted by this spell, all creatures you have charmed by
 
 ***Heightening.*** When cast at 6th Circle, choose one of the enhancements below:
 
-* **(Repeatable)** This spell’s damage roll becomes 24d6.
+* **(Repeatable)** This spell's damage roll becomes 24d6.
 
 * **(+3 WIS and above)** The range of this spell becomes 120 feet.
 
@@ -5099,15 +5098,15 @@ When you spend movement granted by this spell, all creatures you have charmed by
 
 	You create a *maelstrom* represented as a 20 foot radius, 120 foot tall cylinder originating from a target floor within range that persists until this spell ends. If a creature starts its turn in the maelstrom or moves into it, they must make a **Poise** saving throw. On a failure, an affected creature is restrained by this spell and pulled to the center of the maelstrom. A creature restrained by this spell may take an action to retry the saving throw, ending the effect on a success and ejecting themselves out of the maelstrom. If the creature exits the maelstrom while restrained by this spell, they are no longer restrained.
 
-	Unattended objects in the maelstrom’s path are automatically restrained and pulled to the center of the maelstrom. At the end of every round, creatures and objects restrained by the maelstrom is dealt **10d6 bludgeoning damage**.
+	Unattended objects in the maelstrom's path are automatically restrained and pulled to the center of the maelstrom. At the end of every round, creatures and objects restrained by the maelstrom is dealt **10d6 bludgeoning damage**.
 
 Additionally, once per round, you may take an action to cause the origin point of the maelstrom to travel up to 30 feet to a target floor within range. All creatures and objects already restrained by this spell are moved with the maelstrom. Any creature or object the maelstrom passes over during this movement is subjected to its effects similar to above.
 
 ***Heightening.*** When cast at 6th Circle, choose one of the enhancements below:
 
-* This spell’s damage die becomes 12d6.
+* This spell's damage die becomes 12d6.
 
-* **(+3 CHA and above)** The radius of this spell’s area becomes 40 feet.
+* **(+3 CHA and above)** The radius of this spell's area becomes 40 feet.
 
 ## **\[5th\] Pseudochemical Heart**
 
@@ -5127,7 +5126,7 @@ You cause a target willing creature within range to gain the following effects u
 
 * **Adrenaline Pool.** An affected creature has an *adrenaline pool* of dice that starts at 0d4. When this spell ends for a creature, they are dealt **injuring poison damage** equal to a rolling of the adrenaline pool.
 
-* **Expand.** Once during an affected creature’s turn or when they expend a Resolve, they may immediately take an action of their choice as a free action (which may be used as part of a multiaction). If they do, they add 3d4 to their adrenaline pool.
+* **Expand.** Once during an affected creature's turn or when they expend a Resolve, they may immediately take an action of their choice as a free action (which may be used as part of a multiaction). If they do, they add 3d4 to their adrenaline pool.
 
 * **Contract.** As an action, an affected creature may remove 3d4 from their adrenaline pool.
 
@@ -5161,7 +5160,7 @@ You cause a target willing creature within range to gain the following effects u
 
 ***Heightening.*** When cast at 6th Circle, choose one of the enhancements below:
 
-* This spell’s ST recovery roll becomes 24d6 \+ 24\.
+* This spell's ST recovery roll becomes 24d6 \+ 24\.
 
 * **(+3 INT and above)** Additionally, the target is cleansed of the frozen condition.
 
@@ -5185,7 +5184,7 @@ You cause a target willing creature within range to gain the following effects u
 
 ***Heightening.*** When cast at 6th Circle, choose one of the enhancements below:
 
-* This spell’s damage and healing roll both become 12d6.
+* This spell's damage and healing roll both become 12d6.
 
 * **(+3 INT and above)** You invert the effect of this spell: creatures in the circle regain ST while creatures both in the circle and in one of the lines must make the basic **Reflex** saving throw to resist the damage of this spell.
 
@@ -5215,7 +5214,7 @@ You cause a target willing creature within range to gain the following effects u
 
 * **Relocation.** You may take portions of walls, floors, or ceilings and move them to locations within the area.
 
-	Structures formed by this spell ignore the effects of gravity while this spell persists. However, once this spell ends, modifications to the terrain made by this spell do not return to their original arrangement. 
+	Structures formed by this spell ignore the effects of gravity while this spell persists. However, once this spell ends, modifications to the terrain made by this spell do not return to their original arrangement.
 
 If terrain modifications created by this spell would forcibly move a creature or trap them, the creature may make a **Poise** or **Reflex** saving throw. On a success, they may take a reaction to add half their Speed to their movement pool which they may immediately spend as this spell takes effect to find safety.
 
@@ -5223,7 +5222,7 @@ If terrain modifications created by this spell would forcibly move a creature or
 
 * **(+3 WIS and above)** The range of this spell becomes 60 feet.
 
-* **(+3 CHA and above)** The area’s side length becomes 120 feet.
+* **(+3 CHA and above)** The area's side length becomes 120 feet.
 
 ## **\[5th\] Triple Take**
 
@@ -5243,7 +5242,7 @@ If terrain modifications created by this spell would forcibly move a creature or
 
 ***Heightening.*** When cast at 6th Circle, choose one of the enhancements below:
 
-* **(+3 WIS and above)** This spell’s casting time is reduced to a free action.
+* **(+3 WIS and above)** This spell's casting time is reduced to a free action.
 
 * **(+3 CHA and above)** You target a third creature within range other than yourself.
 
@@ -5265,13 +5264,13 @@ If terrain modifications created by this spell would forcibly move a creature or
 
 * **A Door Opens.** All attacks they make have their critical strike threshold reduced by 2\.
 
-* **Another Closes.** All attacks against them have their critical strike threshold increased by 2\. If this would cause an attack’s critical strike threshold to increase above 20, the attack instead cannot score a critical hit.
+* **Another Closes.** All attacks against them have their critical strike threshold increased by 2\. If this would cause an attack's critical strike threshold to increase above 20, the attack instead cannot score a critical hit.
 
 **Expound.** You may take an additional action when this spell begins. If you do, you double the amount of ST regained for all affected creatures.
 
 ***Heightening.*** When cast at 6th Circle, choose one of the enhancements below:
 
-* This spell’s ST recovery die becomes 6d6 \+ 6\.
+* This spell's ST recovery die becomes 6d6 \+ 6\.
 
 ## **\[5th\] Twin Parallax**
 
@@ -5291,7 +5290,7 @@ If terrain modifications created by this spell would forcibly move a creature or
 
 ***Heightening.*** When cast at 6th Circle, choose one of the enhancements below:
 
-* This spell’s ST recovery roll increases to 12d4 \+ 12\.
+* This spell's ST recovery roll increases to 12d4 \+ 12\.
 
 * **(+3 CHA and above)** You target up to four creatures within range.
 
@@ -5311,7 +5310,7 @@ If terrain modifications created by this spell would forcibly move a creature or
 
 ## *The hated form is destroyed, the one unbound set in its place.*
 
-	You designate a 15 foot diameter sphere originating from a target location within range. All creatures in the area **regain 6d6 \+ 6 ST** and are cleansed of all conditions and effects of the target’s choosing.
+	You designate a 15 foot diameter sphere originating from a target location within range. All creatures in the area **regain 6d6 \+ 6 ST** and are cleansed of all conditions and effects of the target's choosing.
 
 **Expound.** You may take an additional action when this spell begins. If you do, you double the amount of ST regained for all affected creatures.
 
@@ -5341,9 +5340,9 @@ You cause the earth in a 100 foot radius sphere originating from a target locati
 
   * **Building Collapse.** A building in the area collapses, potentially trapping any creature inside. All creatures become restrained under a pile of rubble, taking any falling damage the rubble would have taken based on the maximum height of the building. A STR effort check against your spell save DC may be used to escape or help a creature escape.
 
-  * **Fissure.** A fissure 20 feet wide, 60 feet long, and 60 feet deep erupts in this spell’s area. A creature on those spaces falls into the fissure and takes the appropriate falling damage.
+  * **Fissure.** A fissure 20 feet wide, 60 feet long, and 60 feet deep erupts in this spell's area. A creature on those spaces falls into the fissure and takes the appropriate falling damage.
 
-  * **Landslide**. A cliff or overhang of earth in the area collapses, and slides downhill. All creatures standing atop the crumbling surface or caught in the wake of the avalanche of earth are carried off in some direction, potentially outside of this spell’s area.
+  * **Landslide**. A cliff or overhang of earth in the area collapses, and slides downhill. All creatures standing atop the crumbling surface or caught in the wake of the avalanche of earth are carried off in some direction, potentially outside of this spell's area.
 
 When this spell ends, all modifications made to the terrain with this spell remain.
 
@@ -5377,7 +5376,7 @@ When this spell ends, all modifications made to the terrain with this spell rema
 
 **Concentration:**	No
 
-## *A bolt of lightning strikes an ally with explosive resurgence.* 
+## *A bolt of lightning strikes an ally with explosive resurgence.*
 
 	You cause a target creature within range to gain the following benefits:
 
@@ -5385,7 +5384,7 @@ When this spell ends, all modifications made to the terrain with this spell rema
 
 * **Recovery.** The target **regains 24d6 ST**. For each d6 rolled whose outcome is a 6, the d6 *explodes* and you add an additional d6 to the ST recovery roll. All d6s added to the ST recovery roll may also explode if their outcome is a 6\.
 
-* **Explosion.** Creatures of your choosing within 15 feet of the target must make a basic **Reflex** saving throw to resist **lightning damage** equal to 5 × the number of d6s that exploded.
+* **Explosion.** Creatures of your choosing within 15 feet of the target must make a basic **Reflex** saving throw to resist **lightning damage** equal to 5 - the number of d6s that exploded.
 
 ## **\[6th\] Into the Fold**
 
@@ -5399,7 +5398,7 @@ When this spell ends, all modifications made to the terrain with this spell rema
 
 **Concentration:**	No
 
-## *Yeah, I’m thinking we’re back.*
+## *Yeah, I'm thinking we're back.*
 
 	You cause up to five willing creatures to teleport to an unoccupied space within your Reach and **regain 6d8 \+ 12 ST**. A creature must be on the same plane of existence as you to be affected by this spell.
 
@@ -5421,7 +5420,7 @@ When this spell ends, all modifications made to the terrain with this spell rema
 
 	When a creature trapped in a maze plane starts their turn, they may make an INT effort check and add the result to a running score. If multiple creatures travel together, only one creature makes the INT effort check for the whole group. Once a creature surpasses a threshold score of 50, they reach the boundaries of the maze and may inflict damage upon or take Wreck an Object actions against the marble from the inside.
 
-	When this spell ends, all creatures trapped in the maze plane are ejected onto the nearest unoccupied spaces from the marble’s location.
+	When this spell ends, all creatures trapped in the maze plane are ejected onto the nearest unoccupied spaces from the marble's location.
 
 ## **\[6th\] Mantle of Hyperreality**
 
@@ -5459,7 +5458,7 @@ When this spell ends, all modifications made to the terrain with this spell rema
 
 ## *For you, doomsday is the day the sky fell and shattered your ramparts. For me, it was Tuesday.*
 
-	You cause all creatures in a 60 foot radius sphere originating from a target location within range to fall prone and be set ablaze. Immediately afterwards, they must make a basic **Reflex** saving throw to resist **6d10 fire damage**. Once per round, including the round you cast this spell, you may take an action to repeat this spell’s effect.
+	You cause all creatures in a 60 foot radius sphere originating from a target location within range to fall prone and be set ablaze. Immediately afterwards, they must make a basic **Reflex** saving throw to resist **6d10 fire damage**. Once per round, including the round you cast this spell, you may take an action to repeat this spell's effect.
 
 ## **\[6th\] Nebulaic Barrage**
 
@@ -5537,7 +5536,7 @@ You designate a 60 foot radius sphere centered in a target location within range
 
 **Concentration:**	No
 
-## *You twist a target’s thought process into a cascading causal loop.*
+## *You twist a target's thought process into a cascading causal loop.*
 
 	You cause a target creature within range to make a basic **Quick-Wits** saving throw to resist **24d6 psychic damage**. On a failure, the target is stunned until this spell ends. Additionally, if the target is within the Reach of a creature, that creature may take an action to cause the target to retry the saving throw, ending the effect on a success. If an affected creature fails the saving throw when they retry it, the creature that attempted to help them is also stunned until this spell ends.
 
@@ -5556,7 +5555,4 @@ You designate a 60 foot radius sphere centered in a target location within range
 ## *You unwind the twisting and spiraling continuum of time to splice in a small addition.*
 
 	You may only cast this spell on your turn once per round. You take three additional actions of your choosing. Other than your movement, the effects of the actions you take do not occur until all three additional actions are taken.
-
-
-
 
