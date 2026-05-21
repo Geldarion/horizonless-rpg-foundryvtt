@@ -30,6 +30,24 @@ const MOJIBAKE_REPLACEMENTS = Object.freeze([
   ["в€¦", "..."]
 ]);
 
+const SUBCLASS_PREFIXES = Object.freeze([
+  "Artificer Field",
+  "Berserker Mettle",
+  "Champion Legend",
+  "Druid Path",
+  "Evincer Lens",
+  "Fighter Code",
+  "Hexblade Lure",
+  "Maven Realm",
+  "Oracle Vision",
+  "Ranger Enclave",
+  "Seeker Pursuit",
+  "Witch Coven",
+  "Wizard Study"
+]);
+
+const SUBCLASS_PREFIX_SET = new Set(SUBCLASS_PREFIXES);
+
 function cleanText(value) {
   if (value === null || value === undefined) return "";
   let text = String(value);
@@ -106,6 +124,13 @@ function inferFeatureRank(feature, previousRank = null) {
   return parseRank(feature?.rank, previousRank);
 }
 
+function inferSubclassSectionRank(title, body, fallbackRank) {
+  const combined = `${cleanText(title)}\n${cleanText(body)}`;
+  const rankMatch = combined.match(/\b(?:At\s+)?(\d+)(?:st|nd|rd|th)?\s+Rank\b/i);
+  if (rankMatch) return parseRank(rankMatch[1], fallbackRank);
+  return parseRank(fallbackRank, 1);
+}
+
 function formatRankLabel(rank) {
   const normalizedRank = Math.max(1, Math.trunc(Number(rank) || 1));
   const tens = normalizedRank % 100;
@@ -168,10 +193,62 @@ function createFolderDocument(className, classIndex, usedIds, metadata) {
   };
 }
 
-function createClassFeatureDocument(feature, className, classIndex, featureIndex, folderId, usedIds, metadata, rank) {
+function createSubclassFolderDocument(
+  className,
+  subclassInfo,
+  classFolderId,
+  classIndex,
+  subclassIndex,
+  usedIds,
+  metadata,
+  flavorText
+) {
+  const normalizedClassName = cleanText(className) || `Class ${classIndex + 1}`;
+  const normalizedFolderName = cleanText(subclassInfo.folderName) || `Subclass ${subclassIndex + 1}`;
+  const normalizedSubclassKind = cleanText(subclassInfo.subclassKind);
+  const normalizedSubclassName = cleanText(subclassInfo.subclassName);
+  const normalizedFlavorText = cleanText(flavorText);
+
+  return {
+    _id: buildId(
+      `subclass-folder:${slugify(normalizedClassName)}:${slugify(normalizedFolderName)}`,
+      usedIds
+    ),
+    name: normalizedFolderName,
+    type: "Item",
+    description: normalizedFlavorText,
+    folder: classFolderId,
+    sorting: "m",
+    sort: ((classIndex + 1) * 1000) + ((subclassIndex + 1) * 100),
+    color: null,
+    flags: {
+      horizonless: {
+        className: normalizedClassName,
+        subclassKind: normalizedSubclassKind,
+        subclassName: normalizedSubclassName,
+        subclassFolder: normalizedFolderName,
+        flavorText: normalizedFlavorText
+      }
+    },
+    _stats: createStats(metadata)
+  };
+}
+
+function createClassFeatureDocument(feature, className, classIndex, featureIndex, folderId, usedIds, metadata, rank, options = {}) {
   const normalizedClassName = cleanText(className) || `Class ${classIndex + 1}`;
   const featureName = cleanText(feature?.name) || `${normalizedClassName} Feature ${featureIndex + 1}`;
   const name = `${formatRankLabel(rank)} - ${featureName}`;
+  const horizonlessFlags = {
+    className: normalizedClassName,
+    rank
+  };
+  const subclassKind = cleanText(feature?.subclassKind);
+  const subclassName = cleanText(feature?.subclassName);
+  const subclassFolder = cleanText(feature?.subclassFolder);
+
+  if (subclassKind) horizonlessFlags.subclassKind = subclassKind;
+  if (subclassName) horizonlessFlags.subclassName = subclassName;
+  if (subclassFolder) horizonlessFlags.subclassFolder = subclassFolder;
 
   return {
     _id: buildId(`class-feature:${normalizedClassName}:${name}:${rank}`, usedIds),
@@ -186,16 +263,92 @@ function createClassFeatureDocument(feature, className, classIndex, featureIndex
     },
     effects: [],
     folder: folderId,
-    sort: ((classIndex + 1) * 100000) + ((featureIndex + 1) * 1000),
+    sort: options.sort ?? (((classIndex + 1) * 100000) + ((featureIndex + 1) * 1000)),
     ownership: { default: 0 },
     flags: {
-      horizonless: {
-        className: normalizedClassName,
-        rank
-      }
+      horizonless: horizonlessFlags
     },
     _stats: createStats(metadata)
   };
+}
+
+function parseSubclassFeatureHeader(featureName) {
+  const match = cleanText(featureName).match(/^(.+?):\s*(.+)$/);
+  if (!match) return null;
+
+  const subclassKind = cleanText(match[1]);
+  if (!SUBCLASS_PREFIX_SET.has(subclassKind)) return null;
+
+  const subclassName = cleanText(match[2]);
+  const folderName = `${subclassKind}: ${subclassName}`;
+
+  return {
+    subclassKind,
+    subclassName,
+    folderName
+  };
+}
+
+function appendSectionDescription(section, heading, body) {
+  const headingBlock = [`### ${heading}`, body].filter(Boolean).join("\n\n");
+  section.description = [cleanText(section.description), headingBlock].filter(Boolean).join("\n\n");
+}
+
+function splitSubclassFeatureBundle(feature, subclassInfo, fallbackRank) {
+  const description = cleanText(feature?.description);
+  const headingPattern = /^(#{2,3})\s+(.+)$/gm;
+  const matches = [...description.matchAll(headingPattern)];
+
+  if (!matches.length) {
+    return [
+      {
+        name: subclassInfo.subclassName,
+        description,
+        flavor_text: "",
+        subclassKind: subclassInfo.subclassKind,
+        subclassName: subclassInfo.subclassName,
+        subclassFolder: subclassInfo.folderName,
+        rank: parseRank(fallbackRank, 1)
+      }
+    ];
+  }
+
+  const sections = [];
+  const leadingText = cleanText(description.slice(0, matches[0].index));
+  let sawFeatureHeading = false;
+
+  for (let i = 0; i < matches.length; i += 1) {
+    const match = matches[i];
+    const level = match[1].length;
+    const title = cleanText(match[2]);
+    const start = match.index + match[0].length;
+    const end = matches[i + 1]?.index ?? description.length;
+    let body = cleanText(description.slice(start, end));
+    const isFeatureHeading = level === 2 || !sawFeatureHeading;
+
+    if (!isFeatureHeading) {
+      if (sections.length) appendSectionDescription(sections.at(-1), title, body);
+      continue;
+    }
+
+    if (leadingText && sections.length === 0) {
+      body = [leadingText, body].filter(Boolean).join("\n\n");
+    }
+
+    sections.push({
+      name: title,
+      description: body,
+      flavor_text: "",
+      subclassKind: subclassInfo.subclassKind,
+      subclassName: subclassInfo.subclassName,
+      subclassFolder: subclassInfo.folderName,
+      rank: inferSubclassSectionRank(title, body, fallbackRank)
+    });
+
+    if (level === 2) sawFeatureHeading = true;
+  }
+
+  return sections;
 }
 
 function loadClasses() {
@@ -219,6 +372,7 @@ function buildCompendiumDocuments(metadata) {
   const folders = [];
   const docs = [];
   const folderByClassName = new Map();
+  const subclassFolderByKey = new Map();
 
   classes.forEach((classData, classIndex) => {
     const normalizedClassName = cleanText(classData.className) || `Class ${classIndex + 1}`;
@@ -234,6 +388,48 @@ function buildCompendiumDocuments(metadata) {
     classData.features.forEach((feature, featureIndex) => {
       const rank = inferFeatureRank(feature, previousRank);
       previousRank = rank;
+      const subclassInfo = parseSubclassFeatureHeader(feature?.name);
+
+      if (subclassInfo) {
+        const subclassKey = `${normalizedClassName}:${subclassInfo.folderName}`;
+        let subclassFolder = subclassFolderByKey.get(subclassKey);
+
+        if (!subclassFolder) {
+          subclassFolder = createSubclassFolderDocument(
+            normalizedClassName,
+            subclassInfo,
+            folder._id,
+            classIndex,
+            subclassFolderByKey.size,
+            usedIds,
+            metadata,
+            feature?.flavor_text
+          );
+          subclassFolderByKey.set(subclassKey, subclassFolder);
+          folders.push(subclassFolder);
+        }
+
+        const splitFeatures = splitSubclassFeatureBundle(feature, subclassInfo, rank);
+        splitFeatures.forEach((splitFeature, splitIndex) => {
+          docs.push(
+            createClassFeatureDocument(
+              splitFeature,
+              normalizedClassName,
+              classIndex,
+              featureIndex,
+              subclassFolder._id,
+              usedIds,
+              metadata,
+              parseRank(splitFeature.rank, rank),
+              {
+                sort: ((classIndex + 1) * 100000) + ((featureIndex + 1) * 1000) + ((splitIndex + 1) * 10)
+              }
+            )
+          );
+        });
+        return;
+      }
+
       docs.push(
         createClassFeatureDocument(
           feature,
