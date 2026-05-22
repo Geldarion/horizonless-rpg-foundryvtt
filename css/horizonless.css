@@ -762,7 +762,7 @@
 }
 
 .horizonless .custom-attack-table-saves .custom-attack-table-row {
-  grid-template-columns: minmax(110px, 1.2fr) 90px 48px 78px minmax(104px, 0.9fr) 136px 36px;
+  grid-template-columns: minmax(110px, 1.2fr) 90px 48px 78px minmax(104px, 0.9fr) 78px 36px 36px;
 }
 
 .horizonless .custom-attack-table-header {
@@ -808,6 +808,29 @@
   width: 100%;
   min-width: 0;
 }
+.horizonless .custom-save-uses-control {
+  display: inline-grid;
+  grid-template-columns: 30px auto 30px;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+}
+.horizonless .custom-attack-table .custom-save-uses-control .custom-save-uses-input {
+  width: 30px;
+  height: 28px;
+  padding: 1px 3px;
+  text-align: center;
+}
+.horizonless .custom-save-roll {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  padding: 0;
+  line-height: 1;
+}
 
 .horizonless .custom-attack-advantage-control {
   display: inline-grid;
@@ -832,6 +855,7 @@
 
 .horizonless .custom-attack-action-cell,
 .horizonless .custom-attack-advantage-cell,
+.horizonless .custom-save-uses-cell,
 .horizonless .custom-attack-remove-cell {
   align-items: center;
 }
@@ -861,7 +885,13 @@
   .horizonless .custom-attack-remove-cell {
     align-items: stretch;
   }
+  .horizonless .custom-save-roll-cell {
+    align-items: start;
+  }
   .horizonless .custom-attack-advantage-control {
+    justify-content: start;
+  }
+  .horizonless .custom-save-uses-control {
     justify-content: start;
   }
 }

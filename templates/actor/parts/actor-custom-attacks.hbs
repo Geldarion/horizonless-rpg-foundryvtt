@@ -134,6 +134,7 @@
         <div>DC</div>
         <div>Damage</div>
         <div>Damage Type</div>
+        <div>Uses</div>
         <div>Roll</div>
         <div>Remove</div>
       </div>
@@ -192,10 +193,32 @@
                 {{/each}}
               </select>
             </div>
-            <div class="custom-attack-field custom-attack-action-cell">
+            <div class="custom-attack-field custom-save-uses-cell">
+              <span class="stat-label">Uses</span>
+              <div class="custom-save-uses-control" aria-label="Saving throw uses">
+                <input
+                  type="text"
+                  class="custom-save-uses-input custom-save-uses-current"
+                  name="system.customAttacks.{{entry.index}}.usesCurrent"
+                  value="{{entry.usesCurrent}}"
+                  data-dtype="Number"
+                  aria-label="Current saving throw uses"
+                />
+                <span>/</span>
+                <input
+                  type="text"
+                  class="custom-save-uses-input custom-save-uses-max"
+                  name="system.customAttacks.{{entry.index}}.usesMax"
+                  value="{{entry.usesMax}}"
+                  data-dtype="Number"
+                  aria-label="Maximum saving throw uses"
+                />
+              </div>
+            </div>
+            <div class="custom-attack-field custom-attack-action-cell custom-save-roll-cell">
               <span class="stat-label">Roll</span>
-              <button type="button" class="custom-attack-roll" data-index="{{entry.index}}">
-                Roll Saving Throw
+              <button type="button" class="custom-attack-roll custom-save-roll" data-index="{{entry.index}}" title="Roll Saving Throw" aria-label="Roll Saving Throw">
+                <i class="fas fa-dice-d20" aria-hidden="true"></i>
               </button>
             </div>
             <div class="custom-attack-field custom-attack-action-cell custom-attack-remove-cell">

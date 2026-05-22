@@ -43,6 +43,20 @@ function createNpcCustomAttackSchema(fields) {
       blank: true,
       choices: ["", ...DamageTypes],
       initial: ""
+    }),
+    usesCurrent: new fields.NumberField({
+      required: true,
+      nullable: false,
+      integer: true,
+      initial: 1,
+      min: 0
+    }),
+    usesMax: new fields.NumberField({
+      required: true,
+      nullable: false,
+      integer: true,
+      initial: 1,
+      min: 0
     })
   });
 }

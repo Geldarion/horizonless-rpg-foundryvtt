@@ -338,7 +338,8 @@
     48px
     78px
     minmax(104px, 0.9fr)
-    136px
+    78px
+    36px
     36px;
 }
 
@@ -386,6 +387,32 @@
   min-width: 0;
 }
 
+.custom-save-uses-control {
+  display: inline-grid;
+  grid-template-columns: 30px auto 30px;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-attack-table .custom-save-uses-control .custom-save-uses-input {
+  width: 30px;
+  height: 28px;
+  padding: 1px 3px;
+  text-align: center;
+}
+
+.custom-save-roll {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  padding: 0;
+  line-height: 1;
+}
+
 .custom-attack-advantage-control {
   display: inline-grid;
   grid-template-columns: 24px 36px 24px;
@@ -409,6 +436,7 @@
 
 .custom-attack-action-cell,
 .custom-attack-advantage-cell,
+.custom-save-uses-cell,
 .custom-attack-remove-cell {
   align-items: center;
 }
@@ -443,7 +471,15 @@
     align-items: stretch;
   }
 
+  .custom-save-roll-cell {
+    align-items: start;
+  }
+
   .custom-attack-advantage-control {
+    justify-content: start;
+  }
+
+  .custom-save-uses-control {
     justify-content: start;
   }
 }

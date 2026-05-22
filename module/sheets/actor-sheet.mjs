@@ -92,6 +92,7 @@ const CUSTOM_ATTACK_KIND = Object.freeze({
 });
 const CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MIN = -3;
 const CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MAX = 3;
+const CUSTOM_SAVE_USES_DEFAULT = 1;
 const CRITICAL_HIT_THRESHOLD_MIN = 15;
 const CRITICAL_HIT_THRESHOLD_MAX = 20;
 const CRITICAL_HIT_THRESHOLD_FALLBACK = 20;
@@ -151,6 +152,8 @@ function createEmptyCustomAttack(kind = CUSTOM_ATTACK_KIND.ATTACK) {
     dc: '',
     damage: '',
     damageType: '',
+    usesCurrent: normalizedKind === CUSTOM_ATTACK_KIND.SAVE ? CUSTOM_SAVE_USES_DEFAULT : 0,
+    usesMax: normalizedKind === CUSTOM_ATTACK_KIND.SAVE ? CUSTOM_SAVE_USES_DEFAULT : 0,
   };
 }
 
@@ -175,6 +178,34 @@ function clampCustomAttackAdvantageModifier(value) {
     CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MAX,
     Math.max(CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MIN, normalized)
   );
+}
+
+function hasOwnDataKey(source, key) {
+  return Object.prototype.hasOwnProperty.call(source ?? {}, key);
+}
+
+function normalizeCustomSaveUsesMax(entry) {
+  if (!hasOwnDataKey(entry, 'usesMax')) return CUSTOM_SAVE_USES_DEFAULT;
+
+  const normalized = Math.floor(Number(entry?.usesMax ?? 0));
+  if (!Number.isFinite(normalized)) return 0;
+  return Math.max(0, normalized);
+}
+
+function normalizeCustomSaveUsesCurrent(entry, usesMax = normalizeCustomSaveUsesMax(entry)) {
+  if (!hasOwnDataKey(entry, 'usesCurrent')) return Math.min(CUSTOM_SAVE_USES_DEFAULT, usesMax);
+
+  const normalized = Math.floor(Number(entry?.usesCurrent ?? 0));
+  if (!Number.isFinite(normalized)) return 0;
+  return Math.min(usesMax, Math.max(0, normalized));
+}
+
+function normalizeCustomSaveUses(entry) {
+  const usesMax = normalizeCustomSaveUsesMax(entry);
+  return {
+    usesCurrent: normalizeCustomSaveUsesCurrent(entry, usesMax),
+    usesMax,
+  };
 }
 
 function getCustomAttackAdvantageRollTerm(advantageModifier) {
@@ -212,24 +243,52 @@ function clampCriticalHitThresholdInput(input) {
   if (input.value !== clamped) input.value = clamped;
 }
 
+function clampCustomSaveUsesInputs(input) {
+  if (!(input instanceof HTMLInputElement)) return;
+
+  const row = input.closest('.custom-attack-entry-row-save');
+  if (!(row instanceof HTMLElement)) return;
+
+  const currentInput = row.querySelector('.custom-save-uses-current');
+  const maxInput = row.querySelector('.custom-save-uses-max');
+  if (!(currentInput instanceof HTMLInputElement) || !(maxInput instanceof HTMLInputElement)) return;
+
+  const usesMax = normalizeCustomSaveUsesMax({ usesMax: maxInput.value });
+  const usesCurrent = normalizeCustomSaveUsesCurrent({ usesCurrent: currentInput.value }, usesMax);
+
+  currentInput.value = String(usesCurrent);
+  maxInput.value = String(usesMax);
+}
+
 function normalizeCustomAttacks(customAttacks) {
   if (!Array.isArray(customAttacks)) return [];
 
-  return customAttacks.map((entry) => ({
-    kind: normalizeCustomAttackKind(String(entry?.kind ?? '')),
-    name: String(entry?.name ?? ''),
-    toHitBonus: String(entry?.toHitBonus ?? ''),
-    advantageModifier: clampCustomAttackAdvantageModifier(entry?.advantageModifier),
-    saveType: normalizeCustomAttackSaveType(entry?.saveType),
-    dc: String(entry?.dc ?? ''),
-    damage: String(entry?.damage ?? ''),
-    damageType: Object.prototype.hasOwnProperty.call(
-      CONFIG.HORIZONLESS_RPG.damageTypes,
-      String(entry?.damageType ?? '')
-    )
-      ? String(entry?.damageType ?? '')
-      : '',
-  }));
+  return customAttacks.map((entry) => {
+    const kind = normalizeCustomAttackKind(String(entry?.kind ?? ''));
+    const uses = kind === CUSTOM_ATTACK_KIND.SAVE
+      ? normalizeCustomSaveUses(entry)
+      : {
+        usesCurrent: normalizeCustomSaveUsesCurrent(entry, 0),
+        usesMax: normalizeCustomSaveUsesMax({ usesMax: 0 }),
+      };
+
+    return {
+      kind,
+      name: String(entry?.name ?? ''),
+      toHitBonus: String(entry?.toHitBonus ?? ''),
+      advantageModifier: clampCustomAttackAdvantageModifier(entry?.advantageModifier),
+      saveType: normalizeCustomAttackSaveType(entry?.saveType),
+      dc: String(entry?.dc ?? ''),
+      damage: String(entry?.damage ?? ''),
+      damageType: Object.prototype.hasOwnProperty.call(
+        CONFIG.HORIZONLESS_RPG.damageTypes,
+        String(entry?.damageType ?? '')
+      )
+        ? String(entry?.damageType ?? '')
+        : '',
+      ...uses,
+    };
+  });
 }
 
 function groupCustomAttacksForSheet(customAttacks) {
@@ -435,6 +494,11 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     for (const input of root.querySelectorAll('input[name="system.criticalHitThreshold"]')) {
       input.addEventListener('change', () => clampCriticalHitThresholdInput(input), { capture: true });
       input.addEventListener('blur', () => clampCriticalHitThresholdInput(input));
+    }
+
+    for (const input of root.querySelectorAll('.custom-save-uses-input')) {
+      input.addEventListener('change', () => clampCustomSaveUsesInputs(input), { capture: true });
+      input.addEventListener('blur', () => clampCustomSaveUsesInputs(input));
     }
 
     bindEventListeners(root, 'click', '.item-delete', async (event) => {
@@ -1159,7 +1223,18 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     if (!entry) return null;
 
     if (entry.kind === CUSTOM_ATTACK_KIND.SAVE) {
-      return this._rollNpcCustomSave(entry);
+      const roll = await this._rollNpcCustomSave(entry);
+      if (roll !== null) {
+        const usesMax = normalizeCustomSaveUsesMax(entry);
+        entry.usesMax = usesMax;
+        entry.usesCurrent = normalizeCustomSaveUsesCurrent({
+          usesCurrent: Number(entry.usesCurrent ?? 0) - 1,
+        }, usesMax);
+        customAttacks[attackIndex] = entry;
+        await this.actor.update({ 'system.customAttacks': customAttacks });
+        this.render(false);
+      }
+      return roll;
     }
 
     return this._rollNpcCustomAttack(entry);
