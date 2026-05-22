@@ -175,9 +175,19 @@
     background: var(--hz-sheet-surface-soft);
   }
 
-  :is(.property-row, .custom-resource-card, .custom-attack-card) {
+  :is(.property-row, .custom-resource-card, .custom-attack-table) {
     border-color: var(--hz-sheet-stroke-soft);
     background: var(--hz-sheet-surface-soft);
+  }
+
+  .custom-attack-table-header {
+    background: var(--hz-sheet-primary-soft);
+    border-bottom-color: var(--hz-sheet-stroke-soft);
+  }
+
+  .custom-attack-entry-row + .custom-attack-entry-row,
+  .custom-attack-empty-row {
+    border-top-color: var(--hz-sheet-stroke-soft);
   }
 
   .trades-section .trade-task-row {

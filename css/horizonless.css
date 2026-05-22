@@ -698,8 +698,9 @@
 .horizonless .custom-attacks-section {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
   min-width: 0;
+  margin-bottom: 12px;
 }
 
 .horizonless .custom-attacks-header {
@@ -713,52 +714,79 @@
   margin: 0;
 }
 
-.horizonless .custom-attacks-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  justify-content: flex-end;
-}
-
-.horizonless .custom-attack-list {
+.horizonless .custom-attack-list-section {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  min-width: 0;
 }
 
-.horizonless .custom-attack-card {
-  padding: 10px;
+.horizonless .custom-attacks-section .task-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 2px 8px;
+  font-size: 12px;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.horizonless .custom-attacks-section .task-control:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.horizonless .custom-attack-table {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-x: auto;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.28);
 }
 
-.horizonless .custom-attack-row {
+.horizonless .custom-attack-table-row {
   display: grid;
-  gap: 8px;
+  gap: 6px;
   align-items: end;
+  min-width: 0;
+  padding: 6px 8px;
 }
 
-.horizonless .custom-attack-row + .custom-attack-row {
-  margin-top: 8px;
+.horizonless .custom-attack-table-attacks .custom-attack-table-row {
+  grid-template-columns: minmax(110px, 1.2fr) 64px 78px minmax(104px, 0.9fr) 92px 104px 36px;
 }
 
-.horizonless .custom-attack-row-main {
-  grid-template-columns: minmax(0, 1fr) auto;
+.horizonless .custom-attack-table-saves .custom-attack-table-row {
+  grid-template-columns: minmax(110px, 1.2fr) 90px 48px 78px minmax(104px, 0.9fr) 136px 36px;
 }
 
-.horizonless .custom-attack-row-values {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.horizonless .custom-attack-row-values-save {
-  grid-template-columns: minmax(0, 1.1fr) 88px minmax(0, 1fr) minmax(0, 1fr);
-}
-
-.horizonless .custom-attack-row-actions {
-  grid-template-columns: auto auto;
-  justify-content: start;
+.horizonless .custom-attack-table-header {
   align-items: center;
+  min-height: 28px;
+  font-size: 12px;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.horizonless .custom-attack-entry-row + .custom-attack-entry-row,
+.horizonless .custom-attack-empty-row {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.horizonless .custom-attack-empty-row {
+  padding: 10px 8px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.horizonless .custom-attack-entry-row .stat-label {
+  display: none;
 }
 
 .horizonless .custom-attack-field {
@@ -769,44 +797,73 @@
 }
 
 .horizonless .custom-attack-field-dc {
-  max-width: 88px;
+  max-width: 56px;
 }
 
-.horizonless .custom-attack-card :is(input[type="text"], input[type="number"], select) {
+.horizonless .custom-attack-table :is(input[type="text"], input[type="number"], select) {
   width: 100%;
 }
 
-.horizonless .custom-attack-remove {
-  justify-self: end;
-}
-
 .horizonless .custom-attack-roll {
-  width: fit-content;
-  min-width: 140px;
+  width: 100%;
+  min-width: 0;
 }
 
 .horizonless .custom-attack-advantage-control {
   display: inline-grid;
-  grid-template-columns: 28px 44px 28px;
+  grid-template-columns: 24px 36px 24px;
   gap: 4px;
   align-items: center;
+  justify-content: center;
 }
 
 .horizonless .custom-attack-advantage-adjust {
-  width: 28px;
+  width: 24px;
   height: 28px;
   padding: 0;
   line-height: 1;
 }
 
 .horizonless .custom-attack-advantage-control .custom-attack-advantage-display {
-  width: 44px;
+  width: 36px;
   height: 28px;
   text-align: center;
 }
 
-.horizonless .custom-attack-empty {
-  min-height: 96px;
+.horizonless .custom-attack-action-cell,
+.horizonless .custom-attack-advantage-cell,
+.horizonless .custom-attack-remove-cell {
+  align-items: center;
+}
+
+.horizonless .custom-attack-remove-cell .task-control {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+}
+
+@media (max-width: 820px) {
+  .horizonless .custom-attack-table {
+    overflow-x: visible;
+  }
+  .horizonless .custom-attack-table-header {
+    display: none;
+  }
+  .horizonless .custom-attack-table-attacks .custom-attack-table-row,
+  .horizonless .custom-attack-table-saves .custom-attack-table-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .horizonless .custom-attack-entry-row .stat-label {
+    display: block;
+  }
+  .horizonless .custom-attack-action-cell,
+  .horizonless .custom-attack-advantage-cell,
+  .horizonless .custom-attack-remove-cell {
+    align-items: stretch;
+  }
+  .horizonless .custom-attack-advantage-control {
+    justify-content: start;
+  }
 }
 
 /* Trades */
@@ -850,8 +907,7 @@
 }
 
 .horizonless .trades-section .task-control,
-.horizonless .custom-resources-section .task-control,
-.horizonless .custom-attacks-section .task-control {
+.horizonless .custom-resources-section .task-control {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -864,8 +920,7 @@
 }
 
 .horizonless .trades-section .task-control:hover,
-.horizonless .custom-resources-section .task-control:hover,
-.horizonless .custom-attacks-section .task-control:hover {
+.horizonless .custom-resources-section .task-control:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -1228,14 +1283,20 @@
 }
 
 .horizonless.actor .property-row,
-.horizonless.actor .custom-resource-card {
+.horizonless.actor .custom-resource-card,
+.horizonless.actor .custom-attack-table {
   border-color: var(--hz-sheet-stroke-soft);
   background: var(--hz-sheet-surface-soft);
 }
 
-.horizonless.actor .custom-attack-card {
-  border-color: var(--hz-sheet-stroke-soft);
-  background: var(--hz-sheet-surface-soft);
+.horizonless.actor .custom-attack-table-header {
+  background: var(--hz-sheet-primary-soft);
+  border-bottom-color: var(--hz-sheet-stroke-soft);
+}
+
+.horizonless.actor .custom-attack-entry-row + .custom-attack-entry-row,
+.horizonless.actor .custom-attack-empty-row {
+  border-top-color: var(--hz-sheet-stroke-soft);
 }
 
 .horizonless.actor .trades-section .trade-task-row {

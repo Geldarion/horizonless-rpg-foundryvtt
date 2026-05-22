@@ -185,7 +185,6 @@
 
         <section class="main grid-span-2">
           {{> "systems/horizonless/templates/actor/parts/actor-properties.hbs"}}
-          {{> "systems/horizonless/templates/actor/parts/actor-custom-attacks.hbs"}}
         </section>
 
       </section>
@@ -204,7 +203,8 @@
 
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/horizonless/templates/actor/parts/actor-items.hbs"}}
+      {{> "systems/horizonless/templates/actor/parts/actor-custom-attacks.hbs"}}
+      {{> "systems/horizonless/templates/actor/parts/actor-items.hbs"}}
     </div>
 
     {{!-- Active Effects Tab --}}

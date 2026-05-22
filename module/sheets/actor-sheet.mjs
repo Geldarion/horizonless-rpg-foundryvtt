@@ -232,6 +232,21 @@ function normalizeCustomAttacks(customAttacks) {
   }));
 }
 
+function groupCustomAttacksForSheet(customAttacks) {
+  const groups = {
+    attacks: [],
+    saves: [],
+  };
+
+  for (const [index, entry] of customAttacks.entries()) {
+    const sheetEntry = { ...entry, index };
+    if (entry.kind === CUSTOM_ATTACK_KIND.SAVE) groups.saves.push(sheetEntry);
+    else groups.attacks.push(sheetEntry);
+  }
+
+  return groups;
+}
+
 function getTargetedTokens() {
   return Array.from(game.user?.targets ?? []).filter((token) => token?.actor);
 }
@@ -608,6 +623,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
 
   _prepareNpcData(context) {
     context.customAttacks = normalizeCustomAttacks(context.system?.customAttacks);
+    context.customAttackGroups = groupCustomAttacksForSheet(context.customAttacks);
   }
 
   _prepareItems(context) {
