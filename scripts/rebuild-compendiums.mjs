@@ -1,7 +1,7 @@
-import { existsSync, rmSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
+import { removePackArtifacts } from "./compendium-pack-utils.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,32 +30,19 @@ const PACKS = Object.freeze([
   }
 ]);
 
-function removeIfPresent(targetPath) {
-  if (!existsSync(targetPath)) return;
-
-  rmSync(targetPath, {
-    recursive: true,
-    force: false
-  });
-}
-
 function deletePackArtifacts(packName) {
-  const targets = [
-    path.join(rootDir, "packs", `${packName}.db`),
-    path.join(rootDir, "packs", packName)
-  ];
+  const legacyOutputPath = path.join(rootDir, "packs", `${packName}.db`);
+  const outputPath = path.join(rootDir, "packs", packName);
 
-  for (const target of targets) {
-    try {
-      removeIfPresent(target);
-    } catch (error) {
-      const code = error && typeof error === "object" ? error.code : "UNKNOWN";
-      const message = error instanceof Error ? error.message : String(error);
-      console.error(`Warning: failed to delete "${target}" (${code}).`);
-      console.error("Foundry may still be running or still locking compendium files. Close Foundry and run this command again.");
-      console.error(message);
-      process.exit(1);
-    }
+  try {
+    removePackArtifacts(outputPath, legacyOutputPath);
+  } catch (error) {
+    const code = error && typeof error === "object" ? error.code : "UNKNOWN";
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`Warning: failed to delete pack artifacts for "${packName}" (${code}).`);
+    console.error("Foundry may still be running or still locking compendium files. Close Foundry and run this command again.");
+    console.error(message);
+    process.exit(1);
   }
 }
 

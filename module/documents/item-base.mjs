@@ -21,13 +21,6 @@ export class HorizonlessBaseItem extends Item {
   }
 
   /**
-   * Augment the basic Item data model with additional dynamic data.
-   */
-  prepareData() {
-    super.prepareData();
-  }
-
-  /**
    * Prepare a data object which defines the data schema used by dice roll commands against this Item
    * @override
    */

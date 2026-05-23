@@ -109,6 +109,6 @@ export class HorizonlessItem extends HorizonlessWeaponItem {
     if (this.type === 'spell') {
       return HorizonlessSpellItem.prototype.roll.call(this, options);
     }
-    return super.roll();
+    return super.roll(options);
   }
 }
