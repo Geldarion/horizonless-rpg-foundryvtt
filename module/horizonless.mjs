@@ -121,18 +121,10 @@ Hooks.once('init', function () {
   // Register sheet application classes
   const actorCollection = foundry.documents.collections.Actors;
   const itemCollection = foundry.documents.collections.Items;
-  const coreActorSheetClass = foundry.appv1.sheets.ActorSheet;
-  if (actorCollection && coreActorSheetClass) {
-    actorCollection.unregisterSheet('core', coreActorSheetClass);
-  }
   actorCollection?.registerSheet('horizonless', HorizonlessActorSheet, {
     makeDefault: true,
     label: 'HORIZONLESS_RPG.SheetLabels.Actor',
   });
-  const coreItemSheetClass = foundry.appv1.sheets.ItemSheet;
-  if (itemCollection && coreItemSheetClass) {
-    itemCollection.unregisterSheet('core', coreItemSheetClass);
-  }
   itemCollection?.registerSheet('horizonless', HorizonlessItemSheet, {
     makeDefault: true,
     types: [

@@ -48,6 +48,110 @@
   border-color: #102a56 !important;
 }
 
+.horizonless-attack-roll-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 280px;
+}
+.horizonless-attack-roll-dialog .form-group {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  margin: 0;
+}
+.horizonless-attack-roll-dialog label {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.horizonless-attack-roll-dialog .form-fields {
+  display: grid;
+  grid-template-columns: 28px 58px 28px;
+  gap: 4px;
+  align-items: center;
+  justify-content: end;
+}
+.horizonless-attack-roll-dialog .critical-threshold-fields {
+  grid-template-columns: 28px 58px 28px;
+}
+.horizonless-attack-roll-dialog .critical-threshold-fields input[type=number] {
+  grid-column: 1/-1;
+  width: 100%;
+}
+.horizonless-attack-roll-dialog .modifier-adjust {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  line-height: 1;
+}
+.horizonless-attack-roll-dialog input[type=number] {
+  width: 58px;
+  height: 28px;
+  text-align: center;
+}
+
+.horizonless-effort-roll-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 320px;
+}
+.horizonless-effort-roll-dialog .form-group {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  margin: 0;
+}
+.horizonless-effort-roll-dialog label {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.horizonless-effort-roll-dialog .form-fields {
+  display: grid;
+  grid-template-columns: 28px 58px 28px;
+  gap: 4px;
+  align-items: center;
+  justify-content: end;
+}
+.horizonless-effort-roll-dialog .effort-modifier-adjust {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  line-height: 1;
+}
+.horizonless-effort-roll-dialog input[type=number] {
+  width: 58px;
+  height: 28px;
+  text-align: center;
+}
+.horizonless-effort-roll-dialog .effort-tier-fields {
+  grid-template-columns: repeat(3, 58px);
+}
+.horizonless-effort-roll-dialog .effort-tier-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 6px;
+  border: 1px solid var(--color-border-light-primary, #777);
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.horizonless-effort-roll-dialog .effort-tier-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.horizonless-effort-roll-dialog .effort-tier-option:has(input:checked) {
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+
 .chat-message.horizonless-chat-message {
   background: var(--hz-color-surface) !important;
   background-color: var(--hz-color-surface) !important;
@@ -1247,6 +1351,16 @@
   text-decoration: none;
   border-color: var(--hz-sheet-accent-mid);
   background: var(--hz-sheet-surface-strong);
+}
+
+.horizonless.actor .identity-tab {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.horizonless.actor .identity-tab.active {
+  display: flex;
 }
 
 .horizonless.actor :is(.resource, .resource-card) {

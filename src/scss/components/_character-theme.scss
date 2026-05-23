@@ -116,6 +116,16 @@
     background: var(--hz-sheet-surface-strong);
   }
 
+  .identity-tab {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .identity-tab.active {
+    display: flex;
+  }
+
   :is(.resource, .resource-card) {
     padding: 8px 10px;
     border: 1px solid var(--hz-sheet-stroke-soft);

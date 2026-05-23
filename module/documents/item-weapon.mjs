@@ -8,6 +8,7 @@ import {
 import { prepareEnrichedChatContent } from '../helpers/chat.mjs';
 import { markChatMessageWrapper } from '../helpers/chat-dom.mjs';
 import {
+  clampCriticalHitThreshold,
   getAttackOutcome,
   getAttackOutcomeChatData,
   getDamageButtonDataForAttackOutcome,
@@ -36,6 +37,20 @@ const DESCRIPTION_ONLY_ROLL_ITEM_TYPES = Object.freeze([
   ItemType.ARMOR,
   ItemType.CURIO,
 ]);
+
+function normalizeAttackRollDialogCriticalHitThreshold(value, fallback) {
+  const text = String(value ?? '').trim();
+  if (!text) return clampCriticalHitThreshold(fallback);
+  const numeric = Number(text);
+  if (!Number.isFinite(numeric)) return clampCriticalHitThreshold(fallback);
+  return clampCriticalHitThreshold(numeric);
+}
+
+function capitalizeAttackRollDialogTitle(value) {
+  const text = String(value ?? '').trim();
+  if (!text) return 'Weapon';
+  return `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
+}
 
 export class HorizonlessWeaponItem extends HorizonlessBaseItem {
   static _damageRollButtonHookRegistered = false;
@@ -276,6 +291,7 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
   }
 
   async _promptAttackRollModifiers() {
+    const criticalHitThreshold = clampCriticalHitThreshold(this.actor?.system?.criticalHitThreshold);
     const content = `
       <div class="horizonless-attack-roll-dialog">
         <div class="form-group">
@@ -294,11 +310,17 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
             <button type="button" class="modifier-adjust" data-target="disadvantages" data-delta="1">+</button>
           </div>
         </div>
+        <div class="form-group">
+          <label>Critical Hit Threshold</label>
+          <div class="form-fields critical-threshold-fields">
+            <input type="number" name="criticalHitThreshold" value="${criticalHitThreshold}" min="15" max="20" step="1" />
+          </div>
+        </div>
       </div>
     `;
 
     const result = await DialogV2.wait({
-      window: { title: `${this.name} Attack Roll` },
+      window: { title: `${capitalizeAttackRollDialogTitle(this.name)} Attack Roll` },
       content,
       modal: true,
       rejectClose: false,
@@ -311,7 +333,16 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
           callback: (_event, button) => {
             const advantages = Math.max(0, Math.floor(Number(button.form?.elements?.advantages?.value ?? 0)));
             const disadvantages = Math.max(0, Math.floor(Number(button.form?.elements?.disadvantages?.value ?? 0)));
-            return { confirmed: true, advantages, disadvantages };
+            const dialogCriticalHitThreshold = normalizeAttackRollDialogCriticalHitThreshold(
+              button.form?.elements?.criticalHitThreshold?.value,
+              criticalHitThreshold
+            );
+            return {
+              confirmed: true,
+              advantages,
+              disadvantages,
+              criticalHitThreshold: dialogCriticalHitThreshold,
+            };
           },
         },
         {
@@ -330,9 +361,19 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
           input.value = String(normalized);
         };
 
+        const clampCriticalThresholdAndSet = (input, value) => {
+          input.value = String(normalizeAttackRollDialogCriticalHitThreshold(value, criticalHitThreshold));
+        };
+
         for (const input of root.querySelectorAll('input[name="advantages"], input[name="disadvantages"]')) {
           input.addEventListener('change', () => clampAndSet(input, input.value));
         }
+
+        const criticalHitThresholdInput = root.querySelector('input[name="criticalHitThreshold"]');
+        criticalHitThresholdInput?.addEventListener(
+          'change',
+          () => clampCriticalThresholdAndSet(criticalHitThresholdInput, criticalHitThresholdInput.value)
+        );
 
         for (const adjustButton of root.querySelectorAll('.modifier-adjust')) {
           adjustButton.addEventListener('click', (event) => {
@@ -420,17 +461,19 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
 
     const rollData = this.getRollData();
     let formula = rollData.formula;
+    let attackRollModifiers = null;
 
     if (this.type === 'weapon') {
       const modifiers = await this._promptAttackRollModifiers();
       if (!modifiers) return null;
+      attackRollModifiers = modifiers;
       formula = this._buildAttackFormulaWithModifiers(rollData, modifiers);
     }
 
     const roll = new Roll(formula, rollData.actor);
     await roll.evaluate();
     const attackOutcome = this.type === 'weapon'
-      ? getAttackOutcome(roll, this.actor)
+      ? getAttackOutcome(roll, attackRollModifiers?.criticalHitThreshold)
       : null;
 
     let flavor = label;

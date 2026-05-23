@@ -42,7 +42,7 @@ import {
   TradeTypes,
 } from '../data/enums.mjs';
 
-const { HandlebarsApplicationMixin } = foundry.applications.api;
+const { DialogV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
 const TextEditor = foundry.applications.ux.TextEditor.implementation;
 const renderTemplate = foundry.applications.handlebars.renderTemplate;
@@ -93,6 +93,11 @@ const CUSTOM_ATTACK_KIND = Object.freeze({
 const CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MIN = -3;
 const CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MAX = 3;
 const CUSTOM_SAVE_USES_DEFAULT = 1;
+const EFFORT_TIER_MODE = Object.freeze({
+  NONE: 'none',
+  HALF: 'half',
+  FULL: 'full',
+});
 const CRITICAL_HIT_THRESHOLD_MIN = 15;
 const CRITICAL_HIT_THRESHOLD_MAX = 20;
 const CRITICAL_HIT_THRESHOLD_FALLBACK = 20;
@@ -222,6 +227,52 @@ function getCustomAttackAdvantageLabel(advantageModifier) {
   if (modifier === 0) return '';
   const degree = Math.abs(modifier);
   return modifier > 0 ? `Advantage ${degree}` : `Disadvantage ${degree}`;
+}
+
+function clampEffortCheckModifierCount(value) {
+  const normalized = Math.floor(Number(value ?? 0));
+  if (!Number.isFinite(normalized)) return 0;
+  return Math.min(
+    CUSTOM_ATTACK_ADVANTAGE_MODIFIER_MAX,
+    Math.max(0, normalized)
+  );
+}
+
+function getEffortCheckRollTerm(advantages, disadvantages) {
+  const netModifiers = clampEffortCheckModifierCount(advantages)
+    - clampEffortCheckModifierCount(disadvantages);
+  if (netModifiers === 0) return '1d20';
+
+  const degree = Math.abs(netModifiers);
+  const keepClause = netModifiers > 0 ? 'kh1' : 'kl1';
+  return `${degree + 1}d20${keepClause}`;
+}
+
+function normalizeEffortTierMode(value) {
+  const normalized = String(value ?? '').trim().toLowerCase();
+  return Object.values(EFFORT_TIER_MODE).includes(normalized)
+    ? normalized
+    : EFFORT_TIER_MODE.HALF;
+}
+
+function getEffortTierContribution(tierMode, tierBonus) {
+  const normalizedMode = normalizeEffortTierMode(tierMode);
+  const normalizedTierBonus = Math.max(0, Math.floor(Number(tierBonus ?? 0)));
+  if (normalizedMode === EFFORT_TIER_MODE.NONE) return 0;
+  if (normalizedMode === EFFORT_TIER_MODE.FULL) return normalizedTierBonus;
+  return Math.floor(normalizedTierBonus / 2);
+}
+
+function getEffortTierModeLabel(tierMode) {
+  switch (normalizeEffortTierMode(tierMode)) {
+    case EFFORT_TIER_MODE.NONE:
+      return 'No Tier';
+    case EFFORT_TIER_MODE.FULL:
+      return 'Full Tier';
+    case EFFORT_TIER_MODE.HALF:
+    default:
+      return 'Half Tier';
+  }
 }
 
 function clampCriticalHitThreshold(value) {
@@ -369,13 +420,12 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
           initial: 'features',
           tabs: [
             { id: 'features' },
-            { id: 'ancestries' },
-            { id: 'classes' },
             { id: 'trades' },
-            { id: 'description' },
             { id: 'items' },
             { id: 'spells' },
             { id: 'maneuvers' },
+            { id: 'identity' },
+            { id: 'description' },
             { id: 'effects' },
           ],
         },
@@ -389,6 +439,9 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
   }
 
   _syncTabState(root, group = 'primary') {
+    if (group === 'primary' && ['ancestries', 'classes'].includes(this.tabGroups.primary)) {
+      this.tabGroups.primary = 'identity';
+    }
     syncSheetTabState(this, root, group);
   }
 
@@ -648,6 +701,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     });
 
     bindEventListeners(root, 'click', '.ability-save', this._onAbilitySaveRoll.bind(this));
+    bindEventListeners(root, 'click', '.ability-label', this._onEffortCheckRoll.bind(this));
     bindEventListeners(root, 'click', '.rollable', this._onRoll.bind(this));
     bindEventListeners(root, 'click', '.trade-check', this._onTradeCheck.bind(this));
     bindEventListeners(root, 'click', '.trade-task-check', this._onTradeTaskCheck.bind(this));
@@ -1361,6 +1415,136 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     return null;
   }
 
+  async _promptEffortCheckRollModifiers() {
+    const content = `
+      <div class="horizonless-effort-roll-dialog">
+        <div class="form-group">
+          <label>Advantages</label>
+          <div class="form-fields">
+            <button type="button" class="effort-modifier-adjust" data-target="advantages" data-delta="-1">-</button>
+            <input type="number" name="advantages" value="0" min="0" max="3" step="1" />
+            <button type="button" class="effort-modifier-adjust" data-target="advantages" data-delta="1">+</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Disadvantages</label>
+          <div class="form-fields">
+            <button type="button" class="effort-modifier-adjust" data-target="disadvantages" data-delta="-1">-</button>
+            <input type="number" name="disadvantages" value="0" min="0" max="3" step="1" />
+            <button type="button" class="effort-modifier-adjust" data-target="disadvantages" data-delta="1">+</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Tier Bonus</label>
+          <div class="form-fields effort-tier-fields">
+            <label class="effort-tier-option">
+              <input type="radio" name="tierMode" value="${EFFORT_TIER_MODE.NONE}" />
+              <span>None</span>
+            </label>
+            <label class="effort-tier-option">
+              <input type="radio" name="tierMode" value="${EFFORT_TIER_MODE.HALF}" checked />
+              <span>Half</span>
+            </label>
+            <label class="effort-tier-option">
+              <input type="radio" name="tierMode" value="${EFFORT_TIER_MODE.FULL}" />
+              <span>Full</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    `;
+
+    const result = await DialogV2.wait({
+      window: { title: 'Effort Check Roll' },
+      content,
+      modal: true,
+      rejectClose: false,
+      buttons: [
+        {
+          action: 'confirm',
+          icon: 'fas fa-dice-d20',
+          label: 'Roll Effort',
+          default: true,
+          callback: (_event, button) => ({
+            confirmed: true,
+            advantages: clampEffortCheckModifierCount(button.form?.elements?.advantages?.value),
+            disadvantages: clampEffortCheckModifierCount(button.form?.elements?.disadvantages?.value),
+            tierMode: normalizeEffortTierMode(button.form?.elements?.tierMode?.value),
+          }),
+        },
+        {
+          action: 'cancel',
+          icon: 'fas fa-times',
+          label: 'Cancel',
+          callback: () => ({ confirmed: false }),
+        },
+      ],
+      render: (_event, dialog) => {
+        const root = dialog.element;
+        if (!root) return;
+
+        const clampAndSet = (input, value) => {
+          input.value = String(clampEffortCheckModifierCount(value));
+        };
+
+        for (const input of root.querySelectorAll('input[name="advantages"], input[name="disadvantages"]')) {
+          input.addEventListener('change', () => clampAndSet(input, input.value));
+        }
+
+        for (const adjustButton of root.querySelectorAll('.effort-modifier-adjust')) {
+          adjustButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            const target = String(adjustButton.dataset.target ?? '');
+            const delta = Math.floor(Number(adjustButton.dataset.delta ?? 0));
+            if (!target || !Number.isFinite(delta)) return;
+
+            const input = root.querySelector(`input[name="${target}"]`);
+            if (!input) return;
+
+            const current = clampEffortCheckModifierCount(input.value);
+            clampAndSet(input, current + delta);
+          });
+        }
+      },
+    });
+
+    return result?.confirmed ? result : null;
+  }
+
+  async _onEffortCheckRoll(event) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    const element = event.currentTarget;
+    const abilityKey = String(element.dataset.abilityKey ?? '').trim();
+    const label = String(element.dataset.label ?? '').trim();
+
+    await this._submitPendingChanges();
+
+    if (!abilityKey) return null;
+    if (!Object.prototype.hasOwnProperty.call(CONFIG.HORIZONLESS_RPG.abilities, abilityKey)) return null;
+
+    const modifiers = await this._promptEffortCheckRollModifiers();
+    if (!modifiers) return null;
+
+    const abilityMod = Number(this.actor.system?.abilities?.[abilityKey]?.mod ?? 0);
+    const tierBonus = Number(this.actor.system?.tierBonus ?? 0);
+    const tierContribution = getEffortTierContribution(modifiers.tierMode, tierBonus);
+    const rollTerm = getEffortCheckRollTerm(modifiers.advantages, modifiers.disadvantages);
+    const formula = `${rollTerm} + ${abilityMod} + ${tierContribution}`;
+    const resolvedLabel = label || this._getTradeAbilityLabel(abilityKey);
+    const tierLabel = getEffortTierModeLabel(modifiers.tierMode);
+
+    const roll = new Roll(formula, this.actor.getRollData());
+    roll.toMessage({
+      speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      flavor: `[effort] ${resolvedLabel} (${tierLabel})`,
+      rollMode: game.settings.get('core', 'rollMode'),
+    });
+
+    return roll;
+  }
+
   async _onAbilitySaveRoll(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -1604,8 +1788,9 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     const dropTarget = event.target;
     const ancestryTarget = dropTarget?.closest?.('.ancestry-slot-dropzone')
       ?? dropTarget?.closest?.('.inheritor-features-dropzone')
-      ?? dropTarget?.closest?.('.tab.ancestries')
-      ?? dropTarget?.closest?.('.sheet-tabs .item[data-tab="ancestries"]');
+      ?? dropTarget?.closest?.('.identity-tab')
+      ?? dropTarget?.closest?.('.tab[data-tab="identity"]')
+      ?? dropTarget?.closest?.('.sheet-tabs .item[data-tab="identity"]');
     if (!ancestryTarget) return false;
 
     const dropData = TextEditor.getDragEventData(event);
@@ -1665,7 +1850,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       return true;
     }
 
-    ui.notifications?.warn('Only ancestry features can be dropped on the Ancestries tab.');
+    ui.notifications?.warn('Only ancestry features can be dropped on the Identity tab.');
     return true;
   }
 

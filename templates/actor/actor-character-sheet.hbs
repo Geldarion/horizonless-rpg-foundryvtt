@@ -129,13 +129,12 @@
   {{!-- Tab navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     <a class="item" data-tab="features">Features</a>
-    <a class="item" data-tab="ancestries">Ancestries</a>
-    <a class="item" data-tab="classes">Classes</a>
     <a class="item" data-tab="trades">Trades</a>
-    <a class="item" data-tab="description">Description</a>
     <a class="item" data-tab="items">Items</a>
     <a class="item" data-tab="spells">Spells</a>
     <a class="item" data-tab="maneuvers">Maneuvers</a>
+    <a class="item" data-tab="identity">Identity</a>
+    <a class="item" data-tab="description">Notes</a>
     <a class="item" data-tab="effects">Effects</a>
   </nav>
 
@@ -164,6 +163,7 @@
                   <label
                     for="system.abilities.{{key}}.mod"
                     class="stat-label rollable ability-label"
+                    data-ability-key="{{key}}"
                     data-roll="d20+@abilities.{{key}}.mod"
                     data-label="{{localize (lookup @root.config.abilities key)}}"
                     title="{{localize (lookup @root.config.abilities key)}}"
@@ -210,11 +210,7 @@
       </section>
     </div>
 
-    <div class="tab" data-group="primary" data-tab="ancestries">
-      {{> "systems/horizonless/templates/actor/parts/actor-ancestries.hbs"}}
-    </div>
-
-    <div class="tab" data-group="primary" data-tab="classes">
+    <div class="tab identity-tab" data-group="primary" data-tab="identity">
 
       {{> "systems/horizonless/templates/actor/parts/actor-class-feature.hbs"}}
 
@@ -251,6 +247,8 @@
         {{/each}}
 
       </section>
+
+      {{> "systems/horizonless/templates/actor/parts/actor-ancestries.hbs"}}
 
     </div>
 
