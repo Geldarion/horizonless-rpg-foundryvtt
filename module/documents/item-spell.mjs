@@ -580,7 +580,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     if (results.length === 0) return;
 
     const defaultHalfDamage = results.length > 0
-      && results.every((result) => !Boolean(result?.savedAgainstSpell));
+      && results.every((result) => !result?.savedAgainstSpell);
     const damageData = this._getSpellDamageButtonData(
       item,
       selectedTokens.map((token) => token?.document?.uuid ?? ''),
@@ -1490,7 +1490,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
 
     try {
       await sourceApplication.minimize();
-    } catch (error) {
+    } catch {
       return callback();
     }
 
@@ -1499,7 +1499,9 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     } finally {
       try {
         await sourceApplication.maximize();
-      } catch (error) {}
+      } catch {
+        // The source application may have been closed while the template was placed.
+      }
     }
   }
 
@@ -1631,7 +1633,6 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
           },
         },
       });
-      return;
     }
 
     const rollData = this.getRollData();

@@ -142,7 +142,7 @@ export function getCriticalDamageFormula(formula, rollData = {}) {
     const roll = new Roll(baseFormula, rollData);
     const criticalRoll = roll.alter(2, 0, false);
     return String(criticalRoll?.formula ?? '').trim() || baseFormula;
-  } catch (_error) {
+  } catch {
     return baseFormula;
   }
 }

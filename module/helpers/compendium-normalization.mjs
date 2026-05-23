@@ -28,7 +28,7 @@ export function normalizeSpellDamageFormula(rawDamage = '') {
   try {
     const roll = new Roll(normalized);
     return roll.formula;
-  } catch (_error) {
+  } catch {
     return null;
   }
 }

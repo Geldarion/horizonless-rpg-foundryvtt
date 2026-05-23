@@ -1128,7 +1128,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     try {
       roll = new Roll(attackFormula, this.actor.getRollData());
       await roll.evaluate();
-    } catch (_error) {
+    } catch {
       ui.notifications?.warn(`Enter a valid to-hit bonus for ${attackName}.`);
       return null;
     }
@@ -1220,7 +1220,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     try {
       damageRoll = new Roll(damageFormula, this.actor.getRollData());
       await damageRoll.evaluate();
-    } catch (_error) {
+    } catch {
       ui.notifications?.warn(`Enter valid damage for ${saveName}.`);
       return null;
     }
@@ -1799,7 +1799,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     let droppedItem = null;
     try {
       droppedItem = await Item.fromDropData(dropData);
-    } catch (_err) {
+    } catch {
       return false;
     }
 
@@ -1871,7 +1871,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
         if (data?.data?._id) return data.data._id;
         if (data?._id) return data._id;
       }
-    } catch (_err) {
+    } catch {
       return null;
     }
 
@@ -1891,7 +1891,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     let droppedItem = null;
     try {
       droppedItem = await Item.fromDropData(dropData);
-    } catch (_err) {
+    } catch {
       return null;
     }
     if (!droppedItem || droppedItem.type !== ItemType.SPELL) return null;
@@ -1908,7 +1908,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
 
       try {
         candidate = await Item.fromDropData(dropData);
-      } catch (_err) {
+      } catch {
         return null;
       }
     }

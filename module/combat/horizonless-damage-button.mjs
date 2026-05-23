@@ -45,7 +45,7 @@ export function parseStringArray(rawValue) {
           .filter((value) => value.length > 0)
       )
     );
-  } catch (_error) {
+  } catch {
     return normalizedRawValue.length > 0 ? [normalizedRawValue] : [];
   }
 }

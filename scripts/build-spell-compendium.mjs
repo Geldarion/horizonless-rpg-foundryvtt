@@ -72,28 +72,6 @@ function normalizeDamageType(value = "") {
   return cleanText(value).toLowerCase();
 }
 
-function normalizeDamageBufferEntry(entry = {}) {
-  const max = Math.max(0, Math.floor(Number(entry?.max ?? 0)));
-  const value = Math.min(
-    max,
-    Math.max(0, Math.floor(Number(entry?.value ?? 0)))
-  );
-
-  return {
-    type: normalizeDamageType(entry?.type),
-    value,
-    max,
-  };
-}
-
-function normalizeDamageBufferList(value, { ensureAtLeastOne = false } = {}) {
-  const source = Array.isArray(value) ? value : [];
-  const normalized = source.map((entry) => normalizeDamageBufferEntry(entry));
-
-  if (!ensureAtLeastOne || normalized.length > 0) return normalized;
-  return [{ type: "", value: 0, max: 0 }];
-}
-
 function parseHeighteningOptionText(optionText) {
   const raw = cleanText(optionText);
   if (!raw) return { text: "", repeatable: false, attributeRequirement: "" };
@@ -185,11 +163,7 @@ function normalizeSpellDamageFormula(rawDamage = "") {
     .trim();
   if (!/^[\d+\-*/().\s]+$/i.test(normalized)) return null;
 
-  try {
-    return normalized;
-  } catch (_error) {
-    return null;
-  }
+  return normalized;
 }
 
 function normalizeDischarge(value) {
