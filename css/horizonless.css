@@ -3,7 +3,6 @@
 @import url("../module/messages/maneuvers/chat.css");
 @import url("../module/messages/spells/chat.css");
 @import url("../module/messages/spells/heightening-dialog.css");
-
 :root,
 .horizonless-spell-chat-theme {
   --hz-color-primary: #90caf9;
@@ -54,6 +53,7 @@
   gap: 8px;
   min-width: 280px;
 }
+
 .horizonless-attack-roll-dialog .form-group {
   display: grid;
   grid-template-columns: minmax(130px, 1fr) auto;
@@ -61,11 +61,13 @@
   align-items: center;
   margin: 0;
 }
+
 .horizonless-attack-roll-dialog label {
   margin: 0;
   font-weight: 700;
   line-height: 1.2;
 }
+
 .horizonless-attack-roll-dialog .form-fields {
   display: grid;
   grid-template-columns: 28px 58px 28px;
@@ -73,19 +75,23 @@
   align-items: center;
   justify-content: end;
 }
+
 .horizonless-attack-roll-dialog .critical-threshold-fields {
   grid-template-columns: 28px 58px 28px;
 }
+
 .horizonless-attack-roll-dialog .critical-threshold-fields input[type=number] {
   grid-column: 1/-1;
   width: 100%;
 }
+
 .horizonless-attack-roll-dialog .modifier-adjust {
   width: 28px;
   height: 28px;
   padding: 0;
   line-height: 1;
 }
+
 .horizonless-attack-roll-dialog input[type=number] {
   width: 58px;
   height: 28px;
@@ -98,6 +104,7 @@
   gap: 8px;
   min-width: 320px;
 }
+
 .horizonless-effort-roll-dialog .form-group {
   display: grid;
   grid-template-columns: minmax(130px, 1fr) auto;
@@ -105,11 +112,13 @@
   align-items: center;
   margin: 0;
 }
+
 .horizonless-effort-roll-dialog label {
   margin: 0;
   font-weight: 700;
   line-height: 1.2;
 }
+
 .horizonless-effort-roll-dialog .form-fields {
   display: grid;
   grid-template-columns: 28px 58px 28px;
@@ -117,20 +126,24 @@
   align-items: center;
   justify-content: end;
 }
+
 .horizonless-effort-roll-dialog .effort-modifier-adjust {
   width: 28px;
   height: 28px;
   padding: 0;
   line-height: 1;
 }
+
 .horizonless-effort-roll-dialog input[type=number] {
   width: 58px;
   height: 28px;
   text-align: center;
 }
+
 .horizonless-effort-roll-dialog .effort-tier-fields {
   grid-template-columns: repeat(3, 58px);
 }
+
 .horizonless-effort-roll-dialog .effort-tier-option {
   display: flex;
   align-items: center;
@@ -142,11 +155,13 @@
   font-weight: 700;
   cursor: pointer;
 }
+
 .horizonless-effort-roll-dialog .effort-tier-option input {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
+
 .horizonless-effort-roll-dialog .effort-tier-option:has(input:checked) {
   background: rgba(255, 255, 255, 0.18);
   box-shadow: inset 0 0 0 1px currentColor;
@@ -240,46 +255,142 @@
   gap: 10px;
   margin: 10px 0;
   padding: 0;
-  grid-column: span var(--grid-cols) / span var(--grid-cols);
+  grid-column: span var(--grid-cols)/span var(--grid-cols);
   grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
 }
 
 .grid,
-.grid-2col { --grid-cols: 2; }
-.grid-3col { --grid-cols: 3; }
-.grid-4col { --grid-cols: 4; }
-.grid-5col { --grid-cols: 5; }
-.grid-6col { --grid-cols: 6; }
-.grid-7col { --grid-cols: 7; }
-.grid-8col { --grid-cols: 8; }
-.grid-9col { --grid-cols: 9; }
-.grid-10col { --grid-cols: 10; }
-.grid-11col { --grid-cols: 11; }
-.grid-12col { --grid-cols: 12; }
+.grid-2col {
+  --grid-cols: 2;
+}
 
-.grid-start-2 { grid-column-start: 2; }
-.grid-start-3 { grid-column-start: 3; }
-.grid-start-4 { grid-column-start: 4; }
-.grid-start-5 { grid-column-start: 5; }
-.grid-start-6 { grid-column-start: 6; }
-.grid-start-7 { grid-column-start: 7; }
-.grid-start-8 { grid-column-start: 8; }
-.grid-start-9 { grid-column-start: 9; }
-.grid-start-10 { grid-column-start: 10; }
-.grid-start-11 { grid-column-start: 11; }
-.grid-start-12 { grid-column-start: 12; }
+.grid-3col {
+  --grid-cols: 3;
+}
 
-.grid-span-2 { grid-column-end: span 2; }
-.grid-span-3 { grid-column-end: span 3; }
-.grid-span-4 { grid-column-end: span 4; }
-.grid-span-5 { grid-column-end: span 5; }
-.grid-span-6 { grid-column-end: span 6; }
-.grid-span-7 { grid-column-end: span 7; }
-.grid-span-8 { grid-column-end: span 8; }
-.grid-span-9 { grid-column-end: span 9; }
-.grid-span-10 { grid-column-end: span 10; }
-.grid-span-11 { grid-column-end: span 11; }
-.grid-span-12 { grid-column-end: span 12; }
+.grid-4col {
+  --grid-cols: 4;
+}
+
+.grid-5col {
+  --grid-cols: 5;
+}
+
+.grid-6col {
+  --grid-cols: 6;
+}
+
+.grid-7col {
+  --grid-cols: 7;
+}
+
+.grid-8col {
+  --grid-cols: 8;
+}
+
+.grid-9col {
+  --grid-cols: 9;
+}
+
+.grid-10col {
+  --grid-cols: 10;
+}
+
+.grid-11col {
+  --grid-cols: 11;
+}
+
+.grid-12col {
+  --grid-cols: 12;
+}
+
+.grid-start-2 {
+  grid-column-start: 2;
+}
+
+.grid-start-3 {
+  grid-column-start: 3;
+}
+
+.grid-start-4 {
+  grid-column-start: 4;
+}
+
+.grid-start-5 {
+  grid-column-start: 5;
+}
+
+.grid-start-6 {
+  grid-column-start: 6;
+}
+
+.grid-start-7 {
+  grid-column-start: 7;
+}
+
+.grid-start-8 {
+  grid-column-start: 8;
+}
+
+.grid-start-9 {
+  grid-column-start: 9;
+}
+
+.grid-start-10 {
+  grid-column-start: 10;
+}
+
+.grid-start-11 {
+  grid-column-start: 11;
+}
+
+.grid-start-12 {
+  grid-column-start: 12;
+}
+
+.grid-span-2 {
+  grid-column-end: span 2;
+}
+
+.grid-span-3 {
+  grid-column-end: span 3;
+}
+
+.grid-span-4 {
+  grid-column-end: span 4;
+}
+
+.grid-span-5 {
+  grid-column-end: span 5;
+}
+
+.grid-span-6 {
+  grid-column-end: span 6;
+}
+
+.grid-span-7 {
+  grid-column-end: span 7;
+}
+
+.grid-span-8 {
+  grid-column-end: span 8;
+}
+
+.grid-span-9 {
+  grid-column-end: span 9;
+}
+
+.grid-span-10 {
+  grid-column-end: span 10;
+}
+
+.grid-span-11 {
+  grid-column-end: span 11;
+}
+
+.grid-span-12 {
+  grid-column-end: span 12;
+}
 
 /* Flex helpers */
 :is(.flex-group-center, .flex-group-left, .flex-group-right, .align-center, .align-left, .align-right) {
@@ -301,9 +412,17 @@
   text-align: right;
 }
 
-.flexshrink { flex: 0; }
-.flex-between { justify-content: space-between; }
-.flexlarge { flex: 2; }
+.flexshrink {
+  flex: 0;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flexlarge {
+  flex: 2;
+}
 
 /* Base sheet */
 .horizonless :is(.sheet-header, .character-header) {
@@ -663,7 +782,7 @@
 .horizonless :is(.ability-table, .abilities-table) thead th,
 .horizonless :is(.ability-table .heroic-cell, .abilities-table .heroic-toggle-cell),
 .horizonless :is(.ability-table .mod-cell, .abilities-table .ability-modifier-cell),
-.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(n + 2),
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(n+2),
 .horizonless :is(.items-header, .items-list .items-header) > *,
 .horizonless :is(.effect-source),
 .horizonless :is(.effect-duration),
@@ -687,16 +806,27 @@
   overflow: visible;
 }
 
-.horizonless :is(.ability-table .mod-cell input[type="text"], .abilities-table .ability-modifier-cell input[type="text"]) {
+.horizonless :is(.ability-table .mod-cell input[type=text], .abilities-table .ability-modifier-cell input[type=text]) {
   width: 100%;
   max-width: 64px;
   text-align: center;
 }
 
-.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(1) { width: 80px; }
-.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(2) { width: 56px; }
-.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(3) { width: 60px; }
-.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(4) { width: 72px; }
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(1) {
+  width: 80px;
+}
+
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(2) {
+  width: 56px;
+}
+
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(3) {
+  width: 60px;
+}
+
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(4) {
+  width: 72px;
+}
 
 /* Properties */
 .horizonless .properties-section {
@@ -786,8 +916,8 @@
   gap: 4px;
 }
 
-.horizonless .custom-resource-card input[type="text"],
-.horizonless .custom-resource-card input[type="number"] {
+.horizonless .custom-resource-card input[type=text],
+.horizonless .custom-resource-card input[type=number] {
   width: 100%;
 }
 
@@ -904,7 +1034,7 @@
   max-width: 56px;
 }
 
-.horizonless .custom-attack-table :is(input[type="text"], input[type="number"], select) {
+.horizonless .custom-attack-table :is(input[type=text], input[type=number], select) {
   width: 100%;
 }
 
@@ -912,6 +1042,7 @@
   width: 100%;
   min-width: 0;
 }
+
 .horizonless .custom-save-uses-control {
   display: inline-grid;
   grid-template-columns: 30px auto 30px;
@@ -919,12 +1050,14 @@
   align-items: center;
   justify-content: center;
 }
+
 .horizonless .custom-attack-table .custom-save-uses-control .custom-save-uses-input {
   width: 30px;
   height: 28px;
   padding: 1px 3px;
   text-align: center;
 }
+
 .horizonless .custom-save-roll {
   display: inline-flex;
   align-items: center;
@@ -999,7 +1132,6 @@
     justify-content: start;
   }
 }
-
 /* Trades */
 .horizonless .trades-section .trade-column {
   display: flex;
@@ -1090,8 +1222,13 @@
   border: 2px groove #eeede0;
 }
 
-.horizonless .items-header > * { font-size: 14px; }
-.horizonless .items-list .items-header > * { font-size: 12px; }
+.horizonless .items-header > * {
+  font-size: 14px;
+}
+
+.horizonless .items-list .items-header > * {
+  font-size: 12px;
+}
 
 .horizonless :is(.items-header .item-name, .items-list .items-header .item-name) {
   display: flex;
@@ -1302,28 +1439,28 @@
   padding: 5px 8px;
 }
 
-.horizonless.actor .character-header :is(input[type="text"], input[type="number"], select) {
+.horizonless.actor .character-header :is(input[type=text], input[type=number], select) {
   min-height: 28px;
 }
 
 .horizonless.actor :is(.sheet-header h1.charname input, .character-header h1.character-name input),
-.horizonless.actor :is(input[type="text"], input[type="number"], select, textarea) {
+.horizonless.actor :is(input[type=text], input[type=number], select, textarea) {
   color: var(--hz-sheet-text);
   border: 1px solid var(--hz-sheet-stroke-soft);
   background: var(--hz-sheet-surface-strong);
 }
 
-.horizonless.actor :is(input[type="text"], input[type="number"], select, textarea)::placeholder {
+.horizonless.actor :is(input[type=text], input[type=number], select, textarea)::placeholder {
   color: color-mix(in srgb, var(--hz-color-text-on-surface) 58%, transparent);
 }
 
-.horizonless.actor :is(input[type="text"], input[type="number"], select, textarea):focus {
+.horizonless.actor :is(input[type=text], input[type=number], select, textarea):focus {
   border-color: var(--hz-sheet-label);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--hz-color-primary-strong) 34%, transparent);
   outline: none;
 }
 
-.horizonless.actor input[type="checkbox"] {
+.horizonless.actor input[type=checkbox] {
   accent-color: var(--hz-color-primary-strong);
 }
 
@@ -1488,8 +1625,8 @@
   padding: 6px;
 }
 
-.horizonless .class-level-card input[type="number"],
-.horizonless .class-level-card input[type="text"] {
+.horizonless .class-level-card input[type=number],
+.horizonless .class-level-card input[type=text] {
   width: 100%;
   max-width: 72px;
   min-height: 28px;

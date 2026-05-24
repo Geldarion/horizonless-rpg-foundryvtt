@@ -1,200 +1,168 @@
-// Section Header
-.items-header {
+﻿/* Items and effects */
+.horizonless :is(.items-header, .items-list .items-header) {
   height: 28px;
   margin: 2px 0;
   padding: 0;
   align-items: center;
   background: rgba(0, 0, 0, 0.05);
-  border: $border-groove;
-  font-weight: bold;
-  > * {
-    font-size: 14px;
-    text-align: center;
-  }
-  .item-name {
-    font-weight: bold;
-    padding-left: 5px;
-    text-align: left;
-    display: flex;
-    // font-size: 16px;
-  }
+  border: 2px groove #eeede0;
 }
 
-// -----------------------------------------
-// Items Lists
-// -----------------------------------------
+.horizonless .items-header > * { font-size: 14px; }
+.horizonless .items-list .items-header > * { font-size: 12px; }
 
-.items-list {
-  list-style: none;
+.horizonless :is(.items-header .item-name, .items-list .items-header .item-name) {
+  display: flex;
+  padding-left: 5px;
+}
+
+.horizonless :is(.items-list, .items-list .item-list) {
   margin: 0;
   padding: 0;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  color: $c-tan;
-
-  .inventory-header {
-    height: auto;
-    min-height: 40px;
-    padding: 4px 2px;
-
-    .item-controls {
-      flex: 0 1 auto;
-      flex-wrap: wrap;
-      row-gap: 4px;
-      justify-content: flex-end;
-    }
-
-    .item-control {
-      white-space: nowrap;
-    }
-  }
-
-  // Child lists
-  .item-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  // Item Name
-  .item-name {
-    flex: 2;
-    margin: 0;
-    overflow: hidden;
-    font-size: 13px;
-    text-align: left;
-    align-items: center;
-    display: flex;
-    h3, h4 {
-      margin: 0;
-      white-space: nowrap;
-      overflow-x: hidden;
-    }
-  }
-
-  // Control Buttons
-  .item-controls {
-    display: flex;
-    flex: 0 0 100px;
-    justify-content: flex-end;
-    a {
-      font-size: 12px;
-      text-align: center;
-      margin: 0 6px;
-    }
-  }
-
-  // Individual Item
-  .item {
-    align-items: center;
-    padding: 0 2px; // to align with the header border
-    border-bottom: 1px solid $c-faint;
-    &:last-child { border-bottom: none; }
-    .item-name {
-      color: $c-dark;
-      .item-image {
-        flex: 0 0 30px;
-        height: 30px;
-        background-size: 30px;
-        border: none;
-        margin-right: 5px;
-      }
-    }
-  }
-
-  .item-prop {
-    text-align: center;
-    border-left: 1px solid #c9c7b8;
-    border-right: 1px solid #c9c7b8;
-    font-size: 12px;
-  }
-
-  // Section Header
-  .items-header {
-    height: 28px;
-    margin: 2px 0;
-    padding: 0;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.05);
-    border: $border-groove;
-    font-weight: bold;
-    > * {
-      font-size: 12px;
-      text-align: center;
-    }
-    .item-name {
-      padding-left: 5px;
-      text-align: left;
-      // font-size: 16px;
-    }
-  }
+  list-style: none;
 }
 
-:is(.spell-list-section .spell-signature-source, .signature-spell-section) .item-controls {
+.horizonless .items-list {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: #444;
+}
+
+.horizonless .items-list .inventory-header {
+  height: auto;
+  min-height: 40px;
+  padding: 4px 2px;
+}
+
+.horizonless .items-list .inventory-header .item-controls {
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  row-gap: 4px;
+  justify-content: flex-end;
+}
+
+.horizonless .items-list .inventory-header .item-control {
+  white-space: nowrap;
+}
+
+.horizonless .items-list .item-name {
+  display: flex;
+  flex: 2;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+}
+
+.horizonless .items-list .item-name :is(h3, h4) {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.horizonless .items-list .item-controls {
+  display: flex;
+  flex: 0 0 100px;
+  justify-content: flex-end;
+}
+
+.horizonless :is(.spell-list-section .spell-signature-source, .signature-spell-section) .item-controls {
   flex: 0 0 auto;
   align-items: center;
   gap: 6px;
 }
 
-:is(.spell-list-section .spell-signature-source, .signature-spell-section) .item-control {
+.horizonless :is(.spell-list-section .spell-signature-source, .signature-spell-section) .item-control {
   flex: 0 0 auto;
   white-space: nowrap;
 }
 
-:is(.spell-list-section, .signature-spell-section) .spell-heighten-select {
+.horizonless :is(.spell-list-section, .signature-spell-section) .spell-heighten-select {
   min-width: 11.5rem;
 }
 
-.signature-spell-section {
-  .items-list {
-    width: 100%;
-    max-width: 100%;
-    overflow: visible;
-  }
-
-  .item {
-    min-width: 0;
-    width: 100%;
-    flex-wrap: wrap;
-    row-gap: 4px;
-  }
-
-  .item-name {
-    min-width: 0;
-    flex: 1 1 12rem;
-  }
-
-  .item-controls {
-    min-width: 0;
-    flex: 0 1 auto;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  .spell-heighten-select {
-    max-width: 100%;
-  }
-
-  label.item-control {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-
-    &:has(.signature-spell-used-toggle) {
-      margin-left: 6px;
-    }
-  }
-
-  .signature-spell-used-toggle {
-    width: auto;
-    flex: 0 0 auto;
-    margin: 0;
-  }
+.horizonless .signature-spell-section .items-list {
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
 }
 
-// Example style for Horizonless (can be removed if not needed).
-.item-formula {
-  
+.horizonless .signature-spell-section .item {
+  min-width: 0;
+  width: 100%;
+  flex-wrap: wrap;
+  row-gap: 4px;
+}
+
+.horizonless .signature-spell-section .item-name {
+  min-width: 0;
+  flex: 1 1 12rem;
+}
+
+.horizonless .signature-spell-section .item-controls {
+  min-width: 0;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.horizonless .signature-spell-section .spell-heighten-select {
+  max-width: 100%;
+}
+
+.horizonless .signature-spell-section label.item-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.horizonless .signature-spell-section label.item-control:has(.signature-spell-used-toggle) {
+  margin-left: 6px;
+}
+
+.horizonless .signature-spell-section .signature-spell-used-toggle {
+  width: auto;
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.horizonless .items-list .item-controls a {
+  margin: 0 6px;
+  font-size: 12px;
+}
+
+.horizonless .items-list .item {
+  align-items: center;
+  padding: 0 2px;
+  border-bottom: 1px solid #c9c7b8;
+}
+
+.horizonless .items-list .item:last-child {
+  border-bottom: 0;
+}
+
+.horizonless .items-list .item .item-name {
+  color: #191813;
+}
+
+.horizonless .items-list .item .item-name .item-image {
+  flex: 0 0 30px;
+  height: 30px;
+  margin-right: 5px;
+  border: 0;
+  background-size: 30px;
+}
+
+.horizonless :is(.items-list .item-prop, .effects .item .effect-source, .effects .item .effect-duration, .effects .item .effect-controls) {
+  border-inline: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+
+.horizonless .effects .item .effect-controls {
+  border: 0;
+}
+
+.horizonless .item-formula {
   flex: 0 0 200px;
-  padding: 0 8px;
 }
+

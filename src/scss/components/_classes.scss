@@ -1,0 +1,22 @@
+﻿.horizonless .classes-level-grid {
+  grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
+  align-items: start;
+  justify-content: start;
+  gap: 8px;
+}
+
+.horizonless .class-level-card {
+  width: 120px;
+  min-width: 120px;
+  gap: 6px;
+  padding: 6px;
+}
+
+.horizonless .class-level-card input[type="number"],
+.horizonless .class-level-card input[type="text"] {
+  width: 100%;
+  max-width: 72px;
+  min-height: 28px;
+  margin: 0 auto;
+  text-align: center;
+}

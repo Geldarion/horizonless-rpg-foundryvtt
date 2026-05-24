@@ -1,171 +1,21 @@
-// Add custom fonts by visiting and search https://fonts.google.com
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('../module/messages/item/chat.css');
-@import url('../module/messages/maneuvers/chat.css');
-@import url('../module/messages/spells/chat.css');
-@import url('../module/messages/spells/heightening-dialog.css');
+@use 'base/external';
+@use 'base/theme';
 
-:root,
-.horizonless-spell-chat-theme {
-  --hz-color-primary: #90caf9;
-  --hz-color-primary-strong: #2b6cb0;
-  --hz-color-accent: #4b111b;
-  --hz-color-surface: #e6f0ff;
-  --hz-color-background: #080b12;
-  --hz-color-text-on-surface: #0a1421;
-  --hz-color-text-on-dark: #f8fafc;
-  --hz-color-stroke-on-surface: #647b9a;
-  --hz-color-stroke-on-background: #6d90c5;
-}
+@use 'chat/messages';
+@use 'chat/roll-dialogs';
+@use 'chat/core';
 
-.chat-message.horizonless-chat-message.horizonless-attack-chat-message--critical {
-  background: color-mix(in srgb, var(--hz-color-surface) 84%, #7f1d2d 16%) !important;
-  background-color: color-mix(in srgb, var(--hz-color-surface) 84%, #7f1d2d 16%) !important;
-  border-color: #7f1d2d !important;
-}
+@use 'global/window';
+@use 'global/grid';
+@use 'global/flex';
 
-.chat-message.horizonless-chat-message.horizonless-attack-chat-message--critical-miss {
-  background: color-mix(in srgb, var(--hz-color-surface) 84%, #102a56 16%) !important;
-  background-color: color-mix(in srgb, var(--hz-color-surface) 84%, #102a56 16%) !important;
-  border-color: #102a56 !important;
-}
-
-.horizonless-attack-roll-dialog {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 280px;
-
-  .form-group {
-    display: grid;
-    grid-template-columns: minmax(130px, 1fr) auto;
-    gap: 10px;
-    align-items: center;
-    margin: 0;
-  }
-
-  label {
-    margin: 0;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  .form-fields {
-    display: grid;
-    grid-template-columns: 28px 58px 28px;
-    gap: 4px;
-    align-items: center;
-    justify-content: end;
-  }
-
-  .critical-threshold-fields {
-    grid-template-columns: 28px 58px 28px;
-  }
-
-  .critical-threshold-fields input[type="number"] {
-    grid-column: 1 / -1;
-    width: 100%;
-  }
-
-  .modifier-adjust {
-    width: 28px;
-    height: 28px;
-    padding: 0;
-    line-height: 1;
-  }
-
-  input[type="number"] {
-    width: 58px;
-    height: 28px;
-    text-align: center;
-  }
-}
-
-.horizonless-effort-roll-dialog {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 320px;
-
-  .form-group {
-    display: grid;
-    grid-template-columns: minmax(130px, 1fr) auto;
-    gap: 10px;
-    align-items: center;
-    margin: 0;
-  }
-
-  label {
-    margin: 0;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-
-  .form-fields {
-    display: grid;
-    grid-template-columns: 28px 58px 28px;
-    gap: 4px;
-    align-items: center;
-    justify-content: end;
-  }
-
-  .effort-modifier-adjust {
-    width: 28px;
-    height: 28px;
-    padding: 0;
-    line-height: 1;
-  }
-
-  input[type="number"] {
-    width: 58px;
-    height: 28px;
-    text-align: center;
-  }
-
-  .effort-tier-fields {
-    grid-template-columns: repeat(3, 58px);
-  }
-
-  .effort-tier-option {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 28px;
-    padding: 0 6px;
-    border: 1px solid var(--color-border-light-primary, #777);
-    border-radius: 4px;
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  .effort-tier-option input {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .effort-tier-option:has(input:checked) {
-    background: rgba(255, 255, 255, 0.18);
-    box-shadow: inset 0 0 0 1px currentColor;
-  }
-}
-
-// Import utilities.
-@import 'utils/typography';
-@import 'utils/colors';
-@import 'utils/mixins';
-@import 'utils/variables';
-
-/* Global styles */
-@import 'global/window';
-@import 'global/grid';
-@import 'global/flex';
-
-/* Styles limited to horizonless sheets */
-.horizonless {
-  @import 'components/forms';
-  @import 'components/resource';
-  @import 'components/items';
-  @import 'components/effects';
-  @import 'components/character-theme';
-}
+@use 'components/forms';
+@use 'components/resource';
+@use 'components/features';
+@use 'components/properties';
+@use 'components/custom-resources';
+@use 'components/custom-attacks';
+@use 'components/trades';
+@use 'components/items';
+@use 'components/character-theme';
+@use 'components/classes';

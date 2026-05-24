@@ -1,77 +1,108 @@
-.item-form {
-  font-family: $font-primary;
-}
-
-.sheet-header {
-  flex: 0 auto;
+﻿/* Base sheet */
+.horizonless :is(.sheet-header, .character-header) {
   align-items: flex-start;
-  overflow: visible;
   display: flex;
-  flex-direction: row;
+  flex: 0 auto;
   flex-wrap: wrap;
   justify-content: flex-start;
+  overflow: visible;
   margin-bottom: 10px;
-
-  .profile-img {
-    flex: 0 0 100px;
-    height: 100px;
-    margin-right: 10px;
-  }
-
-  .header-fields {
-    flex: 1;
-  }
-
-  h1.charname {
-    height: 50px;
-    padding: 0px;
-    margin: 5px 0;
-    border-bottom: 0;
-    input {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-    }
-  }
 }
 
-.sheet-tabs {
+.horizonless :is(.sheet-header .profile-img, .character-header .character-portrait) {
+  flex: 0 0 140px;
+  width: 140px;
+  height: 140px;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.horizonless :is(.sheet-header .header-fields, .character-header .character-header-details) {
+  flex: 1;
+}
+
+.horizonless :is(.sheet-header h1.charname, .character-header h1.character-name) {
+  height: 50px;
+  margin: 5px 0;
+  padding: 0;
+  border-bottom: 0;
+}
+
+.horizonless :is(.sheet-header h1.charname input, .character-header h1.character-name input) {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.horizonless .sheet-tabs {
   flex: 0 0 auto;
+  min-width: min-content;
 }
 
-.sheet-body {
+.horizonless .sheet-body {
   flex: 1 1 auto;
   min-height: 0;
   overflow: hidden;
 }
 
-.sheet-body,
-.sheet-body .tab,
-.sheet-body .tab .editor {
+.horizonless .character {
+  min-width: 712px;
+}
+
+.horizonless :is(.sheet-body, .sheet-body .tab, .sheet-body .tab .editor) {
   height: 100%;
 }
 
-.sheet-body .tab {
+.horizonless .sheet-body .tab {
   display: none;
   min-height: 0;
   overflow-y: auto;
 }
 
-.sheet-body .tab.active {
+.horizonless .sheet-body .tab.active {
   display: block;
 }
 
-.sheet-body .tab.active.flexcol {
+.horizonless .sheet-body .tab.active.flexcol {
   display: flex;
   flex: 1 1 auto;
 }
 
-.tox {
-  .tox-editor-container {
-    background: $c-white;
-  }
-
-  .tox-edit-area {
-    padding: 0 8px;
-  }
+.horizonless .tox .tox-editor-container {
+  background: #fff;
 }
+
+.horizonless .tox .tox-edit-area,
+.horizonless .item-formula {
+  padding: 0 8px;
+}
+
+.horizonless :is(.resource-label, .stat-label),
+.horizonless .tabs .item,
+.horizonless :is(.ability-table, .abilities-table) thead th,
+.horizonless :is(.items-header, .items-list .items-header),
+.horizonless .items-header .item-name {
+  font-weight: 700;
+}
+
+.horizonless .tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 40px;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #aaa;
+}
+
+.horizonless .tabs .item {
+  flex: 0 0 auto;
+  padding: 0 3px;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.horizonless .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
+}
+

@@ -1,0 +1,30 @@
+﻿.chat-message.horizonless-spell-chat-message {
+  background: var(--hz-color-surface) !important;
+  background-color: var(--hz-color-surface) !important;
+  background-image: none !important;
+  border-color: var(--hz-color-accent) !important;
+}
+
+.chat-message.horizonless-weapon-chat-message {
+  background: var(--hz-item-chat-surface) !important;
+  background-color: var(--hz-item-chat-surface) !important;
+  background-image: none !important;
+  border-color: var(--hz-item-chat-accent) !important;
+  color: var(--hz-item-chat-text);
+}
+
+.chat-message.horizonless-weapon-chat-message .message-content {
+  color: inherit;
+}
+
+.chat-message.horizonless-chat-message.horizonless-attack-chat-message--critical {
+  background: color-mix(in srgb, var(--hz-color-surface) 84%, #7f1d2d 16%) !important;
+  background-color: color-mix(in srgb, var(--hz-color-surface) 84%, #7f1d2d 16%) !important;
+  border-color: #7f1d2d !important;
+}
+
+.chat-message.horizonless-chat-message.horizonless-attack-chat-message--critical-miss {
+  background: color-mix(in srgb, var(--hz-color-surface) 84%, #102a56 16%) !important;
+  background-color: color-mix(in srgb, var(--hz-color-surface) 84%, #102a56 16%) !important;
+  border-color: #102a56 !important;
+}

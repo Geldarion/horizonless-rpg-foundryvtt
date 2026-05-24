@@ -1,0 +1,60 @@
+﻿/* Features */
+.horizonless :is(.features-layout, .features-panel) {
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 16px;
+}
+
+.horizonless :is(.features-layout .sidebar, .features-panel .abilities-panel) {
+  padding-right: 6px;
+}
+
+.horizonless :is(.ability-table, .abilities-table) {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.horizonless :is(.ability-table, .abilities-table) :is(th, td) {
+  padding: 4px 6px;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.horizonless :is(.ability-table, .abilities-table) thead th,
+.horizonless :is(.ability-table .heroic-cell, .abilities-table .heroic-toggle-cell),
+.horizonless :is(.ability-table .mod-cell, .abilities-table .ability-modifier-cell),
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(n + 2),
+.horizonless :is(.items-header, .items-list .items-header) > *,
+.horizonless :is(.effect-source),
+.horizonless :is(.effect-duration),
+.horizonless :is(.items-list .item-prop, .effects .item .effect-source, .effects .item .effect-duration, .effects .item .effect-controls),
+.horizonless .items-list .item-controls a {
+  text-align: center;
+}
+
+.horizonless :is(.ability-table, .abilities-table) thead th:first-child,
+.horizonless :is(.ability-table .ability-name, .abilities-table .ability-label),
+.horizonless :is(.items-header .item-name, .items-list .items-header .item-name),
+.horizonless .items-list .item-name,
+.horizonless .trades-section .trade-task-list {
+  text-align: left;
+}
+
+.horizonless :is(.ability-table .ability-name, .abilities-table .ability-label) {
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.horizonless :is(.ability-table .mod-cell input[type="text"], .abilities-table .ability-modifier-cell input[type="text"]) {
+  width: 100%;
+  max-width: 64px;
+  text-align: center;
+}
+
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(1) { width: 80px; }
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(2) { width: 56px; }
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(3) { width: 60px; }
+.horizonless :is(.ability-table, .abilities-table) :is(th, td):nth-child(4) { width: 72px; }
+

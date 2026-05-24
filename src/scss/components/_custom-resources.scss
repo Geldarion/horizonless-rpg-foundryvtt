@@ -1,0 +1,67 @@
+﻿/* Custom resources */
+.horizonless .custom-resources-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.horizonless .custom-resources-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.horizonless .custom-resources-header h3 {
+  margin: 0;
+}
+
+.horizonless .custom-resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.horizonless .custom-resource-card {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.horizonless .custom-resource-row {
+  display: grid;
+  gap: 8px;
+  align-items: end;
+}
+
+.horizonless .custom-resource-row-main {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+.horizonless .custom-resource-row-values {
+  grid-template-columns: repeat(2, minmax(0, 140px));
+  justify-content: start;
+  margin-top: 8px;
+}
+
+.horizonless .custom-resource-value-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.horizonless .custom-resource-card input[type="text"],
+.horizonless .custom-resource-card input[type="number"] {
+  width: 100%;
+}
+
+.horizonless .custom-resource-remove {
+  justify-self: end;
+}
+
+.horizonless .custom-resource-empty {
+  min-height: 96px;
+}
+

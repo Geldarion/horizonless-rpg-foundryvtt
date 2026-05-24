@@ -1,0 +1,57 @@
+.chat-message.horizonless-chat-message {
+  background: var(--hz-color-surface) !important;
+  background-color: var(--hz-color-surface) !important;
+  background-image: none !important;
+  border: 1px solid var(--hz-color-accent) !important;
+  color: var(--hz-color-text-on-surface);
+  box-shadow: none;
+}
+
+.chat-message.horizonless-chat-message .message-header {
+  margin-bottom: 0.45rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--hz-color-accent) 30%, transparent);
+}
+
+.chat-message.horizonless-chat-message :is(.message-sender, .flavor-text) {
+  color: var(--hz-color-accent);
+}
+
+.chat-message.horizonless-chat-message .message-metadata {
+  color: var(--hz-color-primary-strong);
+}
+
+.chat-message.horizonless-chat-message .message-content {
+  color: inherit;
+}
+
+.chat-message.horizonless-chat-message a.content-link,
+.chat-message.horizonless-chat-message a.inline-roll,
+.chat-message.horizonless-chat-message a.entity-link {
+  color: var(--hz-color-primary-strong);
+}
+
+.chat-message.horizonless-chat-message .dice-roll .dice-formula,
+.chat-message.horizonless-chat-message .dice-roll .dice-total {
+  background: var(--hz-color-primary);
+  border-color: var(--hz-color-accent);
+  color: var(--hz-color-primary-strong);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.chat-message.horizonless-chat-message .dice-roll .dice-tooltip {
+  background: color-mix(in srgb, var(--hz-color-surface) 94%, white);
+  border: 1px solid var(--hz-color-accent);
+  border-radius: 0;
+  color: var(--hz-color-text-on-surface);
+}
+
+.chat-message.horizonless-chat-message .dice-roll .dice-tooltip .part-header {
+  border-bottom-color: color-mix(in srgb, var(--hz-color-accent) 40%, transparent);
+}
+
+#chat-log .chat-message,
+#chat-log .chat-message .message-content {
+  border-radius: 0 !important;
+}

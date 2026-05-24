@@ -1,0 +1,8 @@
+# Dependencies
+/node_modules/
+
+# Local npm cache used when the default user cache is unavailable
+/.npm-cache/
+package-lock.json
+
+!/.gitattributes
