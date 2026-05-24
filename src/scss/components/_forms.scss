@@ -69,7 +69,7 @@
 }
 
 .horizonless .tox .tox-editor-container {
-  background: #fff;
+  background: white;
 }
 
 .horizonless .tox .tox-edit-area,
@@ -90,8 +90,8 @@
   flex-wrap: wrap;
   align-items: center;
   min-height: 40px;
-  border-top: 1px solid #bbb;
-  border-bottom: 1px solid #aaa;
+  border-top: 1px solid var(--hz-color-foundry-border-light);
+  border-bottom: 1px solid var(--hz-color-foundry-border-medium);
 }
 
 .horizonless .tabs .item {

@@ -1,4 +1,6 @@
-﻿.horizonless .custom-attacks-section {
+@use '../utils/mixins';
+
+.horizonless .custom-attacks-section {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -25,21 +27,11 @@
 }
 
 .horizonless .custom-attacks-section .task-control {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
-  background: rgba(0, 0, 0, 0.04);
-  padding: 2px 8px;
-  font-size: 12px;
-  line-height: 18px;
-  text-decoration: none;
+  @include mixins.task-control($display: flex, $justify: center, $text-decoration: none);
 }
 
 .horizonless .custom-attacks-section .task-control:hover {
-  background: rgba(0, 0, 0, 0.1);
+  @include mixins.task-control-hover;
 }
 
 .horizonless .custom-attack-table {
@@ -47,9 +39,9 @@
   flex-direction: column;
   min-width: 0;
   overflow-x: auto;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--hz-color-black-15);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.28);
+  background: var(--hz-color-white-28);
 }
 
 .horizonless .custom-attack-table-row {
@@ -73,19 +65,19 @@
   min-height: 28px;
   font-size: 12px;
   font-weight: bold;
-  background: rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  background: var(--hz-color-black-05);
+  border-bottom: 1px solid var(--hz-color-black-15);
 }
 
 .horizonless .custom-attack-entry-row + .custom-attack-entry-row,
 .horizonless .custom-attack-empty-row {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid var(--hz-color-black-12);
 }
 
 .horizonless .custom-attack-empty-row {
   padding: 10px 8px;
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.65);
+  color: var(--hz-color-black-65);
 }
 
 .horizonless .custom-attack-entry-row .stat-label {
@@ -111,6 +103,7 @@
   width: 100%;
   min-width: 0;
 }
+
 .horizonless .custom-save-uses-control {
   display: inline-grid;
   grid-template-columns: 30px auto 30px;
@@ -118,12 +111,14 @@
   align-items: center;
   justify-content: center;
 }
+
 .horizonless .custom-attack-table .custom-save-uses-control .custom-save-uses-input {
   width: 30px;
   height: 28px;
   padding: 1px 3px;
   text-align: center;
 }
+
 .horizonless .custom-save-roll {
   display: inline-flex;
   align-items: center;
@@ -173,29 +168,35 @@
   .horizonless .custom-attack-table {
     overflow-x: visible;
   }
+
   .horizonless .custom-attack-table-header {
     display: none;
   }
+
   .horizonless .custom-attack-table-attacks .custom-attack-table-row,
   .horizonless .custom-attack-table-saves .custom-attack-table-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   .horizonless .custom-attack-entry-row .stat-label {
     display: block;
   }
+
   .horizonless .custom-attack-action-cell,
   .horizonless .custom-attack-advantage-cell,
   .horizonless .custom-attack-remove-cell {
     align-items: stretch;
   }
+
   .horizonless .custom-save-roll-cell {
     align-items: start;
   }
+
   .horizonless .custom-attack-advantage-control {
     justify-content: start;
   }
+
   .horizonless .custom-save-uses-control {
     justify-content: start;
   }
 }
-

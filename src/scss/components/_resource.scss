@@ -1,4 +1,6 @@
-﻿/* Header stats */
+@use '../utils/mixins';
+
+/* Header stats */
 .horizonless :is(.resource-summary, .resources) {
   display: grid;
 }
@@ -194,20 +196,15 @@
 }
 
 .horizonless :is(.damage-buffer-add, .damage-buffer-remove) {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  @include mixins.task-control($justify: center, $text-decoration: none);
   gap: 4px;
   cursor: pointer;
-  text-decoration: none;
   color: inherit;
-  background: rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 4px;
 }
 
 .horizonless :is(.damage-buffer-add, .damage-buffer-remove):hover {
-  background: rgba(0, 0, 0, 0.1);
+  @include mixins.task-control-hover;
 }
 
 .horizonless .damage-buffer-remove {
@@ -222,4 +219,3 @@
   font-size: 11px;
   line-height: 16px;
 }
-

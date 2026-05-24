@@ -17,7 +17,7 @@
 .horizonless :is(.ability-table, .abilities-table) :is(th, td) {
   padding: 4px 6px;
   vertical-align: middle;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid var(--hz-color-black-12);
 }
 
 .horizonless :is(.ability-table, .abilities-table) thead th,

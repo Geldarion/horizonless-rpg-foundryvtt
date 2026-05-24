@@ -96,7 +96,7 @@ export class HorizonlessCombatTracker extends BaseCombatTracker {
         classes,
         position: {
           width: 340,
-          height: 380,
+          height: 490,
         },
         window: {
           resizable: true,

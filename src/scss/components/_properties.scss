@@ -1,4 +1,6 @@
-﻿/* Properties */
+@use '../utils/mixins';
+
+/* Properties */
 .horizonless .properties-section {
   display: flex;
   flex-direction: column;
@@ -22,13 +24,9 @@
   flex-direction: column;
   gap: 4px;
   min-width: 0;
-  padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.4);
+  @include mixins.sheet-card;
 }
 
 .horizonless .property-row :is(input, select) {
   width: 100%;
 }
-

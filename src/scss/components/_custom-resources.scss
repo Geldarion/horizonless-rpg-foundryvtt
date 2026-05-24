@@ -1,4 +1,6 @@
-﻿/* Custom resources */
+@use '../utils/mixins';
+
+/* Custom resources */
 .horizonless .custom-resources-section {
   display: flex;
   flex-direction: column;
@@ -24,10 +26,7 @@
 }
 
 .horizonless .custom-resource-card {
-  padding: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.4);
+  @include mixins.sheet-card;
 }
 
 .horizonless .custom-resource-row {
@@ -64,4 +63,3 @@
 .horizonless .custom-resource-empty {
   min-height: 96px;
 }
-

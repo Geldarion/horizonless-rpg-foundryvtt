@@ -4,8 +4,8 @@
   margin: 2px 0;
   padding: 0;
   align-items: center;
-  background: rgba(0, 0, 0, 0.05);
-  border: 2px groove #eeede0;
+  background: var(--hz-color-black-05);
+  border: 2px groove var(--hz-color-foundry-border-groove);
 }
 
 .horizonless .items-header > * { font-size: 14px; }
@@ -25,7 +25,7 @@
 .horizonless .items-list {
   overflow-y: auto;
   scrollbar-width: thin;
-  color: #444;
+  color: var(--hz-color-foundry-text-muted);
 }
 
 .horizonless .items-list .inventory-header {
@@ -134,7 +134,7 @@
 .horizonless .items-list .item {
   align-items: center;
   padding: 0 2px;
-  border-bottom: 1px solid #c9c7b8;
+  border-bottom: 1px solid var(--hz-color-foundry-border-faint);
 }
 
 .horizonless .items-list .item:last-child {
@@ -142,7 +142,7 @@
 }
 
 .horizonless .items-list .item .item-name {
-  color: #191813;
+  color: var(--hz-color-foundry-text-dark);
 }
 
 .horizonless .items-list .item .item-name .item-image {
@@ -154,7 +154,7 @@
 }
 
 .horizonless :is(.items-list .item-prop, .effects .item .effect-source, .effects .item .effect-duration, .effects .item .effect-controls) {
-  border-inline: 1px solid #c9c7b8;
+  border-inline: 1px solid var(--hz-color-foundry-border-faint);
   font-size: 12px;
 }
 

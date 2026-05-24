@@ -14,3 +14,35 @@
 @mixin hide {
   display: none;
 }
+
+@mixin sheet-card {
+  padding: 10px;
+  border: 1px solid var(--hz-color-black-15);
+  border-radius: 8px;
+  background: var(--hz-color-white-40);
+}
+
+@mixin task-control($display: inline-flex, $justify: null, $text-decoration: null) {
+  display: $display;
+  align-items: center;
+
+  @if $justify {
+    justify-content: $justify;
+  }
+
+  gap: 6px;
+  padding: 2px 8px;
+  border: 1px solid var(--hz-color-black-25);
+  border-radius: 6px;
+  background: var(--hz-color-black-04);
+  font-size: 12px;
+  line-height: 18px;
+
+  @if $text-decoration {
+    text-decoration: $text-decoration;
+  }
+}
+
+@mixin task-control-hover {
+  background: var(--hz-color-black-10);
+}

@@ -9,4 +9,49 @@
   --hz-color-text-on-dark: #f8fafc;
   --hz-color-stroke-on-surface: #647b9a;
   --hz-color-stroke-on-background: #6d90c5;
+  --hz-color-danger: #7f1d2d;
+  --hz-color-critical-miss: #102a56;
+}
+
+:root,
+.horizonless-spell-chat-theme {
+  --hz-color-foundry-text-dark: #191813;
+  --hz-color-foundry-text-muted: #444;
+  --hz-color-foundry-border-faint: #c9c7b8;
+  --hz-color-foundry-border-muted: #b5b3a4;
+  --hz-color-foundry-border-groove: #eeede0;
+  --hz-color-foundry-border-light: #bbb;
+  --hz-color-foundry-border-medium: #aaa;
+  --hz-color-foundry-border-primary-fallback: #777;
+  --hz-color-window-title-shadow: red;
+  --hz-color-black-02: rgba(0, 0, 0, 0.02);
+  --hz-color-black-03: rgba(0, 0, 0, 0.03);
+  --hz-color-black-04: rgba(0, 0, 0, 0.04);
+  --hz-color-black-05: rgba(0, 0, 0, 0.05);
+  --hz-color-black-08: rgba(0, 0, 0, 0.08);
+  --hz-color-black-10: rgba(0, 0, 0, 0.1);
+  --hz-color-black-12: rgba(0, 0, 0, 0.12);
+  --hz-color-black-15: rgba(0, 0, 0, 0.15);
+  --hz-color-black-25: rgba(0, 0, 0, 0.25);
+  --hz-color-black-65: rgba(0, 0, 0, 0.65);
+  --hz-color-white-18: rgba(255, 255, 255, 0.18);
+  --hz-color-white-28: rgba(255, 255, 255, 0.28);
+  --hz-color-white-40: rgba(255, 255, 255, 0.4);
+}
+
+.horizonless.actor {
+  --hz-sheet-surface-soft: color-mix(in srgb, var(--hz-color-surface) 48%, transparent);
+  --hz-sheet-surface-strong: color-mix(in srgb, var(--hz-color-surface) 72%, transparent);
+  --hz-sheet-primary-soft: color-mix(in srgb, var(--hz-color-primary) 16%, transparent);
+  --hz-sheet-primary-strong: color-mix(in srgb, var(--hz-color-primary) 28%, transparent);
+  --hz-sheet-primary-hover: color-mix(in srgb, var(--hz-color-primary-strong) 18%, transparent);
+  --hz-sheet-accent-soft: color-mix(in srgb, var(--hz-color-accent) 12%, transparent);
+  --hz-sheet-accent-mid: color-mix(in srgb, var(--hz-color-accent) 22%, transparent);
+  --hz-sheet-accent-strong: color-mix(in srgb, var(--hz-color-accent) 38%, transparent);
+  --hz-sheet-stroke-soft: color-mix(in srgb, var(--hz-color-stroke-on-surface) 32%, transparent);
+  --hz-sheet-stroke-strong: color-mix(in srgb, var(--hz-color-accent) 48%, transparent);
+  --hz-sheet-text: var(--hz-color-text-on-surface);
+  --hz-sheet-heading: var(--hz-color-accent);
+  --hz-sheet-link: var(--hz-color-primary-strong);
+  --hz-sheet-label: var(--hz-color-primary-strong);
 }
