@@ -4,7 +4,9 @@
 @import url("../module/messages/spells/chat.css");
 @import url("../module/messages/spells/heightening-dialog.css");
 :root,
-.horizonless-spell-chat-theme {
+body.horizonless-theme-sky,
+body.horizonless-theme-sky .horizonless-spell-chat-theme,
+.horizonless-theme-sky.horizonless-spell-chat-theme {
   --hz-color-primary: #90caf9;
   --hz-color-primary-strong: #2b6cb0;
   --hz-color-accent: #4b111b;
@@ -16,6 +18,78 @@
   --hz-color-stroke-on-background: #6d90c5;
   --hz-color-danger: #7f1d2d;
   --hz-color-critical-miss: #102a56;
+  --hz-color-window-title-shadow: red;
+  --hz-chat-color-primary: var(--hz-color-primary);
+  --hz-chat-color-primary-strong: var(--hz-color-primary-strong);
+  --hz-chat-color-accent: var(--hz-color-accent);
+  --hz-chat-color-surface: var(--hz-color-surface);
+  --hz-chat-color-background: var(--hz-color-background);
+  --hz-chat-color-text-on-surface: var(--hz-color-text-on-surface);
+  --hz-chat-color-text-on-dark: var(--hz-color-text-on-dark);
+  --hz-chat-color-stroke-on-surface: var(--hz-color-stroke-on-surface);
+  --hz-chat-color-stroke-on-background: var(--hz-color-stroke-on-background);
+  --hz-chat-color-danger: var(--hz-color-danger);
+  --hz-chat-color-critical-miss: var(--hz-color-critical-miss);
+  --hz-chat-dice-total-text: var(--hz-color-primary-strong);
+  --hz-chat-dice-tooltip-background: color-mix(in srgb, var(--hz-color-surface) 94%, white);
+  --hz-chat-dice-tooltip-border: var(--hz-color-accent);
+  --hz-chat-item-stroke: var(--hz-color-stroke-on-surface);
+  --hz-theme-sheet-surface-soft: color-mix(in srgb, var(--hz-color-surface) 48%, transparent);
+  --hz-theme-sheet-surface-strong: color-mix(in srgb, var(--hz-color-surface) 72%, transparent);
+  --hz-theme-sheet-primary-soft: color-mix(in srgb, var(--hz-color-primary) 16%, transparent);
+  --hz-theme-sheet-primary-strong: color-mix(in srgb, var(--hz-color-primary) 28%, transparent);
+  --hz-theme-sheet-primary-hover: color-mix(in srgb, var(--hz-color-primary-strong) 18%, transparent);
+  --hz-theme-sheet-accent-soft: color-mix(in srgb, var(--hz-color-accent) 12%, transparent);
+  --hz-theme-sheet-accent-mid: color-mix(in srgb, var(--hz-color-accent) 22%, transparent);
+  --hz-theme-sheet-accent-strong: color-mix(in srgb, var(--hz-color-accent) 38%, transparent);
+  --hz-theme-sheet-stroke-soft: color-mix(in srgb, var(--hz-color-stroke-on-surface) 32%, transparent);
+  --hz-theme-sheet-stroke-strong: color-mix(in srgb, var(--hz-color-accent) 48%, transparent);
+  --hz-theme-sheet-link: var(--hz-color-primary-strong);
+  --hz-theme-sheet-label: var(--hz-color-primary-strong);
+}
+
+body.horizonless-theme-dark,
+body.horizonless-theme-dark .horizonless-spell-chat-theme,
+.horizonless-theme-dark.horizonless-spell-chat-theme {
+  --hz-color-primary: #a8c7ee;
+  --hz-color-primary-strong: #7ea8dc;
+  --hz-color-accent: #aa3442;
+  --hz-color-surface: #111724;
+  --hz-color-background: #070910;
+  --hz-color-text-on-surface: #e9eef7;
+  --hz-color-text-on-dark: #f6f8fc;
+  --hz-color-stroke-on-surface: #526177;
+  --hz-color-stroke-on-background: #809bc0;
+  --hz-color-danger: #681e29;
+  --hz-color-critical-miss: #172f58;
+  --hz-color-window-title-shadow: #aa3442;
+  --hz-chat-color-primary: #2d435f;
+  --hz-chat-color-primary-strong: #a8c7ee;
+  --hz-chat-color-accent: #d76370;
+  --hz-chat-color-surface: #121b2a;
+  --hz-chat-color-background: #070910;
+  --hz-chat-color-text-on-surface: #f0f5fb;
+  --hz-chat-color-text-on-dark: #e9eef7;
+  --hz-chat-color-stroke-on-surface: #5e7795;
+  --hz-chat-color-stroke-on-background: #809bc0;
+  --hz-chat-color-danger: #b83c4d;
+  --hz-chat-color-critical-miss: #3f75bd;
+  --hz-chat-dice-total-text: var(--hz-chat-color-text-on-dark);
+  --hz-chat-dice-tooltip-background: color-mix(in srgb, var(--hz-chat-color-surface) 82%, var(--hz-chat-color-primary) 18%);
+  --hz-chat-dice-tooltip-border: var(--hz-chat-color-stroke-on-surface);
+  --hz-chat-item-stroke: #a5b9ce;
+  --hz-theme-sheet-surface-soft: color-mix(in srgb, var(--hz-color-surface) 72%, var(--hz-color-background));
+  --hz-theme-sheet-surface-strong: color-mix(in srgb, var(--hz-color-surface) 88%, var(--hz-color-background));
+  --hz-theme-sheet-primary-soft: color-mix(in srgb, var(--hz-color-primary) 18%, var(--hz-color-surface));
+  --hz-theme-sheet-primary-strong: color-mix(in srgb, var(--hz-color-primary) 32%, var(--hz-color-surface));
+  --hz-theme-sheet-primary-hover: color-mix(in srgb, var(--hz-color-primary-strong) 28%, var(--hz-color-surface));
+  --hz-theme-sheet-accent-soft: color-mix(in srgb, var(--hz-color-accent) 14%, var(--hz-color-surface));
+  --hz-theme-sheet-accent-mid: color-mix(in srgb, var(--hz-color-accent) 24%, var(--hz-color-surface));
+  --hz-theme-sheet-accent-strong: color-mix(in srgb, var(--hz-color-accent) 42%, var(--hz-color-surface));
+  --hz-theme-sheet-stroke-soft: color-mix(in srgb, var(--hz-color-stroke-on-surface) 44%, var(--hz-color-surface));
+  --hz-theme-sheet-stroke-strong: color-mix(in srgb, var(--hz-color-accent) 52%, var(--hz-color-surface));
+  --hz-theme-sheet-link: #88b1e5;
+  --hz-theme-sheet-label: #88b1e5;
 }
 
 :root,
@@ -28,7 +102,6 @@
   --hz-color-foundry-border-light: #bbb;
   --hz-color-foundry-border-medium: #aaa;
   --hz-color-foundry-border-primary-fallback: #777;
-  --hz-color-window-title-shadow: red;
   --hz-color-black-02: rgba(0, 0, 0, 0.02);
   --hz-color-black-03: rgba(0, 0, 0, 0.03);
   --hz-color-black-04: rgba(0, 0, 0, 0.04);
@@ -45,20 +118,20 @@
 }
 
 .horizonless.actor {
-  --hz-sheet-surface-soft: color-mix(in srgb, var(--hz-color-surface) 48%, transparent);
-  --hz-sheet-surface-strong: color-mix(in srgb, var(--hz-color-surface) 72%, transparent);
-  --hz-sheet-primary-soft: color-mix(in srgb, var(--hz-color-primary) 16%, transparent);
-  --hz-sheet-primary-strong: color-mix(in srgb, var(--hz-color-primary) 28%, transparent);
-  --hz-sheet-primary-hover: color-mix(in srgb, var(--hz-color-primary-strong) 18%, transparent);
-  --hz-sheet-accent-soft: color-mix(in srgb, var(--hz-color-accent) 12%, transparent);
-  --hz-sheet-accent-mid: color-mix(in srgb, var(--hz-color-accent) 22%, transparent);
-  --hz-sheet-accent-strong: color-mix(in srgb, var(--hz-color-accent) 38%, transparent);
-  --hz-sheet-stroke-soft: color-mix(in srgb, var(--hz-color-stroke-on-surface) 32%, transparent);
-  --hz-sheet-stroke-strong: color-mix(in srgb, var(--hz-color-accent) 48%, transparent);
+  --hz-sheet-surface-soft: var(--hz-theme-sheet-surface-soft);
+  --hz-sheet-surface-strong: var(--hz-theme-sheet-surface-strong);
+  --hz-sheet-primary-soft: var(--hz-theme-sheet-primary-soft);
+  --hz-sheet-primary-strong: var(--hz-theme-sheet-primary-strong);
+  --hz-sheet-primary-hover: var(--hz-theme-sheet-primary-hover);
+  --hz-sheet-accent-soft: var(--hz-theme-sheet-accent-soft);
+  --hz-sheet-accent-mid: var(--hz-theme-sheet-accent-mid);
+  --hz-sheet-accent-strong: var(--hz-theme-sheet-accent-strong);
+  --hz-sheet-stroke-soft: var(--hz-theme-sheet-stroke-soft);
+  --hz-sheet-stroke-strong: var(--hz-theme-sheet-stroke-strong);
   --hz-sheet-text: var(--hz-color-text-on-surface);
   --hz-sheet-heading: var(--hz-color-accent);
-  --hz-sheet-link: var(--hz-color-primary-strong);
-  --hz-sheet-label: var(--hz-color-primary-strong);
+  --hz-sheet-link: var(--hz-theme-sheet-link);
+  --hz-sheet-label: var(--hz-theme-sheet-label);
 }
 
 .chat-message.horizonless-spell-chat-message {
@@ -183,6 +256,27 @@
   box-shadow: inset 0 0 0 1px currentColor;
 }
 
+:is(#chat-log, #chat .chat-log) {
+  --hz-color-primary: var(--hz-chat-color-primary);
+  --hz-color-primary-strong: var(--hz-chat-color-primary-strong);
+  --hz-color-accent: var(--hz-chat-color-accent);
+  --hz-color-surface: var(--hz-chat-color-surface);
+  --hz-color-background: var(--hz-chat-color-background);
+  --hz-color-text-on-surface: var(--hz-chat-color-text-on-surface);
+  --hz-color-text-on-dark: var(--hz-chat-color-text-on-dark);
+  --hz-color-stroke-on-surface: var(--hz-chat-color-stroke-on-surface);
+  --hz-color-stroke-on-background: var(--hz-chat-color-stroke-on-background);
+  --hz-color-danger: var(--hz-chat-color-danger);
+  --hz-color-critical-miss: var(--hz-chat-color-critical-miss);
+  --hz-item-chat-primary: var(--hz-color-primary);
+  --hz-item-chat-primary-strong: var(--hz-color-primary-strong);
+  --hz-item-chat-accent: var(--hz-color-accent);
+  --hz-item-chat-surface: var(--hz-color-surface);
+  --hz-item-chat-text: var(--hz-color-text-on-surface);
+  --hz-item-chat-text-on-dark: var(--hz-color-text-on-dark);
+  --hz-item-chat-stroke: var(--hz-chat-item-stroke);
+}
+
 .chat-message.horizonless-chat-message {
   background: var(--hz-color-surface) !important;
   background-color: var(--hz-color-surface) !important;
@@ -220,14 +314,14 @@
 .chat-message.horizonless-chat-message .dice-roll .dice-total {
   background: var(--hz-color-primary);
   border-color: var(--hz-color-accent);
-  color: var(--hz-color-primary-strong);
+  color: var(--hz-chat-dice-total-text);
   border-radius: 0;
   box-shadow: none;
 }
 
 .chat-message.horizonless-chat-message .dice-roll .dice-tooltip {
-  background: color-mix(in srgb, var(--hz-color-surface) 94%, white);
-  border: 1px solid var(--hz-color-accent);
+  background: var(--hz-chat-dice-tooltip-background);
+  border: 1px solid var(--hz-chat-dice-tooltip-border);
   border-radius: 0;
   color: var(--hz-color-text-on-surface);
 }
@@ -236,8 +330,8 @@
   border-bottom-color: color-mix(in srgb, var(--hz-color-accent) 40%, transparent);
 }
 
-#chat-log .chat-message,
-#chat-log .chat-message .message-content {
+:is(#chat-log, #chat .chat-log) .chat-message,
+:is(#chat-log, #chat .chat-log) .chat-message .message-content {
   border-radius: 0 !important;
 }
 
@@ -1406,10 +1500,9 @@
   flex: 0 0 200px;
 }
 
-/* Actor sheet palette derived from the spell chat theme. */
 .horizonless.actor {
   color: var(--hz-sheet-text);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--hz-color-surface) 78%, transparent), color-mix(in srgb, var(--hz-color-primary) 16%, transparent));
+  background: linear-gradient(180deg, var(--hz-sheet-surface-strong), var(--hz-sheet-surface-soft));
 }
 
 .horizonless.actor a {
@@ -1561,7 +1654,7 @@
 .horizonless.actor .trades-section .trade-section-heading {
   color: var(--hz-sheet-heading);
   border: 1px solid var(--hz-sheet-stroke-soft);
-  background: linear-gradient(90deg, var(--hz-sheet-primary-soft), color-mix(in srgb, var(--hz-color-surface) 26%, transparent));
+  background: linear-gradient(90deg, var(--hz-sheet-primary-soft), var(--hz-sheet-surface-soft));
 }
 
 .horizonless.actor .trades-section .trade-card,
@@ -1574,7 +1667,7 @@
 
 .horizonless.actor .trades-section .trade-task-row {
   border-color: var(--hz-sheet-accent-soft);
-  background: color-mix(in srgb, var(--hz-color-primary) 10%, transparent);
+  background: var(--hz-sheet-primary-soft);
 }
 
 .horizonless.actor .custom-attack-table-header {
@@ -1610,7 +1703,7 @@
 
 .horizonless.actor :is(.editor, .editor-content, .ProseMirror) {
   color: var(--hz-sheet-text);
-  background: color-mix(in srgb, var(--hz-color-surface) 38%, transparent);
+  background: var(--hz-sheet-surface-soft);
 }
 
 .horizonless .classes-level-grid {

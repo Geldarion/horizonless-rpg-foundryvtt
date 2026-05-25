@@ -1,3 +1,24 @@
+:is(#chat-log, #chat .chat-log) {
+  --hz-color-primary: var(--hz-chat-color-primary);
+  --hz-color-primary-strong: var(--hz-chat-color-primary-strong);
+  --hz-color-accent: var(--hz-chat-color-accent);
+  --hz-color-surface: var(--hz-chat-color-surface);
+  --hz-color-background: var(--hz-chat-color-background);
+  --hz-color-text-on-surface: var(--hz-chat-color-text-on-surface);
+  --hz-color-text-on-dark: var(--hz-chat-color-text-on-dark);
+  --hz-color-stroke-on-surface: var(--hz-chat-color-stroke-on-surface);
+  --hz-color-stroke-on-background: var(--hz-chat-color-stroke-on-background);
+  --hz-color-danger: var(--hz-chat-color-danger);
+  --hz-color-critical-miss: var(--hz-chat-color-critical-miss);
+  --hz-item-chat-primary: var(--hz-color-primary);
+  --hz-item-chat-primary-strong: var(--hz-color-primary-strong);
+  --hz-item-chat-accent: var(--hz-color-accent);
+  --hz-item-chat-surface: var(--hz-color-surface);
+  --hz-item-chat-text: var(--hz-color-text-on-surface);
+  --hz-item-chat-text-on-dark: var(--hz-color-text-on-dark);
+  --hz-item-chat-stroke: var(--hz-chat-item-stroke);
+}
+
 .chat-message.horizonless-chat-message {
   background: var(--hz-color-surface) !important;
   background-color: var(--hz-color-surface) !important;
@@ -35,14 +56,14 @@
 .chat-message.horizonless-chat-message .dice-roll .dice-total {
   background: var(--hz-color-primary);
   border-color: var(--hz-color-accent);
-  color: var(--hz-color-primary-strong);
+  color: var(--hz-chat-dice-total-text);
   border-radius: 0;
   box-shadow: none;
 }
 
 .chat-message.horizonless-chat-message .dice-roll .dice-tooltip {
-  background: color-mix(in srgb, var(--hz-color-surface) 94%, white);
-  border: 1px solid var(--hz-color-accent);
+  background: var(--hz-chat-dice-tooltip-background);
+  border: 1px solid var(--hz-chat-dice-tooltip-border);
   border-radius: 0;
   color: var(--hz-color-text-on-surface);
 }
@@ -51,7 +72,7 @@
   border-bottom-color: color-mix(in srgb, var(--hz-color-accent) 40%, transparent);
 }
 
-#chat-log .chat-message,
-#chat-log .chat-message .message-content {
+:is(#chat-log, #chat .chat-log) .chat-message,
+:is(#chat-log, #chat .chat-log) .chat-message .message-content {
   border-radius: 0 !important;
 }

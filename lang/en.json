@@ -44,6 +44,16 @@
       "ActivationCount": "Remaining Activations",
       "TakingTurn": "Taking Turn",
       "ResizeTracker": "Drag to Resize Tracker"
+    },
+    "Settings": {
+      "Theme": {
+        "Name": "Theme",
+        "Hint": "Choose the Horizonless interface theme for your user.",
+        "Choices": {
+          "Sky": "Sky",
+          "Dark": "Dark"
+        }
+      }
     }
   },
 

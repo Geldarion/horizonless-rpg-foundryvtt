@@ -1,7 +1,6 @@
-/* Actor sheet palette derived from the spell chat theme. */
 .horizonless.actor {
   color: var(--hz-sheet-text);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--hz-color-surface) 78%, transparent), color-mix(in srgb, var(--hz-color-primary) 16%, transparent));
+  background: linear-gradient(180deg, var(--hz-sheet-surface-strong), var(--hz-sheet-surface-soft));
 }
 
 .horizonless.actor a {
@@ -153,7 +152,7 @@
 .horizonless.actor .trades-section .trade-section-heading {
   color: var(--hz-sheet-heading);
   border: 1px solid var(--hz-sheet-stroke-soft);
-  background: linear-gradient(90deg, var(--hz-sheet-primary-soft), color-mix(in srgb, var(--hz-color-surface) 26%, transparent));
+  background: linear-gradient(90deg, var(--hz-sheet-primary-soft), var(--hz-sheet-surface-soft));
 }
 
 .horizonless.actor .trades-section .trade-card,
@@ -166,7 +165,7 @@
 
 .horizonless.actor .trades-section .trade-task-row {
   border-color: var(--hz-sheet-accent-soft);
-  background: color-mix(in srgb, var(--hz-color-primary) 10%, transparent);
+  background: var(--hz-sheet-primary-soft);
 }
 
 .horizonless.actor .custom-attack-table-header {
@@ -202,5 +201,5 @@
 
 .horizonless.actor :is(.editor, .editor-content, .ProseMirror) {
   color: var(--hz-sheet-text);
-  background: color-mix(in srgb, var(--hz-color-surface) 38%, transparent);
+  background: var(--hz-sheet-surface-soft);
 }

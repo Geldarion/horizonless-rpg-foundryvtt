@@ -31,6 +31,12 @@ const DEFAULT_TOKEN_BAR_ATTRIBUTES = Object.freeze({
 });
 const INITIALIZED_CONE_DEFAULT_SETTING = 'initializedConeDefault';
 const DEFAULT_CONE_TEMPLATE_TYPE = 'flat';
+const THEME_SETTING = 'theme';
+const THEME_CLASS_PREFIX = 'horizonless-theme-';
+const THEME_SETTING_CHOICES = Object.freeze({
+  sky: 'HORIZONLESS_RPG.Settings.Theme.Choices.Sky',
+  dark: 'HORIZONLESS_RPG.Settings.Theme.Choices.Dark',
+});
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -117,6 +123,16 @@ Hooks.once('init', function () {
     type: Boolean,
     default: false,
   });
+  game.settings.register(game.system.id, THEME_SETTING, {
+    name: 'HORIZONLESS_RPG.Settings.Theme.Name',
+    hint: 'HORIZONLESS_RPG.Settings.Theme.Hint',
+    scope: 'user',
+    config: true,
+    type: String,
+    choices: THEME_SETTING_CHOICES,
+    default: 'sky',
+    onChange: applyHorizonlessTheme,
+  });
 
   // Register sheet application classes
   const actorCollection = foundry.documents.collections.Actors;
@@ -154,6 +170,10 @@ Hooks.once('init', function () {
 
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
+});
+
+Hooks.once('setup', function () {
+  applyHorizonlessTheme(game.settings.get(game.system.id, THEME_SETTING));
 });
 
 /* -------------------------------------------- */
@@ -321,6 +341,16 @@ function buildDefaultPrototypeTokenUpdate(data) {
   }
 
   return updateData;
+}
+
+function applyHorizonlessTheme(theme) {
+  const selectedTheme = Object.hasOwn(THEME_SETTING_CHOICES, theme) ? theme : 'sky';
+
+  document.body.classList.remove(
+    `${THEME_CLASS_PREFIX}sky`,
+    `${THEME_CLASS_PREFIX}dark`
+  );
+  document.body.classList.add(`${THEME_CLASS_PREFIX}${selectedTheme}`);
 }
 
 async function migrateActorPrototypeTokenBars() {
