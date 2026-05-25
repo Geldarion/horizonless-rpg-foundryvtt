@@ -51,20 +51,20 @@
 }
 
 .horizonless.actor .character-header {
-  padding: 8px;
+  padding: 6px;
 }
 
 .horizonless.actor .character-header .character-name input {
-  font-size: 1.8rem;
+  font-size: 1.55rem;
   line-height: 1.1;
 }
 
 .horizonless.actor .character-header .resource-card {
-  padding: 5px 8px;
+  padding: 4px 6px;
 }
 
 .horizonless.actor .character-header :is(input[type="text"], input[type="number"], select) {
-  min-height: 28px;
+  min-height: 24px;
 }
 
 .horizonless.actor .tabs {

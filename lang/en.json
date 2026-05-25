@@ -51,6 +51,7 @@
         "Hint": "Choose the Horizonless interface theme for your user.",
         "Choices": {
           "Sky": "Sky",
+          "Verdant": "Verdant",
           "Dark": "Dark"
         }
       }

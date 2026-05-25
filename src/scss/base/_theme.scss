@@ -43,6 +43,50 @@ body.horizonless-theme-sky .horizonless-spell-chat-theme,
   --hz-theme-sheet-label: var(--hz-color-primary-strong);
 }
 
+body.horizonless-theme-verdant,
+body.horizonless-theme-verdant .horizonless-spell-chat-theme,
+.horizonless-theme-verdant.horizonless-spell-chat-theme {
+  --hz-color-primary: #2f7d6d;
+  --hz-color-primary-strong: #14594f;
+  --hz-color-accent: #b23a48;
+  --hz-color-surface: #16241d;
+  --hz-color-background: #101712;
+  --hz-color-text-on-surface: #edf7f0;
+  --hz-color-text-on-dark: #f6faf7;
+  --hz-color-stroke-on-surface: #78998c;
+  --hz-color-stroke-on-background: #8ba89c;
+  --hz-color-danger: #9f2635;
+  --hz-color-critical-miss: #416d8f;
+  --hz-color-window-title-shadow: #b23a48;
+  --hz-chat-color-primary: #356f61;
+  --hz-chat-color-primary-strong: #9ad4c0;
+  --hz-chat-color-accent: #d15a66;
+  --hz-chat-color-surface: #16241d;
+  --hz-chat-color-background: #0d1410;
+  --hz-chat-color-text-on-surface: #edf7f0;
+  --hz-chat-color-text-on-dark: #f7fbf8;
+  --hz-chat-color-stroke-on-surface: #78998c;
+  --hz-chat-color-stroke-on-background: #86a799;
+  --hz-chat-color-danger: #c33c4c;
+  --hz-chat-color-critical-miss: #4f83a8;
+  --hz-chat-dice-total-text: var(--hz-chat-color-text-on-dark);
+  --hz-chat-dice-tooltip-background: color-mix(in srgb, var(--hz-chat-color-surface) 84%, var(--hz-chat-color-primary) 16%);
+  --hz-chat-dice-tooltip-border: var(--hz-chat-color-stroke-on-surface);
+  --hz-chat-item-stroke: #a8c8ba;
+  --hz-theme-sheet-surface-soft: color-mix(in srgb, var(--hz-color-surface) 78%, var(--hz-color-background));
+  --hz-theme-sheet-surface-strong: color-mix(in srgb, var(--hz-color-surface) 92%, var(--hz-color-background));
+  --hz-theme-sheet-primary-soft: color-mix(in srgb, var(--hz-color-primary) 18%, var(--hz-color-surface));
+  --hz-theme-sheet-primary-strong: color-mix(in srgb, var(--hz-color-primary) 30%, var(--hz-color-surface));
+  --hz-theme-sheet-primary-hover: color-mix(in srgb, var(--hz-color-primary-strong) 24%, var(--hz-color-surface));
+  --hz-theme-sheet-accent-soft: color-mix(in srgb, var(--hz-color-accent) 14%, var(--hz-color-surface));
+  --hz-theme-sheet-accent-mid: color-mix(in srgb, var(--hz-color-accent) 26%, var(--hz-color-surface));
+  --hz-theme-sheet-accent-strong: color-mix(in srgb, var(--hz-color-accent) 42%, var(--hz-color-surface));
+  --hz-theme-sheet-stroke-soft: color-mix(in srgb, var(--hz-color-stroke-on-surface) 42%, var(--hz-color-surface));
+  --hz-theme-sheet-stroke-strong: color-mix(in srgb, var(--hz-color-accent) 48%, var(--hz-color-surface));
+  --hz-theme-sheet-link: #9ad4c0;
+  --hz-theme-sheet-label: #9ad4c0;
+}
+
 body.horizonless-theme-dark,
 body.horizonless-theme-dark .horizonless-spell-chat-theme,
 .horizonless-theme-dark.horizonless-spell-chat-theme {

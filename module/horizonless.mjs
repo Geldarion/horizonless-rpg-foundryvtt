@@ -35,6 +35,7 @@ const THEME_SETTING = 'theme';
 const THEME_CLASS_PREFIX = 'horizonless-theme-';
 const THEME_SETTING_CHOICES = Object.freeze({
   sky: 'HORIZONLESS_RPG.Settings.Theme.Choices.Sky',
+  verdant: 'HORIZONLESS_RPG.Settings.Theme.Choices.Verdant',
   dark: 'HORIZONLESS_RPG.Settings.Theme.Choices.Dark',
 });
 
@@ -347,8 +348,7 @@ function applyHorizonlessTheme(theme) {
   const selectedTheme = Object.hasOwn(THEME_SETTING_CHOICES, theme) ? theme : 'sky';
 
   document.body.classList.remove(
-    `${THEME_CLASS_PREFIX}sky`,
-    `${THEME_CLASS_PREFIX}dark`
+    ...Object.keys(THEME_SETTING_CHOICES).map((theme) => `${THEME_CLASS_PREFIX}${theme}`)
   );
   document.body.classList.add(`${THEME_CLASS_PREFIX}${selectedTheme}`);
 }

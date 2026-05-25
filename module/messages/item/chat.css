@@ -6,6 +6,8 @@
   --hz-item-chat-text: var(--hz-color-text-on-surface);
   --hz-item-chat-text-on-dark: var(--hz-color-text-on-dark);
   --hz-item-chat-stroke: var(--hz-color-stroke-on-surface);
+  --hz-item-chat-danger: var(--hz-chat-color-danger, var(--hz-color-danger));
+  --hz-item-chat-critical-miss: var(--hz-chat-color-critical-miss, var(--hz-color-critical-miss));
   color: var(--hz-item-chat-text);
 }
 
@@ -61,27 +63,27 @@
 }
 
 .chat-message.horizonless-chat-message.horizonless-attack-chat-message--critical {
-  border-color: #7f1d2d !important;
-  background: color-mix(in srgb, var(--hz-color-surface) 84%, #7f1d2d 16%) !important;
-  background-color: color-mix(in srgb, var(--hz-color-surface) 84%, #7f1d2d 16%) !important;
+  border-color: var(--hz-chat-color-danger, var(--hz-color-danger)) !important;
+  background: color-mix(in srgb, var(--hz-chat-color-surface, var(--hz-color-surface)) 84%, var(--hz-chat-color-danger, var(--hz-color-danger)) 16%) !important;
+  background-color: color-mix(in srgb, var(--hz-chat-color-surface, var(--hz-color-surface)) 84%, var(--hz-chat-color-danger, var(--hz-color-danger)) 16%) !important;
 }
 
 .chat-message.horizonless-chat-message.horizonless-attack-chat-message--critical-miss {
-  border-color: #102a56 !important;
-  background: color-mix(in srgb, var(--hz-color-surface) 84%, #102a56 16%) !important;
-  background-color: color-mix(in srgb, var(--hz-color-surface) 84%, #102a56 16%) !important;
+  border-color: var(--hz-chat-color-critical-miss, var(--hz-color-critical-miss)) !important;
+  background: color-mix(in srgb, var(--hz-chat-color-surface, var(--hz-color-surface)) 84%, var(--hz-chat-color-critical-miss, var(--hz-color-critical-miss)) 16%) !important;
+  background-color: color-mix(in srgb, var(--hz-chat-color-surface, var(--hz-color-surface)) 84%, var(--hz-chat-color-critical-miss, var(--hz-color-critical-miss)) 16%) !important;
 }
 
 .horizonless-attack-card--critical {
-  --hz-attack-outcome-accent: #7f1d2d;
-  --hz-attack-outcome-surface: color-mix(in srgb, var(--hz-item-chat-surface) 82%, #7f1d2d 18%);
+  --hz-attack-outcome-accent: var(--hz-item-chat-danger);
+  --hz-attack-outcome-surface: color-mix(in srgb, var(--hz-item-chat-surface) 82%, var(--hz-item-chat-danger) 18%);
   border-color: var(--hz-attack-outcome-accent);
   background: var(--hz-attack-outcome-surface);
 }
 
 .horizonless-attack-card--critical-miss {
-  --hz-attack-outcome-accent: #102a56;
-  --hz-attack-outcome-surface: color-mix(in srgb, var(--hz-item-chat-surface) 82%, #102a56 18%);
+  --hz-attack-outcome-accent: var(--hz-item-chat-critical-miss);
+  --hz-attack-outcome-surface: color-mix(in srgb, var(--hz-item-chat-surface) 82%, var(--hz-item-chat-critical-miss) 18%);
   border-color: var(--hz-attack-outcome-accent);
   background: var(--hz-attack-outcome-surface);
 }
@@ -93,12 +95,12 @@
 
 .horizonless-attack-card--critical .horizonless-chat-card-title,
 .horizonless-attack-card--critical .horizonless-attack-result--critical {
-  color: #7f1d2d;
+  color: var(--hz-item-chat-danger);
 }
 
 .horizonless-attack-card--critical-miss .horizonless-chat-card-title,
 .horizonless-attack-card--critical-miss .horizonless-attack-result--critical-miss {
-  color: #102a56;
+  color: var(--hz-item-chat-critical-miss);
 }
 
 .horizonless-chat-card-body,
@@ -210,11 +212,7 @@
   margin-top: 0.45rem;
   padding: 0.35rem 0.45rem;
   border: 1px solid var(--hz-attack-outcome-accent, var(--hz-item-chat-accent));
-  background: color-mix(
-    in srgb,
-    var(--hz-attack-outcome-accent, var(--hz-item-chat-accent)) 14%,
-    white
-  );
+  background: var(--hz-attack-outcome-surface, color-mix(in srgb, var(--hz-item-chat-surface) 86%, var(--hz-attack-outcome-accent, var(--hz-item-chat-accent)) 14%));
   color: var(--hz-attack-outcome-accent, var(--hz-item-chat-accent));
   line-height: 1.2;
 }
@@ -245,11 +243,11 @@
 }
 
 .horizonless-attack-result--critical {
-  color: #7f1d2d;
+  color: var(--hz-item-chat-danger);
 }
 
 .horizonless-attack-result--critical-miss {
-  color: #102a56;
+  color: var(--hz-item-chat-critical-miss);
 }
 
 .horizonless-maneuver-flavor {
