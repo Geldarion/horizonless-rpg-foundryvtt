@@ -299,7 +299,7 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   box-shadow: inset 0 0 0 1px currentColor;
 }
 
-:is(#chat-log, #chat .chat-log) {
+:is(#chat-log, #chat .chat-log, .chat-popout) {
   --hz-color-primary: var(--hz-chat-color-primary);
   --hz-color-primary-strong: var(--hz-chat-color-primary-strong);
   --hz-color-accent: var(--hz-chat-color-accent);
@@ -373,8 +373,8 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   border-bottom-color: color-mix(in srgb, var(--hz-color-accent) 40%, transparent);
 }
 
-:is(#chat-log, #chat .chat-log) .chat-message,
-:is(#chat-log, #chat .chat-log) .chat-message .message-content {
+:is(#chat-log, #chat .chat-log, .chat-popout) .chat-message,
+:is(#chat-log, #chat .chat-log, .chat-popout) .chat-message .message-content {
   border-radius: 0 !important;
 }
 
