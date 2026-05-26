@@ -19,7 +19,7 @@
   --horizonless-initiative-control-color: color-mix(
     in srgb,
     var(--hz-color-primary-strong) 40%,
-    white
+    var(--hz-color-white)
   );
   --horizonless-initiative-control-disabled: color-mix(
     in srgb,
@@ -27,6 +27,14 @@
     transparent
   );
 }
+
+$combat-contexts: '[data-tab="combat"]', '#combat', '#combat-popout';
+$combat-types: (
+  player: player,
+  friendly: friendly,
+  neutral: neutral,
+  enemy: enemy,
+);
 
 #combat .combat-tracker-header,
 #combat-popout .combat-tracker-header {
@@ -84,120 +92,21 @@
   border-bottom: 1px solid color-mix(in srgb, var(--horizonless-initiative-stroke) 35%, transparent);
 }
 
-[data-tab="combat"] li.combatant.player {
-  border-left: 3px solid var(--horizonless-initiative-player-color);
-  border-right: 3px solid var(--horizonless-initiative-player-color);
-}
+@each $type, $token in $combat-types {
+  @each $context in $combat-contexts {
+    #{$context} li.combatant.#{$type} {
+      border-left: 3px solid var(--horizonless-initiative-#{$token}-color);
+      border-right: 3px solid var(--horizonless-initiative-#{$token}-color);
+    }
 
-#combat li.combatant.player,
-#combat-popout li.combatant.player {
-  border-left: 3px solid var(--horizonless-initiative-player-color);
-  border-right: 3px solid var(--horizonless-initiative-player-color);
-}
+    #{$context} li.combatant.#{$type}.active::after {
+      border-color: var(--horizonless-initiative-#{$token}-color);
+    }
 
-[data-tab="combat"] li.combatant.player.active::after {
-  border-color: var(--horizonless-initiative-player-color);
-}
-
-#combat li.combatant.player.active::after,
-#combat-popout li.combatant.player.active::after {
-  border-color: var(--horizonless-initiative-player-color);
-}
-
-[data-tab="combat"] li.combatant.player .horizonless-token-initiative a {
-  color: var(--horizonless-initiative-player-color);
-}
-
-#combat li.combatant.player .horizonless-token-initiative a,
-#combat-popout li.combatant.player .horizonless-token-initiative a {
-  color: var(--horizonless-initiative-player-color);
-}
-
-[data-tab="combat"] li.combatant.friendly {
-  border-left: 3px solid var(--horizonless-initiative-friendly-color);
-  border-right: 3px solid var(--horizonless-initiative-friendly-color);
-}
-
-#combat li.combatant.friendly,
-#combat-popout li.combatant.friendly {
-  border-left: 3px solid var(--horizonless-initiative-friendly-color);
-  border-right: 3px solid var(--horizonless-initiative-friendly-color);
-}
-
-[data-tab="combat"] li.combatant.friendly.active::after {
-  border-color: var(--horizonless-initiative-friendly-color);
-}
-
-#combat li.combatant.friendly.active::after,
-#combat-popout li.combatant.friendly.active::after {
-  border-color: var(--horizonless-initiative-friendly-color);
-}
-
-[data-tab="combat"] li.combatant.friendly .horizonless-token-initiative a {
-  color: var(--horizonless-initiative-friendly-color);
-}
-
-#combat li.combatant.friendly .horizonless-token-initiative a,
-#combat-popout li.combatant.friendly .horizonless-token-initiative a {
-  color: var(--horizonless-initiative-friendly-color);
-}
-
-[data-tab="combat"] li.combatant.neutral {
-  border-left: 3px solid var(--horizonless-initiative-neutral-color);
-  border-right: 3px solid var(--horizonless-initiative-neutral-color);
-}
-
-#combat li.combatant.neutral,
-#combat-popout li.combatant.neutral {
-  border-left: 3px solid var(--horizonless-initiative-neutral-color);
-  border-right: 3px solid var(--horizonless-initiative-neutral-color);
-}
-
-[data-tab="combat"] li.combatant.neutral.active::after {
-  border-color: var(--horizonless-initiative-neutral-color);
-}
-
-#combat li.combatant.neutral.active::after,
-#combat-popout li.combatant.neutral.active::after {
-  border-color: var(--horizonless-initiative-neutral-color);
-}
-
-[data-tab="combat"] li.combatant.neutral .horizonless-token-initiative a {
-  color: var(--horizonless-initiative-neutral-color);
-}
-
-#combat li.combatant.neutral .horizonless-token-initiative a,
-#combat-popout li.combatant.neutral .horizonless-token-initiative a {
-  color: var(--horizonless-initiative-neutral-color);
-}
-
-[data-tab="combat"] li.combatant.enemy {
-  border-left: 3px solid var(--horizonless-initiative-enemy-color);
-  border-right: 3px solid var(--horizonless-initiative-enemy-color);
-}
-
-#combat li.combatant.enemy,
-#combat-popout li.combatant.enemy {
-  border-left: 3px solid var(--horizonless-initiative-enemy-color);
-  border-right: 3px solid var(--horizonless-initiative-enemy-color);
-}
-
-[data-tab="combat"] li.combatant.enemy.active::after {
-  border-color: var(--horizonless-initiative-enemy-color);
-}
-
-#combat li.combatant.enemy.active::after,
-#combat-popout li.combatant.enemy.active::after {
-  border-color: var(--horizonless-initiative-enemy-color);
-}
-
-[data-tab="combat"] li.combatant.enemy .horizonless-token-initiative a {
-  color: var(--horizonless-initiative-enemy-color);
-}
-
-#combat li.combatant.enemy .horizonless-token-initiative a,
-#combat-popout li.combatant.enemy .horizonless-token-initiative a {
-  color: var(--horizonless-initiative-enemy-color);
+    #{$context} li.combatant.#{$type} .horizonless-token-initiative a {
+      color: var(--horizonless-initiative-#{$token}-color);
+    }
+  }
 }
 
 [data-tab="combat"] li.combatant .token-image,
@@ -314,7 +223,7 @@
   justify-content: center;
   min-width: 1.45rem;
   padding: 0 0.2rem;
-  text-shadow: 0 1px 0 rgb(0 0 0 / 28%);
+  text-shadow: 0 1px 0 var(--hz-color-black-28);
 }
 
 #combat li.combatant .horizonless-token-initiative a.done,
@@ -330,7 +239,7 @@
   justify-content: center;
   min-width: 1.45rem;
   padding: 0 0.2rem;
-  text-shadow: 0 1px 0 rgb(0 0 0 / 28%);
+  text-shadow: 0 1px 0 var(--hz-color-black-28);
 }
 
 [data-tab="combat"] li.combatant.horizonless-taking-turn .horizonless-token-initiative a.done,
@@ -448,11 +357,6 @@
   max-height: 80vh;
   min-height: 220px;
   overflow: auto;
-}
-
-.horizonless-combat-tracker:not(.is-popout) #combat-tracker,
-[data-tab="combat"]:not(.is-popout) #combat-tracker,
-#combat:not(.is-popout) #combat-tracker {
   width: 100%;
 }
 

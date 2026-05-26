@@ -1,16 +1,5 @@
-﻿/* Grid helpers */
-.grid,
-.grid-2col,
-.grid-3col,
-.grid-4col,
-.grid-5col,
-.grid-6col,
-.grid-7col,
-.grid-8col,
-.grid-9col,
-.grid-10col,
-.grid-11col,
-.grid-12col {
+/* Grid helpers */
+@mixin grid-helper {
   --grid-cols: 2;
   display: grid;
   gap: 10px;
@@ -20,39 +9,33 @@
   grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
 }
 
+.grid {
+  @include grid-helper;
+}
+
+@for $i from 2 through 12 {
+  .grid-#{$i}col {
+    @include grid-helper;
+  }
+}
+
 .grid,
-.grid-2col { --grid-cols: 2; }
-.grid-3col { --grid-cols: 3; }
-.grid-4col { --grid-cols: 4; }
-.grid-5col { --grid-cols: 5; }
-.grid-6col { --grid-cols: 6; }
-.grid-7col { --grid-cols: 7; }
-.grid-8col { --grid-cols: 8; }
-.grid-9col { --grid-cols: 9; }
-.grid-10col { --grid-cols: 10; }
-.grid-11col { --grid-cols: 11; }
-.grid-12col { --grid-cols: 12; }
+.grid-2col {
+  --grid-cols: 2;
+}
 
-.grid-start-2 { grid-column-start: 2; }
-.grid-start-3 { grid-column-start: 3; }
-.grid-start-4 { grid-column-start: 4; }
-.grid-start-5 { grid-column-start: 5; }
-.grid-start-6 { grid-column-start: 6; }
-.grid-start-7 { grid-column-start: 7; }
-.grid-start-8 { grid-column-start: 8; }
-.grid-start-9 { grid-column-start: 9; }
-.grid-start-10 { grid-column-start: 10; }
-.grid-start-11 { grid-column-start: 11; }
-.grid-start-12 { grid-column-start: 12; }
+@for $i from 3 through 12 {
+  .grid-#{$i}col {
+    --grid-cols: #{$i};
+  }
+}
 
-.grid-span-2 { grid-column-end: span 2; }
-.grid-span-3 { grid-column-end: span 3; }
-.grid-span-4 { grid-column-end: span 4; }
-.grid-span-5 { grid-column-end: span 5; }
-.grid-span-6 { grid-column-end: span 6; }
-.grid-span-7 { grid-column-end: span 7; }
-.grid-span-8 { grid-column-end: span 8; }
-.grid-span-9 { grid-column-end: span 9; }
-.grid-span-10 { grid-column-end: span 10; }
-.grid-span-11 { grid-column-end: span 11; }
-.grid-span-12 { grid-column-end: span 12; }
+@for $i from 2 through 12 {
+  .grid-start-#{$i} {
+    grid-column-start: #{$i};
+  }
+
+  .grid-span-#{$i} {
+    grid-column-end: span #{$i};
+  }
+}

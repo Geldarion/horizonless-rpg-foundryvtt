@@ -154,12 +154,13 @@ function createFeatureDocument(ancestry, ancestryIndex, field, fieldIndex, folde
   const featureName = cleanText(parsed.name) || fallbackName;
   const itemName = `${ancestryName} - ${featureName}${formatFeatureTierSuffix(field.type)}`;
   const description = cleanText(parsed.description || sourceText);
+  const img = cleanText(ancestry?.feature_icons?.[field.sourceKey]) || "icons/svg/book.svg";
 
   return {
     _id: buildId(`ancestry-feature:${ancestryName}:${field.sourceKey}:${featureName}`, usedIds),
     name: itemName,
     type: "feature",
-    img: "icons/svg/book.svg",
+    img,
     system: {
       description,
       ancestryFeatureType: field.type,

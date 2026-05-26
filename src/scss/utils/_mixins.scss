@@ -22,6 +22,17 @@
   background: var(--hz-color-white-40);
 }
 
+@mixin split-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  h3 {
+    margin: 0;
+  }
+}
+
 @mixin task-control($display: inline-flex, $justify: null, $text-decoration: null) {
   display: $display;
   align-items: center;

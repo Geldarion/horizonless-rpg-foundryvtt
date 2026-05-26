@@ -26,7 +26,7 @@ body.horizonless-theme-sky .horizonless-spell-chat-theme,
   --hz-chat-color-danger: var(--hz-color-danger);
   --hz-chat-color-critical-miss: var(--hz-color-critical-miss);
   --hz-chat-dice-total-text: var(--hz-color-primary-strong);
-  --hz-chat-dice-tooltip-background: color-mix(in srgb, var(--hz-color-surface) 94%, white);
+  --hz-chat-dice-tooltip-background: color-mix(in srgb, var(--hz-color-surface) 94%, var(--hz-color-white));
   --hz-chat-dice-tooltip-border: var(--hz-color-accent);
   --hz-chat-item-stroke: var(--hz-color-stroke-on-surface);
   --hz-theme-sheet-surface-soft: color-mix(in srgb, var(--hz-color-surface) 48%, transparent);
@@ -141,6 +141,7 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   --hz-color-foundry-border-light: #bbb;
   --hz-color-foundry-border-medium: #aaa;
   --hz-color-foundry-border-primary-fallback: #777;
+  --hz-color-black: rgb(0 0 0);
   --hz-color-black-02: rgba(0, 0, 0, 0.02);
   --hz-color-black-03: rgba(0, 0, 0, 0.03);
   --hz-color-black-04: rgba(0, 0, 0, 0.04);
@@ -150,7 +151,9 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   --hz-color-black-12: rgba(0, 0, 0, 0.12);
   --hz-color-black-15: rgba(0, 0, 0, 0.15);
   --hz-color-black-25: rgba(0, 0, 0, 0.25);
+  --hz-color-black-28: rgba(0, 0, 0, 0.28);
   --hz-color-black-65: rgba(0, 0, 0, 0.65);
+  --hz-color-white: rgb(255 255 255);
   --hz-color-white-18: rgba(255, 255, 255, 0.18);
   --hz-color-white-28: rgba(255, 255, 255, 0.28);
   --hz-color-white-40: rgba(255, 255, 255, 0.4);

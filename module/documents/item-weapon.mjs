@@ -36,6 +36,7 @@ const DESCRIPTION_ONLY_ROLL_ITEM_TYPES = Object.freeze([
   ItemType.ITEM,
   ItemType.ARMOR,
   ItemType.CURIO,
+  ItemType.CLASS_FEATURE,
 ]);
 
 function normalizeAttackRollDialogCriticalHitThreshold(value, fallback) {
@@ -435,6 +436,8 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
       const curioFlavor = this.type === 'curio'
         ? String(this.system?.flavor ?? '').trim()
         : '';
+      const hasItemIcon = [ItemType.CURIO, ItemType.CLASS_FEATURE].includes(this.type)
+        && String(this.img ?? '').trim().length > 0;
       const curioFlavorHtml = curioFlavor
         ? await this._renderItemMessageTemplate(ITEM_MESSAGE_TEMPLATES.curioFlavor, {
             flavor: curioFlavor,
@@ -443,7 +446,7 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
       const content = await this._renderItemMessageTemplate(
         ITEM_MESSAGE_TEMPLATES.contentMessage,
         {
-          hasItemIcon: this.type === 'curio' && String(this.img ?? '').trim().length > 0,
+          hasItemIcon,
           itemIcon: String(this.img ?? '').trim(),
           itemName: String(this.name ?? '').trim(),
           curioFlavorHtml,

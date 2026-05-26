@@ -73,6 +73,16 @@ function formatDisplayLabel(value) {
     .join(" ");
 }
 
+function normalizeImagePath(value) {
+  const normalized = cleanText(value)
+    .replace(/\\/g, "/")
+    .replace(/^\/+/, "");
+  if (!normalized) return "icons/svg/book.svg";
+
+  if (/^(?:https?:\/\/|data:|blob:)/i.test(normalized)) return normalized;
+  return normalized;
+}
+
 function buildId(seed, usedIds) {
   for (let index = 0; index < 1000; index += 1) {
     const id = createHash("sha1")
@@ -254,7 +264,7 @@ function createClassFeatureDocument(feature, className, classIndex, featureIndex
     _id: buildId(`class-feature:${normalizedClassName}:${name}:${rank}`, usedIds),
     name,
     type: "class-feature",
-    img: "icons/svg/book.svg",
+    img: normalizeImagePath(feature?.icon ?? feature?.iconPath),
     system: {
       description: cleanText(feature?.description),
       className: normalizedClassName,
@@ -339,6 +349,7 @@ function splitSubclassFeatureBundle(feature, subclassInfo, fallbackRank) {
       name: title,
       description: body,
       flavor_text: "",
+      icon: feature?.icons?.[title],
       subclassKind: subclassInfo.subclassKind,
       subclassName: subclassInfo.subclassName,
       subclassFolder: subclassInfo.folderName,

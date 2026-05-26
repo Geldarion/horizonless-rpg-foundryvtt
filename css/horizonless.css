@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-@import url("../module/messages/item/chat.css");
-@import url("../module/messages/maneuvers/chat.css");
-@import url("../module/messages/spells/chat.css");
-@import url("../module/messages/spells/heightening-dialog.css");
 :root,
 body.horizonless-theme-sky,
 body.horizonless-theme-sky .horizonless-spell-chat-theme,
@@ -31,7 +27,7 @@ body.horizonless-theme-sky .horizonless-spell-chat-theme,
   --hz-chat-color-danger: var(--hz-color-danger);
   --hz-chat-color-critical-miss: var(--hz-color-critical-miss);
   --hz-chat-dice-total-text: var(--hz-color-primary-strong);
-  --hz-chat-dice-tooltip-background: color-mix(in srgb, var(--hz-color-surface) 94%, white);
+  --hz-chat-dice-tooltip-background: color-mix(in srgb, var(--hz-color-surface) 94%, var(--hz-color-white));
   --hz-chat-dice-tooltip-border: var(--hz-color-accent);
   --hz-chat-item-stroke: var(--hz-color-stroke-on-surface);
   --hz-theme-sheet-surface-soft: color-mix(in srgb, var(--hz-color-surface) 48%, transparent);
@@ -146,6 +142,7 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   --hz-color-foundry-border-light: #bbb;
   --hz-color-foundry-border-medium: #aaa;
   --hz-color-foundry-border-primary-fallback: #777;
+  --hz-color-black: rgb(0 0 0);
   --hz-color-black-02: rgba(0, 0, 0, 0.02);
   --hz-color-black-03: rgba(0, 0, 0, 0.03);
   --hz-color-black-04: rgba(0, 0, 0, 0.04);
@@ -155,7 +152,9 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   --hz-color-black-12: rgba(0, 0, 0, 0.12);
   --hz-color-black-15: rgba(0, 0, 0, 0.15);
   --hz-color-black-25: rgba(0, 0, 0, 0.25);
+  --hz-color-black-28: rgba(0, 0, 0, 0.28);
   --hz-color-black-65: rgba(0, 0, 0, 0.65);
+  --hz-color-white: rgb(255 255 255);
   --hz-color-white-18: rgba(255, 255, 255, 0.18);
   --hz-color-white-28: rgba(255, 255, 255, 0.28);
   --hz-color-white-40: rgba(255, 255, 255, 0.4);
@@ -379,6 +378,666 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   border-radius: 0 !important;
 }
 
+.horizonless-item-chat {
+  --hz-item-chat-primary: var(--hz-chat-color-primary, var(--hz-color-primary));
+  --hz-item-chat-primary-strong: var(--hz-chat-color-primary-strong, var(--hz-color-primary-strong));
+  --hz-item-chat-accent: var(--hz-chat-color-accent, var(--hz-color-accent));
+  --hz-item-chat-surface: var(--hz-chat-color-surface, var(--hz-color-surface));
+  --hz-item-chat-text: var(--hz-chat-color-text-on-surface, var(--hz-color-text-on-surface));
+  --hz-item-chat-text-on-dark: var(--hz-chat-color-text-on-dark, var(--hz-color-text-on-dark));
+  --hz-item-chat-stroke: var(--hz-chat-item-stroke, var(--hz-chat-color-stroke-on-surface, var(--hz-color-stroke-on-surface)));
+  --hz-item-chat-danger: var(--hz-chat-color-danger, var(--hz-color-danger));
+  --hz-item-chat-critical-miss: var(--hz-chat-color-critical-miss, var(--hz-color-critical-miss));
+  color: var(--hz-item-chat-text);
+}
+
+.horizonless-item-chat hr {
+  border-color: var(--hz-item-chat-accent);
+}
+
+.horizonless-item-chat a.content-link,
+.horizonless-item-chat a.inline-roll {
+  color: var(--hz-item-chat-primary-strong);
+  text-decoration-color: currentColor;
+}
+
+.horizonless-item-chat a.content-link:hover,
+.horizonless-item-chat a.inline-roll:hover {
+  color: var(--hz-item-chat-primary);
+}
+
+.horizonless-weapon-chat-message .dice-roll {
+  margin-top: 0.5rem;
+  background: var(--hz-item-chat-surface);
+  color: var(--hz-item-chat-text);
+}
+
+.horizonless-weapon-chat-message .dice-roll .dice-formula,
+.horizonless-weapon-chat-message .dice-roll .dice-total {
+  border-color: var(--hz-item-chat-accent);
+  background: var(--hz-item-chat-primary);
+  color: var(--hz-item-chat-primary-strong);
+}
+
+.horizonless-weapon-chat-message .dice-roll .dice-tooltip {
+  border-top: 1px solid var(--hz-item-chat-accent);
+  background: color-mix(in srgb, var(--hz-item-chat-surface) 88%, var(--hz-color-white) 12%);
+}
+
+.horizonless-item-flavor {
+  color: var(--hz-item-chat-stroke);
+}
+
+.horizonless-chat-card {
+  width: 100%;
+  border: 1px solid var(--hz-item-chat-accent);
+  padding: 0.5rem 0.6rem;
+  background: var(--hz-item-chat-surface);
+  color: var(--hz-item-chat-text);
+  box-sizing: border-box;
+}
+
+.horizonless-chat-card--alert {
+  border-color: var(--hz-item-chat-primary-strong);
+  background: color-mix(in srgb, var(--hz-item-chat-surface) 82%, var(--hz-item-chat-primary) 18%);
+}
+
+.chat-message.horizonless-chat-message.horizonless-attack-chat-message--critical {
+  border-color: var(--hz-chat-color-danger, var(--hz-color-danger)) !important;
+  background: color-mix(in srgb, var(--hz-chat-color-surface, var(--hz-color-surface)) 84%, var(--hz-chat-color-danger, var(--hz-color-danger)) 16%) !important;
+  background-color: color-mix(in srgb, var(--hz-chat-color-surface, var(--hz-color-surface)) 84%, var(--hz-chat-color-danger, var(--hz-color-danger)) 16%) !important;
+}
+
+.chat-message.horizonless-chat-message.horizonless-attack-chat-message--critical-miss {
+  border-color: var(--hz-chat-color-critical-miss, var(--hz-color-critical-miss)) !important;
+  background: color-mix(in srgb, var(--hz-chat-color-surface, var(--hz-color-surface)) 84%, var(--hz-chat-color-critical-miss, var(--hz-color-critical-miss)) 16%) !important;
+  background-color: color-mix(in srgb, var(--hz-chat-color-surface, var(--hz-color-surface)) 84%, var(--hz-chat-color-critical-miss, var(--hz-color-critical-miss)) 16%) !important;
+}
+
+.horizonless-attack-card--critical {
+  --hz-attack-outcome-accent: var(--hz-item-chat-danger);
+  --hz-attack-outcome-surface: color-mix(in srgb, var(--hz-item-chat-surface) 82%, var(--hz-item-chat-danger) 18%);
+  border-color: var(--hz-attack-outcome-accent);
+  background: var(--hz-attack-outcome-surface);
+}
+
+.horizonless-attack-card--critical-miss {
+  --hz-attack-outcome-accent: var(--hz-item-chat-critical-miss);
+  --hz-attack-outcome-surface: color-mix(in srgb, var(--hz-item-chat-surface) 82%, var(--hz-item-chat-critical-miss) 18%);
+  border-color: var(--hz-attack-outcome-accent);
+  background: var(--hz-attack-outcome-surface);
+}
+
+.horizonless-chat-card-title {
+  font-weight: 700;
+  color: var(--hz-item-chat-accent);
+}
+
+.horizonless-attack-card--critical .horizonless-chat-card-title,
+.horizonless-attack-card--critical .horizonless-attack-result--critical {
+  color: var(--hz-item-chat-danger);
+}
+
+.horizonless-attack-card--critical-miss .horizonless-chat-card-title,
+.horizonless-attack-card--critical-miss .horizonless-attack-result--critical-miss {
+  color: var(--hz-item-chat-critical-miss);
+}
+
+.horizonless-chat-card-body,
+.horizonless-chat-card-actions {
+  margin-top: 0.4rem;
+}
+
+.horizonless-item-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.horizonless-item-chat-icon {
+  flex: 0 0 auto;
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border: 1px solid var(--hz-item-chat-accent);
+  border-radius: 0.35rem;
+  background: color-mix(in srgb, var(--hz-item-chat-surface) 82%, var(--hz-color-black) 18%);
+}
+
+.horizonless-item-chat-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+  font-weight: 700;
+  color: var(--hz-item-chat-accent);
+}
+
+.horizonless-chat-card button,
+.horizonless-chat-card select {
+  border: 1px solid var(--hz-item-chat-accent);
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.horizonless-chat-card button {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  background: var(--hz-item-chat-primary);
+  color: var(--hz-item-chat-primary-strong);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.horizonless-chat-card button:hover {
+  background: var(--hz-item-chat-primary-strong);
+  color: var(--hz-item-chat-text-on-dark);
+}
+
+.horizonless-chat-card button.horizonless-roll-weapon-damage {
+  color: var(--hz-item-chat-accent) !important;
+}
+
+.horizonless-chat-card select {
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+  background: var(--hz-item-chat-surface);
+  color: var(--hz-item-chat-text);
+}
+
+.horizonless-weapon-action {
+  width: 100%;
+}
+
+.horizonless-weapon-chat-message .horizonless-weapon-action,
+.horizonless-weapon-chat-message .horizonless-roll-weapon-damage {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.horizonless-damage-action {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.horizonless-damage-action-field {
+  width: 100%;
+}
+
+.horizonless-damage-action-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+}
+
+.horizonless-damage-type {
+  width: 100%;
+}
+
+.horizonless-attack-results {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.horizonless-attack-outcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.45rem;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid var(--hz-attack-outcome-accent, var(--hz-item-chat-accent));
+  background: var(--hz-attack-outcome-surface, color-mix(in srgb, var(--hz-item-chat-surface) 86%, var(--hz-attack-outcome-accent, var(--hz-item-chat-accent)) 14%));
+  color: var(--hz-attack-outcome-accent, var(--hz-item-chat-accent));
+  line-height: 1.2;
+}
+
+.horizonless-attack-outcome-label {
+  min-width: 0;
+  font-weight: 700;
+}
+
+.horizonless-attack-outcome-detail {
+  flex: 0 1 auto;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: right;
+  color: var(--hz-item-chat-text);
+}
+
+.horizonless-attack-result {
+  font-weight: 700;
+}
+
+.horizonless-attack-result--hit {
+  color: var(--hz-item-chat-accent);
+}
+
+.horizonless-attack-result--miss {
+  color: var(--hz-item-chat-stroke);
+}
+
+.horizonless-attack-result--critical {
+  color: var(--hz-item-chat-danger);
+}
+
+.horizonless-attack-result--critical-miss {
+  color: var(--hz-item-chat-critical-miss);
+}
+
+.horizonless-maneuver-flavor {
+  color: var(--hz-item-chat-stroke);
+}
+
+.horizonless-maneuver-requirements-met strong {
+  color: var(--hz-item-chat-accent);
+}
+
+.horizonless-damage-apply-content {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.horizonless-undo-damage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.2rem;
+  height: 1.2rem;
+  font-size: 0.75rem;
+  border: 1px solid var(--hz-item-chat-accent);
+  border-radius: 0.15rem;
+  cursor: pointer;
+}
+
+.horizonless-maneuver-flavor {
+  color: var(--hz-item-chat-stroke);
+}
+
+@layer horizonless.components {
+  :where(.horizonless-spell-chat) {
+    background: var(--hz-color-surface);
+  }
+  :where(.horizonless-spell-chat-meta,
+  .horizonless-spell-chat-name,
+  .horizonless-spell-chat-name-flavor,
+  .horizonless-spell-heightening-note,
+  .horizonless-spell-chat-possible-heightenings) {
+    color: var(--hz-color-text-on-surface);
+  }
+  :where(.horizonless-spell-chat-meta) {
+    width: 100%;
+    margin: 0 0 0.5rem;
+    border: 2px solid var(--hz-color-accent);
+    border-block-start: 2px solid var(--hz-color-accent) !important;
+    border-block-end: 2px solid var(--hz-color-accent) !important;
+    border-radius: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: clip;
+    background: var(--hz-color-surface);
+  }
+  /*
+  :where(.horizonless-spell-chat-meta > tbody > tr:first-child > th, .horizonless-spell-chat-meta > tbody > tr:first-child > td) {
+    border-block-start: 2px solid var(--hz-color-accent) !important;
+  }
+
+  :where(.horizonless-spell-chat-meta > tbody > tr:last-child > th, .horizonless-spell-chat-meta > tbody > tr:last-child > td) {
+    border-block-end: 2px solid var(--hz-color-accent) !important;
+  }
+    */
+  :where(.horizonless-spell-chat-meta th, .horizonless-spell-chat-meta td) {
+    padding-block: 0.2rem;
+    vertical-align: top;
+  }
+  :where(.horizonless-spell-chat-meta th) {
+    width: 1%;
+    padding-inline: 0.75rem 0.5rem;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: 700;
+    color: var(--hz-color-primary-strong);
+    background: var(--hz-color-primary);
+    border-inline-end: 2px solid var(--hz-color-accent);
+  }
+  :where(.horizonless-spell-chat-meta td) {
+    padding-inline: 0.75rem;
+    background: var(--hz-color-surface);
+  }
+  :where(.horizonless-spell-chat-row-metadata > td) {
+    padding: 0;
+  }
+  :where(.horizonless-spell-chat-metadata-grid) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    background: var(--hz-color-surface);
+  }
+  :where(.horizonless-spell-chat-metadata-cell) {
+    min-width: 0;
+    padding: 0.35rem 0.75rem 0.4rem;
+    position: relative;
+    border-color: var(--hz-color-accent);
+    border-style: solid;
+    border-width: 0;
+  }
+  :where(.horizonless-spell-chat-metadata-cell:nth-child(odd)) {
+    border-inline-end-width: 2px;
+    border-inline-end-color: var(--hz-color-accent);
+  }
+  :where(.horizonless-spell-chat-metadata-cell:nth-child(-n+2)) {
+    border-block-end-width: 2px;
+    border-block-end-color: var(--hz-color-accent);
+  }
+  :where(.horizonless-spell-chat-metadata-label) {
+    color: var(--hz-color-primary-strong);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  :where(.horizonless-spell-chat-metadata-value) {
+    margin-block-start: 0.1rem;
+    color: var(--hz-color-text-on-surface);
+    font-weight: 600;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+  :where(.horizonless-spell-chat-meta tr:not(:last-child) th, .horizonless-spell-chat-meta tr:not(:last-child) td) {
+    border-block-end: 2px solid var(--hz-color-accent);
+  }
+  :where(.horizonless-spell-chat-name) {
+    font-weight: 700;
+    color: var(--hz-color-accent);
+    line-height: 1.3;
+  }
+  :where(.horizonless-spell-chat-name-row) {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  :where(.horizonless-spell-chat-icon) {
+    inline-size: 2rem;
+    block-size: 2rem;
+    border: 1px solid var(--hz-color-accent);
+    object-fit: cover;
+    flex: 0 0 auto;
+  }
+  :where(.horizonless-spell-chat-name-block) {
+    min-width: 0;
+  }
+  :where(.horizonless-spell-chat-name-flavor p) {
+    margin: 0.2rem 0 0;
+    color: var(--hz-color-text-on-surface);
+  }
+  :where(.horizonless-spell-heightening-note ul) {
+    margin: 0.25rem 0 0.6rem 1.25rem;
+    padding: 0;
+  }
+  :where(.horizonless-spell-heightening-note li)::marker,
+  :where(.horizonless-spell-chat-possible-heightenings li)::marker {
+    color: var(--hz-color-primary-strong);
+  }
+  :where(.horizonless-spell-heightening-requirement) {
+    color: var(--hz-color-text-on-surface);
+  }
+  :where(.horizonless-spell-chat-possible-heightenings) {
+    margin: 0.35rem 0 0.6rem;
+    border: 1px solid var(--hz-color-accent);
+    border-radius: 0;
+    background: var(--hz-color-surface);
+    overflow: clip;
+  }
+  :where(.horizonless-spell-chat-possible-heightenings summary) {
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    font-weight: 700;
+    color: var(--hz-color-primary-strong);
+    background: var(--hz-color-primary);
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+  :where(.horizonless-spell-chat-possible-heightenings summary:hover) {
+    background: var(--hz-color-primary-strong);
+    color: var(--hz-color-text-on-dark);
+  }
+  :where(.horizonless-spell-chat-possible-heightenings summary:focus-visible) {
+    outline: 2px solid var(--hz-color-primary-strong);
+    outline-offset: -2px;
+  }
+  :where(.horizonless-spell-chat-possible-heightenings ul) {
+    margin: 0.35rem 0 0;
+    padding: 0 0.75rem 0.75rem 1.25rem;
+  }
+  :where(.horizonless-spell-chat-possible-heightenings li + li) {
+    margin-block-start: 0.35rem;
+  }
+  :where(.horizonless-spell-chat-possible-heightenings li p) {
+    display: inline;
+    margin: 0;
+  }
+  :where(.horizonless-spell-chat-actions) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin: 0.5rem 0 0.6rem;
+  }
+  :where(.horizonless-spell-chat-save-action) {
+    border: 1px solid var(--hz-color-accent);
+    border-radius: 0;
+    background: var(--hz-color-primary);
+    overflow: clip;
+  }
+  :where(.horizonless-spell-chat-save-button, .horizonless-spell-chat-damage-button) {
+    inline-size: 100%;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--hz-color-accent);
+    border-radius: 0;
+    background: var(--hz-color-primary);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+  :where(.horizonless-spell-chat-save-button) {
+    color: var(--hz-color-primary-strong);
+  }
+  :where(.horizonless-spell-chat-damage-button) {
+    color: var(--hz-chat-color-accent, var(--hz-color-accent));
+  }
+  .horizonless-spell-chat button.horizonless-spell-chat-damage-button {
+    color: var(--hz-chat-color-accent, var(--hz-color-accent)) !important;
+  }
+  :where(.horizonless-spell-chat-save-button:hover, .horizonless-spell-chat-damage-button:hover) {
+    background: var(--hz-color-primary-strong);
+    color: var(--hz-color-text-on-dark);
+  }
+  :where(.horizonless-spell-chat-save-action .horizonless-spell-chat-save-button) {
+    border: 0;
+  }
+  :where(.horizonless-spell-chat-save-button:focus-visible, .horizonless-spell-chat-damage-button:focus-visible) {
+    outline: 2px solid var(--hz-color-primary-strong);
+    outline-offset: 1px;
+  }
+  :where(.horizonless-spell-chat-damage-action--inline) {
+    padding: 0.55rem 0.75rem;
+    background: var(--hz-color-surface);
+  }
+  :where(.horizonless-spell-chat-damage-action--inline .horizonless-damage-action) {
+    gap: 0.45rem;
+  }
+  :where(.horizonless-spell-chat-damage-action--inline .horizonless-apply-damage) {
+    inline-size: 100%;
+  }
+  :where(.horizonless-spell-save-results) {
+    margin: 0.35rem 0 0;
+    border: 1px solid var(--hz-color-accent);
+    background: var(--hz-color-surface);
+    color: var(--hz-color-text-on-surface);
+  }
+  :where(.horizonless-spell-save-results-title) {
+    padding: 0.5rem 0.75rem;
+    font-weight: 700;
+    color: var(--hz-color-primary-strong);
+    background: var(--hz-color-primary);
+    border-block-end: 1px solid var(--hz-color-accent);
+  }
+  :where(.horizonless-spell-save-results-list) {
+    display: flex;
+    flex-direction: column;
+  }
+  :where(.horizonless-spell-save-result-row) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.1rem 0.75rem;
+    align-items: center;
+    padding: 0.45rem 0.75rem;
+  }
+  :where(.horizonless-spell-save-result-row + .horizonless-spell-save-result-row) {
+    border-block-start: 1px solid color-mix(in srgb, var(--hz-color-accent) 25%, transparent);
+  }
+  :where(.horizonless-spell-save-result-name) {
+    font-weight: 700;
+  }
+  :where(.horizonless-spell-save-result-total) {
+    font-weight: 700;
+    color: var(--hz-color-accent);
+  }
+  :where(.horizonless-spell-save-result-formula) {
+    grid-column: 1/-1;
+    font-size: 0.8rem;
+    color: var(--hz-color-stroke-on-surface);
+  }
+  :where(.horizonless-spell-save-result-tag) {
+    display: inline-flex;
+    align-items: center;
+    inline-size: fit-content;
+    padding: 0.1rem 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--hz-color-text-on-dark);
+    background: var(--hz-color-primary-strong);
+  }
+  :where(.horizonless-spell-damage-label) {
+    color: var(--hz-color-text-on-surface);
+  }
+  :where(.horizonless-spell-damage-message) {
+    margin: 0.35rem 0 0;
+    border: 1px solid var(--hz-color-accent);
+    background: var(--hz-color-surface);
+    color: var(--hz-color-text-on-surface);
+  }
+  :where(.horizonless-spell-damage-message-label) {
+    padding: 0.45rem 0.75rem 0;
+    color: var(--hz-color-text-on-surface);
+    font-weight: 600;
+  }
+  :where(.horizonless-spell-damage-message-list) {
+    display: flex;
+    flex-direction: column;
+    padding: 0.35rem 0.75rem 0.75rem;
+    gap: 0.6rem;
+  }
+  :where(.horizonless-spell-damage-message-row) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  :where(.horizonless-spell-damage-message-row + .horizonless-spell-damage-message-row) {
+    border-block-start: 1px solid color-mix(in srgb, var(--hz-color-accent) 25%, transparent);
+    padding-block-start: 0.6rem;
+  }
+  :where(.horizonless-spell-damage-message-target) {
+    font-weight: 700;
+    color: var(--hz-color-accent);
+  }
+  :where(.horizonless-spell-damage-message-roll .dice-roll) {
+    margin: 0;
+  }
+  :where(.horizonless-spell-damage-message-controls) {
+    width: 100%;
+  }
+  :where(.horizonless-spell-chat-message .horizonless-damage-action) {
+    margin-top: 0;
+  }
+  :where(.horizonless-spell-chat-meta a, .horizonless-spell-chat-possible-heightenings a) {
+    color: var(--hz-color-primary-strong);
+    text-decoration-color: var(--hz-color-primary-strong);
+    text-underline-offset: 0.15em;
+  }
+  :where(.horizonless-spell-chat-meta a:hover, .horizonless-spell-chat-possible-heightenings a:hover) {
+    color: var(--hz-color-primary);
+    text-decoration-color: currentColor;
+  }
+}
+.hl-heightening-dialog .hl-heightening-progress {
+  margin: 0.25rem 0 0.75rem;
+  font-weight: 600;
+}
+
+.hl-heightening-dialog .hl-heightening-option-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.hl-heightening-dialog .hl-heightening-option-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.hl-heightening-dialog .hl-heightening-option-copy {
+  min-width: 0;
+}
+
+.hl-heightening-dialog .hl-heightening-option-text {
+  line-height: 1.25;
+}
+
+.hl-heightening-dialog .hl-heightening-requirement {
+  opacity: 0.8;
+  font-size: 0.9em;
+  margin-top: 0.15rem;
+}
+
+.hl-heightening-dialog .hl-heightening-tag {
+  opacity: 0.9;
+  font-size: 0.9em;
+}
+
+.hl-heightening-dialog .hl-heightening-option-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hl-heightening-dialog .hl-heightening-adjust {
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+  line-height: 1;
+}
+
+.hl-heightening-dialog .hl-heightening-count {
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
 /* Global */
 .window-app,
 .horizonless .item-form {
@@ -387,22 +1046,121 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
 
 .rollable:is(:hover, :focus) {
   cursor: pointer;
-  color: black;
+  color: var(--hz-color-black);
   text-shadow: 0 0 10px var(--hz-color-window-title-shadow);
 }
 
 /* Grid helpers */
-.grid,
-.grid-2col,
-.grid-3col,
-.grid-4col,
-.grid-5col,
-.grid-6col,
-.grid-7col,
-.grid-8col,
-.grid-9col,
-.grid-10col,
-.grid-11col,
+.grid {
+  --grid-cols: 2;
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  grid-column: span var(--grid-cols)/span var(--grid-cols);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+
+.grid-2col {
+  --grid-cols: 2;
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  grid-column: span var(--grid-cols)/span var(--grid-cols);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+
+.grid-3col {
+  --grid-cols: 2;
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  grid-column: span var(--grid-cols)/span var(--grid-cols);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+
+.grid-4col {
+  --grid-cols: 2;
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  grid-column: span var(--grid-cols)/span var(--grid-cols);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+
+.grid-5col {
+  --grid-cols: 2;
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  grid-column: span var(--grid-cols)/span var(--grid-cols);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+
+.grid-6col {
+  --grid-cols: 2;
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  grid-column: span var(--grid-cols)/span var(--grid-cols);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+
+.grid-7col {
+  --grid-cols: 2;
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  grid-column: span var(--grid-cols)/span var(--grid-cols);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+
+.grid-8col {
+  --grid-cols: 2;
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  grid-column: span var(--grid-cols)/span var(--grid-cols);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+
+.grid-9col {
+  --grid-cols: 2;
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  grid-column: span var(--grid-cols)/span var(--grid-cols);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+
+.grid-10col {
+  --grid-cols: 2;
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  grid-column: span var(--grid-cols)/span var(--grid-cols);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+
+.grid-11col {
+  --grid-cols: 2;
+  display: grid;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+  grid-column: span var(--grid-cols)/span var(--grid-cols);
+  grid-template-columns: repeat(var(--grid-cols), minmax(0, 1fr));
+}
+
 .grid-12col {
   --grid-cols: 2;
   display: grid;
@@ -462,84 +1220,84 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   grid-column-start: 2;
 }
 
-.grid-start-3 {
-  grid-column-start: 3;
-}
-
-.grid-start-4 {
-  grid-column-start: 4;
-}
-
-.grid-start-5 {
-  grid-column-start: 5;
-}
-
-.grid-start-6 {
-  grid-column-start: 6;
-}
-
-.grid-start-7 {
-  grid-column-start: 7;
-}
-
-.grid-start-8 {
-  grid-column-start: 8;
-}
-
-.grid-start-9 {
-  grid-column-start: 9;
-}
-
-.grid-start-10 {
-  grid-column-start: 10;
-}
-
-.grid-start-11 {
-  grid-column-start: 11;
-}
-
-.grid-start-12 {
-  grid-column-start: 12;
-}
-
 .grid-span-2 {
   grid-column-end: span 2;
+}
+
+.grid-start-3 {
+  grid-column-start: 3;
 }
 
 .grid-span-3 {
   grid-column-end: span 3;
 }
 
+.grid-start-4 {
+  grid-column-start: 4;
+}
+
 .grid-span-4 {
   grid-column-end: span 4;
+}
+
+.grid-start-5 {
+  grid-column-start: 5;
 }
 
 .grid-span-5 {
   grid-column-end: span 5;
 }
 
+.grid-start-6 {
+  grid-column-start: 6;
+}
+
 .grid-span-6 {
   grid-column-end: span 6;
+}
+
+.grid-start-7 {
+  grid-column-start: 7;
 }
 
 .grid-span-7 {
   grid-column-end: span 7;
 }
 
+.grid-start-8 {
+  grid-column-start: 8;
+}
+
 .grid-span-8 {
   grid-column-end: span 8;
+}
+
+.grid-start-9 {
+  grid-column-start: 9;
 }
 
 .grid-span-9 {
   grid-column-end: span 9;
 }
 
+.grid-start-10 {
+  grid-column-start: 10;
+}
+
 .grid-span-10 {
   grid-column-end: span 10;
 }
 
+.grid-start-11 {
+  grid-column-start: 11;
+}
+
 .grid-span-11 {
   grid-column-end: span 11;
+}
+
+.grid-start-12 {
+  grid-column-start: 12;
 }
 
 .grid-span-12 {
@@ -649,7 +1407,7 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
 }
 
 .horizonless .tox .tox-editor-container {
-  background: white;
+  background: var(--hz-color-white);
 }
 
 .horizonless .tox .tox-edit-area,
@@ -1035,7 +1793,6 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   justify-content: space-between;
   gap: 8px;
 }
-
 .horizonless .custom-resources-header h3 {
   margin: 0;
 }
@@ -1102,7 +1859,6 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   justify-content: space-between;
   gap: 8px;
 }
-
 .horizonless .custom-attacks-header h3 {
   margin: 0;
 }
@@ -1643,6 +2399,10 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   display: none;
   flex-direction: column;
   gap: 12px;
+}
+
+.horizonless.actor .identity-tab > * {
+  flex-shrink: 0;
 }
 
 .horizonless.actor .identity-tab.active {

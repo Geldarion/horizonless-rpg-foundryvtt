@@ -4,6 +4,10 @@
 @use 'chat/messages';
 @use 'chat/roll-dialogs';
 @use 'chat/core';
+@use 'chat/item';
+@use 'chat/maneuvers';
+@use 'chat/spells';
+@use 'chat/heightening-dialog';
 
 @use 'global/window';
 @use 'global/grid';

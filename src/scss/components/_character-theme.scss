@@ -99,6 +99,10 @@
   gap: 12px;
 }
 
+.horizonless.actor .identity-tab > * {
+  flex-shrink: 0;
+}
+
 .horizonless.actor .identity-tab.active {
   display: flex;
 }

@@ -3,7 +3,7 @@
   "version": "2.0.8",
   "description": "CSS compiler for the Horizonless system",
   "scripts": {
-    "build": "sass src/scss/horizonless.scss css/horizonless.css --style=expanded --no-source-map && sass src/scss/combat-popcorn.scss css/combat-popcorn.css --style=expanded --no-source-map",
+    "build": "sass src/scss/horizonless.scss css/horizonless.css --style=expanded --no-source-map && sass src/scss/combat-popcorn.scss css/combat-popcorn.css --style=expanded --no-source-map && sass src/scss/chat/item.scss module/messages/item/chat.css --style=expanded --no-source-map && sass src/scss/chat/maneuvers.scss module/messages/maneuvers/chat.css --style=expanded --no-source-map && sass src/scss/chat/spells.scss module/messages/spells/chat.css --style=expanded --no-source-map && sass src/scss/chat/heightening-dialog.scss module/messages/spells/heightening-dialog.css --style=expanded --no-source-map",
     "watch": "sass src/scss/horizonless.scss css/horizonless.css --style=expanded --source-map --watch",
     "build:classes": "node scripts/generate_class_jsons.mjs",
     "generate:spells-from-markdown": "node module/data/dataSource/generate_spells_from_markdown.mjs --input module/data/dataSource/spells.md --output module/data/dataSource/spells.json --reference module/data/dataSource/spells.json",

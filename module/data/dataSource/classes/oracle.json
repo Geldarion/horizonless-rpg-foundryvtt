@@ -115,157 +115,241 @@
       "name": "Divine Spellcasting",
       "flavor_text": "",
       "rank": "1st Rank",
-      "description": "As an Oracle, you are able to prepare and cast spells from the Divine\nspell list:\n\n- **Spells Prepared.** At 1st Rank, you may prepare 6 spells for this\n  Class at the end of each long rest. You may cast those prepared spells\n  using this feature.\n\n- **Class Circle Cap.** Each spell you prepare may have a maximum\n  baseline Circle of 1st Circle.\n\n- **Heightening.** When you cast spells using this feature, you may\n  heighten spells up to your Class Circle Cap.\n\n- **Spell Points.** At 1st Rank, you gain 4 Spell Points. When you cast\n  spells using this feature, you must expend Spell Points equal to the\n  Circle of the spell. Spell Points are regained at the end of each long\n  rest.\n\n- **Spellcasting Modifier.** Your spellcasting modifier when casting\n  spells using this feature is WIS.\n\n  - **Your Spell Attack Bonus** = your WIS + your Tier Bonus\n\n  - **Your Spell Save DC** = 8 + your WIS + your Tier Bonus\n\n  - **Spellcasting Checks** made with spells prepared for this class use\n    your WIS.\n\n- **Signature Spell.** Your designated signature spell may be one of the\n  1st Circle or higher spells prepared for this feature.\n\n- **Higher Ranks.** At higher Ranks, the spells prepared, Spell Points,\n  and Class Circle Cap all improve as described in the Class Overview\n  Table."
+      "description": "As an Oracle, you are able to prepare and cast spells from the Divine\nspell list:\n\n- **Spells Prepared.** At 1st Rank, you may prepare 6 spells for this\n  Class at the end of each long rest. You may cast those prepared spells\n  using this feature.\n\n- **Class Circle Cap.** Each spell you prepare may have a maximum\n  baseline Circle of 1st Circle.\n\n- **Heightening.** When you cast spells using this feature, you may\n  heighten spells up to your Class Circle Cap.\n\n- **Spell Points.** At 1st Rank, you gain 4 Spell Points. When you cast\n  spells using this feature, you must expend Spell Points equal to the\n  Circle of the spell. Spell Points are regained at the end of each long\n  rest.\n\n- **Spellcasting Modifier.** Your spellcasting modifier when casting\n  spells using this feature is WIS.\n\n  - **Your Spell Attack Bonus** = your WIS + your Tier Bonus\n\n  - **Your Spell Save DC** = 8 + your WIS + your Tier Bonus\n\n  - **Spellcasting Checks** made with spells prepared for this class use\n    your WIS.\n\n- **Signature Spell.** Your designated signature spell may be one of the\n  1st Circle or higher spells prepared for this feature.\n\n- **Higher Ranks.** At higher Ranks, the spells prepared, Spell Points,\n  and Class Circle Cap all improve as described in the Class Overview\n  Table.",
+      "icon": "icons/magic/holy/prayer-hands-glowing-yellow.webp",
+      "img": "icons/magic/holy/prayer-hands-glowing-yellow.webp"
     },
     {
       "name": "Oracle Vision",
       "flavor_text": "Coalescing premonitions driven to action.",
       "rank": "1st Rank",
-      "description": "At 1st Rank, you choose an Oracle Vision to represent the future you\nhave witnessed but not yet formed. You gain features from this chosen\nOracle Vision at 1st, 4th, and 8th Rank."
+      "description": "At 1st Rank, you choose an Oracle Vision to represent the future you\nhave witnessed but not yet formed. You gain features from this chosen\nOracle Vision at 1st, 4th, and 8th Rank.",
+      "icon": "icons/magic/nature/symbol-moon-stars-white.webp",
+      "img": "icons/magic/nature/symbol-moon-stars-white.webp"
     },
     {
       "name": "Radiance",
       "flavor_text": "Cascading from distant beginnings, carved by your hand as an effigy to a future held adrift in your dreams. Let it go on.",
       "rank": "1st Rank",
-      "description": "At 1st Rank, once per round after casting a spell, you may take a free\naction to manifest either a **Mote of Insight** or **Mote of Power**\ndescribed below:\n\n- **Mote of Insight.** You cause a target within 60 feet of you to\n  **regain 1d8 ST**.\n\n- **Mote of Power**. You deal **1d8 radiant or necrotic damage** (you\n  choose which) to a target within 60 feet of you.\n\nBoth 1d8's are your *radiance die* and it becomes 2d8/3d8/4d8 at\n4th/7th/10th Rank, respectively. Your chosen Oracle Vision grants\nadditional effects both your **Mote of Insight** and **Mote of Power**."
+      "description": "At 1st Rank, once per round after casting a spell, you may take a free\naction to manifest either a **Mote of Insight** or **Mote of Power**\ndescribed below:\n\n- **Mote of Insight.** You cause a target within 60 feet of you to\n  **regain 1d8 ST**.\n\n- **Mote of Power**. You deal **1d8 radiant or necrotic damage** (you\n  choose which) to a target within 60 feet of you.\n\nBoth 1d8's are your *radiance die* and it becomes 2d8/3d8/4d8 at\n4th/7th/10th Rank, respectively. Your chosen Oracle Vision grants\nadditional effects both your **Mote of Insight** and **Mote of Power**.",
+      "icon": "icons/magic/time/day-night-sun-moon.webp",
+      "img": "icons/magic/time/day-night-sun-moon.webp"
     },
     {
       "name": "Glimpse I",
       "flavor_text": "Nameless words etched into the tapestry.",
       "rank": "2nd Rank",
-      "description": "At 2nd Rank, once per rest as an action, you may *predict* a d20 roll.\nWhen you predict a d20 roll, you roll a d20 and record its outcome: the\nnext time any creature rolls a d20 within the next 10 minutes, the\npredicted outcome is used instead (this is called *using a predicted d20\nroll*).\n\nIf a creature rolls an ability check with advantage or disadvantage, a\npredicted d20 roll is used to determine the outcome of only one of the\nd20s rolled. Thus, when rolling more d20s than are predicted, an ability\ncheck's outcome may still be uncertain.\n\n## Communication\n\nYou may not share the numeric outcome of d20 rolls you predict with your\nfellow players (though you may with the GM), though you may provide\nadvice to your allies on what they should do based on what you know.\n\n## Stacking Predictions\n\nAt later Ranks, you may gain features that allow you to predict multiple\nd20 rolls with one usage of **Glimpse**. If so, record the order in\nwhich d20s are rolled. The predicted d20 rolls are used in the same\norder they were recorded. If **Glimpse** is used multiple times (or by\nmultiple creatures), newly predicted d20 rolls are appended after\ncurrently unused predicted d20 rolls."
+      "description": "At 2nd Rank, once per rest as an action, you may *predict* a d20 roll.\nWhen you predict a d20 roll, you roll a d20 and record its outcome: the\nnext time any creature rolls a d20 within the next 10 minutes, the\npredicted outcome is used instead (this is called *using a predicted d20\nroll*).\n\nIf a creature rolls an ability check with advantage or disadvantage, a\npredicted d20 roll is used to determine the outcome of only one of the\nd20s rolled. Thus, when rolling more d20s than are predicted, an ability\ncheck's outcome may still be uncertain.\n\n## Communication\n\nYou may not share the numeric outcome of d20 rolls you predict with your\nfellow players (though you may with the GM), though you may provide\nadvice to your allies on what they should do based on what you know.\n\n## Stacking Predictions\n\nAt later Ranks, you may gain features that allow you to predict multiple\nd20 rolls with one usage of **Glimpse**. If so, record the order in\nwhich d20s are rolled. The predicted d20 rolls are used in the same\norder they were recorded. If **Glimpse** is used multiple times (or by\nmultiple creatures), newly predicted d20 rolls are appended after\ncurrently unused predicted d20 rolls.",
+      "icon": "icons/sundries/misc/hourglass-wood.webp",
+      "icons": {
+        "Communication": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+        "Stacking Predictions": "icons/sundries/books/book-eye-pink.webp"
+      },
+      "img": "icons/sundries/misc/hourglass-wood.webp"
     },
     {
       "name": "Glimpse Filaments I",
       "flavor_text": "A patchwork of portents.",
       "rank": "2nd Rank",
-      "description": "At 2nd Rank, select one of the following Glimpse Filament features from\nthe list below, which enhance the capabilities of your **Glimpse**\nfeature. During the Retrain downtime activity, you may redo the\nselection of all of your chosen Glimpse Filaments.\n\n### Sloughing Facade\n\n2nd Rank Oracle Glimpse Reflection\n\nWhen you use **Glimpse**, you may become **aware** of all creatures and\nobjects within 120 feet of you of which you were previously\n**uncertain**.\n\n### Threaded Guidance\n\n2nd Rank Oracle Glimpse Reflection\n\nWhen an ally uses one of your predicted d20 rolls, you may manifest your\n**Mote of Insight** from your **Radiance** feature.\n\n### Visionary Dominion\n\n2nd Rank Oracle Glimpse Reflection\n\nWhen a hostile creature uses one of your predicted d20 rolls, you may\nmanifest your **Mote of Power** from your **Radiance** feature."
+      "description": "At 2nd Rank, select one of the following Glimpse Filament features from\nthe list below, which enhance the capabilities of your **Glimpse**\nfeature. During the Retrain downtime activity, you may redo the\nselection of all of your chosen Glimpse Filaments.\n\n### Sloughing Facade\n\n2nd Rank Oracle Glimpse Reflection\n\nWhen you use **Glimpse**, you may become **aware** of all creatures and\nobjects within 120 feet of you of which you were previously\n**uncertain**.\n\n### Threaded Guidance\n\n2nd Rank Oracle Glimpse Reflection\n\nWhen an ally uses one of your predicted d20 rolls, you may manifest your\n**Mote of Insight** from your **Radiance** feature.\n\n### Visionary Dominion\n\n2nd Rank Oracle Glimpse Reflection\n\nWhen a hostile creature uses one of your predicted d20 rolls, you may\nmanifest your **Mote of Power** from your **Radiance** feature.",
+      "icon": "icons/sundries/documents/document-symbol-eye.webp",
+      "icons": {
+        "Sloughing Facade": "icons/magic/symbols/runes-star-orange.webp",
+        "Threaded Guidance": "icons/skills/trades/academics-investigation-study-blue.webp",
+        "Visionary Dominion": "icons/magic/symbols/runes-star-magenta.webp"
+      },
+      "img": "icons/sundries/documents/document-symbol-eye.webp"
     },
     {
       "name": "Yearning Precipice",
       "flavor_text": "As words leak from the page, an ocean swells with possibility. Something washes onto the shore.",
       "rank": "3rd Rank",
-      "description": "At 3rd Rank, while preparing your spells at the end of a long rest, you\nmay choose two spells you are able to prepare for the Oracle class and\npresent them to the GM. The GM will reply with which spell they believe\nto be more likely to be useful before the end of the next long rest."
+      "description": "At 3rd Rank, while preparing your spells at the end of a long rest, you\nmay choose two spells you are able to prepare for the Oracle class and\npresent them to the GM. The GM will reply with which spell they believe\nto be more likely to be useful before the end of the next long rest.",
+      "icon": "icons/magic/symbols/star-yellow.webp",
+      "img": "icons/magic/symbols/star-yellow.webp"
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "3rd, 6th, and 9th Rank",
-      "description": "At 3rd, 6th, and 9th Rank, you gain an Ability Improvement. Each time\nyou gain an Ability Improvement, distribute three permanent +1 increases\nto your ability modifiers. You may increase the same ability modifier\nmultiple times.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
+      "description": "At 3rd, 6th, and 9th Rank, you gain an Ability Improvement. Each time\nyou gain an Ability Improvement, distribute three permanent +1 increases\nto your ability modifiers. You may increase the same ability modifier\nmultiple times.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9.",
+      "icon": "icons/magic/symbols/runes-star-blue.webp",
+      "img": "icons/magic/symbols/runes-star-blue.webp"
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "4th, 7th, and 10th Rank",
-      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with Oracle being\nthe exploring Class. Each time you gain an Exploration, you gain the\nfollowing benefit:\n\n- **Bonus Rank.** You choose any Class other than Oracle and gain one\n  Rank in the chosen Class."
+      "description": "At 4th, 7th, and 10th Rank, you gain an Exploration with Oracle being\nthe exploring Class. Each time you gain an Exploration, you gain the\nfollowing benefit:\n\n- **Bonus Rank.** You choose any Class other than Oracle and gain one\n  Rank in the chosen Class.",
+      "icon": "icons/tools/navigation/map-marked-blue.webp",
+      "img": "icons/tools/navigation/map-marked-blue.webp"
     },
     {
       "name": "Oracle Vision Feature",
       "flavor_text": "",
       "rank": "4th Rank",
-      "description": "At 4th Rank, you gain a feature for your Oracle Vision."
+      "description": "At 4th Rank, you gain a feature for your Oracle Vision.",
+      "icon": "icons/sundries/flags/banner-symbol-eye-purple.webp",
+      "img": "icons/sundries/flags/banner-symbol-eye-purple.webp"
     },
     {
       "name": "Glimpse II",
       "flavor_text": "A cry, a response, and the space betwixt.",
       "rank": "5th Rank",
-      "description": "At 5th Rank, you may use **Glimpse** twice per rest. When you use\n**Glimpse**, you may predict an additional d20 roll."
+      "description": "At 5th Rank, you may use **Glimpse** twice per rest. When you use\n**Glimpse**, you may predict an additional d20 roll.",
+      "icon": "icons/sundries/gaming/chess-pawn-white-glass.webp",
+      "img": "icons/sundries/gaming/chess-pawn-white-glass.webp"
     },
     {
       "name": "Aurora I",
       "flavor_text": "Authored into the annals of fate is a great circle writ by many hands.",
       "rank": "6th Rank",
-      "description": "At 6th Rank, once per rest, when you manifest a **Mote of Insight** or\n**Mote of Power** from your **Radiance** feature, you may designate a 10\nfoot radius sphere originating at a target location within 60 feet of\nyou. If you do, your radiance die is doubled and the effect is applied\nto all creatures and objects in the area."
+      "description": "At 6th Rank, once per rest, when you manifest a **Mote of Insight** or\n**Mote of Power** from your **Radiance** feature, you may designate a 10\nfoot radius sphere originating at a target location within 60 feet of\nyou. If you do, your radiance die is doubled and the effect is applied\nto all creatures and objects in the area.",
+      "icon": "icons/sundries/gaming/chess-knight-white-glass.webp",
+      "img": "icons/sundries/gaming/chess-knight-white-glass.webp"
     },
     {
       "name": "Stellar Fragment",
       "flavor_text": "In the gap between heartbeats, you draw a morsel of your soul. Woven as a gift, it joins with greater purpose.",
       "rank": "6th Rank",
-      "description": "At 6th Rank, you may spend a minute (which may be concurrent with a\nrest) and expend a Resolve to give a nearby ally a *stellar fragment*.\nWhen a creature with a stellar fragment is about to burn a Resolve, they\nmay instead destroy the stellar fragment to gain the effects of burning\na Resolve. Additionally, creatures that have a stellar fragment count as\nhaving a Resolve remaining.\n\nWhile the stellar fragment persists, you cannot regain the Resolve spent\nto create it."
+      "description": "At 6th Rank, you may spend a minute (which may be concurrent with a\nrest) and expend a Resolve to give a nearby ally a *stellar fragment*.\nWhen a creature with a stellar fragment is about to burn a Resolve, they\nmay instead destroy the stellar fragment to gain the effects of burning\na Resolve. Additionally, creatures that have a stellar fragment count as\nhaving a Resolve remaining.\n\nWhile the stellar fragment persists, you cannot regain the Resolve spent\nto create it.",
+      "icon": "icons/magic/light/explosion-star-blue.webp",
+      "img": "icons/magic/light/explosion-star-blue.webp"
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "6th Rank",
-      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
+      "description": "At 6th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9.",
+      "icon": "icons/magic/symbols/star-solid-gold.webp",
+      "img": "icons/magic/symbols/star-solid-gold.webp"
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "7th Rank",
-      "description": "At 7th Rank, you gain an Exploration with Oracle being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Oracle and gain one\n  Rank in the chosen Class."
+      "description": "At 7th Rank, you gain an Exploration with Oracle being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Oracle and gain one\n  Rank in the chosen Class.",
+      "icon": "icons/tools/navigation/compass-chain-blue.webp",
+      "img": "icons/tools/navigation/compass-chain-blue.webp"
     },
     {
       "name": "Glimpse Filaments II",
       "flavor_text": "The lucid melody no longer clouded by the narrowing dust.",
       "rank": "8th Rank",
-      "description": "At 8th Rank, select one of the following Glimpse Filament features from\nthe list below or one listed at an earlier Rank. During the Retrain\ndowntime activity, you may redo the selection of all of your chosen\nGlimpse Filaments.\n\n### Course of Enaction\n\n8th Rank Oracle Glimpse Reflection\n\nWhen you use **Glimpse**, you may take a free Dodge action.\n\n### Drifting Locality\n\n8th Rank Oracle Glimpse Reflection\n\nAfter you use **Glimpse**, you may grant one of the following effects to\nthe next 1st Circle or higher spell you cast this turn:\n\n- **Externality.** If the spell's range is measured in feet, you may add\n  30 feet to the range.\n\n- **Internality.** If the spell is listed with a WIS heightening\n  enhancement, you may heighten the spell by one Circle and apply that\n  enhancement.\n\n### Encroaching Thunder\n\n8th Rank Oracle Glimpse Reflection\n\nWhen you use **Glimpse**, you may require the GM to tell you which\ncreatures will take their turn when the next combat team takes\ninitiative."
+      "description": "At 8th Rank, select one of the following Glimpse Filament features from\nthe list below or one listed at an earlier Rank. During the Retrain\ndowntime activity, you may redo the selection of all of your chosen\nGlimpse Filaments.\n\n### Course of Enaction\n\n8th Rank Oracle Glimpse Reflection\n\nWhen you use **Glimpse**, you may take a free Dodge action.\n\n### Drifting Locality\n\n8th Rank Oracle Glimpse Reflection\n\nAfter you use **Glimpse**, you may grant one of the following effects to\nthe next 1st Circle or higher spell you cast this turn:\n\n- **Externality.** If the spell's range is measured in feet, you may add\n  30 feet to the range.\n\n- **Internality.** If the spell is listed with a WIS heightening\n  enhancement, you may heighten the spell by one Circle and apply that\n  enhancement.\n\n### Encroaching Thunder\n\n8th Rank Oracle Glimpse Reflection\n\nWhen you use **Glimpse**, you may require the GM to tell you which\ncreatures will take their turn when the next combat team takes\ninitiative.",
+      "icon": "icons/sundries/books/book-turquoise-moon.webp",
+      "icons": {
+        "Course of Enaction": "icons/sundries/books/book-eye-purple.webp",
+        "Drifting Locality": "icons/magic/light/beam-deflect-path-yellow.webp",
+        "Encroaching Thunder": "icons/magic/lightning/bolt-strike-blue.webp"
+      },
+      "img": "icons/sundries/books/book-turquoise-moon.webp"
     },
     {
       "name": "Oracle Vision Feature",
       "flavor_text": "",
       "rank": "8th Rank",
-      "description": "At 8th Rank, you gain a feature for your Oracle Vision."
+      "description": "At 8th Rank, you gain a feature for your Oracle Vision.",
+      "icon": "icons/sundries/scrolls/scroll-symbol-eye-blue.webp",
+      "img": "icons/sundries/scrolls/scroll-symbol-eye-blue.webp"
     },
     {
       "name": "Aurora II",
       "flavor_text": "Searing might and nurturing warmth held hand-in-hand. The sun never truly sets.",
       "rank": "9th Rank",
-      "description": "At 9th Rank, you may use **Aurora** twice per rest. When you use\n**Aurora**, you may increase the area's radius to 15 feet."
+      "description": "At 9th Rank, you may use **Aurora** twice per rest. When you use\n**Aurora**, you may increase the area's radius to 15 feet.",
+      "icon": "icons/sundries/flags/banner-standard-moon.webp",
+      "img": "icons/sundries/flags/banner-standard-moon.webp"
     },
     {
       "name": "Ability Improvement",
       "flavor_text": "",
       "rank": "9th Rank",
-      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9."
+      "description": "At 9th Rank, you gain an Ability Improvement. Each time you gain an\nAbility Improvement, distribute three permanent +1 increases to your\nability modifiers. You may increase the same ability modifier multiple\ntimes.\n\nThe maximum ability modifier that may be achieved is limited by your\ncharacter's Level. The maximum is +5 at Level 3, increases to +6 at\nLevel 6, and finally becomes +7 at Level 9.",
+      "icon": "icons/magic/light/explosion-star-pink.webp",
+      "img": "icons/magic/light/explosion-star-pink.webp"
     },
     {
       "name": "Vitreous Glance",
       "flavor_text": "You are the words proclaimed into stale air. You are the observer left without a message. You stand at the gates of the forgotten and look past one more time.",
       "rank": "10th Rank",
-      "description": "At 10th Rank, at any point, you may use **Glimpse** as a reaction\n(expending one of its usages)."
+      "description": "At 10th Rank, at any point, you may use **Glimpse** as a reaction\n(expending one of its usages).",
+      "icon": "icons/commodities/treasure/crystal-ball-blue-purple.webp",
+      "img": "icons/commodities/treasure/crystal-ball-blue-purple.webp"
     },
     {
       "name": "Exploration",
       "flavor_text": "",
       "rank": "10th Rank",
-      "description": "At 10th Rank, you gain an Exploration with Oracle being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Oracle and gain one\n  Rank in the chosen Class."
+      "description": "At 10th Rank, you gain an Exploration with Oracle being the exploring\nClass. Each time you gain an Exploration, you gain the following\nbenefit:\n\n- **Bonus Rank.** You choose any Class other than Oracle and gain one\n  Rank in the chosen Class.",
+      "icon": "icons/tools/navigation/map-marked-white-red.webp",
+      "img": "icons/tools/navigation/map-marked-white-red.webp"
     },
     {
       "name": "Fateful Hour",
       "flavor_text": "Tomorrow only holds what has been bestowed.",
       "rank": "11th Rank",
-      "description": "At 11th Rank, when an ally that has one of your stellar fragments makes\na saving throw, they may destroy it to add your radiance die to the\ntotal. If they do, they gain advantage on all subsequent saving throws\nfor the next 10 minutes."
+      "description": "At 11th Rank, when an ally that has one of your stellar fragments makes\na saving throw, they may destroy it to add your radiance die to the\ntotal. If they do, they gain advantage on all subsequent saving throws\nfor the next 10 minutes.",
+      "icon": "icons/magic/time/hourglass-tilted-gray.webp",
+      "img": "icons/magic/time/hourglass-tilted-gray.webp"
     },
     {
       "name": "Prophesy",
       "flavor_text": "The unseeable, unspeaking future trapped within smoky glass. Tremors are felt beneath the chilling, slick marble.",
       "rank": "12th Rank",
-      "description": "At 12th Rank, once per rest when you use **Glimpse**, you may predict an\nadditional five d20 rolls and manifest both your **Mote of Insight** and\n**Mote of Power** from your **Radiance** feature."
+      "description": "At 12th Rank, once per rest when you use **Glimpse**, you may predict an\nadditional five d20 rolls and manifest both your **Mote of Insight** and\n**Mote of Power** from your **Radiance** feature.",
+      "icon": "icons/sundries/books/book-eye-red.webp",
+      "img": "icons/sundries/books/book-eye-red.webp"
     },
     {
       "name": "Final Reach",
       "flavor_text": "",
       "rank": "",
-      "description": "When you reach character Level 12, you compute your *Total Rank*, which\nis calculated as:\n\n###### The sum of all of your Class Ranks\n\nIf your Total Rank is less than 16 when you reach Level 12, then for\neach deficient Rank, you may choose one of the benefits below to modify\na feature granted by one of your Class Ranks:\n\n- **Maneuvers.** You learn two additional maneuvers.\n\n- **Battlecasting.** You gain a maneuver, an additional Spell Point, and\n  an additional prepared spell for that Class.\n\n- **Spellcasting.** You gain three additional Spell Points and three\n  additional prepared spells for that Class.\n\nOracle Visions"
+      "description": "When you reach character Level 12, you compute your *Total Rank*, which\nis calculated as:\n\n###### The sum of all of your Class Ranks\n\nIf your Total Rank is less than 16 when you reach Level 12, then for\neach deficient Rank, you may choose one of the benefits below to modify\na feature granted by one of your Class Ranks:\n\n- **Maneuvers.** You learn two additional maneuvers.\n\n- **Battlecasting.** You gain a maneuver, an additional Spell Point, and\n  an additional prepared spell for that Class.\n\n- **Spellcasting.** You gain three additional Spell Points and three\n  additional prepared spells for that Class.\n\nOracle Visions",
+      "icon": "icons/tools/navigation/map-chart-tan.webp",
+      "img": "icons/tools/navigation/map-chart-tan.webp"
     },
     {
       "name": "Oracle Vision: Calamity",
       "flavor_text": "You have witnessed the boundary past which eons cease. As the ruinous future reaches its hand into the present, you are emboldened to see the path forward.",
       "rank": "1st Rank",
-      "description": "## Well of Determination\n\n*Not yet. Not ever.*\n\nAt 1st Rank, you have a pool of points called your *well of\ndetermination*. After each time you or an ally within 60 feet of you\nfails a saving throw, you may add 1 point to your well of determination.\nYou may have at most 5 points in your well of determination and all\npoints are discarded when you complete a long rest.\n\nAs a reaction when an ally within 60 feet of you makes a saving throw,\nyou may expend up to 3 points from your well of determination to add the\nnumber of points spent to the total.\n\n## Fated Radiance\n\n*Ruin is swift and without remorse. Thinking forward, its incidence can\nbe averted.*\n\nAt 1st Rank, your **Radiance** feature is enhanced in the following\nways:\n\n- **Disaster.** If a subject damaged by **Mote of Power** is killed,\n  knocked out, or burns a Resolve, you may cause a second target within\n  5 feet of the original to also be dealt damage by **Mote of Power**.\n  **Disaste**r may not activate itself.\n\n- **Protection**. Creatures affected by **Mote of Insight** also gain a\n  DB 5 against **elemental damage**. This DB becomes 10/15/20 at\n  4th/7th/10th Rank respectively.\n\n## From the Ashes\n\n*Dust settles upon the charred grasses. The path is never truly gone.*\n\nAt 4th Rank, when you use **Glimpse**, you may add 2 points to your well\nof determination.\n\n## Setting Sun\n\n*Beyond the end of it all, the world must continue.*\n\nAt 8th Rank, your **Well of Determination** feature is improved in the\nfollowing ways:\n\n- In addition to when an ally within 60 feet of you fails a saving\n  throw, you may also add 1 point to your well of determination whenever\n  a hostile creature within 60 feet of you fails a saving throw.\n\n- You may hold up to 7 points in your well of determination.\n\n- You spend up to 5 points from your well of determination at a given\n  time."
+      "description": "## Well of Determination\n\n*Not yet. Not ever.*\n\nAt 1st Rank, you have a pool of points called your *well of\ndetermination*. After each time you or an ally within 60 feet of you\nfails a saving throw, you may add 1 point to your well of determination.\nYou may have at most 5 points in your well of determination and all\npoints are discarded when you complete a long rest.\n\nAs a reaction when an ally within 60 feet of you makes a saving throw,\nyou may expend up to 3 points from your well of determination to add the\nnumber of points spent to the total.\n\n## Fated Radiance\n\n*Ruin is swift and without remorse. Thinking forward, its incidence can\nbe averted.*\n\nAt 1st Rank, your **Radiance** feature is enhanced in the following\nways:\n\n- **Disaster.** If a subject damaged by **Mote of Power** is killed,\n  knocked out, or burns a Resolve, you may cause a second target within\n  5 feet of the original to also be dealt damage by **Mote of Power**.\n  **Disaste**r may not activate itself.\n\n- **Protection**. Creatures affected by **Mote of Insight** also gain a\n  DB 5 against **elemental damage**. This DB becomes 10/15/20 at\n  4th/7th/10th Rank respectively.\n\n## From the Ashes\n\n*Dust settles upon the charred grasses. The path is never truly gone.*\n\nAt 4th Rank, when you use **Glimpse**, you may add 2 points to your well\nof determination.\n\n## Setting Sun\n\n*Beyond the end of it all, the world must continue.*\n\nAt 8th Rank, your **Well of Determination** feature is improved in the\nfollowing ways:\n\n- In addition to when an ally within 60 feet of you fails a saving\n  throw, you may also add 1 point to your well of determination whenever\n  a hostile creature within 60 feet of you fails a saving throw.\n\n- You may hold up to 7 points in your well of determination.\n\n- You spend up to 5 points from your well of determination at a given\n  time.",
+      "icon": "icons/sundries/scrolls/scroll-symbol-eye-brown.webp",
+      "icons": {
+        "Well of Determination": "icons/magic/symbols/star-rising-purple.webp",
+        "Fated Radiance": "icons/magic/symbols/star-inverted-yellow.webp",
+        "From the Ashes": "icons/magic/fire/explosion-fireball-large-red-orange.webp",
+        "Setting Sun": "icons/magic/light/explosion-star-blue-yellow.webp"
+      },
+      "img": "icons/sundries/scrolls/scroll-symbol-eye-brown.webp"
     },
     {
       "name": "Oracle Vision: Discovery",
       "flavor_text": "Great mysteries lie beyond the penumbra of the world's knowledge. As the tapestry of enigma erodes away, its glittering facets choreograph a new thread of inquiry.",
       "rank": "1st Rank",
-      "description": "## Brilliance\n\n*Knowledge is the truest power.*\n\nAt 1st Rank, once per rest when you make an Analyze check against a\ntarget, you may repeatedly manifest either your **Mote of Insight** or\n**Mote of Power** (you choose each time) from your **Radiance** feature\na number of times equal to the number of Analyze check DC thresholds you\nmeet for the target.\n\n## Enigmatic Radiance\n\n*The death of a question only lies when all have failed to answer it.*\n\nAt 1st Rank, your **Radiance** feature is enhanced in the following\nways:\n\n- **Clarity.** Creatures that regain ST from **Mote of Insight** are\n  also cleansed of the disoriented condition.\n\n- **Illumination**. You immediately **perceive** any creature damaged by\n  **Mote of Power** that you were previously **aware** of.\n\n## Precognition\n\n*A future molded by the knowledge of knowledge.*\n\nAt 4th Rank, when you use **Glimpse**, you may take a free Analyze\naction. After learning the predicted d20 roll outcome but before making\nthe Analyze check, you may postpone the usage of the predicted d20 roll\nto the next d20 roll after your Analyze check.\n\n## Knotted Throughline\n\n*Pull upon the thread and carve your truths unto the face of the world.*\n\nAt 8th Rank, if you use **Brilliance** on an Analyze check that succeeds\nthe highest Analyze check DC threshold for the target, your usage of\n**Brilliance** is not expended."
+      "description": "## Brilliance\n\n*Knowledge is the truest power.*\n\nAt 1st Rank, once per rest when you make an Analyze check against a\ntarget, you may repeatedly manifest either your **Mote of Insight** or\n**Mote of Power** (you choose each time) from your **Radiance** feature\na number of times equal to the number of Analyze check DC thresholds you\nmeet for the target.\n\n## Enigmatic Radiance\n\n*The death of a question only lies when all have failed to answer it.*\n\nAt 1st Rank, your **Radiance** feature is enhanced in the following\nways:\n\n- **Clarity.** Creatures that regain ST from **Mote of Insight** are\n  also cleansed of the disoriented condition.\n\n- **Illumination**. You immediately **perceive** any creature damaged by\n  **Mote of Power** that you were previously **aware** of.\n\n## Precognition\n\n*A future molded by the knowledge of knowledge.*\n\nAt 4th Rank, when you use **Glimpse**, you may take a free Analyze\naction. After learning the predicted d20 roll outcome but before making\nthe Analyze check, you may postpone the usage of the predicted d20 roll\nto the next d20 roll after your Analyze check.\n\n## Knotted Throughline\n\n*Pull upon the thread and carve your truths unto the face of the world.*\n\nAt 8th Rank, if you use **Brilliance** on an Analyze check that succeeds\nthe highest Analyze check DC threshold for the target, your usage of\n**Brilliance** is not expended.",
+      "icon": "icons/sundries/books/book-symbol-skull-grey.webp",
+      "icons": {
+        "Brilliance": "icons/sundries/documents/document-symbol-skull-tan.webp",
+        "Enigmatic Radiance": "icons/magic/symbols/runes-star-orange-purple.webp",
+        "Precognition": "icons/magic/symbols/runes-star-pentagon-blue.webp",
+        "Knotted Throughline": "icons/magic/symbols/runes-star-pentagon-orange.webp"
+      },
+      "img": "icons/sundries/books/book-symbol-skull-grey.webp"
     },
     {
       "name": "Oracle Vision: Unity",
       "flavor_text": "With each passing dawn you alight with the understanding that your fates are bound. That you alone do not hold the procession of stars in the night sky or the passage of time from one moment to the next. In that misunderstood futility, you find power.",
       "rank": "1st Rank",
-      "description": "## Heartbound Nail\n\n*As one, we pierce the veil.*\n\nAt 1st Rank, you may append the **Golden Blade** cantrip to the list of\nspells you prepare for the Oracle class. Some spells have effects that\ncan *upgrade* as indicated in the spell's description (e.g. **Armor of\nSouls** can upgrade). When you deal damage with **Golden Blade** while\nconcentrating on an upgraded spell effect, you also **regain ST** equal\nto the damage dealt by the spell.\n\n## Collective Radiance\n\n*In our hands clasped together, we pool the potential of a new\nbeginning.*\n\nAt 1st Rank, your **Radiance** feature is enhanced in the following\nways:\n\n- **Binding.** When you cause a creature to regain ST from **Mote of\n  Insight**, you may cause a second target creature within 5 feet of the\n  original to also regain ST from **Mote of Insight**. **Binding** may\n  not activate itself.\n\n- **Combination.** After damaging a target with **Mote of Power**, the\n  next attack made by your initiative partner this turn against the\n  target treats their AC as being reduced by one guard step (they either\n  have their Full Guard AC, Half Guard AC, or Base AC).\n\n## Coiled Mettle\n\n*The whetstone of promise sharpening a decisive blow.*\n\nAt 4th Rank, when an ally uses a predicted d20 roll for an attack check,\nthe attack's critical hit threshold is reduced by 1.\n\n## Spear of Tomorrow\n\n*Wishes hewn into rays of blistering starlight.*\n\nAt 8th Rank, while concentrating on an upgraded spell effect, you gain\nthe following benefits:\n\n- When you cast **Golden Blade**, you may cause the spell's range to\n  become 30 feet and reclassify the melee spell attack as a ranged spell\n  attack.\n\n- You gain advantage on **Golden Blade** spell attacks."
+      "description": "## Heartbound Nail\n\n*As one, we pierce the veil.*\n\nAt 1st Rank, you may append the **Golden Blade** cantrip to the list of\nspells you prepare for the Oracle class. Some spells have effects that\ncan *upgrade* as indicated in the spell's description (e.g. **Armor of\nSouls** can upgrade). When you deal damage with **Golden Blade** while\nconcentrating on an upgraded spell effect, you also **regain ST** equal\nto the damage dealt by the spell.\n\n## Collective Radiance\n\n*In our hands clasped together, we pool the potential of a new\nbeginning.*\n\nAt 1st Rank, your **Radiance** feature is enhanced in the following\nways:\n\n- **Binding.** When you cause a creature to regain ST from **Mote of\n  Insight**, you may cause a second target creature within 5 feet of the\n  original to also regain ST from **Mote of Insight**. **Binding** may\n  not activate itself.\n\n- **Combination.** After damaging a target with **Mote of Power**, the\n  next attack made by your initiative partner this turn against the\n  target treats their AC as being reduced by one guard step (they either\n  have their Full Guard AC, Half Guard AC, or Base AC).\n\n## Coiled Mettle\n\n*The whetstone of promise sharpening a decisive blow.*\n\nAt 4th Rank, when an ally uses a predicted d20 roll for an attack check,\nthe attack's critical hit threshold is reduced by 1.\n\n## Spear of Tomorrow\n\n*Wishes hewn into rays of blistering starlight.*\n\nAt 8th Rank, while concentrating on an upgraded spell effect, you gain\nthe following benefits:\n\n- When you cast **Golden Blade**, you may cause the spell's range to\n  become 30 feet and reclassify the melee spell attack as a ranged spell\n  attack.\n\n- You gain advantage on **Golden Blade** spell attacks.",
+      "icon": "icons/sundries/flags/banner-standard-blue.webp",
+      "icons": {
+        "Heartbound Nail": "icons/magic/life/heart-hand-gold-green.webp",
+        "Collective Radiance": "icons/skills/social/diplomacy-unity-alliance.webp",
+        "Coiled Mettle": "icons/sundries/flags/banner-standard-brown.webp",
+        "Spear of Tomorrow": "icons/sundries/flags/banner-standard-green.webp"
+      },
+      "img": "icons/sundries/flags/banner-standard-blue.webp"
     }
   ]
 }

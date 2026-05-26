@@ -148,7 +148,9 @@
   color: var(--hz-item-chat-primary-strong);
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 160ms ease, color 160ms ease;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
 }
 
 .horizonless-chat-card button:hover {

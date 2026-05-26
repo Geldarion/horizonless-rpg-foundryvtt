@@ -6,6 +6,6 @@
 
 .rollable:is(:hover, :focus) {
   cursor: pointer;
-  color: black;
+  color: var(--hz-color-black);
   text-shadow: 0 0 10px var(--hz-color-window-title-shadow);
 }

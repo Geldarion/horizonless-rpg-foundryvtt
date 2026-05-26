@@ -9,14 +9,7 @@
 }
 
 .horizonless .custom-resources-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.horizonless .custom-resources-header h3 {
-  margin: 0;
+  @include mixins.split-section-header;
 }
 
 .horizonless .custom-resource-list {
