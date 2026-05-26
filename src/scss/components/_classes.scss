@@ -1,22 +1,68 @@
-﻿.horizonless .classes-level-grid {
-  grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
-  align-items: start;
-  justify-content: start;
+@use '../utils/mixins';
+
+.horizonless .class-ranks-section {
+  display: flex;
+  flex-direction: column;
   gap: 8px;
+  min-width: 0;
+  margin-bottom: 10px;
 }
 
-.horizonless .class-level-card {
-  width: 120px;
-  min-width: 120px;
+.horizonless .class-ranks-header {
+  @include mixins.split-section-header;
+}
+
+.horizonless .class-ranks-section .task-control {
+  @include mixins.task-control;
+}
+
+.horizonless .class-ranks-section .task-control:hover {
+  @include mixins.task-control-hover;
+}
+
+.horizonless .class-ranks-list {
+  @include mixins.sheet-card;
+  display: flex;
+  flex-direction: column;
   gap: 6px;
-  padding: 6px;
 }
 
-.horizonless .class-level-card input[type="number"],
-.horizonless .class-level-card input[type="text"] {
+.horizonless .class-rank-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 76px 32px;
+  gap: 8px;
+  align-items: center;
+}
+
+.horizonless .class-rank-row-header {
+  color: var(--hz-sheet-label, var(--hz-color-black-65));
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.horizonless .class-rank-row select,
+.horizonless .class-rank-row input[type="number"] {
   width: 100%;
-  max-width: 72px;
-  min-height: 28px;
-  margin: 0 auto;
+  min-width: 0;
+}
+
+.horizonless .class-rank-row input[type="number"] {
   text-align: center;
+}
+
+.horizonless .class-rank-remove {
+  justify-content: center;
+  width: 32px;
+  height: 28px;
+  padding: 0;
+}
+
+.horizonless .class-ranks-empty {
+  min-height: 52px;
+}
+
+@media (max-width: 520px) {
+  .horizonless .class-rank-row {
+    grid-template-columns: minmax(0, 1fr) 64px 32px;
+  }
 }

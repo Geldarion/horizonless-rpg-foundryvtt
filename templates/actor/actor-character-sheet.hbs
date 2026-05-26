@@ -214,38 +214,60 @@
 
       {{> "systems/horizonless/templates/actor/parts/actor-class-feature.hbs"}}
 
-      <section class="grid grid-2col classes-level-grid">
-
-        <div class="resource-card flex-group-center class-level-card">
-          <label class="stat-label">
-            Paragon Feats
-          </label>
-
-          <input
-            type="number"
-            name="system.attributes.paragonFeatNum.value"
-            value="{{system.attributes.paragonFeatNum.value}}"
-            data-dtype="Number"
-          />
+      <section class="class-ranks-section">
+        <div class="class-ranks-header">
+          <h3>Class Ranks</h3>
+          {{#if classRankList.canAdd}}
+          <button type="button" class="class-rank-add task-control" title="Add Class Rank">
+            <i class="fas fa-plus"></i>
+            Add
+          </button>
+          {{/if}}
         </div>
 
-        {{#each system.attributes.classes as |classData classKey|}}
-        <div class="resource-card flex-group-center class-level-card">
-
-          <label class="stat-label">
-            {{capitalize classKey}}
-          </label>
-
-          <input
-            type="number"
-            name="system.attributes.classes.{{classKey}}.level"
-            value="{{classData.level}}"
-            data-dtype="Number"
-          />
-
+        {{#if classRankList.rows.length}}
+        <div class="class-ranks-list">
+          <div class="class-rank-row class-rank-row-header">
+            <span>Class</span>
+            <span>Ranks</span>
+            <span></span>
+          </div>
+          {{#each classRankList.rows as |row|}}
+          <div class="class-rank-row">
+            <select name="system.attributes.classRanks.{{row.index}}.classId">
+              {{#each row.options as |option|}}
+              <option
+                value="{{option.value}}"
+                {{#if option.selected}}selected{{/if}}
+                {{#if option.disabled}}disabled{{/if}}
+              >
+                {{option.label}}
+              </option>
+              {{/each}}
+            </select>
+            <input
+              type="number"
+              name="system.attributes.classRanks.{{row.index}}.ranks"
+              value="{{row.ranks}}"
+              data-dtype="Number"
+              min="0"
+            />
+            <button
+              type="button"
+              class="class-rank-remove task-control task-delete"
+              data-index="{{row.index}}"
+              title="Remove Class Rank"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+          {{/each}}
         </div>
-        {{/each}}
-
+        {{else}}
+        <div class="class-ranks-empty resource-card flex-group-center">
+          <p>No class ranks added.</p>
+        </div>
+        {{/if}}
       </section>
 
       {{> "systems/horizonless/templates/actor/parts/actor-ancestries.hbs"}}

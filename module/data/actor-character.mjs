@@ -65,6 +65,7 @@ function createCustomResourceSchema(fields) {
 }
 
 export default class HorizonlessCharacter extends HorizonlessActorBase {
+  static PARAGON_FEATS_CLASS_ID = "paragonFeats";
 
   // Central place for per-rank class progression rules.
   static CLASS_PROGRESSION = Object.freeze({
@@ -101,6 +102,10 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
     return Object.keys(this.CLASS_PROGRESSION);
   }
 
+  static get CLASS_RANK_CHOICES() {
+    return ["", ...this.PLAYER_CLASSES, this.PARAGON_FEATS_CLASS_ID];
+  }
+
   static getClassProgression(classId) {
     return this.CLASS_PROGRESSION[classId] ?? { hpPerRank: 0, staminaPerRank: 0, casterType: CasterType.MARTIAL };
   }
@@ -134,6 +139,86 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
     return diceNum * ((diceSize + 1) / 2);
   }
 
+  static normalizeClassRanks(classRanks) {
+    if (!Array.isArray(classRanks)) return [];
+
+    const seenClassIds = new Set();
+    const normalizedRows = [];
+    for (const row of classRanks) {
+      const classId = String(row?.classId ?? "").trim();
+      if (!this.CLASS_RANK_CHOICES.includes(classId)) continue;
+      if (seenClassIds.has(classId)) continue;
+
+      seenClassIds.add(classId);
+      normalizedRows.push({
+        classId,
+        ranks: Math.max(0, Math.floor(Number(row?.ranks ?? 0) || 0))
+      });
+    }
+
+    return normalizedRows;
+  }
+
+  static buildClassRanksFromLegacyAttributes(attributes) {
+    const classRanks = [];
+    const legacyClasses = attributes?.classes ?? {};
+
+    for (const classId of this.PLAYER_CLASSES) {
+      const ranks = Math.max(0, Math.floor(Number(legacyClasses?.[classId]?.level ?? 0) || 0));
+      if (ranks > 0) classRanks.push({ classId, ranks });
+    }
+
+    const paragonFeats = Math.max(
+      0,
+      Math.floor(Number(attributes?.paragonFeatNum?.value ?? 0) || 0)
+    );
+    if (paragonFeats > 0) {
+      classRanks.push({
+        classId: this.PARAGON_FEATS_CLASS_ID,
+        ranks: paragonFeats
+      });
+    }
+
+    return classRanks;
+  }
+
+  static migrateData(source) {
+    const migrated = super.migrateData(source);
+    const attributes = migrated?.attributes;
+    if (attributes && (!Array.isArray(attributes.classRanks) || attributes.classRanks.length === 0)) {
+      attributes.classRanks = this.buildClassRanksFromLegacyAttributes(attributes);
+    }
+    return migrated;
+  }
+
+  _getClassRankEntries({ includeParagonFeats = false } = {}) {
+    let entries = this.constructor.normalizeClassRanks(this.attributes?.classRanks);
+    if (entries.length === 0) {
+      entries = this.constructor.buildClassRanksFromLegacyAttributes(this.attributes);
+    }
+
+    if (!includeParagonFeats) {
+      entries = entries.filter((entry) => entry.classId !== this.constructor.PARAGON_FEATS_CLASS_ID);
+    }
+
+    return entries;
+  }
+
+  _syncLegacyClassRankFields() {
+    const entries = this._getClassRankEntries({ includeParagonFeats: true });
+    const ranksByClassId = Object.fromEntries(entries.map((entry) => [entry.classId, entry.ranks]));
+
+    for (const classId of this.constructor.PLAYER_CLASSES) {
+      if (this.attributes?.classes?.[classId]) {
+        this.attributes.classes[classId].level = ranksByClassId[classId] ?? 0;
+      }
+    }
+
+    if (this.attributes?.paragonFeatNum) {
+      this.attributes.paragonFeatNum.value = ranksByClassId[this.constructor.PARAGON_FEATS_CLASS_ID] ?? 0;
+    }
+  }
+
   /**
    * Select the best class ranks for a stat (HP or stamina), capped by character level.
    * @param {"hpPerRank"|"staminaPerRank"} progressionKey
@@ -141,11 +226,8 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
    * @returns {number}
    */
   _getMaxClassRankContribution(progressionKey, levelCap) {
-    const classes = this.attributes?.classes ?? {};
-
-    const rankedClasses = Object.entries(classes)
-      .map(([classId, classData]) => {
-        const ranks = Math.max(0, Math.floor(Number(classData?.level ?? 0)));
+    const rankedClasses = this._getClassRankEntries()
+      .map(({ classId, ranks }) => {
         const perRank = Number(
           this.constructor.getClassProgression(classId)?.[progressionKey] ?? 0
         );
@@ -168,11 +250,9 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
   }
 
   _getMaxClassSpellPoints(levelCap) {
-    const classes = this.attributes?.classes ?? {};
     let totalSpellPoints = 0;
 
-    for (const [classId, classData] of Object.entries(classes)) {
-      const ranks = Math.max(0, Math.floor(Number(classData?.level ?? 0)));
+    for (const { classId, ranks } of this._getClassRankEntries()) {
       const cappedRanks = Math.min(Math.max(0, Math.floor(Number(levelCap ?? 0))), ranks);
       const casterType = this.constructor.getClassProgression(classId)?.casterType ?? CasterType.MARTIAL;
       const points = Number(this.constructor.getSpellPointsAtRank(casterType, cappedRanks));
@@ -183,12 +263,10 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
   }
 
   _getMaxClassMartialDie(levelCap) {
-    const classes = this.attributes?.classes ?? {};
     let strongestMartialDie = "";
     let strongestMartialDieAverage = 0;
 
-    for (const [classId, classData] of Object.entries(classes)) {
-      const ranks = Math.max(0, Math.floor(Number(classData?.level ?? 0)));
+    for (const { classId, ranks } of this._getClassRankEntries()) {
       const cappedRanks = Math.min(Math.max(0, Math.floor(Number(levelCap ?? 0))), ranks);
       if (cappedRanks <= 0) continue;
 
@@ -329,7 +407,21 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
         value: new fields.NumberField({ ...requiredInteger, initial: 0 })
       }),
 
-      classes: new fields.SchemaField(classLevels)
+      classes: new fields.SchemaField(classLevels),
+      classRanks: new fields.ArrayField(
+        new fields.SchemaField({
+          classId: new fields.StringField({
+            required: true,
+            blank: true,
+            choices: this.CLASS_RANK_CHOICES,
+            initial: ""
+          }),
+          ranks: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 })
+        }),
+        {
+          initial: []
+        }
+      )
     });
 
     schema.spellPoints = new fields.SchemaField({
@@ -393,6 +485,7 @@ export default class HorizonlessCharacter extends HorizonlessActorBase {
 
   prepareBaseData() {
     super.prepareBaseData();
+    this._syncLegacyClassRankFields();
 
     const { characterLevel, tierBonus } = this._deriveLevelData();
     const { conMod } = this._deriveAbilityMods();

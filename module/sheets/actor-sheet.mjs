@@ -41,6 +41,7 @@ import {
   SheetTheme,
   TradeTypes,
 } from '../data/enums.mjs';
+import HorizonlessCharacter from '../data/actor-character.mjs';
 
 const { DialogV2, HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -141,6 +142,46 @@ function normalizeCustomResources(customResources) {
     value: Math.max(0, Math.floor(Number(resource?.value ?? 0) || 0)),
     max: Math.max(0, Math.floor(Number(resource?.max ?? 0) || 0)),
   }));
+}
+
+function createEmptyClassRank() {
+  return {
+    classId: '',
+    ranks: 0,
+  };
+}
+
+function getClassRankLabel(classId) {
+  if (classId === HorizonlessCharacter.PARAGON_FEATS_CLASS_ID) return 'Paragon Feats';
+  if (!classId) return 'Select Class';
+  return classId.charAt(0).toUpperCase() + classId.slice(1);
+}
+
+function getClassRankOptions(selectedClassIds, currentClassId = '') {
+  return HorizonlessCharacter.CLASS_RANK_CHOICES.map((classId) => ({
+    value: classId,
+    label: getClassRankLabel(classId),
+    selected: classId === currentClassId,
+    disabled: classId !== currentClassId && selectedClassIds.has(classId),
+  }));
+}
+
+function prepareClassRanksForSheet(attributes) {
+  let rows = HorizonlessCharacter.normalizeClassRanks(attributes?.classRanks);
+  if (rows.length === 0) {
+    rows = HorizonlessCharacter.buildClassRanksFromLegacyAttributes(attributes);
+  }
+  const selectedClassIds = new Set(rows.map((row) => row.classId));
+  const optionsCount = HorizonlessCharacter.CLASS_RANK_CHOICES.length;
+
+  return {
+    rows: rows.map((row, index) => ({
+      ...row,
+      index,
+      options: getClassRankOptions(selectedClassIds, row.classId),
+    })),
+    canAdd: selectedClassIds.size < optionsCount,
+  };
 }
 
 function createEmptyCustomAttack(kind = CUSTOM_ATTACK_KIND.ATTACK) {
@@ -538,6 +579,8 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     bindEventListeners(root, 'click', '.damage-buffer-remove', this._onDamageBufferRemove.bind(this));
     bindEventListeners(root, 'click', '.custom-resource-add', this._onCustomResourceAdd.bind(this));
     bindEventListeners(root, 'click', '.custom-resource-remove', this._onCustomResourceRemove.bind(this));
+    bindEventListeners(root, 'click', '.class-rank-add', this._onClassRankAdd.bind(this));
+    bindEventListeners(root, 'click', '.class-rank-remove', this._onClassRankRemove.bind(this));
     bindEventListeners(root, 'click', '.custom-attack-add', this._onCustomAttackAdd.bind(this));
     bindEventListeners(root, 'click', '.custom-save-add', this._onCustomSaveAdd.bind(this));
     bindEventListeners(root, 'click', '.custom-attack-remove', this._onCustomAttackRemove.bind(this));
@@ -737,6 +780,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
 
   _prepareCharacterData(context) {
     context.customResources = normalizeCustomResources(context.system?.customResources);
+    context.classRankList = prepareClassRanksForSheet(context.system?.attributes);
   }
 
   _prepareNpcData(context) {
@@ -942,6 +986,69 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       this.render(false);
     } finally {
       this._customResourceMutationInFlight = false;
+    }
+  }
+
+  async _onClassRankAdd(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (this.actor.type !== 'character') return;
+    if (this._classRankMutationInFlight) return;
+    this._classRankMutationInFlight = true;
+
+    try {
+      await this._submitPendingChanges();
+
+      let classRanks = HorizonlessCharacter.normalizeClassRanks(
+        foundry.utils.deepClone(this.actor.system?.attributes?.classRanks ?? [])
+      );
+      if (classRanks.length === 0) {
+        classRanks = HorizonlessCharacter.buildClassRanksFromLegacyAttributes(this.actor.system?.attributes);
+      }
+      const selectedClassIds = new Set(classRanks.map((row) => row.classId));
+      if (selectedClassIds.size >= HorizonlessCharacter.CLASS_RANK_CHOICES.length) return;
+
+      if (selectedClassIds.has('')) {
+        const nextClassId = HorizonlessCharacter.CLASS_RANK_CHOICES.find((classId) => !selectedClassIds.has(classId));
+        if (!nextClassId) return;
+        classRanks.push({ classId: nextClassId, ranks: 0 });
+      } else {
+        classRanks.push(createEmptyClassRank());
+      }
+
+      await this.actor.update({ 'system.attributes.classRanks': classRanks });
+      this.render(false);
+    } finally {
+      this._classRankMutationInFlight = false;
+    }
+  }
+
+  async _onClassRankRemove(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (this.actor.type !== 'character') return;
+    if (this._classRankMutationInFlight) return;
+    this._classRankMutationInFlight = true;
+
+    try {
+      const classRankIndex = Number(event.currentTarget.dataset.index ?? -1);
+      if (!Number.isInteger(classRankIndex) || classRankIndex < 0) return;
+
+      await this._submitPendingChanges();
+
+      let classRanks = HorizonlessCharacter.normalizeClassRanks(
+        foundry.utils.deepClone(this.actor.system?.attributes?.classRanks ?? [])
+      );
+      if (classRanks.length === 0) {
+        classRanks = HorizonlessCharacter.buildClassRanksFromLegacyAttributes(this.actor.system?.attributes);
+      }
+      if (classRankIndex >= classRanks.length) return;
+
+      classRanks.splice(classRankIndex, 1);
+      await this.actor.update({ 'system.attributes.classRanks': classRanks });
+      this.render(false);
+    } finally {
+      this._classRankMutationInFlight = false;
     }
   }
 

@@ -3,6 +3,7 @@
  * @extends {Actor}
  */
 import { getActiveEffectStatuses } from '../helpers/effects.mjs';
+import HorizonlessCharacter from '../data/actor-character.mjs';
 
 const renderTemplate = foundry.applications.handlebars.renderTemplate;
 const HORIZONLESS_CONDITION_PREFIX = "horizonless.";
@@ -87,6 +88,33 @@ function sanitizeActorSystemIntegers(source = {}, { applyInitials = false } = {}
   return source;
 }
 
+function syncLegacyClassRanksForCharacter(actor, changed = {}) {
+  if (actor?.type !== "character") return;
+
+  const changedClassRanks = foundry.utils.getProperty(changed, "system.attributes.classRanks");
+  if (!Array.isArray(changedClassRanks)) return;
+
+  const normalizedRows = HorizonlessCharacter.normalizeClassRanks(changedClassRanks);
+  foundry.utils.setProperty(changed, "system.attributes.classRanks", normalizedRows);
+  const ranksByClassId = Object.fromEntries(
+    normalizedRows.map((row) => [row.classId, row.ranks])
+  );
+
+  for (const classId of HorizonlessCharacter.PLAYER_CLASSES) {
+    foundry.utils.setProperty(
+      changed,
+      `system.attributes.classes.${classId}.level`,
+      ranksByClassId[classId] ?? 0
+    );
+  }
+
+  foundry.utils.setProperty(
+    changed,
+    "system.attributes.paragonFeatNum.value",
+    ranksByClassId[HorizonlessCharacter.PARAGON_FEATS_CLASS_ID] ?? 0
+  );
+}
+
 export class HorizonlessActor extends Actor {
   /** @override */
   static migrateData(source) {
@@ -97,6 +125,7 @@ export class HorizonlessActor extends Actor {
   /** @override */
   async _preUpdate(changed, options, user) {
     sanitizeActorSystemIntegers(changed);
+    syncLegacyClassRanksForCharacter(this, changed);
 
     const currentHitpoints = Number(this.system?.hitpoints?.value ?? 0);
     const changedHitpoints = foundry.utils.getProperty(changed, 'system.hitpoints.value');

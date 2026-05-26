@@ -143,13 +143,13 @@
   background: var(--hz-sheet-primary-soft);
 }
 
-.horizonless.actor :is(.damage-buffer-add, .damage-buffer-remove, .trades-section .task-control, .custom-resources-section .task-control, .custom-attacks-section .task-control) {
+.horizonless.actor :is(.damage-buffer-add, .damage-buffer-remove, .trades-section .task-control, .custom-resources-section .task-control, .custom-attacks-section .task-control, .class-ranks-section .task-control) {
   color: var(--hz-sheet-text);
   background: var(--hz-sheet-primary-soft);
   border-color: var(--hz-sheet-accent-mid);
 }
 
-.horizonless.actor :is(.damage-buffer-add, .damage-buffer-remove, .trades-section .task-control, .custom-resources-section .task-control, .custom-attacks-section .task-control):hover {
+.horizonless.actor :is(.damage-buffer-add, .damage-buffer-remove, .trades-section .task-control, .custom-resources-section .task-control, .custom-attacks-section .task-control, .class-ranks-section .task-control):hover {
   background: var(--hz-sheet-primary-hover);
 }
 
@@ -162,7 +162,8 @@
 .horizonless.actor .trades-section .trade-card,
 .horizonless.actor .property-row,
 .horizonless.actor .custom-resource-card,
-.horizonless.actor .custom-attack-table {
+.horizonless.actor .custom-attack-table,
+.horizonless.actor .class-ranks-list {
   border-color: var(--hz-sheet-stroke-soft);
   background: var(--hz-sheet-surface-soft);
 }
