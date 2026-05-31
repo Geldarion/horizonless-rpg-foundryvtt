@@ -18,7 +18,17 @@ const HORIZONLESS_TOKEN_CONDITIONS = Object.freeze([
   { id: "horizonless.stuck", name: "Stuck", img: "icons/svg/padlock.svg" },
   { id: "horizonless.stunned", name: "Stunned", img: "icons/svg/lightning.svg" },
   { id: "horizonless.unconscious", name: "Unconscious", img: "icons/svg/sleep.svg" },
-  { id: "horizonless.dead", name: "Dead", img: "icons/svg/skull.svg" }
+  { id: "horizonless.dead", name: "Dead", img: "icons/svg/skull.svg" },
+  { id: "horizonless.mark_one", name: "Mark Triangle", img: "system/horizonless/assets/icons/mark_triangle.svg" },
+  { id: "horizonless.mark_two", name: "Mark Energy", img: "system/horizonless/assets/icons/mark_energy.svg" },
+  { id: "horizonless.bolster_one", name: "Bolster Star", img: "system/horizonless/assets/icons/bolster_star.svg" },
+  { id: "horizonless.bolster_two", name: "Bolster Defence", img: "system/horizonless/assets/icons/bolster_defence.svg" },
+  { id: "horizonless.bolster_three", name: "Bolster Offence", img: "system/horizonless/assets/icons/bolster_offence.svg" },
+  { id: "horizonless.mark_three", name: "Mark Eye", img: "system/horizonless/assets/icons/mark_eye.svg" },
+  { id: "horizonless.mark_four", name: "Mark Target", img: "system/horizonless/assets/icons/mark_target.svg" },
+  { id: "horizonless.bind_one", name: "Bind Star", img: "system/horizonless/assets/icons/bind_star.svg" },
+  { id: "horizonless.bind_two", name: "Bind Defence", img: "system/horizonless/assets/icons/bind_defence.svg" },
+  { id: "horizonless.bind_three", name: "Bind Offence", img: "system/horizonless/assets/icons/bind_offence.svg" }
 ]);
 
 const HORIZONLESS_TOKEN_CONDITION_IDS = Object.freeze(
