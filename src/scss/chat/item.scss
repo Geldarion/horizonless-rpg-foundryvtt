@@ -216,6 +216,13 @@
   width: 100%;
 }
 
+body:is(.horizonless-theme-verdant, .horizonless-theme-dark) :is(button.horizonless-apply-damage, select.horizonless-damage-type),
+body:is(.horizonless-theme-verdant, .horizonless-theme-dark) .horizonless-spell-chat-theme :is(button.horizonless-apply-damage, select.horizonless-damage-type),
+:is(.horizonless-theme-verdant, .horizonless-theme-dark).horizonless-spell-chat-theme :is(button.horizonless-apply-damage, select.horizonless-damage-type) {
+  --button-text-color: var(--hz-color-accent) !important;
+  color: var(--hz-color-accent) !important;
+}
+
 .horizonless-attack-results {
   display: grid;
   gap: 0.1rem;

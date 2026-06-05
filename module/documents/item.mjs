@@ -17,6 +17,9 @@ export class HorizonlessItem extends HorizonlessWeaponItem {
     super.prepareData();
     if (this.type === 'spell') {
       HorizonlessSpellItem.prototype._normalizeSpellCircleDataOnSource.call(this);
+      if (this.parent instanceof Actor && this.parent.type === 'npc') {
+        this.updateSource({ system: { prepared: true } });
+      }
     }
   }
 

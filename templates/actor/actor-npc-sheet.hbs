@@ -199,6 +199,10 @@
       {{> "systems/horizonless/templates/actor/parts/actor-items.hbs"}}
     </div>
 
+    <div class="tab spells" data-group="primary" data-tab="spells">
+      {{> "systems/horizonless/templates/actor/parts/actor-spells.hbs" showSignatureSpell=false showPreparedToggle=false}}
+    </div>
+
     {{!-- Active Effects Tab --}}
     <div class="tab effects flexcol" data-group="primary" data-tab="effects">
       {{> "systems/horizonless/templates/shared/parts/effects-list.hbs" effects=effects effectOwnerId=actor.id}}

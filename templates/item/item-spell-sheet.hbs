@@ -71,6 +71,7 @@
           {{selectOptions spellcastingModifiers selected=system.spellcastingModifier}}
         </select>
       </div>
+      {{#unless hidePreparedField}}
       <div class='resource'>
         <label class='resource-label'>Prepared</label>
         <input
@@ -79,6 +80,7 @@
           {{checked system.prepared}}
         />
       </div>
+      {{/unless}}
       <div class='resource'>
         <label class='resource-label'>Casting Time</label>
         <input

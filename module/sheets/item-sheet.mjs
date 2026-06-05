@@ -163,6 +163,8 @@ export class HorizonlessItemSheet extends HandlebarsApplicationMixin(ItemSheetV2
         )
       : [];
     context.system = itemData.system;
+    context.hidePreparedField = this.item.type === 'spell' && this.item.parent instanceof Actor && this.item.parent.type === 'npc';
+    if (context.hidePreparedField) context.system.prepared = true;
 
     context.enrichedDescription = ['spell', 'curio', 'class-feature', 'feature'].includes(this.item.type)
       ? await prepareEnrichedChatContent(this.item.system.description, {

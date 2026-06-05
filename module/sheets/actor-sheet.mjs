@@ -414,6 +414,7 @@ function getPrimaryTabsForActor(type, activeTab) {
       ['features', 'Features'],
       ['description', 'Description'],
       ['items', 'Items'],
+      ['spells', 'Spells'],
       ['effects', 'Effects'],
     ],
   };
