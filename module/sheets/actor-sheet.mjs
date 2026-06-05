@@ -1245,7 +1245,7 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
       hasSpellDc,
       spellDc: hasSpellDc ? normalizedDc : null,
       resultLabel: hasSpellDc
-        ? (savedAgainstSpell ? 'Spell failed!' : 'Spell successful.')
+        ? (savedAgainstSpell ? 'Success' : 'Failure')
         : '',
       savedAgainstSpell,
     };

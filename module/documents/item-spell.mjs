@@ -639,8 +639,8 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
       if (!result) continue;
 
       result.resultLabel = result.savedAgainstSpell
-        ? 'Spell failed!'
-        : 'Spell successful.';
+        ? 'Success'
+        : 'Failure';
       resultEntries.push({ token, result });
     }
 
@@ -830,7 +830,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
       hasSpellDc,
       spellDc: hasSpellDc ? normalizedSpellDc : null,
       resultLabel: hasSpellDc
-        ? (savedAgainstSpell ? 'Spell failed!' : 'Spell successful.')
+        ? (savedAgainstSpell ? 'Success' : 'Failure')
         : '',
       savedAgainstSpell,
     };
