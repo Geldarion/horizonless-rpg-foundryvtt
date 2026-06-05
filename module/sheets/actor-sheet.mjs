@@ -398,6 +398,33 @@ function groupCustomAttacksForSheet(customAttacks) {
   return groups;
 }
 
+function getPrimaryTabsForActor(type, activeTab) {
+  const tabSets = {
+    character: [
+      ['features', 'Features'],
+      ['trades', 'Trades'],
+      ['items', 'Items'],
+      ['spells', 'Spells'],
+      ['maneuvers', 'Maneuvers'],
+      ['identity', 'Identity'],
+      ['description', 'Notes'],
+      ['effects', 'Effects'],
+    ],
+    npc: [
+      ['features', 'Features'],
+      ['description', 'Description'],
+      ['items', 'Items'],
+      ['effects', 'Effects'],
+    ],
+  };
+
+  return (tabSets[type] ?? tabSets.character).map(([id, label]) => ({
+    id,
+    label,
+    active: activeTab === id,
+  }));
+}
+
 function getTargetedTokens() {
   return Array.from(game.user?.targets ?? []).filter((token) => token?.actor);
 }
@@ -500,6 +527,10 @@ export class HorizonlessActorSheet extends HandlebarsApplicationMixin(ActorSheet
     context.sheetTemplate = this.template;
     context.system = actorData.system;
     context.guardDisplay = getGuardDisplayData(actorData.system?.guard);
+    context.primaryTabs = getPrimaryTabsForActor(
+      actorData.type,
+      context.tabGroups?.primary ?? this.tabGroups.primary
+    );
 
     if (actorData.type === 'character') {
       this._prepareItems(context);

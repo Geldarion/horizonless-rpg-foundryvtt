@@ -1,0 +1,9 @@
+<nav class="sheet-tabs tabs" data-group="{{group}}">
+  {{#each tabs as |tab|}}
+    <a
+      class="item{{#if tab.active}} active{{/if}}"
+      data-group="{{../group}}"
+      data-tab="{{tab.id}}"
+    >{{tab.label}}</a>
+  {{/each}}
+</nav>

@@ -151,7 +151,21 @@
   transition: background-color 160ms ease, color 160ms ease;
 }
 
+.chat-popout .horizonless-chat-card button {
+  background: var(--hz-item-chat-primary);
+  border-color: var(--hz-item-chat-accent);
+  border-radius: 0;
+  color: var(--hz-item-chat-primary-strong);
+  font-weight: 700;
+  line-height: normal;
+}
+
 .horizonless-chat-card button:hover {
+  background: var(--hz-item-chat-primary-strong);
+  color: var(--hz-item-chat-text-on-dark);
+}
+
+.chat-popout .horizonless-chat-card button:hover {
   background: var(--hz-item-chat-primary-strong);
   color: var(--hz-item-chat-text-on-dark);
 }

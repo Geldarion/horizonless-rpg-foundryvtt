@@ -312,3 +312,24 @@
     text-decoration-color: currentColor;
   }
 }
+.chat-popout .horizonless-spell-chat :is(.horizonless-spell-chat-save-button, .horizonless-spell-chat-damage-button) {
+  background: var(--hz-color-primary);
+  border-color: var(--hz-color-accent);
+  border-radius: 0;
+  color: var(--hz-color-primary-strong);
+  font-weight: 700;
+  line-height: normal;
+}
+
+.chat-popout .horizonless-spell-chat .horizonless-spell-chat-damage-button {
+  color: var(--hz-chat-color-accent, var(--hz-color-accent)) !important;
+}
+
+.chat-popout .horizonless-spell-chat .horizonless-spell-chat-save-action .horizonless-spell-chat-save-button {
+  border: 0;
+}
+
+.chat-popout .horizonless-spell-chat :is(.horizonless-spell-chat-save-button, .horizonless-spell-chat-damage-button):hover {
+  background: var(--hz-color-primary-strong);
+  color: var(--hz-color-text-on-dark);
+}

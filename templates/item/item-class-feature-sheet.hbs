@@ -6,11 +6,7 @@
     </div>
   </header>
 
-  <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="attributes">Attributes</a>
-    <a class="item" data-tab="effects">Effects</a>
-  </nav>
+  {{> "systems/horizonless/templates/shared/parts/sheet-tabs.hbs" group="primary" tabs=primaryTabs}}
 
   <section class="sheet-body">
     <div class="tab" data-group="primary" data-tab="description">
@@ -41,7 +37,7 @@
     </div>
 
     <div class="tab effects" data-group="primary" data-tab="effects">
-      {{> "systems/horizonless/templates/item/parts/item-effects.hbs"}}
+      {{> "systems/horizonless/templates/shared/parts/effects-list.hbs" effects=effects effectOwnerId=item.id}}
     </div>
   </section>
 

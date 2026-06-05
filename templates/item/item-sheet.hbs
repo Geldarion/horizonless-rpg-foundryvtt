@@ -20,10 +20,7 @@
   </header>
 
   {{! Sheet Tab Navigation }}
-  <nav class='sheet-tabs tabs' data-group='primary'>
-    <a class='item' data-tab='description'>Description</a>
-    <a class='item' data-tab='attributes'>Attributes</a>
-  </nav>
+  {{> "systems/horizonless/templates/shared/parts/sheet-tabs.hbs" group="primary" tabs=primaryTabs}}
 
   {{! Sheet Body }}
   <section class='sheet-body'>

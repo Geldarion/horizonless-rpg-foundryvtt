@@ -23,10 +23,8 @@ const renderTemplate = foundry.applications.handlebars.renderTemplate;
 
 const ITEM_MESSAGE_TEMPLATES = {
   contentMessage: 'systems/horizonless/module/messages/item/content-message.hbs',
-  curioFlavor: 'systems/horizonless/module/messages/item/curio-flavor.hbs',
   rollFlavor: 'systems/horizonless/module/messages/item/roll-flavor.hbs',
   weaponAttackFlavor: 'systems/horizonless/module/messages/item/weapon-attack-flavor.hbs',
-  weaponDamageFlavor: 'systems/horizonless/module/messages/item/weapon-damage-flavor.hbs',
   weaponDamageRollButton: 'systems/horizonless/module/messages/item/weapon-damage-roll-button.hbs',
   weaponApplyDamageButton: 'systems/horizonless/module/messages/item/damage-apply-button.hbs',
   weaponApplyDamageApplied: 'systems/horizonless/module/messages/item/damage-apply-applied.hbs',
@@ -51,6 +49,16 @@ function capitalizeAttackRollDialogTitle(value) {
   const text = String(value ?? '').trim();
   if (!text) return 'Weapon';
   return `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
+}
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#x27;',
+  }[character]));
 }
 
 export class HorizonlessWeaponItem extends HorizonlessBaseItem {
@@ -224,13 +232,12 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
             injuring: Boolean(weaponItem?.system?.injuring),
           }
         );
-        const damageFlavor = await this._renderMessageTemplate(
-          ITEM_MESSAGE_TEMPLATES.weaponDamageFlavor,
-          {
-            label: `[weapon] ${itemName} Damage`,
-            applyDamageButtonHtml: applyDamageButton,
-          }
-        );
+        const damageFlavor = `<div class="horizonless-chat-card horizonless-item-chat">
+  <div class="horizonless-chat-card-title">${escapeHtml(`[weapon] ${itemName} Damage`)}</div>
+  <div class="horizonless-chat-card-actions">
+    ${applyDamageButton}
+  </div>
+</div>`;
 
         await roll.toMessage({
           speaker: ChatMessage.getSpeaker({ actor }),
@@ -439,9 +446,7 @@ export class HorizonlessWeaponItem extends HorizonlessBaseItem {
       const hasItemIcon = [ItemType.CURIO, ItemType.CLASS_FEATURE].includes(this.type)
         && String(this.img ?? '').trim().length > 0;
       const curioFlavorHtml = curioFlavor
-        ? await this._renderItemMessageTemplate(ITEM_MESSAGE_TEMPLATES.curioFlavor, {
-            flavor: curioFlavor,
-          })
+        ? `<p class="horizonless-item-flavor"><em>${escapeHtml(curioFlavor)}</em></p>`
         : '';
       const content = await this._renderItemMessageTemplate(
         ITEM_MESSAGE_TEMPLATES.contentMessage,

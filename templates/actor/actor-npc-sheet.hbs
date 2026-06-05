@@ -104,9 +104,7 @@
         <div class="resource flex-group-center">
           <label for="system.size" class="resource-label">Size</label>
           <select name="system.size">
-            {{#each @root.config.sizes as |label key|}}
-            <option value="{{key}}" {{#if (eq key ../system.size)}}selected{{/if}}>{{label}}</option>
-            {{/each}}
+            {{selectOptions @root.config.sizes selected=system.size}}
           </select>
         </div>
 
@@ -115,13 +113,7 @@
   </header>
 
   {{!-- Sheet Tab Navigation --}}
-  <nav class="sheet-tabs tabs" data-group="primary">
-    {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="features">Features</a>
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="items">Items</a>
-    <a class="item" data-tab="effects">Effects</a>
-  </nav>
+  {{> "systems/horizonless/templates/shared/parts/sheet-tabs.hbs" group="primary" tabs=primaryTabs}}
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
@@ -209,7 +201,7 @@
 
     {{!-- Active Effects Tab --}}
     <div class="tab effects flexcol" data-group="primary" data-tab="effects">
-      {{> "systems/horizonless/templates/actor/parts/actor-effects.hbs"}}
+      {{> "systems/horizonless/templates/shared/parts/effects-list.hbs" effects=effects effectOwnerId=actor.id}}
     </div>
 
   </section>

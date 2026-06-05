@@ -15,12 +15,49 @@ import {
   submitPendingSheetChanges,
   syncSheetTabState,
 } from '../helpers/sheet.mjs';
-import { SpellList } from '../data/enums.mjs';
+import { AncestryFeatureType, SpellList } from '../data/enums.mjs';
 import { prepareEnrichedChatContent } from '../helpers/chat.mjs';
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
 const TextEditor = foundry.applications.ux.TextEditor.implementation;
+
+const ITEM_PRIMARY_TABS = [
+  { id: 'description', label: 'Description' },
+  { id: 'attributes', label: 'Attributes' },
+  { id: 'effects', label: 'Effects' },
+];
+
+const ITEM_TYPES_WITH_EFFECTS = new Set(['armor', 'weapon', 'feature', 'class-feature']);
+const ITEM_PRIMARY_TABS_WITHOUT_EFFECTS = ITEM_PRIMARY_TABS.filter((tab) => tab.id !== 'effects');
+
+const ARMOR_TYPE_CHOICES = Object.freeze({
+  agile: 'Agile Armor',
+  stock: 'Stock Armor',
+  fortified: 'Fortified Armor',
+});
+
+const MANEUVER_TYPE_CHOICES = Object.freeze({
+  '': 'None',
+  attack: 'Attack',
+  strategy: 'Strategy',
+});
+
+const ANCESTRY_FEATURE_TYPE_CHOICES = Object.freeze({
+  '': 'None',
+  [AncestryFeatureType.PRIMARY]: 'Primary',
+  [AncestryFeatureType.SECONDARY]: 'Secondary',
+  [AncestryFeatureType.TERTIARY]: 'Tertiary',
+  [AncestryFeatureType.INHERITOR]: 'Inheritor',
+});
+
+function getPrimaryTabsForItem(type, activeTab) {
+  const tabs = ITEM_TYPES_WITH_EFFECTS.has(type) ? ITEM_PRIMARY_TABS : ITEM_PRIMARY_TABS_WITHOUT_EFFECTS;
+  return tabs.map((tab) => ({
+    ...tab,
+    active: activeTab === tab.id,
+  }));
+}
 
 export class HorizonlessItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   editingDescriptionTarget = null;
@@ -104,12 +141,27 @@ export class HorizonlessItemSheet extends HandlebarsApplicationMixin(ItemSheetV2
     context.heighteningOptions = [];
     context.item = this.item;
     context.sheetTemplate = this.template;
+    context.primaryTabs = getPrimaryTabsForItem(
+      itemData.type,
+      context.tabGroups?.primary ?? this.tabGroups.primary
+    );
+    context.ancestryFeatureTypeChoices = ANCESTRY_FEATURE_TYPE_CHOICES;
+    context.armorTypeChoices = ARMOR_TYPE_CHOICES;
+    context.maneuverTypeChoices = MANEUVER_TYPE_CHOICES;
+    context.sizeChoices = CONFIG.HORIZONLESS_RPG.sizes;
+    context.spellListChoices = Object.fromEntries(
+      Object.values(SpellList).map((spellList) => [
+        spellList,
+        spellList.charAt(0).toUpperCase() + spellList.slice(1),
+      ])
+    );
     context.spellcastingModifiers = this.item.type === 'spell'
-      ? Object.keys(CONFIG.HORIZONLESS_RPG.abilities ?? {}).filter((key) =>
-          ['con', 'int', 'wis', 'cha'].includes(key)
+      ? Object.fromEntries(
+          Object.entries(CONFIG.HORIZONLESS_RPG.abilities ?? {})
+            .filter(([key]) => ['con', 'int', 'wis', 'cha'].includes(key))
+            .map(([key, label]) => [key, game.i18n.localize(label)])
         )
       : [];
-    context.spellLists = Object.values(SpellList);
     context.system = itemData.system;
 
     context.enrichedDescription = ['spell', 'curio', 'class-feature', 'feature'].includes(this.item.type)

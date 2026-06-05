@@ -107,9 +107,7 @@
         <div class="resource-card flex-group-center">
           <label for="system.size" class="stat-label">Size</label>
           <select name="system.size">
-            {{#each @root.config.sizes as |label key|}}
-            <option value="{{key}}" {{#if (eq key ../system.size)}}selected{{/if}}>{{label}}</option>
-            {{/each}}
+            {{selectOptions @root.config.sizes selected=system.size}}
           </select>
         </div>
 
@@ -127,16 +125,7 @@
   </header>
 
   {{!-- Tab navigation --}}
-  <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="features">Features</a>
-    <a class="item" data-tab="trades">Trades</a>
-    <a class="item" data-tab="items">Items</a>
-    <a class="item" data-tab="spells">Spells</a>
-    <a class="item" data-tab="maneuvers">Maneuvers</a>
-    <a class="item" data-tab="identity">Identity</a>
-    <a class="item" data-tab="description">Notes</a>
-    <a class="item" data-tab="effects">Effects</a>
-  </nav>
+  {{> "systems/horizonless/templates/shared/parts/sheet-tabs.hbs" group="primary" tabs=primaryTabs}}
 
   {{!-- Main content --}}
   <section class="sheet-body">
@@ -305,7 +294,7 @@
 
     {{!-- Effects tab --}}
     <div class="tab flexcol" data-group="primary" data-tab="effects">
-      {{> "systems/horizonless/templates/actor/parts/actor-effects.hbs"}}
+      {{> "systems/horizonless/templates/shared/parts/effects-list.hbs" effects=effects effectOwnerId=actor.id}}
     </div>
 
   </section>

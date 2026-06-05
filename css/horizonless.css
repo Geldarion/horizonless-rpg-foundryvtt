@@ -299,7 +299,7 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   box-shadow: inset 0 0 0 1px currentColor;
 }
 
-:is(#chat-log, #chat .chat-log, .chat-popout) {
+:is(#chat-log, .chat-log, .chat-popout) {
   --hz-color-primary: var(--hz-chat-color-primary);
   --hz-color-primary-strong: var(--hz-chat-color-primary-strong);
   --hz-color-accent: var(--hz-chat-color-accent);
@@ -373,8 +373,8 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   border-bottom-color: color-mix(in srgb, var(--hz-color-accent) 40%, transparent);
 }
 
-:is(#chat-log, #chat .chat-log, .chat-popout) .chat-message,
-:is(#chat-log, #chat .chat-log, .chat-popout) .chat-message .message-content {
+:is(#chat-log, .chat-log, .chat-popout) .chat-message,
+:is(#chat-log, .chat-log, .chat-popout) .chat-message .message-content {
   border-radius: 0 !important;
 }
 
@@ -531,7 +531,21 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
   transition: background-color 160ms ease, color 160ms ease;
 }
 
+.chat-popout .horizonless-chat-card button {
+  background: var(--hz-item-chat-primary);
+  border-color: var(--hz-item-chat-accent);
+  border-radius: 0;
+  color: var(--hz-item-chat-primary-strong);
+  font-weight: 700;
+  line-height: normal;
+}
+
 .horizonless-chat-card button:hover {
+  background: var(--hz-item-chat-primary-strong);
+  color: var(--hz-item-chat-text-on-dark);
+}
+
+.chat-popout .horizonless-chat-card button:hover {
   background: var(--hz-item-chat-primary-strong);
   color: var(--hz-item-chat-text-on-dark);
 }
@@ -981,6 +995,28 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
     text-decoration-color: currentColor;
   }
 }
+.chat-popout .horizonless-spell-chat :is(.horizonless-spell-chat-save-button, .horizonless-spell-chat-damage-button) {
+  background: var(--hz-color-primary);
+  border-color: var(--hz-color-accent);
+  border-radius: 0;
+  color: var(--hz-color-primary-strong);
+  font-weight: 700;
+  line-height: normal;
+}
+
+.chat-popout .horizonless-spell-chat .horizonless-spell-chat-damage-button {
+  color: var(--hz-chat-color-accent, var(--hz-color-accent)) !important;
+}
+
+.chat-popout .horizonless-spell-chat .horizonless-spell-chat-save-action .horizonless-spell-chat-save-button {
+  border: 0;
+}
+
+.chat-popout .horizonless-spell-chat :is(.horizonless-spell-chat-save-button, .horizonless-spell-chat-damage-button):hover {
+  background: var(--hz-color-primary-strong);
+  color: var(--hz-color-text-on-dark);
+}
+
 .hl-heightening-dialog .hl-heightening-progress {
   margin: 0.25rem 0 0.75rem;
   font-weight: 600;

@@ -25,13 +25,11 @@ const renderTemplate = foundry.applications.handlebars.renderTemplate;
 
 const SPELL_MESSAGE_TEMPLATES = {
   spellChat: 'systems/horizonless/module/messages/spells/spell-chat.hbs',
-  spellRollFlavor: 'systems/horizonless/module/messages/spells/spell-roll-flavor.hbs',
   heighteningDialog: 'systems/horizonless/module/messages/spells/heightening-dialog.hbs',
   heighteningNote: 'systems/horizonless/module/messages/spells/heightening-note.hbs',
   spellSaveResults: 'systems/horizonless/module/messages/spells/spell-save-results.hbs',
   spellAttackFlavor: 'systems/horizonless/module/messages/item/weapon-attack-flavor.hbs',
   spellDamageRollButton: 'systems/horizonless/module/messages/spells/spell-damage-roll-button.hbs',
-  spellDamageFlavor: 'systems/horizonless/module/messages/spells/spell-damage-flavor.hbs',
   spellDamageMessage: 'systems/horizonless/module/messages/spells/spell-damage-message.hbs',
   spellApplyDamageButton: 'systems/horizonless/module/messages/spells/spell-apply-damage-button.hbs',
   spellApplyDamageApplied: 'systems/horizonless/module/messages/spells/spell-apply-damage-applied.hbs',
@@ -1639,11 +1637,7 @@ export class HorizonlessSpellItem extends HorizonlessBaseItem {
     const roll = new Roll(rollData.formula, rollData.actor);
     await roll.evaluate();
 
-    const flavor = await renderTemplate(SPELL_MESSAGE_TEMPLATES.spellRollFlavor, {
-      flavorHtml: label,
-      hasHeighteningNote: Boolean(heighteningNoteHtml),
-      heighteningNoteHtml,
-    });
+    const flavor = heighteningNoteHtml ? `${label}<hr>${heighteningNoteHtml}` : label;
 
     roll.toMessage({
       speaker,

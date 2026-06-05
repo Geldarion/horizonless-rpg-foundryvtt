@@ -5,16 +5,12 @@
 import { getActiveEffectStatuses } from '../helpers/effects.mjs';
 import HorizonlessCharacter from '../data/actor-character.mjs';
 
-const renderTemplate = foundry.applications.handlebars.renderTemplate;
 const HORIZONLESS_CONDITION_PREFIX = "horizonless.";
 const KEPT_CONDITIONS_ON_RESOLVE_BURN = Object.freeze(
   new Set(["horizonless.dead", "horizonless.invisible", "horizonless.prone"])
 );
 const PRONE_CONDITION_ID = "horizonless.prone";
 const DEATH_CONDITION_ID = "horizonless.dead";
-const ACTOR_MESSAGE_TEMPLATES = {
-  resolveBurnMessage: 'systems/horizonless/module/messages/item/resolve-burn-message.hbs',
-};
 const ACTOR_INTEGER_SYSTEM_PATHS = Object.freeze([
   'hitpoints.value',
   'hitpoints.max',
@@ -34,6 +30,16 @@ function coerceInteger(value, fallback = 0) {
   const numeric = Number(value);
   if (!Number.isFinite(numeric)) return fallback;
   return Math.trunc(numeric);
+}
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#x27;',
+  }[character]));
 }
 
 function getIntegerFallbackForPath(path) {
@@ -250,9 +256,10 @@ export class HorizonlessActor extends Actor {
 
   async _createResolveBurnChatMessage() {
     const creatureName = String(this.name ?? "Unknown creature").trim() || "Unknown creature";
-    const content = await renderTemplate(ACTOR_MESSAGE_TEMPLATES.resolveBurnMessage, {
-      creatureName,
-    });
+    const content = `<div class="horizonless-chat-card horizonless-item-chat horizonless-chat-card--alert">
+  <div class="horizonless-chat-card-title">${escapeHtml(creatureName)}</div>
+  <div class="horizonless-chat-card-body">has burned a resolve!</div>
+</div>`;
     await ChatMessage.create({
       speaker: ChatMessage.getSpeaker({ actor: this }),
       content,

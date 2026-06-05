@@ -17,10 +17,7 @@
     </div>
   </header>
 
-  <nav class='sheet-tabs tabs' data-group='primary'>
-    <a class='item' data-tab='description'>Description</a>
-    <a class='item' data-tab='attributes'>Attributes</a>
-  </nav>
+  {{> "systems/horizonless/templates/shared/parts/sheet-tabs.hbs" group="primary" tabs=primaryTabs}}
 
   <section class='sheet-body'>
     <div class='tab' data-group='primary' data-tab='description'>
@@ -65,17 +62,13 @@
       <div class='resource'>
         <label class='resource-label'>Primary Spell List</label>
         <select name='system.spellList'>
-          {{#each @root.spellLists as |spellList|}}
-            <option value='{{spellList}}' {{#if (eq spellList ../system.spellList)}}selected{{/if}}>{{capitalize spellList}}</option>
-          {{/each}}
+          {{selectOptions spellListChoices selected=system.spellList}}
         </select>
       </div>
       <div class='resource'>
         <label class='resource-label'>Spellcasting Modifier</label>
         <select name='system.spellcastingModifier'>
-          {{#each @root.spellcastingModifiers as |abilityKey|}}
-            <option value='{{abilityKey}}' {{#if (eq abilityKey ../system.spellcastingModifier)}}selected{{/if}}>{{localize (lookup @root.config.abilities abilityKey)}}</option>
-          {{/each}}
+          {{selectOptions spellcastingModifiers selected=system.spellcastingModifier}}
         </select>
       </div>
       <div class='resource'>
