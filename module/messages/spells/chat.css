@@ -136,7 +136,7 @@
     cursor: pointer;
     padding: 0.5rem 0.75rem;
     font-weight: 700;
-    color: var(--hz-color-primary-strong);
+    color: var(--hz-color-text-on-dark);
     background: var(--hz-color-primary);
     transition: background-color 160ms ease, color 160ms ease;
   }
@@ -182,13 +182,13 @@
     transition: background-color 160ms ease, color 160ms ease;
   }
   :where(.horizonless-spell-chat-save-button) {
-    color: var(--hz-color-primary-strong);
+    color: var(--hz-color-text-on-dark);
   }
   :where(.horizonless-spell-chat-damage-button) {
-    color: var(--hz-chat-color-accent, var(--hz-color-accent));
+    color: var(--hz-color-text-on-dark);
   }
   .horizonless-spell-chat button.horizonless-spell-chat-damage-button {
-    color: var(--hz-chat-color-accent, var(--hz-color-accent)) !important;
+    color: var(--hz-color-text-on-dark) !important;
   }
   :where(.horizonless-spell-chat-save-button:hover, .horizonless-spell-chat-damage-button:hover) {
     background: var(--hz-color-primary-strong);
@@ -220,7 +220,7 @@
   :where(.horizonless-spell-save-results-title) {
     padding: 0.5rem 0.75rem;
     font-weight: 700;
-    color: var(--hz-color-primary-strong);
+    color: var(--hz-color-text-on-dark);
     background: var(--hz-color-primary);
     border-block-end: 1px solid var(--hz-color-accent);
   }
@@ -322,7 +322,7 @@
 }
 
 .chat-popout .horizonless-spell-chat .horizonless-spell-chat-damage-button {
-  color: var(--hz-chat-color-accent, var(--hz-color-accent)) !important;
+  color: var(--hz-color-text-on-dark) !important;
 }
 
 .chat-popout .horizonless-spell-chat .horizonless-spell-chat-save-action .horizonless-spell-chat-save-button {

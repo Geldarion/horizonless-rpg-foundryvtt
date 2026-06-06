@@ -197,7 +197,11 @@
 }
 
 .horizonless.actor .items-list .item .item-name {
-  color: var(--hz-sheet-text);
+  color: var(--hz-sheet-label);
+}
+
+.horizonless.actor :is(.properties-section h3, .custom-resources-header h3, .custom-attacks-header h3, .class-ranks-section h3) {
+  color: var(--hz-sheet-label);
 }
 
 .horizonless.actor :is(.items-list .item-prop, .effects .item .effect-source, .effects .item .effect-duration, .effects .item .effect-controls) {

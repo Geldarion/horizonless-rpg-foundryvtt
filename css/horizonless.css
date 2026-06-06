@@ -3,18 +3,18 @@
 body.horizonless-theme-sky,
 body.horizonless-theme-sky .horizonless-spell-chat-theme,
 .horizonless-theme-sky.horizonless-spell-chat-theme {
-  --hz-color-primary: #90caf9;
-  --hz-color-primary-strong: #2b6cb0;
+  --hz-color-primary: #3178e3;
+  --hz-color-primary-strong: #1b4798;
   --hz-color-accent: #4b111b;
-  --hz-color-surface: #e6f0ff;
-  --hz-color-background: #080b12;
-  --hz-color-text-on-surface: #0a1421;
-  --hz-color-text-on-dark: #f8fafc;
-  --hz-color-stroke-on-surface: #647b9a;
-  --hz-color-stroke-on-background: #6d90c5;
-  --hz-color-danger: #7f1d2d;
-  --hz-color-critical-miss: #102a56;
-  --hz-color-window-title-shadow: red;
+  --hz-color-surface: #f5f9ff;
+  --hz-color-background: #d5e8fb;
+  --hz-color-text-on-surface: #162141;
+  --hz-color-text-on-dark: #ffffff;
+  --hz-color-stroke-on-surface: #647fb4;
+  --hz-color-stroke-on-background: #1b4798;
+  --hz-color-danger: #4b111b;
+  --hz-color-critical-miss: #1b4798;
+  --hz-color-window-title-shadow: var(--hz-color-accent);
   --hz-chat-color-primary: var(--hz-color-primary);
   --hz-chat-color-primary-strong: var(--hz-color-primary-strong);
   --hz-chat-color-accent: var(--hz-color-accent);
@@ -26,20 +26,20 @@ body.horizonless-theme-sky .horizonless-spell-chat-theme,
   --hz-chat-color-stroke-on-background: var(--hz-color-stroke-on-background);
   --hz-chat-color-danger: var(--hz-color-danger);
   --hz-chat-color-critical-miss: var(--hz-color-critical-miss);
-  --hz-chat-dice-total-text: var(--hz-color-primary-strong);
-  --hz-chat-dice-tooltip-background: color-mix(in srgb, var(--hz-color-surface) 94%, var(--hz-color-white));
+  --hz-chat-dice-total-text: var(--hz-color-text-on-dark);
+  --hz-chat-dice-tooltip-background: color-mix(in srgb, var(--hz-color-surface) 92%, #a2ebdc);
   --hz-chat-dice-tooltip-border: var(--hz-color-accent);
   --hz-chat-item-stroke: var(--hz-color-stroke-on-surface);
-  --hz-theme-sheet-surface-soft: color-mix(in srgb, var(--hz-color-surface) 48%, transparent);
-  --hz-theme-sheet-surface-strong: color-mix(in srgb, var(--hz-color-surface) 72%, transparent);
-  --hz-theme-sheet-primary-soft: color-mix(in srgb, var(--hz-color-primary) 16%, transparent);
-  --hz-theme-sheet-primary-strong: color-mix(in srgb, var(--hz-color-primary) 28%, transparent);
-  --hz-theme-sheet-primary-hover: color-mix(in srgb, var(--hz-color-primary-strong) 18%, transparent);
-  --hz-theme-sheet-accent-soft: color-mix(in srgb, var(--hz-color-accent) 12%, transparent);
-  --hz-theme-sheet-accent-mid: color-mix(in srgb, var(--hz-color-accent) 22%, transparent);
-  --hz-theme-sheet-accent-strong: color-mix(in srgb, var(--hz-color-accent) 38%, transparent);
-  --hz-theme-sheet-stroke-soft: color-mix(in srgb, var(--hz-color-stroke-on-surface) 32%, transparent);
-  --hz-theme-sheet-stroke-strong: color-mix(in srgb, var(--hz-color-accent) 48%, transparent);
+  --hz-theme-sheet-surface-soft: color-mix(in srgb, var(--hz-color-surface) 74%, var(--hz-color-background));
+  --hz-theme-sheet-surface-strong: color-mix(in srgb, var(--hz-color-surface) 90%, var(--hz-color-background));
+  --hz-theme-sheet-primary-soft: color-mix(in srgb, var(--hz-color-primary) 16%, var(--hz-color-surface));
+  --hz-theme-sheet-primary-strong: color-mix(in srgb, var(--hz-color-primary) 30%, var(--hz-color-surface));
+  --hz-theme-sheet-primary-hover: color-mix(in srgb, var(--hz-color-primary-strong) 22%, var(--hz-color-surface));
+  --hz-theme-sheet-accent-soft: color-mix(in srgb, var(--hz-color-accent) 12%, var(--hz-color-surface));
+  --hz-theme-sheet-accent-mid: color-mix(in srgb, var(--hz-color-accent) 24%, var(--hz-color-surface));
+  --hz-theme-sheet-accent-strong: color-mix(in srgb, var(--hz-color-accent) 40%, var(--hz-color-surface));
+  --hz-theme-sheet-stroke-soft: color-mix(in srgb, var(--hz-color-stroke-on-surface) 38%, var(--hz-color-surface));
+  --hz-theme-sheet-stroke-strong: color-mix(in srgb, var(--hz-color-accent) 50%, var(--hz-color-surface));
   --hz-theme-sheet-link: var(--hz-color-primary-strong);
   --hz-theme-sheet-label: var(--hz-color-primary-strong);
 }
@@ -161,6 +161,7 @@ body.horizonless-theme-dark .horizonless-spell-chat-theme,
 }
 
 .horizonless.actor {
+  --color-text-primary: var(--hz-sheet-label);
   --hz-sheet-surface-soft: var(--hz-theme-sheet-surface-soft);
   --hz-sheet-surface-strong: var(--hz-theme-sheet-surface-strong);
   --hz-sheet-primary-soft: var(--hz-theme-sheet-primary-soft);
@@ -826,7 +827,7 @@ body:is(.horizonless-theme-verdant, .horizonless-theme-dark) .horizonless-spell-
     cursor: pointer;
     padding: 0.5rem 0.75rem;
     font-weight: 700;
-    color: var(--hz-color-primary-strong);
+    color: var(--hz-color-text-on-dark);
     background: var(--hz-color-primary);
     transition: background-color 160ms ease, color 160ms ease;
   }
@@ -872,13 +873,13 @@ body:is(.horizonless-theme-verdant, .horizonless-theme-dark) .horizonless-spell-
     transition: background-color 160ms ease, color 160ms ease;
   }
   :where(.horizonless-spell-chat-save-button) {
-    color: var(--hz-color-primary-strong);
+    color: var(--hz-color-text-on-dark);
   }
   :where(.horizonless-spell-chat-damage-button) {
-    color: var(--hz-chat-color-accent, var(--hz-color-accent));
+    color: var(--hz-color-text-on-dark);
   }
   .horizonless-spell-chat button.horizonless-spell-chat-damage-button {
-    color: var(--hz-chat-color-accent, var(--hz-color-accent)) !important;
+    color: var(--hz-color-text-on-dark) !important;
   }
   :where(.horizonless-spell-chat-save-button:hover, .horizonless-spell-chat-damage-button:hover) {
     background: var(--hz-color-primary-strong);
@@ -910,7 +911,7 @@ body:is(.horizonless-theme-verdant, .horizonless-theme-dark) .horizonless-spell-
   :where(.horizonless-spell-save-results-title) {
     padding: 0.5rem 0.75rem;
     font-weight: 700;
-    color: var(--hz-color-primary-strong);
+    color: var(--hz-color-text-on-dark);
     background: var(--hz-color-primary);
     border-block-end: 1px solid var(--hz-color-accent);
   }
@@ -1012,7 +1013,7 @@ body:is(.horizonless-theme-verdant, .horizonless-theme-dark) .horizonless-spell-
 }
 
 .chat-popout .horizonless-spell-chat .horizonless-spell-chat-damage-button {
-  color: var(--hz-chat-color-accent, var(--hz-color-accent)) !important;
+  color: var(--hz-color-text-on-dark) !important;
 }
 
 .chat-popout .horizonless-spell-chat .horizonless-spell-chat-save-action .horizonless-spell-chat-save-button {
@@ -1799,6 +1800,7 @@ body:is(.horizonless-theme-verdant, .horizonless-theme-dark) .horizonless-spell-
 
 .horizonless .properties-section h3 {
   margin: 0;
+  color: var(--hz-sheet-label, var(--hz-color-accent));
 }
 
 .horizonless .properties-list {
@@ -2542,7 +2544,11 @@ body:is(.horizonless-theme-verdant, .horizonless-theme-dark) .horizonless-spell-
 }
 
 .horizonless.actor .items-list .item .item-name {
-  color: var(--hz-sheet-text);
+  color: var(--hz-sheet-label);
+}
+
+.horizonless.actor :is(.properties-section h3, .custom-resources-header h3, .custom-attacks-header h3, .class-ranks-section h3) {
+  color: var(--hz-sheet-label);
 }
 
 .horizonless.actor :is(.items-list .item-prop, .effects .item .effect-source, .effects .item .effect-duration, .effects .item .effect-controls) {
